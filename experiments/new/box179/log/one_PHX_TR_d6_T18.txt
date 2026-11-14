@@ -1,0 +1,6 @@
+corpus files at d 6: 1
+class PHX d 6 genomes 0 transitions 3933 distinct-dec-rows 3066 distinct-states 4096 features 194
+FEASIBLE min max Phi = 20.0000
+weights: zH1_1=14.1 ord1=8.91 pair3_0001=-8.15 pair1_0001=-8.03 pair1_1010=-8.02 pair1_0100=-7.68 pair3_0011=-6.78 uH1_4=-6.59 pair5_0101=6.25 ord0=5.71 uH3_8=-5.56 pair3_0000=-5.42 pair3_1111=5.4 k2=5.2 kz0_2=-5.2 pair2_1110=-4.77 pair5_0001=4.37 pair4_0000=-4.28 pair5_0100=4.25 uH2_6=3.87 pair2_1011=-3.55 pair4_1100=-3.34 uH0_7=3.3 k6=-3.29 zH2_3=-3.29 pair3_1101=3.16 zH5_7=3.15 pair3_1001=-3.12 k10=3.08 pair1_1100=3.07 zH1_4=3.04 k1=2.94 k3=-2.94 zk0_2=-2.84 pair5_1010=-2.83 pair5_1101=2.83 pair5_0111=2.76 zH3_8=2.72 kz1_3=2.62 zk1_3=2.53 const=0
+dual: 25 decrease rows in support, sum of their multipliers 20.0000 (= the bound)
+dual mass by genome source: TR_d6_T18.json:20

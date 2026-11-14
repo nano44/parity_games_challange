@@ -1,0 +1,9 @@
+GAME red/ul/instances/reader_L10_n36.pg
+GAMES 1
+enum_states 12
+keep_chk 11
+loc_chk 24
+rhos 48
+states 12
+VIOLATIONS 0
+RC 0

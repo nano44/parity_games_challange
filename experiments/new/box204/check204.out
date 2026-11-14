@@ -1,0 +1,6 @@
+MWR4_2.json ctrl 0 wfail 0 dfail 0 bfail 0 T 30 C 0 R 13 sumflips 13 maxminface 10 maxmaxface 10 gate (34,0) flips 9 Dface (5,10) Dwt 5 ech 4 ech_at_Ccyc 0 bch 9 bch_at_Ccyc 0 Ccyc_changes 0
+K1F21_n48.json ctrl 0 wfail 0 dfail 0 bfail 0 T 31 C 0 R 21 sumflips 40 maxminface 12 maxmaxface 22 gate (46,0) flips 21 Dface (12,22) Dwt 12 ech 11 ech_at_Ccyc 11 bch 21 bch_at_Ccyc 21 Ccyc_changes 21
+k1fail_202.json ctrl 0 wfail 0 dfail 0 bfail 0 T 4 C 0 R 2 sumflips 3 maxminface 3 maxmaxface 3 gate (4,0) flips 2 Dface (2,3) Dwt 2 ech 1 ech_at_Ccyc 0 bch 2 bch_at_Ccyc 1 Ccyc_changes 1
+ctrl1 MWR4_2.json ctrl 1 wfail 186 dfail 0 bfail 0 T 30 C 0 R 13 sumflips 13 maxminface 10 maxmaxface 10 gate (34,0) flips 9 Dface (5,10) Dwt 5 ech 4 ech_at_Ccyc 0 bch 9 bch_at_Ccyc 0 Ccyc_changes 0
+ctrl2 MWR4_2.json ctrl 2 wfail 0 dfail 0 bfail 1727 T 30 C 0 R 13 sumflips 13 maxminface 10 maxmaxface 10 gate (34,0) flips 9 Dface (5,10) Dwt 5 ech 4 ech_at_Ccyc 0 bch 9 bch_at_Ccyc 0 Ccyc_changes 0
+k1 seed 7 ctrl 0 {'genomes': 100, 'wfail': 0, 'dfail': 0, 'bfail': 0}

@@ -1,0 +1,34 @@
+OK   SPEC Ξσ = valuation of every vertex under σ and Odd's OPTIMAL counterstrategy σ̄ (minimising this order a
+OK   SPEC Odd's side: everything on the DUAL game G^d (owner swapped, Ω + 1); τ is an "Even" strategy of G^d; 
+OK   SPEC S2 Improving edges: Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}; 
+OK   RESULTS/SPEC/REACH highest even priority, else lowest odd priority
+OK   SPEC Odd's v (the rule on G^d), in G's terms: highest ODD Ω(w), else lowest EVEN Ω(w)
+OK   SPEC S4 Iteration (one iteration = one pass with Iσ ∪ Iτ ≠ ∅; both steps computed from the SAME (σ, τ), a
+OK   SPEC If Iσ ≠ ∅: A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v. Arena H: Even v keeps only edges to A(v); O
+OK   SPEC b. If Iτ ≠ ∅: A(v) = {τ(v)} ∪ {w : (v, w) ∈ Iτ} for Odd v.
+OK   SPEC c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with an improving edge set σ_ne
+OK   SPEC FIX 3 (S4c, A7). In a fallback iteration with Iσ ≠ ∅ only σ changes (τ_new = τ)
+OK   SPEC S5 Stop when Iσ = Iτ = ∅.
+OK   SPEC if c is odd, longer is better for Even; if c even, shorter is better
+OK   RESULTS/XICYC with ONE change in S4a
+OK   XICYC SPEC S1-S5 with ONE change in S4a. At every Even v with |A(v)| ≥ 2 that is not its own H-cycle node,
+OK   RESULTS/REACH used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima; and S4a's σ_new, S1's out
+OK   RESULTS/REACH Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β
+OK   RESULTS/REACH each with a W-target of level lev(x) − 1 (none at level 0)
+OK   RESULTS/REACH β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone
+OK   RESULTS/REACH e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+OK   RESULTS/REACH an unused even self-loop of priority 2; c_W's priority top is the least even number at least 2 above
+OK   RESULTS/REACH a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2}, K3
+OK   RESULTS/REACH with start σ = the genome start at movers, β → its Ξ-target (u when the target is X), K0 → K3, K1 → 
+OK   RESULTS G is in IDEAL-ACYC iff its
+OK   RESULTS Ξ-graph is ACYCLIC (self-loops count as cycles).
+OK   RESULTS the game Γ3(G) obtained from Γ(G) by 4M + 4 single-successor Even pads of priority ≤ 2 (pA on K0 → K
+OK   RESULTS has S3's start pair equal to R104's stated start transported through the pads (Lemma S3-START)
+OK   RESULTS RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome
+OK   REACH In the standard state, Iτ = ∅, so S4b leaves τ unchanged.
+OK   RESULTS (a) Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(
+OK   RESULTS ≺ is a strict partial order on strategies and every non-empty switch of improvements goes strictly u
+OK   RESULTS/REACH Let G ∈ IDEAL-ACYC with IDEAL run s_0 → s_1 → … → s_L, L = L(G). Then the N5 run of Γ3(G) FROM S3 ha
+OK   RESULTS N5′-xi from S3 on Γ3(G) visits only standard states and makes Howard steps at the movers until its f
+OK   RESULTS Theorem REACH3-CYC, CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome
+quotes 33 missing 0 (every source from trunk c8f42538f)

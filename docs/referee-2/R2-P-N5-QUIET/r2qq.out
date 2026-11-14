@@ -1,0 +1,37 @@
+PACKET §1        OK   RESULTS l. 9864 (R104)       | Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β
+PACKET §1        OK   RESULTS l. 9864 (R104)       | β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone
+PACKET §1        OK   RESULTS l. 9864 (R104)       | e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+PACKET §1        OK   RESULTS l. 9864 (R104)       | an unused even self-loop of priority 2; c_W's priority top is the least even number at least 2 above
+PACKET §1        OK   RESULTS l. 9864 (R104)       | a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2}, K3
+PACKET §1        OK   RESULTS l. 9864 (R104)       | with start σ = the genome start at movers, β → its Ξ-target (u when the target is X), K0 → K3, K1 → 
+PACKET §1        OK   XICYC                        | movers (Even, priority 0) → gates (Odd, priority 1) → {e-face e_g, β-face β_g}
+PACKET §1        OK   RESULTS l. 13607 (R118)      | VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k)
+PACKET §1        OK   RESULTS l. 13677 (R118)      | The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is un
+PACKET §1        OK   RESULTS l. 13678 (R118)      | every mover x goes to a successor of ⊴-largest Ω_t value, and keeps σ_t(x) if σ_t(x) is such a succe
+PACKET §1        OK   RESULTS l. 13679 (R118)      | T_CYC := the number of steps to the first state where no mover has a strictly better successor
+PACKET §1        OK   RESULTS l. 13682 (R118)      | Facts F1-F6 (§3 l. 68-83) with F4 REPLACED by F4′
+PACKET §1        OK   XICYC                        | Ω_t ⊴ Ω_(t+1) pointwise, for every step t.
+PACKET §1        OK   XICYC                        | Ω_t(v) = ext(v, Ω_t(nx_t(v)))
+PACKET §1        OK   XICYC                        | ext(v, (Λ, Π, k)) := (Λ, Π ∪ {v if v is more relevant than Λ}, k + 1)
+PACKET §1        OK   RESULTS l. 13682 (R118)      | if v ∉ Π(A) ∪ Π(B), then A ⊴ B ⇒ ext(v, A) ⊴ ext(v, B), and A ◁ B ⇒ ext(v, A) ◁ ext(v, B).
+PACKET §1        OK   RESULTS l. 13686 (R118)      | For every mover x, step t and successor y of x: Ω_(t+1)(x) ⊵ ext(x, Ω_t(y)).
+PACKET §1        OK   RESULTS l. 13687 (R118)      | If σ_(t+1)(x) ≠ σ_t(x), then Ω_(t+1)(x) ▷ Ω_t(x).
+PACKET §1        OK   RESULTS l. 13691 (R118)      | C ≤ n·(2M + 2).
+PACKET §1        OK   RESULTS l. 13691 (R118)      | (each vertex's Λ moves only to a vertex of strictly larger reward among at most 2M + 3 possible cycl
+PACKET §1        OK   XICYC                        | first the reward of Λ (an even priority p gives +p, an odd one −p, with priorities made injective by
+PACKET §1        OK   RESULTS l. 13682 (R118)      | (§3 l. 68-83)
+PACKET §1        OK   XICYC                        | σ̄_t is optimal at every vertex at once ([VJ])
+PACKET §1        OK   RESULTS l. 933 (R21)         | (Odd's best reply σ̄_k is pointwise optimal in G_{σ_k})
+PACKET §1        OK   PACKET                       | D_E(v) ≤ (2M + 3)·F′_B(M)
+PACKET §1        OK   RESULTS l. 10085 (R104)      | leaves the β-vertex order and the exact e-priorities to packet §3.1
+PACKET §1        OK   REALIZE                      | Ω(e_g) := eb + 2·i, eb := the least even number > bmax, i := the position of g in the order by (lev(
+FIXES [OPT]+G-2  OK   PACKET                       | nothing PROVED about N5′-xi on Γ3(G)
+FIXES [OPT]+G-2  OK   FIXES                        | T bounds IDEAL-CYC iterations; on Γ3 this bounds N5′-xi only up to its first fallback, and only unde
+FIXES [OPT]+G-2  OK   RESULTS l. 2915 (R57)        | that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance
+FIXES [OPT]+G-2  OK   RESULTS l. 9864 (R104)       | used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima
+FIXES [OPT]+G-2  OK   RESULTS l. 2915 (R57)        | that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance, and the code's match to
+FIXES [OPT]+G-2  OK   RESULTS l. 933 (R21)         | (Odd's best reply σ̄_k is pointwise optimal in G_{σ_k})
+L-1              OK   RESULTS l. 2915 (R57)        | that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance
+L-1              OK   RESULTS l. 9864 (R104)       | used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima
+L-1              OK   FIXES                        | T bounds IDEAL-CYC iterations; on Γ3 this bounds N5′-xi only up to its first fallback, and only unde
+quotes 36 missing 0

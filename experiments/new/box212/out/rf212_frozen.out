@@ -1,0 +1,568 @@
+MWR4_2.json RULE howard K2tested 3000 Tmax 30 Tsum 30 bchecked 30 lagstates 465 nonstalls 465 nsmax 30 nspctP 0 runs 1 tailmax 0
+MWR8_2.json RULE howard K2tested 3000 Tmax 54 Tsum 54 bchecked 54 lagstates 1485 nonstalls 1485 nsmax 54 nspctP 0 runs 1 tailmax 0
+MWR16_2.json RULE howard K2tested 3000 Tmax 102 Tsum 102 bchecked 28 lagstates 1523 nonstalls 1523 nsmax 102 nspctP 0 runs 1 tailmax 0
+CW4_n.json RULE howard K2tested 3000 Tmax 30 Tsum 30 bchecked 30 lagstates 465 nonstalls 465 nsmax 30 nspctP 0 runs 1 tailmax 0
+CW8_n.json RULE howard K2tested 3000 Tmax 59 Tsum 59 bchecked 59 lagstates 1770 nonstalls 1770 nsmax 59 nspctP 0 runs 1 tailmax 0
+CW16_n.json RULE howard K2tested 3000 Tmax 114 Tsum 114 bchecked 25 lagstates 1782 nonstalls 1782 nsmax 114 nspctP 0 runs 1 tailmax 0
+CWRR4_n.json RULE howard K2tested 3000 Tmax 28 Tsum 28 bchecked 28 lagstates 406 nonstalls 406 nsmax 28 nspctP 0 runs 1 tailmax 0
+CWRR8_n.json RULE howard K2tested 3000 Tmax 52 Tsum 52 bchecked 52 lagstates 1378 nonstalls 1378 nsmax 52 nspctP 0 runs 1 tailmax 0
+CWRR16_n.json RULE howard K2tested 3000 Tmax 100 Tsum 100 bchecked 23 lagstates 1100 nonstalls 1100 nsmax 100 nspctP 0 runs 1 tailmax 0
+CWRQ8_n.json RULE howard K2tested 3000 Tmax 52 Tsum 52 bchecked 52 lagstates 1378 nonstalls 1378 nsmax 52 nspctP 0 runs 1 tailmax 0
+K1F21_n48.json RULE howard K2tested 3000 Tmax 31 Tsum 31 bchecked 31 lagstates 495 nonstalls 465 nsmax 30 nspctP 0 plateaus 30 platmax 1 runs 1 stalls 30 tailmax 1
+K1F34_n84.json RULE howard K2tested 3000 Tmax 52 Tsum 52 bchecked 52 lagstates 1378 nonstalls 1378 nsmax 52 nspctP 0 runs 1 tailmax 0
+K1C16_n400.json RULE howard K2tested 3000 Tmax 51 Tsum 51 bchecked 51 lagstates 1323 nonstalls 1266 nsmax 48 nspctP 0 plateaus 57 platmax 1 runs 1 stalls 57 tailmax 1
+K1L7_n48.json RULE howard K2tested 3000 Tmax 37 Tsum 37 bchecked 37 lagstates 699 nonstalls 623 nsmax 34 nspctP 0 plateaus 42 platmax 2 runs 1 stalls 76 tailmax 2
+K1L10_n48.json RULE howard K2tested 3000 Tmax 31 Tsum 31 bchecked 31 lagstates 492 nonstalls 443 nsmax 28 nspctP 0 plateaus 39 platmax 2 runs 1 stalls 49 tailmax 2
+K1D4_n48.json RULE howard K2tested 3000 Tmax 23 Tsum 23 bchecked 23 lagstates 228 nonstalls 102 nsmax 12 nspctP 0 plateaus 14 platmax 9 runs 1 stalls 126 tailmax 9
+BLKX23_n48.json RULE howard K2tested 3000 Tmax 28 Tsum 28 bchecked 28 lagstates 403 nonstalls 351 nsmax 26 nspctP 0 plateaus 26 platmax 2 runs 1 stalls 52 tailmax 2
+BLKX26_n48.json RULE howard K2tested 3000 Tmax 33 Tsum 33 bchecked 33 lagstates 557 nonstalls 495 nsmax 30 nspctP 0 plateaus 31 platmax 2 runs 1 stalls 62 tailmax 2
+B400_r32_a13d9661.json RULE howard K2tested 3000 Tmax 49 Tsum 49 bchecked 49 lagstates 1225 nonstalls 1225 nsmax 49 nspctP 0 runs 1 tailmax 0
+CFI3_n48.json RULE howard K2tested 3000 Tmax 24 Tsum 24 bchecked 24 lagstates 284 nonstalls 197 nsmax 17 nspctP 0 plateaus 27 platmax 4 runs 1 stalls 87 tailmax 4
+RINT_n48.json RULE howard K2tested 3000 Tmax 24 Tsum 24 bchecked 24 lagstates 299 nonstalls 276 nsmax 23 nspctP 0 plateaus 23 platmax 1 runs 1 stalls 23 tailmax 1
+k1fail_202.json RULE howard K2tested 3000 Tmax 4 Tsum 4 bchecked 4 lagstates 9 nonstalls 9 nsmax 3 nspctP 0 runs 1 tailmax 1
+naive_k1_s71.json RULE howard K2tested 3000 Tmax 3 Tsum 3 bchecked 3 lagstates 3 nonstalls 3 nsmax 1 nspctP 0 runs 1 tailmax 2
+ST4_k1.json RULE howard K2tested 3000 Tmax 0 Tsum 0 runs 1
+ST8_k1.json RULE howard K2tested 3000 Tmax 0 Tsum 0 runs 1
+C10_NM164_bdf7a4f2.json RULE howard K2tested 3000 Tmax 20 Tsum 20 bchecked 20 lagstates 210 nonstalls 210 nsmax 20 nspctP 0 runs 1 tailmax 0
+C11_NM172_93225ff6.json RULE howard K2tested 3000 Tmax 22 Tsum 22 bchecked 22 lagstates 253 nonstalls 253 nsmax 22 nspctP 0 runs 1 tailmax 0
+C12_NM176_0009119c.json RULE howard K2tested 3000 Tmax 24 Tsum 24 bchecked 24 lagstates 300 nonstalls 300 nsmax 24 nspctP 0 runs 1 tailmax 0
+C2CX4_n23.json RULE howard K2tested 3000 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 66 nsmax 11 nspctP 0 runs 1 tailmax 0
+C2_NM33_38377e9c.json RULE howard K2tested 3000 Tmax 3 Tsum 3 bchecked 3 lagstates 6 nonstalls 6 nsmax 3 nspctP 0 runs 1 tailmax 0
+C3_NM45_8a702944.json RULE howard K2tested 3000 Tmax 6 Tsum 6 bchecked 6 lagstates 21 nonstalls 21 nsmax 6 nspctP 0 runs 1 tailmax 0
+C4_NM50_184a739c.json RULE howard K2tested 3000 Tmax 8 Tsum 8 bchecked 8 lagstates 36 nonstalls 29 nsmax 7 nspctP 0 plateaus 7 platmax 1 runs 1 stalls 7 tailmax 0
+C5_NM63_7ae531ad.json RULE howard K2tested 3000 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 66 nsmax 11 nspctP 0 runs 1 tailmax 0
+C6G8_n54.json RULE howard K2tested 3000 Tmax 17 Tsum 17 bchecked 17 lagstates 153 nonstalls 153 nsmax 17 nspctP 0 runs 1 tailmax 0
+C6_NM75_72a89f5f.json RULE howard K2tested 3000 Tmax 12 Tsum 12 bchecked 12 lagstates 78 nonstalls 78 nsmax 12 nspctP 0 runs 1 tailmax 0
+C7_NM105_4438ea3e.json RULE howard K2tested 3000 Tmax 13 Tsum 13 bchecked 13 lagstates 91 nonstalls 91 nsmax 13 nspctP 0 runs 1 tailmax 0
+C8_NM112_8c4c784f.json RULE howard K2tested 3000 Tmax 16 Tsum 16 bchecked 16 lagstates 136 nonstalls 136 nsmax 16 nspctP 0 runs 1 tailmax 0
+C9_NM122_6224f959.json RULE howard K2tested 3000 Tmax 18 Tsum 18 bchecked 18 lagstates 171 nonstalls 171 nsmax 18 nspctP 0 runs 1 tailmax 0
+CT12_cap200.json RULE howard K2tested 3000 Tmax 46 Tsum 46 bchecked 46 lagstates 1060 nonstalls 838 nsmax 40 nspctP 0 plateaus 37 platmax 6 runs 1 stalls 222 tailmax 6
+CT26_cap400.json RULE howard K2tested 3000 Tmax 79 Tsum 79 bchecked 79 lagstates 3160 nonstalls 3160 nsmax 79 nspctP 0 runs 1 tailmax 0
+CT27_cap400.json RULE howard K2tested 3000 Tmax 79 Tsum 79 bchecked 79 lagstates 3160 nonstalls 3160 nsmax 79 nspctP 0 runs 1 tailmax 0
+CX4_n21.json RULE howard K2tested 3000 Tmax 10 Tsum 10 bchecked 10 lagstates 55 nonstalls 55 nsmax 10 nspctP 0 runs 1 tailmax 0
+DHIB18_2805.json RULE howard K2tested 3000 Tmax 19 Tsum 19 bchecked 19 lagstates 190 nonstalls 190 nsmax 19 nspctP 0 runs 1 tailmax 0
+DHIB26_2804.json RULE howard K2tested 3000 Tmax 28 Tsum 28 bchecked 28 lagstates 406 nonstalls 387 nsmax 27 nspctP 0 plateaus 19 platmax 1 runs 1 stalls 19 tailmax 0
+DSALT6_n108.json RULE howard K2tested 3000 Tmax 21 Tsum 21 bchecked 21 lagstates 175 nonstalls 103 nsmax 7 nspctP 0 plateaus 24 platmax 13 runs 1 stalls 72 tailmax 10
+DSALT7_n108.json RULE howard K2tested 3000 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 62 nsmax 10 nspctP 0 plateaus 4 platmax 1 runs 1 stalls 4 tailmax 0
+DSALT9_n416.json RULE howard K2tested 3000 Tmax 30 Tsum 30 bchecked 30 lagstates 449 nonstalls 274 nsmax 16 nspctP 0 plateaus 59 platmax 10 runs 1 stalls 175 tailmax 5
+DU21_h4.json RULE howard K2tested 3000 Tmax 24 Tsum 24 bchecked 24 lagstates 299 nonstalls 276 nsmax 23 nspctP 0 plateaus 23 platmax 1 runs 1 stalls 23 tailmax 1
+DWT20_2803.json RULE howard K2tested 3000 Tmax 22 Tsum 22 bchecked 22 lagstates 253 nonstalls 240 nsmax 21 nspctP 0 plateaus 13 platmax 1 runs 1 stalls 13 tailmax 0
+FW12_2.json RULE howard K2tested 3000 Tmax 41 Tsum 41 bchecked 41 lagstates 861 nonstalls 861 nsmax 41 nspctP 0 runs 1 tailmax 0
+FW16_2.json RULE howard K2tested 3000 Tmax 53 Tsum 53 bchecked 53 lagstates 1431 nonstalls 1431 nsmax 53 nspctP 0 runs 1 tailmax 0
+FW4_2.json RULE howard K2tested 3000 Tmax 17 Tsum 17 bchecked 17 lagstates 153 nonstalls 153 nsmax 17 nspctP 0 runs 1 tailmax 0
+FW6_3.json RULE howard K2tested 3000 Tmax 30 Tsum 30 bchecked 30 lagstates 465 nonstalls 465 nsmax 30 nspctP 0 runs 1 tailmax 0
+FW6_4.json RULE howard K2tested 3000 Tmax 37 Tsum 37 bchecked 37 lagstates 703 nonstalls 703 nsmax 37 nspctP 0 runs 1 tailmax 0
+FW8_2.json RULE howard K2tested 3000 Tmax 29 Tsum 29 bchecked 29 lagstates 435 nonstalls 435 nsmax 29 nspctP 0 runs 1 tailmax 0
+FW8_4.json RULE howard K2tested 3000 Tmax 47 Tsum 47 bchecked 47 lagstates 1128 nonstalls 1128 nsmax 47 nspctP 0 runs 1 tailmax 0
+GROW7_n34.json RULE howard K2tested 3000 Tmax 13 Tsum 13 bchecked 13 lagstates 91 nonstalls 91 nsmax 13 nspctP 0 runs 1 tailmax 0
+GROW8_n53.json RULE howard K2tested 3000 Tmax 18 Tsum 18 bchecked 18 lagstates 171 nonstalls 171 nsmax 18 nspctP 0 runs 1 tailmax 0
+HOLD2K_n84.json RULE howard K2tested 3000 Tmax 13 Tsum 13 bchecked 13 lagstates 91 nonstalls 87 nsmax 12 nspctP 0 plateaus 4 platmax 1 runs 1 stalls 4 tailmax 0
+HOLD3K_n125.json RULE howard K2tested 3000 Tmax 17 Tsum 17 bchecked 17 lagstates 153 nonstalls 137 nsmax 13 nspctP 0 plateaus 4 platmax 4 runs 1 stalls 16 tailmax 0
+MW12_2.json RULE howard K2tested 3000 Tmax 79 Tsum 79 bchecked 79 lagstates 3160 nonstalls 3160 nsmax 79 nspctP 0 runs 1 tailmax 0
+MW16_2.json RULE howard K2tested 3000 Tmax 103 Tsum 103 bchecked 26 lagstates 1149 nonstalls 1149 nsmax 103 nspctP 0 runs 1 tailmax 0
+MW26_2.json RULE howard K2tested 3000 Tmax 163 Tsum 163 bchecked 30 lagstates 2265 nonstalls 2265 nsmax 163 nspctP 0 runs 1 tailmax 0
+MW32_2.json RULE howard K2tested 3000 Tmax 199 Tsum 199 bchecked 29 lagstates 2818 nonstalls 2818 nsmax 199 nspctP 0 runs 1 tailmax 0
+MW4_2.json RULE howard K2tested 3000 Tmax 31 Tsum 31 bchecked 31 lagstates 496 nonstalls 496 nsmax 31 nspctP 0 runs 1 tailmax 0
+MW5_2.json RULE howard K2tested 3000 Tmax 37 Tsum 37 bchecked 37 lagstates 703 nonstalls 703 nsmax 37 nspctP 0 runs 1 tailmax 0
+MW8_2.json RULE howard K2tested 3000 Tmax 55 Tsum 55 bchecked 55 lagstates 1540 nonstalls 1540 nsmax 55 nspctP 0 runs 1 tailmax 0
+NK6_cl21.json RULE howard K2tested 3000 Tmax 11 Tsum 11 bchecked 11 lagstates 65 nonstalls 43 nsmax 7 nspctP 0 plateaus 14 platmax 3 runs 1 stalls 22 tailmax 1
+ROUTELOW_n21.json RULE howard K2tested 3000 Tmax 10 Tsum 10 bchecked 10 lagstates 55 nonstalls 55 nsmax 10 nspctP 0 runs 1 tailmax 0
+RWX_n95.json RULE howard K2tested 3000 Tmax 12 Tsum 12 bchecked 12 lagstates 78 nonstalls 78 nsmax 12 nspctP 0 runs 1 tailmax 0
+W14_n75.json RULE howard K2tested 3000 Tmax 13 Tsum 13 bchecked 13 lagstates 91 nonstalls 91 nsmax 13 nspctP 0 runs 1 tailmax 0
+W68_n66.json RULE howard K2tested 3000 Tmax 8 Tsum 8 bchecked 8 lagstates 36 nonstalls 36 nsmax 8 nspctP 0 runs 1 tailmax 0
+W86_n77.json RULE howard K2tested 3000 Tmax 19 Tsum 19 bchecked 19 lagstates 190 nonstalls 190 nsmax 19 nspctP 0 runs 1 tailmax 0
+WC16_2.json RULE howard K2tested 3000 Tmax 4 Tsum 4 bchecked 4 lagstates 10 nonstalls 10 nsmax 4 nspctP 0 runs 1 tailmax 0
+WC4_2.json RULE howard K2tested 3000 Tmax 4 Tsum 4 bchecked 4 lagstates 10 nonstalls 10 nsmax 4 nspctP 0 runs 1 tailmax 0
+WC8_2.json RULE howard K2tested 3000 Tmax 4 Tsum 4 bchecked 4 lagstates 10 nonstalls 10 nsmax 4 nspctP 0 runs 1 tailmax 0
+m3_NM106_ea6c4f63.json RULE howard K2tested 3000 Tmax 12 Tsum 12 bchecked 12 lagstates 78 nonstalls 78 nsmax 12 nspctP 0 runs 1 tailmax 0
+m4_NM121_d45d7aaa.json RULE howard K2tested 3000 Tmax 17 Tsum 17 bchecked 17 lagstates 153 nonstalls 153 nsmax 17 nspctP 0 runs 1 tailmax 0
+DEAD_SEG2P_d4_N8.json RULE howard K2tested 3000 Tmax 10 Tsum 10 bchecked 10 lagstates 19 nonstalls 3 nsmax 2 nspctP 0 plateaus 2 platmax 8 runs 1 stalls 16 tailmax 8
+DEAD_SEG2P_d7_N14.json RULE howard K2tested 3000 Tmax 19 Tsum 19 bchecked 19 lagstates 186 nonstalls 166 nsmax 16 nspctP 0 plateaus 12 platmax 2 runs 1 stalls 20 tailmax 2
+DEAD_SEG2P_d9_N18.json RULE howard K2tested 3000 Tmax 21 Tsum 21 bchecked 21 lagstates 212 nonstalls 140 nsmax 12 nspctP 0 plateaus 27 platmax 3 runs 1 stalls 72 tailmax 4
+MWR4_2.json RULE allrand K2tested 3000 K5how 2 Tmax 30 Tsum 30 bchecked 30 lagstates 465 nonstalls 465 nsmax 30 nspctP 0 runs 1 tailmax 0
+MWR8_2.json RULE allrand K2tested 3000 K5how 3 Tmax 54 Tsum 54 bchecked 54 lagstates 1485 nonstalls 1485 nsmax 54 nspctP 0 runs 1 tailmax 0
+MWR16_2.json RULE allrand K2tested 3000 K5how 4 Tmax 102 Tsum 102 bchecked 26 lagstates 1295 nonstalls 1295 nsmax 102 nspctP 0 runs 1 tailmax 0
+CW4_n.json RULE allrand K2tested 3000 K5how 2 Tmax 29 Tsum 29 bchecked 29 lagstates 435 nonstalls 435 nsmax 29 nspctP 0 runs 1 tailmax 0
+CW8_n.json RULE allrand K2tested 3000 K5how 8 Tmax 58 Tsum 58 bchecked 58 lagstates 1711 nonstalls 1711 nsmax 58 nspctP 0 runs 1 tailmax 0
+CW16_n.json RULE allrand K2tested 3000 K5how 29 Tmax 112 Tsum 112 bchecked 24 lagstates 1373 nonstalls 1373 nsmax 112 nspctP 0 runs 1 tailmax 0
+CWRR4_n.json RULE allrand K2tested 3000 K5how 3 Tmax 28 Tsum 28 bchecked 28 lagstates 406 nonstalls 406 nsmax 28 nspctP 0 runs 1 tailmax 0
+CWRR8_n.json RULE allrand K2tested 3000 K5how 2 Tmax 52 Tsum 52 bchecked 52 lagstates 1378 nonstalls 1378 nsmax 52 nspctP 0 runs 1 tailmax 0
+CWRR16_n.json RULE allrand K2tested 3000 K5how 5 Tmax 100 Tsum 100 bchecked 27 lagstates 1400 nonstalls 1400 nsmax 100 nspctP 0 runs 1 tailmax 0
+CWRQ8_n.json RULE allrand K2tested 3000 K5how 2 Tmax 52 Tsum 52 bchecked 52 lagstates 1378 nonstalls 1378 nsmax 52 nspctP 0 runs 1 tailmax 0
+K1F21_n48.json RULE allrand K2tested 3000 K5how 1 Tmax 31 Tsum 31 bchecked 31 lagstates 495 nonstalls 465 nsmax 30 nspctP 0 plateaus 30 platmax 1 runs 1 stalls 30 tailmax 1
+K1F34_n84.json RULE allrand K2tested 3000 K5how 1 Tmax 52 Tsum 52 bchecked 52 lagstates 1378 nonstalls 1378 nsmax 52 nspctP 0 runs 1 tailmax 0
+K1C16_n400.json RULE allrand K2tested 3000 K5how 4 Tmax 50 Tsum 50 bchecked 50 lagstates 1271 nonstalls 1222 nsmax 47 nspctP 0 plateaus 49 platmax 1 runs 1 stalls 49 tailmax 2
+K1L7_n48.json RULE allrand K2tested 3000 Tmax 37 Tsum 37 bchecked 37 lagstates 699 nonstalls 623 nsmax 34 nspctP 0 plateaus 42 platmax 2 runs 1 stalls 76 tailmax 2
+K1L10_n48.json RULE allrand K2tested 3000 Tmax 30 Tsum 30 bchecked 30 lagstates 461 nonstalls 415 nsmax 27 nspctP 0 plateaus 37 platmax 2 runs 1 stalls 46 tailmax 2
+K1D4_n48.json RULE allrand K2tested 3000 K5how 1 Tmax 23 Tsum 23 bchecked 23 lagstates 228 nonstalls 102 nsmax 12 nspctP 0 plateaus 14 platmax 9 runs 1 stalls 126 tailmax 9
+BLKX23_n48.json RULE allrand K2tested 3000 Tmax 27 Tsum 27 bchecked 27 lagstates 377 nonstalls 351 nsmax 26 nspctP 0 plateaus 26 platmax 1 runs 1 stalls 26 tailmax 1
+BLKX26_n48.json RULE allrand K2tested 3000 Tmax 31 Tsum 31 bchecked 31 lagstates 492 nonstalls 434 nsmax 28 nspctP 0 plateaus 29 platmax 2 runs 1 stalls 58 tailmax 2
+B400_r32_a13d9661.json RULE allrand K2tested 3000 K5how 2 Tmax 49 Tsum 49 bchecked 49 lagstates 1225 nonstalls 1225 nsmax 49 nspctP 0 runs 1 tailmax 0
+CFI3_n48.json RULE allrand K2tested 3000 Tmax 24 Tsum 24 bchecked 24 lagstates 284 nonstalls 197 nsmax 17 nspctP 0 plateaus 27 platmax 4 runs 1 stalls 87 tailmax 4
+RINT_n48.json RULE allrand K2tested 3000 K5how 2 Tmax 24 Tsum 24 bchecked 24 lagstates 299 nonstalls 276 nsmax 23 nspctP 0 plateaus 23 platmax 1 runs 1 stalls 23 tailmax 1
+k1fail_202.json RULE allrand K2tested 3000 Tmax 4 Tsum 4 bchecked 4 lagstates 9 nonstalls 9 nsmax 3 nspctP 0 runs 1 tailmax 1
+naive_k1_s71.json RULE allrand K2tested 3000 Tmax 3 Tsum 3 bchecked 3 lagstates 3 nonstalls 3 nsmax 1 nspctP 0 runs 1 tailmax 2
+ST4_k1.json RULE allrand K2tested 3000 Tmax 0 Tsum 0 runs 1
+ST8_k1.json RULE allrand K2tested 3000 Tmax 0 Tsum 0 runs 1
+C10_NM164_bdf7a4f2.json RULE allrand K2tested 3000 Tmax 20 Tsum 20 bchecked 20 lagstates 210 nonstalls 210 nsmax 20 nspctP 0 runs 1 tailmax 0
+C11_NM172_93225ff6.json RULE allrand K2tested 3000 Tmax 22 Tsum 22 bchecked 22 lagstates 253 nonstalls 253 nsmax 22 nspctP 0 runs 1 tailmax 0
+C12_NM176_0009119c.json RULE allrand K2tested 3000 K5how 2 Tmax 24 Tsum 24 bchecked 24 lagstates 300 nonstalls 300 nsmax 24 nspctP 0 runs 1 tailmax 0
+C2CX4_n23.json RULE allrand K2tested 3000 Tmax 8 Tsum 8 bchecked 8 lagstates 36 nonstalls 36 nsmax 8 nspctP 0 runs 1 tailmax 0
+C2_NM33_38377e9c.json RULE allrand K2tested 3000 Tmax 3 Tsum 3 bchecked 3 lagstates 6 nonstalls 6 nsmax 3 nspctP 0 runs 1 tailmax 0
+C3_NM45_8a702944.json RULE allrand K2tested 3000 Tmax 6 Tsum 6 bchecked 6 lagstates 21 nonstalls 21 nsmax 6 nspctP 0 runs 1 tailmax 0
+C4_NM50_184a739c.json RULE allrand K2tested 3000 Tmax 7 Tsum 7 bchecked 7 lagstates 28 nonstalls 22 nsmax 6 nspctP 0 plateaus 6 platmax 1 runs 1 stalls 6 tailmax 0
+C5_NM63_7ae531ad.json RULE allrand K2tested 3000 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 66 nsmax 11 nspctP 0 runs 1 tailmax 0
+C6G8_n54.json RULE allrand K2tested 3000 K5how 2 Tmax 17 Tsum 17 bchecked 17 lagstates 153 nonstalls 153 nsmax 17 nspctP 0 runs 1 tailmax 0
+C6_NM75_72a89f5f.json RULE allrand K2tested 3000 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 66 nsmax 11 nspctP 0 runs 1 tailmax 0
+C7_NM105_4438ea3e.json RULE allrand K2tested 3000 Tmax 13 Tsum 13 bchecked 13 lagstates 91 nonstalls 91 nsmax 13 nspctP 0 runs 1 tailmax 0
+C8_NM112_8c4c784f.json RULE allrand K2tested 3000 K5how 4 Tmax 16 Tsum 16 bchecked 16 lagstates 136 nonstalls 136 nsmax 16 nspctP 0 runs 1 tailmax 0
+C9_NM122_6224f959.json RULE allrand K2tested 3000 K5how 1 Tmax 18 Tsum 18 bchecked 18 lagstates 171 nonstalls 171 nsmax 18 nspctP 0 runs 1 tailmax 0
+CT12_cap200.json RULE allrand K2tested 3000 Tmax 46 Tsum 46 bchecked 46 lagstates 1060 nonstalls 838 nsmax 40 nspctP 0 plateaus 37 platmax 6 runs 1 stalls 222 tailmax 6
+CT26_cap400.json RULE allrand K2tested 3000 K5how 2 Tmax 80 Tsum 80 bchecked 80 lagstates 3240 nonstalls 3240 nsmax 80 nspctP 0 runs 1 tailmax 0
+CT27_cap400.json RULE allrand K2tested 3000 K5how 2 Tmax 78 Tsum 78 bchecked 78 lagstates 3081 nonstalls 3081 nsmax 78 nspctP 0 runs 1 tailmax 0
+CX4_n21.json RULE allrand K2tested 3000 Tmax 10 Tsum 10 bchecked 10 lagstates 55 nonstalls 55 nsmax 10 nspctP 0 runs 1 tailmax 0
+DHIB18_2805.json RULE allrand K2tested 3000 K5how 16 Tmax 16 Tsum 16 bchecked 16 lagstates 136 nonstalls 136 nsmax 16 nspctP 0 runs 1 tailmax 0
+DHIB26_2804.json RULE allrand K2tested 3000 K5how 10 Tmax 16 Tsum 16 bchecked 16 lagstates 136 nonstalls 136 nsmax 16 nspctP 0 runs 1 tailmax 0
+DSALT6_n108.json RULE allrand K2tested 3000 K5how 2 Tmax 16 Tsum 16 bchecked 16 lagstates 128 nonstalls 91 nsmax 8 nspctP 0 plateaus 9 platexit 4 platmax 5 runs 1 stalls 37 tailmax 3
+DSALT7_n108.json RULE allrand K2tested 3000 Tmax 7 Tsum 7 bchecked 7 lagstates 25 nonstalls 25 nsmax 5 nspctP 0 runs 1 tailmax 2
+DSALT9_n416.json RULE allrand K2tested 3000 K5how 2 Tmax 21 Tsum 21 bchecked 21 lagstates 186 nonstalls 173 nsmax 11 nspctP 0 plateaus 13 platmax 1 runs 1 stalls 13 tailmax 9
+DU21_h4.json RULE allrand K2tested 3000 K5how 7 Tmax 16 Tsum 16 bchecked 16 lagstates 136 nonstalls 136 nsmax 16 nspctP 0 runs 1 tailmax 0
+DWT20_2803.json RULE allrand K2tested 3000 K5how 9 Tmax 12 Tsum 12 bchecked 12 lagstates 78 nonstalls 78 nsmax 12 nspctP 0 runs 1 tailmax 0
+FW12_2.json RULE allrand K2tested 3000 Tmax 41 Tsum 41 bchecked 41 lagstates 861 nonstalls 861 nsmax 41 nspctP 0 runs 1 tailmax 0
+FW16_2.json RULE allrand K2tested 3000 Tmax 53 Tsum 53 bchecked 53 lagstates 1431 nonstalls 1431 nsmax 53 nspctP 0 runs 1 tailmax 0
+FW4_2.json RULE allrand K2tested 3000 Tmax 17 Tsum 17 bchecked 17 lagstates 153 nonstalls 153 nsmax 17 nspctP 0 runs 1 tailmax 0
+FW6_3.json RULE allrand K2tested 3000 Tmax 30 Tsum 30 bchecked 30 lagstates 465 nonstalls 465 nsmax 30 nspctP 0 runs 1 tailmax 0
+FW6_4.json RULE allrand K2tested 3000 Tmax 37 Tsum 37 bchecked 37 lagstates 703 nonstalls 703 nsmax 37 nspctP 0 runs 1 tailmax 0
+FW8_2.json RULE allrand K2tested 3000 Tmax 29 Tsum 29 bchecked 29 lagstates 435 nonstalls 435 nsmax 29 nspctP 0 runs 1 tailmax 0
+FW8_4.json RULE allrand K2tested 3000 Tmax 47 Tsum 47 bchecked 47 lagstates 1128 nonstalls 1128 nsmax 47 nspctP 0 runs 1 tailmax 0
+GROW7_n34.json RULE allrand K2tested 3000 K5how 2 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 66 nsmax 11 nspctP 0 runs 1 tailmax 0
+GROW8_n53.json RULE allrand K2tested 3000 K5how 8 Tmax 19 Tsum 19 bchecked 19 lagstates 190 nonstalls 190 nsmax 19 nspctP 0 runs 1 tailmax 0
+HOLD2K_n84.json RULE allrand K2tested 3000 K5how 3 Tmax 9 Tsum 9 bchecked 9 lagstates 45 nonstalls 45 nsmax 9 nspctP 0 runs 1 tailmax 0
+HOLD3K_n125.json RULE allrand K2tested 3000 K5how 3 Tmax 13 Tsum 13 bchecked 13 lagstates 91 nonstalls 91 nsmax 13 nspctP 0 runs 1 tailmax 0
+MW12_2.json RULE allrand K2tested 3000 K5how 1 Tmax 79 Tsum 79 bchecked 79 lagstates 3160 nonstalls 3160 nsmax 79 nspctP 0 runs 1 tailmax 0
+MW16_2.json RULE allrand K2tested 3000 K5how 4 Tmax 103 Tsum 103 bchecked 29 lagstates 1641 nonstalls 1641 nsmax 103 nspctP 0 runs 1 tailmax 0
+MW26_2.json RULE allrand K2tested 3000 K5how 3 Tmax 163 Tsum 163 bchecked 30 lagstates 2394 nonstalls 2394 nsmax 163 nspctP 0 runs 1 tailmax 0
+MW32_2.json RULE allrand K2tested 3000 K5how 4 Tmax 199 Tsum 199 bchecked 29 lagstates 2993 nonstalls 2993 nsmax 199 nspctP 0 runs 1 tailmax 0
+MW4_2.json RULE allrand K2tested 3000 K5how 1 Tmax 31 Tsum 31 bchecked 31 lagstates 496 nonstalls 496 nsmax 31 nspctP 0 runs 1 tailmax 0
+MW5_2.json RULE allrand K2tested 3000 Tmax 37 Tsum 37 bchecked 37 lagstates 703 nonstalls 703 nsmax 37 nspctP 0 runs 1 tailmax 0
+MW8_2.json RULE allrand K2tested 3000 K5how 3 Tmax 55 Tsum 55 bchecked 55 lagstates 1540 nonstalls 1540 nsmax 55 nspctP 0 runs 1 tailmax 0
+NK6_cl21.json RULE allrand K2tested 3000 Tmax 8 Tsum 8 bchecked 8 lagstates 36 nonstalls 33 nsmax 7 nspctP 0 plateaus 3 platmax 1 runs 1 stalls 3 tailmax 0
+ROUTELOW_n21.json RULE allrand K2tested 3000 Tmax 9 Tsum 9 bchecked 9 lagstates 45 nonstalls 45 nsmax 9 nspctP 0 runs 1 tailmax 0
+RWX_n95.json RULE allrand K2tested 3000 K5how 9 Tmax 13 Tsum 13 bchecked 13 lagstates 91 nonstalls 91 nsmax 13 nspctP 0 runs 1 tailmax 0
+W14_n75.json RULE allrand K2tested 3000 K5how 16 Tmax 15 Tsum 15 bchecked 15 lagstates 120 nonstalls 120 nsmax 15 nspctP 0 runs 1 tailmax 0
+W68_n66.json RULE allrand K2tested 3000 K5how 11 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 66 nsmax 11 nspctP 0 runs 1 tailmax 0
+W86_n77.json RULE allrand K2tested 3000 K5how 18 Tmax 20 Tsum 20 bchecked 20 lagstates 210 nonstalls 208 nsmax 19 nspctP 0 plateaus 2 platexit 4 platmax 1 runs 1 stalls 2 tailmax 0
+WC16_2.json RULE allrand K2tested 3000 K5how 11 Tmax 6 Tsum 6 bchecked 6 lagstates 21 nonstalls 21 nsmax 6 nspctP 0 runs 1 tailmax 0
+WC4_2.json RULE allrand K2tested 3000 Tmax 4 Tsum 4 bchecked 4 lagstates 10 nonstalls 10 nsmax 4 nspctP 0 runs 1 tailmax 0
+WC8_2.json RULE allrand K2tested 3000 K5how 5 Tmax 6 Tsum 6 bchecked 6 lagstates 21 nonstalls 21 nsmax 6 nspctP 0 runs 1 tailmax 0
+m3_NM106_ea6c4f63.json RULE allrand K2tested 3000 K5how 1 Tmax 12 Tsum 12 bchecked 12 lagstates 78 nonstalls 78 nsmax 12 nspctP 0 runs 1 tailmax 0
+m4_NM121_d45d7aaa.json RULE allrand K2tested 3000 K5how 1 Tmax 17 Tsum 17 bchecked 17 lagstates 153 nonstalls 153 nsmax 17 nspctP 0 runs 1 tailmax 0
+DEAD_SEG2P_d4_N8.json RULE allrand K2tested 3000 Tmax 10 Tsum 10 bchecked 10 lagstates 19 nonstalls 3 nsmax 2 nspctP 0 plateaus 2 platmax 8 runs 1 stalls 16 tailmax 8
+DEAD_SEG2P_d7_N14.json RULE allrand K2tested 3000 Tmax 19 Tsum 19 bchecked 19 lagstates 186 nonstalls 166 nsmax 16 nspctP 0 plateaus 12 platmax 2 runs 1 stalls 20 tailmax 2
+DEAD_SEG2P_d9_N18.json RULE allrand K2tested 3000 Tmax 21 Tsum 21 bchecked 21 lagstates 212 nonstalls 140 nsmax 12 nspctP 0 plateaus 27 platmax 3 runs 1 stalls 72 tailmax 4
+MWR4_2.json RULE allleast K2tested 3000 K5how 3 Tmax 30 Tsum 30 bchecked 30 lagstates 465 nonstalls 465 nsmax 30 nspctP 0 runs 1 tailmax 0
+MWR8_2.json RULE allleast K2tested 3000 K5how 7 Tmax 54 Tsum 54 bchecked 54 lagstates 1485 nonstalls 1485 nsmax 54 nspctP 0 runs 1 tailmax 0
+MWR16_2.json RULE allleast K2tested 3000 K5how 23 Tmax 102 Tsum 102 bchecked 28 lagstates 1523 nonstalls 1523 nsmax 102 nspctP 0 runs 1 tailmax 0
+CW4_n.json RULE allleast K2tested 3000 K5how 3 Tmax 31 Tsum 31 bchecked 31 lagstates 496 nonstalls 496 nsmax 31 nspctP 0 runs 1 tailmax 0
+CW8_n.json RULE allleast K2tested 3000 K5how 7 Tmax 59 Tsum 59 bchecked 59 lagstates 1770 nonstalls 1770 nsmax 59 nspctP 0 runs 1 tailmax 0
+CW16_n.json RULE allleast K2tested 3000 K5how 23 Tmax 115 Tsum 115 bchecked 23 lagstates 1440 nonstalls 1440 nsmax 115 nspctP 0 runs 1 tailmax 0
+CWRR4_n.json RULE allleast K2tested 3000 K5how 3 Tmax 28 Tsum 28 bchecked 28 lagstates 406 nonstalls 406 nsmax 28 nspctP 0 runs 1 tailmax 0
+CWRR8_n.json RULE allleast K2tested 3000 K5how 7 Tmax 52 Tsum 52 bchecked 52 lagstates 1378 nonstalls 1378 nsmax 52 nspctP 0 runs 1 tailmax 0
+CWRR16_n.json RULE allleast K2tested 3000 K5how 23 Tmax 100 Tsum 100 bchecked 23 lagstates 1100 nonstalls 1100 nsmax 100 nspctP 0 runs 1 tailmax 0
+CWRQ8_n.json RULE allleast K2tested 3000 K5how 7 Tmax 52 Tsum 52 bchecked 52 lagstates 1378 nonstalls 1378 nsmax 52 nspctP 0 runs 1 tailmax 0
+K1F21_n48.json RULE allleast K2tested 3000 Tmax 32 Tsum 32 bchecked 32 lagstates 527 nonstalls 496 nsmax 31 nspctP 0 plateaus 31 platmax 1 runs 1 stalls 31 tailmax 1
+K1F34_n84.json RULE allleast K2tested 3000 K5how 7 Tmax 52 Tsum 52 bchecked 52 lagstates 1378 nonstalls 1378 nsmax 52 nspctP 0 runs 1 tailmax 0
+K1C16_n400.json RULE allleast K2tested 3000 K5how 43 Tmax 51 Tsum 51 bchecked 51 lagstates 1325 nonstalls 1324 nsmax 50 nspctP 0 plateaus 1 platmax 1 runs 1 stalls 1 tailmax 1
+K1L7_n48.json RULE allleast K2tested 3000 Tmax 33 Tsum 33 bchecked 33 lagstates 558 nonstalls 498 nsmax 31 nspctP 0 plateaus 30 platmax 2 runs 1 stalls 60 tailmax 2
+K1L10_n48.json RULE allleast K2tested 3000 Tmax 30 Tsum 30 bchecked 30 lagstates 463 nonstalls 425 nsmax 28 nspctP 0 plateaus 38 platmax 1 runs 1 stalls 38 tailmax 1
+K1D4_n48.json RULE allleast K2tested 3000 K5how 1 Tmax 25 Tsum 25 bchecked 25 lagstates 273 nonstalls 125 nsmax 12 nspctP 0 plateaus 20 platmax 9 runs 1 stalls 148 tailmax 9
+BLKX23_n48.json RULE allleast K2tested 3000 Tmax 27 Tsum 27 bchecked 27 lagstates 375 nonstalls 325 nsmax 25 nspctP 0 plateaus 25 platmax 2 runs 1 stalls 50 tailmax 2
+BLKX26_n48.json RULE allleast K2tested 3000 K5how 4 Tmax 33 Tsum 33 bchecked 33 lagstates 556 nonstalls 487 nsmax 29 nspctP 0 plateaus 38 platexit 14 platmax 2 runs 1 stalls 69 tailmax 2
+B400_r32_a13d9661.json RULE allleast K2tested 3000 K5how 9 Tmax 49 Tsum 49 bchecked 49 lagstates 1225 nonstalls 1225 nsmax 49 nspctP 0 runs 1 tailmax 0
+CFI3_n48.json RULE allleast K2tested 3000 Tmax 23 Tsum 23 bchecked 23 lagstates 260 nonstalls 166 nsmax 16 nspctP 0 plateaus 25 platmax 4 runs 1 stalls 94 tailmax 4
+RINT_n48.json RULE allleast K2tested 3000 K5how 2 Tmax 24 Tsum 24 bchecked 24 lagstates 299 nonstalls 276 nsmax 23 nspctP 0 plateaus 23 platmax 1 runs 1 stalls 23 tailmax 1
+k1fail_202.json RULE allleast K2tested 3000 Tmax 4 Tsum 4 bchecked 4 lagstates 7 nonstalls 3 nsmax 2 nspctP 0 plateaus 2 platmax 2 runs 1 stalls 4 tailmax 2
+naive_k1_s71.json RULE allleast K2tested 3000 Tmax 3 Tsum 3 bchecked 3 lagstates 3 nonstalls 3 nsmax 1 nspctP 0 runs 1 tailmax 2
+ST4_k1.json RULE allleast K2tested 3000 Tmax 0 Tsum 0 runs 1
+ST8_k1.json RULE allleast K2tested 3000 Tmax 0 Tsum 0 runs 1
+C10_NM164_bdf7a4f2.json RULE allleast K2tested 3000 K5how 15 Tmax 20 Tsum 20 bchecked 20 lagstates 210 nonstalls 210 nsmax 20 nspctP 0 runs 1 tailmax 0
+C11_NM172_93225ff6.json RULE allleast K2tested 3000 K5how 10 Tmax 22 Tsum 22 bchecked 22 lagstates 253 nonstalls 253 nsmax 22 nspctP 0 runs 1 tailmax 0
+C12_NM176_0009119c.json RULE allleast K2tested 3000 K5how 14 Tmax 24 Tsum 24 bchecked 24 lagstates 300 nonstalls 300 nsmax 24 nspctP 0 runs 1 tailmax 0
+C2CX4_n23.json RULE allleast K2tested 3000 Tmax 8 Tsum 8 bchecked 8 lagstates 36 nonstalls 36 nsmax 8 nspctP 0 runs 1 tailmax 0
+C2_NM33_38377e9c.json RULE allleast K2tested 3000 Tmax 3 Tsum 3 bchecked 3 lagstates 6 nonstalls 6 nsmax 3 nspctP 0 runs 1 tailmax 0
+C3_NM45_8a702944.json RULE allleast K2tested 3000 Tmax 6 Tsum 6 bchecked 6 lagstates 21 nonstalls 21 nsmax 6 nspctP 0 runs 1 tailmax 0
+C4_NM50_184a739c.json RULE allleast K2tested 3000 Tmax 7 Tsum 7 bchecked 7 lagstates 28 nonstalls 22 nsmax 6 nspctP 0 plateaus 6 platmax 1 runs 1 stalls 6 tailmax 0
+C5_NM63_7ae531ad.json RULE allleast K2tested 3000 Tmax 10 Tsum 10 bchecked 10 lagstates 55 nonstalls 55 nsmax 10 nspctP 0 runs 1 tailmax 0
+C6G8_n54.json RULE allleast K2tested 3000 K5how 14 Tmax 17 Tsum 17 bchecked 17 lagstates 152 nonstalls 152 nsmax 16 nspctP 0 runs 1 tailmax 1
+C6_NM75_72a89f5f.json RULE allleast K2tested 3000 Tmax 12 Tsum 12 bchecked 12 lagstates 78 nonstalls 78 nsmax 12 nspctP 0 runs 1 tailmax 0
+C7_NM105_4438ea3e.json RULE allleast K2tested 3000 Tmax 13 Tsum 13 bchecked 13 lagstates 91 nonstalls 91 nsmax 13 nspctP 0 runs 1 tailmax 0
+C8_NM112_8c4c784f.json RULE allleast K2tested 3000 K5how 5 Tmax 16 Tsum 16 bchecked 16 lagstates 136 nonstalls 136 nsmax 16 nspctP 0 runs 1 tailmax 0
+C9_NM122_6224f959.json RULE allleast K2tested 3000 K5how 4 Tmax 18 Tsum 18 bchecked 18 lagstates 171 nonstalls 171 nsmax 18 nspctP 0 runs 1 tailmax 0
+CT12_cap200.json RULE allleast K2tested 3000 Tmax 45 Tsum 45 bchecked 45 lagstates 1020 nonstalls 835 nsmax 40 nspctP 0 plateaus 37 platmax 5 runs 1 stalls 185 tailmax 5
+CT26_cap400.json RULE allleast K2tested 3000 K5how 17 Tmax 80 Tsum 80 bchecked 80 lagstates 3239 nonstalls 3161 nsmax 79 nspctP 0 plateaus 78 platexit 156 platmax 1 runs 1 stalls 78 tailmax 1
+CT27_cap400.json RULE allleast K2tested 3000 K5how 18 Tmax 78 Tsum 78 bchecked 78 lagstates 3081 nonstalls 3081 nsmax 78 nspctP 0 runs 1 tailmax 0
+CX4_n21.json RULE allleast K2tested 3000 Tmax 8 Tsum 8 bchecked 8 lagstates 36 nonstalls 36 nsmax 8 nspctP 0 runs 1 tailmax 0
+DHIB18_2805.json RULE allleast K2tested 3000 K5how 65 Tmax 18 Tsum 18 bchecked 18 lagstates 171 nonstalls 171 nsmax 18 nspctP 0 runs 1 tailmax 0
+DHIB26_2804.json RULE allleast K2tested 3000 K5how 47 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 66 nsmax 11 nspctP 0 runs 1 tailmax 0
+DSALT6_n108.json RULE allleast K2tested 3000 Tmax 16 Tsum 16 bchecked 16 lagstates 58 nonstalls 58 nsmax 4 nspctP 0 runs 1 tailmax 12
+DSALT7_n108.json RULE allleast K2tested 3000 K5how 2 Tmax 7 Tsum 7 bchecked 7 lagstates 27 nonstalls 27 nsmax 6 nspctP 0 runs 1 tailmax 1
+DSALT9_n416.json RULE allleast K2tested 3000 K5how 5 Tmax 21 Tsum 21 bchecked 21 lagstates 126 nonstalls 126 nsmax 7 nspctP 0 runs 1 tailmax 14
+DU21_h4.json RULE allleast K2tested 3000 K5how 23 Tmax 16 Tsum 16 bchecked 16 lagstates 136 nonstalls 136 nsmax 16 nspctP 0 runs 1 tailmax 0
+DWT20_2803.json RULE allleast K2tested 3000 K5how 10 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 66 nsmax 11 nspctP 0 runs 1 tailmax 0
+FW12_2.json RULE allleast K2tested 3000 K5how 12 Tmax 41 Tsum 41 bchecked 41 lagstates 861 nonstalls 861 nsmax 41 nspctP 0 runs 1 tailmax 0
+FW16_2.json RULE allleast K2tested 3000 K5how 30 Tmax 53 Tsum 53 bchecked 53 lagstates 1431 nonstalls 1431 nsmax 53 nspctP 0 runs 1 tailmax 0
+FW4_2.json RULE allleast K2tested 3000 Tmax 17 Tsum 17 bchecked 17 lagstates 153 nonstalls 153 nsmax 17 nspctP 0 runs 1 tailmax 0
+FW6_3.json RULE allleast K2tested 3000 Tmax 30 Tsum 30 bchecked 30 lagstates 465 nonstalls 465 nsmax 30 nspctP 0 runs 1 tailmax 0
+FW6_4.json RULE allleast K2tested 3000 Tmax 37 Tsum 37 bchecked 37 lagstates 703 nonstalls 703 nsmax 37 nspctP 0 runs 1 tailmax 0
+FW8_2.json RULE allleast K2tested 3000 K5how 2 Tmax 29 Tsum 29 bchecked 29 lagstates 435 nonstalls 435 nsmax 29 nspctP 0 runs 1 tailmax 0
+FW8_4.json RULE allleast K2tested 3000 Tmax 47 Tsum 47 bchecked 47 lagstates 1128 nonstalls 1128 nsmax 47 nspctP 0 runs 1 tailmax 0
+GROW7_n34.json RULE allleast K2tested 3000 K5how 3 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 66 nsmax 11 nspctP 0 runs 1 tailmax 0
+GROW8_n53.json RULE allleast K2tested 3000 K5how 19 Tmax 18 Tsum 18 bchecked 18 lagstates 170 nonstalls 170 nsmax 17 nspctP 0 runs 1 tailmax 1
+HOLD2K_n84.json RULE allleast K2tested 3000 K5how 6 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 66 nsmax 11 nspctP 0 runs 1 tailmax 0
+HOLD3K_n125.json RULE allleast K2tested 3000 K5how 6 Tmax 12 Tsum 12 bchecked 12 lagstates 77 nonstalls 77 nsmax 11 nspctP 0 runs 1 tailmax 1
+MW12_2.json RULE allleast K2tested 3000 K5how 15 Tmax 79 Tsum 79 bchecked 79 lagstates 3160 nonstalls 3160 nsmax 79 nspctP 0 runs 1 tailmax 0
+MW16_2.json RULE allleast K2tested 3000 K5how 25 Tmax 103 Tsum 103 bchecked 26 lagstates 1149 nonstalls 1149 nsmax 103 nspctP 0 runs 1 tailmax 0
+MW26_2.json RULE allleast K2tested 3000 K5how 66 Tmax 163 Tsum 163 bchecked 30 lagstates 2265 nonstalls 2265 nsmax 163 nspctP 0 runs 1 tailmax 0
+MW32_2.json RULE allleast K2tested 3000 K5how 101 Tmax 199 Tsum 199 bchecked 29 lagstates 2818 nonstalls 2818 nsmax 199 nspctP 0 runs 1 tailmax 0
+MW4_2.json RULE allleast K2tested 3000 K5how 3 Tmax 31 Tsum 31 bchecked 31 lagstates 496 nonstalls 496 nsmax 31 nspctP 0 runs 1 tailmax 0
+MW5_2.json RULE allleast K2tested 3000 K5how 4 Tmax 37 Tsum 37 bchecked 37 lagstates 703 nonstalls 703 nsmax 37 nspctP 0 runs 1 tailmax 0
+MW8_2.json RULE allleast K2tested 3000 K5how 7 Tmax 55 Tsum 55 bchecked 55 lagstates 1540 nonstalls 1540 nsmax 55 nspctP 0 runs 1 tailmax 0
+NK6_cl21.json RULE allleast K2tested 3000 K5how 1 Tmax 7 Tsum 7 bchecked 7 lagstates 25 nonstalls 25 nsmax 5 nspctP 0 runs 1 tailmax 2
+ROUTELOW_n21.json RULE allleast K2tested 3000 K5how 2 Tmax 8 Tsum 8 bchecked 8 lagstates 36 nonstalls 36 nsmax 8 nspctP 0 runs 1 tailmax 0
+RWX_n95.json RULE allleast K2tested 3000 K5how 22 Tmax 12 Tsum 12 bchecked 12 lagstates 78 nonstalls 78 nsmax 12 nspctP 0 runs 1 tailmax 0
+W14_n75.json RULE allleast K2tested 3000 K5how 56 Tmax 16 Tsum 16 bchecked 16 lagstates 135 nonstalls 135 nsmax 15 nspctP 0 runs 1 tailmax 1
+W68_n66.json RULE allleast K2tested 3000 K5how 70 Tmax 18 Tsum 18 bchecked 18 lagstates 170 nonstalls 160 nsmax 16 nspctP 0 plateaus 5 platexit 15 platmax 2 runs 1 stalls 10 tailmax 1
+W86_n77.json RULE allleast K2tested 3000 K5how 56 Tmax 21 Tsum 21 bchecked 21 lagstates 231 nonstalls 231 nsmax 21 nspctP 0 runs 1 tailmax 0
+WC16_2.json RULE allleast K2tested 3000 K5how 120 Tmax 19 Tsum 19 bchecked 19 lagstates 190 nonstalls 190 nsmax 19 nspctP 0 runs 1 tailmax 0
+WC4_2.json RULE allleast K2tested 3000 K5how 6 Tmax 7 Tsum 7 bchecked 7 lagstates 28 nonstalls 28 nsmax 7 nspctP 0 runs 1 tailmax 0
+WC8_2.json RULE allleast K2tested 3000 K5how 28 Tmax 11 Tsum 11 bchecked 11 lagstates 66 nonstalls 66 nsmax 11 nspctP 0 runs 1 tailmax 0
+m3_NM106_ea6c4f63.json RULE allleast K2tested 3000 K5how 3 Tmax 12 Tsum 12 bchecked 12 lagstates 78 nonstalls 78 nsmax 12 nspctP 0 runs 1 tailmax 0
+m4_NM121_d45d7aaa.json RULE allleast K2tested 3000 K5how 6 Tmax 17 Tsum 17 bchecked 17 lagstates 153 nonstalls 153 nsmax 17 nspctP 0 runs 1 tailmax 0
+DEAD_SEG2P_d4_N8.json RULE allleast K2tested 3000 Tmax 10 Tsum 10 bchecked 10 lagstates 19 nonstalls 3 nsmax 2 nspctP 0 plateaus 2 platmax 8 runs 1 stalls 16 tailmax 8
+DEAD_SEG2P_d7_N14.json RULE allleast K2tested 3000 Tmax 19 Tsum 19 bchecked 19 lagstates 186 nonstalls 166 nsmax 16 nspctP 0 plateaus 12 platmax 2 runs 1 stalls 20 tailmax 2
+DEAD_SEG2P_d9_N18.json RULE allleast K2tested 3000 Tmax 21 Tsum 21 bchecked 21 lagstates 212 nonstalls 140 nsmax 12 nspctP 0 plateaus 27 platmax 3 runs 1 stalls 72 tailmax 4
+MWR4_2.json RULE onebest K2tested 3000 K5how 43 Tmax 47 Tsum 47 bchecked 47 lagstates 1128 nonstalls 1011 nsmax 40 nspctP 0 plateaus 117 platexit 338 platidle 117 platmax 1 runs 1 stalls 117 tailmax 0
+MWR8_2.json RULE onebest K2tested 3000 K5how 109 Tmax 89 Tsum 89 bchecked 24 lagstates 1038 nonstalls 871 nsmax 70 nspctP 0 plateaus 160 platexit 527 platidle 167 platmax 2 runs 1 stalls 167 tailmax 0
+MWR16_2.json RULE onebest K2tested 3000 K5how 215 Tmax 176 Tsum 176 bchecked 28 lagstates 2240 nonstalls 1778 nsmax 136 nspctP 0 plateaus 390 platexit 1333 platidle 462 platmax 2 runs 1 stalls 462 tailmax 0
+CW4_n.json RULE onebest K2tested 3000 K5how 86 Tmax 57 Tsum 57 bchecked 57 lagstates 1653 nonstalls 1432 nsmax 44 nspctP 0 plat_gt_movers 5 plateaus 197 platexit 844 platidle 221 platmax 5 runs 1 stalls 221 tailmax 0
+CW8_n.json RULE onebest K2tested 3000 K5how 191 Tmax 109 Tsum 109 bchecked 28 lagstates 1580 nonstalls 1244 nsmax 80 nspctP 0 plateaus 221 platexit 1075 platidle 336 platmax 6 runs 1 stalls 336 tailmax 0
+CW16_n.json RULE onebest K2tested 3000 K5how 8379 Tmax 502 Tsum 502 bchecked 31 lagstates 7334 nonstalls 3222 nsmax 154 nspctP 0 plat_gt_movers 7 plateaus 1176 platexit 8830 platidle 4112 platmax 21 runs 1 stalls 4112 tailmax 0
+CWRR4_n.json RULE onebest K2tested 3000 K5how 34 Tmax 41 Tsum 41 bchecked 41 lagstates 861 nonstalls 861 nsmax 41 nspctP 0 runs 1 tailmax 0
+CWRR8_n.json RULE onebest K2tested 3000 K5how 96 Tmax 77 Tsum 77 bchecked 77 lagstates 3003 nonstalls 3003 nsmax 77 nspctP 0 runs 1 tailmax 0
+CWRR16_n.json RULE onebest K2tested 3000 K5how 231 Tmax 149 Tsum 149 bchecked 28 lagstates 2259 nonstalls 2259 nsmax 149 nspctP 0 runs 1 tailmax 0
+CWRQ8_n.json RULE onebest K2tested 3000 K5how 96 Tmax 77 Tsum 77 bchecked 77 lagstates 3003 nonstalls 3003 nsmax 77 nspctP 0 runs 1 tailmax 0
+K1F21_n48.json RULE onebest K2tested 3000 K5how 58 Tmax 75 Tsum 75 bchecked 75 lagstates 2552 nonstalls 924 nsmax 36 nspctP 0 plateaus 215 platexit 898 platidle 174 platmax 23 runs 1 stalls 1628 tailmax 23
+K1F34_n84.json RULE onebest K2tested 3000 K5how 176 Tmax 117 Tsum 117 bchecked 27 lagstates 1506 nonstalls 649 nsmax 60 nspctP 0 plateaus 244 platexit 1992 platidle 275 platmax 14 runs 1 stalls 857 tailmax 14
+K1C16_n400.json RULE onebest K2tested 3000 K5how 688 Tmax 236 Tsum 236 bchecked 28 lagstates 3617 nonstalls 615 nsmax 50 nspctP 0 plateaus 391 platexit 2501 platidle 1299 platmax 85 runs 1 stalls 3002 tailmax 79
+K1L7_n48.json RULE onebest K2tested 3000 K5how 37 Tmax 77 Tsum 77 bchecked 77 lagstates 2564 nonstalls 814 nsmax 32 nspctP 0 plateaus 218 platexit 733 platidle 387 platmax 29 runs 1 stalls 1750 tailmax 29
+K1L10_n48.json RULE onebest K2tested 3000 K5how 210 Tmax 73 Tsum 73 bchecked 73 lagstates 2642 nonstalls 1219 nsmax 33 nspctP 0 plateaus 576 platexit 4909 platidle 851 platmax 8 runs 1 stalls 1423 tailmax 7
+K1D4_n48.json RULE onebest K2tested 3000 K5how 31 Tmax 72 Tsum 72 bchecked 72 lagstates 1821 nonstalls 266 nsmax 12 nspctP 0 plat_gt_movers 8 plateaus 223 platexit 536 platidle 262 platmax 39 runs 1 stalls 1555 tailmax 39
+BLKX23_n48.json RULE onebest K2tested 3000 K5how 58 Tmax 77 Tsum 77 bchecked 77 lagstates 2371 nonstalls 641 nsmax 28 nspctP 0 plateaus 225 platexit 665 platidle 260 platmax 35 runs 1 stalls 1730 tailmax 35
+BLKX26_n48.json RULE onebest K2tested 3000 K5how 102 Tmax 82 Tsum 82 bchecked 23 lagstates 934 nonstalls 332 nsmax 32 nspctP 0 plat_gt_movers 1 plateaus 170 platexit 534 platidle 295 platmax 16 runs 1 stalls 602 tailmax 15
+B400_r32_a13d9661.json RULE onebest K2tested 3000 K5how 127 Tmax 106 Tsum 106 bchecked 27 lagstates 1429 nonstalls 800 nsmax 64 nspctP 0 plateaus 319 platexit 1312 platidle 335 platmax 6 runs 1 stalls 629 tailmax 1
+CFI3_n48.json RULE onebest K2tested 3000 K5how 75 Tmax 58 Tsum 58 bchecked 58 lagstates 1295 nonstalls 330 nsmax 22 nspctP 0 plateaus 96 platexit 838 platidle 115 platmax 28 runs 1 stalls 965 tailmax 28
+RINT_n48.json RULE onebest K2tested 3000 K5how 200 Tmax 52 Tsum 52 bchecked 52 lagstates 1350 nonstalls 629 nsmax 29 nspctP 0 plateaus 288 platexit 3600 platidle 250 platmax 5 runs 1 stalls 721 tailmax 4
+k1fail_202.json RULE onebest K2tested 3000 K5how 2 Tmax 13 Tsum 13 bchecked 13 lagstates 53 nonstalls 11 nsmax 3 nspctP 0 plateaus 7 platexit 4 platidle 2 platmax 8 runs 1 stalls 42 tailmax 8
+naive_k1_s71.json RULE onebest K2tested 3000 Tmax 7 Tsum 7 bchecked 7 lagstates 7 nonstalls 7 nsmax 1 nspctP 0 runs 1 tailmax 6
+ST4_k1.json RULE onebest K2tested 3000 Tmax 0 Tsum 0 runs 1
+ST8_k1.json RULE onebest K2tested 3000 Tmax 0 Tsum 0 runs 1
+C10_NM164_bdf7a4f2.json RULE onebest K2tested 3000 K5how 29 Tmax 36 Tsum 36 bchecked 36 lagstates 666 nonstalls 435 nsmax 23 nspctP 0 plateaus 224 platexit 593 platidle 231 platmax 2 runs 1 stalls 231 tailmax 0
+C11_NM172_93225ff6.json RULE onebest K2tested 3000 K5how 57 Tmax 43 Tsum 43 bchecked 43 lagstates 945 nonstalls 614 nsmax 27 nspctP 0 plateaus 236 platexit 759 platidle 294 platmax 4 runs 1 stalls 331 tailmax 1
+C12_NM176_0009119c.json RULE onebest K2tested 3000 K5how 63 Tmax 46 Tsum 46 bchecked 46 lagstates 1080 nonstalls 697 nsmax 29 nspctP 0 plateaus 270 platexit 863 platidle 343 platmax 4 runs 1 stalls 383 tailmax 1
+C2CX4_n23.json RULE onebest K2tested 3000 K5how 34 Tmax 22 Tsum 22 bchecked 22 lagstates 241 nonstalls 111 nsmax 11 nspctP 0 plateaus 49 platexit 183 platidle 52 platmax 4 runs 1 stalls 130 tailmax 3
+C2_NM33_38377e9c.json RULE onebest K2tested 3000 K5how 1 Tmax 3 Tsum 3 bchecked 3 lagstates 6 nonstalls 6 nsmax 3 nspctP 0 runs 1 tailmax 0
+C3_NM45_8a702944.json RULE onebest K2tested 3000 K5how 3 Tmax 7 Tsum 7 bchecked 7 lagstates 27 nonstalls 20 nsmax 5 nspctP 0 plateaus 7 platexit 14 platidle 2 platmax 1 runs 1 stalls 7 tailmax 1
+C4_NM50_184a739c.json RULE onebest K2tested 3000 Tmax 6 Tsum 6 bchecked 6 lagstates 20 nonstalls 15 nsmax 5 nspctP 0 plateaus 5 platmax 1 runs 1 stalls 5 tailmax 1
+C5_NM63_7ae531ad.json RULE onebest K2tested 3000 K5how 39 Tmax 19 Tsum 19 bchecked 19 lagstates 188 nonstalls 108 nsmax 12 nspctP 0 plat_gt_movers 14 plateaus 47 platexit 183 platidle 70 platmax 3 runs 1 stalls 80 tailmax 1
+C6G8_n54.json RULE onebest K2tested 3000 K5how 673 Tmax 64 Tsum 64 bchecked 64 lagstates 2044 nonstalls 484 nsmax 17 nspctP 0 plat_gt_movers 116 plateaus 267 platexit 2430 platidle 1531 platmax 11 runs 1 stalls 1560 tailmax 6
+C6_NM75_72a89f5f.json RULE onebest K2tested 3000 K5how 46 Tmax 15 Tsum 15 bchecked 15 lagstates 118 nonstalls 54 nsmax 6 nspctP 0 plat_gt_movers 4 plateaus 25 platexit 132 platidle 62 platmax 9 runs 1 stalls 64 tailmax 1
+C7_NM105_4438ea3e.json RULE onebest K2tested 3000 K5how 26 Tmax 24 Tsum 24 bchecked 24 lagstates 297 nonstalls 174 nsmax 15 nspctP 0 plateaus 81 platexit 254 platidle 81 platmax 3 runs 1 stalls 123 tailmax 2
+C8_NM112_8c4c784f.json RULE onebest K2tested 3000 K5how 31 Tmax 31 Tsum 31 bchecked 31 lagstates 495 nonstalls 368 nsmax 21 nspctP 0 plateaus 121 platexit 328 platidle 102 platmax 2 runs 1 stalls 127 tailmax 1
+C9_NM122_6224f959.json RULE onebest K2tested 3000 K5how 51 Tmax 36 Tsum 36 bchecked 36 lagstates 664 nonstalls 418 nsmax 23 nspctP 0 plateaus 206 platexit 574 platidle 181 platmax 2 runs 1 stalls 246 tailmax 1
+CT12_cap200.json RULE onebest K2tested 3000 K5how 550 Tmax 110 Tsum 110 bchecked 29 lagstates 1536 nonstalls 482 nsmax 40 nspctP 0 plat_gt_movers 16 plateaus 244 platexit 3651 platidle 946 platmax 22 runs 1 stalls 1054 tailmax 6
+CT26_cap400.json RULE onebest K2tested 3000 K5how 514 Tmax 196 Tsum 196 bchecked 26 lagstates 2727 nonstalls 1123 nsmax 91 nspctP 0 plat_gt_movers 50 plateaus 508 platexit 3417 platidle 1255 platmax 18 runs 1 stalls 1604 tailmax 5
+CT27_cap400.json RULE onebest K2tested 3000 K5how 543 Tmax 216 Tsum 216 bchecked 29 lagstates 3275 nonstalls 1351 nsmax 99 nspctP 0 plateaus 528 platexit 3956 platidle 800 platmax 17 runs 1 stalls 1924 tailmax 17
+CX4_n21.json RULE onebest K2tested 3000 K5how 20 Tmax 13 Tsum 13 bchecked 13 lagstates 88 nonstalls 55 nsmax 7 nspctP 0 plateaus 17 platexit 56 platidle 20 platmax 3 runs 1 stalls 33 tailmax 1
+DHIB18_2805.json RULE onebest K2tested 3000 K5how 3578 Tmax 124 Tsum 124 bchecked 29 lagstates 1826 nonstalls 390 nsmax 29 nspctP 0 plat_gt_movers 33 plateaus 236 platexit 7011 platidle 1361 platmax 24 runs 1 stalls 1436 tailmax 3
+DHIB26_2804.json RULE onebest K2tested 3000 K5how 1976 Tmax 145 Tsum 145 bchecked 26 lagstates 2313 nonstalls 310 nsmax 21 nspctP 0 plat_gt_movers 37 plateaus 218 platexit 4423 platidle 1851 platmax 53 runs 1 stalls 2003 tailmax 4
+DSALT6_n108.json RULE onebest K2tested 3000 K5how 61 Tmax 61 Tsum 61 bchecked 61 lagstates 1636 nonstalls 382 nsmax 10 nspctP 0 plateaus 382 platexit 1425 platidle 61 platmax 6 runs 1 stalls 1254 tailmax 19
+DSALT7_n108.json RULE onebest K2tested 3000 K5how 101 Tmax 61 Tsum 61 bchecked 61 lagstates 1621 nonstalls 288 nsmax 8 nspctP 0 plat_gt_movers 48 plateaus 217 platexit 2158 platidle 678 platmax 19 runs 1 stalls 1333 tailmax 17
+TIMEOUT DSALT9_n416.json RULE onebest
+DU21_h4.json RULE onebest K2tested 3000 K5how 776 Tmax 91 Tsum 91 bchecked 27 lagstates 1221 nonstalls 244 nsmax 22 nspctP 0 plateaus 179 platexit 4467 platidle 505 platmax 12 runs 1 stalls 977 tailmax 9
+DWT20_2803.json RULE onebest K2tested 3000 K5how 564 Tmax 96 Tsum 96 bchecked 28 lagstates 1320 nonstalls 415 nsmax 37 nspctP 0 plat_gt_movers 23 plateaus 286 platexit 4413 platidle 583 platmax 17 runs 1 stalls 905 tailmax 7
+FW12_2.json RULE onebest K2tested 3000 K5how 1166 Tmax 192 Tsum 192 bchecked 30 lagstates 2634 nonstalls 2459 nsmax 179 nspctP 0 plateaus 175 platexit 2078 platidle 145 platmax 1 runs 1 stalls 175 tailmax 0
+FW16_2.json RULE onebest K2tested 3000 K5how 1601 Tmax 259 Tsum 259 bchecked 30 lagstates 3563 nonstalls 3324 nsmax 242 nspctP 0 plateaus 239 platexit 2886 platidle 209 platmax 1 runs 1 stalls 239 tailmax 0
+FW4_2.json RULE onebest K2tested 3000 K5how 178 Tmax 52 Tsum 52 bchecked 52 lagstates 1377 nonstalls 1307 nsmax 49 nspctP 0 plateaus 70 platexit 218 platidle 19 platmax 1 runs 1 stalls 70 tailmax 1
+FW6_3.json RULE onebest K2tested 3000 K5how 902 Tmax 157 Tsum 157 bchecked 26 lagstates 1868 nonstalls 1763 nsmax 148 nspctP 0 plateaus 105 platexit 1312 platidle 79 platmax 1 runs 1 stalls 105 tailmax 0
+FW6_4.json RULE onebest K2tested 3000 K5how 2032 Tmax 238 Tsum 238 bchecked 28 lagstates 3225 nonstalls 3126 nsmax 230 nspctP 0 plateaus 99 platexit 1542 platidle 71 platmax 1 runs 1 stalls 99 tailmax 0
+FW8_2.json RULE onebest K2tested 3000 K5how 619 Tmax 122 Tsum 122 bchecked 27 lagstates 1975 nonstalls 1842 nsmax 114 nspctP 0 plateaus 133 platexit 1468 platidle 106 platmax 1 runs 1 stalls 133 tailmax 0
+MWR4_2.json RULE subrand K2tested 3000 K5how 15 Tmax 36 Tsum 36 bchecked 36 lagstates 665 nonstalls 607 nsmax 33 nspctP 0 plateaus 58 platexit 200 platidle 25 platmax 1 runs 1 stalls 58 tailmax 1
+MWR8_2.json RULE subrand K2tested 3000 K5how 40 Tmax 69 Tsum 69 bchecked 69 lagstates 2412 nonstalls 2124 nsmax 62 nspctP 0 plateaus 147 platexit 642 platidle 158 platmax 2 runs 1 stalls 288 tailmax 2
+MWR16_2.json RULE subrand K2tested 3000 K5how 57 Tmax 123 Tsum 123 bchecked 28 lagstates 1553 nonstalls 1436 nsmax 114 nspctP 0 plateaus 117 platexit 310 platidle 117 platmax 1 runs 1 stalls 117 tailmax 0
+CW4_n.json RULE subrand K2tested 3000 K5how 25 Tmax 39 Tsum 39 bchecked 39 lagstates 779 nonstalls 726 nsmax 36 nspctP 0 plateaus 53 platexit 212 platidle 17 platmax 1 runs 1 stalls 53 tailmax 1
+CW8_n.json RULE subrand K2tested 3000 K5how 149 Tmax 78 Tsum 78 bchecked 78 lagstates 3077 nonstalls 2630 nsmax 65 nspctP 0 plateaus 296 platexit 1297 platidle 299 platmax 2 runs 1 stalls 447 tailmax 2
+FW8_4.json RULE onebest K2tested 3000 K5how 3955 Tmax 374 Tsum 374 bchecked 30 lagstates 5942 nonstalls 5781 nsmax 363 nspctP 0 plateaus 161 platexit 3218 platidle 131 platmax 1 runs 1 stalls 161 tailmax 0
+GROW7_n34.json RULE onebest K2tested 3000 K5how 143 Tmax 39 Tsum 39 bchecked 39 lagstates 765 nonstalls 331 nsmax 18 nspctP 0 plateaus 171 platexit 1230 platidle 353 platmax 6 runs 1 stalls 434 tailmax 4
+GROW8_n53.json RULE onebest K2tested 3000 K5how 532 Tmax 73 Tsum 73 bchecked 73 lagstates 2681 nonstalls 549 nsmax 19 nspctP 0 plat_gt_movers 91 plateaus 321 platexit 3101 platidle 2126 platmax 25 runs 1 stalls 2132 tailmax 2
+HOLD2K_n84.json RULE onebest K2tested 3000 K5how 165 Tmax 52 Tsum 52 bchecked 52 lagstates 1332 nonstalls 316 nsmax 14 nspctP 0 plat_gt_movers 35 plateaus 239 platexit 1778 platidle 727 platmax 15 runs 1 stalls 1016 tailmax 4
+CW16_n.json RULE subrand K2tested 3000 K5how 986 Tmax 189 Tsum 189 bchecked 29 lagstates 3534 nonstalls 2656 nsmax 133 nspctP 0 plateaus 538 platexit 1560 platidle 878 platmax 7 runs 1 stalls 878 tailmax 0
+CWRR4_n.json RULE subrand K2tested 3000 K5how 6 Tmax 30 Tsum 30 bchecked 30 lagstates 465 nonstalls 465 nsmax 30 nspctP 0 runs 1 tailmax 0
+CWRR8_n.json RULE subrand K2tested 3000 K5how 21 Tmax 59 Tsum 59 bchecked 59 lagstates 1770 nonstalls 1770 nsmax 59 nspctP 0 runs 1 tailmax 0
+CWRR16_n.json RULE subrand K2tested 3000 K5how 48 Tmax 119 Tsum 119 bchecked 24 lagstates 1430 nonstalls 1408 nsmax 118 nspctP 0 plateaus 22 platexit 44 platidle 22 platmax 1 runs 1 stalls 22 tailmax 0
+CWRQ8_n.json RULE subrand K2tested 3000 K5how 21 Tmax 59 Tsum 59 bchecked 59 lagstates 1770 nonstalls 1770 nsmax 59 nspctP 0 runs 1 tailmax 0
+K1F21_n48.json RULE subrand K2tested 3000 K5how 16 Tmax 40 Tsum 40 bchecked 40 lagstates 810 nonstalls 585 nsmax 31 nspctP 0 plateaus 105 platexit 220 platidle 46 platmax 3 runs 1 stalls 225 tailmax 3
+HOLD3K_n125.json RULE onebest K2tested 3000 K5how 460 Tmax 78 Tsum 78 bchecked 78 lagstates 2986 nonstalls 630 nsmax 16 nspctP 0 plat_gt_movers 53 plateaus 419 platexit 3634 platidle 1776 platmax 22 runs 1 stalls 2356 tailmax 6
+K1F34_n84.json RULE subrand K2tested 3000 K5how 34 Tmax 64 Tsum 64 bchecked 64 lagstates 2079 nonstalls 1771 nsmax 56 nspctP 0 plateaus 277 platexit 917 platidle 184 platmax 2 runs 1 stalls 308 tailmax 1
+MW12_2.json RULE onebest K2tested 3000 K5how 211 Tmax 148 Tsum 148 bchecked 27 lagstates 1698 nonstalls 1245 nsmax 103 nspctP 0 plateaus 282 platexit 1149 platidle 453 platmax 4 runs 1 stalls 453 tailmax 0
+K1C16_n400.json RULE subrand K2tested 3000 K5how 93 Tmax 67 Tsum 67 bchecked 67 lagstates 2218 nonstalls 1281 nsmax 43 nspctP 0 plateaus 319 platexit 739 platidle 312 platmax 10 runs 1 stalls 937 tailmax 10
+K1L7_n48.json RULE subrand K2tested 3000 K5how 34 Tmax 49 Tsum 49 bchecked 49 lagstates 1207 nonstalls 780 nsmax 35 nspctP 0 plateaus 240 platexit 797 platidle 222 platmax 5 runs 1 stalls 427 tailmax 5
+K1L10_n48.json RULE subrand K2tested 3000 K5how 68 Tmax 34 Tsum 34 bchecked 34 lagstates 591 nonstalls 410 nsmax 25 nspctP 0 plateaus 161 platexit 1098 platidle 149 platmax 2 runs 1 stalls 181 tailmax 1
+K1D4_n48.json RULE subrand K2tested 3000 K5how 14 Tmax 28 Tsum 28 bchecked 28 lagstates 369 nonstalls 160 nsmax 12 nspctP 0 plateaus 56 platexit 88 platidle 54 platmax 7 runs 1 stalls 209 tailmax 7
+BLKX23_n48.json RULE subrand K2tested 3000 K5how 21 Tmax 39 Tsum 39 bchecked 39 lagstates 768 nonstalls 540 nsmax 29 nspctP 0 plateaus 108 platexit 227 platidle 88 platmax 4 runs 1 stalls 228 tailmax 4
+BLKX26_n48.json RULE subrand K2tested 3000 K5how 39 Tmax 43 Tsum 43 bchecked 43 lagstates 938 nonstalls 652 nsmax 29 nspctP 0 plateaus 179 platexit 340 platidle 203 platmax 2 runs 1 stalls 286 tailmax 2
+B400_r32_a13d9661.json RULE subrand K2tested 3000 K5how 31 Tmax 60 Tsum 60 bchecked 60 lagstates 1828 nonstalls 1521 nsmax 51 nspctP 0 plateaus 253 platexit 856 platidle 194 platmax 2 runs 1 stalls 307 tailmax 1
+CFI3_n48.json RULE subrand K2tested 3000 K5how 19 Tmax 36 Tsum 36 bchecked 36 lagstates 619 nonstalls 320 nsmax 20 nspctP 0 plateaus 97 platexit 278 platidle 61 platmax 7 runs 1 stalls 299 tailmax 7
+RINT_n48.json RULE subrand K2tested 3000 K5how 12 Tmax 30 Tsum 30 bchecked 30 lagstates 453 nonstalls 316 nsmax 24 nspctP 0 plateaus 59 platexit 96 platidle 33 platmax 4 runs 1 stalls 137 tailmax 4
+k1fail_202.json RULE subrand K2tested 3000 Tmax 6 Tsum 6 bchecked 6 lagstates 14 nonstalls 9 nsmax 2 nspctP 0 plateaus 5 platmax 1 runs 1 stalls 5 tailmax 3
+naive_k1_s71.json RULE subrand K2tested 3000 Tmax 4 Tsum 4 bchecked 4 lagstates 4 nonstalls 4 nsmax 1 nspctP 0 runs 1 tailmax 3
+ST4_k1.json RULE subrand K2tested 3000 Tmax 0 Tsum 0 runs 1
+ST8_k1.json RULE subrand K2tested 3000 Tmax 0 Tsum 0 runs 1
+C10_NM164_bdf7a4f2.json RULE subrand K2tested 3000 K5how 25 Tmax 30 Tsum 30 bchecked 30 lagstates 464 nonstalls 344 nsmax 22 nspctP 0 plateaus 81 platexit 263 platidle 92 platmax 4 runs 1 stalls 120 tailmax 1
+C11_NM172_93225ff6.json RULE subrand K2tested 3000 K5how 23 Tmax 34 Tsum 34 bchecked 34 lagstates 594 nonstalls 469 nsmax 27 nspctP 0 plateaus 117 platexit 366 platidle 93 platmax 2 runs 1 stalls 125 tailmax 1
+C12_NM176_0009119c.json RULE subrand K2tested 3000 K5how 26 Tmax 27 Tsum 27 bchecked 27 lagstates 377 nonstalls 347 nsmax 25 nspctP 0 plateaus 30 platexit 110 platidle 5 platmax 1 runs 1 stalls 30 tailmax 1
+C2CX4_n23.json RULE subrand K2tested 3000 K5how 7 Tmax 11 Tsum 11 bchecked 11 lagstates 65 nonstalls 44 nsmax 7 nspctP 0 plateaus 12 platexit 60 platidle 21 platmax 2 runs 1 stalls 21 tailmax 1
+C2_NM33_38377e9c.json RULE subrand K2tested 3000 Tmax 2 Tsum 2 bchecked 2 lagstates 3 nonstalls 3 nsmax 2 nspctP 0 runs 1 tailmax 0
+C3_NM45_8a702944.json RULE subrand K2tested 3000 K5how 1 Tmax 7 Tsum 7 bchecked 7 lagstates 28 nonstalls 24 nsmax 6 nspctP 0 plateaus 4 platexit 8 platidle 4 platmax 1 runs 1 stalls 4 tailmax 0
+C4_NM50_184a739c.json RULE subrand K2tested 3000 K5how 1 Tmax 10 Tsum 10 bchecked 10 lagstates 55 nonstalls 30 nsmax 6 nspctP 0 plateaus 11 platexit 8 platidle 11 platmax 3 runs 1 stalls 25 tailmax 0
+C5_NM63_7ae531ad.json RULE subrand K2tested 3000 K5how 2 Tmax 9 Tsum 9 bchecked 9 lagstates 45 nonstalls 45 nsmax 9 nspctP 0 runs 1 tailmax 0
+C6G8_n54.json RULE subrand K2tested 3000 K5how 45 Tmax 24 Tsum 24 bchecked 24 lagstates 299 nonstalls 161 nsmax 13 nspctP 0 plateaus 94 platexit 264 platidle 138 platmax 3 runs 1 stalls 138 tailmax 1
+C6_NM75_72a89f5f.json RULE subrand K2tested 3000 K5how 6 Tmax 12 Tsum 12 bchecked 12 lagstates 77 nonstalls 71 nsmax 10 nspctP 0 plateaus 3 platexit 18 platidle 3 platmax 2 runs 1 stalls 6 tailmax 1
+C7_NM105_4438ea3e.json RULE subrand K2tested 3000 K5how 11 Tmax 16 Tsum 16 bchecked 16 lagstates 136 nonstalls 111 nsmax 13 nspctP 0 plateaus 20 platexit 47 platidle 25 platmax 2 runs 1 stalls 25 tailmax 0
+C8_NM112_8c4c784f.json RULE subrand K2tested 3000 K5how 26 Tmax 21 Tsum 21 bchecked 21 lagstates 231 nonstalls 176 nsmax 17 nspctP 0 plateaus 45 platexit 170 platidle 40 platmax 2 runs 1 stalls 55 tailmax 0
+C9_NM122_6224f959.json RULE subrand K2tested 3000 K5how 23 Tmax 26 Tsum 26 bchecked 26 lagstates 350 nonstalls 270 nsmax 18 nspctP 0 plat_gt_movers 5 plateaus 70 platexit 270 platidle 56 platmax 3 runs 1 stalls 80 tailmax 1
+CT12_cap200.json RULE subrand K2tested 3000 K5how 30 Tmax 50 Tsum 50 bchecked 50 lagstates 1254 nonstalls 923 nsmax 39 nspctP 0 plateaus 121 platexit 158 platidle 79 platmax 6 runs 1 stalls 331 tailmax 6
+MW16_2.json RULE onebest K2tested 3000 K5how 275 Tmax 197 Tsum 197 bchecked 31 lagstates 3392 nonstalls 2406 nsmax 137 nspctP 0 plateaus 632 platexit 2442 platidle 986 platmax 4 runs 1 stalls 986 tailmax 0
+CT26_cap400.json RULE subrand K2tested 3000 K5how 76 Tmax 109 Tsum 109 bchecked 28 lagstates 1721 nonstalls 1345 nsmax 85 nspctP 0 plateaus 225 platexit 698 platidle 236 platmax 3 runs 1 stalls 376 tailmax 0
+CT27_cap400.json RULE subrand K2tested 3000 K5how 117 Tmax 112 Tsum 112 bchecked 27 lagstates 1656 nonstalls 1267 nsmax 85 nspctP 0 plateaus 238 platexit 612 platidle 254 platmax 3 runs 1 stalls 389 tailmax 0
+CX4_n21.json RULE subrand K2tested 3000 K5how 11 Tmax 12 Tsum 12 bchecked 12 lagstates 78 nonstalls 52 nsmax 8 nspctP 0 plateaus 26 platexit 74 platidle 17 platmax 1 runs 1 stalls 26 tailmax 0
+DHIB18_2805.json RULE subrand K2tested 3000 K5how 138 Tmax 30 Tsum 30 bchecked 30 lagstates 464 nonstalls 302 nsmax 19 nspctP 0 plateaus 60 platexit 232 platidle 101 platmax 4 runs 1 stalls 162 tailmax 1
+DHIB26_2804.json RULE subrand K2tested 3000 K5how 163 Tmax 30 Tsum 30 bchecked 30 lagstates 464 nonstalls 335 nsmax 22 nspctP 0 plateaus 108 platexit 365 platidle 129 platmax 2 runs 1 stalls 129 tailmax 1
+DSALT6_n108.json RULE subrand K2tested 3000 K5how 7 Tmax 23 Tsum 23 bchecked 23 lagstates 206 nonstalls 140 nsmax 8 nspctP 0 plateaus 48 platexit 54 platmax 2 runs 1 stalls 66 tailmax 11
+DSALT7_n108.json RULE subrand K2tested 3000 K5how 2 Tmax 10 Tsum 10 bchecked 10 lagstates 54 nonstalls 46 nsmax 9 nspctP 0 plateaus 8 platmax 1 runs 1 stalls 8 tailmax 1
+DSALT9_n416.json RULE subrand K2tested 3000 K5how 59 Tmax 26 Tsum 26 bchecked 26 lagstates 259 nonstalls 243 nsmax 12 nspctP 0 plateaus 16 platmax 1 runs 1 stalls 16 tailmax 13
+DU21_h4.json RULE subrand K2tested 3000 K5how 26 Tmax 23 Tsum 23 bchecked 23 lagstates 273 nonstalls 184 nsmax 16 nspctP 0 plateaus 78 platexit 351 platidle 48 platmax 2 runs 1 stalls 89 tailmax 1
+DWT20_2803.json RULE subrand K2tested 3000 K5how 63 Tmax 16 Tsum 16 bchecked 16 lagstates 135 nonstalls 124 nsmax 13 nspctP 0 plateaus 9 platexit 38 platidle 10 platmax 2 runs 1 stalls 11 tailmax 1
+FW12_2.json RULE subrand K2tested 3000 K5how 134 Tmax 63 Tsum 63 bchecked 63 lagstates 2016 nonstalls 1990 nsmax 62 nspctP 0 plateaus 26 platexit 208 platidle 26 platmax 1 runs 1 stalls 26 tailmax 0
+FW16_2.json RULE subrand K2tested 3000 K5how 231 Tmax 90 Tsum 90 bchecked 28 lagstates 1348 nonstalls 1329 nsmax 89 nspctP 0 plateaus 19 platexit 228 platidle 19 platmax 1 runs 1 stalls 19 tailmax 0
+FW4_2.json RULE subrand K2tested 3000 K5how 36 Tmax 24 Tsum 24 bchecked 24 lagstates 300 nonstalls 282 nsmax 22 nspctP 0 plateaus 18 platexit 168 platidle 18 platmax 1 runs 1 stalls 18 tailmax 0
+FW6_3.json RULE subrand K2tested 3000 K5how 106 Tmax 45 Tsum 45 bchecked 45 lagstates 1035 nonstalls 1032 nsmax 44 nspctP 0 plateaus 3 platexit 12 platidle 3 platmax 1 runs 1 stalls 3 tailmax 0
+FW6_4.json RULE subrand K2tested 3000 K5how 195 Tmax 63 Tsum 63 bchecked 63 lagstates 2016 nonstalls 2016 nsmax 63 nspctP 0 runs 1 tailmax 0
+FW8_2.json RULE subrand K2tested 3000 K5how 87 Tmax 43 Tsum 43 bchecked 43 lagstates 946 nonstalls 946 nsmax 43 nspctP 0 runs 1 tailmax 0
+FW8_4.json RULE subrand K2tested 3000 K5how 311 Tmax 83 Tsum 83 bchecked 28 lagstates 1158 nonstalls 1158 nsmax 83 nspctP 0 runs 1 tailmax 0
+GROW7_n34.json RULE subrand K2tested 3000 K5how 38 Tmax 17 Tsum 17 bchecked 17 lagstates 152 nonstalls 132 nsmax 14 nspctP 0 plateaus 17 platexit 89 platidle 6 platmax 2 runs 1 stalls 20 tailmax 1
+GROW8_n53.json RULE subrand K2tested 3000 K5how 29 Tmax 21 Tsum 21 bchecked 21 lagstates 230 nonstalls 181 nsmax 17 nspctP 0 plateaus 30 platexit 79 platidle 49 platmax 2 runs 1 stalls 49 tailmax 1
+HOLD2K_n84.json RULE subrand K2tested 3000 K5how 40 Tmax 14 Tsum 14 bchecked 14 lagstates 104 nonstalls 84 nsmax 9 nspctP 0 plateaus 16 platexit 56 platidle 15 platmax 2 runs 1 stalls 20 tailmax 1
+HOLD3K_n125.json RULE subrand K2tested 3000 K5how 33 Tmax 17 Tsum 17 bchecked 17 lagstates 148 nonstalls 121 nsmax 11 nspctP 0 plateaus 9 platexit 12 platidle 12 platmax 4 runs 1 stalls 27 tailmax 2
+MW12_2.json RULE subrand K2tested 3000 K5how 64 Tmax 102 Tsum 102 bchecked 24 lagstates 1411 nonstalls 1190 nsmax 84 nspctP 0 plateaus 179 platexit 474 platidle 221 platmax 2 runs 1 stalls 221 tailmax 0
+MW16_2.json RULE subrand K2tested 3000 K5how 84 Tmax 131 Tsum 131 bchecked 28 lagstates 1683 nonstalls 1534 nsmax 117 nspctP 0 plateaus 122 platexit 315 platidle 149 platmax 2 runs 1 stalls 149 tailmax 0
+TIMEOUT300 MW26_2.json RULE onebest
+MW26_2.json RULE subrand K2tested 3000 K5how 123 Tmax 209 Tsum 209 bchecked 30 lagstates 3022 nonstalls 2683 nsmax 185 nspctP 0 plateaus 300 platexit 777 platidle 339 platmax 2 runs 1 stalls 339 tailmax 0
+MW32_2.json RULE subrand K2tested 3000 K5how 151 Tmax 252 Tsum 252 bchecked 29 lagstates 3686 nonstalls 3292 nsmax 220 nspctP 0 plateaus 341 platexit 857 platidle 394 platmax 2 runs 1 stalls 394 tailmax 0
+MW4_2.json RULE subrand K2tested 3000 K5how 28 Tmax 38 Tsum 38 bchecked 38 lagstates 741 nonstalls 674 nsmax 32 nspctP 0 plateaus 55 platexit 122 platidle 67 platmax 2 runs 1 stalls 67 tailmax 0
+MW5_2.json RULE subrand K2tested 3000 K5how 32 Tmax 45 Tsum 45 bchecked 45 lagstates 1035 nonstalls 881 nsmax 38 nspctP 0 plateaus 126 platexit 316 platidle 154 platmax 2 runs 1 stalls 154 tailmax 0
+MW8_2.json RULE subrand K2tested 3000 K5how 47 Tmax 69 Tsum 69 bchecked 69 lagstates 2415 nonstalls 2013 nsmax 58 nspctP 0 plateaus 326 platexit 836 platidle 402 platmax 2 runs 1 stalls 402 tailmax 0
+TIMEOUT300 MW32_2.json RULE onebest
+NK6_cl21.json RULE subrand K2tested 3000 K5how 10 Tmax 13 Tsum 13 bchecked 13 lagstates 87 nonstalls 61 nsmax 8 nspctP 0 plateaus 22 platexit 22 platmax 2 runs 1 stalls 26 tailmax 2
+ROUTELOW_n21.json RULE subrand K2tested 3000 K5how 11 Tmax 8 Tsum 8 bchecked 8 lagstates 36 nonstalls 22 nsmax 5 nspctP 0 plateaus 8 platexit 40 platidle 14 platmax 2 runs 1 stalls 14 tailmax 0
+MW4_2.json RULE onebest K2tested 3000 K5how 62 Tmax 53 Tsum 53 bchecked 53 lagstates 1431 nonstalls 1192 nsmax 41 nspctP 0 plateaus 178 platexit 683 platidle 239 platmax 3 runs 1 stalls 239 tailmax 0
+RWX_n95.json RULE subrand K2tested 3000 K5how 58 Tmax 26 Tsum 26 bchecked 26 lagstates 350 nonstalls 269 nsmax 19 nspctP 0 plateaus 56 platexit 212 platidle 61 platmax 2 runs 1 stalls 81 tailmax 1
+MW5_2.json RULE onebest K2tested 3000 K5how 81 Tmax 66 Tsum 66 bchecked 66 lagstates 2211 nonstalls 1786 nsmax 50 nspctP 0 plateaus 296 platexit 1171 platidle 425 platmax 3 runs 1 stalls 425 tailmax 0
+W14_n75.json RULE subrand K2tested 3000 K5how 191 Tmax 33 Tsum 33 bchecked 33 lagstates 556 nonstalls 328 nsmax 19 nspctP 0 plateaus 131 platexit 1241 platidle 225 platmax 3 runs 1 stalls 228 tailmax 1
+W68_n66.json RULE subrand K2tested 3000 K5how 132 Tmax 20 Tsum 20 bchecked 20 lagstates 209 nonstalls 165 nsmax 15 nspctP 0 plateaus 40 platexit 378 platidle 27 platmax 2 runs 1 stalls 44 tailmax 1
+W86_n77.json RULE subrand K2tested 3000 K5how 185 Tmax 40 Tsum 40 bchecked 40 lagstates 818 nonstalls 507 nsmax 26 nspctP 0 plateaus 160 platexit 898 platidle 251 platmax 3 runs 1 stalls 311 tailmax 1
+WC16_2.json RULE subrand K2tested 3000 K5how 67 Tmax 8 Tsum 8 bchecked 8 lagstates 36 nonstalls 36 nsmax 8 nspctP 0 runs 1 tailmax 0
+WC4_2.json RULE subrand K2tested 3000 K5how 10 Tmax 7 Tsum 7 bchecked 7 lagstates 28 nonstalls 28 nsmax 7 nspctP 0 runs 1 tailmax 0
+WC8_2.json RULE subrand K2tested 3000 K5how 25 Tmax 8 Tsum 8 bchecked 8 lagstates 36 nonstalls 33 nsmax 7 nspctP 0 plateaus 3 platexit 12 platidle 3 platmax 1 runs 1 stalls 3 tailmax 0
+m3_NM106_ea6c4f63.json RULE subrand K2tested 3000 K5how 16 Tmax 15 Tsum 15 bchecked 15 lagstates 120 nonstalls 111 nsmax 13 nspctP 0 plateaus 9 platexit 18 platidle 9 platmax 1 runs 1 stalls 9 tailmax 0
+m4_NM121_d45d7aaa.json RULE subrand K2tested 3000 K5how 35 Tmax 20 Tsum 20 bchecked 20 lagstates 210 nonstalls 176 nsmax 17 nspctP 0 plateaus 34 platexit 124 platidle 15 platmax 1 runs 1 stalls 34 tailmax 0
+DEAD_SEG2P_d4_N8.json RULE subrand K2tested 3000 Tmax 8 Tsum 8 bchecked 8 lagstates 15 nonstalls 3 nsmax 2 nspctP 0 plateaus 2 platmax 6 runs 1 stalls 12 tailmax 6
+DEAD_SEG2P_d7_N14.json RULE subrand K2tested 3000 Tmax 9 Tsum 9 bchecked 9 lagstates 45 nonstalls 45 nsmax 9 nspctP 0 runs 1 tailmax 0
+DEAD_SEG2P_d9_N18.json RULE subrand K2tested 3000 K5how 7 Tmax 25 Tsum 25 bchecked 25 lagstates 311 nonstalls 196 nsmax 15 nspctP 0 plateaus 82 platexit 98 platidle 49 platmax 2 runs 1 stalls 115 tailmax 3
+MW8_2.json RULE onebest K2tested 3000 K5how 148 Tmax 105 Tsum 105 bchecked 27 lagstates 1691 nonstalls 1239 nsmax 73 nspctP 0 plateaus 268 platexit 1141 platidle 452 platmax 4 runs 1 stalls 452 tailmax 0
+MWR4_2.json RULE oneleast K2tested 3000 K5how 142 Tmax 44 Tsum 44 bchecked 44 lagstates 987 nonstalls 979 nsmax 42 nspctP 0 plateaus 4 platexit 12 platidle 8 platmax 2 runs 1 stalls 8 tailmax 2
+MWR8_2.json RULE oneleast K2tested 3000 K5how 640 Tmax 84 Tsum 84 bchecked 28 lagstates 1273 nonstalls 1237 nsmax 78 nspctP 0 plateaus 6 platexit 42 platidle 36 platmax 6 runs 1 stalls 36 tailmax 0
+MWR16_2.json RULE oneleast K2tested 3000 K5how 2740 Tmax 164 Tsum 164 bchecked 28 lagstates 2467 nonstalls 2411 nsmax 150 nspctP 0 plat_gt_movers 4 plateaus 4 platexit 60 platidle 56 platmax 14 runs 1 stalls 56 tailmax 10
+CW4_n.json RULE oneleast K2tested 3000 K5how 301 Tmax 61 Tsum 61 bchecked 61 lagstates 1888 nonstalls 1672 nsmax 43 nspctP 0 plat_gt_movers 25 plateaus 52 platexit 632 platidle 216 platmax 7 runs 1 stalls 216 tailmax 2
+CW8_n.json RULE oneleast K2tested 3000 K5how 3210 Tmax 359 Tsum 359 bchecked 30 lagstates 4560 nonstalls 2029 nsmax 83 nspctP 0 plat_gt_movers 105 plateaus 166 platexit 8502 platidle 2531 platmax 64 runs 1 stalls 2531 tailmax 0
+NK6_cl21.json RULE onebest K2tested 3000 K5how 65 Tmax 56 Tsum 56 bchecked 56 lagstates 1449 nonstalls 269 nsmax 8 nspctP 0 plateaus 236 platexit 1561 platidle 74 platmax 12 runs 1 stalls 1180 tailmax 8
+ROUTELOW_n21.json RULE onebest K2tested 3000 K5how 31 Tmax 24 Tsum 24 bchecked 24 lagstates 293 nonstalls 160 nsmax 13 nspctP 0 plateaus 79 platexit 342 platidle 67 platmax 6 runs 1 stalls 133 tailmax 2
+RWX_n95.json RULE onebest K2tested 3000 K5how 991 Tmax 105 Tsum 105 bchecked 28 lagstates 1548 nonstalls 517 nsmax 37 nspctP 0 plat_gt_movers 24 plateaus 276 platexit 6423 platidle 707 platmax 17 runs 1 stalls 1031 tailmax 2
+W14_n75.json RULE onebest K2tested 3000 K5how 1406 Tmax 95 Tsum 95 bchecked 25 lagstates 1104 nonstalls 447 nsmax 40 nspctP 0 plat_gt_movers 12 plateaus 289 platexit 7995 platidle 528 platmax 13 runs 1 stalls 657 tailmax 2
+CWRR4_n.json RULE oneleast K2tested 3000 K5how 448 Tmax 54 Tsum 54 bchecked 54 lagstates 1482 nonstalls 1380 nsmax 42 nspctP 0 plat_gt_movers 10 plateaus 21 platexit 344 platidle 102 platmax 7 runs 1 stalls 102 tailmax 2
+CWRR8_n.json RULE oneleast K2tested 3000 K5how 3139 Tmax 120 Tsum 120 bchecked 27 lagstates 1723 nonstalls 1434 nsmax 77 nspctP 0 plat_gt_movers 9 plateaus 35 platexit 1942 platidle 289 platmax 15 runs 1 stalls 289 tailmax 2
+W68_n66.json RULE onebest K2tested 3000 K5how 1087 Tmax 79 Tsum 79 bchecked 79 lagstates 3132 nonstalls 985 nsmax 23 nspctP 0 plat_gt_movers 61 plateaus 681 platexit 15202 platidle 1876 platmax 10 runs 1 stalls 2147 tailmax 4
+W86_n77.json RULE onebest K2tested 3000 K5how 1813 Tmax 115 Tsum 115 bchecked 27 lagstates 1255 nonstalls 163 nsmax 14 nspctP 0 plat_gt_movers 47 plateaus 114 platexit 2093 platidle 1045 platmax 50 runs 1 stalls 1092 tailmax 5
+WC16_2.json RULE onebest K2tested 3000 K5how 802 Tmax 50 Tsum 50 bchecked 50 lagstates 1275 nonstalls 1271 nsmax 48 nspctP 0 plateaus 2 platexit 12 platidle 4 platmax 2 runs 1 stalls 4 tailmax 0
+WC4_2.json RULE onebest K2tested 3000 K5how 50 Tmax 14 Tsum 14 bchecked 14 lagstates 105 nonstalls 103 nsmax 13 nspctP 0 plateaus 2 platexit 4 platidle 2 platmax 1 runs 1 stalls 2 tailmax 0
+WC8_2.json RULE onebest K2tested 3000 K5how 200 Tmax 25 Tsum 25 bchecked 25 lagstates 325 nonstalls 325 nsmax 25 nspctP 0 runs 1 tailmax 0
+m3_NM106_ea6c4f63.json RULE onebest K2tested 3000 K5how 31 Tmax 20 Tsum 20 bchecked 20 lagstates 209 nonstalls 170 nsmax 15 nspctP 0 plateaus 34 platexit 109 platidle 21 platmax 2 runs 1 stalls 39 tailmax 1
+m4_NM121_d45d7aaa.json RULE onebest K2tested 3000 K5how 45 Tmax 38 Tsum 38 bchecked 38 lagstates 738 nonstalls 459 nsmax 22 nspctP 0 plat_gt_movers 5 plateaus 201 platexit 710 platidle 209 platmax 3 runs 1 stalls 279 tailmax 2
+DEAD_SEG2P_d4_N8.json RULE onebest K2tested 3000 Tmax 14 Tsum 14 bchecked 14 lagstates 27 nonstalls 3 nsmax 2 nspctP 0 plat_gt_movers 2 plateaus 2 platmax 12 runs 1 stalls 24 tail_gt_N 4 tailmax 12
+DEAD_SEG2P_d7_N14.json RULE onebest K2tested 3000 K5how 21 Tmax 23 Tsum 23 bchecked 23 lagstates 262 nonstalls 155 nsmax 13 nspctP 0 plat_gt_movers 11 plateaus 52 platexit 274 platidle 69 platmax 6 runs 1 stalls 107 tailmax 4
+DEAD_SEG2P_d9_N18.json RULE onebest K2tested 3000 K5how 15 Tmax 30 Tsum 30 bchecked 30 lagstates 422 nonstalls 134 nsmax 10 nspctP 0 plateaus 117 platexit 228 platidle 99 platmax 7 runs 1 stalls 288 tailmax 7
+MWR4_2.json RULE onerand K2tested 3000 K5how 74 Tmax 49 Tsum 49 bchecked 49 lagstates 1223 nonstalls 1014 nsmax 40 nspctP 0 plateaus 187 platexit 772 platidle 119 platmax 2 runs 1 stalls 209 tailmax 1
+MWR8_2.json RULE onerand K2tested 3000 K5how 129 Tmax 95 Tsum 95 bchecked 29 lagstates 1348 nonstalls 1031 nsmax 72 nspctP 0 plateaus 228 platexit 937 platidle 210 platmax 3 runs 1 stalls 317 tailmax 3
+CWRR16_n.json RULE oneleast K2tested 3000 K5how 25645 Tmax 300 Tsum 300 bchecked 29 lagstates 4478 nonstalls 3149 nsmax 149 nspctP 0 plat_gt_movers 12 plateaus 100 platexit 17076 platidle 1329 platmax 31 runs 1 stalls 1329 tailmax 4
+CWRQ8_n.json RULE oneleast K2tested 3000 K5how 3139 Tmax 120 Tsum 120 bchecked 27 lagstates 1723 nonstalls 1434 nsmax 77 nspctP 0 plat_gt_movers 9 plateaus 35 platexit 1942 platidle 289 platmax 15 runs 1 stalls 289 tailmax 2
+K1F21_n48.json RULE oneleast K2tested 3000 K5how 157 Tmax 64 Tsum 64 bchecked 64 lagstates 1857 nonstalls 896 nsmax 35 nspctP 0 plateaus 85 platexit 348 platidle 54 platmax 20 runs 1 stalls 961 tailmax 20
+K1F34_n84.json RULE oneleast K2tested 3000 K5how 634 Tmax 93 Tsum 93 bchecked 23 lagstates 1173 nonstalls 759 nsmax 64 nspctP 0 plateaus 43 platexit 1020 platidle 34 platmax 20 runs 1 stalls 414 tailmax 19
+MWR16_2.json RULE onerand K2tested 3000 K5how 199 Tmax 182 Tsum 182 bchecked 30 lagstates 2771 nonstalls 2088 nsmax 136 nspctP 0 plateaus 519 platexit 1732 platidle 595 platmax 3 runs 1 stalls 683 tailmax 0
+CW4_n.json RULE onerand K2tested 3000 K5how 99 Tmax 55 Tsum 55 bchecked 55 lagstates 1538 nonstalls 1223 nsmax 42 nspctP 0 plateaus 267 platexit 1050 platidle 213 platmax 5 runs 1 stalls 315 tailmax 1
+CW8_n.json RULE onerand K2tested 3000 K5how 375 Tmax 130 Tsum 130 bchecked 25 lagstates 1957 nonstalls 1415 nsmax 90 nspctP 0 plateaus 347 platexit 1562 platidle 445 platmax 5 runs 1 stalls 542 tailmax 1
+K1C16_n400.json RULE oneleast K2tested 3000 K5how 1977 Tmax 182 Tsum 182 bchecked 29 lagstates 2920 nonstalls 339 nsmax 24 nspctP 0 plat_gt_movers 6 plateaus 231 platexit 11031 platidle 814 platmax 80 runs 1 stalls 2581 tailmax 80
+K1L7_n48.json RULE oneleast K2tested 3000 K5how 325 Tmax 65 Tsum 65 bchecked 65 lagstates 2077 nonstalls 1333 nsmax 40 nspctP 0 plateaus 156 platexit 4018 platidle 702 platmax 10 runs 1 stalls 744 tailmax 10
+K1L10_n48.json RULE oneleast K2tested 3000 K5how 195 Tmax 69 Tsum 69 bchecked 69 lagstates 2222 nonstalls 953 nsmax 32 nspctP 0 plateaus 296 platexit 4657 platidle 497 platmax 17 runs 1 stalls 1269 tailmax 17
+K1D4_n48.json RULE oneleast K2tested 3000 K5how 142 Tmax 64 Tsum 64 bchecked 64 lagstates 1723 nonstalls 490 nsmax 17 nspctP 0 plateaus 161 platexit 991 platidle 189 platmax 24 runs 1 stalls 1233 tailmax 24
+BLKX23_n48.json RULE oneleast K2tested 3000 K5how 57 Tmax 64 Tsum 64 bchecked 64 lagstates 1313 nonstalls 202 nsmax 16 nspctP 0 plateaus 58 platexit 385 platidle 91 platmax 38 runs 1 stalls 1111 tailmax 38
+BLKX26_n48.json RULE oneleast K2tested 3000 K5how 46 Tmax 43 Tsum 43 bchecked 43 lagstates 752 nonstalls 264 nsmax 19 nspctP 0 plateaus 56 platexit 124 platidle 28 platmax 19 runs 1 stalls 488 tailmax 19
+B400_r32_a13d9661.json RULE oneleast K2tested 3000 K5how 636 Tmax 81 Tsum 81 bchecked 26 lagstates 1068 nonstalls 813 nsmax 62 nspctP 0 plateaus 35 platexit 584 platidle 17 platmax 11 runs 1 stalls 255 tailmax 11
+CFI3_n48.json RULE oneleast K2tested 3000 K5how 80 Tmax 68 Tsum 68 bchecked 68 lagstates 2032 nonstalls 427 nsmax 13 nspctP 0 plat_gt_movers 27 plateaus 175 platexit 885 platidle 661 platmax 22 runs 1 stalls 1605 tailmax 16
+RINT_n48.json RULE oneleast K2tested 3000 K5how 137 Tmax 39 Tsum 39 bchecked 39 lagstates 761 nonstalls 504 nsmax 28 nspctP 0 plateaus 117 platexit 1142 platidle 9 platmax 4 runs 1 stalls 257 tailmax 4
+k1fail_202.json RULE oneleast K2tested 3000 K5how 4 Tmax 10 Tsum 10 bchecked 10 lagstates 44 nonstalls 18 nsmax 3 nspctP 0 plateaus 18 platexit 32 platidle 4 platmax 2 runs 1 stalls 26 tailmax 3
+naive_k1_s71.json RULE oneleast K2tested 3000 K5how 6 Tmax 9 Tsum 9 bchecked 9 lagstates 29 nonstalls 21 nsmax 3 nspctP 0 plateaus 8 platexit 48 platidle 8 platmax 1 runs 1 stalls 8 tailmax 5
+ST4_k1.json RULE oneleast K2tested 3000 Tmax 0 Tsum 0 runs 1
+ST8_k1.json RULE oneleast K2tested 3000 Tmax 0 Tsum 0 runs 1
+C10_NM164_bdf7a4f2.json RULE oneleast K2tested 3000 K5how 174 Tmax 27 Tsum 27 bchecked 27 lagstates 378 nonstalls 366 nsmax 25 nspctP 0 plateaus 6 platexit 18 platidle 12 platmax 2 runs 1 stalls 12 tailmax 0
+C11_NM172_93225ff6.json RULE oneleast K2tested 3000 K5how 221 Tmax 31 Tsum 31 bchecked 31 lagstates 496 nonstalls 484 nsmax 29 nspctP 0 plateaus 6 platexit 18 platidle 12 platmax 2 runs 1 stalls 12 tailmax 0
+C12_NM176_0009119c.json RULE oneleast K2tested 3000 K5how 274 Tmax 34 Tsum 34 bchecked 34 lagstates 595 nonstalls 581 nsmax 32 nspctP 0 plateaus 7 platexit 21 platidle 14 platmax 2 runs 1 stalls 14 tailmax 0
+C2CX4_n23.json RULE oneleast K2tested 3000 K5how 38 Tmax 18 Tsum 18 bchecked 18 lagstates 164 nonstalls 105 nsmax 13 nspctP 0 plateaus 30 platexit 174 platidle 32 platmax 2 runs 1 stalls 59 tailmax 2
+C2_NM33_38377e9c.json RULE oneleast K2tested 3000 Tmax 3 Tsum 3 bchecked 3 lagstates 6 nonstalls 6 nsmax 3 nspctP 0 runs 1 tailmax 0
+C3_NM45_8a702944.json RULE oneleast K2tested 3000 K5how 2 Tmax 3 Tsum 3 bchecked 3 lagstates 6 nonstalls 6 nsmax 3 nspctP 0 runs 1 tailmax 0
+C4_NM50_184a739c.json RULE oneleast K2tested 3000 Tmax 7 Tsum 7 bchecked 7 lagstates 25 nonstalls 9 nsmax 3 nspctP 0 plateaus 5 platidle 6 platmax 4 runs 1 stalls 16 tailmax 2
+C5_NM63_7ae531ad.json RULE oneleast K2tested 3000 K5how 22 Tmax 13 Tsum 13 bchecked 13 lagstates 84 nonstalls 37 nsmax 7 nspctP 0 plateaus 22 platexit 130 platidle 26 platmax 3 runs 1 stalls 47 tailmax 3
+C6G8_n54.json RULE oneleast K2tested 3000 K5how 795 Tmax 74 Tsum 74 bchecked 74 lagstates 2711 nonstalls 346 nsmax 10 nspctP 0 plat_gt_movers 71 plateaus 213 platexit 8392 platidle 2180 platmax 63 runs 1 stalls 2365 tailmax 5
+C6_NM75_72a89f5f.json RULE oneleast K2tested 3000 K5how 31 Tmax 18 Tsum 18 bchecked 18 lagstates 141 nonstalls 46 nsmax 7 nspctP 0 plateaus 31 platexit 238 platidle 39 platmax 7 runs 1 stalls 95 tailmax 7
+C7_NM105_4438ea3e.json RULE oneleast K2tested 3000 K5how 48 Tmax 14 Tsum 14 bchecked 14 lagstates 104 nonstalls 91 nsmax 13 nspctP 0 plateaus 13 platexit 26 platmax 1 runs 1 stalls 13 tailmax 1
+C8_NM112_8c4c784f.json RULE oneleast K2tested 3000 K5how 82 Tmax 22 Tsum 22 bchecked 22 lagstates 253 nonstalls 247 nsmax 20 nspctP 0 plateaus 6 platexit 12 platidle 6 platmax 1 runs 1 stalls 6 tailmax 0
+C9_NM122_6224f959.json RULE oneleast K2tested 3000 K5how 110 Tmax 26 Tsum 26 bchecked 26 lagstates 350 nonstalls 315 nsmax 23 nspctP 0 plateaus 30 platexit 115 platidle 10 platmax 2 runs 1 stalls 35 tailmax 1
+CT12_cap200.json RULE oneleast K2tested 3000 K5how 976 Tmax 76 Tsum 76 bchecked 76 lagstates 2874 nonstalls 649 nsmax 23 nspctP 0 plat_gt_movers 23 plateaus 328 platexit 12278 platidle 1790 platmax 55 runs 1 stalls 2225 tailmax 6
+CT26_cap400.json RULE oneleast K2tested 3000 K5how 1537 Tmax 135 Tsum 135 bchecked 29 lagstates 1827 nonstalls 518 nsmax 71 nspctP 0 plat_gt_movers 12 plateaus 54 platexit 2403 platidle 889 platmax 104 runs 1 stalls 1309 tailmax 27
+CT27_cap400.json RULE oneleast K2tested 3000 K5how 1540 Tmax 158 Tsum 158 bchecked 28 lagstates 1702 nonstalls 710 nsmax 87 nspctP 0 plateaus 45 platexit 1109 platidle 24 platmax 33 runs 1 stalls 992 tailmax 33
+CX4_n21.json RULE oneleast K2tested 3000 K5how 35 Tmax 18 Tsum 18 bchecked 18 lagstates 164 nonstalls 92 nsmax 11 nspctP 0 plateaus 43 platexit 200 platidle 45 platmax 2 runs 1 stalls 72 tailmax 2
+TIMEOUT300 CW16_n.json RULE onerand
+CWRR4_n.json RULE onerand K2tested 3000 K5how 39 Tmax 44 Tsum 44 bchecked 44 lagstates 988 nonstalls 896 nsmax 41 nspctP 0 plateaus 92 platexit 488 platidle 51 platmax 1 runs 1 stalls 92 tailmax 1
+CWRR8_n.json RULE onerand K2tested 3000 K5how 116 Tmax 82 Tsum 82 bchecked 23 lagstates 916 nonstalls 830 nsmax 77 nspctP 0 plateaus 86 platexit 538 platidle 29 platmax 1 runs 1 stalls 86 tailmax 1
+DHIB18_2805.json RULE oneleast K2tested 3000 K5how 6274 Tmax 171 Tsum 171 bchecked 29 lagstates 2095 nonstalls 270 nsmax 21 nspctP 0 plat_gt_movers 70 plateaus 170 platexit 17879 platidle 1546 platmax 111 runs 1 stalls 1825 tailmax 9
+CWRR16_n.json RULE onerand K2tested 3000 K5how 262 Tmax 153 Tsum 153 bchecked 28 lagstates 2122 nonstalls 2021 nsmax 149 nspctP 0 plateaus 101 platexit 1678 platidle 46 platmax 1 runs 1 stalls 101 tailmax 1
+CWRQ8_n.json RULE onerand K2tested 3000 K5how 116 Tmax 82 Tsum 82 bchecked 23 lagstates 916 nonstalls 830 nsmax 77 nspctP 0 plateaus 86 platexit 538 platidle 29 platmax 1 runs 1 stalls 86 tailmax 1
+K1F21_n48.json RULE onerand K2tested 3000 K5how 84 Tmax 82 Tsum 82 bchecked 22 lagstates 811 nonstalls 279 nsmax 34 nspctP 0 plateaus 113 platexit 410 platidle 122 platmax 22 runs 1 stalls 532 tailmax 22
+K1F34_n84.json RULE onerand K2tested 3000 K5how 113 Tmax 112 Tsum 112 bchecked 28 lagstates 1232 nonstalls 482 nsmax 61 nspctP 0 plateaus 158 platexit 1172 platidle 118 platmax 17 runs 1 stalls 750 tailmax 14
+DHIB26_2804.json RULE oneleast K2tested 3000 K5how 2940 Tmax 151 Tsum 151 bchecked 28 lagstates 2366 nonstalls 595 nsmax 46 nspctP 0 plat_gt_movers 33 plateaus 374 platexit 22226 platidle 1482 platmax 126 runs 1 stalls 1771 tailmax 13
+DSALT6_n108.json RULE oneleast K2tested 3000 K5how 17 Tmax 54 Tsum 54 bchecked 54 lagstates 698 nonstalls 333 nsmax 7 nspctP 0 plateaus 133 platexit 738 platidle 321 platmax 4 runs 1 stalls 365 tailmax 39
+DSALT7_n108.json RULE oneleast K2tested 3000 K5how 87 Tmax 50 Tsum 50 bchecked 50 lagstates 1033 nonstalls 200 nsmax 7 nspctP 0 plat_gt_movers 29 plateaus 117 platexit 1780 platidle 833 platmax 29 runs 1 stalls 833 tailmax 16
+K1C16_n400.json RULE onerand K2tested 3000 K5how 531 Tmax 228 Tsum 228 bchecked 30 lagstates 3102 nonstalls 738 nsmax 62 nspctP 0 plat_gt_movers 2 plateaus 439 platexit 2491 platidle 777 platmax 66 runs 1 stalls 2364 tailmax 55
+K1L7_n48.json RULE onerand K2tested 3000 K5how 74 Tmax 77 Tsum 77 bchecked 77 lagstates 2819 nonstalls 1161 nsmax 37 nspctP 0 plateaus 511 platexit 1720 platidle 477 platmax 18 runs 1 stalls 1658 tailmax 18
+K1L10_n48.json RULE onerand K2tested 3000 K5how 266 Tmax 96 Tsum 96 bchecked 29 lagstates 1432 nonstalls 602 nsmax 41 nspctP 0 plateaus 253 platexit 2183 platidle 498 platmax 7 runs 1 stalls 830 tailmax 2
+K1D4_n48.json RULE onerand K2tested 3000 K5how 35 Tmax 78 Tsum 78 bchecked 78 lagstates 2179 nonstalls 380 nsmax 16 nspctP 0 plateaus 167 platexit 536 platidle 243 platmax 41 runs 1 stalls 1799 tailmax 41
+BLKX23_n48.json RULE onerand K2tested 3000 K5how 70 Tmax 83 Tsum 83 bchecked 27 lagstates 1093 nonstalls 358 nsmax 35 nspctP 0 plateaus 151 platexit 705 platidle 135 platmax 22 runs 1 stalls 735 tailmax 20
+BLKX26_n48.json RULE onerand K2tested 3000 K5how 90 Tmax 69 Tsum 69 bchecked 69 lagstates 2216 nonstalls 763 nsmax 29 nspctP 0 plateaus 304 platexit 1178 platidle 503 platmax 19 runs 1 stalls 1453 tailmax 19
+B400_r32_a13d9661.json RULE onerand K2tested 3000 K5how 146 Tmax 104 Tsum 104 bchecked 29 lagstates 1611 nonstalls 884 nsmax 61 nspctP 0 plateaus 269 platexit 1602 platidle 303 platmax 11 runs 1 stalls 727 tailmax 6
+CFI3_n48.json RULE onerand K2tested 3000 K5how 63 Tmax 63 Tsum 63 bchecked 63 lagstates 1594 nonstalls 260 nsmax 15 nspctP 0 plat_gt_movers 20 plateaus 152 platexit 404 platidle 281 platmax 26 runs 1 stalls 1334 tailmax 26
+RINT_n48.json RULE onerand K2tested 3000 K5how 102 Tmax 63 Tsum 63 bchecked 63 lagstates 1848 nonstalls 680 nsmax 33 nspctP 0 plateaus 244 platexit 2322 platidle 196 platmax 17 runs 1 stalls 1168 tailmax 17
+k1fail_202.json RULE onerand K2tested 3000 K5how 12 Tmax 18 Tsum 18 bchecked 18 lagstates 119 nonstalls 30 nsmax 5 nspctP 0 plateaus 15 platexit 24 platidle 3 platmax 9 runs 1 stalls 89 tailmax 9
+naive_k1_s71.json RULE onerand K2tested 3000 Tmax 5 Tsum 5 bchecked 5 lagstates 5 nonstalls 5 nsmax 1 nspctP 0 runs 1 tailmax 4
+ST4_k1.json RULE onerand K2tested 3000 Tmax 0 Tsum 0 runs 1
+ST8_k1.json RULE onerand K2tested 3000 Tmax 0 Tsum 0 runs 1
+C10_NM164_bdf7a4f2.json RULE onerand K2tested 3000 K5how 58 Tmax 34 Tsum 34 bchecked 34 lagstates 593 nonstalls 363 nsmax 23 nspctP 0 plateaus 122 platexit 480 platidle 174 platmax 3 runs 1 stalls 230 tailmax 1
+C11_NM172_93225ff6.json RULE onerand K2tested 3000 K5how 83 Tmax 41 Tsum 41 bchecked 41 lagstates 858 nonstalls 553 nsmax 28 nspctP 0 plateaus 227 platexit 865 platidle 199 platmax 2 runs 1 stalls 305 tailmax 1
+C12_NM176_0009119c.json RULE onerand K2tested 3000 K5how 97 Tmax 48 Tsum 48 bchecked 48 lagstates 1172 nonstalls 671 nsmax 28 nspctP 0 plateaus 352 platexit 1489 platidle 330 platmax 3 runs 1 stalls 501 tailmax 1
+C2CX4_n23.json RULE onerand K2tested 3000 K5how 19 Tmax 13 Tsum 13 bchecked 13 lagstates 89 nonstalls 56 nsmax 7 nspctP 0 plateaus 17 platexit 50 platidle 25 platmax 3 runs 1 stalls 33 tailmax 1
+C2_NM33_38377e9c.json RULE onerand K2tested 3000 K5how 1 Tmax 3 Tsum 3 bchecked 3 lagstates 6 nonstalls 6 nsmax 3 nspctP 0 runs 1 tailmax 0
+C3_NM45_8a702944.json RULE onerand K2tested 3000 K5how 8 Tmax 11 Tsum 11 bchecked 11 lagstates 63 nonstalls 38 nsmax 6 nspctP 0 plateaus 15 platexit 40 platidle 9 platmax 2 runs 1 stalls 25 tailmax 2
+C4_NM50_184a739c.json RULE onerand K2tested 3000 K5how 1 Tmax 7 Tsum 7 bchecked 7 lagstates 27 nonstalls 17 nsmax 5 nspctP 0 plateaus 10 platexit 8 platidle 4 platmax 1 runs 1 stalls 10 tailmax 1
+C5_NM63_7ae531ad.json RULE onerand K2tested 3000 K5how 46 Tmax 27 Tsum 27 bchecked 27 lagstates 371 nonstalls 163 nsmax 12 nspctP 0 plateaus 76 platexit 479 platidle 146 platmax 4 runs 1 stalls 208 tailmax 2
+C6G8_n54.json RULE onerand K2tested 3000 K5how 850 Tmax 82 Tsum 82 bchecked 26 lagstates 1289 nonstalls 188 nsmax 13 nspctP 0 plat_gt_movers 45 plateaus 144 platexit 1933 platidle 1051 platmax 15 runs 1 stalls 1101 tailmax 6
+C6_NM75_72a89f5f.json RULE onerand K2tested 3000 K5how 34 Tmax 23 Tsum 23 bchecked 23 lagstates 272 nonstalls 135 nsmax 12 nspctP 0 plateaus 72 platexit 292 platidle 104 platmax 4 runs 1 stalls 137 tailmax 1
+C7_NM105_4438ea3e.json RULE onerand K2tested 3000 K5how 26 Tmax 26 Tsum 26 bchecked 26 lagstates 349 nonstalls 205 nsmax 15 nspctP 0 plateaus 98 platexit 300 platidle 101 platmax 2 runs 1 stalls 144 tailmax 1
+C8_NM112_8c4c784f.json RULE onerand K2tested 3000 K5how 38 Tmax 25 Tsum 25 bchecked 25 lagstates 323 nonstalls 224 nsmax 18 nspctP 0 plateaus 63 platexit 324 platidle 57 platmax 3 runs 1 stalls 99 tailmax 1
+C9_NM122_6224f959.json RULE onerand K2tested 3000 K5how 73 Tmax 42 Tsum 42 bchecked 42 lagstates 895 nonstalls 487 nsmax 23 nspctP 0 plat_gt_movers 5 plateaus 250 platexit 1018 platidle 221 platmax 3 runs 1 stalls 408 tailmax 3
+CT12_cap200.json RULE onerand K2tested 3000 K5how 431 Tmax 91 Tsum 91 bchecked 28 lagstates 1166 nonstalls 351 nsmax 36 nspctP 0 plat_gt_movers 20 plateaus 185 platexit 2907 platidle 721 platmax 24 runs 1 stalls 815 tailmax 15
+TIMEOUT300 DSALT9_n416.json RULE oneleast
+CT26_cap400.json RULE onerand K2tested 3000 K5how 511 Tmax 209 Tsum 209 bchecked 31 lagstates 3421 nonstalls 1462 nsmax 93 nspctP 0 plat_gt_movers 52 plateaus 590 platexit 4469 platidle 1647 platmax 23 runs 1 stalls 1959 tailmax 9
+DU21_h4.json RULE oneleast K2tested 3000 K5how 1418 Tmax 116 Tsum 116 bchecked 28 lagstates 1614 nonstalls 298 nsmax 26 nspctP 0 plateaus 182 platexit 10214 platidle 771 platmax 25 runs 1 stalls 1316 tailmax 8
+DWT20_2803.json RULE oneleast K2tested 3000 K5how 1258 Tmax 115 Tsum 115 bchecked 30 lagstates 1724 nonstalls 281 nsmax 22 nspctP 0 plat_gt_movers 20 plateaus 137 platexit 5400 platidle 1144 platmax 51 runs 1 stalls 1443 tailmax 13
+CT27_cap400.json RULE onerand K2tested 3000 K5how 445 Tmax 252 Tsum 252 bchecked 28 lagstates 3121 nonstalls 1067 nsmax 97 nspctP 0 plat_gt_movers 1 plateaus 387 platexit 2702 platidle 611 platmax 43 runs 1 stalls 2054 tailmax 33
+CX4_n21.json RULE onerand K2tested 3000 K5how 19 Tmax 14 Tsum 14 bchecked 14 lagstates 101 nonstalls 62 nsmax 8 nspctP 0 plateaus 24 platexit 63 platidle 14 platmax 2 runs 1 stalls 39 tailmax 2
+FW12_2.json RULE oneleast K2tested 3000 K5how 3793 Tmax 197 Tsum 197 bchecked 28 lagstates 3095 nonstalls 2967 nsmax 187 nspctP 0 plateaus 128 platexit 2916 platidle 128 platmax 1 runs 1 stalls 128 tailmax 0
+DHIB18_2805.json RULE onerand K2tested 3000 K5how 4816 Tmax 190 Tsum 190 bchecked 26 lagstates 2582 nonstalls 315 nsmax 24 nspctP 0 plat_gt_movers 34 plateaus 218 platexit 6521 platidle 2253 platmax 65 runs 1 stalls 2267 tailmax 2
+FW16_2.json RULE oneleast K2tested 3000 K5how 7153 Tmax 269 Tsum 269 bchecked 29 lagstates 4183 nonstalls 4008 nsmax 255 nspctP 0 plateaus 175 platexit 5942 platidle 175 platmax 1 runs 1 stalls 175 tailmax 0
+FW4_2.json RULE oneleast K2tested 3000 K5how 241 Tmax 53 Tsum 53 bchecked 53 lagstates 1431 nonstalls 1411 nsmax 51 nspctP 0 plateaus 20 platexit 74 platidle 20 platmax 1 runs 1 stalls 20 tailmax 0
+FW6_3.json RULE oneleast K2tested 3000 K5how 1641 Tmax 159 Tsum 159 bchecked 27 lagstates 2257 nonstalls 2191 nsmax 152 nspctP 0 plateaus 42 platexit 645 platidle 66 platmax 2 runs 1 stalls 66 tailmax 0
+DHIB26_2804.json RULE onerand K2tested 3000 K5how 2008 Tmax 173 Tsum 173 bchecked 31 lagstates 2492 nonstalls 537 nsmax 39 nspctP 0 plat_gt_movers 37 plateaus 374 platexit 11000 platidle 1590 platmax 27 runs 1 stalls 1955 tailmax 19
+FW6_4.json RULE oneleast K2tested 3000 K5how 2830 Tmax 243 Tsum 243 bchecked 31 lagstates 3461 nonstalls 3381 nsmax 234 nspctP 0 plateaus 45 platexit 948 platidle 80 platmax 3 runs 1 stalls 80 tailmax 0
+FW8_2.json RULE oneleast K2tested 3000 K5how 1489 Tmax 125 Tsum 125 bchecked 26 lagstates 1903 nonstalls 1831 nsmax 119 nspctP 0 plateaus 72 platexit 906 platidle 72 platmax 1 runs 1 stalls 72 tailmax 0
+DSALT6_n108.json RULE onerand K2tested 3000 K5how 40 Tmax 68 Tsum 68 bchecked 68 lagstates 1955 nonstalls 239 nsmax 7 nspctP 0 plateaus 233 platexit 793 platidle 152 platmax 19 runs 1 stalls 1716 tailmax 19
+DSALT7_n108.json RULE onerand K2tested 3000 K5how 148 Tmax 56 Tsum 56 bchecked 56 lagstates 1373 nonstalls 223 nsmax 11 nspctP 0 plateaus 204 platexit 2832 platidle 91 platmax 17 runs 1 stalls 1150 tailmax 17
+FW8_4.json RULE oneleast K2tested 3000 K5how 6740 Tmax 383 Tsum 383 bchecked 30 lagstates 6671 nonstalls 6476 nsmax 368 nspctP 0 plateaus 92 platexit 3622 platidle 195 platmax 3 runs 1 stalls 195 tailmax 0
+GROW7_n34.json RULE oneleast K2tested 3000 K5how 120 Tmax 42 Tsum 42 bchecked 42 lagstates 884 nonstalls 270 nsmax 13 nspctP 0 plat_gt_movers 13 plateaus 167 platexit 1232 platidle 469 platmax 27 runs 1 stalls 614 tailmax 3
+GROW8_n53.json RULE oneleast K2tested 3000 K5how 633 Tmax 68 Tsum 68 bchecked 68 lagstates 2283 nonstalls 330 nsmax 10 nspctP 0 plat_gt_movers 63 plateaus 192 platexit 5418 platidle 1793 platmax 65 runs 1 stalls 1953 tailmax 5
+HOLD2K_n84.json RULE oneleast K2tested 3000 K5how 120 Tmax 62 Tsum 62 bchecked 62 lagstates 1855 nonstalls 489 nsmax 13 nspctP 0 plat_gt_movers 33 plateaus 243 platexit 1912 platidle 1221 platmax 27 runs 1 stalls 1366 tailmax 12
+HOLD3K_n125.json RULE oneleast K2tested 3000 K5how 155 Tmax 85 Tsum 85 bchecked 28 lagstates 1083 nonstalls 250 nsmax 16 nspctP 0 plat_gt_movers 19 plateaus 120 platexit 902 platidle 805 platmax 27 runs 1 stalls 833 tailmax 18
+MW12_2.json RULE oneleast K2tested 3000 K5how 2414 Tmax 124 Tsum 124 bchecked 27 lagstates 1740 nonstalls 1710 nsmax 114 nspctP 0 plat_gt_movers 3 plateaus 3 platexit 33 platidle 30 platmax 10 runs 1 stalls 30 tailmax 0
+MW16_2.json RULE oneleast K2tested 3000 K5how 4396 Tmax 164 Tsum 164 bchecked 28 lagstates 2496 nonstalls 2440 nsmax 150 nspctP 0 plat_gt_movers 4 plateaus 4 platexit 60 platidle 56 platmax 14 runs 1 stalls 56 tailmax 0
+MW26_2.json RULE oneleast K2tested 3000 K5how 11941 Tmax 264 Tsum 264 bchecked 30 lagstates 3537 nonstalls 3489 nsmax 240 nspctP 0 plat_gt_movers 2 plateaus 2 platexit 50 platidle 48 platmax 24 runs 1 stalls 48 tailmax 0
+MW32_2.json RULE oneleast K2tested 3000 K5how 18244 Tmax 324 Tsum 324 bchecked 29 lagstates 5361 nonstalls 5211 nsmax 294 nspctP 0 plat_gt_movers 5 plateaus 5 platexit 155 platidle 150 platmax 30 runs 1 stalls 150 tailmax 0
+MW4_2.json RULE oneleast K2tested 3000 K5how 226 Tmax 44 Tsum 44 bchecked 44 lagstates 990 nonstalls 982 nsmax 42 nspctP 0 plateaus 4 platexit 12 platidle 8 platmax 2 runs 1 stalls 8 tailmax 0
+MW5_2.json RULE oneleast K2tested 3000 K5how 370 Tmax 54 Tsum 54 bchecked 54 lagstates 1485 nonstalls 1470 nsmax 51 nspctP 0 plateaus 5 platexit 20 platidle 15 platmax 3 runs 1 stalls 15 tailmax 0
+MW8_2.json RULE oneleast K2tested 3000 K5how 1024 Tmax 84 Tsum 84 bchecked 28 lagstates 1273 nonstalls 1237 nsmax 78 nspctP 0 plateaus 6 platexit 42 platidle 36 platmax 6 runs 1 stalls 36 tailmax 0
+NK6_cl21.json RULE oneleast K2tested 3000 K5how 19 Tmax 51 Tsum 51 bchecked 51 lagstates 619 nonstalls 275 nsmax 7 nspctP 0 plateaus 178 platexit 868 platidle 294 platmax 3 runs 1 stalls 344 tailmax 37
+ROUTELOW_n21.json RULE oneleast K2tested 3000 K5how 48 Tmax 22 Tsum 22 bchecked 22 lagstates 242 nonstalls 146 nsmax 14 nspctP 0 plat_gt_movers 19 plateaus 50 platexit 312 platidle 62 platmax 3 runs 1 stalls 96 tailmax 3
+RWX_n95.json RULE oneleast K2tested 3000 K5how 1094 Tmax 103 Tsum 103 bchecked 28 lagstates 1490 nonstalls 230 nsmax 24 nspctP 0 plat_gt_movers 19 plateaus 159 platexit 5260 platidle 904 platmax 44 runs 1 stalls 1260 tailmax 14
+W14_n75.json RULE oneleast K2tested 3000 K5how 1638 Tmax 93 Tsum 93 bchecked 26 lagstates 1550 nonstalls 277 nsmax 15 nspctP 0 plat_gt_movers 28 plateaus 194 platexit 8642 platidle 1160 platmax 27 runs 1 stalls 1273 tailmax 6
+W68_n66.json RULE oneleast K2tested 3000 K5how 1032 Tmax 90 Tsum 90 bchecked 26 lagstates 1216 nonstalls 231 nsmax 18 nspctP 0 plat_gt_movers 7 plateaus 115 platexit 3697 platidle 718 platmax 64 runs 1 stalls 985 tailmax 13
+W86_n77.json RULE oneleast K2tested 3000 K5how 2321 Tmax 98 Tsum 98 bchecked 30 lagstates 1439 nonstalls 203 nsmax 16 nspctP 0 plat_gt_movers 31 plateaus 98 platexit 2462 platidle 1162 platmax 48 runs 1 stalls 1236 tailmax 4
+WC16_2.json RULE oneleast K2tested 3000 K5how 945 Tmax 64 Tsum 64 bchecked 64 lagstates 2080 nonstalls 2080 nsmax 64 nspctP 0 runs 1 tailmax 0
+WC4_2.json RULE oneleast K2tested 3000 K5how 45 Tmax 16 Tsum 16 bchecked 16 lagstates 136 nonstalls 136 nsmax 16 nspctP 0 runs 1 tailmax 0
+WC8_2.json RULE oneleast K2tested 3000 K5how 217 Tmax 32 Tsum 32 bchecked 32 lagstates 528 nonstalls 528 nsmax 32 nspctP 0 runs 1 tailmax 0
+m3_NM106_ea6c4f63.json RULE oneleast K2tested 3000 K5how 51 Tmax 14 Tsum 14 bchecked 14 lagstates 105 nonstalls 105 nsmax 14 nspctP 0 runs 1 tailmax 0
+m4_NM121_d45d7aaa.json RULE oneleast K2tested 3000 K5how 129 Tmax 25 Tsum 25 bchecked 25 lagstates 324 nonstalls 292 nsmax 22 nspctP 0 plateaus 28 platexit 108 platidle 8 platmax 2 runs 1 stalls 32 tailmax 1
+DEAD_SEG2P_d4_N8.json RULE oneleast K2tested 3000 Tmax 8 Tsum 8 bchecked 8 lagstates 15 nonstalls 3 nsmax 2 nspctP 0 plateaus 2 platmax 6 runs 1 stalls 12 tailmax 6
+DEAD_SEG2P_d7_N14.json RULE oneleast K2tested 3000 Tmax 5 Tsum 5 bchecked 5 lagstates 12 nonstalls 12 nsmax 3 nspctP 0 runs 1 tailmax 2
+DEAD_SEG2P_d9_N18.json RULE oneleast K2tested 3000 K5how 14 Tmax 26 Tsum 26 bchecked 26 lagstates 306 nonstalls 126 nsmax 11 nspctP 0 plateaus 36 platexit 90 platmax 5 runs 1 stalls 180 tailmax 5
+DEAD_SEG2P_d9_N18.json RULE onerand K2tested 3000 K5how 16 Tmax 42 Tsum 42 bchecked 42 lagstates 805 nonstalls 253 nsmax 15 nspctP 0 plateaus 152 platexit 249 platidle 62 platmax 12 runs 1 stalls 552 tailmax 12
+DEAD_SEG2P_d7_N14.json RULE onerand K2tested 3000 K5how 26 Tmax 31 Tsum 31 bchecked 31 lagstates 481 nonstalls 284 nsmax 17 nspctP 0 plat_gt_movers 24 plateaus 92 platexit 297 platidle 136 platmax 5 runs 1 stalls 197 tailmax 3
+DEAD_SEG2P_d4_N8.json RULE onerand K2tested 3000 Tmax 14 Tsum 14 bchecked 14 lagstates 27 nonstalls 3 nsmax 2 nspctP 0 plat_gt_movers 2 plateaus 2 platmax 12 runs 1 stalls 24 tail_gt_N 4 tailmax 12
+m4_NM121_d45d7aaa.json RULE onerand K2tested 3000 K5how 71 Tmax 35 Tsum 35 bchecked 35 lagstates 625 nonstalls 374 nsmax 23 nspctP 0 plateaus 151 platexit 693 platidle 128 platmax 4 runs 1 stalls 251 tailmax 2
+m3_NM106_ea6c4f63.json RULE onerand K2tested 3000 K5how 29 Tmax 22 Tsum 22 bchecked 22 lagstates 252 nonstalls 171 nsmax 15 nspctP 0 plateaus 68 platexit 209 platidle 61 platmax 2 runs 1 stalls 81 tailmax 1
+WC8_2.json RULE onerand K2tested 3000 K5how 200 Tmax 28 Tsum 28 bchecked 28 lagstates 406 nonstalls 406 nsmax 28 nspctP 0 runs 1 tailmax 0
+WC4_2.json RULE onerand K2tested 3000 K5how 47 Tmax 13 Tsum 13 bchecked 13 lagstates 91 nonstalls 90 nsmax 12 nspctP 0 plateaus 1 platexit 2 platidle 1 platmax 1 runs 1 stalls 1 tailmax 0
+WC16_2.json RULE onerand K2tested 3000 K5how 856 Tmax 50 Tsum 50 bchecked 50 lagstates 1274 nonstalls 1261 nsmax 49 nspctP 0 plateaus 13 platexit 234 platidle 13 platmax 1 runs 1 stalls 13 tailmax 1
+W86_n77.json RULE onerand K2tested 3000 K5how 1395 Tmax 105 Tsum 105 bchecked 27 lagstates 1382 nonstalls 226 nsmax 18 nspctP 0 plat_gt_movers 26 plateaus 121 platexit 1691 platidle 1132 platmax 37 runs 1 stalls 1156 tailmax 3
+W68_n66.json RULE onerand K2tested 3000 K5how 1359 Tmax 101 Tsum 101 bchecked 29 lagstates 1699 nonstalls 378 nsmax 22 nspctP 0 plat_gt_movers 61 plateaus 211 platexit 5035 platidle 1211 platmax 22 runs 1 stalls 1321 tailmax 1
+W14_n75.json RULE onerand K2tested 3000 K5how 1545 Tmax 131 Tsum 131 bchecked 30 lagstates 2074 nonstalls 521 nsmax 33 nspctP 0 plat_gt_movers 41 plateaus 314 platexit 9783 platidle 1084 platmax 26 runs 1 stalls 1553 tailmax 9
+TIMEOUT300 DSALT9_n416.json RULE onerand
+RWX_n95.json RULE onerand K2tested 3000 K5how 955 Tmax 105 Tsum 105 bchecked 27 lagstates 1710 nonstalls 555 nsmax 39 nspctP 0 plat_gt_movers 27 plateaus 374 platexit 9266 platidle 469 platmax 8 runs 1 stalls 1155 tailmax 3
+ROUTELOW_n21.json RULE onerand K2tested 3000 K5how 35 Tmax 13 Tsum 13 bchecked 13 lagstates 91 nonstalls 59 nsmax 8 nspctP 0 plateaus 18 platexit 79 platidle 32 platmax 2 runs 1 stalls 32 tailmax 0
+NK6_cl21.json RULE onerand K2tested 3000 K5how 73 Tmax 74 Tsum 74 bchecked 74 lagstates 2451 nonstalls 305 nsmax 10 nspctP 0 plateaus 302 platexit 2695 platidle 112 platmax 19 runs 1 stalls 2146 tailmax 19
+MW8_2.json RULE onerand K2tested 3000 K5how 159 Tmax 108 Tsum 108 bchecked 25 lagstates 1389 nonstalls 949 nsmax 71 nspctP 0 plateaus 264 platexit 995 platidle 393 platmax 4 runs 1 stalls 440 tailmax 1
+MW5_2.json RULE onerand K2tested 3000 K5how 77 Tmax 62 Tsum 62 bchecked 62 lagstates 1953 nonstalls 1656 nsmax 46 nspctP 0 plat_gt_movers 3 plateaus 246 platexit 784 platidle 297 platmax 5 runs 1 stalls 297 tailmax 0
+MW4_2.json RULE onerand K2tested 3000 K5how 67 Tmax 54 Tsum 54 bchecked 54 lagstates 1484 nonstalls 1135 nsmax 41 nspctP 0 plateaus 246 platexit 851 platidle 296 platmax 3 runs 1 stalls 349 tailmax 1
+DU21_h4.json RULE onerand K2tested 3000 K5how 863 Tmax 132 Tsum 132 bchecked 28 lagstates 1852 nonstalls 384 nsmax 34 nspctP 0 plateaus 329 platexit 9901 platidle 498 platmax 14 runs 1 stalls 1468 tailmax 9
+DWT20_2803.json RULE onerand K2tested 3000 K5how 1361 Tmax 112 Tsum 112 bchecked 28 lagstates 1525 nonstalls 306 nsmax 29 nspctP 0 plat_gt_movers 17 plateaus 182 platexit 4384 platidle 979 platmax 44 runs 1 stalls 1219 tailmax 8
+FW12_2.json RULE onerand K2tested 3000 K5how 926 Tmax 195 Tsum 195 bchecked 29 lagstates 3006 nonstalls 2776 nsmax 178 nspctP 0 plateaus 219 platexit 1800 platidle 172 platmax 2 runs 1 stalls 230 tailmax 0
+TIMEOUT300 MW32_2.json RULE onerand
+FW16_2.json RULE onerand K2tested 3000 K5how 1222 Tmax 263 Tsum 263 bchecked 26 lagstates 3876 nonstalls 3577 nsmax 241 nspctP 0 plateaus 248 platexit 2248 platidle 247 platmax 3 runs 1 stalls 299 tailmax 0
+FW4_2.json RULE onerand K2tested 3000 K5how 172 Tmax 52 Tsum 52 bchecked 52 lagstates 1377 nonstalls 1321 nsmax 50 nspctP 0 plateaus 56 platexit 122 platidle 5 platmax 1 runs 1 stalls 56 tailmax 1
+FW6_3.json RULE onerand K2tested 3000 K5how 1061 Tmax 159 Tsum 159 bchecked 27 lagstates 2307 nonstalls 2191 nsmax 148 nspctP 0 plateaus 112 platexit 1436 platidle 90 platmax 3 runs 1 stalls 116 tailmax 1
+FW6_4.json RULE onerand K2tested 3000 K5how 1829 Tmax 240 Tsum 240 bchecked 30 lagstates 4389 nonstalls 4268 nsmax 231 nspctP 0 plateaus 121 platexit 1476 platidle 91 platmax 1 runs 1 stalls 121 tailmax 0
+FW8_2.json RULE onerand K2tested 3000 K5how 551 Tmax 124 Tsum 124 bchecked 31 lagstates 1722 nonstalls 1559 nsmax 113 nspctP 0 plateaus 148 platexit 776 platidle 76 platmax 2 runs 1 stalls 163 tailmax 1
+TIMEOUT300 MW26_2.json RULE onerand
+TIMEOUT300 FW8_4.json RULE onerand
+GROW7_n34.json RULE onerand K2tested 3000 K5how 288 Tmax 54 Tsum 54 bchecked 54 lagstates 1461 nonstalls 395 nsmax 16 nspctP 0 plat_gt_movers 39 plateaus 253 platexit 2281 platidle 987 platmax 12 runs 1 stalls 1066 tailmax 4
+GROW8_n53.json RULE onerand K2tested 3000 K5how 642 Tmax 68 Tsum 68 bchecked 68 lagstates 2325 nonstalls 663 nsmax 18 nspctP 0 plat_gt_movers 53 plateaus 396 platexit 3493 platidle 1593 platmax 10 runs 1 stalls 1662 tailmax 3
+HOLD2K_n84.json RULE onerand K2tested 3000 K5how 248 Tmax 67 Tsum 67 bchecked 67 lagstates 2223 nonstalls 480 nsmax 19 nspctP 0 plat_gt_movers 91 plateaus 300 platexit 3465 platidle 1474 platmax 16 runs 1 stalls 1743 tailmax 4
+MW16_2.json RULE onerand K2tested 3000 K5how 297 Tmax 209 Tsum 209 bchecked 29 lagstates 3110 nonstalls 2025 nsmax 136 nspctP 0 plateaus 636 platexit 2572 platidle 973 platmax 4 runs 1 stalls 1085 tailmax 2
+HOLD3K_n125.json RULE onerand K2tested 3000 K5how 655 Tmax 89 Tsum 89 bchecked 29 lagstates 1376 nonstalls 402 nsmax 25 nspctP 0 plateaus 257 platexit 3371 platidle 335 platmax 13 runs 1 stalls 974 tailmax 13
+MW12_2.json RULE onerand K2tested 3000 K5how 183 Tmax 143 Tsum 143 bchecked 29 lagstates 2267 nonstalls 1674 nsmax 103 nspctP 0 plateaus 428 platexit 1493 platidle 535 platmax 5 runs 1 stalls 593 tailmax 0
+MW12_2.json RULE onerand K2tested 3000 K5how 183 Tmax 143 Tsum 143 bchecked 29 lagstates 2267 nonstalls 1674 nsmax 103 nspctP 0 plateaus 428 platexit 1493 platidle 535 platmax 5 runs 1 stalls 593 tailmax 0
+NOTCHECKED-OOM CW16_n.json RULE oneleast

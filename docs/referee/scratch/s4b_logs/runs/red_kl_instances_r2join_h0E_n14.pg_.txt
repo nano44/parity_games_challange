@@ -1,0 +1,8 @@
+GAME red/kl/instances/r2join_h0E_n14.pg 
+GAMES 1
+enum_states 2
+loc_chk 3
+rhos 5
+states 2
+VIOLATIONS 0
+RC 0

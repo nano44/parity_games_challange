@@ -1,0 +1,5 @@
+R1 old once in the text it is applied to: yes
+R2 old once in the text it is applied to: yes
+R3 old once in the text it is applied to: yes
+R4 old once in the text it is applied to: yes
+L-2 + R1-R4 == L-3: True | L-3 sha1 7328e67345e1bb6a8605ccfa4f406d1020eabfdb 4908 bytes; 82 ( 82 ) | «|» 0 | « — » 1 | gauntlet 0 | lines 1

@@ -1,0 +1,14 @@
+PRIO104 n 2 mode free: e-vertices below some beta 92 of 92; odd e 0; odd betas above some e 16; carrier priorities 6..348; c_W 350
+PRIO104 n 2 mode edom: e-vertices below some beta 0 of 92; odd e 0; odd betas above some e 0; carrier priorities 6..372; c_W 374
+PRIO104 n 3 mode free: e-vertices below some beta 133 of 133; odd e 0; odd betas above some e 23; carrier priorities 6..500; c_W 502
+PRIO104 n 3 mode edom: e-vertices below some beta 0 of 133; odd e 0; odd betas above some e 0; carrier priorities 6..536; c_W 538
+PRIO104 n 4 mode free: e-vertices below some beta 174 of 174; odd e 0; odd betas above some e 30; carrier priorities 6..652; c_W 654
+PRIO104 n 4 mode edom: e-vertices below some beta 0 of 174; odd e 0; odd betas above some e 0; carrier priorities 6..700; c_W 702
+PRIO104 n 5 mode free: e-vertices below some beta 215 of 215; odd e 0; odd betas above some e 37; carrier priorities 6..804; c_W 806
+PRIO104 n 5 mode edom: e-vertices below some beta 0 of 215; odd e 0; odd betas above some e 0; carrier priorities 6..864; c_W 866
+PRIO104 n 6 mode free: e-vertices below some beta 256 of 256; odd e 0; odd betas above some e 44; carrier priorities 6..956; c_W 958
+PRIO104 n 6 mode edom: e-vertices below some beta 0 of 256; odd e 0; odd betas above some e 0; carrier priorities 6..1028; c_W 1030
+PRIO104 n 7 mode free: e-vertices below some beta 297 of 297; odd e 0; odd betas above some e 51; carrier priorities 6..1108; c_W 1110
+PRIO104 n 7 mode edom: e-vertices below some beta 0 of 297; odd e 0; odd betas above some e 0; carrier priorities 6..1192; c_W 1194
+PRIO104 n 8 mode free: e-vertices below some beta 338 of 338; odd e 0; odd betas above some e 58; carrier priorities 6..1260; c_W 1262
+PRIO104 n 8 mode edom: e-vertices below some beta 0 of 338; odd e 0; odd betas above some e 0; carrier priorities 6..1356; c_W 1358

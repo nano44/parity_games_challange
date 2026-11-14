@@ -1,0 +1,26 @@
+KEY105 json WC4_2.json (E-DOM priorities) N 20 M 40 |V| 310: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 2
+KEY105 json WC16_2.json (E-DOM priorities) N 68 M 148 |V| 1114: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 2
+KEY105 json FW8_2.json (E-DOM priorities) N 123 M 248 |V| 1869: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 28
+KEY105 json FW16_2.json (E-DOM priorities) N 259 M 528 |V| 3965: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 52
+KEY105 json MW8_2.json (E-DOM priorities) N 84 M 177 |V| 1333: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 52
+KEY105 json MW32_2.json (E-DOM priorities) N 300 M 657 |V| 4909: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 196
+KEY105 json C6G8_n54.json (E-DOM priorities) N 54 M 150 |V| 1114: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 3
+KEY105 json RWX_n95.json (E-DOM priorities) N 95 M 233 |V| 1736: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 3
+KEY105 json DWT20_2803.json (E-DOM priorities) N 102 M 262 |V| 1946: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 2
+KEY105 json DHIB26_2804.json (E-DOM priorities) N 108 M 292 |V| 2162: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 3
+KEY105 json DHIB18_2805.json (E-DOM priorities) N 99 M 301 |V| 2216: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 3
+KEY105 json Kprev_8.json: SKIPPED, not a genome in R104's sense (some W-target is not one level down), so KEY(G*) is not defined
+KEY105 json Ku_16.json (E-DOM priorities) N 156 M 337 |V| 2525: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 100
+KEY105 json Ku_4.json (E-DOM priorities) N 48 M 97 |V| 737: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 28
+KEY105 json Ku_8.json (E-DOM priorities) N 84 M 177 |V| 1333: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 52
+KEY105 json MWR16_2.json (E-DOM priorities) N 156 M 337 |V| 2525: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 100
+KEY105 json MWR4_2.json (E-DOM priorities) N 48 M 97 |V| 737: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 28
+KEY105 json MWR8_2.json (E-DOM priorities) N 84 M 177 |V| 1333: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 52
+KEY105 json k1fail_202.json (E-DOM priorities) N 15 M 45 |V| 340: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 1
+KEY105 json C98_2_2_3.json (E-DOM priorities) N 4 M 10 |V| 84: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 1
+KEY105 json C98_2_3_3.json (E-DOM priorities) N 6 M 14 |V| 114: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 4
+KEY105 json C98_3_3_3.json (E-DOM priorities) N 9 M 22 |V| 173: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 1
+KEY105 json C98_3_4_3.json (E-DOM priorities) N 12 M 29 |V| 225: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 0
+KEY105 json C98_4_4_3.json (E-DOM priorities) N 16 M 40 |V| 306: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 1
+KEY105 json C98_4_5_3.json (E-DOM priorities) N 20 M 52 |V| 394: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 2
+KEY105 json C98_5_5_3.json (E-DOM priorities) N 25 M 59 |V| 448: s3fail 0 keyfail 0 endfail 0 wrong 0 keymono 0 valmono 0 | L* 2

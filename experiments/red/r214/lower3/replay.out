@@ -1,0 +1,43 @@
+# L-RED R214 replay of L-LOWER 3 instances (byte copies of claude/l-lower 4d747490 experiments/lower/l3/kill/*.json), 2026-11-07 03:51Z (date -u)
+# cwd experiments/red; tools: r214/memb.py (R104/R110 membership), r214/lowrep.py (r187/ideal.py stored-start replay + r189/lemck.py + box150 check.py)
+# lemck needs gates/betas renumbered 0..M-1: section 4 runs lowrep on order-preserving renumbered copies (r214/renum.py -> r214/lower3/rn/), same runs
+# 1. sha1sum r214/lower3/*.json
+5301c716f68f219bda2806f29b317c94e0ed5df0  r214/lower3/KILL_M2D_d6_mu13.json
+d96c2b3657e79c410b180580d829366cbecc9ea4  r214/lower3/KILL_M2D_d8_mu21.json
+b114f4cdefaf1da6818e15512bc1fdb19c249e59  r214/lower3/REC_d10_mu32.json
+cc94dc9c46ef63f7a3a54b536d9d3b38fdee5255  r214/lower3/REC_d10_tower_mu30.json
+bbdb33d963d198c439aec63c8c75b0f080043510  r214/lower3/REC_d11_mu40.json
+28e62d513b697ab3083da6310af631c14e1fc830  r214/lower3/REC_d12_mu42.json
+62917c189113bee004d02ada48803f235143a9eb  r214/lower3/REC_d7_mu17.json
+18d26cec2651290dfd9d137712bdadbb36d6f3d8  r214/lower3/REC_d8_mu24.json
+2d034e7fcc3a9261e2fbdcaf5eae9dd5f38a2313  r214/lower3/REC_d9_mu29.json
+# 2. python3 r214/memb.py r214/lower3/*.json
+r214/lower3/KILL_M2D_d6_mu13.json: d 6 PASS
+r214/lower3/KILL_M2D_d8_mu21.json: d 8 PASS
+r214/lower3/REC_d10_mu32.json: d 10 PASS
+r214/lower3/REC_d10_tower_mu30.json: d 10 PASS
+r214/lower3/REC_d11_mu40.json: d 11 PASS
+r214/lower3/REC_d12_mu42.json: d 12 PASS
+r214/lower3/REC_d7_mu17.json: d 7 PASS
+r214/lower3/REC_d8_mu24.json: d 8 PASS
+r214/lower3/REC_d9_mu29.json: d 9 PASS
+# 3. python3 r214/lowrep.py r214/lower3/*.json   (lemck field empty: crashes on non-0..M-1 gates)
+KILL_M2D_d6_mu13.json: d 6 T 13 end stuck | max mover 8 lev 4 Xi-target 1 moves 13 2d 12 >2d | moves [1, 1, 3, 3, 6, 2, 6, 6, 13, 7, 1, 1] | F [2, 6, 8, 12, 20, 2] |  | box150 TOTAL genomes 1 runs 1 steps 13 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+KILL_M2D_d8_mu21.json: d 8 T 24 end stuck | max mover 15 lev 7 Xi-target 1 moves 21 2d 16 >2d | moves [1, 1, 3, 1, 3, 4, 6, 7, 5, 5, 1, 1, 10, 11, 1, 21] | F [2, 4, 7, 13, 10, 2, 21, 22] |  | box150 TOTAL genomes 1 runs 1 steps 24 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d10_mu32.json: d 10 T 33 end stuck | max mover 15 lev 7 Xi-target 1 moves 32 2d 20 >2d | moves [1, 1, 3, 1, 4, 4, 4, 8, 4, 8, 4, 4, 16, 16, 13, 32, 4, 3, 4, 1] | F [2, 4, 8, 12, 12, 8, 32, 45, 7, 5] |  | box150 TOTAL genomes 1 runs 1 steps 33 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d10_tower_mu30.json: d 10 T 35 end stuck | max mover 8 lev 4 Xi-target 1 moves 30 2d 20 >2d | moves [1, 1, 3, 3, 7, 7, 15, 15, 30, 7, 8, 2, 8, 1, 4, 1, 4, 1, 1, 1] | F [2, 6, 14, 30, 37, 10, 9, 5, 5, 2] |  | box150 TOTAL genomes 1 runs 1 steps 35 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d11_mu40.json: d 11 T 44 end stuck | max mover 15 lev 7 Xi-target 1 moves 40 2d 22 >2d | moves [1, 1, 3, 1, 4, 4, 9, 9, 4, 10, 5, 6, 20, 20, 10, 40, 1, 5, 1, 5, 4, 5] | F [2, 4, 8, 18, 14, 11, 40, 50, 6, 6, 9] |  | box150 TOTAL genomes 1 runs 1 steps 44 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d12_mu42.json: d 12 T 48 end stuck | max mover 15 lev 7 Xi-target 1 moves 42 2d 24 >2d | moves [1, 1, 3, 1, 4, 4, 9, 9, 4, 10, 7, 7, 21, 21, 11, 42, 1, 8, 1, 0, 3, 2, 4, 1] | F [2, 4, 8, 18, 14, 14, 42, 53, 9, 1, 5, 5] |  | box150 TOTAL genomes 1 runs 1 steps 48 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d7_mu17.json: d 7 T 17 end stuck | max mover 8 lev 4 Xi-target 1 moves 17 2d 14 >2d | moves [1, 1, 3, 3, 7, 3, 9, 8, 17, 8, 3, 4, 1, 1] | F [2, 6, 10, 17, 25, 7, 2] |  | box150 TOTAL genomes 1 runs 1 steps 17 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d8_mu24.json: d 8 T 25 end stuck | max mover 8 lev 4 Xi-target 1 moves 24 2d 16 >2d | moves [1, 1, 3, 2, 6, 6, 12, 12, 24, 6, 1, 5, 3, 1, 1, 1] | F [2, 5, 12, 24, 30, 6, 4, 2] |  | box150 TOTAL genomes 1 runs 1 steps 25 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d9_mu29.json: d 9 T 31 end stuck | max mover 15 lev 7 Xi-target 1 moves 29 2d 18 >2d | moves [1, 1, 3, 1, 4, 4, 5, 1, 5, 6, 3, 13, 14, 14, 4, 29, 10, 1] | F [2, 4, 8, 6, 11, 16, 28, 33, 11] |  | box150 TOTAL genomes 1 runs 1 steps 31 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+# 4. python3 r214/lowrep.py r214/lower3/rn/*.json   (renumbered copies)
+KILL_M2D_d6_mu13.json: d 6 T 13 end stuck | max mover 8 lev 4 Xi-target 1 moves 13 2d 12 >2d | moves [1, 1, 3, 3, 6, 2, 6, 6, 13, 7, 1, 1] | F [2, 6, 8, 12, 20, 2] | MCK KILL_M2D_d6_mu13.json L 13 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0 | box150 TOTAL genomes 1 runs 1 steps 13 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+KILL_M2D_d8_mu21.json: d 8 T 24 end stuck | max mover 15 lev 7 Xi-target 1 moves 21 2d 16 >2d | moves [1, 1, 3, 1, 3, 4, 6, 7, 5, 5, 1, 1, 10, 11, 1, 21] | F [2, 4, 7, 13, 10, 2, 21, 22] | MCK KILL_M2D_d8_mu21.json L 24 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0 | box150 TOTAL genomes 1 runs 1 steps 24 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d10_mu32.json: d 10 T 33 end stuck | max mover 15 lev 7 Xi-target 1 moves 32 2d 20 >2d | moves [1, 1, 3, 1, 4, 4, 4, 8, 4, 8, 4, 4, 16, 16, 13, 32, 4, 3, 4, 1] | F [2, 4, 8, 12, 12, 8, 32, 45, 7, 5] | LEMCK REC_d10_mu32.json L 33 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0 | box150 TOTAL genomes 1 runs 1 steps 33 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d10_tower_mu30.json: d 10 T 35 end stuck | max mover 8 lev 4 Xi-target 1 moves 30 2d 20 >2d | moves [1, 1, 3, 3, 7, 7, 15, 15, 30, 7, 8, 2, 8, 1, 4, 1, 4, 1, 1, 1] | F [2, 6, 14, 30, 37, 10, 9, 5, 5, 2] | K REC_d10_tower_mu30.json L 35 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0 | box150 TOTAL genomes 1 runs 1 steps 35 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d11_mu40.json: d 11 T 44 end stuck | max mover 15 lev 7 Xi-target 1 moves 40 2d 22 >2d | moves [1, 1, 3, 1, 4, 4, 9, 9, 4, 10, 5, 6, 20, 20, 10, 40, 1, 5, 1, 5, 4, 5] | F [2, 4, 8, 18, 14, 11, 40, 50, 6, 6, 9] | LEMCK REC_d11_mu40.json L 44 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0 | box150 TOTAL genomes 1 runs 1 steps 44 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d12_mu42.json: d 12 T 48 end stuck | max mover 15 lev 7 Xi-target 1 moves 42 2d 24 >2d | moves [1, 1, 3, 1, 4, 4, 9, 9, 4, 10, 7, 7, 21, 21, 11, 42, 1, 8, 1, 0, 3, 2, 4, 1] | F [2, 4, 8, 18, 14, 14, 42, 53, 9, 1, 5, 5] | LEMCK REC_d12_mu42.json L 48 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0 | box150 TOTAL genomes 1 runs 1 steps 48 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d7_mu17.json: d 7 T 17 end stuck | max mover 8 lev 4 Xi-target 1 moves 17 2d 14 >2d | moves [1, 1, 3, 3, 7, 3, 9, 8, 17, 8, 3, 4, 1, 1] | F [2, 6, 10, 17, 25, 7, 2] | LEMCK REC_d7_mu17.json L 17 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0 | box150 TOTAL genomes 1 runs 1 steps 17 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d8_mu24.json: d 8 T 25 end stuck | max mover 8 lev 4 Xi-target 1 moves 24 2d 16 >2d | moves [1, 1, 3, 2, 6, 6, 12, 12, 24, 6, 1, 5, 3, 1, 1, 1] | F [2, 5, 12, 24, 30, 6, 4, 2] | LEMCK REC_d8_mu24.json L 25 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0 | box150 TOTAL genomes 1 runs 1 steps 25 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF
+REC_d9_mu29.json: d 9 T 31 end stuck | max mover 15 lev 7 Xi-target 1 moves 29 2d 18 >2d | moves [1, 1, 3, 1, 4, 4, 5, 1, 5, 6, 3, 13, 14, 14, 4, 29, 10, 1] | F [2, 4, 8, 6, 11, 16, 28, 33, 11] | LEMCK REC_d9_mu29.json L 31 stuck viol SBAR 0 TAU 0 ESC 0 W 0 AV 0 KEY 0 FB 0 | box150 TOTAL genomes 1 runs 1 steps 31 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYF

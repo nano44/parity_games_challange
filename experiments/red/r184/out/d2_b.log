@@ -1,0 +1,3 @@
+START n 72 3503 {'FL': 3, 'STRETCHES': 1, 'CYCST': 1, 'LCYC': 3, 'LACYC': 0, 'HMAX': 0, 'CASCVIOL': 0, 'SELFL': 15, 'CNMOV': 0, 'CNMAX': 0, 'LFL': 3}
+IT 606 {'FL': 4, 'STRETCHES': 1, 'CYCST': 1, 'LCYC': 4, 'LACYC': 0, 'HMAX': 0, 'CASCVIOL': 0, 'SELFL': 13, 'CNMOV': 0, 'CNMAX': 0, 'LFL': 4}
+BEST n 72 {'FL': 4, 'STRETCHES': 1, 'CYCST': 1, 'LCYC': 4, 'LACYC': 0, 'HMAX': 0, 'CASCVIOL': 0, 'SELFL': 10, 'CNMOV': 0, 'CNMAX': 0, 'LFL': 4}

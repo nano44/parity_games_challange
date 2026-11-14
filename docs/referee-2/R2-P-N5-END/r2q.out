@@ -1,0 +1,54 @@
+packet	SELF(fixes/packet)	FREEZE packet P-N5-END: E0-E4, TERM-XI, ENDGAME-3, ENDGAME-3-N5, EXACT-L (IDEAL-ACYC), and END-T3 marked condi
+packet	N5-ssi-global.md	Ξσ = valuation of every vertex under σ and Odd's OPTIMAL counterstrategy σ̄ (minimising this order at every ve
+packet	N5-ssi-global.md	Odd's side: everything on the DUAL game G^d (owner swapped, Ω + 1); τ is an "Even" strategy of G^d; Ξτ, τ̄ (= 
+packet	N5-ssi-global.md	S2 Improving edges: Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}; Iτ the sam
+packet	RESULTS.md,N5-ssi-global.md,P-N5-REACH.md	highest even priority, else lowest odd priority
+packet	N5-ssi-global.md	Odd's v (the rule on G^d), in G's terms: highest ODD Ω(w), else lowest EVEN Ω(w)
+packet	N5-ssi-global.md	S4 Iteration (one iteration = one pass with Iσ ∪ Iτ ≠ ∅; both steps computed from the SAME (σ, τ), applied tog
+packet	N5-ssi-global.md	If Iσ ≠ ∅: A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v. Arena H: Even v keeps only edges to A(v); Odd v keeps
+packet	N5-ssi-global.md	b. If Iτ ≠ ∅: A(v) = {τ(v)} ∪ {w : (v, w) ∈ Iτ} for Odd v.
+packet	N5-ssi-global.md	c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with an improving edge set σ_new(v) = the
+packet	N5-ssi-global.md	FIX 3 (S4c, A7). In a fallback iteration with Iσ ≠ ∅ only σ changes (τ_new = τ)
+packet	N5-ssi-global.md	S5 Stop when Iσ = Iτ = ∅.
+packet	N5-ssi-global.md	if c is odd, longer is better for Even; if c even, shorter is better
+packet	RESULTS.md,P-N5-XICYC.md	with ONE change in S4a
+packet	P-N5-XICYC.md	SPEC S1-S5 with ONE change in S4a. At every Even v with |A(v)| ≥ 2 that is not its own H-cycle node, σ_new(v) 
+packet	RESULTS.md,P-N5-REACH.md	used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima; and S4a's σ_new, S1's output on the
+packet	RESULTS.md,P-N5-REACH.md	Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β
+packet	RESULTS.md,P-N5-REACH.md	each with a W-target of level lev(x) − 1 (none at level 0)
+packet	RESULTS.md,P-N5-REACH.md	β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone
+packet	RESULTS.md,P-N5-REACH.md	e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+packet	RESULTS.md,P-N5-REACH.md	an unused even self-loop of priority 2; c_W's priority top is the least even number at least 2 above every oth
+packet	RESULTS.md,P-N5-REACH.md	a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2}, K3 (Even, to
+packet	RESULTS.md,P-N5-REACH.md	with start σ = the genome start at movers, β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1, K3 → K
+packet	RESULTS.md,P-N5-REALIZE.md	G is in IDEAL-ACYC iff its
+packet	RESULTS.md,P-N5-REALIZE.md	Ξ-graph is ACYCLIC (self-loops count as cycles).
+packet	RESULTS.md	the game Γ3(G) obtained from Γ(G) by 4M + 4 single-successor Even pads of priority ≤ 2 (pA on K0 → K3, s on K1
+packet	RESULTS.md	has S3's start pair equal to R104's stated start transported through the pads (Lemma S3-START)
+packet	RESULTS.md	RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome
+packet	P-N5-REACH.md	In the standard state, Iτ = ∅, so S4b leaves τ unchanged.
+packet	RESULTS.md	(a) Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(σ)}.
+packet	RESULTS.md	≺ is a strict partial order on strategies and every non-empty switch of improvements goes strictly up in ≺. Co
+packet	RESULTS.md,P-N5-REACH.md	Let G ∈ IDEAL-ACYC with IDEAL run s_0 → s_1 → … → s_L, L = L(G). Then the N5 run of Γ3(G) FROM S3 has states 0
+packet	RESULTS.md	N5′-xi from S3 on Γ3(G) visits only standard states and makes Howard steps at the movers until its first fallb
+packet	RESULTS.md	Theorem REACH3-CYC, CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome
+packet	N5-ssi-global.md,P-N5-REACH.md	Iτ computed there
+packet	P-N5-XICYC.md	pe at every gate
+packet	SELF(fixes/packet)	pe at every gate, K2 → K2
+packet	SELF(fixes/packet)	one fallback, 3 iterations from it
+packet	SELF(fixes/packet)	ctrl1
+packet	SELF(fixes/packet)	ctrl2
+packet	RESULTS.md,N5-ssi-global.md,P-N5-XICYC.md,P-N5-REACH.md,DECISIONS.md,P-N5-REALIZE.md	late
+packet	SELF(fixes/packet)	BOX 195 END
+packet	RESULTS.md	ctrl
+packet	SELF(fixes/packet)	P-N5-END
+L-2	RESULTS.md,P-N5-REALIZE.md	Ξ-graph is ACYCLIC (self-loops count as cycles)
+L-2	RESULTS.md	CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome
+L-2	RESULTS.md,P-N5-XICYC.md	T3 is the first state at which no mover has a strictly better successor in Γ3
+L-2	SELF(fixes/packet)	Hypotheses of every row: under the standing SPEC premise 1E-N3 (RESULTS R57 (b)), as in RESULTS R104 / R117.
+L-2	P-N5-REACH.md	In the standard state, Iτ = ∅, so S4b leaves τ unchanged.
+L-2	RESULTS.md	RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome
+L-2	RESULTS.md,P-N5-REACH.md	used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima; and S4a's σ_new
+L-2	RESULTS.md	every non-empty switch of improvements goes strictly up in ≺
+L-2	SELF(fixes/packet)	one fallback, 3 iterations from it
+quotes 53  not in trunk sources 9  (trunk a1decf9a0)

@@ -1,0 +1,11 @@
+{'skipped': 175, 'genomes': 200, 'k1fail': 1, 'maxflip': 4, 'maxT3': 6, 'maxT3perN': 1.33}
+{'skipped': 361, 'genomes': 400, 'k1fail': 1, 'maxflip': 4, 'maxT3': 7, 'maxT3perN': 1.5}
+{'skipped': 532, 'genomes': 600, 'k1fail': 3, 'maxflip': 4, 'maxT3': 7, 'maxT3perN': 1.5}
+{'skipped': 704, 'genomes': 800, 'k1fail': 3, 'maxflip': 4, 'maxT3': 7, 'maxT3perN': 1.5}
+{'skipped': 857, 'genomes': 1000, 'k1fail': 3, 'maxflip': 4, 'maxT3': 7, 'maxT3perN': 1.5}
+{'skipped': 1030, 'genomes': 1200, 'k1fail': 3, 'maxflip': 4, 'maxT3': 8, 'maxT3perN': 1.5}
+{'skipped': 1214, 'genomes': 1400, 'k1fail': 6, 'maxflip': 4, 'maxT3': 8, 'maxT3perN': 1.5}
+{'skipped': 1395, 'genomes': 1600, 'k1fail': 6, 'maxflip': 4, 'maxT3': 8, 'maxT3perN': 1.5}
+{'skipped': 1580, 'genomes': 1800, 'k1fail': 6, 'maxflip': 4, 'maxT3': 8, 'maxT3perN': 1.5}
+{'skipped': 1728, 'genomes': 2000, 'k1fail': 7, 'maxflip': 4, 'maxT3': 8, 'maxT3perN': 1.67}
+FINAL mode 2 ctrl 0 {'skipped': 1728, 'genomes': 2000, 'k1fail': 7, 'maxflip': 4, 'maxT3': 8, 'maxT3perN': 1.67}

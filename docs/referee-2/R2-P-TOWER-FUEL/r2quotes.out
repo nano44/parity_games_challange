@@ -1,0 +1,13 @@
+QUOTE OK in R105 : the Ξ-order of β-sets is the order of the integers Σ ±2^rank (+ for even parity), so … the ...
+QUOTE OK in R113 : on 𝓛^R_d, for 1 ≤ l ≤ d − 1 and every state s of a run, both movers 2l and 2l + 1 have KP_ ...
+QUOTE NOT FOUND: signed, not landed
+R110 phrase OK : option k of a mover of level l ≥ 1 W-pointing to mover 2(l − 1) + k
+R110 phrase OK : movers 2l and 2l + 1 on level l, all of degree 2, no other movers
+R113 phrase OK : c_l(s) the option index k for which mover 2(l − 1) + k has the smaller current key under s
+R113 phrase OK : γ_l(j) := [g(2l, j) < g(2l + 1, j)] with g(x, k) the gate index of option (x, k)
+R113 phrase OK : on 𝓛^R_d F(l) the number of steps at which the pair (2l, 2l + 1) flips
+R113 phrase OK : a flip of (u, w) at step t a change between s_(t−1) and s_t of the order of the keys of their current options
+R113 phrase OK : cv_s(z) the integer value of z's current option (R105 ENC)
+R113 phrase OK : on acyclic Ξ-graphs
+R105 phrase OK : at any degree: (ENC)
+R104 phrase OK : and the run stops when nothing is available or nothing changes

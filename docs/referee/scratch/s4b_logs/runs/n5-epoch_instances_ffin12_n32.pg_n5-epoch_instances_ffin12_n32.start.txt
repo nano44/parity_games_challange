@@ -1,0 +1,8 @@
+GAME n5-epoch/instances/ffin12_n32.pg n5-epoch/instances/ffin12_n32.start
+GAMES 1
+enum_states 1
+loc_chk 1
+rhos 2
+states 1
+VIOLATIONS 0
+RC 0

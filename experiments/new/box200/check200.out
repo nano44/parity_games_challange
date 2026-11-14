@@ -1,0 +1,7 @@
+CX4_n21.json T3 10 selffail 0 tcfail 0 swfail 0 leapfail 0 | ytops 728 returns 17 maxc 5 maxused 4 maxS 4 maxsumS 6 maxsw 4 maxDhib 6 maxsumD 12
+RWX_n95.json T3 12 selffail 0 tcfail 0 swfail 0 leapfail 0 | ytops 2644 returns 17 maxc 2 maxused 2 maxS 2 maxsumS 2 maxsw 3 maxDhib 7 maxsumD 8
+C6G8_n54.json T3 17 selffail 0 tcfail 0 swfail 0 leapfail 0 | ytops 2598 returns 54 maxc 6 maxused 6 maxS 6 maxsumS 6 maxsw 6 maxDhib 8 maxsumD 16
+ctrl1 CX4_n21.json T3 10 selffail 689 tcfail 420 swfail 0 leapfail 0 | ytops 728 returns 17 maxc 5 maxused 4 maxS 4 maxsumS 4 maxsw 4 maxDhib 6 maxsumD 12
+ctrl2 CX4_n21.json T3 10 selffail 728 tcfail 442 swfail 0 leapfail 0 | ytops 728 returns 17 maxc 5 maxused 4 maxS 4 maxsumS 0 maxsw 4 maxDhib 6 maxsumD 11
+ctrl3 CX4_n21.json T3 10 selffail 0 tcfail 0 swfail 22 leapfail 0 | ytops 728 returns 17 maxc 5 maxused 4 maxS 4 maxsumS 6 maxsw 4 maxDhib 6 maxsumD 12
+ctrl4 CX4_n21.json T3 10 selffail 0 tcfail 0 swfail 0 leapfail 17 | ytops 728 returns 17 maxc 5 maxused 4 maxS 4 maxsumS 6 maxsw 4 maxDhib 6 maxsumD 12

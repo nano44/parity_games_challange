@@ -1,0 +1,6 @@
+corpus files at d 3: 62
+class PHXVDBG d 3 genomes 1500 transitions 81704 distinct-dec-rows 75584 distinct-states 99456 features 184
+FEASIBLE min max Phi = 13.9193
+weights: budn2=6.37 vr2=5.21 pair0_1101=-2.95 pair0_1000=-2.71 u1=2.7 pair0_0110=2.68 pair0_0101=-2.65 pair0_1001=-2.52 k0=2.46 z0=-2.33 pair0_0000=-2.22 budn5=2.21 pair0_0001=-2.14 vr4=-2.02 pair0_1110=2.02 pair0_1111=-1.97 budn3=1.61 gapn5=-1.6 u5=1.56 u2=1.46 k4=1.31 pair2_1000=-1.3 pair1_1101=1.28 pair2_1101=-1.18 pair2_1111=-1.13 pair2_1100=-1.12 pair2_1001=-0.901 zH1_1=-0.866 gapn4=-0.853 pair1_0111=0.807 pair1_0001=-0.75 pair1_0101=0.748 uH0_6=0.719 pair1_0000=-0.667 uH2_1=0.614 pair1_0100=-0.57 uH1_6=-0.569 k3=0.557 pair1_0010=-0.555 zH2_1=-0.549 const=0
+dual: 104 decrease rows in support, sum of their multipliers 13.9193 (= the bound)
+dual mass by genome source: rand:8.78 now1_d3_5.json:1.62 ext_d3_t10.json:1.14 ext_d3_8.json:0.544 climb_SUM_m2_s2.json:0.42 iso_d3_6.json:0.383 now_d3_5.json:0.346 iso_d3_7.json:0.22 kf1_d3_5.json:0.188 kf8_d3_t8.json:0.104 climb_SUM_m2_s4.json:0.0601 kf2_d3_7.json:0.038

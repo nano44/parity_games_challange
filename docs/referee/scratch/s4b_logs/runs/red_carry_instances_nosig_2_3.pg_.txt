@@ -1,0 +1,8 @@
+GAME red/carry/instances/nosig_2_3.pg 
+GAMES 1
+enum_states 1
+loc_chk 2
+rhos 4
+states 1
+VIOLATIONS 0
+RC 0

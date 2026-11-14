@@ -1,0 +1,28 @@
+OK   R104        line 9864 | each with a W-target of level lev(x) − 1 (none at level 0), a Ξ-target xt(x, k), a mover or the exit X
+OK   R104        line 9864 | Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β
+OK   R104        line 9864 | β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone
+OK   R104        line 9864 | e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+OK   R104        line 9864 | an unused even self-loop of priority 2; c_W's priority top is the least even number at least 2 above every oth
+OK   R104        line 9864 | a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2}, K3 (Even, to
+OK   R104        line 9864 | with start σ = the genome start at movers, β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1, K3 → K
+OK   R104        line 10085 | the exact e-priorities to packet §3.1
+OK   R118        line 13677 | The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is unrestricted
+OK   R118        line 13682 | (b) Facts F1-F6 (§3 l. 68-83) with F4 REPLACED by F4′
+OK   P-N5-XICYC  line - | Ω_t ⊴ Ω_(t+1) pointwise, for every step t.
+OK   P-N5-XICYC  line - | if Ω(v) ⊴ Ω′(v) and Λ ≠ Λ′, then the reward of Λ′ is strictly larger. Distinct vertices have distinct rewards.
+OK   P-N5-XICYC  line - | let v be a vertex with Λ_t(v) ≠ v. Then Ω_t(v) = ext(v, Ω_t(nx_t(v))), … and ext(v, (Λ, Π, k)) := (Λ, Π ∪ {v i
+OK   R118        line 13691 | C ≤ n·(2M + 2).
+OK   R118        line 13691 | (each vertex's Λ moves only to a vertex of strictly larger reward among at most 2M + 3 possible cycle nodes)
+OK   R104        line 9864 | one edge to the W-target or to … c_W
+R104 heading at l. 9864 : ### R104 [refereed-only]
+R118 heading at l. 13607 : ### R118 [refereed-only]
+l. 13677 contains '(a) Definitions' : True
+l. 13682 contains '(b) Facts F1-F6' : True
+l. 13691 contains '(e) Lemma CYC-COUNT' : True
+l. 10085 contains 'the exact e-priorities to packet §3.1' : True
+XICYC l. 69 : - F1 (from [R15a]): Ω_t ⊴ Ω_(t+1) pointwise, for every step t. A Howard step switches exactly at the movers where the new successor is
+XICYC l. 70 :   strictly better, so I is non-empty and unambiguous (one switch per vertex).
+XICYC l. 71 : - F2 (from [VJ]): if Ω(v) ⊴ Ω′(v) and Λ ≠ Λ′, then the reward of Λ′ is strictly larger. Distinct vertices have distinct rewards.
+XICYC l. 72 : - F3 (from [VJ], plays of a positional pair): let v be a vertex with Λ_t(v) ≠ v. Then Ω_t(v) = ext(v, Ω_t(nx_t(v))), where nx_t(v) is
+XICYC l. 73 :   σ_t(v) for an Even v and σ̄_t(v) for an Odd v, and ext(v, (Λ, Π, k)) := (Λ, Π ∪ {v if v is more relevant than Λ}, k + 1).
+XICYC l. 74 :   Also Ω_t(w) = (w, ∅, 0) when Λ_t(w) = w.

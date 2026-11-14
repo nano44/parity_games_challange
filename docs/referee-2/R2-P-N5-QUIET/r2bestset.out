@@ -1,0 +1,18 @@
+rd3_d4.json genomes 1 states 19 pairs 152 diffbest 0 diffbetter 0
+RS2_L32M6.json genomes 1 states 42 pairs 3234 diffbest 0 diffbetter 0
+CLR_k8s16.json genomes 1 states 29 pairs 1537 diffbest 0 diffbetter 0
+FPORT_n2.json genomes 1 states 15 pairs 810 diffbest 0 diffbetter 0
+FPORT_n3.json genomes 1 states 17 pairs 1292 diffbest 0 diffbetter 0
+LEAP_k8.json genomes 1 states 18 pairs 666 diffbest 0 diffbetter 0
+RS2.json genomes 1 states 11 pairs 198 diffbest 0 diffbetter 0
+RS2_L8M6.json genomes 1 states 18 pairs 522 diffbest 0 diffbetter 0
+RS3.json genomes 1 states 14 pairs 532 diffbest 0 diffbetter 0
+RSG_K4.json genomes 1 states 8 pairs 112 diffbest 0 diffbetter 0
+cR_d2_w8_R22.json genomes 1 states 25 pairs 400 diffbest 0 diffbetter 0
+rd2_d9.json genomes 1 states 22 pairs 396 diffbest 0 diffbetter 0
+rd2_d10.json genomes 1 states 27 pairs 540 diffbest 0 diffbetter 0
+rd3_d7.json genomes 1 states 26 pairs 364 diffbest 0 diffbetter 0
+rf_d5.json genomes 1 states 12 pairs 120 diffbest 0 diffbetter 0
+rand191_s2.jsonl genomes 1000 states 3517 pairs 30132 diffbest 0 diffbetter 0
+own_s33.jsonl genomes 1000 states 2827 pairs 19156 diffbest 0 diffbetter 0
+exit 0

@@ -1,0 +1,3 @@
+START n 24 0 {'FVCH': 0, 'L': 0, 'CROSS': 0, 'K': 3}
+IT 501 {'FVCH': 0, 'L': 1, 'CROSS': 0, 'K': 4, 'FVMAX': 0}
+BEST n 24 {'FVCH': 0, 'L': 1, 'CROSS': 0, 'K': 3, 'FVMAX': 0}

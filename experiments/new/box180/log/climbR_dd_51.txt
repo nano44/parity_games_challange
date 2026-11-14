@@ -1,0 +1,1 @@
+climbR_d5_s51: best maxR 10 at (4, 0) with T 14 (N 10)

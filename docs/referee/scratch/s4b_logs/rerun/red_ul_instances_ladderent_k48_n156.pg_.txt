@@ -1,0 +1,9 @@
+GAME red/ul/instances/ladderent_k48_n156.pg
+GAMES 1
+enum_states 50
+keep_chk 49
+loc_chk 50
+rhos 100
+states 50
+VIOLATIONS 0
+RC 0

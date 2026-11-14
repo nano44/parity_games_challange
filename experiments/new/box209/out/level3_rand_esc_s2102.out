@@ -1,0 +1,1 @@
+rand esc g3 ctrl 0 seed 2102 genomes 300 TOTALS monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 0 l3fail 0 phifail 0 stallnocyc 0 nofvs 0 rstall 0 boundfail 0 winstall 0 wbeta 0 wl3fail 0 wmid 0 wbound 0 stalls 25 stallloud 0 plat 21 windows 504 MAX T 5 k 4 levels 2 phivals 4 platmax 2 wmax 2 wlev 1 DR 3

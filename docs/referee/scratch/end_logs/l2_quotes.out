@@ -1,0 +1,9 @@
+OK   ['RESULTS.md'] | Ξ-graph is ACYCLIC (self-loops count as cycles)
+OK   ['RESULTS.md'] | CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome
+OK   ['RESULTS.md', 'P-N5-XICYC.md'] | T3 is the first state at which no mover has a strictly better successor in Γ3
+OK   ['P-N5-END-fixes.md@2fcee038'] | Hypotheses of every row: under the standing SPEC premise 1E-N3 (RESULTS R57 (b)), as in RESULTS R104 / R117.
+OK   ['P-N5-REACH.md'] | In the standard state, Iτ = ∅, so S4b leaves τ unchanged.
+OK   ['RESULTS.md'] | RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome
+OK   ['RESULTS.md', 'P-N5-REACH.md'] | used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima; and S4a's σ_new
+OK   ['RESULTS.md'] | every non-empty switch of improvements goes strictly up in ≺
+NONE [] | one fallback, 3 iterations from it

@@ -1,0 +1,11 @@
+restart 0 it 195 score 2 {'T': 2, 'M': [1, 0, 1], 'DREL': [0, 1], 'D2': [0, 0], 'KCHMAX': 1}
+restart 0 it 518 score 3 {'T': 3, 'M': [1, 1, 1], 'DREL': [1, 1], 'D2': [0, 0], 'KCHMAX': 2}
+restart 1 it 262 score 2 {'T': 2, 'M': [1, 0, 1], 'DREL': [0, 1], 'D2': [0, 0], 'KCHMAX': 1}
+restart 1 it 1725 score 3 {'T': 3, 'M': [1, 2, 1], 'DREL': [2, 1], 'D2': [1, 0], 'KCHMAX': 2}
+restart 2 it 131 score 2 {'T': 2, 'M': [1, 1, 2], 'DREL': [1, 1], 'D2': [0, 0], 'KCHMAX': 2}
+restart 2 it 673 score 3 {'T': 3, 'M': [1, 1, 1], 'DREL': [1, 1], 'D2': [0, 0], 'KCHMAX': 2}
+restart 3 it 99 score 2 {'T': 2, 'M': [0, 1, 1], 'DREL': [1, 1], 'D2': [0, 0], 'KCHMAX': 1}
+restart 3 it 337 score 3 {'T': 3, 'M': [1, 1, 2], 'DREL': [1, 1], 'D2': [0, 0], 'KCHMAX': 2}
+restart 4 it 119 score 2 {'T': 2, 'M': [0, 1, 1], 'DREL': [1, 1], 'D2': [0, 0], 'KCHMAX': 1}
+restart 4 it 1176 score 3 {'T': 3, 'M': [1, 1, 2], 'DREL': [1, 2], 'D2': [0, 1], 'KCHMAX': 1}
+BEST 3 {'T': 3, 'M': [1, 2, 2], 'DREL': [2, 2], 'D2': [1, 1], 'KCHMAX': 2}

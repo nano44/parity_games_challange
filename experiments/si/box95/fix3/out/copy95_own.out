@@ -1,0 +1,22 @@
+own ND2_4.json T 31 | L1 R 18 | L2 R 18 copy 1
+own ND2_8.json T 55 | L1 R 34 | L2 R 34 copy 1
+own ND3_4.json T 31 | L1 R 18 | L2 R 18 copy 1 | L3 R 18 copy 1
+own ND3_8.json T 55 | L1 R 34 | L2 R 34 copy 1 | L3 R 34 copy 1
+own NDB2_4.json T 31 | L1 R 18 | L2 R 18 copy 1
+own NDB2_8.json T 55 | L1 R 34 | L2 R 34 copy 1
+own NDB3_4.json T 31 | L1 R 18 | L2 R 18 copy 1 | L3 R 18 copy 1
+own NDB3_8.json T 55 | L1 R 34 | L2 R 34 copy 1 | L3 R 34 copy 1
+own NDV2_4.json T 31 | L1 R 18 | L2 R 18 copy 1
+own NDV2_8.json T 55 | L1 R 34 | L2 R 34 copy 1
+own NDV3_4.json T 31 | L1 R 18 | L2 R 18 copy 1 | L3 R 18 copy 1
+own NDV3_8.json T 55 | L1 R 34 | L2 R 34 copy 1 | L3 R 34 copy 1
+own NP2_4.json T 31 | L1 R 18 | L2 R 18 copy 1
+own NP2_8.json T 55 | L1 R 34 | L2 R 34 copy 1
+own NP3_4.json T 31 | L1 R 18 | L2 R 18 copy 1 | L3 R 18 copy 1
+own NP3_8.json T 55 | L1 R 34 | L2 R 34 copy 1 | L3 R 34 copy 1
+own NSQ2_4.json T 103 | L1 R 18 | L2 R 22 copy 0
+own NSQ3_4.json T 271 | L1 R 18 | L2 R 22 copy 0 | L3 R 26 copy 0
+own NV2_4.json T 31 | L1 R 18 | L2 R 18 copy 1
+own NV2_8.json T 55 | L1 R 34 | L2 R 34 copy 1
+own NV3_4.json T 31 | L1 R 18 | L2 R 18 copy 1 | L3 R 18 copy 1
+own NV3_8.json T 55 | L1 R 34 | L2 R 34 copy 1 | L3 R 34 copy 1

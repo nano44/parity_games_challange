@@ -1,0 +1,6 @@
+restart 0 best-in-restart (4, 13) best (4, 13) (d 4, d+1 = 5)
+restart 1 best-in-restart (4, 13) best (4, 13) (d 4, d+1 = 5)
+restart 2 best-in-restart (4, 13) best (4, 13) (d 4, d+1 = 5)
+restart 3 best-in-restart (4, 13) best (4, 13) (d 4, d+1 = 5)
+restart 4 best-in-restart (4, 13) best (4, 13) (d 4, d+1 = 5)
+restart 5 best-in-restart (4, 13) best (4, 13) (d 4, d+1 = 5)

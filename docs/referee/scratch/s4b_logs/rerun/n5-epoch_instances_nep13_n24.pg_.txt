@@ -1,0 +1,9 @@
+GAME n5-epoch/instances/nep13_n24.pg
+GAMES 1
+enum_states 12
+keep_chk 5
+loc_chk 94
+rhos 1900
+states 12
+VIOLATIONS 0
+RC 0

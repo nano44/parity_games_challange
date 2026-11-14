@@ -1,0 +1,10 @@
+R-L old in L-2 1
+R-U old in L-2 1
+R-B2 old in L-2 1
+R-Q old in L-2 1
+R-T old in L-2 1
+R-G old in L-2 1
+parens 103 103 min depth 0 | newlines 1 | bars 0 | predicted L-4 sha1 0809da259cc54e3cec1fdf455070620314d4e622 5433 B
+0809da259cc54e3cec1fdf455070620314d4e622  qL4.txt
+5433
+cmp L-4 (claude/l-new 87603d07) vs rebuild: EQUAL

@@ -1,0 +1,9 @@
+GAME red/n3/instances/lag11_n40.pg
+GAMES 1
+enum_states 16
+keep_chk 8
+loc_chk 52
+rhos 1302
+states 16
+VIOLATIONS 0
+RC 0

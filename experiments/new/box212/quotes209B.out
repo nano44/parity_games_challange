@@ -1,0 +1,7 @@
+OK   [docs/new/P-N5-CHAIN.md@7fa6aff4] docs/new/P-N5-CHAIN.md@7fa6aff4 | e_g's only in-edge is from pe_g, and pe_g's only from g
+OK   [docs/new/P-N5-CHAIN.md@7fa6aff4] docs/new/P-N5-CHAIN.md@7fa6aff4 | (Core) In standard states and in HOW3: K0 → pA → K3 → K2 and K1 → s → K1 are frozen
+OK   [docs/new/P-N5-CHAIN.md@7fa6aff4] docs/new/P-N5-CHAIN.md@7fa6aff4 | K3's only in-edge is from pA, pA's only from K0; K0's in-edges are from q (q's only in-edg
+OK   [docs/new/P-N5-CHAIN.md@7fa6aff4] docs/new/P-N5-CHAIN.md@7fa6aff4 | c_X has no in-edge but its loop
+OK   [docs/new/P-N5-CHAIN.md@7fa6aff4] docs/new/P-N5-CHAIN.md@7fa6aff4 | (E-DOM) Every vertex more relevant than some e-vertex is an e-vertex, c_W, K0 or K3 ((R)).
+OK   [R104] RESULTS l. 9864 | with one edge to the W-target or to the top even self-loop c_W
+quotes 6 missing 0 (trunk 7fa6aff4aa04054fe063abaa57889591883db014)

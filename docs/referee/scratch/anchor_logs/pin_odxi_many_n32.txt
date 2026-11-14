@@ -1,0 +1,8 @@
+FILE odxi_many_n32.pg n 32 K 26 fallbacks 5 FLruns 3 FLtrans 8
+RUN [6, 9] FL 3 CAP 8 GCH 2 epochs 3 ODIFF-Xi-changes 22 [(7, 3), (7, 5), (7, 9), (7, 10), (7, 12), (7, 19), (7, 20), (7, 23), (7, 25), (7, 26), (7, 28), (8, 9)]
+RUN [10, 13] FL 3 CAP 9 GCH 1 epochs 2 ODIFF-Xi-changes 11 [(12, 3), (12, 5), (12, 9), (12, 10), (12, 12), (12, 19), (12, 20), (12, 23), (12, 25), (12, 26), (12, 28)]
+RUN [14, 16] FL 2 CAP 9 GCH 1 epochs 2 ODIFF-Xi-changes 10 [(15, 3), (15, 5), (15, 10), (15, 12), (15, 20), (15, 23), (15, 26), (15, 28), (16, 19), (16, 25)]
+moves_nonCN 15
+pre_chk 338
+tight_chk 220
+VIOLATIONS 0

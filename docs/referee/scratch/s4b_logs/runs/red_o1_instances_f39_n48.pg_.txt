@@ -1,0 +1,9 @@
+GAME red/o1/instances/f39_n48.pg 
+GAMES 1
+enum_states 38
+keep_chk 37
+loc_chk 38
+rhos 76
+states 38
+VIOLATIONS 0
+RC 0

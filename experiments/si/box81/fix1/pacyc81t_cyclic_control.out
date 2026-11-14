@@ -1,0 +1,7 @@
+rd2_d3.json taubad 0 N 6 k1 10 T3 9 iters 12 notbeta 13 nonstd 0 C 3 R 5
+rd2_d4.json taubad 0 N 8 k1 12 T3 11 iters 14 notbeta 36 nonstd 0 C 3 R 8
+rd3_d3.json taubad 0 N 6 k1 13 T3 12 iters 15 notbeta 13 nonstd 0 C 3 R 4
+rf_d4.json taubad 0 N 8 k1 13 T3 12 iters 15 notbeta 29 nonstd 0 C 6 R 4
+RS2.json taubad 0 N 18 k1 11 T3 10 iters 13 notbeta 30 nonstd 0 C 0 R 4
+iterations after the first fallback (value: genomes): {2: 5}
+pacyc81 count 0 seed 1 files 5: taubad 0 genomes 5 states 59 nofallback 0 notbeta 121 nonstd 0 C 15 R 25 bigT 4 maxT3_over_N 2.0

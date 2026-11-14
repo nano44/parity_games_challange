@@ -1,0 +1,47 @@
+cyc ND2_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 17 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 17 |R| 18 flQ 18 seteq 1
+cyc ND2_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 33 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 33 |R| 34 flQ 34 seteq 1
+cyc ND3_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 17 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 17 |R| 18 flQ 18 seteq 1 | L3 |v| 17 |R| 18 flQ 18 seteq 1
+cyc ND3_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 33 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 33 |R| 34 flQ 34 seteq 1 | L3 |v| 33 |R| 34 flQ 34 seteq 1
+cyc NDB2_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 9 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 18 |R| 18 flQ 0 seteq 1
+cyc NDB2_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 17 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 34 |R| 34 flQ 0 seteq 1
+cyc NDB3_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 9 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 18 |R| 18 flQ 0 seteq 1 | L3 |v| 18 |R| 18 flQ 0 seteq 1
+cyc NDB3_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 17 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 34 |R| 34 flQ 0 seteq 1 | L3 |v| 34 |R| 34 flQ 0 seteq 1
+cyc NDV2_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 9 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 18 |R| 18 flQ 0 seteq 1
+cyc NDV2_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 17 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 34 |R| 34 flQ 0 seteq 1
+cyc NDV3_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 9 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 18 |R| 18 flQ 0 seteq 1 | L3 |v| 18 |R| 18 flQ 0 seteq 1
+cyc NDV3_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 17 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 34 |R| 34 flQ 0 seteq 1 | L3 |v| 34 |R| 34 flQ 0 seteq 1
+cyc NP2_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 9 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 9 |R| 18 flQ 18 seteq 1
+cyc NP2_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 17 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 17 |R| 34 flQ 34 seteq 1
+cyc NP3_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 9 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 9 |R| 18 flQ 18 seteq 1 | L3 |v| 9 |R| 18 flQ 18 seteq 1
+cyc NP3_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 17 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 17 |R| 34 flQ 34 seteq 1 | L3 |v| 17 |R| 34 flQ 34 seteq 1
+cyc NSQ2_4.json T 103 | C 9 maxflips 18 lamch@max 0 chD@max 13 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 13 |R| 22 flQ 18 seteq 0
+cyc NSQ3_4.json T 271 | C 9 maxflips 18 lamch@max 0 chD@max 17 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 13 |R| 22 flQ 18 seteq 0 | L3 |v| 17 |R| 26 flQ 18 seteq 0
+cyc NV2_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 9 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 18 |R| 18 flQ 2 seteq 1
+cyc NV2_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 17 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 34 |R| 34 flQ 2 seteq 1
+cyc NV3_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 9 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 18 |R| 18 flQ 2 seteq 1 | L3 |v| 18 |R| 18 flQ 2 seteq 1
+cyc NV3_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 17 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 34 |R| 34 flQ 2 seteq 1 | L3 |v| 34 |R| 34 flQ 2 seteq 1
+cyc NDb2_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 13 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 13 |R| 18 flQ 18 seteq 1
+cyc NDb2_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 25 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 25 |R| 34 flQ 34 seteq 1
+cyc NDb3_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 13 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 13 |R| 18 flQ 18 seteq 1 | L3 |v| 13 |R| 18 flQ 18 seteq 1
+cyc NDb3_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 25 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 25 |R| 34 flQ 34 seteq 1 | L3 |v| 25 |R| 34 flQ 34 seteq 1
+cyc NDbr2_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 9 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 9 |R| 18 flQ 18 seteq 1
+cyc NDbr2_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 17 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 17 |R| 34 flQ 34 seteq 1
+cyc NDbr3_4.json T 31 | C 9 maxflips 18 lamch@max 0 chD@max 11 | L1 |v| 9 |R| 18 flQ 18 | L2 |v| 9 |R| 18 flQ 18 seteq 1 | L3 |v| 11 |R| 18 flQ 18 seteq 1
+cyc NDbr3_8.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 21 | L1 |v| 17 |R| 34 flQ 34 | L2 |v| 17 |R| 34 flQ 34 seteq 1 | L3 |v| 21 |R| 34 flQ 34 seteq 1
+cyc LT4_1_0.json T 19 | C 2 maxflips 5 lamch@max 0 chD@max 13
+cyc LT4_1_1.json T 19 | C 2 maxflips 5 lamch@max 0 chD@max 13
+cyc LT4_m1_0.json T 17 | C 1 maxflips 3 lamch@max 0 chD@max 13
+cyc LT4_m1_1.json T 17 | C 1 maxflips 1 lamch@max 0 chD@max 12
+cyc LT5_1_0.json T 23 | C 2 maxflips 5 lamch@max 0 chD@max 16
+cyc LT5_1_1.json T 23 | C 2 maxflips 5 lamch@max 0 chD@max 20
+cyc LT5_m1_0.json T 21 | C 2 maxflips 3 lamch@max 0 chD@max 17
+cyc LT5_m1_1.json T 22 | C 2 maxflips 5 lamch@max 0 chD@max 18
+cyc MWR16_2.json T 102 | C 17 maxflips 33 lamch@max 0 chD@max 16
+cyc MWR4_2.json T 30 | C 5 maxflips 9 lamch@max 0 chD@max 4
+cyc MWR8_2.json T 54 | C 9 maxflips 17 lamch@max 0 chD@max 8
+cyc WC16_2.json T 4 | C 1 maxflips 1 lamch@max 0 chD@max 1
+cyc WC4_2.json T 4 | C 1 maxflips 1 lamch@max 0 chD@max 1
+cyc MW32_2.json T 199 | C 65 maxflips 130 lamch@max 0 chD@max 65
+cyc MW8_2.json T 55 | C 17 maxflips 34 lamch@max 0 chD@max 17
+cyc FW16_2.json T 53 | C 3 maxflips 1 lamch@max 1 chD@max 2
+cyc FW8_2.json T 29 | C 3 maxflips 1 lamch@max 1 chD@max 2

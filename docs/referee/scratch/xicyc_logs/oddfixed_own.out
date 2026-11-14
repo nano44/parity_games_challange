@@ -1,0 +1,18 @@
+DEAD_SEG2P_d4_N8.json N 8 Howard ties 0 labels ppppppppRC max Lambda-keeping run 9
+  step 8->9 Lambda-kept True forced-at 1 Odd vertices
+DEAD_SEG2P_d7_N14.json N 14 Howard ties 0 labels CCCCpRRRRppRRRpRppp max Lambda-keeping run 15
+  step 5->6 Lambda-kept True forced-at 1 Odd vertices
+  step 6->7 Lambda-kept True forced-at 2 Odd vertices
+  step 7->8 Lambda-kept True forced-at 5 Odd vertices
+  step 8->9 Lambda-kept True forced-at 7 Odd vertices
+  step 11->12 Lambda-kept True forced-at 1 Odd vertices
+  step 12->13 Lambda-kept True forced-at 3 Odd vertices
+  step 13->14 Lambda-kept True forced-at 4 Odd vertices
+  step 15->16 Lambda-kept True forced-at 1 Odd vertices
+DEAD_SEG2P_d9_N18.json N 18 Howard ties 0 labels pppRppRppRppRRRpppppp max Lambda-keeping run 21
+  step 3->4 Lambda-kept True forced-at 2 Odd vertices
+  step 6->7 Lambda-kept True forced-at 1 Odd vertices
+  step 9->10 Lambda-kept True forced-at 3 Odd vertices
+  step 12->13 Lambda-kept True forced-at 2 Odd vertices
+  step 13->14 Lambda-kept True forced-at 4 Odd vertices
+  step 14->15 Lambda-kept True forced-at 3 Odd vertices

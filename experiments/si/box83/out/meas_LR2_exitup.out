@@ -1,0 +1,12 @@
+LR2_exitup.json N 25 M 41 n 154 T 8 R 4 C 0 labels pRpppRRR
+  RF [0, 3, 1, 0] GF [0, 3, 1, 0] bits(B2..B1) 00 00 01 01 01 01 11 10 11
+  premature resets at [] hubH 4 SumD 194 maxD 4
+  t 0 hub -
+  t 1 hub -
+  t 2 hub B1.SET
+  t 3 hub B1.SET
+  t 4 hub B1.SET
+  t 5 hub B1.SET
+  t 6 hub B1.SET
+  t 7 hub B2.SET
+  t 8 hub B1.SET/B2.SET

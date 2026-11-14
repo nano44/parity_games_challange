@@ -1,0 +1,98 @@
+== box166/out/KILL_PM_compose_dd_d5_F14.json
+N 15 T 14
+run 110111111000000 111111101110101 111111000110001 111110010110011 111110110110011 111100100110111 010000000111110 010001011111110 010001111011000 000011101011101 001011000011001 001010010011001 001010110011001 001000100011001 001000000011001
+mover 0 lev 0 deg 2 D [1, 2, 3, 4, 5, 6, 7, 8, 9] moves 1 [6] VR 6 [6, 7, 8, 9, 13, 14]
+mover 1 lev 0 deg 2 D [3, 9] moves 1 [9] VR 1 [9]
+mover 2 lev 1 deg 2 D [1, 3, 8, 9] moves 3 [1, 6, 10] VR 4 [1, 6, 7, 10]
+mover 3 lev 1 deg 2 D [] moves 1 [6] VR 1 [6]
+mover 4 lev 2 deg 2 D [1, 2, 3, 5, 6, 7, 8, 9] moves 3 [5, 9, 13] VR 8 [1, 5, 6, 7, 8, 9, 13, 14]
+mover 5 lev 2 deg 2 D [3, 8, 9] moves 3 [3, 7, 11] VR 3 [3, 7, 11]
+mover 6 lev 3 deg 2 D [1, 2, 3, 5, 7, 8, 9] moves 7 [2, 4, 6, 8, 10, 12, 14] VR 10 [2, 3, 4, 6, 7, 8, 10, 11, 12, 14]
+mover 7 lev 3 deg 2 D [1, 2, 3, 5, 8, 9] moves 7 [1, 3, 5, 7, 9, 11, 13] VR 7 [1, 3, 5, 7, 9, 11, 13]
+mover 8 lev 4 deg 2 D [3, 9] moves 3 [2, 7, 10] VR 3 [2, 7, 10]
+mover 9 lev 4 deg 2 D [3] moves 2 [1, 8] VR 2 [1, 8]
+mover 10 lev 1 deg 2 D [] moves 1 [1] VR 1 [1]
+mover 11 lev 1 deg 2 D [10] moves 1 [6] VR 1 [6]
+mover 12 lev 4 deg 2 D [10, 11, 13, 14] moves 6 [1, 2, 5, 8, 9, 10] VR 6 [1, 2, 5, 8, 9, 10]
+mover 13 lev 4 deg 2 D [10, 11] moves 2 [3, 8] VR 2 [3, 8]
+mover 14 lev 1 deg 2 D [10, 11] moves 3 [1, 6, 9] VR 3 [1, 6, 9]
+flips 0 (0, 1) 2
+flips 1 (2, 3) 3
+flips 1 (2, 10) 0
+flips 1 (2, 11) 1
+flips 1 (2, 14) 2
+flips 1 (3, 10) 0
+flips 1 (3, 11) 0
+flips 1 (3, 14) 1
+flips 1 (10, 11) 1
+flips 1 (10, 14) 3
+flips 1 (11, 14) 1
+flips 2 (4, 5) 6
+flips 3 (6, 7) 14
+flips 4 (8, 9) 7
+flips 4 (8, 12) 5
+flips 4 (8, 13) 7
+flips 4 (9, 12) 6
+flips 4 (9, 13) 2
+flips 4 (12, 13) 2
+== box172/inst/dd_d5_F14.json
+N 10 T 14
+run 1101111110 1111111011 1111110001 1111100101 1111101101 1111001001 0100000001 0100010111 0100011110 0000111010 0010110000 0010100100 0010101100 0010001000 0010000000
+mover 0 lev 0 deg 2 D [1, 2, 3, 4, 5, 6, 7, 8, 9] moves 1 [6] VR 6 [6, 7, 8, 9, 13, 14]
+mover 1 lev 0 deg 2 D [3, 9] moves 1 [9] VR 1 [9]
+mover 2 lev 1 deg 2 D [1, 3, 8, 9] moves 3 [1, 6, 10] VR 4 [1, 6, 7, 10]
+mover 3 lev 1 deg 2 D [] moves 1 [6] VR 1 [6]
+mover 4 lev 2 deg 2 D [1, 2, 3, 5, 6, 7, 8, 9] moves 3 [5, 9, 13] VR 8 [1, 5, 6, 7, 8, 9, 13, 14]
+mover 5 lev 2 deg 2 D [3, 8, 9] moves 3 [3, 7, 11] VR 3 [3, 7, 11]
+mover 6 lev 3 deg 2 D [1, 2, 3, 5, 7, 8, 9] moves 7 [2, 4, 6, 8, 10, 12, 14] VR 10 [2, 3, 4, 6, 7, 8, 10, 11, 12, 14]
+mover 7 lev 3 deg 2 D [1, 2, 3, 5, 8, 9] moves 7 [1, 3, 5, 7, 9, 11, 13] VR 7 [1, 3, 5, 7, 9, 11, 13]
+mover 8 lev 4 deg 2 D [3, 9] moves 3 [2, 7, 10] VR 3 [2, 7, 10]
+mover 9 lev 4 deg 2 D [3] moves 2 [1, 8] VR 2 [1, 8]
+flips 0 (0, 1) 2
+flips 1 (2, 3) 3
+flips 2 (4, 5) 6
+flips 3 (6, 7) 14
+flips 4 (8, 9) 7
+== box170/out/T1_dd_top8.json
+N 18 T 14
+run 110111111000101000 111111101111001100 111111000101011100 111110010111111110 111110110101110110 111100100101010110 010000000100010011 010001011110111011 010001111000111011 000011101000011011 001011000000011111 001010010010111111 001010110000111111 001000100000111111 001000000000111111
+mover 0 lev 0 deg 2 D [1, 2, 3, 4, 5, 6, 7, 8, 9] moves 1 [6] VR 6 [6, 7, 8, 9, 13, 14]
+mover 1 lev 0 deg 2 D [3, 9] moves 1 [9] VR 1 [9]
+mover 2 lev 1 deg 2 D [1, 3, 8, 9] moves 3 [1, 6, 10] VR 4 [1, 6, 7, 10]
+mover 3 lev 1 deg 2 D [] moves 1 [6] VR 1 [6]
+mover 4 lev 2 deg 2 D [1, 2, 3, 5, 6, 7, 8, 9] moves 3 [5, 9, 13] VR 8 [1, 5, 6, 7, 8, 9, 13, 14]
+mover 5 lev 2 deg 2 D [3, 8, 9] moves 3 [3, 7, 11] VR 3 [3, 7, 11]
+mover 6 lev 3 deg 2 D [1, 2, 3, 5, 7, 8, 9] moves 7 [2, 4, 6, 8, 10, 12, 14] VR 10 [2, 3, 4, 6, 7, 8, 10, 11, 12, 14]
+mover 7 lev 3 deg 2 D [1, 2, 3, 5, 8, 9] moves 7 [1, 3, 5, 7, 9, 11, 13] VR 7 [1, 3, 5, 7, 9, 11, 13]
+mover 8 lev 4 deg 2 D [3, 9] moves 3 [2, 7, 10] VR 3 [2, 7, 10]
+mover 9 lev 4 deg 2 D [3] moves 2 [1, 8] VR 2 [1, 8]
+mover 10 lev 4 deg 2 D [12, 13, 14, 15, 16, 17] moves 8 [1, 2, 3, 4, 7, 8, 11, 12] VR 10 [1, 2, 3, 4, 5, 7, 8, 9, 11, 12]
+mover 11 lev 2 deg 2 D [12, 13, 14, 15, 16, 17] moves 2 [1, 6] VR 6 [1, 2, 6, 7, 9, 11]
+mover 12 lev 3 deg 2 D [14, 15, 16, 17] moves 6 [1, 3, 5, 7, 9, 11] VR 6 [1, 3, 5, 7, 9, 11]
+mover 13 lev 1 deg 2 D [14, 15, 16, 17] moves 1 [2] VR 3 [2, 6, 10]
+mover 14 lev 5 deg 2 D [16, 17] moves 2 [4, 7] VR 2 [4, 7]
+mover 15 lev 2 deg 2 D [16, 17] moves 3 [1, 6, 10] VR 3 [1, 6, 10]
+mover 16 lev 3 deg 2 D [] moves 1 [3] VR 1 [3]
+mover 17 lev 1 deg 2 D [] moves 1 [6] VR 1 [6]
+flips 0 (0, 1) 2
+flips 1 (2, 3) 3
+flips 1 (2, 13) 0
+flips 1 (2, 17) 1
+flips 1 (3, 13) 0
+flips 1 (3, 17) 0
+flips 1 (13, 17) 1
+flips 2 (4, 5) 6
+flips 2 (4, 11) 4
+flips 2 (4, 15) 6
+flips 2 (5, 11) 4
+flips 2 (5, 15) 6
+flips 2 (11, 15) 1
+flips 3 (6, 7) 14
+flips 3 (6, 12) 12
+flips 3 (6, 16) 7
+flips 3 (7, 12) 0
+flips 3 (7, 16) 1
+flips 3 (12, 16) 1
+flips 4 (8, 9) 7
+flips 4 (8, 10) 7
+flips 4 (9, 10) 8

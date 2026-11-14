@@ -1,0 +1,6 @@
+IT 102 100 {'runs': 1, 'maxlen': 1, 'routeC': 0, 'viol': 0}
+IT 1138 101 {'runs': 2, 'maxlen': 1, 'routeC': 1, 'viol': 0}
+IT 1487 102 {'runs': 2, 'maxlen': 1, 'routeC': 2, 'viol': 0}
+IT 3567 103 {'runs': 3, 'maxlen': 1, 'routeC': 3, 'viol': 0}
+IT 3644 104 {'runs': 4, 'maxlen': 1, 'routeC': 4, 'viol': 0}
+BEST 104 {'runs': 4, 'maxlen': 1, 'routeC': 4, 'viol': 0}

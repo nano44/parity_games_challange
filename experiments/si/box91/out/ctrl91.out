@@ -1,0 +1,12 @@
+engine own instance N+M T C Dhib sumD maxa Xdep Xfan maxPX mexp nexp seg2 tuples par1 par2 par3 lexfail afail pxfail dhifail spfail maxflip gtight grfail gr2fail grwhy fl_lam fl_e fl_len maxlamfl trfail pecouples nexpl pefail ecfail pelam
+ctrl=a0 own MW8_2.json 261 55 17 18 18 9 8 8 37 1 15 0 61 0 0 0 0 14 0 0 0 34 0 0 0 0 8 34 0 1 0 28 8 0 0 0
+ctrl=a0 own C6G8_n54.json 204 17 6 8 16 3 2 2 4 2 6 0 88 0 0 0 0 96 0 0 0 11 0 0 0 0 19 54 0 2 0 10 2 0 0 0
+engine own instance N+M T C Dhib sumD maxa Xdep Xfan maxPX mexp nexp seg2 tuples par1 par2 par3 lexfail afail pxfail dhifail spfail maxflip gtight grfail gr2fail grwhy fl_lam fl_e fl_len maxlamfl trfail pecouples nexpl pefail ecfail pelam
+ctrl=pre own MW8_2.json 261 55 17 18 18 9 8 8 37 1 15 0 61 0 0 58 0 0 0 0 0 34 0 0 0 0 8 34 0 1 0 28 8 0 0 0
+ctrl=pre own C6G8_n54.json 204 17 6 8 16 3 2 2 4 2 6 0 88 0 0 80 0 0 0 0 0 11 0 0 0 0 19 54 0 2 0 10 2 0 0 0
+engine own instance N+M T C Dhib sumD maxa Xdep Xfan maxPX mexp nexp seg2 tuples par1 par2 par3 lexfail afail pxfail dhifail spfail maxflip gtight grfail gr2fail grwhy fl_lam fl_e fl_len maxlamfl trfail pecouples nexpl pefail ecfail pelam
+ctrl=gr own MW8_2.json 261 55 17 18 18 9 8 8 37 1 15 0 61 0 0 0 0 0 0 0 0 34 0 0 8 0 8 34 0 1 0 28 8 0 0 0
+ctrl=gr own C6G8_n54.json 204 17 6 8 16 3 2 2 4 2 6 0 88 0 0 0 0 0 0 0 0 11 0 0 9 0 19 54 0 2 0 10 2 0 0 0
+engine own instance N+M T C Dhib sumD maxa Xdep Xfan maxPX mexp nexp seg2 tuples par1 par2 par3 lexfail afail pxfail dhifail spfail maxflip gtight grfail gr2fail grwhy fl_lam fl_e fl_len maxlamfl trfail pecouples nexpl pefail ecfail pelam
+ctrl=uz own MW8_2.json 261 55 17 18 18 9 8 8 37 1 15 0 61 0 0 0 0 0 0 0 0 34 0 0 0 0 8 34 0 1 0 28 8 28 1 0
+ctrl=uz own C6G8_n54.json 204 17 6 8 16 3 2 2 4 2 6 0 88 0 0 0 0 0 0 0 0 11 0 0 0 0 19 54 0 2 0 10 2 10 1 0

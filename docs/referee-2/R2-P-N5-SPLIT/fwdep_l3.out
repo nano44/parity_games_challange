@@ -1,0 +1,5 @@
+FW4_2.json T3 17 changes 303 ytops 303 d2 5 d3 3 maxRA 2 maxC 3 maxSPL 3 maxW 2 maxDep 4 maxT3 17
+   first d2 ('v', ('x', 54), 'y', ('e', (17, 0)), 'wt', ('x', 21), 't1', ('state', 6), 't2', ('state', 11))
+FW8_2.json T3 29 changes 879 ytops 879 d2 13 d3 7 maxRA 2 maxC 3 maxSPL 3 maxW 2 maxDep 8 maxT3 29
+   first d2 ('v', ('x', 122), 'y', ('e', (29, 0)), 'wt', ('x', 37), 't1', ('state', 6), 't2', ('state', 11))
+TOTAL: runs 2 changes 1182 ytops 1182 couples 0 rewins 0 entfail 0 playfail 0 prefail 0 kindfail 0 hwfail 0 gtfail 0 trfail 0 abfail 0 psa 0 psb 0 psc 0 rw_psa 0 rw_psb 0 rw_psc 0 lamb 0 lamm 0 spfail 0 spl3M 0 rcfail 0 decfail 0 rws1 0 rws2 0 Seq 0 rw1fail 0 ph_a 0 ph_b 0 ph_c 0 rafail 0 rpfail 0 rptfail 0 recfail 0 dmon 0 pcfail 0 bdfail 0 awa 0 awb 0 awc 0 awd 0 awmv 0 rootfail 0 ascents 0 d1 0 d2 18 d3 10 d4 0 d5 0 d6 0 d6m 0 maxRA 2 maxC 3 maxSPL 3 maxW 2 maxDep 8 maxT3 29

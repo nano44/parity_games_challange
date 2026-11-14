@@ -1,0 +1,5 @@
+engine own instance N+M T C Dhib sumD maxa Xdep Xfan maxPX mexp nexp seg2 tuples par1 par2 par3 lexfail afail pxfail dhifail spfail maxflip gtight grfail gr2fail grwhy fl_lam fl_e fl_len maxlamfl trfail pecouples nexpl pefail ecfail pelam
+own Ku_4.json 145 28 2 3 3 1 1 1 2 1 1 0 11 0 0 0 0 0 0 0 0 4 0 0 0 0 3 4 0 2 0 0 1 0 0 0
+own Ku_8.json 261 52 2 3 3 1 1 1 2 1 1 0 11 0 0 0 0 0 0 0 0 4 0 0 0 0 3 4 0 2 0 0 1 0 0 0
+own Ku_16.json 493 100 2 3 3 1 1 1 2 1 1 0 11 0 0 0 0 0 0 0 0 4 0 0 0 0 3 4 0 2 0 0 1 0 0 0
+own Kprev_8.json 261 52 2 3 3 1 0 0 1 0 0 0 11 0 0 0 0 0 0 0 0 4 0 0 0 0 3 4 0 2 0 0 0 0 0 0

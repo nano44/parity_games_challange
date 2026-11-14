@@ -1,0 +1,6 @@
+L-4 4017305a34eac21615ba8f172a9b899544d25659 5198 | L-5 fe4d3f902b6afde93384ebf625fa9bebcea0e1d0 5192 | packet unchanged: True 9c9cb50d
+R-A old in L-4 1 | old in L-5 0 | new in L-4 0 | new in L-5 1
+R-I old in L-4 1 | old in L-5 0 | new in L-4 0 | new in L-5 1
+rebuild L-4 + R-A + R-I equal to L-5: True fe4d3f902b6afde93384ebf625fa9bebcea0e1d0 5192
+L-5 newlines 1 parens 124 124 neg False pipes 0 under [E-LEV] 4
+CHAIN-DECOMP clause: (Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), then f's successor y_f is a mover with Λ_t(y_f)

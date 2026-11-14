@@ -1,0 +1,10 @@
+CX4_n21.json T3 10 changes 728 ytops 728 couples 313 rewins 219 psc 313 rw_psc 219 spfail 161 rcfail 161 rws1 313 Seq 313 rw1fail 188 ph_a 200 ph_b 188 rafail 286 ascents 941 d1 192 d2 286 d3 200 d6 219 d6m 92 maxRA 3 maxC 5 maxSPL 2 maxW 2 maxDep 3 maxT3 10
+   first d1 ('v', ('x', 0), 'y', ('e', (10, 0)), 't1', ('state', 8), 't2', ('state', 10), 'u', ('g', (10, 0)), 'b', ('pe', (10, 0)))
+   first d2 ('v', ('x', 0), 'y', ('e', (10, 0)), 'wt', ('x', 17), 't1', ('state', 2), 't2', ('state', 4))
+   first d6 ('v', ('x', 0), 'u', ('g', (10, 0)), 'b', ('pe', (10, 0)), 'y', ('e', (10, 0)), 'wt', ('x', 17), 't', ('state', 8), 't2', ('state', 10), 'Ewt', (), (), 'Eb', (), ())
+RWX_n95.json T3 12 changes 2644 ytops 2644 couples 31 rewins 31 psc 31 rw_psc 31 spfail 31 rcfail 31 rws1 31 Seq 31 ph_a 238 rafail 238 ascents 6403 d2 238 d3 238 d6 31 d6m 31 maxRA 1 maxC 2 maxSPL 2 maxW 1 maxDep 2 maxT3 12
+   first d2 ('v', ('x', 9), 'y', ('e', (8, 0)), 'wt', ('x', 20), 't1', ('state', 3), 't2', ('state', 6))
+   first d6 ('v', ('x', 17), 'u', ('x', 17), 'b', ('m', (17, 1)), 'y', ('e', (8, 0)), 'wt', ('x', 20), 't', ('state', 3), 't2', ('state', 6), 'Ewt', (), (), 'Eb', (), ())
+FW6_4.json T3 37 changes 1613 ytops 1613 ph_a 5 ph_b 10 rafail 14 d2 14 d3 5 maxRA 4 maxC 5 maxSPL 5 maxW 4 maxDep 6 maxT3 37
+   first d2 ('v', ('x', 237), 'y', ('e', (35, 0)), 'wt', ('x', 41), 't1', ('state', 8), 't2', ('state', 17))
+TOTAL CTRL U0: runs 3 changes 4985 ytops 4985 couples 344 rewins 250 entfail 0 playfail 0 prefail 0 kindfail 0 hwfail 0 gtfail 0 trfail 0 abfail 0 psa 0 psb 0 psc 344 rw_psa 0 rw_psb 0 rw_psc 250 lamb 0 lamm 0 spfail 192 spl3M 0 rcfail 192 decfail 0 rws1 344 rws2 0 Seq 344 rw1fail 188 ph_a 443 ph_b 198 ph_c 0 rafail 538 rpfail 0 rptfail 0 recfail 0 dmon 0 pcfail 0 bdfail 0 awa 0 awb 0 awc 0 awd 0 awmv 0 rootfail 0 ascents 7344 d1 192 d2 538 d3 443 d4 0 d5 0 d6 250 d6m 123 maxRA 4 maxC 5 maxSPL 5 maxW 4 maxDep 6 maxT3 37

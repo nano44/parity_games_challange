@@ -1,0 +1,9 @@
+REFEREE 34 report 4c8d6c4f sha1 374a1ba06f845ab9376f78b5ef82d24a3e4d2fc5; REFEREE-2 39 report 43824abc sha1 77a38f1ae36c32aed245fdd0a1bb0777ec9690fb
+LT-1 applied; sha1 4ce361ed 7566 B
+LT-2 applied; sha1 3b23785a 7631 B
+LT-3 applied; sha1 389645a2 7706 B
+L-1 + LT-1..LT-3: sha1 389645a2a646522a8fb57f05dba4458695ac74f2 7706 B (REFEREE 34 reports 389645a2a646522a8fb57f05dba4458695ac74f2)
+R-1 applied; sha1 7afc25c8 7855 B
+R-2 applied; sha1 1ba96bd2 7912 B
+LO-1 applied; sha1 d18125ed 7970 B
+L-2 written: sha1 d18125ed1c62f8ad20396d9f94eac8bdbc624cf4 7970 B; 93 ( = 93 )

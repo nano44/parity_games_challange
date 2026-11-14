@@ -1,0 +1,118 @@
+INFO files 208 runs 63223 steps 140395
+# per (d, level j): max F(j) | max moves (all movers of level j) | max moves (Xi-targets of level j)
+d 1 F [1] | M [1] | MZ [1]
+d 2 F [2, 3] | M [1, 2] | MZ [1, 2]
+d 3 F [2, 6, 7] | M [1, 3, 3] | MZ [1, 3, 3]
+d 4 F [2, 6, 10, 8] | M [1, 3, 7, 4] | MZ [1, 3, 7, 4]
+d 5 F [2, 6, 12, 14, 8] | M [1, 3, 6, 7, 9] | MZ [1, 3, 6, 7, 9]
+d 6 F [2, 4, 4, 6, 4, 3] | M [1, 2, 4, 4, 4, 5] | MZ [1, 2, 4, 1, 4, 5]
+d 8 F [1, 3, 3, 4, 5, 4, 5, 2] | M [1, 2, 4, 4, 5, 3, 3, 3] | MZ [0, 1, 4, 3, 2, 3, 3, 3]
+# window types (Phi at entry, same option, ready = misaligned and pi = c): count, max moves of p,q, max flips of pair j, max length
+WT (0, 1, 0) [54841, 0, 0, 6]
+WT (1, 0, 0) [66492, 1, 2, 8]
+WT (1, 0, 1) [63358, 1, 1, 6]
+WT (2, 1, 0) [35026, 2, 2, 10]
+WT (2, 1, 1) [55883, 2, 2, 10]
+WT (2, 1, 2) [13354, 2, 1, 6]
+# temporal max-plus graph (consecutive windows of one level; weight = max moves of p,q in the first window)
+TEMP (0, 1, 0) -> (2, 1, 0) 0
+TEMP (0, 1, 0) -> (2, 1, 1) 0
+TEMP (0, 1, 0) -> (2, 1, 2) 0
+TEMP (1, 0, 0) -> (1, 0, 0) 0
+TEMP (1, 0, 0) -> (1, 0, 1) 0
+TEMP (1, 0, 0) -> (2, 1, 0) 1
+TEMP (1, 0, 0) -> (2, 1, 1) 1
+TEMP (1, 0, 0) -> (2, 1, 2) 1
+TEMP (1, 0, 1) -> (2, 1, 0) 1
+TEMP (1, 0, 1) -> (2, 1, 1) 1
+TEMP (1, 0, 1) -> (2, 1, 2) 1
+TEMP (2, 1, 0) -> (0, 1, 0) 0
+TEMP (2, 1, 0) -> (1, 0, 0) 1
+TEMP (2, 1, 0) -> (1, 0, 1) 1
+TEMP (2, 1, 0) -> (2, 1, 0) 2
+TEMP (2, 1, 0) -> (2, 1, 1) 2
+TEMP (2, 1, 0) -> (2, 1, 2) 2
+TEMP (2, 1, 1) -> (1, 0, 0) 1
+TEMP (2, 1, 1) -> (1, 0, 1) 1
+TEMP (2, 1, 1) -> (2, 1, 0) 2
+TEMP (2, 1, 1) -> (2, 1, 1) 2
+TEMP (2, 1, 1) -> (2, 1, 2) 2
+TEMP (2, 1, 2) -> (2, 1, 0) 2
+TEMP (2, 1, 2) -> (2, 1, 1) 2
+TEMP (2, 1, 2) -> (2, 1, 2) 2
+MCM_TEMP (2.0, ((2, 1, 0),))
+# spawn matrix B (level j type -> level j+1 type: max number of child windows starting inside); (+,x) recursion
+SPAWN (0, 1, 0) -> (0, 1, 0) 1
+SPAWN (0, 1, 0) -> (1, 0, 0) 1
+SPAWN (0, 1, 0) -> (1, 0, 1) 1
+SPAWN (0, 1, 0) -> (2, 1, 0) 1
+SPAWN (0, 1, 0) -> (2, 1, 1) 1
+SPAWN (0, 1, 0) -> (2, 1, 2) 1
+SPAWN (1, 0, 0) -> (0, 1, 0) 1
+SPAWN (1, 0, 0) -> (1, 0, 0) 2
+SPAWN (1, 0, 0) -> (1, 0, 1) 1
+SPAWN (1, 0, 0) -> (2, 1, 0) 2
+SPAWN (1, 0, 0) -> (2, 1, 1) 2
+SPAWN (1, 0, 0) -> (2, 1, 2) 2
+SPAWN (1, 0, 1) -> (0, 1, 0) 1
+SPAWN (1, 0, 1) -> (1, 0, 0) 1
+SPAWN (1, 0, 1) -> (1, 0, 1) 1
+SPAWN (1, 0, 1) -> (2, 1, 0) 1
+SPAWN (1, 0, 1) -> (2, 1, 1) 1
+SPAWN (1, 0, 1) -> (2, 1, 2) 1
+SPAWN (2, 1, 0) -> (0, 1, 0) 2
+SPAWN (2, 1, 0) -> (1, 0, 0) 3
+SPAWN (2, 1, 0) -> (1, 0, 1) 2
+SPAWN (2, 1, 0) -> (2, 1, 0) 2
+SPAWN (2, 1, 0) -> (2, 1, 1) 3
+SPAWN (2, 1, 0) -> (2, 1, 2) 3
+SPAWN (2, 1, 1) -> (0, 1, 0) 1
+SPAWN (2, 1, 1) -> (1, 0, 0) 2
+SPAWN (2, 1, 1) -> (1, 0, 1) 1
+SPAWN (2, 1, 1) -> (2, 1, 0) 2
+SPAWN (2, 1, 1) -> (2, 1, 1) 2
+SPAWN (2, 1, 1) -> (2, 1, 2) 2
+SPAWN (2, 1, 2) -> (0, 1, 0) 1
+SPAWN (2, 1, 2) -> (1, 0, 0) 1
+SPAWN (2, 1, 2) -> (1, 0, 1) 1
+SPAWN (2, 1, 2) -> (2, 1, 0) 1
+SPAWN (2, 1, 2) -> (2, 1, 1) 1
+SPAWN (2, 1, 2) -> (2, 1, 2) 1
+SPAWN_MAX_TOTAL 15
+# additive increment: max over runs of [moves of a Xi-target of level j] - [max moves of any mover of level < j]
+INC d 2 j 1 1  witness ('experiments/new/box150/out/rand/r150_023.json', '0100', 1, (0, 0, 1, 0))
+INC d 3 j 1 2  witness ('experiments/new/box156/ext/dbl_d3_F6.json', '110101', 6, (1, 1, 2, 3, 1, 1))
+INC d 3 j 2 2  witness ('experiments/new/box160/out/iso_d3_6.json', '110110', 5, (1, 1, 0, 1, 3, 1))
+INC d 4 j 1 2  witness ('experiments/new/box156/ext/dbl_d4_F10.json', '11010001', 7, (1, 1, 2, 3, 2, 2, 0, 1))
+INC d 4 j 2 4  witness ('experiments/new/box187/inst/m4_z4_r7.json', '10111010', 8, (1, 1, 3, 3, 7, 3, 1, 2))
+INC d 4 j 3 2  witness ('experiments/new/box186/out/pass_d4_D4.json', '01000000', 3, (1, 1, 1, 1, 0, 1, 0, 3))
+INC d 5 j 1 2  witness ('experiments/new/box152/c4x_d5_F12.json', '1110011101', 9, (1, 1, 3, 2, 4, 3, 2, 1, 1, 0))
+INC d 5 j 2 3  witness ('experiments/new/box152/nd2_d5_F12.json', '1100010000', 12, (1, 1, 3, 3, 5, 6, 1, 3, 2, 1))
+INC d 5 j 3 4  witness ('experiments/new/box152/dd_d5_F14.json', '1101110110', 13, (1, 1, 3, 1, 3, 3, 6, 7, 3, 2))
+INC d 5 j 4 4  witness ('experiments/new/box186/out/dense_d5_D9.json', '0101010000', 8, (1, 1, 1, 2, 1, 1, 3, 3, 1, 7))
+INC d 6 j 1 1  witness ('experiments/new/box164/out/climb_A_d6_m2_T9.json', '110110101101', 9, (1, 1, 2, 2, 1, 3, 1, 1, 2, 2, 1, 2))
+INC d 6 j 2 2  witness ('experiments/new/box180/out/climbR_d6_s5.json', '000110101111', 19, (1, 1, 2, 2, 3, 4, 4, 1, 4, 4, 4, 5))
+INC d 6 j 3 0  witness ('experiments/new/box160/ext/fdown_d6.json', '110001010011', 6, (1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 2, 0))
+INC d 6 j 4 1  witness ('experiments/new/box164/out/climb_A_d6_m2_T8.json', '011010111100', 8, (1, 1, 0, 1, 1, 0, 1, 1, 2, 2, 3, 1))
+INC d 6 j 5 1  witness ('experiments/new/box164/out/climb_A_d6_m2_T8.json', '011010111100', 8, (1, 1, 0, 1, 1, 0, 1, 1, 2, 2, 3, 1))
+INC d 8 j 1 0  witness ('experiments/new/box160/ext/rk_D2_k2_d8.json', '0001101101000011', 14, (1, 0, 2, 1, 3, 4, 2, 2, 5, 2, 3, 1, 2, 1, 3, 2))
+INC d 8 j 2 2  witness ('experiments/new/box160/ext/rk_D2_k2_d8.json', '0001101101000011', 14, (1, 0, 2, 1, 3, 4, 2, 2, 5, 2, 3, 1, 2, 1, 3, 2))
+INC d 8 j 3 -1  witness ('experiments/new/box165/out/seedpm_rk_D2_k2_d8_s1.json', '0001100110001011', 17, (1, 0, 2, 1, 3, 4, 3, 4, 4, 2, 3, 1, 3, 1, 3, 2))
+INC d 8 j 4 -2  witness ('experiments/new/box160/ext/rk_D2_k2_d8.json', '0001101101000011', 14, (1, 0, 2, 1, 3, 4, 2, 2, 5, 2, 3, 1, 2, 1, 3, 2))
+INC d 8 j 5 -1  witness ('experiments/new/box165/out/seedpm_rk_D2_k2_d8_s1.json', '0001100110001011', 17, (1, 0, 2, 1, 3, 4, 3, 4, 4, 2, 3, 1, 3, 1, 3, 2))
+INC d 8 j 6 -1  witness ('experiments/new/box165/out/seedpm_rk_D2_k2_d8_s1.json', '0001100110001011', 17, (1, 0, 2, 1, 3, 4, 3, 4, 4, 2, 3, 1, 3, 1, 3, 2))
+INC d 8 j 7 -1  witness ('experiments/new/box165/out/seedpm_rk_D2_k2_d8_s1.json', '0001100110001011', 17, (1, 0, 2, 1, 3, 4, 3, 4, 4, 2, 3, 1, 3, 1, 3, 2))
+WIT ('F', 1, 0) ('experiments/new/box150/out/rand/r150_021.json', '01', 1)
+WIT ('F', 2, 1) ('experiments/new/box160/out/iso_d2_4.json', '0101', 3)
+WIT ('F', 3, 2) ('experiments/new/box156/ext/dbl_d3_F6.json', '111101', 8)
+WIT ('F', 4, 3) ('experiments/new/box180/out/climbR_d4_s6.json', '11000101', 11)
+WIT ('F', 5, 4) ('experiments/new/box152/tri_d5_L12.json', '1101010111', 11)
+WIT ('F', 6, 5) ('experiments/new/box164/out/climb_A_d6_m1_T8.json', '101011111010', 8)
+WIT ('F', 8, 7) ('experiments/new/box165/out/seedpm_rk_D2_k2_d8_s1.json', '0001100110001011', 17)
+WIT ('MZ', 1, 0) ('experiments/new/box150/out/rand/r150_158.json', '00', 1)
+WIT ('MZ', 2, 1) ('experiments/new/box160/out/iso_d2_3.json', '1110', 3)
+WIT ('MZ', 3, 2) ('experiments/new/box156/ext/dbl_d3_F6.json', '111001', 7)
+WIT ('MZ', 4, 3) ('experiments/new/box156/ext/max_d4_L13.json', '11000101', 13)
+WIT ('MZ', 5, 4) ('experiments/new/box186/out/dense_d5_D9.json', '0101111000', 9)
+WIT ('MZ', 6, 5) ('experiments/new/box180/out/climbR_d6_s5.json', '000110101111', 19)
+WIT ('MZ', 8, 7) ('experiments/new/box160/ext/rk_D2_k2_d8.json', '0001101101000011', 14)

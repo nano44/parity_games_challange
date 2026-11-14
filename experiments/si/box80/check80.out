@@ -1,0 +1,10 @@
+CORPUS INFO runs 63223 steps 140395
+CORPUS XS 0 PN 0 (units: 32 (run, level j, j-window) with k >= 1) PN_T 30
+EXTRA INFO runs 4 steps 442
+EXTRA XS 0 PN 0 (units: 102 (run, level j, j-window) with k >= 1) PN_T 22
+ZONE 0 (units: 3180 (extension, start)) ZONE_NEG 218 of 479
+INSERT 0 INSERT_F 0 (units: 2037 (genome, level L, start)) INSERT_NEG 1841
+SLACK DBL4_d20_F30.json capped 0 T 30 
+SLACK H5_d20_F62.json capped 5 T 136 j1:min 8 need 4 slack 4; j2:min 7 need 3 slack 4; j3:min 3 need 2 slack 1; j4:min 1 need 1 slack 0
+SLACK H6_d24_F126.json capped 6 T 209 j1:min 21 need 5 slack 16; j2:min 7 need 4 slack 3; j3:min 5 need 3 slack 2; j4:min 2 need 2 slack 0; j5:min 1 need 1 slack 0
+SLACK RECF4_d20_F60.json capped 4 T 67 j1:min 8 need 3 slack 5; j2:min 4 need 2 slack 2; j3:min 2 need 1 slack 1

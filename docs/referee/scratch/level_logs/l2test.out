@@ -1,0 +1,11 @@
+LT-1 old count 1
+LT-2 old count 1
+LT-3 old count 1
+stage LT-1..LT-3 sha1 389645a2a646522a8fb57f05dba4458695ac74f2
+R-1 old count 1
+stage R-1 sha1 7afc25c86e3c9839b934013ea679f7476712aee8
+R-2 old count 1
+stage R-2 sha1 1ba96bd2f7412503ecd0315c4a3c1aa84506263e
+LO-1 old count 1
+L-2 sha1 d18125ed1c62f8ad20396d9f94eac8bdbc624cf4 7970 B; newlines 1 bars 0 parens 93 93
+EQUAL

@@ -1,0 +1,5 @@
+family selfl seed 3202 count 200
+MUST-0:  i_img 0  i_own 0  i_edge 0  i_start 0  i_rel 0  i_par 0  ii_val 0  ii_br 0  ii_sbar 0  ii_rand 0  cn_pad 0  iii_step 0  iii_stut 0  iv_brseg 0
+RECORDS: pairs 658  randpairs 1974  openpairs 300  lit 25  gtNC 0  tdiff 0  mpadchg 253  maxwin 3  c_mpad 253  c_open 241  c_iv 15
+LITERAL (iv) example: selfl_3202_8 C=[1] |R|=1 a=t0=0 T3=2 window 2 steps
+exit 0

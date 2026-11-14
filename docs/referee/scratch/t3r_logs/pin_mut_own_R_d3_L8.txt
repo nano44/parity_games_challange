@@ -1,0 +1,2 @@
+MUTANTS own_R_d3_L8.json 40 max-T histogram {2: 1, 3: 2, 4: 11, 5: 7, 6: 3, 7: 2, 8: 14}
+TOTAL runs 2560 T histogram {0: 155, 1: 770, 2: 703, 3: 291, 4: 258, 5: 245, 6: 94, 7: 30, 8: 14} run disagreements 0 genome-only tests 40 genome-only disagreements 0

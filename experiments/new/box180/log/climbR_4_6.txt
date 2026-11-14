@@ -1,0 +1,1 @@
+climbR_d4_s6: best maxR 8 at (0, 0) with T 11 (N 8)

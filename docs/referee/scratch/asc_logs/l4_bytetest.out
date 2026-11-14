@@ -1,0 +1,10 @@
+R5 old in L-3: 1 | new in L-3: 0 | new in L-4: 1 | old in L-4: 0
+L-3 + R5 == L-4: True ('4017305a34eac21615ba8f172a9b899544d25659', 5198) | L-4 ('4017305a34eac21615ba8f172a9b899544d25659', 5198)
+parens L-4 125 125 | newlines L-4 1
+L-4 1 | hence seq_t(v) = (f, seq_t(y_f))
+L-4 1 | an ascent of seq_t(v) a step
+L-4 1 | ; L-NEW successors 61-62)
+L-4 1 | UP-JUMP, UP-B and NOUP under HYPOTHESIS [E-LEV]
+L-4 1 | (only for §6 UP-JUMP, UP-B and NOUP)
+L-4 1 | referee-originated
+CTX: ) the number of distinct E_t(v) on an interval I of states with Λ_t(v) = w fixed (M_w := the number of e-vertices more relevant than w): (Lemma E-MON) if Λ_t(v) = Λ_(t+1)(v) then E_t(v) ≤ E_(t+1)(v); (Lemma CHAIN-DECOMP) if seq_t(v) = (f, …), i.e. the first e-vertex on v's play is f and f ∈ Π_t(v), then f's successor y_f is a mover with Λ_t(y_f) = Λ_t(v) and E_t(v) = {f} ∪ E_t(y_f), hence seq_t(v) = (f, seq_t(y_f)); (Lemma SKELETON and Theorem HUB-ASC(B)) 

@@ -1,0 +1,6 @@
+corpus files at d 2: 9
+class PBG d 2 genomes 2000 transitions 22077 distinct-dec-rows 16458 distinct-states 30676 features 72
+FEASIBLE min max Phi = 8.0000
+weights: pair0_1110=3 k0=3 pair0_0100=3 pair0_1100=3 u1=3 pair0_1111=-3 pair0_0110=3 u2=-3 pair1_0110=-3 k2=2 pair1_0010=-2 z2=2 u3=-1 pair1_0101=1 k3=1 pair1_1100=-1 pair1_1000=-1 pair1_0111=-1 const=0
+dual: 21 decrease rows in support, sum of their multipliers 8.0000 (= the bound)
+dual mass by genome source: rand:6.09 v_d2_4.json:1.61 sampleI_d2_s1.json:0.305

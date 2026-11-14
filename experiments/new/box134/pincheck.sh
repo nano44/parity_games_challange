@@ -1,0 +1,15 @@
+#!/bin/bash
+# L-NEW box 134 (P-N5-ANCHOR pins): L-RED R179's ODIFF-Xi instances, copied read-only from claude/l-red a612b0a5
+# (experiments/red/r179/instances/, sha1 as in its pins.sha1) into new/box134/inst/. Oink 8fbf0a7 --zlk / --tl verified vs N5 regions
+# (box107/pinwin.py), n5b state by state (si/root/n5bcmp.py), box132/anchor.py, box133/odxi.py.
+cd "$(dirname "$0")/../.."; O=../tools/oink/build/oink; t=$(mktemp -d)
+for b in odxi_min_n12 odxi_lasso_n13 odxi_many_n32; do
+  p=new/box134/inst/$b; st=$p.start
+  echo "PIN $b $(sha1sum < $p.pg | cut -c1-12) start $(sha1sum < $st | cut -c1-12)"
+  for s in zlk tl; do "$O" --$s -v $p.pg $t/$b.$s.sol > $t/$b.$s.log 2>&1; grep -q "solution verified" $t/$b.$s.log && echo "OINK $b --$s verified" || echo "OINK $b --$s NOT verified"; done
+  python3 -I new/box107/pinwin.py $p.pg $st $t/$b.zlk.sol
+  timeout 3000 python3 -I si/root/n5bcmp.py $p.pg $st | head -1
+  python3 -I new/box132/anchor.py $p.pg $st
+  python3 -I new/box133/odxi.py $p.pg $st
+done
+rm -rf $t

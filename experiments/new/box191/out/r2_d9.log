@@ -1,0 +1,17 @@
+start score (3, 3) N 18
+it 18 N 18 T 5 maxrun 5 C 0
+it 45 N 18 T 6 maxrun 6 C 0
+it 65 N 18 T 7 maxrun 6 C 1
+it 116 N 18 T 8 maxrun 7 C 1
+it 120 N 18 T 8 maxrun 8 C 0
+it 133 N 18 T 9 maxrun 9 C 0
+it 152 N 18 T 11 maxrun 11 C 0
+it 216 N 18 T 12 maxrun 12 C 0
+it 358 N 18 T 13 maxrun 13 C 0
+it 450 N 18 T 14 maxrun 14 C 0
+it 1156 N 18 T 15 maxrun 15 C 0
+it 1365 N 18 T 16 maxrun 16 C 0
+it 1999 N 18 T 17 maxrun 17 C 0
+it 3000 N 18 T 19 maxrun 19 C 0
+it 3952 N 18 T 20 maxrun 20 C 0
+it 4001 N 18 T 21 maxrun 21 C 0

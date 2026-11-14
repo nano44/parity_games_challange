@@ -1,0 +1,13 @@
+CY2_lr.json N 27 M 44 n 165 T 9 R 6 C 0 labels RRpppRRRR
+  RF [0, 6, 1, 0] GF [0, 6, 1, 0] bits(B2..B1) 00 00 01 01 01 01 11 10 10 11
+  premature resets at [] hubH 6 SumD 245 maxD 6
+  t 0 hub -
+  t 1 hub B1.CYC
+  t 2 hub B1.SET
+  t 3 hub B1.SET
+  t 4 hub B1.SET
+  t 5 hub B1.SET
+  t 6 hub B1.SET
+  t 7 hub B2.SET
+  t 8 hub B1.CYC/B2.SET
+  t 9 hub B1.SET/B2.SET

@@ -1,0 +1,4 @@
+runs 52 NOCAUSE 0 histogram of per-(z, level) charges {1: 359, 2: 136, 3: 132, 4: 48, 5: 14, 6: 6, 7: 5, 8: 1, 9: 1, 10: 2}
+CHG-LEV (10, 'dd_d5_F14.json', (1, 1, 0, 1, 1, 1, 1, 1, 1, 0), 'z', 6, 'level', 3)
+CHG-MOV (7, 'dd_d5_F14.json', (1, 1, 0, 1, 1, 1, 1, 1, 1, 0), 'z', 6, 'mover', 6)
+R (11, 'climbR_d6_s5.json', 'z', 9, 'd', 6)

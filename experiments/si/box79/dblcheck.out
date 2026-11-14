@@ -1,0 +1,6 @@
+CORPUS violations: WO 0 HIT 0 ALTa 0 ALTb 0 ALTc 0 ALTd 0 DBLa 0 DBLb 0 DBLc 0 TN 0 PF 0 FU2 0
+CORPUS controls (must be > 0): ALTb_T 112372 ALTc_T 7085 WO_T 220641 FU2_T 222089
+CORPUS units: ALT units (run, mover) 577740; DBLa units (run, level) 225647; DBLb units (run, doubling level, window, member) 11052; FU2 units (run, level) 288870; HIT units (run, mover, step) 1298948; PF units (run, level) frozen split 23317; TN units (run, doubling level, member) 9068; WO units (run, level, window, member) 577908; doubling (run, level) 4534; runs 63223; steps 140395
+LOWER violations: WO 0 HIT 0 ALTa 0 ALTb 0 ALTc 0 ALTd 0 DBLa 0 DBLb 0 DBLc 0 TN 0 PF 0 FU2 0
+LOWER controls (must be > 0): ALTb_T 43 ALTc_T 13 WO_T 984 FU2_T 81
+LOWER units: ALT units (run, mover) 162; DBLa units (run, level) 72; DBLb units (run, doubling level, window, member) 176; FU2 units (run, level) 81; HIT units (run, mover, step) 5216; TN units (run, doubling level, member) 24; WO units (run, level, window, member) 1736; doubling (run, level) 12; runs 9; steps 270

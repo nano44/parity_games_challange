@@ -1,0 +1,21 @@
+HP3_mup.json N 77 M 138 n 497 T 17 R 9 C 0 labels pRpRpppRpRRppRRRR
+  RF [0, 5, 4, 2, 0] GF [0, 5, 6, 2, 0] bits(B3..B1) 000 000 001 001 011 011 011 011 111 101 100 101 101 101 101 111 110 111
+  premature resets at [] hubH 8 SumD 710 maxD 8
+  t 0 hub -
+  t 1 hub -
+  t 2 hub B1.SET
+  t 3 hub B1.SET
+  t 4 hub B1.SET/M2.SET
+  t 5 hub B1.SET/M2.SET
+  t 6 hub B1.SET/M2.SET
+  t 7 hub B1.SET/M2.SET
+  t 8 hub B1.SET/M2.SET
+  t 9 hub B1.SET/M2.SET
+  t 10 hub B3.SET
+  t 11 hub B1.SET/B3.SET
+  t 12 hub B1.SET/B3.SET
+  t 13 hub B1.SET/B3.SET
+  t 14 hub B1.SET/B3.SET
+  t 15 hub B1.SET/M3.SET
+  t 16 hub B2.SET/M3.SET
+  t 17 hub B1.SET/M2.SET/M3.SET

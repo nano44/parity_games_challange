@@ -1,0 +1,16 @@
+LO2_priv.json N 47 M 82 n 299 T 12 R 4 C 0 labels pRRppppppRRp
+  RF [0, 3, 2, 0] GF [0, 4, 2, 0] bits(B2..B1) 00 00 01 10 10 10 10 10 10 10 10 01 00
+  premature resets at [11] hubH 5 SumD 395 maxD 5
+  t 0 hub -
+  t 1 hub -
+  t 2 hub B1.SET
+  t 3 hub B2.SET
+  t 4 hub B2.SET
+  t 5 hub B2.SET
+  t 6 hub B2.SET
+  t 7 hub B2.SET
+  t 8 hub B2.SET
+  t 9 hub B2.SET
+  t 10 hub B2.SET
+  t 11 hub B1.SET/M2.SET
+  t 12 hub M1.SET/M2.SET

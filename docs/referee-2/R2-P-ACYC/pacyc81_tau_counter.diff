@@ -1,0 +1,23 @@
+23c23
+<     states = [list(sigma)]; k1 = None; it = 0
+---
+>     states = [list(sigma)]; taus = [list(tau)]; k1 = None; it = 0
+29c29
+<         states.append(list(sigma))
+---
+>         states.append(list(sigma)); taus.append(list(tau))
+40c40,43
+<     return dict(N=N, k1=k1, T3=(k1 - 1) if k1 else None, iters=it, notbeta=notb, nonstd=nonstd, C=lamchg, R=sbchg)
+---
+>     K2 = V[("K", 2)]; pe = [V[("pe", (x, k))] for x in range(N) for k in range(len(G["opts"][x]))]
+>     gts = [V[("g", (x, k))] for x in range(N) for k in range(len(G["opts"][x]))]
+>     taubad = sum(1 for t in taus if t[K2] != K2 or any(t[gq] != pq for gq, pq in zip(gts, pe)))
+>     return dict(taubad=taubad, N=N, k1=k1, T3=(k1 - 1) if k1 else None, iters=it, notbeta=notb, nonstd=nonstd, C=lamchg, R=sbchg)
+45c48
+<     tot = dict(genomes=0, states=0, nofallback=0, notbeta=0, nonstd=0, C=0, R=0, bigT=0, maxT3_over_N=0.0)
+---
+>     tot = dict(taubad=0, genomes=0, states=0, nofallback=0, notbeta=0, nonstd=0, C=0, R=0, bigT=0, maxT3_over_N=0.0)
+56c59
+<         for k in ("notbeta", "nonstd", "C", "R"): tot[k] += r[k]
+---
+>         for k in ("notbeta", "nonstd", "C", "R", "taubad"): tot[k] += r[k]

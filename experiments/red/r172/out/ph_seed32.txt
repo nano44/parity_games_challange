@@ -1,0 +1,8 @@
+start PHNF 17 {'a': 2, 'b': 25, 'L': 23, 'ODIFF': 2, 'FB': 0, 'PHNF': 17}
+it 550 PHNF 18 L 23 {'a': 2, 'b': 25, 'L': 23, 'ODIFF': 2, 'FB': 0, 'PHNF': 18}
+it 2451 PHNF 19 L 24 {'a': 2, 'b': 26, 'L': 24, 'ODIFF': 2, 'FB': 0, 'PHNF': 19}
+it 3007 PHNF 20 L 22 {'a': 3, 'b': 25, 'L': 22, 'ODIFF': 2, 'FB': 0, 'PHNF': 20}
+it 3015 PHNF 20 L 23 {'a': 3, 'b': 26, 'L': 23, 'ODIFF': 2, 'FB': 1, 'PHNF': 20}
+it 3168 PHNF 20 L 24 {'a': 1, 'b': 25, 'L': 24, 'ODIFF': 2, 'FB': 1, 'PHNF': 20}
+it 5172 PHNF 21 L 25 {'a': 1, 'b': 26, 'L': 25, 'ODIFF': 2, 'FB': 1, 'PHNF': 21}
+BEST n 32 KO 2 PHNF 21 (n-1 = 31) {'a': 1, 'b': 26, 'L': 25, 'ODIFF': 2, 'FB': 1, 'PHNF': 21}

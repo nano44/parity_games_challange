@@ -1,0 +1,3 @@
+XMAX d 5 t 15 N 10 vars 276409 clauses 964180 build 1.8 s
+XMAX d 5 T >= 15: SAT 2092.3 s
+replay L 15 opt (needs >= 15): OK -> out/max/d5_t15S.json

@@ -1,0 +1,9 @@
+GAME red/xing/instances/u1t_cex_n32.pg 
+GAMES 1
+enum_states 12
+keep_chk 10
+loc_chk 21
+rhos 33
+states 12
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,12 @@
+sha1 b995fff21c1f8558eb3e1868ec5ce59a3d4ccfb3 G7_best_d28.txt; c1b46c319fd614e5bcb0909b616a9f2833e0dfee SL41_d28.txt
+start G7 11110011110011000111100110010001000101011001000100001100 | start SL41 11110011110011000111110111010110001111111000010111100110
+I-ROOM level 5: (window, condition) units 30 on 16 distinct 5-windows of 63
+I-ROOM j-windows at j = 1..5: 119 | I-FUEL: 119
+I-FUEL decider = option 19 (12 or 13) ('at s_(a-1)', 'fail') 32
+I-FUEL decider = option 19 (12 or 13) ('at s_(a-1)', 'good') 0
+I-FUEL decider = option 19 (12 or 13) ('every pre-state', 'fail') 16
+I-FUEL decider = option 19 (12 or 13) ('every pre-state', 'good') 0
+I-FUEL decider = option 19 (12 or 13) ('some pre-state', 'fail') 48
+I-FUEL decider = option 19 (12 or 13) ('some pre-state', 'good') 0
+I-FUEL decider = option 19 (12 or 13) ('some s_a..s_e', 'fail') 32
+I-FUEL decider = option 19 (12 or 13) ('some s_a..s_e', 'good') 0

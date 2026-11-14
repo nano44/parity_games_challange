@@ -1,0 +1,8 @@
+4 2 0 11 400000 seeds/red_m4_T2_16.txt
+4 2 0 12 400000 seeds/lsi_k2_m4_s2.txt
+4 1 0 13 400000 seeds/lsi_k1_m4_s2.txt
+4 2 2 14 400000 seeds/lsi_k1_m4_s2.txt
+5 2 0 21 500000 seeds/ext5_bot2.txt
+5 2 0 22 500000 seeds/ext5_top1.txt
+5 1 0 23 500000 seeds/ext5_bot2.txt
+5 0 0 24 500000 seeds/ext5_bot2.txt

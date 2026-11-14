@@ -1,0 +1,6 @@
+corpus files at d 5: 1
+class PHX d 5 genomes 0 transitions 971 distinct-dec-rows 851 distinct-states 1024 features 159
+FEASIBLE min max Phi = 15.0000
+weights: pair1_1100=8.59 zH1_4=6.4 zH1_1=5.85 ord0=5.38 pair2_0001=5.13 pair4_1101=4.97 pair0_0101=-4.62 uH3_8=-4.47 pair4_0101=4.4 pair2_1001=4.38 pair2_1011=4.32 k5=4.3 pair0_0011=4.08 zH0_7=-4.07 pair2_0011=3.97 kz1_3=-3.45 k1=3.26 k2=-3.13 zH3_8=3.09 pair3_1011=3.02 pair0_0001=-2.78 pair1_1101=2.73 pair4_0111=2.73 k4=2.72 uH0_7=2.54 pair4_1010=-2.52 ord3=-2.46 pair1_0100=2.36 k6=2.3 pair4_1110=2.27 pair0_0000=-2.25 pair2_0100=2.07 kz2_5=-2.01 zk3_4=-1.93 kz2_4=1.82 pair1_0001=1.71 pair1_1001=1.66 uH4_5=-1.57 uH4_2=1.54 pair3_0101=1.5 const=0
+dual: 15 decrease rows in support, sum of their multipliers 15.0000 (= the bound)
+dual mass by genome source: max_d5_L15.json:15

@@ -1,0 +1,10 @@
+GAME new/box54/out/hf/counter_rob_6.pg 
+GAMES 1
+enum_skip 7
+enum_states 6
+keep_chk 7
+loc_chk 253
+rhos 4164
+states 13
+VIOLATIONS 0
+RC 0

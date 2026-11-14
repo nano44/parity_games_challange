@@ -1,0 +1,9 @@
+GAME n5-epoch/instances/gci2_n12.pg
+GAMES 1
+enum_states 7
+keep_chk 6
+loc_chk 7
+rhos 14
+states 7
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,12 @@
+start (2, 4) C 1
+iter 9 R 2 T 5 C 2
+iter 21 R 2 T 6 C 2
+iter 26 R 2 T 7 C 3
+iter 46 R 3 T 5 C 0
+iter 139 R 3 T 6 C 1
+iter 197 R 3 T 8 C 3
+iter 250 R 4 T 8 C 3
+iter 352 R 5 T 9 C 2
+iter 4719 R 6 T 8 C 1
+iter 6311 R 7 T 8 C 1
+final d 4 seed 2 R 7 T 8

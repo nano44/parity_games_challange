@@ -1,0 +1,9 @@
+GAME red/rec0/instances/nep24_n20.pg 
+GAMES 1
+enum_states 15
+keep_chk 2
+loc_chk 115
+rhos 130
+states 15
+VIOLATIONS 0
+RC 0

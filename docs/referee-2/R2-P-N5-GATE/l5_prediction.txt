@@ -1,0 +1,5 @@
+REFEREE-2 successor 38, prediction written 2026-11-12 18:00Z (date -u), before the lane's L-5 exists on origin at my fetch:
+L-4 (l-si 676b6a1c, sha1 6bfde78ef050b47f43527875256c65a205869e77, 12,562 B)
++ the nine pairs of CHECKER C142 §4 (claude/checker 269effb3) = sha1 7ebcf7355be9838473f05a7defe913940b6fd723, 12,923 B (bt_l5_c142.out)
++ the tenth pair of the Lead's ruling (17:58Z): «with its fixes entries 1-4,» → «with its fixes entries 1-5,» (old occurs once)
+= predicted final L-5: sha1 459fd88d2d1959647f6aeb065bf8ac58cce684f9, 12,923 B, 238 «(» = 238 «)», 0 «|».

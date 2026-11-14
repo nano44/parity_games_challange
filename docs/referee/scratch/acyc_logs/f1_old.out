@@ -1,0 +1,11 @@
+1 | w* does not depend on σ. Proof.
+1 | - w*: the two plays from K2 lie inside the closed core, which does not depend on σ. So Odd's optimal choice at
+1 | at K2 the same choice (LAMBDA-CONST's proof).
+1 | - The bound is attained: T_CYC = N on some genomes of §6's set A (max T/N = 1.0).
+1 | Hence a super-polynomial tower family would bear on N5 only, and N5′-xi lower bounds need Ξ-cyclic genomes.
+1 | A family of towers with L super-polynomial in N + M would therefore bear on N5 (R117's Corollary REAL-IDEAL-S3
+1 | For N5′-xi to be slow, R must grow (R118 (l)'s equivalence), and R = 0 on every Ξ-acyclic genome. So a candida
+1 | its FL run has length exactly L(G) (R117:
+1 | states 0, …, k1 − 1 that are non-standard.
+1 | (DATA: 2 more on every genome of §6, but no bound)
+1 | is the k-th pass of SPEC S4,

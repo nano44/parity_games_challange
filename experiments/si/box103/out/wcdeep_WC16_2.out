@@ -1,0 +1,3 @@
+T3 4 N 68 SCC sizes [66]
+mover 67 t 3 Lam ('K', 1) z ('e', (33, 0)) gained e-depth 16 | movers switching t->t+1: [67]
+   lost e: []  gained e: [(33, 0)]

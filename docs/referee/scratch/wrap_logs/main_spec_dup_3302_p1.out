@@ -1,0 +1,19 @@
+mode spec family dup seed 3302 games 2000 nmax 12 CTRL 0 PERM 1 | maxT 3 sumT 404 maxF 4 max|W| 236
+s3fail 0
+nonstd 0
+nohoward 0
+fbwrong 0
+endwrong 0
+wrong 0
+size 0
+w1 0
+w4a 0
+w4b 0
+w4c 0
+w4d 0
+w5 0
+w6 0
+w8 0
+v5 0
+rem2 0
+rem3 0

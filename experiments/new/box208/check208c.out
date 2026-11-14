@@ -1,0 +1,7 @@
+CFI3_n48.json K2tested 4000 P4eq 30 Tmax 24 Tsum 24 genomes 1 lagstates 284 maxmvals_pct 1 nonstalls 197 plateaus 27 platmax 4 platpct 8 stalls 87
+DEAD_SEG2P_d4_N8.json K2tested 4000 Tmax 10 Tsum 10 genomes 1 lagstates 19 maxmvals_pct 3 nonstalls 3 plateaus 2 platmax 8 platpct 100 stalls 16
+K1D4_n48.json K2tested 4000 Tmax 23 Tsum 23 betaonly 3 genomes 1 lagstates 228 maxmvals_pct 1 nonstalls 102 plateaus 14 platmax 9 platpct 18 stalls 126
+ctrl MWR4_2.json K2tested 4000 L1stall 25 L2 30 L3 30 L4beta 25 L4gate_face 21 L4nocycle 25 Tmax 30 Tsum 30 genomes 1 lagstates 30 maxmvals_pct 6 nonstalls 5 stalls 25
+xcheck RINT_n48.json T 24 OK
+xcheck DEAD_SEG2P_d9_N18.json T 21 OK
+rand 2098 150 rand,cyc,self,up,down,dense,flat K2tested 436574 Tmax 6 Tsum 239 betaonly 231 genomes 150 lagstates 366 maxmvals_pct 25 nonstalls 355 plateaus 11 platmax 1 platpct 25 stalls 11

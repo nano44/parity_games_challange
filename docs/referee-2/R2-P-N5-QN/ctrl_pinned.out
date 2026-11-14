@@ -1,0 +1,4 @@
+k1fail_202.json N 15 M 45 k 1 T 4 Q 3 W 1 maxflips 2 lamch 0 faces (2, 3) maxasc 1 C 0
+MWR4_2.json N 48 M 97 k 1 T 30 Q 30 W 0 maxflips 9 lamch 0 faces (5, 10) maxasc 2 C 0
+MWR8_2.json N 84 M 177 k 1 T 54 Q 54 W 0 maxflips 17 lamch 0 faces (9, 18) maxasc 2 C 0
+TOTAL CTRL: runs 3 lamskip 0 gc 28 gf 16 qnotp 1 qwin 1 Tq 1 qsum 3 lam 0 lamid 0 cpay 0 lamid_mover 0 | max T 54 W 1 maxflips 17 maxasc 2 k 1

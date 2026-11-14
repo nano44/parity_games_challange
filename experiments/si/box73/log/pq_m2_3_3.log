@@ -1,0 +1,2 @@
+DIMACS m2_pq_T1_T26_K1_NOIM0.cnf sha1 9b5def25316a45dd44b54d80efe614ad32c72284
+m 2 MODE pq T 1 T2 6 K 1 NOIM 0 vars 1569 clauses 7270 -> UNSAT 0.6s

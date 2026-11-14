@@ -1,0 +1,8 @@
+GAME n5-epoch/instances/ffin4_n24.pg 
+GAMES 1
+enum_states 1
+loc_chk 5
+rhos 12
+states 1
+VIOLATIONS 0
+RC 0

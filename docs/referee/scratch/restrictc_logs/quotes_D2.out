@@ -1,0 +1,5 @@
+OK   R125(body)               «For every positional pair of Γ3(G) and every vertex v ≠ c_X, the cycle node of v's play has Ω ≥ 3; no mover, gate or pad is ever a cycle node or in…»
+OK   R125(body)               «For every genome G, the N5′-xi run from S3 on Γ3(G) visits only standard states and its mover parts form a run of HOW3(G) (tie rule: Ξσ-best, then …»
+OK   R118(body)               «If Λ and σ̄ are constant on the states a, a+1, …, a+j+1 and the step a+j → a+j+1 changes σ, then j ≤ N − 1.»
+OK   R118(body)               «§4 applies on Γ3»
+quotes 4, missing 0

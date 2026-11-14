@@ -1,0 +1,23 @@
+start FB 0 L 5 {'a': 1, 'b': 6, 'L': 5, 'FB': 0, 'XO': 0, 'ODIFF': 0, 'FFSEG': 5}
+it 5 FB 0 L 6 {'a': 0, 'b': 6, 'L': 6, 'FB': 0, 'XO': 0, 'ODIFF': 0, 'FFSEG': 6}
+it 21 FB 0 L 8 {'a': 0, 'b': 8, 'L': 8, 'FB': 0, 'XO': 0, 'ODIFF': 0, 'FFSEG': 8}
+it 23 FB 1 L 5 {'a': 0, 'b': 5, 'L': 5, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 4}
+it 25 FB 1 L 6 {'a': 0, 'b': 6, 'L': 6, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 5}
+it 222 FB 1 L 9 {'a': 0, 'b': 9, 'L': 9, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 8}
+it 299 FB 1 L 10 {'a': 0, 'b': 10, 'L': 10, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 9}
+it 382 FB 1 L 12 {'a': 0, 'b': 12, 'L': 12, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 11}
+it 592 FB 1 L 13 {'a': 0, 'b': 13, 'L': 13, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 12}
+it 748 FB 1 L 14 {'a': 0, 'b': 14, 'L': 14, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 13}
+it 1213 FB 1 L 15 {'a': 0, 'b': 15, 'L': 15, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 14}
+it 1424 FB 1 L 16 {'a': 0, 'b': 16, 'L': 16, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 15}
+it 1669 FB 1 L 17 {'a': 0, 'b': 17, 'L': 17, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 16}
+it 2594 FB 1 L 18 {'a': 0, 'b': 18, 'L': 18, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 17}
+it 2814 FB 1 L 19 {'a': 0, 'b': 19, 'L': 19, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 18}
+it 2887 FB 1 L 20 {'a': 0, 'b': 20, 'L': 20, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 19}
+it 3012 FB 1 L 21 {'a': 0, 'b': 21, 'L': 21, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 20}
+it 3369 FB 1 L 22 {'a': 0, 'b': 22, 'L': 22, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 21}
+it 3703 FB 1 L 23 {'a': 0, 'b': 23, 'L': 23, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 22}
+it 4552 FB 1 L 24 {'a': 0, 'b': 24, 'L': 24, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 23}
+it 5523 FB 1 L 25 {'a': 0, 'b': 25, 'L': 25, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 24}
+it 5598 FB 1 L 26 {'a': 0, 'b': 26, 'L': 26, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 25}
+BEST n 32 FB 1 L 26 {'a': 0, 'b': 26, 'L': 26, 'FB': 1, 'XO': 0, 'ODIFF': 0, 'FFSEG': 25}

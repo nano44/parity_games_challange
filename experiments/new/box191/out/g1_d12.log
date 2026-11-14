@@ -1,0 +1,25 @@
+start score (4, 4) N 24
+it 13 N 24 T 5 maxrun 1 C 4
+it 21 N 24 T 8 maxrun 1 C 6
+it 89 N 24 T 9 maxrun 3 C 6
+it 492 N 24 T 10 maxrun 3 C 7
+it 533 N 24 T 11 maxrun 4 C 6
+it 599 N 24 T 12 maxrun 5 C 5
+it 691 N 24 T 13 maxrun 5 C 6
+it 744 N 24 T 15 maxrun 6 C 6
+it 774 N 24 T 16 maxrun 7 C 6
+it 816 N 24 T 17 maxrun 8 C 5
+it 832 N 24 T 18 maxrun 9 C 5
+it 852 N 24 T 19 maxrun 9 C 6
+it 874 N 24 T 20 maxrun 9 C 6
+it 1776 N 24 T 21 maxrun 10 C 8
+it 1788 N 24 T 22 maxrun 10 C 8
+it 1809 N 24 T 23 maxrun 11 C 8
+it 2219 N 24 T 24 maxrun 10 C 9
+it 2290 N 24 T 25 maxrun 12 C 8
+it 2485 N 24 T 26 maxrun 12 C 8
+it 2937 N 24 T 27 maxrun 13 C 9
+it 2939 N 24 T 28 maxrun 14 C 9
+it 3010 N 24 T 29 maxrun 14 C 9
+it 6166 N 24 T 30 maxrun 14 C 9
+it 6316 N 24 T 31 maxrun 13 C 11

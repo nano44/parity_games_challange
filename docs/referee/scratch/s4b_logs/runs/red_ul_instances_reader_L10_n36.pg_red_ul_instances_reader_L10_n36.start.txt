@@ -1,0 +1,4 @@
+GAME red/ul/instances/reader_L10_n36.pg red/ul/instances/reader_L10_n36.start
+GAMES 1
+VIOLATIONS 0
+RC 0

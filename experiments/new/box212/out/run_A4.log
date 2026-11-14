@@ -1,0 +1,3 @@
+run212a4.sh: line 14: 20181 Killed                  RULE=$r SEED=212 timeout 300 python3 -I rf212.py $f > out/one4.tmp 2>&1
+run212a4 finished
+exit 0

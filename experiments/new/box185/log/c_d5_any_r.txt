@@ -1,0 +1,24 @@
+it 0 moves 1 runT 3
+it 1 moves 1 runT 5
+it 8 moves 3 runT 5
+it 204 moves 3 runT 6
+it 335 moves 3 runT 7
+it 394 moves 3 runT 8
+it 473 moves 4 runT 8
+it 2017 moves 4 runT 9
+it 2154 moves 4 runT 10
+it 4044 moves 4 runT 11
+it 9907 moves 4 runT 12
+it 17883 moves 4 runT 13
+it 45309 moves 5 runT 7
+it 45480 moves 5 runT 8
+it 46740 moves 5 runT 9
+it 49658 moves 5 runT 10
+it 55732 moves 5 runT 11
+it 60320 moves 5 runT 12
+it 61712 moves 5 runT 13
+it 73094 moves 5 runT 14
+it 74354 moves 6 runT 12
+it 75374 moves 6 runT 13
+it 92075 moves 6 runT 14
+FINAL moves 6 runT 14

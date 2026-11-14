@@ -1,0 +1,9 @@
+GAME red/sgrow/instances/s20_n20.pg 
+GAMES 1
+enum_skip 2
+enum_states 5
+loc_chk 69
+rhos 210
+states 7
+VIOLATIONS 0
+RC 0

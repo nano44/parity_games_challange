@@ -1,0 +1,10 @@
+L-1 1 | G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim
+L-1 1 | nothing is claimed about iterations after the first fallback, about Ξ-cyclic genomes, or about the running time of N5 or N5′-xi
+L-1 1 | PROVED-CONDITIONAL on R118's REACH3-CYC
+packet 1 | Not a TARGET.md claim; not M3; not a gauntlet step; G-N5-TIME stays OPEN.
+packet 1 | None is an M3 or M4 claim or a gauntlet step (§5). G-N5-TIME stays OPEN; N5′-xi stays a CANDIDATE (D1).
+L-1 word polynomial 0
+L-1 word M4 0
+L-1 word M3 1
+L-1 word W_E 0
+L-1 word solve 0

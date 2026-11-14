@@ -1,0 +1,27 @@
+TOTAL rand 3000 3901 8 FAILS 0 | s3fail 0 nonstd 0 e0fail 0 nohoward 0 fbwrong 0 endwrong 0 kconf 0 odd5 0 ntfail 0 tiefail 0 sinkfail 0 injfail 0 | iters 11020 runs 3000 states 14020
+TOTAL rand 3000 3901 8 --mode spec FAILS 0 | s3fail 0 nonstd 0 e0fail 0 nohoward 0 fbwrong 0 endwrong 0 kconf 0 odd5 0 ntfail 0 tiefail 0 sinkfail 0 injfail 0 | iters 10038 runs 3000 states 13038
+TOTAL rand 1000 3902 12 --perm FAILS 0 | s3fail 0 nonstd 0 e0fail 0 nohoward 0 fbwrong 0 endwrong 0 kconf 0 odd5 0 ntfail 0 tiefail 0 sinkfail 0 injfail 0 | iters 3961 runs 1000 states 4961
+TOTAL rand 1000 3902 12 --perm --mode spec FAILS 0 | s3fail 0 nonstd 0 e0fail 0 nohoward 0 fbwrong 0 endwrong 0 kconf 0 odd5 0 ntfail 0 tiefail 0 sinkfail 0 injfail 0 | iters 3506 runs 1000 states 4506
+W(G_1, iota): |W| 211 mode xi iterations 11 F 9 H-steps 8 iters 11 runs 1 states 12
+W(G_2, iota): |W| 395 mode xi iterations 29 F 27 H-steps 26 iters 29 runs 1 states 30
+W(G_3, iota): |W| 600 mode xi iterations 65 F 63 H-steps 62 iters 65 runs 1 states 66
+W(G_4, iota): |W| 826 mode xi iterations 137 F 135 H-steps 134 iters 137 runs 1 states 138
+W(G_5, iota): |W| 1073 mode xi iterations 281 F 279 H-steps 278 iters 281 runs 1 states 282
+TOTAL wgn 5 FAILS 0 | s3fail 0 nonstd 0 e0fail 0 nohoward 0 fbwrong 0 endwrong 0 kconf 0 odd5 0 ntfail 0 tiefail 0 sinkfail 0 injfail 0 rem3 0 | iters 523 runs 5 states 528
+W(G_1, iota): |W| 211 mode spec iterations 3 F 1 H-steps 0 iters 3 rec_spec_Fmax 1 runs 1 states 4
+W(G_2, iota): |W| 395 mode spec iterations 3 F 1 H-steps 0 iters 3 rec_spec_Fmax 1 runs 1 states 4
+W(G_3, iota): |W| 600 mode spec iterations 3 F 1 H-steps 0 iters 3 rec_spec_Fmax 1 runs 1 states 4
+W(G_4, iota): |W| 826 mode spec iterations 3 F 1 H-steps 0 iters 3 rec_spec_Fmax 1 runs 1 states 4
+TOTAL wgn 4 --mode spec FAILS 0 | s3fail 0 nonstd 0 e0fail 0 nohoward 0 fbwrong 0 endwrong 0 kconf 0 odd5 0 ntfail 0 tiefail 0 sinkfail 0 injfail 0 rem3 0 | iters 12 rec_spec_Fmax 4 runs 4 states 16
+TOTAL rand 200 3903 6 --ctrl start FAILS 3571 | s3fail 0 nonstd 800 e0fail 600 nohoward 40 fbwrong 0 endwrong 200 kconf 0 odd5 1931 ntfail 0 tiefail 0 sinkfail 0 injfail 0 rem3 0 | iters 600 runs 200 states 800
+TOTAL rand 200 3903 6 --ctrl worst FAILS 222 | s3fail 0 nonstd 0 e0fail 0 nohoward 222 fbwrong 0 endwrong 0 kconf 0 odd5 0 ntfail 0 tiefail 0 sinkfail 0 injfail 0 rem3 0 | iters 713 runs 200 states 913
+TOTAL ntrand 300 3904 FAILS 244 | s3fail 0 nonstd 0 e0fail 0 nohoward 0 fbwrong 0 endwrong 0 kconf 0 odd5 0 ntfail 198 tiefail 46 sinkfail 0 injfail 0 rem3 0 | gn_states 504
+G_1: nodes 14 injective 1 max priority 20 T 8 9*2^n-10 8 gn_states 9
+G_2: nodes 24 injective 1 max priority 32 T 26 9*2^n-10 26 gn_states 27
+G_3: nodes 34 injective 1 max priority 44 T 62 9*2^n-10 62 gn_states 63
+G_4: nodes 44 injective 1 max priority 56 T 134 9*2^n-10 134 gn_states 135
+G_5: nodes 54 injective 1 max priority 68 T 278 9*2^n-10 278 gn_states 279
+G_6: nodes 64 injective 1 max priority 80 T 566 9*2^n-10 566 gn_states 567
+G_7: nodes 74 injective 1 max priority 92 T 1142 9*2^n-10 1142 gn_states 1143
+G_8: nodes 84 injective 1 max priority 104 T 2294 9*2^n-10 2294 gn_states 2295
+TOTAL gn 8 FAILS 0 | s3fail 0 nonstd 0 e0fail 0 nohoward 0 fbwrong 0 endwrong 0 kconf 0 odd5 0 ntfail 0 tiefail 0 sinkfail 0 injfail 0 rem3 0 | gn_states 4518

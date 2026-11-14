@@ -1,0 +1,3 @@
+R2 steps 2072 own-cycle-node-switch steps 555 H0 failures 388
+random count 2000 seed 3 n 12: maxpure > nE in 0 (of which with an H0 event: 0); max maxpure/nE 1.00
+exit 0

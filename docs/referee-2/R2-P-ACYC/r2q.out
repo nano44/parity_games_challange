@@ -1,0 +1,30 @@
+MISS {'docs/RESULTS.md': 0, 'docs/new/N5-ssi-global.md': 0} | Freeze a short packet P-ACYC
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | an IDEAL genome G has N movers x with levels lev(x), M := Σ deg(x) options (x, k), each with a W-target of lev
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | the Ξ-graph has an edge x → xt(x, k) for every option with a mover as Ξ-target
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | the game Γ(G) on n = N + 3M + 6 vertices (Even movers of priority 0; Odd gates of priority 1 with a W-face e a
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | with start σ = the genome start at movers, β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1, K3 → K
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | the game Γ3(G) obtained from Γ(G) by 4M + 4 single-successor Even pads of priority ≤ 2 (pA on K0 → K3, s on K1
+OK   {'docs/RESULTS.md': 2, 'docs/new/N5-ssi-global.md': 0} | VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k)
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | σ̄ is Odd's optimal counterstrategy, chosen by a fixed deterministic rule
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is unrestricted
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | every mover x goes to a successor of ⊴-largest Ω_t value, and keeps σ_t(x) if σ_t(x) is such a successor
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | T_CYC := the number of steps to the first state where no mover has a strictly better successor
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | C if Λ_t(v) ≠ Λ_(t+1)(v) for some vertex v;
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | else R if σ̄_t(v) ≠ σ̄_(t+1)(v) for some Odd vertex v;
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | If Λ and σ̄ are constant on the states a, a+1, …, a+j+1 and the step a+j → a+j+1 changes σ, then j ≤ N − 1. He
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | an N5′-xi run (box 190's S4a tie rule by Ξσ)
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | The N5′-xi run of Γ3(G) from S3 has the following form:
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | T3 is the first state at which no mover has a strictly better successor in Γ3;
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | transition T3 + 1 is an S4c fallback.
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | which RESULTS R117 (P-N5-REACH) signs in its entry (S3-START, PAD, K3, TAU3 for every genome; ESC3, W3 for IDE
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | §4 applies on Γ3 (movers priority 0, pads never cycle nodes by PAD (b), non-mover Even vertices frozen in stan
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | T3 ≤ C + R + (C + R + 1)·N, with C ≤ n3·(2M + 2) and n3 = N + 7M + 10;
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | the first fallback of N5′-xi on Γ3(G) comes at iteration T3 + 1.
+OK   {'docs/RESULTS.md': 3, 'docs/new/N5-ssi-global.md': 0} | no bound on R is claimed (OPEN), so nothing about N5′-xi's or N5's running time follows
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | N5 "SSI-GLOBAL" as specified in docs/new/N5-ssi-global.md
+OK   {'docs/RESULTS.md': 0, 'docs/new/N5-ssi-global.md': 1} | S4 Iteration (one iteration = one pass with Iσ ∪ Iτ ≠ ∅; both steps computed from the SAME (σ, τ), applied tog
+OK   {'docs/RESULTS.md': 0, 'docs/new/N5-ssi-global.md': 1} | c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with an improving edge set σ_new(v) = the
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | non-mover Even vertices frozen in standard states
+OK   {'docs/RESULTS.md': 1, 'docs/new/N5-ssi-global.md': 0} | the N5 run of Γ3(G) FROM S3 has states 0, …, L(G) equal to the transported REALIZE states of the IDEAL run
+MISS {'docs/RESULTS.md': 0, 'docs/new/N5-ssi-global.md': 0} | Polynomial only on a restricted class … 
+quotes: 27 of 29 found verbatim (whitespace-normalised)

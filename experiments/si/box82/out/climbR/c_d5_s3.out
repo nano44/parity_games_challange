@@ -1,0 +1,20 @@
+start (0, 2) C 1
+iter 3 score (1, 3) C 1
+iter 6 score (2, 3) C 1
+iter 7 score (3, 5) C 1
+iter 72 score (3, 6) C 1
+iter 127 score (3, 8) C 2
+iter 202 score (4, 8) C 2
+iter 408 score (5, 9) C 2
+iter 540 score (5, 10) C 2
+iter 553 score (6, 9) C 2
+iter 1818 score (6, 10) C 2
+iter 1829 score (6, 11) C 3
+iter 3009 score (6, 13) C 4
+iter 4116 score (6, 14) C 4
+iter 5702 score (6, 15) C 4
+iter 12059 score (7, 14) C 3
+iter 12200 score (7, 15) C 3
+iter 12226 score (8, 12) C 2
+iter 12292 score (9, 12) C 2
+final d 5 seed 3 OBJ R score (9, 12)

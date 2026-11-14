@@ -1,0 +1,96 @@
+claude/l-new fcba92fc:experiments/new/box196/inst_si85/CL2_21.json
+claude/l-new fcba92fc:experiments/new/box196/inst_si85/CL2_22.json
+claude/l-new fcba92fc:experiments/new/box196/inst_si85/CL3_31.json
+claude/l-new fcba92fc:experiments/new/box196/inst_si85/CL3_32.json
+claude/l-new fcba92fc:experiments/new/box196/inst_si85/TC2.json
+claude/l-new fcba92fc:experiments/new/box196/inst_si85/TC2d.json
+claude/l-new fcba92fc:experiments/new/box196/inst_si85/TC3.json
+claude/l-new fcba92fc:experiments/new/box196/inst_si85/TC3d.json
+claude/l-new fcba92fc:experiments/new/box196/inst_si85/TC3m.json
+claude/l-new fcba92fc:experiments/new/box196/inst_si85/TC4m.json
+claude/l-new fcba92fc:experiments/new/box196/inst_si85/TC5m.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H2A.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H2B.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H2C.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H3A.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H3B.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H3C.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H4A.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H4B.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H4C.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H5A.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H5B.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H5C.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H6A.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H6B.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H6C.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H7A.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H7B.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H7C.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H8A.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H8B.json
+claude/l-new fcba92fc:experiments/new/box197/hfam/H8C.json
+claude/l-new fcba92fc:experiments/new/box198/inst/DSALT6_n108.json
+claude/l-new fcba92fc:experiments/new/box198/inst/DSALT7_n108.json
+claude/l-new fcba92fc:experiments/new/box198/inst/DSALT9_n416.json
+claude/l-new fcba92fc:experiments/new/box198/inst/NK6_cl21.json
+claude/l-red ea985380:experiments/red/r225/inst/CX4_n21.json
+claude/l-red ea985380:experiments/red/r225/inst/HIT7_d28.json
+claude/l-red ea985380:experiments/red/r225/inst/OFFUP_n4.json
+claude/l-red ea985380:experiments/red/r226/inst/CC2_n42.json
+claude/l-red ea985380:experiments/red/r226/inst/D2R_n23.json
+claude/l-red ea985380:experiments/red/r226/inst/DG3_n23.json
+claude/l-red ea985380:experiments/red/r226/inst/DSALT6_n108.json
+claude/l-red ea985380:experiments/red/r226/inst/DSALT7_n108.json
+claude/l-red ea985380:experiments/red/r226/inst/DSALT9_n416.json
+claude/l-red ea985380:experiments/red/r226/inst/GROW7_n34.json
+claude/l-red ea985380:experiments/red/r226/inst/GROW8_n53.json
+claude/l-red ea985380:experiments/red/r226/inst/HP6b_mup.json
+claude/l-red ea985380:experiments/red/r226/inst/HP6x_mup.json
+claude/l-red ea985380:experiments/red/r226/inst/HP7b_mup.json
+claude/l-red ea985380:experiments/red/r226/inst/HP7x_mup.json
+claude/l-red ea985380:experiments/red/r226/inst/HP8b_mup.json
+claude/l-red ea985380:experiments/red/r226/inst/SHARP_EU1.json
+claude/l-red ea985380:experiments/red/r226/inst/SHARP_EU2.json
+claude/l-red ea985380:experiments/red/r227/inst/C2CX4_n23.json
+claude/l-red ea985380:experiments/red/r227/inst/HOLD2K_n84.json
+claude/l-red ea985380:experiments/red/r227/inst/HOLD2_n84.json
+claude/l-red ea985380:experiments/red/r227/inst/HOLD3K_n125.json
+claude/l-red ea985380:experiments/red/r227/inst/HOLD3_n125.json
+claude/l-si:experiments/si/box84/inst/HP2_mup.json
+claude/l-si:experiments/si/box84/inst/HP3_mup.json
+claude/l-si:experiments/si/box84/inst/HP3_mup0.json
+claude/l-si:experiments/si/box84/inst/HP4_mup.json
+claude/l-si:experiments/si/box84/inst/HP5_mup.json
+claude/l-si:experiments/si/box85/inst/CL2_21.json
+claude/l-si:experiments/si/box85/inst/CL2_22.json
+claude/l-si:experiments/si/box85/inst/CL3_31.json
+claude/l-si:experiments/si/box85/inst/CL3_32.json
+claude/l-si:experiments/si/box85/inst/TC2.json
+claude/l-si:experiments/si/box85/inst/TC2d.json
+claude/l-si:experiments/si/box85/inst/TC3.json
+claude/l-si:experiments/si/box85/inst/TC3d.json
+claude/l-si:experiments/si/box85/inst/TC3m.json
+claude/l-si:experiments/si/box85/inst/TC4m.json
+claude/l-si:experiments/si/box85/inst/TC5m.json
+claude/l-si:experiments/si/box86/inst/CB2_63.json
+claude/l-si:experiments/si/box86/inst/CB3_61.json
+claude/l-si:experiments/si/box86/inst/CB3_62.json
+claude/l-si:experiments/si/box86/inst/LT2_1_0.json
+claude/l-si:experiments/si/box86/inst/LT2_1_1.json
+claude/l-si:experiments/si/box86/inst/LT2_m1_0.json
+claude/l-si:experiments/si/box86/inst/LT2_m1_1.json
+claude/l-si:experiments/si/box86/inst/LT3_1_0.json
+claude/l-si:experiments/si/box86/inst/LT3_1_1.json
+claude/l-si:experiments/si/box86/inst/LT3_m1_0.json
+claude/l-si:experiments/si/box86/inst/LT3_m1_1.json
+claude/l-si:experiments/si/box88/inst/HP3t.json
+claude/l-si:experiments/si/box88/inst/HP4t.json
+claude/l-si:experiments/si/box88/inst/HP5t.json
+claude/l-si:experiments/si/box88/inst/HP6b.json
+claude/l-si:experiments/si/box88/inst/HP7b.json
+claude/l-si:experiments/si/box88/inst/HP8b.json
+claude/l-si:experiments/si/box88/inst/ND4_hp3.json
+claude/l-si:experiments/si/box88/inst/NK6_cl21.json
+claude/l-si:experiments/si/box89/inst/DU21_h4.json
+claude/l-si:experiments/si/box89/inst/DU9_h3.json

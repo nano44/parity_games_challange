@@ -1,0 +1,12 @@
+LT-1a old count 1
+LT-1b old count 1
+GL-1 old count 1
+GL-2 old count 1
+GL-3 old count 1
+src note old count 1
+sha1 6bfde78ef050b47f43527875256c65a205869e77 12562 B; lines 1 bars 0 parens 230 230
+count RA-MULT 0
+count K1-FLIP(c) 0
+count a polynomial bound on the RA path count 0
+count pending 0
+CMP-EQUAL

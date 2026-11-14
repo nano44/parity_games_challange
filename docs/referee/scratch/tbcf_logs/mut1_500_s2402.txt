@@ -1,0 +1,15 @@
+GAMES 500
+ODD_V 5
+corner_own_cycle 230
+even 226
+flat_nc 19
+movers 1046
+odd 820
+ties_even 45
+ties_odd 5
+VIOLATIONS 5
+EX ('ODD', 'rand16', 0, 4)
+EX ('ODD', 'rand16', 1, 4)
+EX ('ODD', 'rand96', 0, 4)
+EX ('ODD', 'rand232', 0, 0)
+EX ('ODD', 'rand300', 1, 1)

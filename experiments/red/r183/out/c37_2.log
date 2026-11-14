@@ -1,0 +1,4 @@
+START n 37 4277 {'FVCH': 4, 'L': 7, 'CROSS': 1, 'K': 16, 'FVMAX': 4}
+IT 26 {'FVCH': 5, 'L': 6, 'CROSS': 1, 'K': 15, 'FVMAX': 5}
+IT 415 {'FVCH': 6, 'L': 6, 'CROSS': 1, 'K': 14, 'FVMAX': 5}
+BEST n 37 {'FVCH': 6, 'L': 6, 'CROSS': 1, 'K': 13, 'FVMAX': 5}

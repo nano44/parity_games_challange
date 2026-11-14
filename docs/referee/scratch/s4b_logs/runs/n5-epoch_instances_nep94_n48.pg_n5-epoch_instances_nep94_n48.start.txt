@@ -1,0 +1,9 @@
+GAME n5-epoch/instances/nep94_n48.pg n5-epoch/instances/nep94_n48.start
+GAMES 1
+enum_states 100
+keep_chk 95
+loc_chk 114
+rhos 1163
+states 100
+VIOLATIONS 0
+RC 0

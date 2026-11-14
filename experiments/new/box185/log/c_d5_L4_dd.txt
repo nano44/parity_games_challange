@@ -1,0 +1,24 @@
+it 39378 moves 3 runT 15
+it 65882 moves 4 runT 6
+it 66677 moves 4 runT 7
+it 66794 moves 4 runT 8
+it 71665 moves 4 runT 9
+it 72673 moves 4 runT 10
+it 78755 moves 4 runT 11
+it 79010 moves 4 runT 12
+it 79475 moves 4 runT 13
+it 81757 moves 4 runT 14
+it 100434 moves 5 runT 8
+it 101249 moves 5 runT 9
+it 104102 moves 5 runT 10
+it 104105 moves 5 runT 11
+it 116291 moves 5 runT 12
+it 127781 moves 5 runT 13
+it 132988 moves 5 runT 14
+it 256690 moves 6 runT 8
+it 256732 moves 6 runT 9
+it 257179 moves 6 runT 10
+it 346469 moves 6 runT 11
+it 346480 moves 6 runT 12
+it 352425 moves 7 runT 11
+FINAL moves 7 runT 11

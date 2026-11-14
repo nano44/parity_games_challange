@@ -1,0 +1,8 @@
+rstart K1L10_n48.json 2131 5 RULE subrand K2tested 15000 K5how 137 Tmax 47 Tsum 183 bchecked 183 lagstates 3472 nonstalls 2308 nsmax 27 nspctP 0 plateaus 796 platexit 1969 platidle 865 platmax 3 runs 5 stalls 1164 tailmax 3
+rstart CFI3_n48.json 2131 5 RULE subrand K2tested 15000 K5how 74 Tmax 39 Tsum 146 bchecked 146 lagstates 2159 nonstalls 1407 nsmax 23 nspctP 0 plateaus 304 platexit 656 platidle 176 platmax 9 runs 5 stalls 752 tailmax 9
+rstart RINT_n48.json 2131 5 RULE subrand K2tested 15000 K5how 120 Tmax 32 Tsum 143 bchecked 143 lagstates 2100 nonstalls 1693 nsmax 26 nspctP 0 plateaus 227 platexit 614 platidle 77 platmax 5 runs 5 stalls 407 tailmax 5
+rstart MWR4_2.json 2131 5 RULE subrand K2tested 15000 K5how 80 Tmax 41 Tsum 191 bchecked 191 lagstates 3741 nonstalls 3180 nsmax 34 nspctP 0 plateaus 476 platexit 1242 platidle 253 platmax 2 runs 5 stalls 561 tailmax 2
+rstart CW4_n.json 2131 5 RULE subrand K2tested 15000 K5how 131 Tmax 39 Tsum 188 bchecked 188 lagstates 3625 nonstalls 3264 nsmax 35 nspctP 0 plateaus 288 platexit 715 platidle 120 platmax 3 runs 5 stalls 361 tailmax 2
+rstart BLKX26_n48.json 2131 5 RULE subrand K2tested 15000 K5how 157 Tmax 48 Tsum 210 bchecked 210 lagstates 4499 nonstalls 3057 nsmax 31 nspctP 0 plateaus 863 platexit 2057 platidle 920 platmax 4 runs 5 stalls 1442 tailmax 4
+rstart K1D4_n48.json 2131 5 RULE subrand K2tested 15000 K5how 65 Tmax 36 Tsum 156 bchecked 156 lagstates 2076 nonstalls 728 nsmax 13 nspctP 0 plateaus 246 platexit 329 platidle 172 platmax 16 runs 5 stalls 1348 tailmax 16
+rstart DEAD_SEG2P_d7_N14.json 2131 5 RULE subrand K2tested 15000 K5how 24 Tmax 18 Tsum 72 bchecked 72 lagstates 564 nonstalls 405 nsmax 13 nspctP 0 plateaus 111 platexit 255 platidle 62 platmax 2 runs 5 stalls 159 tailmax 2

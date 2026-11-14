@@ -1,0 +1,9 @@
+P-ACYC fix1 checks: PASS
+box 81 checks: PASS
+
+real	1m38.240s
+user	1m36.894s
+sys	0m0.731s
+exit 0
+P-ACYC fix1 checks: PASS
+exit 0

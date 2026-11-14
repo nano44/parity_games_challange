@@ -1,0 +1,1 @@
+n 7 VER fig4 nodes 74 edges 222 maxprio 92 | T 1142 2^n 128 9*2^n-10 1142 states 1143 | fact61 0 sinkex 0 w1all 0 sinkseek 0 eqval 0 tie 0 | WRAP xi |W| 1630 its 1145 F 1143 fallbacks 1 T_W 1142 its-T 3 | s3fail 0 nonstd 0 nohoward 0 fbwrong 0 endwrong 0 wrong 0 size 0 w1 0 w4a 0 w4b 0 w4c 0 w4d 0 w5 0 w6 0 w8 0 v5 0 rem2 0 rem3 0

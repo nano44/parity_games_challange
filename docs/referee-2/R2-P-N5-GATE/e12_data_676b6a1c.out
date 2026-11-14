@@ -1,0 +1,69 @@
+box90/out/mw90.out first / last commit, #commits: ('2d0344d3d', '2d0344d3d', 1)
+box90/out/fw90.out first / last commit, #commits: ('4ded1e8d9', '4ded1e8d9', 1)
+PASS own MW8_2 maxm = 8 :: got 8
+PASS own MW8_2 C = 17 :: got 17
+PASS own MW32_2 maxm = 32 :: got 32
+PASS own MW32_2 C = 65 :: got 65
+PASS own FW8_2 maxP = 54 :: got 54
+PASS own FW8_2 depth = 8 :: got 8
+PASS own FW8_2 C = 3 :: got 3
+PASS own FW16_2 maxP = 2583 :: got 2583
+PASS own FW16_2 depth = 16 :: got 16
+PASS own FW16_2 C = 3 :: got 3
+PASS g3 MW8_2 maxm = 8 :: got 8
+PASS g3 MW8_2 C = 17 :: got 17
+PASS g3 MW32_2 maxm = 32 :: got 32
+PASS g3 MW32_2 C = 65 :: got 65
+PASS g3 FW8_2 maxP = 54 :: got 54
+PASS g3 FW8_2 depth = 8 :: got 8
+PASS g3 FW8_2 C = 3 :: got 3
+PASS g3 FW16_2 maxP = 2583 :: got 2583
+PASS g3 FW16_2 depth = 16 :: got 16
+PASS g3 FW16_2 C = 3 :: got 3
+PASS F_10 − 1 = 54 and F_18 − 1 = 2583 (F_1 = F_2 = 1; d + 2 at d = 8, 16) :: 55 2584
+PASS own MW8_2 C = 17 :: got 17
+PASS own MW8_2 maxflip = 34 :: got 34
+PASS own MW32_2 C = 65 :: got 65
+PASS own MW32_2 maxflip = 130 :: got 130
+PASS own FW8_2 C = 3 :: got 3
+PASS own FW16_2 C = 3 :: got 3
+PASS g3 MW8_2 C = 17 :: got 17
+PASS g3 MW8_2 maxflip = 34 :: got 34
+PASS g3 MW32_2 C = 65 :: got 65
+PASS g3 MW32_2 maxflip = 130 :: got 130
+PASS g3 FW8_2 C = 3 :: got 3
+PASS g3 FW16_2 C = 3 :: got 3
+PASS box 91 rows equal on the two engines :: 11 rows
+box 91 maxa on MW8_2 / MW32_2 / FW16_2: ['9', '33', '0'] (not A*_all: C 65 > 33)
+PASS own MWR4_2 mx_flips = 9 :: got 9
+PASS own MWR4_2 mx_ch_D = 4 :: got 4
+PASS own MWR4_2 mx_lam_pe = 0 :: got 0
+PASS own MWR4_2 mx_lam_pb = 0 :: got 0
+PASS own MWR4_2 flips = 2·ch_D + 1 and = 2·min(mx_ch_pe, mx_ch_pb) + 1 :: mx_ch_pe 4 mx_ch_pb 9
+PASS own MWR8_2 mx_flips = 17 :: got 17
+PASS own MWR8_2 mx_ch_D = 8 :: got 8
+PASS own MWR8_2 mx_lam_pe = 0 :: got 0
+PASS own MWR8_2 mx_lam_pb = 0 :: got 0
+PASS own MWR8_2 flips = 2·ch_D + 1 and = 2·min(mx_ch_pe, mx_ch_pb) + 1 :: mx_ch_pe 8 mx_ch_pb 17
+PASS own MWR16_2 mx_flips = 33 :: got 33
+PASS own MWR16_2 mx_ch_D = 16 :: got 16
+PASS own MWR16_2 mx_lam_pe = 0 :: got 0
+PASS own MWR16_2 mx_lam_pb = 0 :: got 0
+PASS own MWR16_2 flips = 2·ch_D + 1 and = 2·min(mx_ch_pe, mx_ch_pb) + 1 :: mx_ch_pe 16 mx_ch_pb 33
+PASS g3 MWR4_2 mx_flips = 9 :: got 9
+PASS g3 MWR4_2 mx_ch_D = 4 :: got 4
+PASS g3 MWR4_2 mx_lam_pe = 0 :: got 0
+PASS g3 MWR4_2 mx_lam_pb = 0 :: got 0
+PASS g3 MWR4_2 flips = 2·ch_D + 1 and = 2·min(mx_ch_pe, mx_ch_pb) + 1 :: mx_ch_pe 4 mx_ch_pb 9
+PASS g3 MWR8_2 mx_flips = 17 :: got 17
+PASS g3 MWR8_2 mx_ch_D = 8 :: got 8
+PASS g3 MWR8_2 mx_lam_pe = 0 :: got 0
+PASS g3 MWR8_2 mx_lam_pb = 0 :: got 0
+PASS g3 MWR8_2 flips = 2·ch_D + 1 and = 2·min(mx_ch_pe, mx_ch_pb) + 1 :: mx_ch_pe 8 mx_ch_pb 17
+PASS g3 MWR16_2 mx_flips = 33 :: got 33
+PASS g3 MWR16_2 mx_ch_D = 16 :: got 16
+PASS g3 MWR16_2 mx_lam_pe = 0 :: got 0
+PASS g3 MWR16_2 mx_lam_pb = 0 :: got 0
+PASS g3 MWR16_2 flips = 2·ch_D + 1 and = 2·min(mx_ch_pe, mx_ch_pb) + 1 :: mx_ch_pe 16 mx_ch_pb 33
+PASS box 93 MWR rows equal on the two engines :: 3 rows
+FAILS 0

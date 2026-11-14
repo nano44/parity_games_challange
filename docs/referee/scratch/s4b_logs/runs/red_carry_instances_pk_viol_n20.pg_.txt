@@ -1,0 +1,11 @@
+GAME red/carry/instances/pk_viol_n20.pg 
+GAMES 1
+enum_skip 1
+enum_states 2
+keep_chk 1
+loc_chk 28
+oddfb 1
+rhos 4
+states 3
+VIOLATIONS 0
+RC 0

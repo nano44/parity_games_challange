@@ -1,0 +1,7 @@
+MWR4_2.json ctrl 0 wfail 0 dfail 0 bfail 0 T 30 C 0 R 13 sumflips 13 maxminface 10 maxmaxface 10 gate (34,0) flips 9 Dface (5,10) Dwt 5 ech 4 ech_at_Ccyc 0 bch 9 bch_at_Ccyc 0 Ccyc_changes 0
+MWR8_2.json ctrl 0 wfail 0 dfail 0 bfail 0 T 54 C 0 R 25 sumflips 25 maxminface 18 maxmaxface 18 gate (62,0) flips 17 Dface (9,18) Dwt 9 ech 8 ech_at_Ccyc 0 bch 17 bch_at_Ccyc 0 Ccyc_changes 0
+MWR16_2.json ctrl 0 wfail 0 dfail 0 bfail 0 T 102 C 0 R 49 sumflips 49 maxminface 34 maxmaxface 34 gate (118,0) flips 33 Dface (17,34) Dwt 17 ech 16 ech_at_Ccyc 0 bch 33 bch_at_Ccyc 0 Ccyc_changes 0
+K1F21_n48.json ctrl 0 wfail 0 dfail 0 bfail 0 T 31 C 0 R 21 sumflips 40 maxminface 12 maxmaxface 22 gate (46,0) flips 21 Dface (12,22) Dwt 12 ech 11 ech_at_Ccyc 11 bch 21 bch_at_Ccyc 21 Ccyc_changes 21
+K1C16_n400.json ctrl 0 wfail 0 dfail 0 bfail 0 T 51 C 0 R 44 sumflips 125 maxminface 37 maxmaxface 37 gate (82,0) flips 31 Dface (22,37) Dwt 22 ech 21 ech_at_Ccyc 16 bch 36 bch_at_Ccyc 33 Ccyc_changes 35
+B400_r32_a13d9661.json ctrl 0 wfail 0 dfail 0 bfail 0 T 49 C 0 R 40 sumflips 60 maxminface 19 maxmaxface 34 gate (82,0) flips 32 Dface (18,34) Dwt 18 ech 17 ech_at_Ccyc 17 bch 33 bch_at_Ccyc 33 Ccyc_changes 33
+k1fail_202.json ctrl 0 wfail 0 dfail 0 bfail 0 T 4 C 0 R 2 sumflips 3 maxminface 3 maxmaxface 3 gate (4,0) flips 2 Dface (2,3) Dwt 2 ech 1 ech_at_Ccyc 0 bch 2 bch_at_Ccyc 1 Ccyc_changes 1

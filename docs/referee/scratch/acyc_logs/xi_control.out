@@ -1,0 +1,6 @@
+rd2_d3.json N 6 acyclic False builder_equal True k1 10 T3_own 9 nonstd_states 0 xi_movers==own_howard_and_k1==T3+1 True
+rd2_d4.json N 8 acyclic False builder_equal True k1 12 T3_own 11 nonstd_states 0 xi_movers==own_howard_and_k1==T3+1 True
+rd3_d3.json N 6 acyclic False builder_equal True k1 13 T3_own 12 nonstd_states 0 xi_movers==own_howard_and_k1==T3+1 True
+rf_d4.json N 8 acyclic False builder_equal True k1 13 T3_own 12 nonstd_states 0 xi_movers==own_howard_and_k1==T3+1 True
+RS2.json N 18 acyclic False builder_equal True k1 11 T3_own 10 nonstd_states 0 xi_movers==own_howard_and_k1==T3+1 True
+TOTAL files rd2_d3.json rd2_d4.json rd3_d3.json rf_d4.json RS2.json: genomes 5 acyclic 0 builderdiff 0 s3startdiff 0 nofb 0 nonstd 0 notequal 0 bigk 4 states 59 max (k1-1)/N 2.0

@@ -1,0 +1,8 @@
+GAME new/box54/out/hf/counter_m_6.pg 
+GAMES 1
+enum_states 3
+loc_chk 9
+rhos 28
+states 3
+VIOLATIONS 0
+RC 0

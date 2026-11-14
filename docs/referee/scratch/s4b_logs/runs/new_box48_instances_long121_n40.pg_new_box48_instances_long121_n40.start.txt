@@ -1,0 +1,8 @@
+GAME new/box48/instances/long121_n40.pg new/box48/instances/long121_n40.start
+GAMES 1
+enum_states 1
+loc_chk 2
+rhos 4
+states 1
+VIOLATIONS 0
+RC 0

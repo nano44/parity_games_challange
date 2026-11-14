@@ -1,0 +1,8 @@
+k1fail_202.json N 15 k 1 T 4 C 0 R 2 p 2 maxflip 2 at (4, 0) maxasc 1
+MWR4_2.json N 48 k 1 T 30 C 0 R 13 p 17 maxflip 9 at (34, 0) maxasc 2
+MWR8_2.json N 84 k 1 T 54 C 0 R 25 p 29 maxflip 17 at (62, 0) maxasc 2
+MWR16_2.json N 156 k 1 T 102 C 0 R 49 p 53 maxflip 33 at (118, 0) maxasc 2
+ST4_k1.json N 9 k 1 T 0 C 0 R 0 p 0 maxflip 0 at None maxasc 3
+ST8_k1.json N 17 k 1 T 0 C 0 R 0 p 0 maxflip 0 at None maxasc 7
+K1C16_n400.json N 113 k 1 T 51 C 0 R 44 p 7 maxflip 31 at (82, 0) maxasc 3
+K1F21_n48.json N 48 k 1 T 31 C 0 R 21 p 10 maxflip 21 at (46, 0) maxasc 3

@@ -1,0 +1,6 @@
+RX 0 AGA 0 AGB 0 AGC 0 SWA 0 SWB 0 SWC 0 SWD 0 SWE 0 WPD 0
+INFO files 208 runs 63223 steps 140395 RXEQ 59502 segments 225917 windows 1288162 maxD 9
+DEAD-SEG box186/out/pass_d3_D3.json start 110100 z 5 level 2 Xi-target True T 4 moves of z at steps [1, 2, 3] LM 0
+DEAD-SEG box186/out/pass_d4_D4.json start 01010111 z 7 level 3 Xi-target True T 4 moves of z at steps [1, 2, 3, 4] LM 0
+DEAD-SEG box186/out/pass_d5_D5.json start 0101010110 z 9 level 4 Xi-target True T 5 moves of z at steps [1, 2, 3, 4, 5] LM 0
+DEAD-LEV box187/inst/m4_z4_r7.json start 10111010 mover 4 level 2 Xi-target True moves 7 T 8

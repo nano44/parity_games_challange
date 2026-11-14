@@ -1,0 +1,3 @@
+HP3_mup.json N 77 T 17 labels pRpRpppRpRRppRRRR R 9 C 0
+  GF [0, 5, 6, 2, 0] RF [0, 5, 4, 2, 0] MV [36, 6, 13, 22, 0] KF [0, 0, 0, 0, 0] U 39 maxasc 2 hist {0: 8795, 1: 143, 2: 8} maxDE 8
+  Xi-cycles (movers, level): [[(6, 3)], [(2, 2)], [(5, 2)], [(8, 2)], [(4, 1)], [(1, 1)], [(0, 0)], [(3, 3)], [(9, 3)]] count 9

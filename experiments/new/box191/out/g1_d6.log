@@ -1,0 +1,13 @@
+start score (5, 5) N 12
+it 4 N 12 T 7 maxrun 2 C 3
+it 94 N 12 T 8 maxrun 2 C 3
+it 211 N 12 T 10 maxrun 2 C 6
+it 219 N 12 T 11 maxrun 3 C 6
+it 259 N 12 T 12 maxrun 3 C 6
+it 493 N 12 T 13 maxrun 4 C 5
+it 773 N 12 T 14 maxrun 5 C 8
+it 1336 N 12 T 15 maxrun 4 C 8
+it 1666 N 12 T 16 maxrun 5 C 8
+it 3663 N 12 T 17 maxrun 5 C 8
+it 3813 N 12 T 18 maxrun 6 C 8
+it 12941 N 12 T 19 maxrun 6 C 8

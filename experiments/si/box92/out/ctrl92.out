@@ -1,0 +1,3 @@
+engine own instance N+M gates flips f_lam f_np f_up lowch lowflip decfail glnfail
+ctrl=low own MW8_2.json 261 177 42 8 34 0 0 0 0 0
+ctrl=low own C6G8_n54.json 204 150 73 19 13 15 156 26 0 26

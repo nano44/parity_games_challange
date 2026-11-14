@@ -372,3 +372,239 @@ enter a RESULTS line as «DEAD»: it enters as DATA with its numbers and source 
 refereed proof, or one instance exceeding an EXPLICIT bound (as R90's REP-LIN, 570 > 538). Grounds: CHECKER C108 E-1 and C109 E-3
 («A DATA label does not cure an overclaim»), REFEREE ROOT-L4 / ROOT-L5 (claude/referee 74025e44). Applied: P-N5-STAIR line L-3 drops
 the DESC-LIN clause; P-N5-ROOT line L-2 drops the DESC-LIN and DESC*-LIN clauses.
+
+Lead reading L44 (2026-11-01 03:17Z by date -u):
+Class-free items inside class-scoped RESULTS entries. An item of a landed RESULTS entry whose heading or Setting names a subclass (e.g.
+R18, 𝒞^1O) may be cited «on every game» in a later line when (i) the item's own statement carries no class hypothesis and (ii) both
+referees of the citing packet confirm that its signed proof uses none; the citing line says so («its proof uses no 𝒞^1O hypothesis»)
+and the entry quotes both confirmations. Applied first to R18 (d) Lemma R / Lemma S (a)-(b) in P-N5-GATE (REFEREE c9bc161c §1;
+REFEREE-2 e35e8280 §2). Landed precedents in entry bodies: R47, R55, R56.
+
+Lead reading L45 (2026-11-01 04:10Z by date -u):
+S4b is covered by R57's 1E-N3. L42's restriction («R57 covers S1 and S4a only; [S4b-OPT] not covered») is LIFTED for S4b: S4b runs S1's
+procedure on the restricted game H′_k (same V, Ω, owners; E′ ⊆ E; a successor at every vertex; «S1 procedure on H', not dual»), which is an
+input of the kind 1E-N3 / N-1E-1 speaks of (R57 (b): «that S1's procedure realises an optimal σ̄ is VJ00 §6 plus SPEC conformance»).
+Grounds: P-N5-S4B (l-si 68fa36619) Lemma S4B-OPT and Corollary S4B-KEEP, SIGNED by REFEREE (062cd734) and REFEREE-2 (1b9ef2e1), both
+stating that 1E-N3 covers S4b and that the lift is consistent with their signatures. Effect: lemmas that used [S4b-OPT] / [S4b-KEEP]
+(e.g. O-ARENA, withdrawn from P-N5-STAIR under L42) are as conditional as every landed N5 result, i.e. on R57's SPEC premise only; they
+still need their own referee review to land. L42 stays in force for any premise other than S1's procedure on a valid input.
+
+Lead reading L46 (2026-11-01 13:32Z by date -u):
+RESULTS R24 (a) Lemma R and R24 (b) Lemma TB are class-free under L44 (i)-(ii): both referees confirmed, independently and before any
+citing packet, that the statements carry no class hypothesis and that the signed proofs use none; 𝒞^1O enters R24 only in (c) CASC,
+(d) U1 and (e) WC (REFEREE docs/referee/R-R24-L44.md 472f0dcd; REFEREE-2 docs/referee-2/R2-R24-L44.md d96d2f9e). A citing packet may
+quote both confirmations as L44's (ii); its own referees still check how the items are used. The CHOICE FORM («a flat non-corner Even
+mover picks the smallest index at an odd W′-cycle node, the lex-min root-first key at an even one, among its tied options») is NOT
+R24 (b)'s literal statement: a citing line states it as «R24 (a) Lemma R and R24 (b)'s choice rule (TB proof steps 1, 3-5) with
+bridge B; its proof uses no 𝒞^1O hypothesis» (REFEREE CF-1), and bridge B (flat + non-corner ⇒ the old option is fully optimal) is
+signed in the citing packet. «Tied» means fully optimal under W′ = H_k's arena optimum (W′(z) ⊕ h = W′(h)), not under W_k; an option
+whose play passes h is a corner, outside the rule (REFEREE-2 precision note). Not covered: R24 (c)-(e).
+Amendment to L46 (2026-11-01 17:35Z by date -u, Lead): (1) attribution: «tied under W′» is REFEREE-2's precision note (d96d2f9e); the corner
+clause is REFEREE's CF-1 (472f0dcd), not REFEREE-2's. (2) wording: «corner» means that h occurs on the option's play BEFORE that play's
+cycle node (REFEREE R-R24-L44.md Addendum 1; ANC-1 on P-N5-ANCHOR); read with the full lasso the clause would wrongly exclude σ_j(h)
+when h lies on its own W-cycle. REFEREE-2 (R2-N5-ANCHOR G-ANC-1) shows the clause is vacuous on fully W′-optimal options. Verdicts of
+both L44 checks unchanged.
+
+## D19 (2026-11-03 ~19:12Z, owner directly in the Lead session)
+> we have 9% usage left until tomorrow night, make use of it
+
+Lead reading L47 (2026-11-03 19:13Z by date -u):
+(1) Spend signal (as D17): about 9% of the weekly allowance remains until the reset (2026-11-04 21:00Z). Idle capacity is waste, so the
+    pacing hold of 2026-11-02 is lifted. The spend is spread so the allowance lasts until about the reset. D1/D7 still stand: stop on paid
+    overage (isUsingOverage true). A «rejected» rate limit just pauses lanes until the reset.
+(2) Research: L-RED 48 does not park at its 21:00Z timebox; it continues R199 until about 600k context. L-NEW successor 50 starts with
+    (a) freezing packet P-IDEAL-RED (CHAIN-BACK + KEYFLIP, R178 XI-NEW proof carried) for the referees, then (b) the proof side: a
+    stacking-limit lemma from L-RED 48's d 5 refutations (k = 3 nesting needs value semantics; wake-order relaxation SAT), aimed at
+    «DBL − ZERO bounded by the levels above».
+(3) Gates: when P-IDEAL-RED is frozen, a fresh REFEREE successor (REFEREE 22 is at ~474k) and REFEREE-2 26 review it; CHECKER 16 lands it.
+    Peak: 2 research lanes + up to 3 gates (5 sessions, within D1's cap).
+
+## D20 (2026-11-05 ~09:48Z, owner directly in the Lead session)
+> We have reset the weekly usage, so we can again work faster no?
+
+Lead reading L48 (2026-11-05 09:58Z by date -u):
+(1) Yes: full pace for the new weekly window (as D17). Stop on paid overage (D1/D7); a «rejected» limit pauses lanes until its reset.
+(2) Research lanes: L-RED 49 (exact ladder searches, resumable cube driver; R202/R205), L-NEW 53 (P-IDEAL-FLIP freeze, FLIP-ADD),
+    plus two restarted lanes: L-COMP successor 9 (independent exact computation: T^R(d) re-derivation, T_k(m) for m ≤ 2, padded T*(d)) and
+    L-SI successor 39 (policy-iteration / OR lens on FLIP-ADD: warm-start bounds on decomposable USOs). Four research lanes (D1 cap 5).
+(3) Gates on demand: fresh REFEREE / REFEREE-2 / CHECKER successors when a packet freezes (L39 (3): gates run in addition to the lanes).
+
+Lead reading L49 (2026-11-06 09:42Z by date -u; scope of the FLIP-ADD route, raised by L-RED successor 51, R212):
+(1) RESULTS R110 (IDEAL-FLIP) signs W-ONLY, T ≤ T_2(d−1) + 2, for ISO genomes of 𝓛^R_d only. Hence lane CONJECTURE FLIP-ADD
+    (T_2(m) ≤ T^R(m) + O(m)) would bound T^R restricted to ISO genomes, written T^R_ISO(d), and not T^R(d) over all of 𝓛^R_d.
+    The fleet's conjecture chain is recorded as FLIP-ADD ⇒ T^R_ISO(d) polynomial; the non-ISO part of 𝓛^R_d needs a separate route.
+(2) Lane lemma FROZEN-EMBED (L-RED R212, unrefereed) gives T_k(m) ≤ (k+1)·T^R(m), so the FLIP-ADD excess can grow only through T^R itself.
+    Lanes report T^R_ISO-best and T^R-best separately and measure excesses against T^R_ISO-best.
+(3) Nothing landed changes; G-N5-TIME stays OPEN.
+
+Lead reading L50 (2026-11-07 01:42Z by date -u; MOVES-2D killed; landing scope of P-IDEAL-MOVES):
+(1) Lane CONJECTURE MOVES-2D (on 𝓛^R_d, every Ξ-target mover moves at most 2d times; stated on all of 𝓛^R_d, not ISO only) is killed
+    by L-LOWER 3's instances KILL_M2D_d6_mu13.json (sha1 5301c716…, d 6, 13 > 12) and KILL_M2D_d8_mu21.json (sha1 d96c2b36…, d 8, 21 > 16)
+    at claude/l-lower 4d747490. Three independent replays: L-NEW 57 box 188, L-SI 41, L-RED 52 r214. It is recorded as a DEAD END
+    only after referee review of packet P-M2D-DEAD; until then it is «DEAD (lane, triple-replayed)».
+(2) P-IDEAL-MOVES lands with a line that makes no status claim about MOVES-2D (fix round 3, L-4). Its signed items do not depend
+    on MOVES-2D (both referees, 2026-11-07). The DEAD record is a separate entry.
+(3) The growth of T^R(d) is the open question. L-LOWER's REC_d10_tower attains R113's per-level doubling on 4 consecutive levels.
+    A family doing so on linearly many levels would, by RESULTS R104 Corollary REAL-IDEAL, make FL-POLY false. Nothing landed changes;
+    G-N5-TIME stays OPEN.
+
+## D21 (2026-11-12, owner: instruction relayed by OWNER-DESK 10:05Z, confirmed by the owner directly in the Lead session ~10:37Z)
+Relayed text (OWNER-DESK, verbatim): «Okay, I want maximum effort. I want to use 200% usage in 3 days. There is fable 5.2 as well, use that too in dpeth everywhere where it seems fitting, use fable 5.2 at hard or xhigh. SO yes, 200% uage under 2 days.»
+Relayed follow-ups (OWNER-DESK, verbatim): «act on it, I have a usage reset that is what. Iwill use» and «I also have a fable 5.2 usage reset as well on top».
+Direct confirmation in the Lead session (verbatim): «I confrim tge stuff»
+
+Lead reading L51 (2026-11-12, by date -u at commit):
+(1) Effort and spend: maximum effort until 2026-11-14 10:05Z, drawing on the owner's usage resets (general and Fable 5.2). Paid overage is
+    not expected. If get_session shows isUsingOverage = true, the Lead tells the owner at once and spawns nothing new until the owner
+    answers; running lanes are stopped only on the owner's «stop» (this replaces, for this window, the automatic Stop on paid overage of
+    D1 / D7 / L47 / L48; a «rejected» limit still pauses).
+(2) Sessions (D17 + D21): 7 working lanes + 3 gates (CHECKER, REFEREE, REFEREE-2), plus OWNER-DESK and WATCHDOG. New: L-FORMAL (Lean
+    check of the elementary lane lemmas: LAM-GAP / SHARP, ONE-CROSS) and L-LIT (sources for LAM-GAP's novelty and a DEEP3 check
+    against known strategy-improvement lower bounds). Both are verification / literature roles, not attack lanes (D1).
+(3) Model: Fable 5.2 at effort xhigh («hard» is not an effort level) for every new session and every successor of REFEREE, REFEREE-2,
+    L-SI, L-NEW, L-RED, L-COMP, L-LOWER. Running Opus lanes switch at their next park. CHECKER stays Opus 5.5 high (byte checks).
+(4) Unchanged: the gauntlet, the landing rules, D1's «treat every claim as wrong», the no-contact rule.
+
+Lead reading L52 (2026-11-12 17:08Z by date -u; on L51 and docs/agents/LEAD-BACKSTOP.md step 2):
+(1) Event: the account's five-hour limit was hit around 16:10-16:40Z («You've hit your 5-hour limit · resets 5pm (UTC)»); every running
+    session's turn failed; the limit reset at 17:00Z; isUsingOverage stayed false (Lead get_session 17:05Z).
+(2) Reading: a five-hour limit that has already reset is a PAUSE, not a Stop trigger. The Stop procedure runs on the owner's «stop», on
+    paid overage, or on a limit that still rejects after its stated reset time. After a pause the Lead sends one resume message to each
+    session whose turn failed with live work, and starts successors that were due; D21 «maximum effort» stands.
+(3) The owner is told of each pause in the next owner line (not urgent: no spend beyond the plan).
+
+Lead reading L53 (2026-11-12 19:57Z by date -u; on D21, L51, L52):
+(1) Event: the Fable 5.2 weekly limit is reached (rate_limit_info rateLimitType «seven_day_overage_included», status «rejected»,
+    resets 2026-11-18 21:00Z; post-turn «You've reached your Fable limit»); every Fable session stopped about 19:38Z; isUsingOverage
+    false. Opus 5.5 sessions run (seven_day «allowed_warning»).
+(2) Reading: D21's «use fable 5.2 … where it seems fitting» cannot apply while Fable rejects; successors and new sessions use Opus
+    5.5 (effort high) until the Fable reset. No usage credits are bought (spend is the owner's decision). The fleet stays at D21's
+    maximum effort to 2026-11-14 10:05Z. The owner is told at once (via OWNER-DESK, 19:57Z), including the risk that an Opus weekly
+    «rejected» would stop the whole fleet until 2026-11-18 21:00Z.
+(3) A session stopped by the limit mid-work has no handover: its successor resumes from the notebook, origin, and the Lead's brief,
+    and redoes any result that was not on origin.
+
+## D22 (2026-11-12, owner: answer relayed by OWNER-DESK, logged on claude/owner-desk docs/owner-desk/LOG.md «2026-11-12T12:51Z owner message»)
+Question (Lead, 12:10Z, D1 approval for a new attack lane): «To spend more usefully, I propose one more lane, L-RED-B, a second
+adversary on Fable 5.2 xhigh against L-NEW 72's new CANDIDATE (a polynomial bound at k = 1 on IDEAL-CYC, the biggest claim of the
+week). Under D1, a new attack lane needs your «yes».»
+Owner (verbatim): «yes»
+Effect: L-RED-B (files docs/red-b/, experiments/red-b/; CLAUDE.md line added a9699c30) created 12:52Z. Recorded late (20:10Z) after
+L-RED-B successor 3 found the ruling missing from this file; the lane's existence rested on it from 12:52Z. Under L53 its successors run
+on Opus 5.5 until the Fable reset.
+
+Lead reading L54 (2026-11-12 23:01Z by date -u; on CLAUDE.md «Lean checks it (no sorry, allowed axioms only)» and the CHECKER exact-commit rule):
+(1) Event: CHECKER 23 (C143, Lean rows) has no Lean toolchain; installing elan in its session was refused by the permission classifier,
+    and CHECKER did not work around it.
+(2) Reading: for Lean rows, the clean build of record is the GitHub Actions job lean-lemmas (trunk workflow .github/workflows/verify.yml,
+    added 7fa6aff4) run on the EXACT commit in a fresh runner. CHECKER reads it itself from the Actions API (head_sha, conclusion, the log
+    lines «Build completed successfully», the axiom list and «LEAN LEMMAS PASS»), checks that the workflow file at that commit equals
+    trunk's job, and records the step as «PASS by CI re-run of record (L54)», not as a checker build. If the run is on an ancestor, CHECKER
+    shows lean/ byte-identical between the two commits. Statement and definition diffs remain CHECKER's own work.
+
+Lead reading L55 (2026-11-13 03:11Z by date -u; on CLAUDE.md «Push only with scripts/push.sh (runs scripts/verify.sh, pushes the current branch only on PASS)»):
+(1) Facts: verify's experiment self-checks take 30-70 min; container restarts come every 40-60 min and kill them (Lead pushes lost 00:50Z and
+    03:04Z on 2026-11-13; lanes report the same). Commits that change only docs/ or notes/ re-run the identical experiment suite.
+(2) Reading: scripts/verify.sh reports the experiment self-checks as NOT RUN, naming both tree ids, when the commit's experiments/ and scripts/
+    trees are byte-identical (same git tree id) to origin/<branch>, the working tree is clean there, and VERIFY_FULL is not 1. That
+    origin commit went through this gate, and CI (.github/workflows/verify.yml, job verify) re-runs the full suite on every push: CI is the
+    full run of record. Any change under experiments/ or scripts/, a missing origin branch or VERIFY_FULL=1 forces the full local run.
+    Doc shape, Lean and Oink steps are unchanged. Red CI on a pushed head is that branch's work at once (backstop step 5).
+
+Lead reading L56 (2026-11-13 05:40Z by date -u; correction of L55 on CHECKER 24's finding, 05:45Z):
+(1) Facts (CHECKER 24, CI run 43373199202 job 131713548195 on eb22d350): in the Actions push checkout origin/<branch> is the pushed commit,
+    so L55's test held in CI too and the experiment self-checks were NOT RUN there on every push since 626da53c; L55's «CI stays the full
+    run of record» was false. Also, many check.sh blocks pin files under docs/ (docs/new, docs/si, docs/referee*, docs/RESULTS.md, …), so a
+    docs-only commit can break a self-check.
+(2) Reading: the skip now applies ONLY outside CI (GITHUB_ACTIONS unset), with VERIFY_FULL != 1, a clean tree, experiments/ and scripts/
+    equal to origin/<branch>, EVERY changed path under docs/agents/ (Lead logs and drafts, handover checks), and no check script
+    (*.sh, *.py, *.pins) under experiments/ mentioning docs/agents. Anything else runs in full, locally and in CI. Tested both ways
+    (docs/agents-only diff skips; CI, VERIFY_FULL, a RESULTS/NOW diff and an empty diff run in full).
+(3) Commits 626da53c, eb22d350 and 65e02855 had no CI self-check run: CHECKER 24 runs VERIFY_FULL=1 on eb22d350 (the R128 landing
+    commit) itself, and the first CI run after this fix runs the full suite on trunk.
+
+D23 (owner, relayed verbatim by OWNER-DESK, received 08:44Z on 2026-11-13 by date -u):
+«I reset the fable weekly limit, please conitnue on high effort, we already used a day, w still have 160% of usage left until tomorrow night»
+
+Lead reading L57 (2026-11-13 08:44Z by date -u; on D21 and D23):
+(1) D21's maximum effort continues to its end (2026-11-14 10:05Z); D23 says about 160% of the allowance remains until «tomorrow night».
+(2) «high effort» is read literally: new sessions run at effort level «high» (D21's «hard or xhigh» is superseded on this point by the later
+    owner word). Fable 5.2 is available again (L53's Opus-only reading lapses), to be used «in depth everywhere where it seems fitting»
+    (D21): deep design and proof work (L-NEW, L-SI, L-FORMAL, referees) on Fable 5.2 at high, others may stay on Opus 5.5 at high.
+(3) The reset is verified by measurement, not assumed: the first new Fable session's rate_limit_info is read with get_session; if Fable is
+    still refused, successors stay on Opus and the owner is told. Overage stays the stop signal (L51).
+
+D24 (owner, relayed verbatim by OWNER-DESK, received 08:55Z on 2026-11-13 by date -u):
+«do xhigh»
+
+D25 (owner, direct message to the Lead, 2026-11-13, after the Lead's answer to «Did we achieve anything significant over the past few weeks?»):
+«So put everything into trying solving it today»
+Later the same morning (owner, direct message to the Lead): «I have switched you too to fable 5.2 high, maybe you can reason better»
+
+Lead reading L58 (2026-11-13 10:10Z by date -u; on D24 and D25; amends L57 (2)):
+(1) D24 supersedes L57 (2) on the effort level: every session created from now on, Fable 5.2 and Opus 5.5 alike, runs at effort «xhigh».
+    Running sessions keep their level until they park. The Fable reset is verified (the Lead session's get_session: five_hour «allowed»,
+    no overage). Overage stays the stop signal (L51).
+(2) D25 is read as: for today the whole fleet works on G-N5-TIME through the one question the night's work reduced it to, box 217's
+    ENUM-LOG on the one-player key model (QUIET-KEY-1P): is the enumeration depth k(G) of N5's key rule O(log N)? Either answer is taken:
+    a family with unbounded-rate k (min d(k) linear) is a kill of N5 and is reported as such; a proof of ENUM-LOG plus the bridge to SPEC is
+    a step toward a bound and is refereed as such. Landing duty (R130) and Lean statements continue; side items wait.
+(3) Nothing in D25 relaxes D1: no claim of a solution leaves the fleet, and a claimed bound is «wrong until it passes the gauntlet».
+    «Solving it today» is an instruction about effort, not a deadline that changes the standard of proof.
+(4) The Lead session runs on Fable 5.2 at effort high by the owner's own switch; the Lead's commit trailer follows the session.
+
+Lead reading L59 (2026-11-13 11:57Z by date -u; amends L58 (2) on L-NEW 76's correction, box 217 §5 A6′, claude/l-new a143d406):
+(1) The exact open statement is SW-POLY (every mover of 1P(G) switches poly(N + M) times; QUIET-KEY-1P ⟺ SW-POLY). ENUM-LOG (enumeration depth
+    k(G) = O(log N)) is a NECESSARY condition only; its converse is unproved. In L58 (2) read «a proof of SW-POLY plus the bridge to SPEC» for
+    «a proof of ENUM-LOG plus the bridge to SPEC». The kill side is unchanged: a family with enumeration depth growing like a power of d.
+(2) Successors created today under D24 / L58: L-SI 55, L-RED 70, L-RED-B 5, REFEREE-2 41, L-NEW 77 on Fable 5.2 at xhigh; CHECKER 25 on Opus 5.5 at
+    xhigh. No new lane was created (D1: «Spawn no attack lane before I approve it.»): each is the successor of an existing lane.
+(3) Early start: a successor may be created before its predecessor's handover commit is on origin, with a brief clause that forbids any commit
+    or push until that commit is on origin (then fast-forward, then the handover check). Reason: container restarts killed four handover pushes
+    this morning and each costs 30-70 minutes of verify.
+
+D26 (owner, direct message to the Lead, received 13:43Z on 2026-11-13 by date -u):
+«I hit my usage limit while you were working, but it has reset now. Please continue from where you left off.»
+
+Lead reading L60 (2026-11-13 13:47Z by date -u; on D26, L52):
+(1) Facts: the working sessions' turns failed at about 13:35Z («You've hit your 5-hour limit · resets 1:40pm (UTC)», read with get_session on L-RED-B 5
+    and REFEREE 35 at 13:44Z); about ten sessions at effort xhigh were running. Everything committed before that is on origin, including the
+    frozen kill packet P-N5-EXP (claude/l-red-b 350d84eb). The Lead woke the lanes between 13:45Z and 13:47Z (the messages carry stamps up to «13:52Z», typed ahead of the clock).
+(2) Reading: a reset 5-hour limit is a pause (L52); work continues from the notebooks. To keep the referees supplied, the load is lowered:
+    the search lanes (L-COMP, L-LOWER) and L-NEW park after their final commits; L-FORMAL 6 and L-RED 71 are not created until the kill
+    packet has had its referee round; successors are created only where a referee or the packet's author is past its park line.
+(3) scripts/push.sh now checks origin with git ls-remote after git push, retries four times and exits 2 if origin does not show the verified
+    commit (L-COMP 22: a push that printed «RPC failed; HTTP 503» had exited 0). Lane branches carry the old copy until they merge trunk:
+    every lane compares ls-remote with its SHA after a push.
+
+
+D27 (owner; first relayed by OWNER-DESK, its message queued 2026-11-13 20:27Z and read by the Lead 2026-11-14 13:38Z after the Fable
+weekly limit had stopped the Lead; then repeated by the owner as a direct message to the Lead, received 2026-11-14 13:40Z by date -u):
+«SO we have to look for a new algorithm no? Do we have any promising lead or can convert our learning into a new promising algorithm?»
+
+D28 (owner, direct message to the Lead, received 2026-11-14 13:39Z by date -u):
+«I reset everything, you have until 11PM to use a full 100% usage»
+
+Lead reading L61 (2026-11-14 13:41Z by date -u; on D27, D28, D18, D14, D1):
+(1) Facts: the Fable 5.2 weekly limit rejected every Fable session from about 19:25Z on 2026-11-13 (Lead, REFEREE 37, L-RED-B 7, the
+    Lead's subagent; «You've hit your Fable limit · resets Nov 18, 9pm (UTC)»); no overage (isUsingOverage false on every record read).
+    At 13:38Z on 2026-11-14 the Lead's record reads five_hour, «allowed», window reset 18:30Z. Candidate N5 is dead on the signed proof
+    of packet P-N5-EXP (both referees; landing as RESULTS R131 is in its last steps). D18's direction («Focus on N5 and work toward
+    proving it.») has no object left.
+(2) The Lead's answer to D27, given to the owner in the session at about 13:41Z: yes, a new algorithm is needed; there is no lead the Lead
+    would call promising; three design lessons exist (the two kills are complementary: N5 is exponential on Γ3(G_k) where N5′-xi makes
+    7 iterations, and N5′-xi is exponential on the wrapper family of R130 where N5 is polynomial; G_k is Ξ-acyclic, so its answer is
+    computable in one pass in dependency order, and N5 loses by reacting twice to each move of the unit above; every kill attacked the
+    tie rule). The Lead's estimate, labelled as an estimate: a few percent at most that a design of today survives the fleet's own
+    adversaries, far less that it is polynomial.
+(3) Reading of D27 + D28 with D18 («Make reasonable assumptions where needed, state them briefly, and proceed without asking me
+    questions.») and D14 («You know it can also test prveiously not tested approaches, it can come up with it own as well»): today's
+    usage goes to (a) landing R131; (b) a DESIGN DAY for a new candidate built on the three lessons: two design lanes (L-NEW, L-SI:
+    successors of existing lanes), a test battery of every kill family (L-COMP), the two approved adversary lanes (L-RED, L-RED-B:
+    D2, D22) on the first candidate that passes the battery, and a barrier lane (L-LOWER) that tries to turn the three kills into one
+    theorem naming the rules that cannot work. No new lane is created (D1: «Spawn no attack lane before I approve it.»): each is the
+    successor of an existing lane. New sessions on Fable 5.2 at xhigh (D24). D1's standard is unchanged: «Treat every such claim,
+    including the fleet's own, as wrong until it passes the gauntlet below.»; nothing is called a result before the gauntlet.
+(4) «11PM» is read as the owner's local time; the zone is not known to the Lead. The Lead works until the limit records say stop
+    (overage, or a limit that still rejects after its reset: L52) and reports at the end of the day what was designed, what was killed
+    and what is left.

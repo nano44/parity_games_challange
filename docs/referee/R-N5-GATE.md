@@ -116,3 +116,40 @@ Referee: REFEREE (successor 21), Opus 5.5 (D15). Lead brief 2026-11-01 00:34Z (r
   3. The DEAD is confirmed on lend107_n32 by my engine.
   4. The line MATCHES; precision P-1..P-4.
 - NEEDS: Lead: precision items to L-NEW 44 if wanted.
+
+## Addendum 1 (successor 22, 2026-11-01T01:31Z by date -u; Opus 5.5, D15): REFEREE-2's GATE-L1
+- Read after my report of record (c9bc161c): REFEREE-2 25, docs/referee-2/R2-N5-GATE.md at e35e8280, GATE-L1 «lend107_n32, 107 > 31» →
+  «106 > 31».
+- Cause, found in my own tool: s21's gate_probe.py (§6 above) assigns transition j → j + 1 to the phase of its FIRST state j. So it also
+  counts the transition at which λ_W changes. That is the lane's gate.py convention, and it gives 107.
+- The line's definition is «a maximal set of its consecutive transitions at whose states the map v ↦ cycle node of W(v) is constant». A
+  transition belongs to a phase only if λ_W is the same at both of its states. Own re-run (scratch/gate_strict.py, own engine rl_engine;
+  gate_logs/strict_lend107.txt) on lend107_n32 (ab4c9811…, start 9df4ea2c…): K 112, one τ-stretch of transitions 1-109, λ_W changes at
+  transitions 1, 108 and 109. Strict reading: **106** W-changing transitions in one phase (2-107). First-state reading: 107.
+- fbg_K12_m6_m24 (2f035ca0…, start 9f03f81f…): λ_W is constant on its one 403-transition stretch, so both readings give 403 > 289
+  (gate_logs/strict_fbg.txt).
+- Verdict: I **concur with GATE-L1**. My §6 «107 … This equals the packet» is corrected to 106 under the line's wording. The DEAD stands
+  either way (106 > 31). My line verdict changes from MATCHES to **REQUIRED GATE-L1** (either «106 > 31», or a phase definition by first
+  states that keeps 107). REFEREE-2's N-1 (packet §7 «118 runs» → 116) has the same cause. I did not re-run the corpus count. It is DATA,
+  not signed.
+
+## §C (successor 22, 2026-11-01T01:58Z by date -u; Opus 5.5, D15): word-diff of line L-1
+- Revision: claude/l-new afb8b99e, docs/new/P-N5-GATE-line-L1.txt (sha1 d677161c…, one line), against the frozen line 245ce9fe (l-new
+  516717da). Fixes file docs/new/P-N5-GATE-fixes-box120.md (sha1 bd458816…), F0 + entry 1. Diff: `git diff --no-index --word-diff`.
+- The diff has exactly five changes. Nothing else in the line changed:
+  1. R18 (d): «used on every game)» → «used on every game: its proof uses no 𝒞^1O hypothesis: VJ00 (11), Lemma R, R15 (a), (d))». This is
+     the citation §1 suggested (P-4) and REFEREE-2's P-1/P-2. It is accurate: §1 above, and REFEREE-2 §2.
+  2. SG (BG): «SET grows (B rises)» → «SET_k grows (B_k rises)». P-1 met: the clash between B and B_k is resolved.
+  3. CONSISTENT-RED: «with τ := τ_(k0),» added; the local index is now j («τ_j = τ for k0 ≤ j ≤ k1», «every transition j → j + 1 with
+     k0 ≤ j < k1»). P-2 met (and REFEREE-2's P-3). Binder check: j is bound by its own clause, k0 and k1 by «all states k0 < k1», and τ by
+     «:=». The outer «every transition k → k + 1» no longer collides. No free symbol.
+  4. DEAD instances, pinned by path and sha1: fbg_K12_m6_m24.pg (2f035ca0…) with fbg_K12_m6_m24_fixed.start (9f03f81f…), and
+     lend107_n32.pg (ab4c9811…) with lend107_n32.start (9df4ea2c…), n = 32, **106 > 31**. P-3 met. The sha1s equal my pins (Addendum 1).
+     GATE-L1 met: 106 equals my own strict recount (scratch/gate_strict.py: λ_W changes at transitions 1, 108, 109; phase 2-107) and
+     L-NEW's box120/inphase.py («maxFirst 107 maxInPhase 106 at (2, 107)»). fbg's «403 > 289» is unchanged, and correct under both readings.
+  5. Source: «… with its fixes entry 1, docs/new/P-N5-GATE-fixes-box120.md; L-NEW successors 43-44». Accurate.
+- Checks: parentheses balance (90/90, depth never negative); «» 1/1. Scope words, L41 tail, L43 (explicit bound n − 1 with both counts),
+  «G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim» are unchanged ✓. TARGET.md diff: no algorithm claim ✓.
+- Optional (not required): item 1 has two colons in a row («every game: its proof …: VJ00 …»). «(proof: VJ00 (11), Lemma R, R15 (a),
+  (d); no 𝒞^1O hypothesis)» reads more cleanly. Left to CHECKER.
+- Verdict: line L-1 **MATCHES** (GATE-L1 met; P-1..P-4 met). My Addendum 1 «REQUIRED GATE-L1» is discharged.

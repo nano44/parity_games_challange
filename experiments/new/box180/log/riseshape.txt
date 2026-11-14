@@ -1,0 +1,3 @@
+options 5796 R_gt_2dep 10 R_gt_D1 37
+max R-dep = 6 at u4_d8.json option (7, 2) (R 12 dep 6 D 6)
+max R-D = 6 at u4_d8.json option (7, 2) (R 12 dep 6 D 6)

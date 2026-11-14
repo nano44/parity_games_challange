@@ -1,0 +1,47 @@
+lines 1 bars 0 open 260 close 260
+paren depth never negative: True
+1 MUST (LEX-Λ) is applied only to non-core vertices (pads), where P-N5-CHAIN'
+1 MUST [DEF] = RESULTS R104's definitions of the genome and of Γ(G)
+1 MUST [G3] = RESULTS R117's definition of Γ3(G)
+1 MUST [OPT] = RESULTS R118 (b) and RESULTS R21 (a)
+1 MUST (Core) in its W-1-repaired reading
+1 MUST P-N5-CHAIN's frozen text (l-new 93531b03, sha1 6e613ba7, §2 and §4)
+1 MUST each statement PROVED and CONDITIONAL on RESULTS R125 (P-N5-CHAIN)
+1 MUST under HYPOTHESIS [E-LEV]
+1 MUST large zero counts are DATA, not evidence
+1 MUST the open core is max over y, b, J of Dhi_y(b, J)
+1 MUST a reduction, not an equivalence
+1 MUST G-N5-TIME stays OPEN
+1 MUST sha1 5bc1b1f3, with fixes entries 1-2
+1 MUST L-NEW successors 65-67 and 69
+1 MUST L-RED 60-62
+0 ABSENT a play passes K0 iff it passes K3
+0 ABSENT iff its cycle node is in the closed core
+R125-L5 HOW3 5
+R125-L5 REACH3-ALL 3
+R125-L5 F1 4
+R125-L5 F3 1
+R125-L5 F4′ 2
+R125-L5 F5 1
+R125-L5 F6 1
+R125-L5 DOM 1
+R125-L5 STRICT 3
+R125-L5 CN2-3 2
+R125-L5 LOC-GATE3 2
+R125-L5 LOC-K2-3 2
+R125-L5 B-ONLY3 2
+R125-L5 NO-TIE3 3
+R125-L5 T-QUIET3 2
+R125-L5 L3 6
+R125-L5 E-MON3 3
+R125-L5 CHAIN-DECOMP3 1
+R125-L5 (should be cited from frozen text) F2 0
+R125-L5 (should be cited from frozen text) (Core) 0
+R125-L5 (should be cited from frozen text) (E-DOM) 0
+R125-L5 (should be cited from frozen text) CYC 6
+tail in L1 1 in trunk RESULTS 2
+quote each re-win of y at u is paid by a class change of a vertex 
+quote E(wt(y)) ∩ U_y changes between any two consecutive y-tops
+quote c_y(v) ≤ the number of values of E(wt(y)) ∩ U_y on the span
+quote no U_y-letter on v's new play between u and y at a y-top
+quote the U_y-letters before y on v's play are lex-monotone at y-t

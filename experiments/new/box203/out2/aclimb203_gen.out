@@ -1,0 +1,4 @@
+climb seed 1 mode deep iterations 4700 best (maxasc, maxasc_faces, T) [1, 1, 11] N 7
+climb seed 2 mode deep iterations 1275 best (maxasc, maxasc_faces, T) [1, 1, 10] N 16
+climb seed 3 mode dense iterations 8450 best (maxasc, maxasc_faces, T) [1, 1, 10] N 6
+climb seed 4 mode dense iterations 17800 best (maxasc, maxasc_faces, T) [1, 1, 8] N 4

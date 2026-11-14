@@ -1,0 +1,12 @@
+restart 0: best T 0 (N 2, M 2)
+restart 1: best T 0 (N 1, M 1)
+restart 2: best T 1 (N 1, M 2)
+restart 3: best T 1 (N 2, M 3)
+restart 4: best T 4 (N 2, M 5)
+restart 5: best T 2 (N 2, M 4)
+restart 6: best T 1 (N 1, M 2)
+restart 7: best T 1 (N 1, M 2)
+restart 8: best T 2 (N 2, M 4)
+restart 9: best T 4 (N 2, M 5)
+objective T family tiny seed 44: evaluations 20010, best 4, sum of the 36 must-be-0 counters over all genomes visited: 0
+exit 0

@@ -1,0 +1,35 @@
+== 05:29Z d 6 seed-file out/xb_d5.json
+start n 190 xi 9 spec 5
+it 0 n 190 xi 9 spec 6 OK
+it 2 n 190 xi 12 spec 6 OK
+it 17 n 190 xi 13 spec 6 OK
+it 107 n 190 xi 14 spec 4 OK
+it 242 n 190 xi 14 spec 5 OK
+it 294 n 190 xi 15 spec 5 OK
+it 337 n 190 xi 15 spec 6 OK
+it 383 n 190 xi 15 spec 7 OK
+it 391 n 190 xi 15 spec 8 OK
+it 519 n 190 xi 15 spec 9 OK
+it 624 n 190 xi 16 spec 6 OK
+it 670 n 190 xi 16 spec 8 OK
+it 741 n 190 xi 16 spec 9 OK
+it 747 n 190 xi 17 spec 9 OK
+it 760 n 190 xi 17 spec 10 OK
+it 834 n 190 xi 18 spec 7 OK
+it 873 n 190 xi 18 spec 8 OK
+it 935 n 190 xi 19 spec 8 OK
+it 1740 n 190 xi 20 spec 8 OK
+it 2418 n 190 xi 20 spec 9 OK
+it 2486 n 190 xi 20 spec 10 OK
+it 3686 n 190 xi 20 spec 11 OK
+it 5978 n 190 xi 21 spec 4 OK
+it 5986 n 190 xi 21 spec 5 OK
+it 6019 n 190 xi 21 spec 6 OK
+it 6029 n 190 xi 21 spec 7 OK
+it 6078 n 190 xi 21 spec 8 OK
+it 6176 n 190 xi 22 spec 6 OK
+it 6200 n 190 xi 22 spec 8 OK
+it 7051 n 190 xi 23 spec 6 OK
+it 7081 n 190 xi 23 spec 8 OK
+it 7233 n 190 xi 23 spec 9 OK
+it 9130 n 190 xi 23 spec 10 OK

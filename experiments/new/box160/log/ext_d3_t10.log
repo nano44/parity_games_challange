@@ -1,0 +1,3 @@
+ISO d 3 t 10 N 6 ISO=None NOL0=None NOW=None SEG=None vars 28995 clauses 96521 build 0.3 s
+RESULT d 3 T >= 10: SAT 1456.0 s
+replay (forced level-0 schedule [[1, 0], [1, 0], [1, 0], [1, 0], [1, 0], [0, 0], [0, 0], [0, 1], [0, 1], [0, 1], [0, 1]]): steps moving level >= 1: 10 of 10; b_0 flips 2

@@ -1,0 +1,2 @@
+MWR4_2.json K2tested 4000 L1stall 25 L2 30 L3 30 L4beta 25 L4gate_face 21 L4nocycle 25 Tmax 30 Tsum 30 genomes 1 lagstates 30 maxmvals_pct 6 nonstalls 5 stalls 25
+CFI3_n48.json K2tested 4000 L1rise 1 L1stall 4 L2 20 L3 20 L4beta 19 L4mover 4 L4nocycle 22 P1 1267 P3 20 P4 24 P4eq 16 P5howard 57 P5val 316 Tmax 24 Tsum 24 genomes 1 lagstates 24 maxmvals_pct 1 nonstalls 2 plateaus 2 platmax 15 platpct 31 stalls 22

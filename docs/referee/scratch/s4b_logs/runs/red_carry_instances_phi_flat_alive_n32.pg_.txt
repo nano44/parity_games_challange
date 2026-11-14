@@ -1,0 +1,9 @@
+GAME red/carry/instances/phi_flat_alive_n32.pg 
+GAMES 1
+enum_skip 2
+enum_states 2
+loc_chk 51
+rhos 132
+states 4
+VIOLATIONS 0
+RC 0

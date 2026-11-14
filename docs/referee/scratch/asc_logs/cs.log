@@ -1,0 +1,12 @@
+RMON-2 witness CS(5, 2): forests valid True True | every chain lex-nondecreasing True | max ascents 2 | tau before (5, 5, 4, 0, 4) after (5, 5, 4, 0, 4)
+  part of chain(1) before tau(1) = 5: before [1, 2] after [1] | decreases: True | chain(5) = [5, 4] -> [5, 3, 4] (changed: P-N5-ASC (ii) conditions on chain(y) = C, so this step is outside it)
+CS(M 1), hub <= 0 ascents: max distinct hub values 2 (nodes 2); F_0(M) = 2; F_0(M) = 2
+CS(M 2), hub <= 0 ascents: max distinct hub values 4 (nodes 8); F_0(M) = 4; F_0(M) = 4
+CS(M 3), hub <= 0 ascents: max distinct hub values 7 (nodes 50); F_0(M) = 7; F_0(M) = 7
+CS(M 4), hub <= 0 ascents: max distinct hub values 11 (nodes 432); F_0(M) = 11; F_0(M) = 11
+CS(M 5), hub <= 0 ascents: max distinct hub values 16 (nodes 4802); F_0(M) = 16; F_0(M) = 16
+CS(M 1), hub <= 1 ascents: max distinct hub values 2 (nodes 2); F_1(M) = 15; F_0(M) = 2
+CS(M 2), hub <= 1 ascents: max distinct hub values 4 (nodes 9); F_1(M) = 231; F_0(M) = 4
+CS(M 3), hub <= 1 ascents: max distinct hub values 8 (nodes 63); F_1(M) = 1924; F_0(M) = 7
+CS(M 4), hub <= 1 ascents: max distinct hub values 16 (nodes 597); F_1(M) = 10185; F_0(M) = 11
+CS(M 5), hub <= 1 ascents: max distinct hub values 29 (nodes 7143); F_1(M) = 39711; F_0(M) = 16

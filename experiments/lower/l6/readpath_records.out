@@ -1,0 +1,21 @@
+== H5_d20_F62.txt
+J 1 2x q3->f2:(3, 17, 19, 31, 38, 2) 1x q3->f2:(3, 25, 7, 32, 28, 14, 24, 2)
+J 2 4x q4->f5:(4, 17, 14, 5) 3x q4->f5:no f
+J 3 15x q6->f7:no f
+J 4 31x q9->f8:no f
+J 5 15x q10->f11:no f
+J 6 
+== H6_d24_F126.txt
+J 1 3x q3->f2:no f
+J 2 4x q4->f5:no f 3x q4->f5:(4, 6, 44, 19, 5)
+J 3 15x q6->f7:no f
+J 4 31x q9->f8:no f
+J 5 32x q10->f11:no f 31x q10->f11:(10, 11)
+J 6 
+== SL41_d28.txt
+J 1 3x q3->f2:no f
+J 2 7x q4->f5:no f
+J 3 8x q6->f7:no f 7x q6->f7:(6, 53, 15, 52, 20, 14, 7)
+J 4 31x q9->f8:no f
+J 5 32x q10->f11:no f 31x q10->f11:(10, 55, 12, 11)
+J 6 79x q12->f13:no f

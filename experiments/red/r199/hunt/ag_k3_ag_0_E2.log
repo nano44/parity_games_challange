@@ -1,0 +1,232 @@
+  local search left 12
+CEGAR2 iter 0: refuted (xwake + xisat 55 s); blocked 1
+  local search left 13
+CEGAR2 iter 1: refuted (xwake + xisat 58 s); blocked 2
+  local search left 22
+CEGAR2 iter 2: refuted (xwake + xisat 59 s); blocked 3
+  local search left 16
+CEGAR2 iter 3: refuted (xwake + xisat 59 s); blocked 4
+  local search left 20
+CEGAR2 iter 4: refuted (xwake + xisat 58 s); blocked 5
+  local search left 18
+CEGAR2 iter 5: refuted (xwake + xisat 58 s); blocked 6
+  local search left 20
+CEGAR2 iter 6: refuted (xwake + xisat 58 s); blocked 7
+  local search left 15
+CEGAR2 iter 7: refuted (xwake + xisat 57 s); blocked 8
+  local search left 15
+CEGAR2 iter 8: refuted (xwake + xisat 58 s); blocked 9
+  local search left 18
+CEGAR2 iter 9: refuted (xwake + xisat 57 s); blocked 10
+  local search left 17
+CEGAR2 iter 10: refuted (xwake + xisat 59 s); blocked 11
+  local search left 18
+CEGAR2 iter 11: refuted (xwake + xisat 59 s); blocked 12
+  local search left 16
+CEGAR2 iter 12: refuted (xwake + xisat 59 s); blocked 13
+  local search left 18
+CEGAR2 iter 13: refuted (xwake + xisat 58 s); blocked 14
+  local search left 17
+CEGAR2 iter 14: refuted (xwake + xisat 60 s); blocked 15
+  local search left 16
+CEGAR2 iter 15: refuted (xwake + xisat 55 s); blocked 16
+  local search left 15
+CEGAR2 iter 16: refuted (xwake + xisat 61 s); blocked 17
+  local search left 19
+CEGAR2 iter 17: refuted (xwake + xisat 61 s); blocked 18
+  local search left 18
+CEGAR2 iter 18: refuted (xwake + xisat 63 s); blocked 19
+  local search left 14
+CEGAR2 iter 19: refuted (xwake + xisat 58 s); blocked 20
+  local search left 12
+CEGAR2 iter 20: refuted (xwake + xisat 59 s); blocked 21
+  local search left 18
+CEGAR2 iter 21: refuted (xwake + xisat 60 s); blocked 22
+  local search left 16
+CEGAR2 iter 22: refuted (xwake + xisat 59 s); blocked 23
+  local search left 17
+CEGAR2 iter 23: refuted (xwake + xisat 60 s); blocked 24
+  local search left 13
+CEGAR2 iter 24: refuted (xwake + xisat 60 s); blocked 25
+  local search left 20
+CEGAR2 iter 25: refuted (xwake + xisat 61 s); blocked 26
+  local search left 20
+CEGAR2 iter 26: refuted (xwake + xisat 58 s); blocked 27
+  local search left 17
+CEGAR2 iter 27: refuted (xwake + xisat 62 s); blocked 28
+  local search left 21
+CEGAR2 iter 28: refuted (xwake + xisat 57 s); blocked 29
+  local search left 15
+CEGAR2 iter 29: refuted (xwake + xisat 58 s); blocked 30
+  local search left 19
+CEGAR2 iter 30: refuted (xwake + xisat 57 s); blocked 31
+  local search left 19
+CEGAR2 iter 31: refuted (xwake + xisat 58 s); blocked 32
+  local search left 17
+CEGAR2 iter 32: refuted (xwake + xisat 57 s); blocked 33
+  local search left 18
+CEGAR2 iter 33: refuted (xwake + xisat 59 s); blocked 34
+  local search left 20
+CEGAR2 iter 34: refuted (xwake + xisat 59 s); blocked 35
+  local search left 18
+CEGAR2 iter 35: refuted (xwake + xisat 59 s); blocked 36
+  local search left 11
+CEGAR2 iter 36: refuted (xwake + xisat 57 s); blocked 37
+  local search left 14
+CEGAR2 iter 37: refuted (xwake + xisat 55 s); blocked 38
+  local search left 21
+CEGAR2 iter 38: refuted (xwake + xisat 57 s); blocked 39
+  local search left 16
+CEGAR2 iter 39: refuted (xwake + xisat 57 s); blocked 40
+  local search left 17
+CEGAR2 iter 40: refuted (xwake + xisat 56 s); blocked 41
+  local search left 18
+CEGAR2 iter 41: refuted (xwake + xisat 57 s); blocked 42
+  local search left 15
+CEGAR2 iter 42: refuted (xwake + xisat 57 s); blocked 43
+  local search left 17
+CEGAR2 iter 43: refuted (xwake + xisat 55 s); blocked 44
+  local search left 15
+CEGAR2 iter 44: refuted (xwake + xisat 56 s); blocked 45
+  local search left 16
+CEGAR2 iter 45: refuted (xwake + xisat 57 s); blocked 46
+  local search left 20
+CEGAR2 iter 46: refuted (xwake + xisat 57 s); blocked 47
+  local search left 16
+CEGAR2 iter 47: refuted (xwake + xisat 56 s); blocked 48
+  local search left 13
+CEGAR2 iter 48: refuted (xwake + xisat 55 s); blocked 49
+  local search left 20
+CEGAR2 iter 49: refuted (xwake + xisat 57 s); blocked 50
+  local search left 17
+CEGAR2 iter 50: refuted (xwake + xisat 57 s); blocked 51
+  local search left 17
+CEGAR2 iter 51: refuted (xwake + xisat 57 s); blocked 52
+  local search left 18
+CEGAR2 iter 52: refuted (xwake + xisat 57 s); blocked 53
+  local search left 16
+CEGAR2 iter 53: refuted (xwake + xisat 57 s); blocked 54
+  local search left 17
+CEGAR2 iter 54: refuted (xwake + xisat 58 s); blocked 55
+  local search left 21
+CEGAR2 iter 55: refuted (xwake + xisat 56 s); blocked 56
+  local search left 14
+CEGAR2 iter 56: refuted (xwake + xisat 58 s); blocked 57
+  local search left 16
+CEGAR2 iter 57: refuted (xwake + xisat 56 s); blocked 58
+  local search left 11
+CEGAR2 iter 58: refuted (xwake + xisat 56 s); blocked 59
+  local search left 19
+CEGAR2 iter 59: refuted (xwake + xisat 58 s); blocked 60
+  local search left 13
+CEGAR2 iter 60: refuted (xwake + xisat 57 s); blocked 61
+  local search left 19
+CEGAR2 iter 61: refuted (xwake + xisat 57 s); blocked 62
+  local search left 16
+CEGAR2 iter 62: refuted (xwake + xisat 56 s); blocked 63
+  local search left 17
+CEGAR2 iter 63: refuted (xwake + xisat 57 s); blocked 64
+  local search left 20
+CEGAR2 iter 64: refuted (xwake + xisat 58 s); blocked 65
+  local search left 17
+CEGAR2 iter 65: refuted (xwake + xisat 57 s); blocked 66
+  local search left 13
+CEGAR2 iter 66: refuted (xwake + xisat 59 s); blocked 67
+  local search left 16
+CEGAR2 iter 67: refuted (xwake + xisat 58 s); blocked 68
+  local search left 9
+CEGAR2 iter 68: refuted (xwake + xisat 57 s); blocked 69
+  local search left 16
+CEGAR2 iter 69: refuted (xwake + xisat 56 s); blocked 70
+  local search left 16
+CEGAR2 iter 70: refuted (xwake + xisat 58 s); blocked 71
+  local search left 19
+CEGAR2 iter 71: refuted (xwake + xisat 59 s); blocked 72
+  local search left 19
+CEGAR2 iter 72: refuted (xwake + xisat 59 s); blocked 73
+  local search left 16
+CEGAR2 iter 73: refuted (xwake + xisat 58 s); blocked 74
+  local search left 19
+CEGAR2 iter 74: refuted (xwake + xisat 60 s); blocked 75
+  local search left 16
+CEGAR2 iter 75: refuted (xwake + xisat 57 s); blocked 76
+  local search left 18
+CEGAR2 iter 76: refuted (xwake + xisat 56 s); blocked 77
+  local search left 16
+CEGAR2 iter 77: refuted (xwake + xisat 58 s); blocked 78
+  local search left 17
+CEGAR2 iter 78: refuted (xwake + xisat 58 s); blocked 79
+  local search left 15
+CEGAR2 iter 79: refuted (xwake + xisat 59 s); blocked 80
+  local search left 17
+CEGAR2 iter 80: refuted (xwake + xisat 56 s); blocked 81
+  local search left 16
+CEGAR2 iter 81: refuted (xwake + xisat 57 s); blocked 82
+  local search left 14
+CEGAR2 iter 82: refuted (xwake + xisat 57 s); blocked 83
+  local search left 17
+CEGAR2 iter 83: refuted (xwake + xisat 57 s); blocked 84
+  local search left 18
+CEGAR2 iter 84: refuted (xwake + xisat 59 s); blocked 85
+  local search left 22
+CEGAR2 iter 85: refuted (xwake + xisat 59 s); blocked 86
+  local search left 10
+CEGAR2 iter 86: refuted (xwake + xisat 57 s); blocked 87
+  local search left 21
+CEGAR2 iter 87: refuted (xwake + xisat 57 s); blocked 88
+  local search left 18
+CEGAR2 iter 88: refuted (xwake + xisat 59 s); blocked 89
+  local search left 18
+CEGAR2 iter 89: refuted (xwake + xisat 58 s); blocked 90
+  local search left 15
+CEGAR2 iter 90: refuted (xwake + xisat 59 s); blocked 91
+  local search left 20
+CEGAR2 iter 91: refuted (xwake + xisat 60 s); blocked 92
+  local search left 15
+CEGAR2 iter 92: refuted (xwake + xisat 58 s); blocked 93
+  local search left 13
+CEGAR2 iter 93: refuted (xwake + xisat 57 s); blocked 94
+  local search left 16
+CEGAR2 iter 94: refuted (xwake + xisat 57 s); blocked 95
+  local search left 19
+CEGAR2 iter 95: refuted (xwake + xisat 58 s); blocked 96
+  local search left 16
+CEGAR2 iter 96: refuted (xwake + xisat 58 s); blocked 97
+  local search left 20
+CEGAR2 iter 97: refuted (xwake + xisat 57 s); blocked 98
+  local search left 18
+CEGAR2 iter 98: refuted (xwake + xisat 57 s); blocked 99
+  local search left 15
+CEGAR2 iter 99: refuted (xwake + xisat 57 s); blocked 100
+  local search left 16
+CEGAR2 iter 100: refuted (xwake + xisat 57 s); blocked 101
+  local search left 14
+CEGAR2 iter 101: refuted (xwake + xisat 55 s); blocked 102
+  local search left 18
+CEGAR2 iter 102: refuted (xwake + xisat 56 s); blocked 103
+  local search left 15
+CEGAR2 iter 103: refuted (xwake + xisat 56 s); blocked 104
+  local search left 23
+CEGAR2 iter 104: refuted (xwake + xisat 59 s); blocked 105
+  local search left 16
+CEGAR2 iter 105: refuted (xwake + xisat 56 s); blocked 106
+  local search left 12
+CEGAR2 iter 106: refuted (xwake + xisat 56 s); blocked 107
+  local search left 11
+CEGAR2 iter 107: refuted (xwake + xisat 56 s); blocked 108
+  local search left 17
+CEGAR2 iter 108: refuted (xwake + xisat 56 s); blocked 109
+  local search left 15
+CEGAR2 iter 109: refuted (xwake + xisat 55 s); blocked 110
+  local search left 20
+CEGAR2 iter 110: refuted (xwake + xisat 55 s); blocked 111
+  local search left 16
+CEGAR2 iter 111: refuted (xwake + xisat 55 s); blocked 112
+  local search left 19
+CEGAR2 iter 112: refuted (xwake + xisat 57 s); blocked 113
+  local search left 15
+CEGAR2 iter 113: refuted (xwake + xisat 56 s); blocked 114
+  local search left 17
+CEGAR2 iter 114: refuted (xwake + xisat 55 s); blocked 115
+  local search left 19
+CEGAR2 iter 115: refuted (xwake + xisat 57 s); blocked 116

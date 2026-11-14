@@ -1,0 +1,10 @@
+GAME new/box48/out/qpcclimb/scale/snap_n80_s62.pg
+GAMES 1
+enum_skip 1
+enum_states 19
+keep_chk 11
+loc_chk 175
+rhos 3444
+states 20
+VIOLATIONS 0
+RC 0

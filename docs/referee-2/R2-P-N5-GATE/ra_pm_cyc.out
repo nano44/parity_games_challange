@@ -1,0 +1,8 @@
+MW8_2.json cyc T 55 C 17 maxP 18 depth 3 fanin 9 maxm 8 idfail 0 rafail 0
+MW32_2.json cyc T 199 C 65 maxP 66 depth 3 fanin 33 maxm 32 idfail 0 rafail 0
+FW8_2.json cyc T 29 C 3 maxP 54 depth 8 fanin 2 maxm 1 idfail 0 rafail 0
+FW16_2.json cyc T 53 C 3 maxP 2583 depth 16 fanin 2 maxm 1 idfail 0 rafail 0
+MW4_2.json cyc T 31 C 9 maxP 10 depth 3 fanin 5 maxm 4 idfail 0 rafail 0
+MW16_2.json cyc T 103 C 33 maxP 34 depth 3 fanin 17 maxm 16 idfail 0 rafail 0
+FW4_2.json cyc T 17 C 3 maxP 7 depth 4 fanin 2 maxm 1 idfail 0 rafail 0
+FW12_2.json cyc T 41 C 3 maxP 376 depth 12 fanin 2 maxm 1 idfail 0 rafail 0

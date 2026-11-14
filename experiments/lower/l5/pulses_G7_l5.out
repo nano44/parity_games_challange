@@ -1,0 +1,5 @@
+type ((8, 0),) {'pulse 2 len 5': 8, 'pulse 2 len 4': 8} triggers {(12,): 16}
+type ((8, 1),) {'pulse 2 len 3': 15} triggers {(12, 16): 14, (12,): 1}
+type ((9, 0),) {'pulse 2 len 6': 11, 'pulse 2 len 7': 5} triggers {(12, 15): 16}
+type ((9, 1),) {'pulse 1 len 3': 14, 'pulse 1 len 5': 1} triggers {(15,): 15}
+type () {'pulse 1 len 5': 1} triggers {(15,): 1}

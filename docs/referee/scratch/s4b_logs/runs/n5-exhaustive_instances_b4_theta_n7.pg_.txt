@@ -1,0 +1,4 @@
+GAME n5-exhaustive/instances/b4_theta_n7.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

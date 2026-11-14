@@ -1,0 +1,15 @@
+CLR_k8s16.json U(G) 21 max ascents 2 UPB viol 0
+FPORT_n2.json U(G) 4 max ascents 1 UPB viol 0
+FPORT_n3.json U(G) 6 max ascents 2 UPB viol 0
+LEAP_k8.json U(G) 17 max ascents 2 UPB viol 0
+RS2.json U(G) 4 max ascents 1 UPB viol 0
+RS2_L8M6.json U(G) 7 max ascents 1 UPB viol 0
+RS3.json U(G) 6 max ascents 2 UPB viol 0
+RSG_K4.json U(G) 1 max ascents 1 UPB viol 0
+cR_d2_w8_R22.json U(G) 9 max ascents 3 UPB viol 0
+rd2_d9.json U(G) 20 max ascents 3 UPB viol 0
+rd2_d10.json U(G) 18 max ascents 2 UPB viol 0
+rd3_d7.json U(G) 17 max ascents 2 UPB viol 0
+rf_d5.json U(G) 8 max ascents 2 UPB viol 0
+CTRL - CDEC 0 CDEC_units 24818 EDOM 0 EDOM_units 13 EMON 0 EMON_units 46830 HUBG 0 HUBG_units 4051 LAMX 0 LAMX_units 50881 UPB 0 UPB_units 50881 UPJ 0 UPJ_units 10751
+INFO maxDE 18 maxDE_B0 7 maxU 21 maxasc 2 maxasc_all 3 runs 13 states 242

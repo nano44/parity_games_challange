@@ -1,0 +1,4 @@
+MWR4_2.json g3 T 30 gates 97 maxflips 9 at-max (flips, ch_pe, ch_pb, ch_D, lamch): [(9, 4, 9, 4, 0)] | (d) equality at every max gate: True | flips = 2·ch_D + 1: True | lamch 0: True | (d) violations over all gates: 0
+MWR8_2.json g3 T 54 gates 177 maxflips 17 at-max (flips, ch_pe, ch_pb, ch_D, lamch): [(17, 8, 17, 8, 0)] | (d) equality at every max gate: True | flips = 2·ch_D + 1: True | lamch 0: True | (d) violations over all gates: 0
+MW8_2.json g3 T 55 gates 177 maxflips 34 at-max (flips, ch_pe, ch_pb, ch_D, lamch): [(34, 17, 34, 17, 0)] | (d) equality at every max gate: False | flips = 2·ch_D + 1: False | lamch 0: True | (d) violations over all gates: 0
+MWR16_2.json g3 T 102 gates 337 maxflips 33 at-max (flips, ch_pe, ch_pb, ch_D, lamch): [(33, 16, 33, 16, 0)] | (d) equality at every max gate: True | flips = 2·ch_D + 1: True | lamch 0: True | (d) violations over all gates: 0

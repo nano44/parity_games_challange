@@ -1,0 +1,8 @@
+rstart K1L10_n48.json 2131 5 RULE howard K2tested 15000 Tmax 31 Tsum 152 bchecked 152 lagstates 2365 nonstalls 2091 nsmax 28 nspctP 0 plateaus 195 platmax 2 runs 5 stalls 274 tailmax 2
+rstart CFI3_n48.json 2131 5 RULE howard K2tested 15000 Tmax 24 Tsum 115 bchecked 115 lagstates 1315 nonstalls 985 nsmax 17 nspctP 0 plateaus 114 platmax 4 runs 5 stalls 330 tailmax 4
+rstart RINT_n48.json 2131 5 RULE howard K2tested 15000 Tmax 24 Tsum 117 bchecked 117 lagstates 1422 nonstalls 1312 nsmax 23 nspctP 0 plateaus 66 platmax 2 runs 5 stalls 110 tailmax 2
+rstart MWR4_2.json 2131 5 RULE howard K2tested 15000 Tmax 31 Tsum 151 bchecked 151 lagstates 2354 nonstalls 2296 nsmax 31 nspctP 0 plateaus 58 platmax 1 runs 5 stalls 58 tailmax 1
+rstart CW4_n.json 2131 5 RULE howard K2tested 15000 Tmax 30 Tsum 149 bchecked 149 lagstates 2293 nonstalls 2236 nsmax 30 nspctP 0 plateaus 57 platmax 1 runs 5 stalls 57 tailmax 1
+rstart BLKX26_n48.json 2131 5 RULE howard K2tested 15000 Tmax 33 Tsum 162 bchecked 162 lagstates 2692 nonstalls 2475 nsmax 30 nspctP 0 plateaus 155 platmax 2 runs 5 stalls 217 tailmax 2
+rstart K1D4_n48.json 2131 5 RULE howard K2tested 15000 Tmax 23 Tsum 114 bchecked 114 lagstates 1126 nonstalls 510 nsmax 12 nspctP 0 plateaus 70 platmax 9 runs 5 stalls 616 tailmax 9
+rstart DEAD_SEG2P_d7_N14.json 2131 5 RULE howard K2tested 15000 Tmax 14 Tsum 61 bchecked 61 lagstates 405 nonstalls 355 nsmax 12 nspctP 0 plateaus 43 platmax 2 runs 5 stalls 50 tailmax 2

@@ -1,0 +1,3 @@
+t 1 B1 ON  z B1.SET(1) side SET rel own
+t 4 B2 ON  z B2.SET(2) side SET rel own
+LT2_1_1.json summary B1on:own=1 B2on:own=1

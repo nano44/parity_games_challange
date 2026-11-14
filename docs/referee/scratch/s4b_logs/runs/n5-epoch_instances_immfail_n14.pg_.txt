@@ -1,0 +1,9 @@
+GAME n5-epoch/instances/immfail_n14.pg 
+GAMES 1
+enum_states 4
+keep_chk 2
+loc_chk 16
+rhos 36
+states 4
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,30 @@
+[None] RESULTS entries NONE | SPEC False | Freeze a short packet P-ACYC
+[## 0. Premises (quoted; every ] RESULTS entries ['R104'] | SPEC False | an IDEAL genome G has N movers x with levels lev(x), M := Σ deg(x) options (x, k), each with a W-target of lev
+[## 0. Premises (quoted; every ] RESULTS entries ['R104'] | SPEC False | the Ξ-graph has an edge x → xt(x, k) for every option with a mover as Ξ-target
+[## 0. Premises (quoted; every ] RESULTS entries ['R104'] | SPEC False | the game Γ(G) on n = N + 3M + 6 vertices (Even movers of priority 0; Odd gates of priority 1 with a W-face e a
+[## 0. Premises (quoted; every ] RESULTS entries ['R104'] | SPEC False | with start σ = the genome start at movers, β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1, K3 → K
+[## 0. Premises (quoted; every ] RESULTS entries ['R117'] | SPEC False | the game Γ3(G) obtained from Γ(G) by 4M + 4 single-successor Even pads of priority ≤ 2 (pA on K0 → K3, s on K1
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k)
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | σ̄ is Odd's optimal counterstrategy, chosen by a fixed deterministic rule
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is unrestricted
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | every mover x goes to a successor of ⊴-largest Ω_t value, and keeps σ_t(x) if σ_t(x) is such a successor
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | T_CYC := the number of steps to the first state where no mover has a strictly better successor
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | C if Λ_t(v) ≠ Λ_(t+1)(v) for some vertex v;
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | else R if σ̄_t(v) ≠ σ̄_(t+1)(v) for some Odd vertex v;
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | If Λ and σ̄ are constant on the states a, a+1, …, a+j+1 and the step a+j → a+j+1 changes σ, then j ≤ N − 1. He
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | an N5′-xi run (box 190's S4a tie rule by Ξσ)
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | The N5′-xi run of Γ3(G) from S3 has the following form:
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | T3 is the first state at which no mover has a strictly better successor in Γ3;
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | transition T3 + 1 is an S4c fallback.
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | which RESULTS R117 (P-N5-REACH) signs in its entry (S3-START, PAD, K3, TAU3 for every genome; ESC3, W3 for IDE
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | §4 applies on Γ3 (movers priority 0, pads never cycle nodes by PAD (b), non-mover Even vertices frozen in stan
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | T3 ≤ C + R + (C + R + 1)·N, with C ≤ n3·(2M + 2) and n3 = N + 7M + 10;
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | the first fallback of N5′-xi on Γ3(G) comes at iteration T3 + 1.
+[## 0. Premises (quoted; every ] RESULTS entries ['R118'] | SPEC False | no bound on R is claimed (OPEN), so nothing about N5′-xi's or N5's running time follows
+[## 0. Premises (quoted; every ] RESULTS entries ['R15'] | SPEC False | N5 "SSI-GLOBAL" as specified in docs/new/N5-ssi-global.md
+[## 0. Premises (quoted; every ] RESULTS entries NONE | SPEC True | S4 Iteration (one iteration = one pass with Iσ ∪ Iτ ≠ ∅; both steps computed from the SAME (σ, τ), applied tog
+[## 0. Premises (quoted; every ] RESULTS entries NONE | SPEC True | c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with an improving edge set σ_new(v) = the
+[## 1. Definitions and facts re] RESULTS entries ['R118'] | SPEC False | non-mover Even vertices frozen in standard states
+[## 5. What this says about N5 ] RESULTS entries ['R117'] | SPEC False | the N5 run of Γ3(G) FROM S3 has states 0, …, L(G) equal to the transported REALIZE states of the IDEAL run
+[## 7. Diff against TARGET.md (] RESULTS entries NONE | SPEC False | Polynomial only on a restricted class … 
+quotes 29, found 27, not found 2

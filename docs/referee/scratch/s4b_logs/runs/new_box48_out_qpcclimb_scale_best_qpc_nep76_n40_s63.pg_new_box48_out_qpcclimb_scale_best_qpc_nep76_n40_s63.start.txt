@@ -1,0 +1,9 @@
+GAME new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.pg new/box48/out/qpcclimb/scale/best_qpc_nep76_n40_s63.start
+GAMES 1
+enum_skip 2
+enum_states 4
+loc_chk 62
+rhos 301
+states 6
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,13 @@
+N 1 runs 16 T=N 10 max T/N 1.000
+N 2 runs 35 T=N 0 max T/N 0.500
+N 3 runs 30 T=N 0 max T/N 0.667
+N 4 runs 32 T=N 0 max T/N 0.750
+N 5 runs 18 T=N 0 max T/N 0.800
+N 6 runs 43 T=N 0 max T/N 0.333
+N 8 runs 23 T=N 0 max T/N 0.375
+N 9 runs 19 T=N 0 max T/N 0.333
+N 10 runs 16 T=N 0 max T/N 0.400
+N 12 runs 38 T=N 0 max T/N 0.333
+N 15 runs 21 T=N 0 max T/N 0.267
+N 18 runs 9 T=N 0 max T/N 0.222
+set A: runs with T = N 10 (all at N = 1: True); max T/N over N >= 2: 0.800

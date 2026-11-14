@@ -1,0 +1,35 @@
+quote '4M + 4 single-successor Even pads of priority ≤ 2 (pA on K0 ' lines [13362, 15371, 15467] found True
+quote 'Even movers of priority 0; Odd gates of priority 1 with a W-' lines [9864, 15806] found True
+quote 'β of priority 6 + 2·rank + parity with edges to the Ξ-target' lines [9864, 15807] found True
+quote 'e of even priority above every β with one edge to the W-targ' lines [9864] found True
+quote 'a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5' lines [9864, 15809] found True
+quote 'HOW3(G), the Howard run on Γ3(G) (every non-mover Even verte' lines [15595] found True
+quote 'the core K-config κ0 = (σ(K0), σ(K1), σ(K3)) = (pA, s, K2)' lines [15371] found True
+quote 'β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1,' lines [9864, 15811] found True
+quote 'N5′-xi from S3 on Γ3(G) visits only standard states and its ' lines [13607, 15595] found True
+quote '(Facts F1, F3, F4′, F5, F6, DOM, STRICT on HOW3(G)) F1 from ' lines [15595] found True
+quote 'Lemma A: for any non-empty unambiguous set I of improvements' lines [631, 13736, 15595] found True
+quote 'For every mover x, step t and successor y of x: Ω_(t+1)(x) ⊵' lines [13686] found True
+quote 'for every positional pair and every vertex v other than c_X ' lines [15595] found True
+quote 'at every state and gate g, if the faces pe_g, pβ_g have diff' lines [15076, 15595, 15824] found True
+quote 'Ω_t(pe_g) ≠ Ω_t(pβ_g) at every state and gate' lines [15595] found True
+quote 'σ̄_t(K2) = r and Ω_t(r) ◁ Ω_t(K2) at every state' lines [15595] found True
+quote 'at every state and every vertex v other than c_W, the e-vert' lines [15595] found True
+quote 'VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the value (Λ, Π' lines [13607, 13726, 14320] found True
+quote "[OPT] for HOW3's σ̄_t = RESULTS R118's σ̄ as used in R118 (b" lines [15595] found True
+quote '[OPT] (σ̄_t is optimal at every vertex at once against σ_t)' lines [15076, 15208] found True
+quote 'an optimal counterstrategy being pointwise optimal (at every' lines [14744, 14782, 14877] found True
+quote 'Every vertex more relevant than some e-vertex is an e-vertex' lines [14481] found True
+quote 'H0: every step t → t+1 switches some Even x with Λ_t(x) ≠ x ' lines [] found True
+quote '(a) every maximal run of p-steps has at most n_E steps;' lines [13698] found True
+quote "labelled C if some vertex's cycle node Λ changes, else R if " lines [13607, 15815] found True
+quote 'if REACH3-CYC holds for G, N5′-xi from S3 on Γ3(G) makes exa' lines [15371] found True
+quote "RESULTS R118 (k)'s Theorem REACH3-CYC" lines [15595] found True
+quote 'T3 ≤ (1 + Σ_v (D^tot_E(v) − 1))·(L3 + 1)' lines [15595] found True
+quote 'T3 ≤ C + R + (C + R + 1)·N' lines [13607, 13716] found True
+quote "N5′-xi's FL run on Γ3(G) is polynomial in N + M for every ge" lines [13718] found True
+quote 'R is polynomial along these Howard runs' lines [13718] found True
+quote 'it bounds none of F, T3, L(G) (OPEN)' lines [15371] found True
+quote 'says nothing about N5 (whose pre-fallback run on Ξ-cyclic ge' lines [15595] found True
+quote 'an optimal counterstrategy being pointwise optimal (at every' lines [14744, 14782, 14877] found True
+quotes 34 missing 0 trunk 471aba45214c9b4009332ef1d498dd5dbc42f3cb

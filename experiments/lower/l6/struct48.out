@@ -1,0 +1,4 @@
+SL41_d28.txt T 290 caps 6 F6 222 windows 127 profile {(12, 13): 79, (13,): 16, (): 16, (12,): 16} pair6 12->[22, 11] 13->[11, 22] crossed True upstream(12,13) [10, 12, 13, 27, 55] 10-upstream True 11-upstream False
+G7_best_d28.txt T 270 caps 6 F6 222 windows 127 profile {(12, 13): 79, (13,): 16, (): 16, (12,): 16} pair6 12->[22, 11] 13->[11, 22] crossed True upstream(12,13) [10, 12, 13, 28] 10-upstream True 11-upstream False
+snap.txt T 312 caps 6 F6 222 windows 127 profile {(12, 13): 79, (13,): 16, (): 16, (12,): 16} pair6 12->[13, 47] 13->[47, 44] crossed False upstream(12,13) [0, 3, 10, 12, 13, 16, 17, 18, 21, 23, 27, 30, 33, 34, 37, 38, 41, 49] 10-upstream True 11-upstream False
+w1.txt T 281 caps 6 F6 222 windows 127 profile {(12, 13): 79, (13,): 16, (): 16, (12,): 16} pair6 12->[13, 11] 13->[11, 23] crossed False upstream(12,13) [4, 10, 12, 13, 18, 24, 31, 35, 45, 49, 50] 10-upstream True 11-upstream False

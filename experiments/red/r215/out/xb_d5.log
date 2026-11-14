@@ -1,0 +1,22 @@
+== 05:17Z d 5 seed-file out/xb_d4.json
+start n 160 xi 9 spec 5
+it 2 n 160 xi 10 spec 5 OK
+it 4 n 160 xi 11 spec 4 OK
+it 10 n 160 xi 13 spec 4 OK
+it 19 n 160 xi 13 spec 6 OK
+it 147 n 160 xi 14 spec 6 OK
+it 701 n 160 xi 14 spec 7 OK
+it 715 n 160 xi 15 spec 5 OK
+it 764 n 160 xi 15 spec 6 OK
+it 846 n 160 xi 15 spec 7 OK
+it 928 n 160 xi 15 spec 10 OK
+it 1096 n 160 xi 16 spec 6 OK
+it 1166 n 160 xi 16 spec 7 OK
+it 1212 n 160 xi 17 spec 8 OK
+it 1361 n 160 xi 18 spec 8 OK
+it 1932 n 160 xi 18 spec 9 OK
+it 2787 n 160 xi 18 spec 11 OK
+it 3092 n 160 xi 18 spec 12 OK
+it 5616 n 160 xi 19 spec 9 OK
+it 5716 n 160 xi 19 spec 12 OK
+FINAL best 19.012

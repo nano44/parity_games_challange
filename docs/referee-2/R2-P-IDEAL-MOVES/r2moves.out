@@ -1,0 +1,9 @@
+CORPUS RX1 0 RX2 0 RX3 0 MEQ 0 F0 0 AGA 0 AGB 0 AGBm 0 AGC 0 WDA 0 WDB 0 WB2 0 SWA 0 SWB1 0 SWB2 0 SWC 0 SWD 0 SWE1 0 SWE2 0 SWE3 0
+INFO files 208 runs 63223 steps 140395 segments 225917 windows 1288162 maxD 9 flipsNoMove 31212 runsha1 9dae285766bf
+RANDOM RX1 0 RX2 0 RX3 0 MEQ 0 F0 0 AGA 0 AGB 0 AGBm 0 AGC 0 WDA 0 WDB 0 WB2 0 SWA 0 SWB1 0 SWB2 0 SWC 0 SWD 0 SWE1 0 SWE2 0 SWE3 0
+RINFO files 300 runs 85440 steps 89461 segments 174772 windows 380073 maxD 2 flipsNoMove 19024
+DEAD box186/out/pass_d3_D3.json sha1 8bca9764 LR True d 3 start 110100 z 5 level 2 Xi-target True T 4 moves 3 at [1, 2, 3] contiguous True LM 0 2(l+1) 6
+DEAD box186/out/pass_d4_D4.json sha1 3bf6a4a4 LR True d 4 start 01010111 z 7 level 3 Xi-target True T 4 moves 4 at [1, 2, 3, 4] contiguous True LM 0 2(l+1) 8
+DEAD box186/out/pass_d5_D5.json sha1 16be2e59 LR True d 5 start 0101010110 z 9 level 4 Xi-target True T 5 moves 5 at [1, 2, 3, 4, 5] contiguous True LM 0 2(l+1) 10
+DEAD box187/inst/m4_z4_r7.json sha1 7c158e2f LR True d 4 start 10111010 z 4 level 2 Xi-target True T 8 moves 7 at [1, 2, 3, 5, 6, 7, 8] contiguous False LM 6 2(l+1) 6
+exit 0

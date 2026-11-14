@@ -1,0 +1,32 @@
+OK R1,R2,packet | …
+OK R1,R2,packet | Under the RANK hypothesis at s, |D_s| ≥ 2^(rank of the top element) > 2·max(|θ_(2j)|, |θ_(2j+1)|) (each θ is a
+OK R1 | Measured: the first inequality fails at 57 of the 86 RANK states (43 windows × 2) of the corpus (scratch/tf_lo
+OK R2 | Measured on the 1,010 corpus states of the 14 crossed pairs where the RANK hypothesis holds (r2tower.out): |D|
+OK R1 | fix s with the RANK hypothesis; let m* be the option of largest rank R in chain_s(A_0) △ chain_s(A_1) (chains 
+OK R2 | (iii) 2j and 2j + 1 have Ξ-edges to both A_0 and A_1, so by acyclicity no chain of A_0 or A_1 meets pair j, an
+OK R2 | Checked pointwise at every state of every crossed pair: 0 violations on 1,010 RANK states, and |D| > max|θ| at
+OK packet | (unit = 5-window; set = all 63 5-windows; scope = stored start)
+-- lane text | (unit = (5-window, PULSE or GAP): 30 units on 16 distinct 5-windows; set = all 63 5-windows; scope = stored st
+OK packet | In all 48 failing 6-windows the deciding element (Lemma 4) of 12 or 13 is option 19 = (mover 9, option 1), ran
+-- lane text | In each of the 48 failing 6-windows [a, e], option 19 = (mover 9, option 1), rank 87, odd parity, on 11's chai
+OK R1 | The packet's «48 / none of the 79» is exact for the first scope only.
+OK R2 | - **§4 reading, false literally (W-3).** «Lemma 4 (b) is violated in exactly those windows by a parked β of th
+OK R1 | «Lemma 4 (b) is violated in exactly those windows by a parked β» is a READING: Lemma 4 (b) assumes a doubling 
+OK R1,packet | E5 0 (unit = doubling level, 62)
+-- lane text | E5 0 (unit = doubling (run, level) pair, 62; its hypothesis F(j − 1) ≥ 1 holds on 61 of them)
+OK R1 | TF-2 (optional remark, no change required): γ_j(c′) = γ_j(1 − c′) is already γ_j(0) = γ_j(1), from ONE window;
+OK R2 | **N-1:** since {w, c′} = {0, 1}, one window already gives γ_j(0) = γ_j(1) and fixes the first mover as 2j iff 
+-- lane text | \n
+OK R1,R2,packet | |
+-- lane text | … F(l) and cv)
+OK R1 | 16 of its 63 5-windows
+OK R1 | (j = 1, …, 5)
+OK R2 | at levels j = 1, …, 5 (unit = j-window; set = all 119 of them)
+OK R1 | at some state s among s_(a−1), …, s_(e−1) of the window [a, e]
+OK R1,R2 | at no such state in any of the other 79
+OK R2 | do not have exactly one move of each member of pair 6 (crossed onto movers 22, 11)
+OK R2 | at every such state in 16 of them
+OK R2 | 62 doubling (run, level) pairs
+OK R2 | on 7,069 (step, doubling level) units for its first two clauses, on the 757 j-windows for the third and on the
+OK R1,R2,packet | with equal deciders
+OK R1 | Packet-description slip (Lead 14:36Z): the packet's report and the brief gave L-1 as «3,699 bytes»; it is 3,69

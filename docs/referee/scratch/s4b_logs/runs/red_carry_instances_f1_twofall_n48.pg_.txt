@@ -1,0 +1,10 @@
+GAME red/carry/instances/f1_twofall_n48.pg 
+GAMES 1
+enum_skip 1
+enum_states 3
+keep_chk 1
+loc_chk 41
+rhos 1200
+states 4
+VIOLATIONS 0
+RC 0

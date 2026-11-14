@@ -1,0 +1,3 @@
+CW4_n.json ctrl 0 genomes 1 loud 30 ldfail 0 maxld 3 maxA 5 gap -1
+CW8_n.json ctrl 0 genomes 1 loud 59 ldfail 0 maxld 8 maxA 9 gap -1
+CW16_n.json ctrl 0 genomes 1 loud 114 ldfail 0 maxld 16 maxA 17 gap -1

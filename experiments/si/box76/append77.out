@@ -1,0 +1,3 @@
+base  climbR_d4_s6.json start 11011111: T 10 F [2, 2, 2, 6]
+frozen top pair: T 10 F [2, 2, 2, 6, 6] moves of new pair 0 0; lower states identical: True
+written inst/passfreeze77_d5.json

@@ -1,0 +1,4 @@
+corpus files at d 3: 62
+class C0 d 3 genomes 100 transitions 8677 distinct-dec-rows 2221 distinct-states 3688 features 18
+FEASIBLE min max Phi = 22.0000
+weights: k1=7 k0=7 k3=3 k2=3 k5=1 k4=1 const=-0

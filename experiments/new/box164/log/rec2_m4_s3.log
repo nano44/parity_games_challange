@@ -1,0 +1,4 @@
+restart 0 (mu_k, T_k) (2, 8) best (2, 8) bound 2
+restart 1 (mu_k, T_k) (2, 7) best (2, 8) bound 2
+restart 2 (mu_k, T_k) (2, 9) best (2, 9) bound 2
+restart 3 (mu_k, T_k) (2, 9) best (2, 9) bound 2

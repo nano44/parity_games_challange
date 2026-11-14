@@ -1,0 +1,8 @@
+CY2_lr.json units 2 priv 1 maxex_priv 0 maxex_nopriv -5 maxfl_priv 1 maxfl_nopriv 3 T 9
+CY2_hp.json units 3 priv 2 maxex_priv 0 maxex_nopriv -5 maxfl_priv 1 maxfl_nopriv 3 T 11
+CY3_hp.json units 5 priv 3 maxex_priv 0 maxex_nopriv -7 maxfl_priv 3 maxfl_nopriv 3 T 17
+CY4_hp.json units 7 priv 4 maxex_priv 0 maxex_nopriv -13 maxfl_priv 3 maxfl_nopriv 3 T 37
+LR3_exitup.json units 3 priv 3 maxex_priv 0 maxex_nopriv None maxfl_priv 3 maxfl_nopriv 0 T 11
+HP3_mup.json units 5 priv 5 maxex_priv 0 maxex_nopriv None maxfl_priv 5 maxfl_nopriv 0 T 17
+HP4_mup.json units 7 priv 7 maxex_priv 0 maxex_nopriv None maxfl_priv 5 maxfl_nopriv 0 T 37
+HP5_mup.json units 9 priv 9 maxex_priv 0 maxex_nopriv None maxfl_priv 5 maxfl_nopriv 0 T 43

@@ -1,0 +1,15 @@
+MWR4_2.json T 30 R 47 DR 10 cint 2 loudint 8 flipint 2 Rint 2 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+MWR8_2.json T 54 R 83 DR 18 cint 2 loudint 8 flipint 2 Rint 2 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+MWR16_2.json T 102 R 155 DR 34 cint 2 loudint 8 flipint 2 Rint 2 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+CW4_n.json T 30 R 47 DR 12 cint 2 loudint 8 flipint 2 Rint 2 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+CW8_n.json T 59 R 83 DR 38 cint 2 loudint 8 flipint 2 Rint 2 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+CW16_n.json T 114 R 155 DR 92 cint 2 loudint 8 flipint 2 Rint 2 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+K1F21_n48.json T 31 R 28 DR 22 cint 2 loudint 6 flipint 1 Rint 1 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+K1F34_n84.json T 52 R 83 DR 35 cint 2 loudint 6 flipint 2 Rint 2 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+K1L7_n48.json T 37 R 28 DR 19 cint 2 loudint 8 flipint 2 Rint 2 deepnoR 3 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+K1L10_n48.json T 31 R 28 DR 15 cint 2 loudint 7 flipint 2 Rint 3 deepnoR 5 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+BLKX23_n48.json T 28 R 28 DR 23 cint 2 loudint 2 flipint 2 Rint 2 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+BLKX26_n48.json T 33 R 28 DR 21 cint 2 loudint 2 flipint 2 Rint 2 deepnoR 2 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+B400_r32_a13d9661.json T 49 R 83 DR 34 cint 3 loudint 4 flipint 2 Rint 2 deepnoR 0 efail 1 pR 0 rrep 0 ifail 0 qfail 0
+CWRR8_n.json T 52 R 83 DR 3 cint 2 loudint 43 flipint 1 Rint 1 deepnoR 0 efail 0 pR 0 rrep 0 ifail 0 qfail 0
+CFI3_n48.json T 24 R 29 DR 3 cint 4 loudint 11 flipint 3 Rint 9 deepnoR 0 efail 5 pR 0 rrep 0 ifail 0 qfail 0

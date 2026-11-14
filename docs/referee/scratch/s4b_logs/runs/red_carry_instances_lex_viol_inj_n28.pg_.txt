@@ -1,0 +1,9 @@
+GAME red/carry/instances/lex_viol_inj_n28.pg 
+GAMES 1
+enum_states 4
+keep_chk 1
+loc_chk 34
+rhos 2640
+states 4
+VIOLATIONS 0
+RC 0

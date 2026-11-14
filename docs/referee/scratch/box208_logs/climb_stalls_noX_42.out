@@ -1,0 +1,8 @@
+restart 0: best stalls 0 (N 1, M 1)
+restart 1: best stalls 1 (N 2, M 4)
+restart 2: best stalls 4 (N 9, M 17)
+restart 3: best stalls 4 (N 4, M 10)
+restart 4: best stalls 0 (N 2, M 2)
+restart 5: best stalls 3 (N 7, M 13)
+objective stalls family noX seed 42: evaluations 9006, best 4, sum of the 36 must-be-0 counters over all genomes visited: 0
+exit 0

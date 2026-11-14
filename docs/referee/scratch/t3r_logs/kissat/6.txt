@@ -1,0 +1,2 @@
+CUBE 6 2:0,3:1,4:1,5:0, vars 58896 clauses 204036 dimacs-sha1 e4886b4716f5fe07039fd62d9e2de787c780f83d empty-clauses 0 unit-clauses 69 solver kissat404 result UNSAT 275.6 s
+exit 0

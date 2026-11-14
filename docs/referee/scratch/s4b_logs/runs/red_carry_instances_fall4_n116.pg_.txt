@@ -1,0 +1,9 @@
+GAME red/carry/instances/fall4_n116.pg 
+GAMES 1
+enum_skip 3
+enum_states 2
+loc_chk 83
+rhos 196
+states 5
+VIOLATIONS 0
+RC 0

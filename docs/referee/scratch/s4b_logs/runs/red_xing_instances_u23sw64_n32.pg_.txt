@@ -1,0 +1,4 @@
+GAME red/xing/instances/u23sw64_n32.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,2 @@
+LR2_exitup.json mode xi start S3 iters 11 fallbacks 1 T3 8 howardT 8 moverphase_eq_howard 1 full_eq_howard 1 distinct_mover_states 10
+LR2_exitup.json mode spec start S3 iters 4 fallbacks 1 T3 1 howardT 8 moverphase_eq_howard 0 full_eq_howard 0 distinct_mover_states 4

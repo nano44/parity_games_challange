@@ -1,0 +1,8 @@
+GAME new/box59/out/rnd/r8_n30.pg 
+GAMES 1
+enum_states 4
+loc_chk 11
+rhos 46
+states 4
+VIOLATIONS 0
+RC 0

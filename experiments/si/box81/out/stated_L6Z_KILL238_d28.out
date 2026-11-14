@@ -1,0 +1,2 @@
+L6Z_KILL238_d28.json mode spec start stated idealT 283 moverphase_eq_ideal 1 T3_eq_idealT 1 iters 286 fallbacks 1 T3 283 howardT 9 moverphase_eq_howard 0 full_eq_howard 0 distinct_mover_states 287
+L6Z_KILL238_d28.json mode xi start stated idealT 283 moverphase_eq_ideal 0 T3_eq_idealT 0 iters 12 fallbacks 1 T3 9 howardT 9 moverphase_eq_howard 1 full_eq_howard 1 distinct_mover_states 11

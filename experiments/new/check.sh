@@ -631,4 +631,579 @@ if grep -qF "INPHASE lend107_n32.pg n 32 K 112 maxFirst 107 maxInPhase 106 at (2
 else
   echo "box 120 GATE-L1 check: FAILED"; exit 1
 fi
+w69=$(cd .. && python3 -I new/box121/brtree.py new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start; python3 -I new/box121/twofix.py new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start)
+if grep -qF "XIN_OLD 4029/4029 (path only 4029) FF 43 IN_OLD 43 IN_NEW 43 PHL up/dn 39/5 PDEP up/dn 36/4" <<<"$w69" && grep -qF "TWOFIX cp_K4.pg n 192 K 44 windows 1 inwin 43 | longest [0, 43] L 43 ODIFF 16 SB 2 SBSTEP 1" <<<"$w69"; then
+  echo "box 121 BRTREE: cp_K4 PLAY-CONTAIN 4029/4029, PHL falls 5 times (potential DEAD); one TWO-FIX window of 43 vs switch-best 2: PASS"
+else
+  echo "box 121 BRTREE check: FAILED"; exit 1
+fi
+w70=$(cd .. && python3 -I new/box122/windows.py n5-exhaustive/instances/b5_os_n40.pg new/box121/inst/b5_os_n40_default.start 4)
+if grep -qF "WIN b5_os_n40.pg n 40 K 81 [0, 77] L 77 ODIFF 1 FB 9 SB 7 SBSTEP 9 MAXSEG 17 MAXPH 17 PHNF 17 FLATNF 0 LAMNF 7 O [(7, 2, 7)]" <<<"$w70"; then
+  echo "box 122 TWOFIX: b5_os_n40 ODIFF 1 window 77 = 9 fallbacks + runs <= 17, PHNF 17 <= n - 1 (TF-PH): PASS"
+else
+  echo "box 122 TWOFIX check: FAILED"; exit 1
+fi
+w71=$(cd .. && python3 -I new/box123/fbcount.py red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start)
+if grep -qF "FBW frz24.pg n 24 [13, 30] L 17 ODIFF 1 FB 2 REPW 0 REPWF 0 PEAKMON 1 TROUGHMON 1 SW 9 SWD 9 WDROP 6 WDROPD 6 GAPF [18, 18] NOTDESC 1 NOTDESC_NOXO 1 XOBETWEEN 0 XOALL 1" <<<"$w71"; then
+  echo "box 123 FBCOUNT: frz24 gap 18 -> 18 between fallbacks with no Xi(o) change (GAP-DESC DEAD); W-drops all in D: PASS"
+else
+  echo "box 123 FBCOUNT check: FAILED"; exit 1
+fi
+w72=$(cd .. && python3 -I new/box124/lemmap.py red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start; python3 -I new/box124/lemmap.py red/n5inj/instances/block_bk20.pg -)
+if grep -qF "LEMMAP frz24.pg n 24 K 39 pieces 5 longest 7 checks 335 viol 12 BLK 8 NOTBLK 4 INX 4 INZ 8" <<<"$w72" && grep -qF "LEMMAP block_bk20.pg n 24 K 27 pieces 3 longest 9 checks 303 viol 0 " <<<"$w72"; then
+  echo "box 124 LEMMAP: Lemma P invariant fails in TWO-FIX pieces with D nonempty (frz24 12 / 335), holds with D empty (block_bk20 0 / 303): PASS"
+else
+  echo "box 124 LEMMAP check: FAILED"; exit 1
+fi
+w73=$(cd .. && python3 -I new/box125/chain.py new/box116/inst/fbA_K4_m8_m8.pg new/box116/inst/fbA_K4_m8_m8_fixed.start)
+if grep -qF "CHAIN fbA_K4_m8_m8.pg n 136 K 44 stretches 1 T 44 WIN 34 SBC 33 FBX 0 VMOVES 72 VAL 72 TIE 0 TOW 44 AWAY 28 SIDE 0 DSW 72 MOVERS 23 MAXFLIP 8 " <<<"$w73"; then
+  echo "box 125 CHAIN: fbA_K4 one tau-stretch of 44 = 34 TWO-FIX windows, 33 sbar-changes all Xi-changes at Odd vertices (SBC-XI): PASS"
+else
+  echo "box 125 CHAIN check: FAILED"; exit 1
+fi
+w74=$(cd .. && python3 -I new/box126/oddxi.py new/box113/inst/cp_K4.pg new/box113/inst/cp_K4.start 1)
+if grep -qF "ODDXI cp_K4.pg n 192 K 44 XCHodd 329 MINRISE 329 SBMOVE 16 MOVES 16 OLDROSE 16 FLATMOVES 0 END sw 329 cyc 0 stop 0 MAXCHAIN 4" <<<"$w74"; then
+  echo "box 126 ODDXI: cp_K4 every Odd Xi-change is a minimiser rise charged down the play to an Even switch (329 / 329): PASS"
+else
+  echo "box 126 ODDXI check: FAILED"; exit 1
+fi
+w75=$(cd .. && python3 -I new/box127/expir.py n5-epoch/instances/nep92_n40.pg n5-epoch/instances/nep92_n40.start)
+if grep -qF "EXP nep92_n40.pg n 40 K 98 WRUNS 9 MAXRUN 14 SRCS 360 XCH 964 BLK 964 MAXXCH 11 MAXBLK 11 RET 0 AF 50 AFREV 0 SRCVIOL 27 QOFF 2 Q2OFF 50 NEITHER 0" <<<"$w75"; then
+  echo "box 127 PARAM: nep92_n40 expiration (alternation-free) property fails inside W-runs (50 violations, all availability), no path-part returns: PASS"
+else
+  echo "box 127 PARAM check: FAILED"; exit 1
+fi
+w76=$(cd .. && python3 -I new/box128/pcount.py new/box52/out/topfix_n10.pg new/box128/topfix_n10_default.start; python3 -I new/box128/witness.py new/box52/out/topfix_n10.pg new/box128/topfix_n10_default.start | head -1; python3 -I new/box128/pcount.py n5-exhaustive/instances/n4all_maxph_0.pg -)
+if grep -qF "PCOUNT topfix_n10.pg n 210 K 64 WIN 3 STRETCHES 3 MOVES 756 STRICT 756 FLAT 0 WORSE 0 FIRST 212 SAME 0 SAMEZCNR 0 PVIOL 0 DIFF 544 RET 252 STRICTDIFF 544 STRICTRET 252 STRICTSAME_NOZC 0 STRICTSAME_NONR 0 BVIOL 0 MAXSTRICT 36 MAXDIFF 35 MAXRET 18 LAMXI 70 NBSUM 366 MAXWINSTRICT 646 CORNER 9 WORSE_NOCORNER 0 STATVIOL 0 STATCORNER 0 PAID_XI 544 PAID_WONLY 0 LEADVIOL 24 MAXEXCESS 16 MAXMULTI 1 MULTI2 0 DEGVIOL 0 MAXRATIO 1.89" <<<"$w76" && grep -qF "WITNESS topfix_n10.pg n 210 window [6,64] stretch [6,64] h 192 (prio 67) STRICT 36 LC 20 EXCESS 16" <<<"$w76" && grep -qF "WORSE 1 " <<<"$w76" && grep -qF "CORNER 2 WORSE_NOCORNER 0 STATVIOL 0" <<<"$w76"; then
+  echo "box 128 PCOUNT: topfix_n10 h 192 36 W-strict moves > per-h (#X)(#ZC) bound 20 (hub re-entries); STATIC-TIE 0 violations; WORSE only at the comparison corner: PASS"
+else
+  echo "box 128 PCOUNT check: FAILED"; exit 1
+fi
+w77=$(cd .. && python3 -I new/box129/gatechg.py new/box52/out/topfix_n10.pg new/box128/topfix_n10_default.start)
+if grep -qF "GATECHG topfix_n10.pg n 210 ODIFF0 WIN 2 STRICT 667 CHARGED 543 PAYXI 300 PAYW 243 CYC 0 P_FIRST 66 P_STRICT 477 P_FLAT 0 P_WEAK 0 SELFPAY 0 DEPTH 52 FANIN 9 MAXSTRICT_H 36 MAXSCC 3 REVISIT 225" <<<"$w77"; then
+  echo "box 129 GATECHG: topfix_n10 ODIFF-0 charge chains depth 52, fan-in 9, mutual-payment SCC 3 (gate depth undefined): PASS"
+else
+  echo "box 129 GATECHG check: FAILED"; exit 1
+fi
+w78=$(cd .. && python3 -I new/box130/flatcnt.py red/xing/instances/u2flat73_n32.pg new/box130/u2flat73_n32_default.start; python3 -I new/box130/flatcnt.py red/so/instances/tog6a_n32.pg -)
+if grep -qxF "FLATCNT u2flat73_n32.pg n 32 ODIFF1+ WIN 1 MOVES 75 STRICT 2 FLAT 73 WEAK 0 CORNER 0 FLATTRANS 0 FL 7 ONLYFLAT_VIOL 0 FLOPT_VIOL 0 FLTIGHT_VIOL 0 XIRISE_VIOL 0 MAXFLRUN 3 MAXFLWIN 73 FLATFIRST 49 ODIFF0FLAT 0 XIRISE_CYC 0 FLTIGHT_CYC 0 FL0_NONCORNER 0" <<<"$w78" && grep -qxF "FLATCNT tog6a_n32.pg n 32 ODIFF0 WIN 1 MOVES 25 STRICT 23 FLAT 1 WEAK 1 CORNER 6 FLATTRANS 0 FL 1 ONLYFLAT_VIOL 0 FLOPT_VIOL 0 FLTIGHT_VIOL 0 XIRISE_VIOL 0 MAXFLRUN 1 MAXFLWIN 1 FLATFIRST 1 ODIFF0FLAT 1 XIRISE_CYC 2 FLTIGHT_CYC 0 FL0_NONCORNER 0" <<<"$w78"; then
+  echo "box 130 FLATCNT: u2flat73_n32 73 flat moves, 7 FL transitions (ODIFF >= 1); tog6a ODIFF-0 FL transition only at corner movers: PASS"
+else
+  echo "box 130 FLATCNT check: FAILED"; exit 1
+fi
+w79=$(cd .. && python3 -I new/box131/canon.py red/xing/instances/u2flat73_n32.pg -)
+if grep -qxF "CANON u2flat73_n32.pg n 32 K 16 DEC_EVEN 51 FLDEC_EVEN 51 FLKEYDEC 73 FLKEYEQ 0 FLKEYEQ_CYCNODE 0 FLMOVES_EVEN 73 KEYMIN_EVEN 74 KEYTIES_EVEN 74 MAXFLMV_EVEN 2 MINIDX_EVEN 51 MOVETIE_EVEN 73 TIES_EVEN 74" <<<"$w79"; then
+  echo "box 131 CANON: u2flat73_n32 every even-cycle-node tie broken by the lex-smallest BFS key (74 / 74), every FL move lowers the mover's key (73 / 73), index not monotone (51 / 73): PASS"
+else
+  echo "box 131 CANON check: FAILED"; exit 1
+fi
+w80=$(cd .. && python3 -I new/box132/anchor.py red/xing/instances/u23sw64_n32.pg new/box132/u23sw64_n32_default.start; python3 -I new/box132/anchor.py red/kw/instances/cw11_n24.pg new/box132/cw11_n24_default.start)
+if grep -qxF "ANCHOR u23sw64_n32.pg n 32 RUNS 1 FL 8 EPOCHS 1 GCH 0 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 8 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 0 MAXLEN 8 CMXICH 0" <<<"$w80" && grep -qxF "ANCHOR cw11_n24.pg n 24 RUNS 4 FL 7 EPOCHS 7 GCH 3 VIOL 0 LVLVIOL 0 CMOVES 7 CMNORISE 0 CMLATE 0 MAXEP 1 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 3 MAXLEN 3 CMXICH 7" <<<"$w80"; then
+  echo "box 132 ANCHOR: u23sw64_n32 FL run of 8 = one epoch, level timing holds; cw11_n24 3 gating changes (Xi at a W-cycle node), 7 cycle-node moves: PASS"
+else
+  echo "box 132 ANCHOR check: FAILED"; exit 1
+fi
+w81=$(cd .. && python3 -I new/box133/odxi.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "ODXI odxi_n37.pg n 37 RUNS 1 FL 8 XICH_ODIFF 5 GATEREL 1 EX [(1, 6, 35, 34, 33, 33)]" <<<"$w81"; then
+  echo "box 133 ODXI: odxi_n37 Xi at ODIFF gate 33 changes 5 times inside the FL run [1, 9] and releases the FL move 35: 34 -> 33 at 5 -> 6: PASS"
+else
+  echo "box 133 ODXI check: FAILED"; exit 1
+fi
+w82=$(cd .. && python3 -I new/box132/anchor.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start; python3 -I new/box133/odxi.py new/box134/inst/odxi_min_n12.pg new/box134/inst/odxi_min_n12.start)
+if grep -qxF "ANCHOR odxi_many_n32.pg n 32 RUNS 3 FL 8 EPOCHS 7 GCH 4 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 2 EPVIOL 0 BOUNDVIOL 0 XIB 4 SBB 0 CYB 0 MAXLEN 3 CMXICH 0" <<<"$w82" && grep -qxF "ODXI odxi_min_n12.pg n 12 RUNS 1 FL 1 XICH_ODIFF 1 GATEREL 0" <<<"$w82"; then
+  echo "box 134 P-N5-ANCHOR pins: odxi_many_n32 (R179) 8 FL transitions, 4 gating changes, FL-ANCHOR items hold; odxi_min_n12 one ODIFF Xi-change in its FL run: PASS"
+else
+  echo "box 134 P-N5-ANCHOR pins check: FAILED"; exit 1
+fi
+w83=$(cd .. && python3 -I new/box134/cmpw.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "CMPW odxi_n37.pg n 37 MOVES 65 FLIPS 45 PREFIX 44 CROSS 1 INPREF 0 CYCNODE 0 SAMEW 0 NONFLIP 5" <<<"$w83"; then
+  echo "box 134 CMPW: odxi_n37 order flips behind FL moves 44 PREFIX + 1 CROSS, SAMEW 0 (Lemma COMPARE-W): PASS"
+else
+  echo "box 134 CMPW check: FAILED"; exit 1
+fi
+w84=$(cd .. && STRETCH=1 python3 -I new/box135/dmerge.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start; STRETCH=1 python3 -I new/box135/dmerge.py red/xing/instances/u23sw64_n32.pg new/box132/u23sw64_n32_default.start)
+if grep -qxF "DMERGES odxi_many_n32.pg n 32 RUNS 3 FL 8 ACYC 1 CYC 2 HMAX 8 CASCVIOL 0 SEGEDGES 274 MAXL 3 SELFL 7 CNMOV 0" <<<"$w84" && grep -qxF "DMERGES u23sw64_n32.pg n 32 RUNS 1 FL 8 ACYC 1 CYC 0 HMAX 9 CASCVIOL 0 SEGEDGES 305 MAXL 8 SELFL 0 CNMOV 0" <<<"$w84"; then
+  echo "box 135 DMERGE: u23sw64_n32 stretch D' acyclic, height 9, FL 8 (CASC-M); odxi_many_n32 2 cyclic stretches via 7 self-edges: PASS"
+else
+  echo "box 135 DMERGE check: FAILED"; exit 1
+fi
+w85=$(cd .. && DOM=1 STRETCH=1 python3 -I new/box136/dmerge2.py new/box134/inst/odxi_many_n32.pg new/box134/inst/odxi_many_n32.start)
+if grep -qxF "DMERGE2SD odxi_many_n32.pg n 32 RUNS 3 FL 8 ACYC 3 CYC 0 HMAX 8 CASCVIOL 0 SEGEDGES 255 MAXL 3 SELFL 0 CNMOV 0 DOMCUT 117" <<<"$w85"; then
+  echo "box 136 DMERGE2: odxi_many_n32 all 3 stretches D''-acyclic under z-world + DOM (D' had 2 cyclic), CASC-M'' holds: PASS"
+else
+  echo "box 136 DMERGE2 check: FAILED"; exit 1
+fi
+w86=$(cd .. && python3 -I new/box137/rel.py new/box137/ret2_n37.pg new/box137/ret2_n37_default.start; python3 -I new/box137/rel.py new/box137/cwmov2_n57.pg new/box137/cwmov2_n57_default.start; python3 -I new/box132/anchor.py new/box137/ret2_n37.pg new/box137/ret2_n37_default.start)
+if grep -qxF "REL ret2_n37.pg n 37 K 12 RUNS 1 FL 7 CEILVIOL 0 SATDEC 0 SATGAIN 0 MOVERS 74 FROZVIOL 0 SYNC 98 SYNCVIOL 0 CW 0 CWVIOL 0 RET 44 RETMAX 2 MOVMAX 6 CHAINVIOL 0 CNMOV 0 CWMOV 0 WWMOV 74 DEFVIOL 0" <<<"$w86" && grep -qxF "ANCHOR ret2_n37.pg n 37 RUNS 1 FL 7 EPOCHS 1 GCH 0 VIOL 0 LVLVIOL 0 CMOVES 0 CMNORISE 0 CMLATE 0 MAXEP 7 EPVIOL 0 BOUNDVIOL 0 XIB 0 SBB 0 CYB 0 MAXLEN 7 CMXICH 0" <<<"$w86" && grep -qxF "REL cwmov2_n57.pg n 57 K 15 RUNS 2 FL 6 CEILVIOL 0 SATDEC 0 SATGAIN 2 MOVERS 32 FROZVIOL 0 SYNC 113 SYNCVIOL 0 CW 102 CWVIOL 0 RET 14 RETMAX 1 MOVMAX 4 CHAINVIOL 0 CNMOV 0 CWMOV 2 WWMOV 30 DEFVIOL 0" <<<"$w86"; then
+  echo "box 137 REL: ret2_n37 one FL run = one epoch (GCH 0), an option re-entered twice (RET-1 DEAD), box 137 lemma checks 0; cwmov2_n57 2 c-world FL moves, DEFICIT holds: PASS"
+else
+  echo "box 137 REL check: FAILED"; exit 1
+fi
+w87=$(cd .. && python3 -I new/box138/dmerge3.py new/box138/sbmany_n57.pg new/box138/sbmany_n57_default.start; python3 -I new/box138/dmerge3.py new/box133/odxi_n37.pg new/box133/odxi_n37.start)
+if grep -qxF "DMERGE3 sbmany_n57.pg n 57 SSTRETCHES 1 FL 3 ACYC 1 CYC 0 EHEIGHT 9 CASCVIOL 0 EDGES 99 MAXL 3 CNMOV 1 SBIN 95 TIES 0 ODDNODES 8 SBSTR 1 SBACYC 1 SBFL 3" <<<"$w87" && grep -qxF "DMERGE3 odxi_n37.pg n 37 SSTRETCHES 1 FL 8 ACYC 1 CYC 0 EHEIGHT 9 CASCVIOL 0 EDGES 372 MAXL 8 CNMOV 0 SBIN 0 TIES 0 ODDNODES 54 SBSTR 0 SBACYC 0 SBFL 0" <<<"$w87"; then
+  echo "box 138 GATE: sbmany_n57 95 sbar changes inside one acyclic S-stretch of 3 transitions (CASC-M3); odxi_n37 one S-stretch, Even-height 9: PASS"
+else
+  echo "box 138 GATE check: FAILED"; exit 1
+fi
+w88=$(cd .. && python3 -I new/box139/paths.py new/box139/genomes/big_d4_k3_W3.json new/box139/genomes/grow_top_N24.json)
+if grep -qxF "PATHS big_d4_k3_W3.json N 12 STEPS 32 STOP stuck MOVES 57 MOVMAX 10 VXMAX 833 VWMAX 81 CURVIOL 0 KEYVIOL 0 BOUNDVIOL 0 SLACK 1.0000" <<<"$w88" && grep -qxF "PATHS grow_top_N24.json N 24 STEPS 64 STOP stuck MOVES 119 MOVMAX 10 VXMAX 8799 VWMAX 6561 CURVIOL 0 KEYVIOL 0 BOUNDVIOL 0 SLACK 1.0000" <<<"$w88"; then
+  echo "box 139 PATHS: IDEAL-ACYC champions big_d4 / grow_top_N24: value and key monotone at every step, moves <= min(VX, VW) - 1: PASS"
+else
+  echo "box 139 PATHS check: FAILED"; exit 1
+fi
+w89=$(cd .. && python3 -I new/box140/alt.py new/box140/out/up_d5.json new/box140/out/up_d6.json)
+if grep -qxF "ALT up_d5.json N 10 STEPS 11 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 5, 7, 4, 2] LFLIPS [2, 5, 5, 3, 2]" <<<"$w89" && grep -qxF "ALT up_d6.json N 12 STEPS 13 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 4, 7, 7, 3, 2] LFLIPS [2, 3, 7, 6, 6, 5]" <<<"$w89"; then
+  echo "box 140 JOINT: UP-LADDER climb champions d 5 / 6 (FL 11 / 13): ALTERNATION, TOWARD-L, L-ACCOUNT hold; moves peak mid-ladder: PASS"
+else
+  echo "box 140 JOINT check: FAILED"; exit 1
+fi
+w90=$(cd .. && python3 -I new/box140/alt.py new/box141/out/up_d8_s8.json)
+if grep -qxF "ALT up_d8_s8.json N 16 STEPS 19 LADDER True ALTVIOL 0 TOWARDVIOL 0 LFVIOL 0 MOVES [2, 6, 8, 9, 8, 4, 4, 2] LFLIPS [2, 6, 8, 9, 7, 6, 6, 5]" <<<"$w90"; then
+  echo "box 141 UPLIN: UP-LADDER d 8 champion FL 19 (linear), ALTERNATION / TOWARD-L / L-ACCOUNT hold: PASS"
+else
+  echo "box 141 UPLIN check: FAILED"; exit 1
+fi
+w91=$(cd .. && python3 -I new/box142/lag.py new/box142/lag_min_d2.json new/box141/out/up_d8_s8.json)
+if grep -qxF "LAG lag_min_d2.json STEPS 2 STOP opt LAGEVENTS 1 LAGMAX 1 DOUBLE 0 DELAY [0, 1] LFLIPS [1, 1] DELVIOL 0 EX (1, 1, [2, 3], 2, 1)" <<<"$w91" && grep -qxF "LAG up_d8_s8.json STEPS 19 STOP stuck LAGEVENTS 2 LAGMAX 1 DOUBLE 8 DELAY [0, 3, 3, 4, 2, 1, 1, 0] LFLIPS [2, 6, 8, 9, 7, 6, 6, 5] DELVIOL 0 EX (1, 11, [2, 3], 11, 12)" <<<"$w91"; then
+  echo "box 142 LAG: NO-LAG dead (lag_min_d2, sibling Xi-read); DELAY-CHARGE holds on up_d8_s8: PASS"
+else
+  echo "box 142 LAG check: FAILED"; exit 1
+fi
+w92=$(cd .. && python3 -I new/box143/cause.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json; python3 -I new/box143/rerise.py new/box143/inst/x3_L8.json)
+if grep -qxF "CAUSE x3_L8.json d 3 STEPS 8 STOP stuck SUMDELAY 5 CELEMVIOL 0 LEAST {'DEL': 4, 'PRE': 3, 'OTHER': 0, 'CAR': 0} PRE 4 STEPBOUND 9 NOCAUSE 0 CAUSECLS {'DEL': 1, 'CAR': 3, 'PRE': 1} CAUSELEVDIFF {-2: 1, -1: 1, 0: 2, 1: 1} MOVES 13 BFLIPS 13" <<<"$w92" && grep -qxF "CAUSE dc_d12.json d 12 STEPS 26 STOP stuck SUMDELAY 63 CELEMVIOL 0 LEAST {'DEL': 23, 'PRE': 2, 'OTHER': 0, 'CAR': 0} PRE 7 STEPBOUND 31 NOCAUSE 0 CAUSECLS {'DEL': 42, 'CAR': 13, 'PRE': 8} CAUSELEVDIFF {-10: 4, -9: 2, -8: 2, -6: 2, -5: 1, -4: 4, -3: 3, -2: 4, -1: 6, 0: 6, 1: 3, 2: 9, 3: 5, 4: 4, 5: 3, 6: 3, 7: 2} MOVES 82 BFLIPS 89" <<<"$w92" && grep -qxF "RERISE x3_L8.json d 3 STEPS 8 PAIRS 12 RERISEVIOL 4 STRICTVIOL 5 MAXRISES 5" <<<"$w92"; then
+  echo "box 143 DELAY: C-ELEM and STEP-DELAY hold on R188 pin x3_L8 and the d 12 Sum-DELAY champion (63 delays, 26 steps); literal re-rise hint dead on x3_L8: PASS"
+else
+  echo "box 143 DELAY check: FAILED"; exit 1
+fi
+w93=$(cd .. && python3 -I new/box144/merge.py new/box143/inst/x3_L8.json; python3 -I new/box144/chain.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json)
+if grep -qxF "MERGE x3_L8.json d 3 STEPS 8 DELSTEPS 4 NOPRE 1 MAXX 2 MAXXK 2 MAXXC 2 MAXC 2 MAXXCK 2 PAIRS 2 CAUSECLS {'CAR': 2, 'DEL': 1} CLEAST 1 SEGLEN 2 KBARHIT 1 SUFHIT 1" <<<"$w93" && grep -qxF "CHAIN x3_L8.json d 3 STEPS 8 DELSTEPS 4 CHAINED 2 UNCHAINED 2 NOCAUSE 0 PIVIOL 0 MAXCHAIN 3 UNCLS {'CAR': 2} UNLEV {1: 2} | ALL: UNCH 3 NOCAUSE 0 PIVIOL 0 MAXBLOCK 3 BOUND N(1+U) 24 OK True" <<<"$w93" && grep -qxF "CHAIN dc_d12.json d 12 STEPS 26 DELSTEPS 23 CHAINED 10 UNCHAINED 13 NOCAUSE 0 PIVIOL 0 MAXCHAIN 7 UNCLS {'DEL': 10, 'CAR': 3} UNLEV {0: 1, 1: 5, 3: 1, 4: 2, 7: 3, 8: 1} | ALL: UNCH 14 NOCAUSE 0 PIVIOL 0 MAXBLOCK 7 BOUND N(1+U) 360 OK True" <<<"$w93"; then
+  echo "box 144 MERGE-CHAIN: pre-merge cause premise dead on x3_L8 (NOPRE 1); CHAIN-BACK blocks <= n_E, steps <= n_E (1 + U) on x3_L8 and dc_d12: PASS"
+else
+  echo "box 144 MERGE-CHAIN check: FAILED"; exit 1
+fi
+w94=$(cd .. && python3 -I new/box145/thr.py new/box143/inst/x3_L8.json new/box144/inst/nest_d3_L4.json)
+if grep -qxF "THR x3_L8.json N 6 STATES 64 IMAGES 30 NONUNATE 2 NONASUM2 3 WITNESS (2, 3, (1, 1, 0, 0, 1, 1), (1, 1, 1, 0, 0, 0))" <<<"$w94" && grep -qxF "THR nest_d3_L4.json N 6 STATES 64 IMAGES 18 NONUNATE 1 NONASUM2 1 WITNESS (5, 0, (0, 1, 1, 1, 0, 1), (0, 1, 0, 1, 1, 0))" <<<"$w94"; then
+  echo "box 145 ENERGY: direct threshold cast dead (one-step map not unate on x3_L8 and nest_d3_L4): PASS"
+else
+  echo "box 145 ENERGY check: FAILED"; exit 1
+fi
+w95=$(cd .. && python3 -I new/box146/energy.py new/box146/small_d2.json new/box144/inst/lag1.json)
+if grep -qxF "ENERGY small_d2.json N 4 STEPS 2 UNCH 0 CH 1 V0D 1 V0U 0 V1D 1 V1U 0 V2D 1 V2U 0 V3D 1 V3U 0 VLEXD 1 VLEXU 0" <<<"$w95" && grep -qxF "ENERGY lag1.json N 6 STEPS 2 UNCH 1 CH 0 V0D 1 V0U 1 V1D 1 V1U 0 V2D 1 V2U 0 V3D 1 V3U 0 VLEXD 0 VLEXU 1" <<<"$w95"; then
+  echo "box 146 SPLITE: split-level energy dead (small_d2 chained rise; lag1 unchained non-fall): PASS"
+else
+  echo "box 146 SPLITE check: FAILED"; exit 1
+fi
+w96=$(cd .. && python3 -I new/box147/rank.py new/box143/inst/x3_L8.json new/box147/out/rk_d3.json; python3 -I new/box147/stat.py new/box144/inst/lag1.json)
+if grep -qxF "RANK x3_L8.json N 6 STEPS 8 U 3 YSTAB 0 ABOVE 0 MAXR_UNCH 2 MAXR_CH 2 MAXR_ALL 3 UNCH_RANKS [1, 1, 2]" <<<"$w96" && grep -qxF "RANK rk_d3.json N 6 STEPS 2 U 1 YSTAB 0 ABOVE 0 MAXR_UNCH 5 MAXR_CH 0 MAXR_ALL 5 UNCH_RANKS [5]" <<<"$w96" && grep -q "^STAT lag1.json N 6 STEPS 2 U 1 CH 0 .* QUOT B:BAD1 UNST:lv1 AGR:lv1 KP:lv1 MRG:BAD1 " <<<"$w96"; then
+  echo "box 147 COARSE: DECREMENT holds (YSTAB 0, ABOVE 0); unchained RANK 5 = n - 1 on rk_d3; B and MRG constant across lag1's unchained step: PASS"
+else
+  echo "box 147 COARSE check: FAILED"; exit 1
+fi
+w97=$(cd .. && python3 -I new/box148/charge.py new/box144/out/uc_d6.json; python3 -I new/box148/restrict.py new/box143/inst/x3_L8.json new/box144/out/uc_d10.json)
+if grep -q "^CHARGE uc_d6.json N 12 STEPS 13 U 9 .* k1: H 6 NOFLIP_ABOVE 4 NOFLIP_FROZ 5 SAMETOP 6 FIRSTFAIL 3 " <<<"$w97" && grep -q "^RESTRICT x3_L8.json N 6 STEPS 8 U 3 INTERVALS 5 PREFIXVIOL 0 " <<<"$w97" && grep -q "^RESTRICT uc_d10.json N 20 STEPS 22 U 17 INTERVALS 4 PREFIXVIOL 0 MAXUNCH_IN 10 " <<<"$w97"; then
+  echo "box 148 INTERVAL: per-step key-change charge dead on uc_d6; INTERVAL-RESTRICT prefix holds on x3_L8 and uc_d10: PASS"
+else
+  echo "box 148 INTERVAL check: FAILED"; exit 1
+fi
+w98=$(cd .. && python3 -I new/box149/keyflip.py new/box143/inst/x3_L8.json new/box143/out/dc_d12.json)
+if grep -qxF "KEYFLIP x3_L8.json N 6 STEPS 8 MOVES 13 KFLIPS 10 VIOL 0" <<<"$w98" && grep -qxF "KEYFLIP dc_d12.json N 24 STEPS 26 MOVES 82 KFLIPS 86 VIOL 0" <<<"$w98"; then
+  echo "box 149 KEYFLIP: moves(x) <= 1 + key flips(x) on x3_L8 and dc_d12: PASS"
+else
+  echo "box 149 KEYFLIP check: FAILED"; exit 1
+fi
+w99=$(cd .. && python3 -I new/box150/check.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json | tail -1; ALL=1 python3 -I new/box150/check.py new/box150/out/rand/*.json | tail -1; NEG=3 python3 -I new/box150/check.py new/box150/out/rand/*.json | tail -1)
+if grep -qxF "TOTAL genomes 46 runs 46 steps 386 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w99" && grep -qxF "TOTAL genomes 200 runs 75518 steps 93963 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w99" && grep -q "^TOTAL genomes 200 runs 200 .* XINEW [1-9]" <<<"$w99"; then
+  echo "box 150 P-IDEAL-RED: every packet inequality, 0 violations on 46 corpus genomes and 75,518 all-start runs of 200 random genomes; negative control fires: PASS"
+else
+  echo "box 150 P-IDEAL-RED check: FAILED"; exit 1
+fi
+if python3 -c "import z3" 2> /dev/null; then
+  w100=$(bash box151/run.sh check 2>&1)
+  exp100="NEST k 3 E 0 DEG 1 ANTI 0 FREEKP 0 xwake -> sat
+NEST k 3 E 0 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 3 E 1 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 2 E 2 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> sat
+NEST k 4 E 2 DEG 0 ANTI 1 FREEKP 0 xwake_anti -> unsat
+NEST k 3 E 1 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> unsat
+NEST k 4 E 2 DEG 0 ANTI 1 FREEKP 1 xwake_anti -> sat"
+  if [ "$w100" == "$exp100" ]; then
+    echo "box 151 NEST: xwake.py without antisymmetry SAT on bare k 3; with it UNSAT k 3 E 0/1, k 4 E 2, SAT k 2 E 2; gate-free UNSAT k 3 E 1, SAT k 4 E 2: PASS"
+  else
+    echo "box 151 NEST check: FAILED"; echo "$w100"; exit 1
+  fi
+else echo "box 151 NEST checks skipped (no z3)"; fi
+w101=$(cd .. && python3 -I new/box152/lemcheck.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*_d5_*.json)
+if grep -qxF "LEMCHECK runs 50 pairs 92308 PMDIFF 0 SPATH 0 pm_prem 32586 sp_prem 37303" <<<"$w101"; then
+  echo "box 152 PMDIFF / STABLE-PATH: 0 violations on 92,308 state pairs of 50 runs (incl. R198/R199 d 5 pins): PASS"
+else
+  echo "box 152 lemcheck: FAILED"; echo "$w101"; exit 1
+fi
+w102=$(cd .. && NMAX=10 python3 -I new/box153/decomp.py new/box14*/out/*.json new/box14*/inst/*.json new/box152/*_d5_*.json; python3 -I new/box153/longpath.py new/box153/ladlp_5.json)
+if grep -qxF "DECOMP genomes 25 faces 478953 USO 0 COMB 0 ORDER 0 ACYC 0 JUMP 0 maxjump 7" <<<"$w102" && grep -qxF "LONGPATH ladlp_5.json n2 10 longest 114 ideal_T 1" <<<"$w102"; then
+  echo "box 153 DECOMP: improvement orientation is a decomposable AUSO (0 violations); Xi-ladder K 5 longest improving path 114: PASS"
+else
+  echo "box 153 check: FAILED"; echo "$w102"; exit 1
+fi
+w103=$(cd .. && python3 -I new/box154/ladder.py 10)
+if [ "$(grep -c ' OK$' <<<"$w103")" = 10 ] && grep -qF "LADDER K 7 N 14 path 254 = 2^(K+1)-2 True nonimproving 0 flips [2, 4, 8, 16, 32, 64, 128] DP_longest 254 ideal_T 0 OK" <<<"$w103"; then
+  echo "box 154 LADDER-LP: Xi-ladder L_K has a directed improving path of length 2^(K+1)-2 (K = 1..10; DP exact K <= 7): PASS"
+else
+  echo "box 154 LADDER check: FAILED"; echo "$w103"; exit 1
+fi
+# frozen-file pins (CHECKER C116 G-3): P-IDEAL-CUBE packet and line L-1 (d97555d4)
+pin104=$(cd ../.. && sha1sum docs/new/P-IDEAL-CUBE.md docs/new/P-IDEAL-CUBE-line-L1.txt docs/new/P-IDEAL-CUBE-line-L2.txt docs/new/P-IDEAL-CUBE-fixes.md)
+if grep -q "^366afedcf7cd04a31302e25cec47c7fb3df455bb  docs/new/P-IDEAL-CUBE.md$" <<<"$pin104" && grep -q "^99ae8face50615b4ce1ce5cd5e69f223f17208e1  docs/new/P-IDEAL-CUBE-line-L1.txt$" <<<"$pin104" && grep -q "^449421e4cfaedbef577f68720fab4924111cd170  docs/new/P-IDEAL-CUBE-line-L2.txt$" <<<"$pin104" && grep -q "^006274ec3f0aa82ceac8fa9b8f294f1f8d2e138e  docs/new/P-IDEAL-CUBE-fixes.md$" <<<"$pin104"; then
+  echo "P-IDEAL-CUBE pins (packet 366afedc, line L-1 99ae8fac, line L-2 449421e4, fixes 006274ec): PASS"
+else
+  echo "P-IDEAL-CUBE pin check: FAILED"; echo "$pin104"; exit 1
+fi
+# P-IDEAL-M2 (box 156; L-NEW 51): MULTI-CHARGE (mcharge.py), TRIGGER / XIFLIP (trig.py, with NEG=3 control), LIN-156 DEAD instance, pins
+w105=$(cd .. && python3 -I new/box155/mcharge.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json; ALL=1 ALLN=8 python3 -I new/box155/mcharge.py new/box150/out/rand/*.json; python3 -I new/box156/trig.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json; ALL=1 python3 -I new/box156/trig.py new/box150/out/rand/*.json; NEG=3 python3 -I new/box156/trig.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json; python3 -I new/box156/val.py new/box156/ext/max_d4_L13.json)
+if grep -qxF "MCHARGE runs 54 steps 468 unch 222 M2 300 VIOL 0 BOUND 0 single_runs 0 single_maxT_over_N 0.0" <<<"$w105" && grep -qxF "MCHARGE runs 34934 steps 38676 unch 2148 M2 5188 VIOL 0 BOUND 0 single_runs 6114 single_maxT_over_N 1.0" <<<"$w105" && grep -qxF "TRIG runs 54 moves 919 NEITHER 0 WNOLOW 0 XNODESC 0 XiT 707 WT 333 BOTH 121 multi 270 WREL 162 XIBR 108 XIFLIP 0" <<<"$w105" && grep -qxF "TRIG runs 3981 moves 298 NEITHER 0 WNOLOW 0 XNODESC 0 XiT 298 WT 0 BOTH 0 multi 12 WREL 0 XIBR 12 XIFLIP 0" <<<"$w105" && grep -q "^TRIG runs 54 moves 488 NEITHER 141 " <<<"$w105" && grep -qxF "new/box156/ext/max_d4_L13.json N 8 T 13 M2 5 U 4 mv [1, 1, 2, 1, 1, 2, 3, 2, 1, 1, 2, 1, 1]" <<<"$w105" && [ "$(sha1sum box156/ext/max_d4_L13.json | cut -d' ' -f1)" = f0735b61312bdbfe1bb553496d7e9ee38681dcee ]; then
+  echo "P-IDEAL-M2: MULTI-CHARGE 0 viol. (54 + 34,934 runs), TRIGGER / XIFLIP 0 viol. (54 + 3,981 runs; NEG=3 fires), max_d4_L13 T 13 > 12: PASS"
+else
+  echo "P-IDEAL-M2 check: FAILED"; echo "$w105"; exit 1
+fi
+pin105=$(cd ../.. && sha1sum docs/new/P-IDEAL-M2.md docs/new/P-IDEAL-M2-line-L1.txt docs/new/P-IDEAL-M2-line-L2.txt docs/new/P-IDEAL-M2-fixes.md)
+if grep -q "^bc47b06c4b8d90ceb28939c966083e0c057a442b  docs/new/P-IDEAL-M2.md$" <<<"$pin105" && grep -q "^0160d1e3ffa832536454a74c559b20280b87f53e  docs/new/P-IDEAL-M2-line-L1.txt$" <<<"$pin105" && grep -q "^c890f2685edf3725a5fccb12cf93e9d3dd7d44ff  docs/new/P-IDEAL-M2-line-L2.txt$" <<<"$pin105" && grep -q "^66fd61731df0667e380e8ac231ee27062ee6b8a8  docs/new/P-IDEAL-M2-fixes.md$" <<<"$pin105"; then
+  echo "P-IDEAL-M2 pins (packet bc47b06c, line L-1 0160d1e3, line L-2 c890f268, fixes 66fd6173): PASS"
+else
+  echo "P-IDEAL-M2 pin check: FAILED"; echo "$pin105"; exit 1
+fi
+# box 157 (L-NEW 51): Lemma SEG, SEG-ONCE, Corollary LEVEL-PRODUCT (segcheck.py; BADLEV=2 negative control)
+w106=$(cd .. && python3 -I new/box157/segcheck.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json new/box157/max_d5_L15.json new/box139/genomes/*.json; ALL=1 ALLN=8 python3 -I new/box157/segcheck.py new/box150/out/rand/*.json; BADLEV=2 python3 -I new/box157/segcheck.py new/box14*/out/*.json new/box14*/inst/*.json new/box142/*.json new/box146/*.json new/box152/*.json new/box153/*.json new/box156/ext/*.json new/box157/max_d5_L15.json new/box139/genomes/*.json)
+if grep -qxF "SEGCHECK runs 59 steps 650 intervals 652 SEG 0 ONCE 0 COUNT 0 PROD 0 maxratio 0.3333" <<<"$w106" && grep -qxF "SEGCHECK runs 34934 steps 38676 intervals 57755 SEG 0 ONCE 0 COUNT 0 PROD 0 maxratio 1.0" <<<"$w106" && grep -qxF "SEGCHECK runs 59 steps 650 intervals 652 SEG 0 ONCE 112 COUNT 0 PROD 0 maxratio 0.3333" <<<"$w106" && [ "$(sha1sum box157/max_d5_L15.json | cut -d' ' -f1)" = ba963aceabeb35d95f9c47d80d1d0e87b87baf21 ]; then
+  echo "box 157 SEG / SEG-ONCE / LEVEL-PRODUCT: 0 violations (59 + 34,934 runs; BADLEV=2 control fires): PASS"
+else
+  echo "box 157 segcheck: FAILED"; echo "$w106"; exit 1
+fi
+# P-IDEAL-SEG (box 157; L-NEW 51): REPLAY DEAD instance data (seg.py on max_d5_L15) + frozen-file pins; SEG checks are block w106
+w107=$(cd .. && python3 -I new/box157/seg.py new/box157/max_d5_L15.json)
+pin107=$(cd ../.. && sha1sum docs/new/P-IDEAL-SEG.md docs/new/P-IDEAL-SEG-line-L1.txt docs/new/P-IDEAL-SEG-fixes.md)
+if grep -qxF "max_d5_L15.json N 10 T 15 L 0 cuts [7, 8]" <<<"$w107" && grep -qF "  seg t9-15 len 7 NEWSTATES 7 REPLAY False: " <<<"$w107" && grep -qF "  seg t1-6 len 6 NEWSTATES 6 REPLAY False: " <<<"$w107" && [ "$(sha1sum box157/max_d5_L15.json | cut -d' ' -f1)" = ba963aceabeb35d95f9c47d80d1d0e87b87baf21 ] && grep -q "^7fa847843cb950e87dac38bf3d612effd5a9834e  docs/new/P-IDEAL-SEG.md$" <<<"$pin107" && grep -q "^a18f6f0c61d6d5f33adc61519d94252dd5ba9721  docs/new/P-IDEAL-SEG-line-L1.txt$" <<<"$pin107" && grep -q "^2e3dd53211b44ca752611aadf4f30e5a0e7c165f  docs/new/P-IDEAL-SEG-fixes.md$" <<<"$pin107"; then
+  echo "P-IDEAL-SEG: REPLAY DEAD data on max_d5_L15 (segment t9-15 all new); pins packet 7fa84784, line L-1 a18f6f0c, fixes 2e3dd532: PASS"
+else
+  echo "P-IDEAL-SEG check: FAILED"; echo "$w107"; echo "$pin107"; exit 1
+fi
+# box 158 (L-NEW 51): Lemma LIFT on three champions (same run one level up, no level-0 move) and their segment data
+w108=$(cd .. && for f in new/box156/ext/max_d4_L13.json new/box157/max_d5_L15.json new/box152/dd_d5_F14.json; do python3 -I new/box158/lift.py $f "$tmp/lift_$(basename $f)"; done; python3 -I new/box158/three.py "$tmp"/lift_*.json)
+if [ "$(grep -c ' SAME True$' <<<"$w108")" = 3 ] && grep -qxF "lift_max_d4_L13.json d 5 T 13 cuts [] seg1 13" <<<"$w108" && grep -qxF "lift_max_d5_L15.json d 6 T 15 cuts [] seg1 15" <<<"$w108"; then
+  echo "box 158 LIFT: max_d4_L13 / max_d5_L15 / dd_d5_F14 lift one level up with the same run and seg1 = T: PASS"
+else
+  echo "box 158 LIFT check: FAILED"; echo "$w108"; exit 1
+fi
+# P-IDEAL-SLOT (box 158; L-NEW 51): instance lift_max_d4_L13 (box 150 checker), frozen-file pins; LIFT runs are block w108
+w109=$(cd .. && python3 -I new/box150/check.py new/box158/lift_max_d4_L13.json | tail -1; python3 -I new/box158/three.py new/box158/lift_max_d4_L13.json)
+pin109=$(cd ../.. && sha1sum docs/new/P-IDEAL-SLOT.md docs/new/P-IDEAL-SLOT-line-L1.txt experiments/new/box158/lift_max_d4_L13.json docs/new/P-IDEAL-SLOT-line-L2.txt docs/new/P-IDEAL-SLOT-fixes.md docs/new/P-IDEAL-SLOT-line-L3.txt docs/new/P-IDEAL-SLOT-line-L4.txt)
+if grep -qxF "TOTAL genomes 1 runs 1 steps 13 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w109" && grep -qxF "lift_max_d4_L13.json d 5 T 13 cuts [] seg1 13" <<<"$w109" && grep -q "^62901b5f951598fb44426942b0fb1d999325625a  docs/new/P-IDEAL-SLOT.md$" <<<"$pin109" && grep -q "^17236fb18d70c1e2968689108a74a1acac938bd5  docs/new/P-IDEAL-SLOT-line-L1.txt$" <<<"$pin109" && grep -q "^33fec48f1a8f1c57891b7574d87cc6bbe5e3bd38  experiments/new/box158/lift_max_d4_L13.json$" <<<"$pin109" && grep -q "^55e74726f0c7e6c6e27f780b779788014cc97e29  docs/new/P-IDEAL-SLOT-line-L2.txt$" <<<"$pin109" && grep -q "^e7bd036111a2a87a67183b998a62f10f533aff9f  docs/new/P-IDEAL-SLOT-fixes.md$" <<<"$pin109" && grep -q "^0c51ce6da0a655c31112515c78cb0b5d22690168  docs/new/P-IDEAL-SLOT-line-L3.txt$" <<<"$pin109" && grep -q "^008b10ad8ee340793c5167fe5f990b7b71020630  docs/new/P-IDEAL-SLOT-line-L4.txt$" <<<"$pin109"; then
+  echo "P-IDEAL-SLOT: instance lift_max_d4_L13 (d 5, T 13, seg1 13, 0 violations); pins packet 62901b5f, line L-1 17236fb1, instance 33fec48f, line L-2 55e74726, fixes e7bd0361, line L-3 0c51ce6d, line L-4 008b10ad: PASS"
+else
+  echo "P-IDEAL-SLOT check: FAILED"; echo "$w109"; echo "$pin109"; exit 1
+fi
+# P-IDEAL-FLIP (box 162; L-NEW 53): W-ONLY / NOW-ONCE / SWAP / FLIP-1 checks (flipcheck.py), instance iso_d4_st9 (box 150 checker), pins
+w162=$(cd .. && python3 -I new/box162/flipcheck.py; python3 -I new/box150/check.py new/box160/out/iso_d4_st9.json | tail -1)
+pin162=$(cd ../.. && sha1sum docs/new/P-IDEAL-FLIP.md docs/new/P-IDEAL-FLIP-line-L1.txt experiments/new/box160/out/iso_d4_st9.json experiments/new/box162/out/kf0_d2_t2.json experiments/new/box162/out/kf1_d2_t3.json docs/new/P-IDEAL-FLIP-fixes.md docs/new/P-IDEAL-FLIP-line-L2.txt docs/new/P-IDEAL-FLIP-line-L3.txt)
+if grep -qE "WONLY 0 ISOA 0 FROZ 0 CONS 0 SWAP 0 SWAPNEG [1-9][0-9]* NOWONCE 0 NOWCTRL [1-9][0-9]* FLIP1 0$" <<<"$w162" && grep -qxF "INST iso_d4_st9 LR True ISO True d 4 T 11 level-0 steps [7, 8] seg1 6 tail 3" <<<"$w162" && grep -qxF "WIT kf0_d2_t2.json LR True ISO True V_0 2" <<<"$w162" && grep -qxF "WIT kf1_d2_t3.json LR True ISO True V_1 3" <<<"$w162" && grep -qxF "TOTAL genomes 1 runs 1 steps 11 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w162" && grep -q "^92803bd5b750924f0d0bc7db3c57eddf5725dfcb  docs/new/P-IDEAL-FLIP.md$" <<<"$pin162" && grep -q "^36418d164ac759472fadf0b411d81901db32e6da  docs/new/P-IDEAL-FLIP-line-L1.txt$" <<<"$pin162" && grep -q "^7ca1e68c52e4bb02ee260ccc36e8323146cdc6b3  experiments/new/box160/out/iso_d4_st9.json$" <<<"$pin162" && grep -q "^c2233e05b6212233acf5e3121b0ed088b7863b3c  experiments/new/box162/out/kf0_d2_t2.json$" <<<"$pin162" && grep -q "^d368d441b13b512c3453ea168d187734fe92b45e  experiments/new/box162/out/kf1_d2_t3.json$" <<<"$pin162" && grep -q "^4220c44e6caa0bc6e2b2d4363ba3f5ec97505de6  docs/new/P-IDEAL-FLIP-fixes.md$" <<<"$pin162" && grep -q "^4089bd73baf65929cf5b6094ef31882df817fd53  docs/new/P-IDEAL-FLIP-line-L3.txt$" <<<"$pin162" && grep -q "^8099415b58689ea9241f2da9d642ba8a1af74cf9  docs/new/P-IDEAL-FLIP-line-L2.txt$" <<<"$pin162"; then
+  echo "P-IDEAL-FLIP: flipcheck 0 violations (controls fire), instance iso_d4_st9 (T 11, seg1 6, tail 3), FLIP-1 instances V_0 2 / V_1 3; pins packet 92803bd5, line L-1 36418d16, instance 7ca1e68c, I-0 c2233e05, I-1 d368d441, fixes 4220c44e, line L-2 8099415b, line L-3 4089bd73: PASS"
+else
+  echo "P-IDEAL-FLIP check: FAILED"; echo "$w162"; echo "$pin162"; exit 1
+fi
+# P-IDEAL-KEYS (box 172; L-NEW 55): key-side lemma checks (keycheck.py, frozen output), DEAD instances (box 150 checker), pins
+w172=$(cd .. && python3 -I new/box172/keycheck.py | diff - new/box172/keycheck.out && echo KEYCHECK SAME; for f in box166/out/KILL_PM_compose_dd_d5_F14.json box172/inst/dd_d5_F14.json box170/out/T1_dd_top8.json; do python3 -I new/box150/check.py new/$f | tail -1; done)
+pin172=$(cd ../.. && sha1sum docs/new/P-IDEAL-KEYS.md docs/new/P-IDEAL-KEYS-line-L1.txt experiments/new/box172/keycheck.py experiments/new/box172/keycheck.out experiments/new/box166/out/KILL_PM_compose_dd_d5_F14.json experiments/new/box172/inst/dd_d5_F14.json experiments/new/box170/out/T1_dd_top8.json docs/new/P-IDEAL-KEYS-fixes.md docs/new/P-IDEAL-KEYS-line-L2.txt docs/new/P-IDEAL-KEYS-line-L3.txt)
+if grep -qxF "KEYCHECK SAME" <<<"$w172" && [ "$(grep -cxF "TOTAL genomes 1 runs 1 steps 14 XSIM 0 TOPO 0 MONO 0 XINEW 0 RISE 0 CHAIN 0 KEYFLIP 0 DECR 0 TOPMONO 0 RBOUND 0 RESTR 0 ICHARGE 0 REC 0 VIOL 0 (info REC148 0)" <<<"$w172")" = 3 ] && grep -qxF "LOCALKP 0 LOCALCTL 48435 KFWE 0 PAIRKF 0 CASCADE 0 LADDER 0 FLET 0 RENEW 0 RENEWB 0 MERGE 0 MERGECTL 23272 RETURN 0 RETCNT 0 KEYFLIP 0" box172/keycheck.out && grep -q "^62b35bf7ed7616bb66ff512edc30fe30431db0e5  docs/new/P-IDEAL-KEYS.md$" <<<"$pin172" && grep -q "^f36c6402064f61511048887bde28a72e270382ee  docs/new/P-IDEAL-KEYS-line-L1.txt$" <<<"$pin172" && grep -q "^6ce4693dda9f5baac0f524312009955d89a0a41a  experiments/new/box172/keycheck.py$" <<<"$pin172" && grep -q "^5100eb30482a1c5ceb60b7ed84b38d7700213770  experiments/new/box172/keycheck.out$" <<<"$pin172" && grep -q "^c025a4b61cd6342775aba6cbe2f89a9362dfa172  experiments/new/box166/out/KILL_PM_compose_dd_d5_F14.json$" <<<"$pin172" && grep -q "^06f0e5015d09c0f1e03f1b9293ab3cd8483e435b  experiments/new/box172/inst/dd_d5_F14.json$" <<<"$pin172" && grep -q "^9aead80e6123c720255cfbf75af12992bbc8e9b9  experiments/new/box170/out/T1_dd_top8.json$" <<<"$pin172" && grep -q "^504403c3816279bee51da5358e0e77250ffb8f69  docs/new/P-IDEAL-KEYS-fixes.md$" <<<"$pin172" && grep -q "^c29f0a9365e700e0888018be42caf8757df1ac74  docs/new/P-IDEAL-KEYS-line-L3.txt$" <<<"$pin172" && grep -q "^fb1b22763f5cc5e64fa2cab78468718b1321a846  docs/new/P-IDEAL-KEYS-line-L2.txt$" <<<"$pin172"; then
+  echo "P-IDEAL-KEYS: keycheck 0 violations (controls fire, output = frozen keycheck.out), DEAD instances PM / PMV / tower replayed (XSIM 0); pins packet 62b35bf7, line L-1 f36c6402, tool 6ce4693d, output 5100eb30, instances c025a4b6 / 06f0e501 / 9aead80e, fixes 504403c3, line L-2 fb1b2276, line L-3 c29f0a93: PASS"
+else
+  echo "P-IDEAL-KEYS check: FAILED"; echo "$w172"; echo "$pin172"; exit 1
+fi
+# P-IDEAL-ALIGN (box 178; L-NEW 55): ALIGN / PAIR-DOUBLE / MOVES / T-BOUND / PATH-RISE checks (aligncheck.py, frozen output), pins
+w178=$(cd .. && python3 -I new/box178/aligncheck.py | diff - new/box178/aligncheck.out && echo ALIGNCHECK SAME)
+pin178=$(cd ../.. && sha1sum docs/new/P-IDEAL-ALIGN.md docs/new/P-IDEAL-ALIGN-line-L1.txt experiments/new/box178/aligncheck.py experiments/new/box178/aligncheck.out experiments/new/box172/inst/dd_d5_F14.json docs/new/P-IDEAL-ALIGN-fixes.md docs/new/P-IDEAL-ALIGN-line-L2.txt docs/new/P-IDEAL-ALIGN-line-L3.txt)
+if grep -qxF "ALIGNCHECK SAME" <<<"$w178" && grep -qxF "KPEQ 0 LAND 0 ORD 0 DBL 0 F0 0 KFF 0 MOV 0 TB 0 PATH 0" box178/aligncheck.out && grep -q "^d8acdececb507bfad476341411bddd579fcc5b00  docs/new/P-IDEAL-ALIGN.md$" <<<"$pin178" && grep -q "^e46b0417295bfbde7f4cb2d434deed5d0f2e209c  docs/new/P-IDEAL-ALIGN-line-L1.txt$" <<<"$pin178" && grep -q "^9335dee71554491004b5f7567bb1a6784c5292dd  experiments/new/box178/aligncheck.py$" <<<"$pin178" && grep -q "^b653b01bbdca19c8e0c7d406b1bd2470c35c55fc  experiments/new/box178/aligncheck.out$" <<<"$pin178" && grep -q "^06f0e5015d09c0f1e03f1b9293ab3cd8483e435b  experiments/new/box172/inst/dd_d5_F14.json$" <<<"$pin178" && grep -q "^64e83e68e4a3642b724b2a5d3b712bec4162c21a  docs/new/P-IDEAL-ALIGN-fixes.md$" <<<"$pin178" && grep -q "^cb5f0398431cc1a5122e13327e7bbae9f9985e51  docs/new/P-IDEAL-ALIGN-line-L2.txt$" <<<"$pin178" && grep -q "^4d28b1f36f610c6ecda7ab48891edb5feae97d66  docs/new/P-IDEAL-ALIGN-line-L3.txt$" <<<"$pin178"; then
+  echo "P-IDEAL-ALIGN: aligncheck 0 violations (output = frozen aligncheck.out); pins packet d8acdece, line L-1 e46b0417, tool 9335dee7, output b653b01b, instance 06f0e501, fixes 64e83e68, line L-2 cb5f0398, line L-3 4d28b1f3: PASS"
+else
+  echo "P-IDEAL-ALIGN check: FAILED"; echo "$w178"; echo "$pin178"; exit 1
+fi
+# P-IDEAL-RISE (box 182, L-NEW successor 56): frozen risecheck output + pins
+w182=$(cd .. && python3 -I new/box182/risecheck.py | diff - new/box182/risecheck.out && echo RISECHECK SAME)
+pin182=$(cd ../.. && sha1sum docs/new/P-IDEAL-RISE.md docs/new/P-IDEAL-RISE-line-L1.txt experiments/new/box182/risecheck.py experiments/new/box182/risecheck.out experiments/new/box182/cert/cert_PBG_d2_s179.json experiments/new/box182/cert/cert_PBG_d3_s1793.json experiments/new/box182/cert/cert_PBG_d4_s1794.json experiments/new/box182/cert/cert_PHX_d3_s1793.json docs/new/P-IDEAL-RISE-fixes.md docs/new/P-IDEAL-RISE-line-L2.txt docs/new/P-IDEAL-RISE-line-L3.txt)
+if grep -qxF "RISECHECK SAME" <<<"$w182" && grep -qxF "PHIK 0 OPTK 0 RISE_A 0 RISE_B 0 RISE_C 0 MOVERISE 0 CERT 0" box182/risecheck.out && [ "$(grep -c " CERTIFIED$" box182/risecheck.out)" = 4 ] && grep -q "^573ef1171eec0f48aad974d221050681fc09ecc4  docs/new/P-IDEAL-RISE.md$" <<<"$pin182" && grep -q "^7e4273a97993e6e67fb8b7c81d6e215ceaa7bbbe  docs/new/P-IDEAL-RISE-line-L1.txt$" <<<"$pin182" && grep -q "^404df6de34c24ea8e86c305ae059ca3ce43db746  experiments/new/box182/risecheck.py$" <<<"$pin182" && grep -q "^3685b69bcdc03bf261931e94ef3427550026a1b6  experiments/new/box182/risecheck.out$" <<<"$pin182" && grep -q "^bf65a4e6cd20d497b7fed5dc7ab7c03752bf38cf  experiments/new/box182/cert/cert_PBG_d2_s179.json$" <<<"$pin182" && grep -q "^f878699ff959bf08f26d001275de2000a6bb68f1  experiments/new/box182/cert/cert_PBG_d3_s1793.json$" <<<"$pin182" && grep -q "^7f3d88c349511baa4abe78139ac5f9f019edd339  experiments/new/box182/cert/cert_PBG_d4_s1794.json$" <<<"$pin182" && grep -q "^71fb16831f47d8f2de6fc58791b749e672c3dc2a  experiments/new/box182/cert/cert_PHX_d3_s1793.json$" <<<"$pin182" && grep -q "^d8046a92f9081c01f488fbcdf51ba13843a9bcaf  docs/new/P-IDEAL-RISE-fixes.md$" <<<"$pin182" && grep -q "^25170417891fec8d815cc23a30aa71c839369ada  docs/new/P-IDEAL-RISE-line-L2.txt$" <<<"$pin182" && grep -q "^4a553a296533b86de8bb3fce20a90ff0e13393e9  docs/new/P-IDEAL-RISE-line-L3.txt$" <<<"$pin182"; then
+  echo "P-IDEAL-RISE: risecheck 0 violations, 4 certificates CERTIFIED (output = frozen risecheck.out); pins packet 573ef117, line L-1 7e4273a9, tool 404df6de, output 3685b69b, certificates bf65a4e6 f878699f 7f3d88c3 71fb1683, fixes d8046a92, line L-2 25170417, line L-3 4a553a29: PASS"
+else
+  echo "P-IDEAL-RISE check: FAILED"; echo "$w182"; echo "$pin182"; exit 1
+fi
+# P-IDEAL-MOVES (box 187, L-NEW successor 57): frozen movescheck output + pins
+w187=$(python3 -I box187/movescheck.py | diff - box187/movescheck.out && echo MOVESCHECK SAME)
+pin187=$(cd ../.. && sha1sum docs/new/P-IDEAL-MOVES.md docs/new/P-IDEAL-MOVES-line-L1.txt experiments/new/box187/movescheck.py experiments/new/box187/movescheck.out experiments/new/box186/out/pass_d3_D3.json experiments/new/box186/out/pass_d4_D4.json experiments/new/box186/out/pass_d5_D5.json experiments/new/box187/inst/m4_z4_r7.json docs/new/P-IDEAL-MOVES-fixes.md docs/new/P-IDEAL-MOVES-line-L2.txt docs/new/P-IDEAL-MOVES-line-L3.txt docs/new/P-IDEAL-MOVES-line-L4.txt docs/new/P-IDEAL-MOVES-line-L5.txt)
+if grep -qxF "MOVESCHECK SAME" <<<"$w187" && grep -qxF "RX 0 AGA 0 AGB 0 AGC 0 SWA 0 SWB 0 SWC 0 SWD 0 SWE 0 WPD 0" box187/movescheck.out && [ "$(grep -c "^DEAD-SEG .* Xi-target True .* LM 0$" box187/movescheck.out)" = 3 ] && grep -q "^DEAD-LEV box187/inst/m4_z4_r7.json start 10111010 mover 4 level 2 Xi-target True moves 7 T 8$" box187/movescheck.out && grep -q "^5ce2947d1ee4dab317e5c06446b38f050146cafb  docs/new/P-IDEAL-MOVES.md$" <<<"$pin187" && grep -q "^819c58159100d77ec509348345cfd1a641a6f9e7  docs/new/P-IDEAL-MOVES-line-L1.txt$" <<<"$pin187" && grep -q "^8153717b8596b82a68c8b35c7ab76aabc765d7c2  experiments/new/box187/movescheck.py$" <<<"$pin187" && grep -q "^4874020973e02bf269b64624e4e7b110bb08ca24  experiments/new/box187/movescheck.out$" <<<"$pin187" && grep -q "^8bca976438ca184bb8b8e4d5ecf3455f51809ff4  experiments/new/box186/out/pass_d3_D3.json$" <<<"$pin187" && grep -q "^3bf6a4a48bc2df9fb8809306f8347ee280965b07  experiments/new/box186/out/pass_d4_D4.json$" <<<"$pin187" && grep -q "^16be2e594732ad0b21e2c84aa4cdbc62d143e7c4  experiments/new/box186/out/pass_d5_D5.json$" <<<"$pin187" && grep -q "^7c158e2f806df2d1984418902548cfc2cb243d75  experiments/new/box187/inst/m4_z4_r7.json$" <<<"$pin187" && grep -q "^fba3443ac0d732d820469a2e24785f1a374bfa20  docs/new/P-IDEAL-MOVES-fixes.md$" <<<"$pin187" && grep -q "^f3692aaa033540ff0494b0aac6b2d524757d5c00  docs/new/P-IDEAL-MOVES-line-L2.txt$" <<<"$pin187" && grep -q "^d3983c68cdda03e81fdaedec770af587f758d84e  docs/new/P-IDEAL-MOVES-line-L3.txt$" <<<"$pin187" && grep -q "^73c16d1e2b009ff2e3d774a904e4462be0874db1  docs/new/P-IDEAL-MOVES-line-L4.txt$" <<<"$pin187" && grep -q "^a42257cb159b2e51128c2334062d44edb97661f6  docs/new/P-IDEAL-MOVES-line-L5.txt$" <<<"$pin187"; then
+  echo "P-IDEAL-MOVES: movescheck 0 violations, 4 DEAD instances re-run (output = frozen movescheck.out); pins packet 5ce2947d, line L-1 819c5815, tool 8153717b, output 48740209, instances 8bca9764 3bf6a4a4 16be2e59 7c158e2f, fixes fba3443a, line L-2 f3692aaa, line L-3 d3983c68, line L-4 73c16d1e, line L-5 a42257cb: PASS"
+else
+  echo "P-IDEAL-MOVES check: FAILED"; echo "$w187"; echo "$pin187"; exit 1
+fi
+# BOX 189 REACH (L-NEW successor 58): N5 from S3 on R104's Gamma(G) (1 iteration) vs the S3-padded Gamma3(G) (one FL run = L(G))
+o189=$(bash box189/check189.sh | diff - box189/reach.out && echo REACH SAME)
+if grep -qxF "REACH SAME" <<<"$o189" && [ "$(grep -c "S3 == stated start: True (differs at 0 vertices) | N5 from S3: .* FL runs \[(0, \([0-9]*\), \1)\] | movers follow IDEAL for states 0..\1$" box189/reach.out)" = 3 ] && [ "$(grep -c "pads=none .* N5 from S3: 1 iterations, 0 fallbacks, FL runs \[\]" box189/reach.out)" = 3 ]; then
+  echo "BOX 189 REACH: Gamma3 from S3 = stated start, FL run [0, L(G)] on 3 pinned genomes (L 35, 59, 13); Gamma from S3: 1 iteration; 2 instances regenerated byte-identical: PASS"
+else
+  echo "BOX 189 REACH check: FAILED"; echo "$o189"; exit 1
+fi
+# P-N5-REACH (box 189, L-NEW successor 58): frozen reachcheck output + sha1 pins (packet, line L-1, tools, output, 14 corpus genomes)
+w189=$(python3 -I box189/reachcheck.py --approx | diff - box189/reachcheck.out && echo REACHCHECK SAME)
+pin189=$(cd ../.. && sha1sum -c --quiet experiments/new/box189/reach.pins && echo PINS OK; sha1sum experiments/new/box189/reach.pins)
+if grep -qxF "REACHCHECK SAME" <<<"$w189" && grep -qxF "PINS OK" <<<"$pin189" && grep -q "^1a075f50314bd3fd8a5933b51d41a43b1f2f62a8  experiments/new/box189/reach.pins$" <<<"$pin189" && grep -q "^C14+R440 NO-REACH runs 454 states 908: standard 0, core-not-(K0->K1,K1->K0) 0, cycle-node(K0)!=K0 0; (state, vertex) pairs 42880: beta-in-P-or-low-cycle-node 0;" box189/reachcheck.out && grep -q "^C14+R440 S3-START genomes 454: S3 != stated start 0$" box189/reachcheck.out && grep -q "^C14+R440 PAD (state, vertex, world) triples 693030: pad-in-P-or-cycle-node-Om<3 0$" box189/reachcheck.out && grep -q "^C14+R440 REACH3 genomes 454 (states 0..L checked 1225): failures 0$" box189/reachcheck.out && grep -q "^SUBDIV-DEAD instance B n 5: G from (s0, t0): iterations 2 fallbacks 0; G^pad (n 17) from S3: iterations 3 " box189/reachcheck.out; then
+  echo "P-N5-REACH: reachcheck re-run = frozen output (NO-REACH 0/908 states, S3-START 0/454, PAD 0/693030, REACH3 0/454 failures, SUBDIV-DEAD A and B); pins (reach.pins 1a075f50: packet b7bd6937, line L-1 b12ec57a, fixes be31f774, line L-2 4de27b32, line L-3 adfbb3b8, line L-4 f85a024b, reachcheck c368b363, gamma3 8758456f, subdiv 63c7ae38, output af50ee34, 14 genomes): PASS"
+else
+  echo "P-N5-REACH check: FAILED"; echo "$w189"; echo "$pin189"; exit 1
+fi
+# BOX 190 DE-TOWER (L-NEW successor 58): N5 / N5'-xi / N5'-idx / N5'-seq on Gamma3 of the P-N5-REACH corpus (frozen table)
+o190=$(python3 -I box190/corpus190.py | diff - box190/corpus190.out && echo DETOWER SAME)
+if grep -qxF "DETOWER SAME" <<<"$o190" && [ "$(grep -c "^REC_d10_tower_mu30_norm.json d 10 N 20 Xi-depth 13 L 35 | spec 38 | xi 6 | idx 5 | seq 66$" box190/corpus190.out)" = 1 ] && [ "$(wc -l < box190/corpus190.out)" = 14 ]; then
+  echo "BOX 190 DE-TOWER: 14 corpus genomes on Gamma3 from S3, spec / xi / idx / seq iterations = frozen table: PASS"
+else
+  echo "BOX 190 DE-TOWER check: FAILED"; echo "$o190"; exit 1
+fi
+# BOX 191 XI-CYCLIC (L-NEW successor 59): REALIZE-CYC data (N5'-xi mover phase on Gamma3 = IDEAL-CYC), ONEP-POLY / BR-SEG counts, DEAD SEG-2P
+o191=$(cd box191 && bash check191.sh 2>&1 | diff - check191.out && echo XICYC SAME)
+if grep -qxF "XICYC SAME" <<<"$o191" && grep -qxF "TOTAL match 22 mismatch 0" box191/check191.out && grep -q "^ONE-player: 300 genomes seed 11: maxrun > N in 0, C > N\*M in 0" box191/check191.out && grep -q "^sae_5.pg n 77 nE 50 T 310 C 0 R 54 p 256 maxpure 15 H0events 0$" box191/check191.out; then
+  echo "BOX 191 XI-CYCLIC: REALIZE-CYC 22/22 (8 Xi-cyclic + 14 corpus), random 297/300 + 3 exact-VJ-tie divergences; SEG-1P / CYC-COUNT 0 violations; DEAD SEG-2P instances; BR-SEG on switchallexp N 2-5 = frozen: PASS"
+else
+  echo "BOX 191 XI-CYCLIC check: FAILED"; echo "$o191"; exit 1
+fi
+# P-N5-XICYC (box 191, L-NEW successor 59): sha1 pins (packet, line L-1, tools, check191.out, instances); the run itself is block BOX 191
+pin191=$(cd ../.. && sha1sum -c --quiet experiments/new/box191/xicyc.pins && echo PINS OK; sha1sum experiments/new/box191/xicyc.pins)
+if grep -qxF "PINS OK" <<<"$pin191" && grep -q "^df6f47994d849914819d5475a37d5f52540ed438  experiments/new/box191/xicyc.pins$" <<<"$pin191"; then
+  echo "P-N5-XICYC: pins (xicyc.pins df6f4799: packet 149e2414, line L-1 d6f77b12, fixes 90d0f09d, line L-2 857d21c8, line L-3 1690b6ad, line L-4 85fe809c, level0_191.py, data outputs, sae_6/7, check191.out d07c2f0c, tools, 17 instance files): PASS"
+else
+  echo "P-N5-XICYC check: FAILED"; echo "$pin191"; exit 1
+fi
+# BOX 192 R-POT (L-NEW successor 60): data behind DEAD FLIP-H / HEAD-STEP / EXCH-1, EQ-FLIP and X-GATE checks, SEG-T sample
+# no silent exit: every failure path prints «BOX 192 R-POT check: FAILED» with the exit code, the diff and the run's last lines
+r192=0; run192=$(cd box192 && bash check192.sh 2>&1) || r192=$?
+d192=$(diff <(printf '%s\n' "$run192") box192/check192.out 2>&1) || true
+if [ "$r192" -eq 0 ] && [ -z "$d192" ] && grep -q "^rd2_d9.json N 18 T 21 C 3 R 18 p 0 flips 55 eqfail 0 Rnohead 9 flipnoh 15 xsz 7 " box192/check192.out; then
+  echo "BOX 192 R-POT: EQ-FLIP 0 failures, X-GATE <= 1 flip per interval, DEAD FLIP-H / HEAD-STEP / EXCH-1 instances (rd2_d9), SEG-T sample = frozen: PASS"
+else
+  echo "BOX 192 R-POT check: FAILED (check192.sh exit $r192; python $(python3 --version 2>&1))"; echo "$d192" | head -30; echo "$run192" | tail -15; exit 1
+fi
+# BOX 193 ASC (L-NEW successor 61): CHAIN-DECOMP / TAIL-MON / E-DOM / UP-JUMP / ASC-GATE data, CS(M, A) exact values M <= 5, ASC-EXP, NOUP
+# no silent exit: every failure path prints «BOX 193 ASC check: FAILED» with the exit code, the diff and the run's last lines
+r193=0; run193=$(cd box193 && bash check193.sh 2>&1) || r193=$?
+d193=$(diff <(printf '%s\n' "$run193") box193/check193.out 2>&1) || true
+if [ "$r193" -eq 0 ] && [ -z "$d193" ] && grep -q "^rd2_d9.json N 18 T 21 M 36 edomfail 0 decfail 0 tmonfail 0 ascstates 1053 maxasc 3 maxDE 18 asc 180 upfail 0 gates 448 ci 147 con 263 chi 38 gfail 0 edomunits 93 decunits 2154 tmonunits 291$" box193/check193.out && grep -q "^CS(M 7, A 0): max distinct hub chains 29;" box193/check193.out && grep -q "^CS(M 5, A 1): max distinct hub chains 29;" box193/check193.out; then
+  echo "BOX 193 ASC: CHAIN-DECOMP / TAIL-MON / UP-JUMP / ASC-GATE 0 failures, CS(M <= 5) exact values, ASC-EXP M <= 10, NOUP 0 ascents = frozen: PASS"
+else
+  echo "BOX 193 ASC check: FAILED (check193.sh exit $r193; python $(python3 --version 2>&1))"; echo "$d193" | head -30; echo "$run193" | tail -15; exit 1
+fi
+# P-N5-ASC (L-NEW successor 61; fixes entry 1 + line L-1, successor 62): frozen packet, fixes, L-1, cited tools / instances against box193/asc.pins (DOCS/ = docs/new/)
+pinA=$(cd box193 && sed 's#DOCS/#../../../docs/new/#' asc.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinA" ]; then
+  echo "P-N5-ASC: packet and $(wc -l < box193/asc.pins) pinned files match asc.pins: PASS"
+else
+  echo "P-N5-ASC check: FAILED"; echo "$pinA" | head -20; exit 1
+fi
+# BOX 194 LOC (L-NEW successor 62): LOC-GATE / LOC-K2 / CN2 / OVT-DV (loc194.py), Theorem QUIET (quiet194.py), DEAD constant IN-BOUND (in194.py)
+# no silent exit: every failure path prints «BOX 194 LOC check: FAILED» with the exit code, the diff and the run's last lines
+r194=0; run194=$(cd box194 && bash check194.sh 2>&1) || r194=$?
+d194=$(diff <(printf '%s\n' "$run194") box194/check194.out 2>&1) || true
+if [ "$r194" -eq 0 ] && [ -z "$d194" ] && grep -q "^LEAP_k64.json T 129 cnlow 0 k2fail 0 gatestates 66950 ties 0 locfail 0 intervals 515 flips 128 ovtfail 0 efail 0 bfail 0 maxF 128 tight 0$" box194/check194.out && grep -q "^RS2_L32M6.json T 41 n 527 IN 33 INk 0 INb 33 INB 34 who ('x', 74)$" box194/check194.out && ! grep -Eq "(locfail|ovtfail|efail|bfail|cnlow|k2fail|wfail|Tfail|crossflip|bonlyfail|ties) [1-9]" box194/check194.out; then
+  echo "BOX 194 LOC: LOC-GATE / LOC-K2 / CN2 / OVT-DV / QUIET 0 failures, DEAD constant IN-BOUND (RS2_L32M6 IN 33) = frozen: PASS"
+else
+  echo "BOX 194 LOC check: FAILED (check194.sh exit $r194; python $(python3 --version 2>&1))"; echo "$d194" | head -30; echo "$run194" | tail -15; exit 1
+fi
+# P-N5-QUIET (L-NEW successor 62): frozen packet + cited tools / instances against box194/quiet.pins (DOCS/ = docs/new/)
+pinQ=$(cd box194 && sed 's#DOCS/#../../../docs/new/#' quiet.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinQ" ]; then
+  echo "P-N5-QUIET: packet and $(wc -l < box194/quiet.pins) pinned files match quiet.pins: PASS"
+else
+  echo "P-N5-QUIET check: FAILED"; echo "$pinQ" | head -20; exit 1
+fi
+# BOX 195 END (L-NEW successor 63): Lemmas E0-E4 / Theorems ENDGAME-3, ENDGAME-3-N5 (eg195.py), frozen output + negative controls
+# no silent exit: every failure path prints «BOX 195 END check: FAILED» with the exit code, the diff and the run's last lines
+r195=0; run195=$(cd box195 && bash check195.sh 2>&1) || r195=$?
+d195=$(diff <(printf '%s\n' "$run195") box195/check195.out 2>&1) || true
+if [ "$r195" -eq 0 ] && [ -z "$d195" ] && ! grep -v "^ctrl" box195/check195.out | grep -Eq "(e[0-4]fail|stopfail|finsbar|fintie|nofb|late|capped|lfail) [1-9]" && grep -q "^ctrl1 .*e2fail 100 e3fail 100 e4fail 100 stopfail 100 finsbar 100 fintie 100" box195/check195.out && grep -q "^ctrl2 .*e0fail 200 e1fail 200" box195/check195.out; then
+  echo "BOX 195 END: E0-E4 / ENDGAME-3 (xi and spec) 0 failures, controls fire = frozen: PASS"
+else
+  echo "BOX 195 END check: FAILED (check195.sh exit $r195; python $(python3 --version 2>&1))"; echo "$d195" | head -30; echo "$run195" | tail -15; exit 1
+fi
+# P-N5-END (L-NEW successor 63): frozen packet + cited tools / instances / outputs against box195/end.pins (DOCS/ = docs/new/)
+pinE=$(cd box195 && sed 's#DOCS/#../../../docs/new/#' end.pins | sha1sum -c --quiet 2>&1) || true
+# fixes entry 4 (C138 E-1, E-2): line L-4 = L-3 + R-U + R-T0 must be CHECKER's 5f88c297… (7,230 B)
+l4E=$(sha1sum < ../../docs/new/P-N5-END-line-L4.txt | cut -c1-40); l4B=$(wc -c < ../../docs/new/P-N5-END-line-L4.txt)
+[ "$l4E" = "5f88c2971718522027ae267754814c6ba401b829" ] && [ "$l4B" -eq 7230 ] || pinE="L-4: sha1 $l4E, $l4B B (expected 5f88c297…, 7230 B)"
+if [ -z "$pinE" ]; then
+  echo "P-N5-END: packet and $(wc -l < box195/end.pins) pinned files match end.pins: PASS"
+else
+  echo "P-N5-END check: FAILED"; echo "$pinE" | head -20; exit 1
+fi
+# BOX 196 CHAIN (L-NEW successor 64): QUIET3 / T-QUIET3 / REACH3-ALL / UP-B3 counters on the Γ3 run (qt3_196.py), frozen output + controls
+# no silent exit: every failure path prints «BOX 196 CHAIN check: FAILED» with the exit code, the diff and the run's last lines
+r196=0; run196=$(cd box196 && bash check196.sh 2>&1) || r196=$?
+d196=$(diff <(printf '%s\n' "$run196") box196/check196.out 2>&1) || true
+if [ "$r196" -eq 0 ] && [ -z "$d196" ] && ! grep -Ev "^(ctrl|spec)" box196/check196.out | grep -Eq "(nonstd|nohoward|cnlow|locfail|ties|bonly|k2fail|wfail|crossflip|Tfail|upfail|emon) [1-9]" && grep -q "^ctrl1 .*wfail [1-9].*Tfail [1-9][0-9]* upfail [1-9]" box196/check196.out && grep -q "^ctrl2 .*locfail [1-9]" box196/check196.out && grep -q "^ctrl3 .*bonly [1-9]" box196/check196.out && grep -q "^spec .*nohoward [1-9]" box196/check196.out; then
+  echo "BOX 196 CHAIN: Γ3-native QUIET3 / REACH3-ALL / UP-B3 counters 0, controls and spec-mode nohoward fire = frozen: PASS"
+else
+  echo "BOX 196 CHAIN check: FAILED (check196.sh exit $r196; python $(python3 --version 2>&1))"; echo "$d196" | head -30; echo "$run196" | tail -15; exit 1
+fi
+# P-N5-CHAIN (L-NEW successor 64): frozen packet + cited tools / instances / outputs against box196/chain.pins (DOCS/ = docs/new/)
+pinC=$(cd box196 && sed 's#DOCS/#../../../docs/new/#' chain.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinC" ]; then
+  echo "P-N5-CHAIN: packet and $(wc -l < box196/chain.pins) pinned files match chain.pins: PASS"
+else
+  echo "P-N5-CHAIN check: FAILED"; echo "$pinC" | head -20; exit 1
+fi
+# BOX 197 CORE (L-NEW successor 65): ASC-WIT / ASC-ROOT / RE-COUNT counters on the Γ3 run (asc197.py), frozen output + controls
+r197=0; run197=$(cd box197 && bash check197.sh 2>&1) || r197=$?
+d197=$(diff <(printf '%s\n' "$run197") box197/check197.out 2>&1) || true
+if [ "$r197" -eq 0 ] && [ -z "$d197" ] && ! grep -v "^ctrl" box197/check197.out | grep -Eq "(awA|awB|lexdec|dfail|rootfail) [1-9]" && grep -q "^ctrl1 .*awA [1-9]" box197/check197.out && grep -q "^ctrl2 .*rootfail [1-9]" box197/check197.out && grep -q "^ctrl3 .*awB [1-9]" box197/check197.out && grep -q "^ctrl4 .*dfail [1-9]" box197/check197.out; then
+  echo "BOX 197 CORE: ASC-WIT / ASC-ROOT / RE-COUNT counters 0, controls fire = frozen: PASS"
+else
+  echo "BOX 197 CORE check: FAILED (check197.sh exit $r197)"; echo "$d197" | head -30; echo "$run197" | tail -15; exit 1
+fi
+# BOX 198 PAIR (L-NEW successor 65): PAIR-HIGH / RA-PATHS counters (pair198.py), frozen output + controls
+r198=0; run198=$(cd box198 && bash check198.sh 2>&1) || r198=$?
+d198=$(diff <(printf '%s\n' "$run198") box198/check198.out 2>&1) || true
+if [ "$r198" -eq 0 ] && [ -z "$d198" ] && ! grep -v "^ctrl" box198/check198.out | grep -Eq "(ph1fail|ph2fail|rafail|rpfail) [1-9]" && grep -q "^ctrl1 .*ph1fail [1-9]" box198/check198.out && grep -q "^ctrl2 .*rpfail [1-9]" box198/check198.out; then
+  echo "BOX 198 PAIR: PAIR-HIGH / RA-PATHS counters 0, controls fire = frozen: PASS"
+else
+  echo "BOX 198 PAIR check: FAILED (check198.sh exit $r198)"; echo "$d198" | head -30; echo "$run198" | tail -15; exit 1
+fi
+# BOX 199 SPLIT (L-NEW successor 66): SPLIT / REWIN / REWIN-HI counters (split199.py), DEAD witnesses, frozen output + controls
+r199=0; run199=$(cd box199 && bash check199.sh 2>&1) || r199=$?
+d199=$(diff <(printf '%s\n' "$run199") box199/check199.out 2>&1) || true
+if [ "$r199" -eq 0 ] && [ -z "$d199" ] && ! grep -v "^ctrl" box199/check199.out | grep -Eq "(playfail|kindfail|hwfail|gtfail|trfail|dnfail|rhfail|rh2fail|spfail|rw1fail|wlamfail) [1-9]" && grep -q "^GROW7_n34.json .*wcfail 18 " box199/check199.out && grep -q "^CX4_n21.json .*dn_nobelow_all [1-9]" box199/check199.out && grep -q "^ctrl1 .*hwfail [1-9]" box199/check199.out && grep -q "^ctrl2 .*wbfail [1-9]" box199/check199.out && grep -q "^ctrl3 .*dnfail [1-9]" box199/check199.out && grep -q "^ctrl4 .*rhfail [1-9].*rh2fail [1-9].*spfail [1-9]" box199/check199.out && grep -q "^ctrl5 .*gtfail [1-9]" box199/check199.out && grep -q "^ctrl6 .*Bne_t2 [1-9]" box199/check199.out && grep -q "^ROUTELOW_n21.json .*ytopB_ne [1-9]" box199/check199.out && grep -q "^RWX_n95.json .*rwfail [1-9]" box199/check199.out; then
+  echo "BOX 199 SPLIT: SPLIT / REWIN / REWIN-HI / PAIR-SPLIT / SPLIT-COUNT / RW-1 counters 0, DEAD witnesses present, controls fire = frozen: PASS"
+else
+  echo "BOX 199 SPLIT check: FAILED (check199.sh exit $r199)"; echo "$d199" | head -30; echo "$run199" | tail -15; exit 1
+fi
+# P-N5-SPLIT (L-NEW successor 67; L-3 assert successor 71, R-D7a + R-U127): frozen packet + sources, P-N5-CHAIN premise, tools / outputs / instances / engine against box199/split.pins (DOCS/ = docs/new/)
+pinS=$(cd box199 && sed 's#DOCS/#../../../docs/new/#' split.pins | sha1sum -c --quiet 2>&1) || true
+if [ -z "$pinS" ] && grep -q "^a8661c4b7998aafc02299c43dfe4e2c6320f73ee  DOCS/P-N5-SPLIT-line-L3.txt$" box199/split.pins; then
+  echo "P-N5-SPLIT: packet and $(wc -l < box199/split.pins) pinned files match split.pins, line L-3 a8661c4b pinned: PASS"
+else
+  echo "P-N5-SPLIT check: FAILED"; echo "$pinS" | head -20; exit 1
+fi
+# BOX 200 SELF (L-NEW successor 67): SELF / TIME-CHARGE / LEAP counters (self200.py), frozen output + controls
+r200=0; run200=$(cd box200 && bash check200.sh 2>&1) || r200=$?
+d200=$(diff <(printf '%s\n' "$run200") box200/check200.out 2>&1) || true
+if [ "$r200" -eq 0 ] && [ -z "$d200" ] && ! grep -v "^ctrl" box200/check200.out | grep -Eq "(selffail|tcfail|swfail|leapfail) [1-9]" && grep -q "^ctrl1 .*selffail [1-9].*tcfail [1-9]" box200/check200.out && grep -q "^ctrl2 .*selffail [1-9]" box200/check200.out && grep -q "^ctrl3 .*swfail [1-9]" box200/check200.out && grep -q "^ctrl4 .*leapfail [1-9]" box200/check200.out && (cd box200/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 200 SELF: SELF / TIME-CHARGE / LEAP counters 0, controls fire = frozen: PASS"
+else
+  echo "BOX 200 SELF check: FAILED (check200.sh exit $r200)"; echo "$d200" | head -30; echo "$run200" | tail -15; exit 1
+fi
+# BOX 203 FLIP (L-NEW successor 68): GATE-CLASS / GATE-FLIP / QUIET-N counters on IDEAL-CYC (gfc203.py, rnd203.py); part 2: (k+1)-Lambda
+# (lam203.py) and the DEAD ascent bound (asc203.py on the staircase ST8: 7 ascents at k = 1); frozen output + controls
+r203=0; run203=$(cd box203 && bash check203.sh 2>&1) || r203=$?
+d203=$(diff <(printf '%s\n' "$run203") box203/check203.out 2>&1) || true
+if [ "$r203" -eq 0 ] && [ -z "$d203" ] && ! grep -v "^ctrl" box203/check203.out | grep -Eq "(odd|vfail|glnfail|emon|hfail|hefail|tieflip|lfail|gfail|qflip|qfail|Tfail) [1-9]" && grep -q "^ctrl1 .*glnfail [1-9]" box203/check203.out && grep -q "^ctrl2 .*hefail [1-9]" box203/check203.out && grep -q "^ctrl3 .*lfail [1-9]" box203/check203.out && ! grep -v "^ctrl" box203/check203.out | grep -q "'lfail': [1-9]" && grep -q "^ctrl4 .*'lfail': [1-9]" box203/check203.out && grep -q "^ST8_k1.json k 1 .*maxasc 7" box203/check203.out && [ "$(grep -c . box203/check203.out)" -eq 17 ] && (cd box203/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 203 FLIP: GATE-CLASS / GATE-FLIP / QUIET-N / (k+1)-Lambda counters 0, ST8 ascent witness, controls fire = frozen: PASS"
+else
+  echo "BOX 203 FLIP check: FAILED (check203.sh exit $r203)"; echo "$d203" | head -30; echo "$run203" | tail -15; exit 1
+fi
+# P-N5-QN (L-NEW successor 68): frozen packet + source note, quote check, tools / outputs / instances / engine against box203/qn.pins (DOCS/ = docs/new/)
+pinQ=$(cd box203 && sed 's#DOCS/#../../../docs/new/#' qn.pins | sha1sum -c --quiet 2>&1) || true
+grep -q "^quotes 24 missing 0 " box203/quotesqn.out || pinQ="$pinQ quotesqn.out: not «quotes 24 missing 0»"
+if [ -z "$pinQ" ]; then
+  echo "P-N5-QN: packet and $(wc -l < box203/qn.pins) pinned files match qn.pins, quotes 24 missing 0: PASS"
+else
+  echo "P-N5-QN check: FAILED"; echo "$pinQ" | head -20; exit 1
+fi
+# BOX 204 K1EQ (L-NEW successor 68): Lemma FACE-TARGET counters (k1eq204.py), frozen output + controls
+r204=0; run204=$(cd box204 && bash check204.sh 2>&1) || r204=$?
+d204=$(diff <(printf '%s\n' "$run204") box204/check204.out 2>&1) || true
+if [ "$r204" -eq 0 ] && [ -z "$d204" ] && ! grep -v "^ctrl" box204/check204.out | grep -Eq "(wfail|dfail|bfail) [1-9]" && grep -q "'wfail': 0, 'dfail': 0, 'bfail': 0" box204/check204.out && grep -q "^ctrl1 .*wfail [1-9]" box204/check204.out && grep -q "^ctrl2 .*bfail [1-9]" box204/check204.out && (cd box204/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 204 K1EQ: FACE-TARGET counters 0, controls fire = frozen: PASS"
+else
+  echo "BOX 204 K1EQ check: FAILED (check204.sh exit $r204)"; echo "$d204" | head -30; echo "$run204" | tail -15; exit 1
+fi
+# BOX 205 BETA-LOC (L-NEW successor 69): Lemma BETA-LOC counters (betaloc205.py), frozen output + control + naive DEAD witness
+r205=0; run205=$(cd box205 && bash check205.sh 2>&1) || r205=$?
+d205=$(diff <(printf '%s\n' "$run205") box205/check205.out 2>&1) || true
+if [ "$r205" -eq 0 ] && [ -z "$d205" ] && ! grep -v "^ctrl1" box205/check205.out | grep -Eq "'(bfail|nfail)': [1-9]" && grep -q "^ctrl1 .*'bfail': [1-9]" box205/check205.out && grep -q "^naive_k1_s71.json .*'naive': [1-9]" box205/check205.out && (cd box205/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 205 BETA-LOC: bfail / nfail 0, control fires, naive witness fires = frozen: PASS"
+else
+  echo "BOX 205 BETA-LOC check: FAILED (check205.sh exit $r205)"; echo "$d205" | head -30; echo "$run205" | tail -15; exit 1
+fi
+# BOX 206 DEPTH (L-NEW successor 70): change-depth counters (depth206.py), Lemma DIV (div206.py), controls, LD-ASC DEAD witness (ascdepth206.py); Addendum E: CWR race-cycle trap (ediag206.py)
+r206=0; run206=$(cd box206 && bash check206.sh 2>&1) || r206=$?
+d206=$(diff <(printf '%s\n' "$run206") box206/check206.out 2>&1) || true
+if [ "$r206" -eq 0 ] && [ -z "$d206" ] && ! grep -v "^ctrl" box206/check206.out | grep -Eq "(elfall|topfall|pfail|cfail|ufail|nop|lamp|symp|dep|kind) [1-9]" && grep -q "^ctrl3 .*symp [1-9].*kind [1-9]" box206/check206.out && grep -q "^ctrl1 .*elfall [1-9].*ufail [1-9]" box206/check206.out && grep -q "^K1F34_n84.json ctrl 0 .*ldfail 1 " box206/check206.out && grep -q "^ctrl2 .*ldfail [1-9]" box206/check206.out && grep -q "^WC8_2.json ctrl 0 movers .*maxdepth 8 " box206/check206.out && grep -q "^BLKX23_n48.json .*'excess': 1," box206/check206.out && grep -q "^ediag CWRR4 TOTALS closed 0 raceTop 20 states 29" box206/check206.out && (cd box206/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 206 DEPTH: depth and DIV counters 0, controls fire, DEAD witnesses (WC8_2 depth 8, K1F34 LD-ASC, BLKX23 BLOCK-DESC) = frozen: PASS"
+else
+  echo "BOX 206 DEPTH check: FAILED (check206.sh exit $r206)"; echo "$d206" | head -30; echo "$run206" | tail -15; exit 1
+fi
+# BOX 207 RLOCAL (L-NEW successor 71): R-LOCAL and PAID (Addendum A) must-0 counters, DEAD race-flip charges (K1L10 deepnoR 5, B400_r32 step 43), control
+r207=0; run207=$(cd box207 && bash check207.sh 2>&1) || r207=$?
+d207=$(diff <(printf '%s\n' "$run207") box207/check207.out 2>&1) || true
+if [ "$r207" -eq 0 ] && [ -z "$d207" ] && ! grep -v "^ctrl" box207/check207.out | grep -Eq "(rrep|ifail|qfail|nonext|notK1|notE|lexfail|nochain) [1-9]" && grep -q "^ctrl .*rrep [1-9].*ifail [1-9].*qfail [1-9]" box207/check207.out && grep -q "^ctrlpaid .*lexfail [1-9].*nochain [1-9]" box207/check207.out && grep -q "^paid K1L10_n48.json .*maxchain 2 " box207/check207.out && grep -q "^K1L10_n48.json .*deepnoR 5 " box207/check207.out && grep -q "^B400 43 NO-Rchange (62, 1)e" box207/check207.out && (cd box207/inst && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 207 RLOCAL: R-LOCAL and PAID counters 0, controls fire, DEAD charges (K1L10 deepnoR 5, B400_r32 step 43) = frozen: PASS"
+else
+  echo "BOX 207 RLOCAL check: FAILED (check207.sh exit $r207)"; echo "$d207" | head -30; echo "$run207" | tail -15; exit 1
+fi
+# BOX 208 LEVEL (L-NEW successor 72): CANDIDATES Lemma LEVEL / Theorem WIN / Lemma PLATEAU (Addendum A): class facts, L1-L4, window and plateau must-0 counters on the check set, controls fire, frozen outputs unchanged and all 0
+r208=0; run208=$(cd box208 && bash check208.sh 2>&1) || r208=$?
+d208=$(diff <(printf '%s\n' "$run208") box208/check208.out 2>&1) || true
+m208='(monofail|k3fail|k4fail|k5fail|einF|l3fail|phifail|stallnocyc|nofvs|rstall|boundfail|winstall|wbeta|wl3fail|wmid|wbound|levfail|stall0|optfail) [1-9]'
+if [ "$r208" -eq 0 ] && [ -z "$d208" ] && ! grep -v "^ctrl" box208/check208.out | grep -Eq "$m208" && grep -q "^ctrl1 .*winstall [1-9]" box208/check208.out && grep -q "^ctrl2 .*l3fail [1-9].*stallnocyc [1-9]" box208/check208.out && grep -q "^RINT_n48.json .*wmax 22 " box208/check208.out && ! cat box208/out/level208_records.out box208/out/level208_corpus.out box208/out/level208_rand_*.out box208/out/level208_g3_*.out box208/out/mut208_*.out box208/out/own208_records.out box208/out/own208_corpus.out | grep -Eq "$m208" && ! grep "ctrl 0" box208/out/abs208.out | grep -Eq "$m208" && ! grep -h "ctrl 0" box208/check208.out box208/out/plat208_records.out box208/out/plat208_corpus.out box208/out/plat208_rand_s2091.out box208/out/plat208_mut_s2092.out box208/out/plat208_mut2_s2093.out | grep "^plat\|^rnd plat" | grep -Eq "\b(p1|pclos|p2|p3|p4|p5) [1-9]" && grep -q "^ctrlp .*pclos [1-9]" box208/check208.out && grep -q "ctrl 1 monofail [1-9]" box208/out/abs208.out && grep -q "winstall [1-9]" box208/out/level208_ctrl1.out && (cd box208/out && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 208 LEVEL: LEVEL / WIN must-0 counters 0 (check set and frozen outputs), controls fire: PASS"
+else
+  echo "BOX 208 LEVEL check: FAILED (check208.sh exit $r208)"; echo "$d208" | head -30; echo "$run208" | tail -15; exit 1
+fi
+# BOX 208 ADD-B (L-NEW successor 72): the third implementation rv208.py (own builder / valuation / Odd reply / Howard run; every reference state b): check set, control fires, frozen outputs unchanged and all 0, cross-check OK on every file
+r208c=0; run208c=$(cd box208 && bash check208c.sh 2>&1) || r208c=$?
+d208c=$(diff <(printf '%s\n' "$run208c") box208/check208c.out 2>&1) || true
+m208c='VIOLATION|\b(CN2|CN2pi|BONLY|NOTIE|LOCGATE|LOCK2|F1|DOM|K1|K2|K3a|K3b|K3c|K3d|K3e|K4|K5|L1sub|L1stall|L1rise|L1stallempty|L1lagback|C4|L2|L3|L3alpha_m|L3beta_kind|L3beta_m|L5set|L4mover|L4gate_face|L4gate|L4beta|L4nocycle|L4shape|L4xi|L5m|L5phi|P1|P2|P3|P4|P4eq_face|P4K2|P5closed|P5val|P5howard|P6|P7) [1-9]'
+if [ "$r208c" -eq 0 ] && [ -z "$d208c" ] && ! grep -v "^ctrl" box208/check208c.out | grep -Eq "$m208c" && grep -Eq "^ctrl .*\bL3 [1-9]" box208/check208c.out && ! cat box208/out/rv208_frozen.out box208/out/rv208_mut_s2094.out box208/out/rv208_rand_s2095.out | grep -Eq "$m208c" && [ "$(grep -c ' OK$' box208/out/rv208_xcheck.out)" -eq "$(grep -c . box208/out/rv208_xcheck.out)" ] && grep -Eq "\bL3 [1-9]" box208/out/rv208_ctrl1.out && [ "$(grep -c . box208/out/rv208_frozen.out)" -eq 81 ]; then
+  echo "BOX 208 ADD-B: rv208 (third implementation, every reference state) counters 0 on the check set and the frozen outputs, control fires, cross-check OK: PASS"
+else
+  echo "BOX 208 ADD-B check: FAILED (check208c.sh exit $r208c)"; echo "$d208c" | head -30; echo "$run208c" | tail -15; exit 1
+fi
+# BOX 209 LEVEL3 (L-NEW successor 72): CANDIDATES Lemma LEVEL3 / Lemma PLATEAU3 / Theorem T3-ALL on Gamma3 runs (N5'-xi from S3, n5v; and L-RED's HOW3 engine in the frozen outputs): must-0 counters on the check set, controls fire, frozen outputs unchanged and all 0, quotes found
+r209=0; run209=$(cd box209 && bash check209.sh 2>&1) || r209=$?
+d209=$(diff <(printf '%s\n' "$run209") box209/check209.out 2>&1) || true
+m209='(monofail|k3fail|k4fail|k5fail|einF|l3fail|phifail|stallnocyc|nofvs|rstall|boundfail|winstall|wbeta|wl3fail|wmid|wbound|structfail) [1-9]'; p209='\b(p1|pclos|p2|p3|p4|p5|t1|t2|t3) [1-9]'
+if [ "$r209" -eq 0 ] && [ -z "$d209" ] && ! grep -v "^ctrl" box209/check209.out | grep -Eq "$m209|$p209" && grep -q "^ctrl1 .*winstall [1-9]" box209/check209.out && grep -q "^ctrl2 .*l3fail [1-9].*stallnocyc [1-9]" box209/check209.out && grep -q "^ctrlp .*pclos [1-9]" box209/check209.out && ! cat box209/out/level3_records.out box209/out/level3_corpus.out box209/out/level3_dead.out box209/out/level3_rand_*.out box209/out/own3_level_*.out box209/out/struct3.out | grep -Eq "$m209" && ! cat box209/out/plat3_records.out box209/out/plat3_corpus.out box209/out/plat3_dead.out box209/out/plat3_rand_s2103.out box209/out/plat3_mut_s2104.out box209/out/own3_plat_*.out | grep -Eq "$p209" && grep -q "pclos [1-9]" box209/out/plat3_ctrl1.out && grep -q "stallnocyc [1-9]" box209/out/level3_ctrl2.out && [ ! -e box209/out/own3_fail.out ] && [ "$(cat box209/out/own3_level_*.out | grep -c ' monofail ')" -eq 81 ] && grep -q "missing 0 " box209/out/quotes209.out && (cd box209/out && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 209 LEVEL3: LEVEL3 / PLATEAU3 / T3-ALL must-0 counters 0 (check set and frozen outputs, two engines), controls fire: PASS"
+else
+  echo "BOX 209 LEVEL3 check: FAILED (check209.sh exit $r209)"; echo "$d209" | head -30; echo "$run209" | tail -15; exit 1
+fi
+# BOX 210 GEN-LEVEL (L-NEW successor 72): CANDIDATES Lemma G-CLASS / GEN-LEVEL / GEN-PLATEAU for Howard on split-form parity games: must-0 counters on the check set, three controls fire, frozen outputs unchanged and all 0, cross-check OK, quotes found
+r210=0; run210=$(cd box210 && bash check210.sh 2>&1) || r210=$?
+d210=$(diff <(printf '%s\n' "$run210") box210/check210.out 2>&1) || true
+m210='\b(F1|K1|K3|K4|K5|L1|L3|L3m|L4|L4c|L5|P1|P2|P3|P4w) [1-9]'
+if [ "$r210" -eq 0 ] && [ -z "$d210" ] && ! grep "^gen210" box210/check210.out | grep -Eq "$m210" && grep -Eq "^ctrl1 .*\bL3 [1-9].*\bL4 [1-9]" box210/check210.out && grep -Eq "^ctrl2 .*\bK5 [1-9]" box210/check210.out && grep -Eq "^ctrl3 .*\bK4 [1-9].*\bK5 [1-9]" box210/check210.out && ! cat box210/out/gen210_families.out box210/out/gen210_rand.out box210/out/gen210_allb.out box210/out/climb210.out | grep -Eq "$m210" && [ "$(grep -c '^gen210 pg' box210/out/gen210_families.out)" -eq 23 ] && [ "$(grep -c ' OK$' box210/out/gen210_xcheck.out)" -eq 23 ] && grep -Eq "ctrl 1 .*\bL4 [1-9]" box210/out/gen210_ctrl.out && grep -Eq "ctrl 2 .*\bK5 [1-9]" box210/out/gen210_ctrl.out && grep -Eq "ctrl 3 .*\bK5 [1-9]" box210/out/gen210_ctrl.out && ! grep "^n5lev" box210/out/n5lev210.out | grep -Eq '\b(F1|K1|K3|K4|L1|L3|L3m) [1-9]' && grep "^n5lev rand" box210/out/n5lev210.out | grep -Eq '\bK5 [1-9]' && grep -q "missing 0 " box210/out/quotes210.out && (cd box210/out && sha1sum -c --quiet SHA1SUMS); then
+  echo "BOX 210 GEN-LEVEL: G-CLASS / GEN-LEVEL / GEN-PLATEAU must-0 counters 0 (check set and frozen outputs), controls fire, cross-check OK: PASS"
+else
+  echo "BOX 210 GEN-LEVEL check: FAILED (check210.sh exit $r210)"; echo "$d210" | head -30; echo "$run210" | tail -15; exit 1
+fi
+# BOX 210 ADD-A (L-NEW successor 72): brute210.py (Odd's reply by brute force, every even up-set H, every reference state): check set all 0, two controls fire, frozen exhaustive and random outputs all 0
+r210b=0; run210b=$(cd box210 && bash check210b.sh 2>&1) || r210b=$?
+d210b=$(diff <(printf '%s\n' "$run210b") box210/check210b.out 2>&1) || true
+if [ "$r210b" -eq 0 ] && [ -z "$d210b" ] && [ "$(grep -v '^ctrl' box210/check210b.out | grep -c 'MUST0: all 0')" -eq 2 ] && grep -q "^ctrlH .*K2=[1-9]" box210/check210b.out && grep -q "^ctrlHodd .*K5=[1-9]" box210/check210b.out && [ "$(cat box210/out/brute210_exh3.out box210/out/brute210_exhgen23.out box210/out/brute210_rand.out | grep -c 'MUST0: all 0')" -eq 6 ] && ! cat box210/out/brute210_exh3.out box210/out/brute210_exhgen23.out box210/out/brute210_rand.out | grep -q "FIRST\|NO_POINTWISE" && grep -q "K5=[1-9]" box210/out/brute210_ctrl.out; then
+  echo "BOX 210 ADD-A: brute210 (brute-force reply, every even up-set, every reference state) all 0 on the check set and the frozen outputs, controls fire: PASS"
+else
+  echo "BOX 210 ADD-A check: FAILED (check210b.sh exit $r210b)"; echo "$d210b" | head -30; echo "$run210b" | tail -15; exit 1
+fi
+# P-N5-LEVEL (L-NEW successor 73): frozen packet + source note + proposed line L-1, the two landed packet files quoted in its section 1, the quote check, and box 208's tools / outputs / instances / engine against box211/level.pins (DOCS/ = docs/new/)
+pinL=$(cd box211 && sed 's#DOCS/#../../../docs/new/#' level.pins | sha1sum -c --quiet 2>&1) || true
+tail -1 box211/quotes211.out | grep -q "^quotes 44 missing 0 (trunk 68c8d29339d5945efe6878a7e4cfc9d6a1611d48)$" || pinL="$pinL quotes211.out: last line is not «quotes 44 missing 0 (trunk 68c8d293...)»"
+grep -q "  DOCS/P-N5-LEVEL-line-L1.txt$" box211/level.pins && grep -q "  DOCS/P-N5-LEVEL.md$" box211/level.pins || pinL="$pinL level.pins: packet or line L-1 not pinned"
+# fixes entry 1 (L-NEW successor 74): the fixes file and line L-2 pinned; mkl2_211.out (L-1 + LT-1..LT-3 = REFEREE 34's 389645a2, then R-1, R-2, LO-1) ends with L-2's sha1
+grep -q "  DOCS/P-N5-LEVEL-line-L2.txt$" box211/level.pins && grep -q "  DOCS/P-N5-LEVEL-fixes.md$" box211/level.pins || pinL="$pinL level.pins: fixes file or line L-2 not pinned"
+grep -q "^L-1 + LT-1..LT-3: sha1 389645a2a646522a8fb57f05dba4458695ac74f2 " box211/mkl2_211.out && tail -1 box211/mkl2_211.out | grep -q "^L-2 written: sha1 $(sha1sum < ../../docs/new/P-N5-LEVEL-line-L2.txt | cut -c1-40) " || pinL="$pinL mkl2_211.out: does not show REFEREE 34's L-1' or does not end with L-2's sha1"
+if [ -z "$pinL" ]; then
+  echo "P-N5-LEVEL: packet, lines L-1 and L-2, fixes file and $(wc -l < box211/level.pins) pinned files match level.pins, quotes 44 missing 0, L-2 built by mkl2_211.py: PASS"
+else
+  echo "P-N5-LEVEL check: FAILED"; echo "$pinL" | head -20; exit 1
+fi
+# BOX 212 RF-LEVEL (L-NEW successor 74): CANDIDATES RF-A / RF-B / RF-C (any improving rule on IDEAL-CYC(G)) and CONDITIONAL RF-D (N5's key rule on Gamma3): rule-free must-0 counters 0 on the check set and in every frozen output (summ212.py), controls fire, outputs and tower genomes pinned, quotes found (box 212 and box 209 Addendum B)
+r212=0; run212=$(cd box212 && bash check212.sh 2>&1) || r212=$?
+d212=$(diff <(printf '%s\n' "$run212") box212/check212.out 2>&1) || true
+m212='\b(IMP|CAP|CN2|CN2pi|BONLY|NOTIE|LOCGATE|LOCK2|F1|K1|K2|K3a|K3b|K3c|K3d|K3e|K4|K5new|L1sub|L1stall|L1rise|L1stallempty|L1lagback|L2|L3|L3alpha_m|L3beta_kind|L3beta_m|L5set|L5phi|NSP|P1|P2|P4|P4K2|PHclosed|PHval|PHimp|PHout|C4|DECOMP|imp3|monofail|k3fail|k4fail|einF|l3fail|phifail|phivals3|p1|pclos|p3) [1-9]'
+s212=$(cd box212 && python3 -I summ212.py 2>&1) || r212=$((r212 + 100))
+if [ "$r212" -eq 0 ] && [ -z "$d212" ] && ! grep -v '^ctrl' box212/check212.out | grep -Eq "$m212" && grep -Eq '^ctrl .*\bL3 [1-9]' box212/check212.out && grep -Eq '^ctrlimp .*\bimp3 [1-9]' box212/check212.out && grep -Eq '^ctrllv .*\bl3fail [1-9]' box212/check212.out && [ "$(printf '%s\n' "$s212" | grep -c 'must0_sum 0 ')" -eq 31 ] && ! printf '%s\n' "$s212" | grep -Eq 'must0_sum [1-9]|MISSING' && printf '%s\n' "$s212" | grep -q '^VIOLATION lines: 0 ' && diff <(printf '%s\n' "$s212") box212/out/summ212.txt > /dev/null && (cd box212/out && sha1sum -c --quiet SHA1SUMS) && (cd box212/inst && sha1sum -c --quiet SHA1SUMS) && grep -q '^quotes 30 missing 0 ' box212/quotes212.out && grep -q '^quotes 6 missing 0 ' box212/quotes209B.out; then
+  echo "BOX 212 RF-LEVEL: rule-free must-0 counters 0 (check set; 21 rf212 and 10 rfd212 frozen rows), controls fire, outputs and tower genomes pinned, quotes 30 + 6 found: PASS"
+else
+  echo "BOX 212 RF-LEVEL check: FAILED (exit $r212)"; echo "$d212" | head -30; echo "$run212" | tail -15; printf '%s\n' "$s212" | tail -5; exit 1
+fi
 rm -rf "$tmp"

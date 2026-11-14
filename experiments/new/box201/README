@@ -1,0 +1,3 @@
+# Box 201 tools (L-NEW successor 67): run from experiments/new/box201 as
+#   python3 -I seg.py ../box200/inst/*.json > seg.out; python3 -I rarg.py ../box200/inst/*.json > rarg.out
+# (records; not wired into check.sh: DATA for an obstruction, no lemma counter). ~10 min for both.

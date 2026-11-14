@@ -1,0 +1,9 @@
+GAME red/kl/instances/r2climb_h13.pg 
+GAMES 1
+enum_states 4
+keep_chk 1
+loc_chk 34
+rhos 312
+states 4
+VIOLATIONS 0
+RC 0

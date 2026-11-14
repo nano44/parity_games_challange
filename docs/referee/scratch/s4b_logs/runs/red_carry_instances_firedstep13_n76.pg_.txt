@@ -1,0 +1,9 @@
+GAME red/carry/instances/firedstep13_n76.pg 
+GAMES 1
+enum_skip 4
+enum_states 2
+loc_chk 226
+rhos 1692
+states 6
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,16 @@
+start (0, 2) 9 CC
+it 0 score (1, 2) nE 9 Cp
+it 23 score (2, 3) nE 8 Cpp
+it 30 score (3, 3) nE 9 ppp
+it 243 score (3, 4) nE 9 Cppp
+it 247 score (4, 4) nE 9 pppp
+it 424 score (6, 7) nE 10 ppppppC
+it 786 score (6, 8) nE 11 ppppppCC
+it 1069 score (7, 9) nE 11 pppppppCC
+it 1569 score (8, 10) nE 14 ppppppppCC
+it 2059 score (8, 11) nE 12 ppppppppCCC
+it 2394 score (9, 12) nE 12 pppppppppCCC
+it 6043 score (10, 13) nE 12 ppppppppppCCC
+it 9306 score (11, 14) nE 14 pppppppppppCCC
+it 11511 score (12, 12) nE 13 pppppppppppp
+final (12, 12)

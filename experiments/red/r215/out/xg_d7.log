@@ -1,0 +1,13 @@
+== 05:40Z d 7 seed-file out/xg_d6.json
+start n 220 xi 11 spec 4
+it 36 n 220 xi 12 spec 4 OK
+it 80 n 220 xi 13 spec 4 OK
+it 86 n 220 xi 15 spec 4 OK
+it 269 n 220 xi 16 spec 4 OK
+it 378 n 220 xi 17 spec 4 OK
+it 440 n 220 xi 18 spec 4 OK
+it 931 n 220 xi 19 spec 4 OK
+it 1378 n 220 xi 20 spec 4 OK
+it 1504 n 220 xi 21 spec 5 OK
+it 1542 n 220 xi 21 spec 4 OK
+it 1894 n 220 xi 22 spec 4 OK

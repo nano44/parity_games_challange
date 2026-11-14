@@ -1,0 +1,8 @@
+iterations after the first fallback (value: genomes): {2: 300}
+pacyc81 count 300 seed 7 files 0: taubad 0 genomes 300 states 768 nofallback 0 notbeta 0 nonstd 0 C 0 R 0 bigT 0 maxT3_over_N 1.0
+H5_d20_F62.json taubad 0 N 40 k1 10 T3 9 iters 12 notbeta 0 nonstd 0 C 0 R 0
+H6_d24_F126.json taubad 0 N 48 k1 13 T3 12 iters 15 notbeta 0 nonstd 0 C 0 R 0
+SL41_d28.json taubad 0 N 56 k1 11 T3 10 iters 13 notbeta 0 nonstd 0 C 0 R 0
+L6Z_KILL238_d28.json taubad 0 N 56 k1 10 T3 9 iters 12 notbeta 0 nonstd 0 C 0 R 0
+iterations after the first fallback (value: genomes): {2: 4}
+pacyc81 count 0 seed 1 files 4: taubad 0 genomes 4 states 44 nofallback 0 notbeta 0 nonstd 0 C 0 R 0 bigT 0 maxT3_over_N 0.25

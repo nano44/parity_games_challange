@@ -1,0 +1,2 @@
+REC_d10_tower_mu30.json d 10 false (reading A) for l in [1, 2, 3, 4, 5, 6, 7, 8] | (reading B) [1, 2, 3, 4, 5, 6, 7, 8] | true for l in [0] | witnesses {1: [(4, 3), (11, 3)], 8: [(4, 3), (4, 9)]}
+KILL_M2D_d6_mu13.json d 6 false (reading A) for l in [1, 2, 3, 4] | (reading B) [1, 2, 3] | true for l in [0] | witnesses {1: [(5, 3), (6, 2)], 4: [(5, 3), (6, 2)]}

@@ -1,0 +1,5 @@
+R1 old occurs 1 time(s) in the text it is applied to
+R2 old occurs 1 time(s) in the text it is applied to
+R3 old occurs 1 time(s) in the text it is applied to
+R4 old occurs 1 time(s) in the text it is applied to
+L-2 + R1..R4 == L-3: True | sha1 7328e67345e1bb6a8605ccfa4f406d1020eabfdb 4908 B 1 newline(s) 82 «(» 82 «)» min depth 0 0 «|» 1 « — » 0 «gauntlet»

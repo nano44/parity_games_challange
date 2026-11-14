@@ -1,0 +1,7 @@
+R-G3 old in L-3 1 | in current 1
+R-W old in L-3 0 | in current 1
+R-B3 old in L-3 1 | in current 1
+parens 174 174 min depth 0 | newlines 1 | bars 0 | predicted L-4 sha1 a69c8aa96fb0b67c6c0a3f6d11670a0b57ba9331 9082 B
+a69c8aa96fb0b67c6c0a3f6d11670a0b57ba9331  cL4.txt
+9082
+cmp L-4 (claude/l-new 87603d07) vs rebuild: EQUAL

@@ -1,0 +1,4 @@
+GAME red/usplit/instances/pairoc_n58.pg red/usplit/instances/pairoc_n58.start
+GAMES 1
+VIOLATIONS 0
+RC 0

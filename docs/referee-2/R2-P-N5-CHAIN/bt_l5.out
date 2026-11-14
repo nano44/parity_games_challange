@@ -1,0 +1,11 @@
+L-4 sha1 a69c8aa96fb0b67c6c0a3f6d11670a0b57ba9331 9082 B;  L-5 sha1 473344b1149d4b44d87bdb917607b618d05d57ce 9047 B
+R-U old count in line 1 | new count before 0
+R-U new count after 1
+R-L1 old count in line 1 | new count before 0
+R-L1 new count after 1
+R-L2 old count in line 1 | new count before 0
+R-L2 new count after 1
+pairs ['R-U', 'R-L1', 'R-L2']
+L-4 + pairs == L-5: True | sha1 473344b1149d4b44d87bdb917607b618d05d57ce 9047 B
+one line True | «|» 0 | ( ) 175 175 | unlanded/not landed/when landed/to land [0, 0, 0, 0]
+CONDITIONAL count 3 | «CONDITIONAL on P-N5-END's Theorem ENDGAME-3 (RESULTS R124)»: True

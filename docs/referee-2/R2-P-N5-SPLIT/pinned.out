@@ -1,0 +1,67 @@
+C2CX4_n23.json T3 11 changes 951 ytops 951 couples 460 rewins 336 ascents 1146 d1 255 maxRA 2 maxC 4 maxSPL 2 maxW 3 maxDep 3 maxT3 11
+   first d1 ('v', ('x', 0), 'y', ('e', (9, 1)), 't1', ('state', 3), 't2', ('state', 9), 'u', ('g', (9, 1)), 'b', ('pe', (9, 1)))
+C6G8_n54.json T3 17 changes 2598 ytops 2598 couples 376 rewins 315 ascents 3846 d1 125 maxRA 3 maxC 6 maxSPL 2 maxW 1 maxDep 3 maxT3 17
+   first d1 ('v', ('x', 10), 'y', ('e', (10, 0)), 't1', ('state', 6), 't2', ('state', 8), 'u', ('g', (10, 0)), 'b', ('pe', (10, 0)))
+CX4_n21.json T3 10 changes 728 ytops 728 couples 313 rewins 219 ascents 941 d1 192 maxRA 3 maxC 5 maxSPL 2 maxW 2 maxDep 3 maxT3 10
+   first d1 ('v', ('x', 0), 'y', ('e', (10, 0)), 't1', ('state', 8), 't2', ('state', 10), 'u', ('g', (10, 0)), 'b', ('pe', (10, 0)))
+DSALT6_n108.json T3 21 changes 333 ytops 333 couples 120 rewins 79 ascents 678 d1 56 maxRA 3 maxC 4 maxSPL 2 maxW 1 maxDep 3 maxT3 21
+   first d1 ('v', ('x', 3), 'y', ('e', (3, 4)), 't1', ('state', 3), 't2', ('state', 5), 'u', ('x', 3), 'b', ('m', (3, 4)))
+DSALT7_n108.json T3 11 changes 249 ytops 249 couples 44 rewins 26 ascents 210 d1 24 maxRA 3 maxC 4 maxSPL 2 maxW 1 maxDep 3 maxT3 11
+   first d1 ('v', ('x', 3), 'y', ('e', (3, 4)), 't1', ('state', 2), 't2', ('state', 6), 'u', ('x', 3), 'b', ('m', (3, 4)))
+DSALT9_n416.json T3 30 changes 9424 ytops 9424 couples 3000 rewins 2241 ascents 31859 d1 1234 d4 8 maxRA 4 maxC 5 maxSPL 3 maxW 2 maxDep 3 maxT3 30
+   first d1 ('v', ('x', 6), 'y', ('e', (7, 5)), 't1', ('state', 6), 't2', ('state', 13), 'u', ('x', 6), 'b', ('m', (6, 1)))
+   first d4 ('v', ('x', 6), 't', ('state', 26), 'y', ('e', (19, 15)), 'u', ('x', 22))
+DU21_h4.json T3 24 changes 13848 ytops 13848 couples 315 rewins 313 ascents 25301 d1 97 d5 165 maxRA 2 maxC 3 maxSPL 2 maxW 1 maxDep 2 maxT3 24
+   first d1 ('v', ('x', 19), 'y', ('e', (6, 7)), 't1', ('state', 15), 't2', ('state', 22), 'u', ('x', 41), 'b', ('m', (41, 1)))
+FW12_2.json T3 41 changes 1455 ytops 1455 d2 21 d3 11 maxRA 2 maxC 3 maxSPL 3 maxW 2 maxDep 12 maxT3 41
+   first d2 ('v', ('x', 190), 'y', ('e', (41, 0)), 'wt', ('x', 53), 't1', ('state', 6), 't2', ('state', 11))
+FW16_2.json T3 53 changes 2031 ytops 2031 d2 29 d3 15 maxRA 2 maxC 3 maxSPL 3 maxW 2 maxDep 16 maxT3 53
+   first d2 ('v', ('x', 258), 'y', ('e', (53, 0)), 'wt', ('x', 69), 't1', ('state', 6), 't2', ('state', 11))
+FW4_2.json T3 17 changes 303 ytops 303 d2 5 d3 3 maxRA 2 maxC 3 maxSPL 3 maxW 2 maxDep 4 maxT3 17
+   first d2 ('v', ('x', 54), 'y', ('e', (17, 0)), 'wt', ('x', 21), 't1', ('state', 6), 't2', ('state', 11))
+FW6_3.json T3 30 changes 1080 ytops 1080 d2 12 d3 5 maxRA 3 maxC 4 maxSPL 4 maxW 3 maxDep 6 maxT3 30
+   first d2 ('v', ('x', 155), 'y', ('e', (29, 0)), 'wt', ('x', 35), 't1', ('state', 7), 't2', ('state', 14))
+FW6_4.json T3 37 changes 1613 ytops 1613 d2 14 d3 5 maxRA 4 maxC 5 maxSPL 5 maxW 4 maxDep 6 maxT3 37
+   first d2 ('v', ('x', 237), 'y', ('e', (35, 0)), 'wt', ('x', 41), 't1', ('state', 8), 't2', ('state', 17))
+FW8_2.json T3 29 changes 879 ytops 879 d2 13 d3 7 maxRA 2 maxC 3 maxSPL 3 maxW 2 maxDep 8 maxT3 29
+   first d2 ('v', ('x', 122), 'y', ('e', (29, 0)), 'wt', ('x', 37), 't1', ('state', 6), 't2', ('state', 11))
+FW8_4.json T3 47 changes 2836 ytops 2836 d2 22 d3 7 maxRA 4 maxC 5 maxSPL 5 maxW 4 maxDep 8 maxT3 47
+   first d2 ('v', ('x', 371), 'y', ('e', (45, 0)), 'wt', ('x', 53), 't1', ('state', 8), 't2', ('state', 17))
+GROW7_n34.json T3 13 changes 1552 ytops 1552 couples 231 rewins 192 ascents 2344 d1 60 d2 18 d5 18 maxRA 2 maxC 4 maxSPL 2 maxW 2 maxDep 4 maxT3 13
+   first d1 ('v', ('x', 0), 'y', ('e', (14, 0)), 't1', ('state', 2), 't2', ('state', 11), 'u', ('g', (14, 0)), 'b', ('pe', (14, 0)))
+   first d2 ('v', ('x', 10), 'y', ('e', (15, 1)), 'wt', ('x', 0), 't1', ('state', 4), 't2', ('state', 6))
+GROW8_n53.json T3 18 changes 3123 ytops 3123 couples 709 rewins 598 ascents 4610 d1 366 d5 14 maxRA 3 maxC 5 maxSPL 3 maxW 3 maxDep 3 maxT3 18
+   first d1 ('v', ('x', 0), 'y', ('e', (13, 0)), 't1', ('state', 5), 't2', ('state', 14), 'u', ('x', 14), 'b', ('m', (14, 0)))
+HOLD2K_n84.json T3 13 changes 1793 ytops 1793 couples 206 rewins 185 ascents 2478 d1 77 d2 18 d3 18 maxRA 3 maxC 4 maxSPL 2 maxW 1 maxDep 4 maxT3 13
+   first d1 ('v', ('x', 0), 'y', ('e', (14, 0)), 't1', ('state', 2), 't2', ('state', 11), 'u', ('g', (14, 0)), 'b', ('pe', (14, 0)))
+   first d2 ('v', ('x', 10), 'y', ('e', (15, 1)), 'wt', ('x', 0), 't1', ('state', 4), 't2', ('state', 6))
+HOLD3K_n125.json T3 17 changes 2290 ytops 2290 couples 281 rewins 242 ascents 4055 d1 82 d2 18 d5 18 maxRA 2 maxC 4 maxSPL 2 maxW 2 maxDep 4 maxT3 17
+   first d1 ('v', ('x', 0), 'y', ('e', (14, 0)), 't1', ('state', 2), 't2', ('state', 11), 'u', ('g', (14, 0)), 'b', ('pe', (14, 0)))
+   first d2 ('v', ('x', 10), 'y', ('e', (15, 1)), 'wt', ('x', 0), 't1', ('state', 4), 't2', ('state', 6))
+MW16_2.json T3 103 changes 1548 ytops 1548 couples 7728 rewins 608 ascents 2961 d1 496 maxRA 17 maxC 33 maxSPL 1 maxDep 3 maxT3 103
+   first d1 ('v', ('x', 152), 'y', ('e', (118, 0)), 't1', ('state', 1), 't2', ('state', 12), 'u', ('x', 152), 'b', ('m', (152, 16)))
+MW32_2.json T3 199 changes 3068 ytops 3068 couples 30304 rewins 1216 ascents 5905 d1 992 maxRA 33 maxC 65 maxSPL 1 maxDep 3 maxT3 199
+   first d1 ('v', ('x', 296), 'y', ('e', (230, 0)), 't1', ('state', 1), 't2', ('state', 12), 'u', ('x', 296), 'b', ('m', (296, 32)))
+MW4_2.json T3 31 changes 408 ytops 408 couples 540 rewins 152 ascents 753 d1 124 maxRA 5 maxC 9 maxSPL 1 maxDep 3 maxT3 31
+   first d1 ('v', ('x', 44), 'y', ('e', (34, 0)), 't1', ('state', 1), 't2', ('state', 12), 'u', ('x', 44), 'b', ('m', (44, 4)))
+MW8_2.json T3 55 changes 788 ytops 788 couples 2008 rewins 304 ascents 1489 d1 248 maxRA 9 maxC 17 maxSPL 1 maxDep 3 maxT3 55
+   first d1 ('v', ('x', 80), 'y', ('e', (62, 0)), 't1', ('state', 1), 't2', ('state', 12), 'u', ('x', 80), 'b', ('m', (80, 8)))
+NK6_cl21.json T3 11 changes 227 ytops 227 couples 50 rewins 29 ascents 195 d1 16 maxRA 3 maxC 4 maxSPL 2 maxW 1 maxDep 3 maxT3 11
+   first d1 ('v', ('x', 3), 'y', ('e', (3, 4)), 't1', ('state', 5), 't2', ('state', 7), 'u', ('x', 3), 'b', ('m', (3, 4)))
+ROUTELOW_n21.json T3 10 changes 762 ytops 762 couples 38 rewins 38 ascents 519 d1 38 d4 65 maxRA 1 maxC 2 maxSPL 1 maxDep 2 maxT3 10
+   first d1 ('v', ('x', 0), 'y', ('e', (10, 0)), 't1', ('state', 4), 't2', ('state', 6), 'u', ('x', 0), 'b', ('m', (0, 0)))
+   first d4 ('v', ('x', 0), 't', ('state', 2), 'y', ('e', (11, 0)), 'u', ('g', (10, 0)))
+RWX_n95.json T3 12 changes 2644 ytops 2644 couples 31 rewins 31 Seq 31 ascents 6403 d2 238 d3 238 d4 205 d6 31 d6m 31 maxRA 1 maxC 2 maxSPL 2 maxW 1 maxDep 2 maxT3 12
+   first d2 ('v', ('x', 9), 'y', ('e', (8, 0)), 'wt', ('x', 20), 't1', ('state', 3), 't2', ('state', 6))
+   first d4 ('v', ('x', 10), 't', ('state', 6), 'y', ('e', (8, 0)), 'u', ('x', 12))
+   first d6 ('v', ('x', 17), 'u', ('x', 17), 'b', ('m', (17, 1)), 'y', ('e', (8, 0)), 'wt', ('x', 20), 't', ('state', 3), 't2', ('state', 6), 'Ewt', (), (), 'Eb', (), (('e', (40, 9)),))
+W14_n75.json T3 13 changes 3498 ytops 3498 couples 330 rewins 258 ascents 5210 d1 25 d2 26 d5 26 maxRA 3 maxC 4 maxSPL 3 maxW 3 maxDep 4 maxT3 13
+   first d1 ('v', ('x', 10), 'y', ('e', (10, 0)), 't1', ('state', 10), 't2', ('state', 13), 'u', ('g', (10, 0)), 'b', ('pe', (10, 0)))
+   first d2 ('v', ('x', 10), 'y', ('e', (15, 1)), 'wt', ('x', 0), 't1', ('state', 4), 't2', ('state', 6))
+W68_n66.json T3 8 changes 2654 ytops 2654 couples 20 rewins 20 ascents 3466 d1 2 d2 127 d3 127 maxRA 1 maxC 2 maxSPL 2 maxW 1 maxDep 2 maxT3 8
+   first d1 ('v', ('g', (13, 2)), 'y', ('e', (13, 2)), 't1', ('state', 2), 't2', ('state', 8), 'u', ('g', (13, 2)), 'b', ('pe', (13, 2)))
+   first d2 ('v', ('x', 3), 'y', ('e', (15, 1)), 'wt', ('x', 0), 't1', ('state', 4), 't2', ('state', 6))
+W86_n77.json T3 19 changes 3652 ytops 3652 couples 654 rewins 478 ascents 8869 d1 177 d2 159 d3 133 d5 37 maxRA 3 maxC 5 maxSPL 2 maxW 2 maxDep 4 maxT3 19
+   first d1 ('v', ('x', 3), 'y', ('e', (10, 0)), 't1', ('state', 10), 't2', ('state', 19), 'u', ('x', 3), 'b', ('m', (3, 8)))
+   first d2 ('v', ('x', 3), 'y', ('e', (15, 1)), 'wt', ('x', 0), 't1', ('state', 8), 't2', ('state', 11))
+TOTAL: runs 28 changes 66335 ytops 66335 couples 47758 rewins 7880 entfail 0 playfail 0 prefail 0 kindfail 0 hwfail 0 gtfail 0 trfail 0 abfail 0 psa 0 psb 0 psc 0 rw_psa 0 rw_psb 0 rw_psc 0 lamb 0 lamm 0 spfail 0 spl3M 0 rcfail 0 decfail 0 rws1 0 rws2 0 Seq 31 rw1fail 0 ph_a 0 ph_b 0 ph_c 0 rafail 0 rpfail 0 rptfail 0 recfail 0 dmon 0 pcfail 0 bdfail 0 awa 0 awb 0 awc 0 awd 0 awmv 0 rootfail 0 ascents 113238 d1 4686 d2 720 d3 569 d4 278 d5 278 d6 31 d6m 31 maxRA 33 maxC 65 maxSPL 5 maxW 4 maxDep 16 maxT3 199

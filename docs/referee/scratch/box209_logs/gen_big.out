@@ -1,0 +1,3 @@
+family big seed 3313 count 1500
+MUST-0:  k0 0  k1 0  k2 0  k3a 0  k3c 0  k3d 0  k3e 0  k4 0  k5 0  l1 0  l2 0  l3 0  l3v 0  l4 0  l4c 0  l5 0  c4 0  p1 0  p2 0  p3 0  p4 0  p4c 0  p5v 0  p5h 0  p6 0  p7 0  t1 0  t2 0  tb 0  nE 0
+RECORDS: genomes 1500  states 9221  maxT 13  maxPhi 12  stalls 324  plateaus 413  maxplat 4  maxplat_pct_movers 40  maxtail 7  n_alpha 3349  n_beta 11494  n_p4case3 9  c_k4 334797  c_k5 24920  ch1 570  ch2 12738  ch3 6369  ch3v 0  ch4 2773  ch4c 1408  ch5 6369  c_Y 486

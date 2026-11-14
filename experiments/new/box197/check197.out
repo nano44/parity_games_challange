@@ -1,0 +1,7 @@
+deep seed 1971 runs 30 awA 0 awB 0 caseL 808 caseE 475 Rtop 26 Rcarry 86 lexdec 0 dfail 0 rootfail 0 rootok 1267 maxR 1 maxalt 3 maxtops 5 rootdepth 4 max T3 9 max D 6 max D-Mact 1 (D 2, Mact 1)
+TC3.json runs 1 awA 0 awB 0 caseL 1135 caseE 0 Rtop 172 Rcarry 28 lexdec 0 dfail 0 rootfail 0 rootok 1012 maxR 3 maxalt 4 maxtops 8 rootdepth 1 max T3 18 max D 9 max D-Mact 3 (D 8, Mact 5)
+rd2_d9.json runs 1 awA 0 awB 0 caseL 1218 caseE 1436 Rtop 623 Rcarry 372 lexdec 0 dfail 0 rootfail 0 rootok 1977 maxR 12 maxalt 5 maxtops 17 rootdepth 7 max T3 21 max D 18 max D-Mact 6 (D 18, Mact 12)
+ctrl1 deep seed 1973 runs 30 awA 1070 awB 0 caseL 0 caseE 0 Rtop 0 Rcarry 0 lexdec 0 dfail 0 rootfail 0 rootok 1062 maxR 0 maxalt 2 maxtops 3 rootdepth 5 max T3 9 max D 4 max D-Mact 1 (D 1, Mact 0)
+ctrl2 deep seed 1973 runs 30 awA 0 awB 0 caseL 562 caseE 508 Rtop 0 Rcarry 0 lexdec 0 dfail 0 rootfail 1062 rootok 1062 maxR 0 maxalt 2 maxtops 3 rootdepth 5 max T3 9 max D 4 max D-Mact 1 (D 1, Mact 0)
+ctrl3 deep seed 1973 runs 30 awA 0 awB 430 caseL 562 caseE 508 Rtop 0 Rcarry 0 lexdec 0 dfail 0 rootfail 0 rootok 1062 maxR 0 maxalt 2 maxtops 3 rootdepth 5 max T3 9 max D 4 max D-Mact 1 (D 1, Mact 0)
+ctrl4 TC3.json runs 1 awA 0 awB 0 caseL 1135 caseE 0 Rtop 172 Rcarry 28 lexdec 0 dfail 72 rootfail 0 rootok 1012 maxR 3 maxalt 4 maxtops 8 rootdepth 1 max T3 18 max D 9 max D-Mact 3 (D 8, Mact 5)

@@ -1,0 +1,10 @@
+LR2_none.json N 21 M 33 n 126 T 6 R 2 C 0 labels pRpppR
+  RF [0, 1, 1, 0] GF [0, 1, 1, 0] bits(B2..B1) 00 00 01 01 01 01 11
+  premature resets at [] hubH 3 SumD 155 maxD 3
+  t 0 hub -
+  t 1 hub -
+  t 2 hub B1.SET
+  t 3 hub B1.SET
+  t 4 hub B1.SET
+  t 5 hub B1.SET
+  t 6 hub B1.SET/B2.SET

@@ -1,0 +1,9 @@
+GAME red/n5inj/instances/phase2_pk32.pg 
+GAMES 1
+enum_states 56
+keep_chk 54
+loc_chk 56
+rhos 112
+states 56
+VIOLATIONS 0
+RC 0

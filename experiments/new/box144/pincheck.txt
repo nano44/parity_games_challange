@@ -1,0 +1,20 @@
+PIN lag1_n48 aed8620b95e0 start 5a1ba61c99dc
+OINK lag1_n48 --zlk verified
+OINK lag1_n48 --tl verified
+PINWIN lag1_n48.pg n 48 states 6 fallbacks 1 W0 47 AGREE True
+n5b iterations 5 fallbacks 1 states 6 | n5x states 6 | identical state sequences: True
+PIN lag1u_n48 4db88f5b00f1 start a6bf67beec4a
+OINK lag1u_n48 --zlk verified
+OINK lag1u_n48 --tl verified
+PINWIN lag1u_n48.pg n 48 states 6 fallbacks 1 W0 47 AGREE True
+n5b iterations 5 fallbacks 1 states 6 | n5x states 6 | identical state sequences: True
+PIN lag2c_d4_n62 c3a530fddb43 start 5159196dd413
+OINK lag2c_d4_n62 --zlk verified
+OINK lag2c_d4_n62 --tl verified
+PINWIN lag2c_d4_n62.pg n 62 states 13 fallbacks 1 W0 61 AGREE True
+n5b iterations 12 fallbacks 1 states 13 | n5x states 13 | identical state sequences: True
+PIN nest_d3_L4_n48 af8c37c98d6f start a634cf1c3cea
+OINK nest_d3_L4_n48 --zlk verified
+OINK nest_d3_L4_n48 --tl verified
+PINWIN nest_d3_L4_n48.pg n 48 states 8 fallbacks 1 W0 47 AGREE True
+n5b iterations 7 fallbacks 1 states 8 | n5x states 8 | identical state sequences: True

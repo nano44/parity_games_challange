@@ -1,0 +1,15 @@
+HP2_mup.json N 40 M 69 n 253 T 11 R 4 C 0 labels pRpppRpppRR
+  RF [0, 3, 2, 0] GF [0, 3, 2, 0] bits(B2..B1) 00 00 01 01 01 01 11 10 10 10 10 11
+  premature resets at [] hubH 4 SumD 291 maxD 4
+  t 0 hub -
+  t 1 hub -
+  t 2 hub B1.SET
+  t 3 hub B1.SET
+  t 4 hub B1.SET
+  t 5 hub B1.SET
+  t 6 hub B1.SET
+  t 7 hub B2.SET
+  t 8 hub B2.SET
+  t 9 hub B2.SET
+  t 10 hub B2.SET
+  t 11 hub B1.SET/M2.SET

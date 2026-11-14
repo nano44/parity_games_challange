@@ -1,0 +1,9 @@
+GAME new/box54/out/hf/tc_8.pg 
+GAMES 1
+enum_skip 17
+enum_states 12
+loc_chk 540
+rhos 9642
+states 29
+VIOLATIONS 0
+RC 0

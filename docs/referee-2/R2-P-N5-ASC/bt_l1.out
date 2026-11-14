@@ -1,0 +1,18 @@
+L-1 sha1 08cced78a214080dac3f8f07ebc900510e3f35ab 4896 B 1 newline(s) 116 «(» 116 «)» min depth 0 0 «|»
+W-1 §1 | new in L-1: 1 | old in L-1: 0
+W-1 table | new in L-1: 1 | old in L-1: 0
+W-1 title | new in L-1: 1 | old in L-1: 0
+L-1 contains 1 x: under [E-LEV]: max ascents ≤ U(G) on all 13 instances
+L-1 contains 1 x: NOUP under [E-LEV]
+L-1 contains 1 x: NOT R and NOT any running time
+L-1 contains 1 x: G-N5-TIME stays OPEN; not M3, not a step-4 pass, not a TARGET.md claim
+L-1 contains 1 x: all pinned in asc.pins
+L-1 contains 1 x: M 6 and 7 re-run by check193.sh
+L-1 contains 1 x: F′_0 = F_0 (DESC-POLY on the whole interval)
+L-1 contains 1 x: the number D_E(v) of distinct (Λ_t(v), E_t(v))
+L-1 contains 1 x: «C ≤ n·(2M + 2).»
+L-1 contains 1 x: (consecutive state pair, W-target with Λ fixed) pairs
+L-1 contains 1 x: UP-JUMP: violations 0 in 1,956 ascents of movers' plays with Λ below every e
+check193 sums over the 13 instance lines: {'edomfail': 0, 'decfail': 0, 'tmonfail': 0, 'upfail': 0, 'asc': 1956, 'edomunits': 1892, 'decunits': 24818, 'tmonunits': 2552}
+M 7 line: ['CS(M 7, A 0): max distinct hub chains 29; 2^M 128; 1 + M(M+1)/2 29']
+ug193 lines: 13

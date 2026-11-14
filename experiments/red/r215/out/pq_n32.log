@@ -1,0 +1,34 @@
+== 05:21Z n 32 seed-file 
+start n 72 xi 3 spec 3
+it 0 n 72 xi 7 spec 7 OK
+it 1 n 72 xi 8 spec 8 OK
+it 10 n 72 xi 9 spec 9 OK
+it 63 n 72 xi 10 spec 10 OK
+it 64 n 72 xi 14 spec 13 OK
+it 65 n 72 xi 17 spec 14 OK
+it 162 n 72 xi 18 spec 14 OK
+it 280 n 77 xi 19 spec 14 OK
+it 469 n 77 xi 20 spec 14 OK
+it 759 n 71 xi 21 spec 14 OK
+it 1408 n 80 xi 22 spec 14 OK
+it 1577 n 79 xi 23 spec 14 OK
+it 4498 n 82 xi 24 spec 14 OK
+it 5195 n 81 xi 25 spec 14 OK
+it 5612 n 89 xi 26 spec 15 OK
+it 5665 n 89 xi 24 spec 12 OK
+it 5890 n 87 xi 25 spec 13 OK
+it 5970 n 83 xi 26 spec 13 OK
+it 6132 n 86 xi 27 spec 13 OK
+it 6186 n 82 xi 28 spec 11 OK
+it 6357 n 83 xi 29 spec 11 OK
+it 6426 n 83 xi 29 spec 10 OK
+it 6638 n 79 xi 29 spec 9 OK
+it 6735 n 80 xi 30 spec 9 OK
+it 7370 n 87 xi 31 spec 10 OK
+it 7527 n 87 xi 31 spec 9 OK
+it 7701 n 87 xi 32 spec 9 OK
+it 7989 n 85 xi 34 spec 11 OK
+it 7995 n 86 xi 35 spec 9 OK
+it 9461 n 82 xi 36 spec 9 OK
+it 11576 n 85 xi 36 spec 8 OK
+FINAL best 28.036

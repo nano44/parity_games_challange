@@ -1,0 +1,2 @@
+XMAX d 3 t 9 N 6 vars 36905 clauses 123999 build 0.1 s
+XMAX d 3 T >= 9: UNSAT 13.5 s

@@ -1,0 +1,8 @@
+restart 0: best T 9 (N 6, M 15)
+restart 1: best T 14 (N 8, M 17)
+restart 2: best T 0 (N 1, M 1)
+restart 3: best T 1 (N 5, M 6)
+restart 4: best T 4 (N 5, M 8)
+restart 5: best T 7 (N 6, M 12)
+objective T family rand seed 41: evaluations 9006, best 14, sum of the 36 must-be-0 counters over all genomes visited: 0
+exit 0

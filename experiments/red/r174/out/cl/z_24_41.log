@@ -1,0 +1,23 @@
+it 22 score 2 {'moves': 0, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': None, 'X': None, 'K': 2}
+it 82 score 3 {'moves': 0, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': None, 'X': None, 'K': 3}
+it 92 score 4 {'moves': 0, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': None, 'X': None, 'K': 4}
+it 101 score 1005 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 3, 'X': 9, 'K': 5}
+it 150 score 1006 {'moves': 1, 'span': 0, 'odiff': 0, 'zch': 0, 'wch': 0, 'h': 3, 'X': 9, 'K': 6}
+it 167 score 1007 {'moves': 1, 'span': 0, 'odiff': 1, 'zch': 0, 'wch': 0, 'h': 3, 'X': 9, 'K': 7}
+it 180 score 1008 {'moves': 1, 'span': 0, 'odiff': 1, 'zch': 0, 'wch': 0, 'h': 6, 'X': 2, 'K': 8}
+it 189 score 2048 {'moves': 2, 'span': 4, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 22, 'X': 6, 'K': 8}
+it 204 score 2049 {'moves': 2, 'span': 4, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 22, 'X': 6, 'K': 10}
+it 210 score 2059 {'moves': 2, 'span': 5, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 22, 'X': 19, 'K': 10}
+it 646 score 2069 {'moves': 2, 'span': 6, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 22, 'X': 19, 'K': 11}
+it 2321 score 2079 {'moves': 2, 'span': 7, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 15, 'X': 19, 'K': 10}
+it 2737 score 2089 {'moves': 2, 'span': 8, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 15, 'X': 19, 'K': 12}
+it 3176 score 2099 {'moves': 2, 'span': 9, 'odiff': 1, 'zch': 1, 'wch': 1, 'h': 15, 'X': 19, 'K': 15}
+it 3199 score 2109 {'moves': 2, 'span': 10, 'odiff': 1, 'zch': 1, 'wch': 1, 'h': 15, 'X': 19, 'K': 16}
+it 4008 score 2119 {'moves': 2, 'span': 11, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 0, 'X': 19, 'K': 14}
+it 6925 score 2129 {'moves': 2, 'span': 12, 'odiff': 1, 'zch': 1, 'wch': 1, 'h': 0, 'X': 19, 'K': 14}
+it 9817 score 2139 {'moves': 2, 'span': 13, 'odiff': 2, 'zch': 1, 'wch': 1, 'h': 0, 'X': 19, 'K': 17}
+it 12099 score 2149 {'moves': 2, 'span': 14, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 6, 'X': 19, 'K': 19}
+it 13336 score 2159 {'moves': 2, 'span': 15, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 6, 'X': 19, 'K': 19}
+it 16536 score 2169 {'moves': 2, 'span': 16, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 6, 'X': 19, 'K': 19}
+it 17607 score 2179 {'moves': 2, 'span': 17, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 6, 'X': 19, 'K': 20}
+FINAL score 2179 {'moves': 2, 'span': 17, 'odiff': 0, 'zch': 1, 'wch': 1, 'h': 6, 'X': 19, 'K': 20}

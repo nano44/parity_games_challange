@@ -1,0 +1,8 @@
+GAME red/n3/instances/ret22_n40.pg red/n3/instances/ret22_n40.start
+GAMES 1
+enum_states 2
+loc_chk 3
+rhos 6
+states 2
+VIOLATIONS 0
+RC 0

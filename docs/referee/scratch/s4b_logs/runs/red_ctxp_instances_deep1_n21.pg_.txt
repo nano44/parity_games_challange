@@ -1,0 +1,8 @@
+GAME red/ctxp/instances/deep1_n21.pg 
+GAMES 1
+enum_states 3
+loc_chk 5
+rhos 10
+states 3
+VIOLATIONS 0
+RC 0

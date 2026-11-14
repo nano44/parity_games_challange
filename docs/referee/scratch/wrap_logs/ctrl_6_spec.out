@@ -1,0 +1,19 @@
+mode spec family rand seed 3310 games 300 nmax 8 CTRL 6 PERM 0 | maxT 2 sumT 67 maxF 3 max|W| 154
+s3fail 282
+nonstd 463
+nohoward 0
+fbwrong 0
+endwrong 0
+wrong 0
+size 282
+w1 0
+w4a 0
+w4b 302
+w4c 236
+w4d 44
+w5 1309
+w6 583
+w8 0
+v5 9
+rem2 0
+rem3 22

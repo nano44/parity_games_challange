@@ -1,0 +1,8 @@
+engine own instance N M U T maxasc Dmax sumD upfail
+own C98_2_2_3.json 4 10 4 8 0 4 64 0
+own C98_2_3_3.json 6 14 3 8 1 6 122 0
+own C98_3_3_3.json 9 22 6 12 2 9 382 0
+own C98_3_4_3.json 12 29 9 12 2 8 431 0
+own C98_4_4_3.json 16 40 15 16 1 8 710 0
+own C98_4_5_3.json 20 52 12 19 2 14 1396 0
+own C98_5_5_3.json 25 59 16 15 2 8 927 0

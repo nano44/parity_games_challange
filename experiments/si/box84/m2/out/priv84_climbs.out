@@ -1,0 +1,4 @@
+climb_s11.json units 2 priv 1 maxex_priv -2 maxex_nopriv -1 maxfl_priv 0 maxfl_nopriv 1 T 10
+climb_s12.json units 4 priv 2 maxex_priv -1 maxex_nopriv -1 maxfl_priv 0 maxfl_nopriv 0 T 12
+climb_s13.json units 3 priv 1 maxex_priv -1 maxex_nopriv 0 maxfl_priv 1 maxfl_nopriv 1 T 9
+climb_s14.json units 1 priv 0 maxex_priv None maxex_nopriv -1 maxfl_priv 0 maxfl_nopriv 0 T 14

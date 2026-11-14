@@ -1,0 +1,16 @@
+it 12 n 130 xi 6 spec 4 OK
+it 20 n 130 xi 6 spec 5 OK
+it 27 n 130 xi 7 spec 5 OK
+it 29 n 130 xi 8 spec 5 OK
+it 35 n 130 xi 9 spec 5 OK
+it 44 n 130 xi 10 spec 5 OK
+it 107 n 130 xi 10 spec 7 OK
+it 171 n 130 xi 11 spec 7 OK
+it 225 n 130 xi 11 spec 8 OK
+it 244 n 130 xi 12 spec 8 OK
+it 724 n 130 xi 13 spec 4 OK
+it 727 n 130 xi 13 spec 7 OK
+it 1067 n 130 xi 13 spec 8 OK
+it 1297 n 130 xi 14 spec 8 OK
+it 1725 n 130 xi 15 spec 8 OK
+FINAL best xi 15

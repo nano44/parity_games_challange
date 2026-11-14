@@ -1,0 +1,26 @@
+inst 1 L 2 req 4: brute sat (0.2 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 2 L 3 req 8: brute sat (0.1 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 3 L 3 req 6: brute sat (0.1 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 4 L 2 req 4: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 5 L 2 req 3: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 6 L 2 req 5: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 7 L 2 req 5: brute sat (0.1 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 8 L 2 req 7: brute unsat (0.5 s) xcnf LEM unsat noLEM unsat AGREE
+inst 9 L 2 req 6: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 10 L 3 req 6: brute sat (0.1 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 11 L 3 req 9: brute unsat (0.5 s) xcnf LEM unsat noLEM unsat AGREE
+inst 12 L 2 req 3: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 13 L 2 req 7: brute sat (0.2 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 14 L 2 req 3: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 15 L 2 req 6: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 16 L 2 req 3: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 17 L 2 req 5: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 18 L 3 req 6: brute unsat (0.5 s) xcnf LEM unsat noLEM unsat AGREE
+inst 19 L 3 req 7: brute unsat (0.8 s) xcnf LEM unsat noLEM unsat AGREE
+inst 20 L 2 req 3: brute sat (0.1 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 21 L 2 req 3: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 22 L 3 req 7: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 23 L 2 req 3: brute sat (0.1 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 24 L 2 req 3: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+inst 25 L 2 req 3: brute sat (0.0 s) xcnf LEM sat/replay-ok noLEM sat/replay-ok AGREE
+SUMMARY 25 / 25 agree; 4 brute-unsat

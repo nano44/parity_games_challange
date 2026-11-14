@@ -1,0 +1,15 @@
+CTRL224 CL2_21.json T3 23 Q 10 W 8 | nonstd clean 0 injected 1 | cnlow clean 0 injected 24 | k2fail clean 0 injected 24 | crossflip clean 0 injected 2645 | emon clean 0 injected 131
+CTRL224 CL2_22.json T3 28 Q 9 W 8 | nonstd clean 0 injected 1 | cnlow clean 0 injected 29 | k2fail clean 0 injected 29 | crossflip clean 0 injected 5716 | emon clean 0 injected 181
+CTRL224 CL3_31.json T3 15 Q 10 W 2 | nonstd clean 0 injected 1 | cnlow clean 0 injected 16 | k2fail clean 0 injected 16 | crossflip clean 0 injected 941 | emon clean 0 injected 148
+CTRL224 CL3_32.json T3 24 Q 11 W 7 | nonstd clean 0 injected 1 | cnlow clean 0 injected 25 | k2fail clean 0 injected 25 | crossflip clean 0 injected 4092 | emon clean 0 injected 214
+CTRL224 TC2.json T3 12 Q 8 W 1 | nonstd clean 0 injected 1 | cnlow clean 0 injected 13 | k2fail clean 0 injected 13 | crossflip clean 0 injected 434 | emon clean 0 injected 81
+CTRL224 TC2d.json T3 10 Q 6 W 1 | nonstd clean 0 injected 1 | cnlow clean 0 injected 11 | k2fail clean 0 injected 11 | crossflip clean 0 injected 440 | emon clean 0 injected 83
+CTRL224 TC3.json T3 18 Q 13 W 2 | nonstd clean 0 injected 1 | cnlow clean 0 injected 19 | k2fail clean 0 injected 19 | crossflip clean 0 injected 1062 | emon clean 0 injected 154
+CTRL224 TC3d.json T3 14 Q 9 W 2 | nonstd clean 0 injected 1 | cnlow clean 0 injected 15 | k2fail clean 0 injected 15 | crossflip clean 0 injected 1079 | emon clean 0 injected 158
+CTRL224 TC3m.json T3 17 Q 12 W 2 | nonstd clean 0 injected 1 | cnlow clean 0 injected 18 | k2fail clean 0 injected 18 | crossflip clean 0 injected 1060 | emon clean 0 injected 154
+CTRL224 TC4m.json T3 37 Q 18 W 5 | nonstd clean 0 injected 1 | cnlow clean 0 injected 38 | k2fail clean 0 injected 38 | crossflip clean 0 injected 9135 | emon clean 0 injected 311
+CTRL224 TC5m.json T3 43 Q 21 W 9 | nonstd clean 0 injected 1 | cnlow clean 0 injected 44 | k2fail clean 0 injected 44 | crossflip clean 0 injected 17333 | emon clean 0 injected 486
+CTRL224 A_d4_W2_k2.json T3 5 Q 0 W 5 | nonstd clean 0 injected 1 | cnlow clean 0 injected 6 | k2fail clean 0 injected 6 | crossflip clean 0 injected 80 | emon clean 0 injected 24
+CTRL224 REC_d7_mu17_norm.json T3 8 Q 0 W 8 | nonstd clean 0 injected 8 | cnlow clean 0 injected 9 | k2fail clean 0 injected 9 | crossflip clean 0 injected 224 | emon clean 0 injected 48
+CTRL224 KILL_M2D_d6_mu13_norm.json T3 7 Q 0 W 7 | nonstd clean 0 injected 1 | cnlow clean 0 injected 8 | k2fail clean 0 injected 8 | crossflip clean 0 injected 168 | emon clean 0 injected 40
+CTRL224 A_d5_W2_k3.json T3 3 Q 0 W 3 | nonstd clean 0 injected 2 | cnlow clean 0 injected 4 | k2fail clean 0 injected 4 | crossflip clean 0 injected 90 | emon clean 0 injected 48

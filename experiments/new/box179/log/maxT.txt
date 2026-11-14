@@ -1,0 +1,4 @@
+TR_d6_T18.json maxT 18 at 001100001011
+TR_d7_T20.json maxT 20 at 00110000101010
+dd_d5_F14.json maxT 14 at 1101111111
+max_d5_L15.json maxT 15 at 0011000010

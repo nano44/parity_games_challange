@@ -1,0 +1,8 @@
+rstart K1L10_n48.json 2131 5 RULE allrand K2tested 15000 Tmax 31 Tsum 149 bchecked 149 lagstates 2275 nonstalls 1994 nsmax 28 nspctP 0 plateaus 188 platmax 2 runs 5 stalls 281 tailmax 2
+rstart CFI3_n48.json 2131 5 RULE allrand K2tested 15000 Tmax 24 Tsum 115 bchecked 115 lagstates 1308 nonstalls 944 nsmax 17 nspctP 0 plateaus 112 platmax 4 runs 5 stalls 364 tailmax 4
+rstart RINT_n48.json 2131 5 RULE allrand K2tested 15000 K5how 4 Tmax 24 Tsum 117 bchecked 117 lagstates 1422 nonstalls 1312 nsmax 23 nspctP 0 plateaus 66 platmax 2 runs 5 stalls 110 tailmax 2
+rstart MWR4_2.json 2131 5 RULE allrand K2tested 15000 K5how 2 Tmax 31 Tsum 151 bchecked 151 lagstates 2355 nonstalls 2326 nsmax 31 nspctP 0 plateaus 29 platmax 1 runs 5 stalls 29 tailmax 1
+rstart CW4_n.json 2131 5 RULE allrand K2tested 15000 K5how 3 Tmax 31 Tsum 150 bchecked 150 lagstates 2327 nonstalls 2298 nsmax 31 nspctP 0 plateaus 29 platmax 1 runs 5 stalls 29 tailmax 1
+rstart BLKX26_n48.json 2131 5 RULE allrand K2tested 15000 Tmax 33 Tsum 154 bchecked 154 lagstates 2437 nonstalls 2204 nsmax 30 nspctP 0 plateaus 146 platmax 2 runs 5 stalls 233 tailmax 2
+rstart K1D4_n48.json 2131 5 RULE allrand K2tested 15000 K5how 3 Tmax 25 Tsum 119 bchecked 119 lagstates 1237 nonstalls 567 nsmax 12 nspctP 0 plateaus 86 platmax 9 runs 5 stalls 670 tailmax 9
+rstart DEAD_SEG2P_d7_N14.json 2131 5 RULE allrand K2tested 15000 Tmax 14 Tsum 61 bchecked 61 lagstates 405 nonstalls 355 nsmax 12 nspctP 0 plateaus 43 platmax 2 runs 5 stalls 50 tailmax 2

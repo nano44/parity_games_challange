@@ -1,0 +1,2 @@
+rand seed 64 genomes 1000 ctrl 0 all sumT 2521 T 9 lam 61850 ch 16886 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 3 maxdeep_v 4 maxDE 5 loud 1690 maxloud 1 | d0 13194 d1 3456 d2 213 d3 23 | L-1 1283 L0 402 L1 5
+  genomes by maxdepth: {0: 762, 1: 209, 2: 25, 3: 4}

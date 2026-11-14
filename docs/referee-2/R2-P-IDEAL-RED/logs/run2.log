@@ -1,0 +1,17 @@
+== lane rand 200, ALL=1 (every start, N <= 9)
+IDEAL-CHECK CHAIN_U_max 9726 CHAIN_U_min 11818 X_KEYFLIP_deg3 2473 X_TOP_deg3 78579 deg2_genomes 93 deg3plus_genomes 107 genomes 200 rec_runs 8874 restr_intervals 40522 runs 74495 steps 92837 xinew_checks 21035
+VIOLATIONS 0 
+== NEG=old control on lane rand 200 (default starts)
+IDEAL-CHECK CHAIN_U_max 5 CHAIN_U_min 7 X_KEYFLIP_deg3 1 X_TOP_deg3 61 deg2_genomes 93 deg3plus_genomes 107 genomes 200 rec_runs 279 restr_intervals 1589 runs 200 steps 138 xinew_checks 13
+VIOLATIONS 6 XINEW 6
+  first XINEW g2@2 h=4
+== NEG=old control on corpus 46
+IDEAL-CHECK CHAIN_U_max 128 CHAIN_U_min 121 deg2_genomes 46 genomes 46 rec_runs 138 restr_intervals 10389 runs 46 steps 282 xinew_checks 179
+VIOLATIONS 85 XINEW 85
+  first XINEW g0@4 h=5
+== own random deg<=2, all starts: 300 genomes N<=8 d<=4
+IDEAL-CHECK CHAIN_U_max 20 CHAIN_U_min 24 deg2_genomes 300 genomes 300 rec_runs 8274 restr_intervals 87995 runs 2758 steps 1889 xinew_checks 114
+VIOLATIONS 0 
+== own random deg<=4, all starts: 200 genomes N<=7 d<=3
+IDEAL-CHECK CHAIN_U_max 2083 CHAIN_U_min 1821 X_KEYFLIP_deg3 696 X_TOP_deg3 23151 deg2_genomes 14 deg3plus_genomes 186 genomes 200 rec_runs 96 restr_intervals 439 runs 33104 steps 34819 xinew_checks 4011
+VIOLATIONS 0 

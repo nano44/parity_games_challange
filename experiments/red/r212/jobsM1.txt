@@ -1,0 +1,4 @@
+4 0 0 701 300000 seedsL/dd_d5_F14.txt
+4 0 0 702 300000 seedsL/rise_d5_R13.txt
+5 0 0 703 200000 seedsL/rise_d6_R14.txt
+5 0 0 704 200000 seedsL/ext_d6_dd_top1.txt

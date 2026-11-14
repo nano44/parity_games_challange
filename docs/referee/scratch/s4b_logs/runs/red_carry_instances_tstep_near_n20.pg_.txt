@@ -1,0 +1,9 @@
+GAME red/carry/instances/tstep_near_n20.pg 
+GAMES 1
+enum_states 5
+keep_chk 1
+loc_chk 33
+rhos 3518
+states 5
+VIOLATIONS 0
+RC 0

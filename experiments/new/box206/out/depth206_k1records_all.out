@@ -1,0 +1,10 @@
+MWR4_2.json ctrl 0 all sumT 30 T 30 lam 0 ch 821 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 1 maxdeep_v 4 maxDE 10 loud 30 maxloud 1 | d0 496 d1 325 | L0 29 L1 1
+MWR8_2.json ctrl 0 all sumT 54 T 54 lam 0 ch 2225 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 1 maxdeep_v 8 maxDE 18 loud 54 maxloud 1 | d0 1266 d1 959 | L0 53 L1 1
+MWR16_2.json ctrl 0 all sumT 102 T 102 lam 0 ch 6857 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 1 maxdeep_v 16 maxDE 34 loud 102 maxloud 1 | d0 3718 d1 3139 | L0 101 L1 1
+K1F21_n48.json ctrl 0 all sumT 31 T 31 lam 0 ch 1930 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 3 maxdeep_v 15 maxDE 22 loud 30 maxloud 3 | d0 656 d1 844 d2 333 d3 97 | L0 27 L1 1 L2 1 L3 1
+K1F34_n84.json ctrl 0 all sumT 52 T 52 lam 0 ch 4307 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 3 maxdeep_v 25 maxDE 35 loud 52 maxloud 3 | d0 1406 d1 1355 d2 1257 d3 289 | L0 50 L2 1 L3 1
+K1C16_n400.json ctrl 0 all sumT 51 T 51 lam 0 ch 8474 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 3 maxdeep_v 28 maxDE 37 loud 48 maxloud 2 | d0 3482 d1 3189 d2 1680 d3 123 | L0 43 L1 4 L2 1
+B400_r32_a13d9661.json ctrl 0 all sumT 49 T 49 lam 0 ch 4286 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 2 maxdeep_v 24 maxDE 34 loud 49 maxloud 2 | d0 1381 d1 1986 d2 919 | L0 46 L1 2 L2 1
+k1fail_202.json ctrl 0 all sumT 4 T 4 lam 0 ch 116 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 1 maxdeep_v 2 maxDE 3 loud 3 maxloud 0 | d0 83 d1 33 | L0 3
+naive_k1_s71.json ctrl 0 all sumT 3 T 3 lam 33 ch 0 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 0 maxdeep_v 0 maxDE 1 loud 1 maxloud 0 |  | L-1 1
+K1D4_n48.json ctrl 0 all sumT 23 T 23 lam 360 ch 1177 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 5 maxdeep_v 7 maxDE 10 loud 12 maxloud 0 | d0 425 d1 458 d2 150 d4 143 d5 1 | L-1 2 L0 10

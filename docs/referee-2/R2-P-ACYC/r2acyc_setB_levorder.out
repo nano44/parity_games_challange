@@ -1,0 +1,9 @@
+H5_d20_F62.json | N 40 | acyclic 1 | G: T 9 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0 | G3: T 9 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0
+H6_d24_F126.json | N 48 | acyclic 1 | G: T 12 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0 | G3: T 12 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0
+SL41_d28.json | N 56 | acyclic 1 | G: T 10 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0 | G3: T 10 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0
+L6Z_KILL238_d28.json | N 56 | acyclic 1 | G: T 9 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0 | G3: T 9 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0
+TOTAL G: genomes 4 acyclic 4 states 44 pairs 4400 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0 T_gt_N 0 howard_ties 0 pi_startdep 0 brute_states 0 brute_noopt 0 brute_eface 0 brute_valdiff 0 T3_ne_T 0 mover_seq_ne 0
+TOTAL G3: genomes 4 acyclic 4 states 44 pairs 4400 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0 T_gt_N 0 howard_ties 0 pi_startdep 0 brute_states 0 brute_noopt 0 brute_eface 0 brute_valdiff 0 T3_ne_T 0 mover_seq_ne 0
+TOTAL Grand: genomes 4 acyclic 0 states 12 pairs 1200 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0 T_gt_N 0 howard_ties 0 pi_startdep 0 brute_states 0 brute_noopt 0 brute_eface 0 brute_valdiff 0 T3_ne_T 0 mover_seq_ne 0
+TOTAL G3rand: genomes 4 acyclic 0 states 12 pairs 1200 notbeta 0 nonstrict 0 lamfail 0 wstar_not_K1 0 C 0 R 0 T_gt_N 0 howard_ties 0 pi_startdep 0 brute_states 0 brute_noopt 0 brute_eface 0 brute_valdiff 0 T3_ne_T 0 mover_seq_ne 0
+max T/N on Γ: 0.250

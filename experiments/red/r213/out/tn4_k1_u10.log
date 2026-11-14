@@ -1,0 +1,2 @@
+TN d 4 t 13 U >= 10 k 1: SAT solve 319.7 s
+  replay T 10 U 10 level-0 steps 1 (OK) -> out/tn4_k1_u10.json

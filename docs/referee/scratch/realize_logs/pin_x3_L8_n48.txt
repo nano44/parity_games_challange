@@ -1,0 +1,5 @@
+FILE x3_L8_n48.pg n 48 N 6 M 12 K 11 L_FL 8 fallback at transition 9
+FL_trans 8
+fallback_at 9
+std_states 9
+VIOLATIONS 0

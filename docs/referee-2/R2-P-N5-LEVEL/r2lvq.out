@@ -1,0 +1,45 @@
+FOUND   R104 «Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β»
+FOUND   R104 «β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone»
+FOUND   R104 «e of even priority above every β with one edge to the W-target or to the top even self-loop c_W»
+FOUND   R104 «an unused even self-loop of priority 2; c_W's priority top is the least even number at least 2 above every oth…»
+FOUND   R104 «a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2}, K3 (Even, to…»
+FOUND   R104 «with start σ = the genome start at movers, β → its Ξ-target (u when the target is X), K0 → K3, K1 → K1, K3 → K…»
+FOUND   R104 «a distinct β-rank with a parity»
+FOUND   P-N5-QN «(D1) each gate g has its own e-vertex e_g, whose only in-edge is from g»
+FOUND   P-N5-QN «(D3) the core is entered from outside only at u = K0 (the β's escape edge)»
+FOUND   P-N5-QN «(D4) the unused self-loop c_X has no in-edge from another vertex»
+FOUND   R118 «VJ00 §4.2 / Friedmann arXiv 1106.0778 §3 for the order ⊴ on values (Λ, Π, k)»
+FOUND   R118 «The game is Γ(G) with every Even vertex that is not a mover frozen at its start successor. Odd is unrestricted…»
+FOUND   R118 «every mover x goes to a successor of ⊴-largest Ω_t value, and keeps σ_t(x) if σ_t(x) is such a successor»
+FOUND   R118 «T_CYC := the number of steps to the first state where no mover has a strictly better successor»
+FOUND   R118 «Facts F1-F6 (§3 l. 68-83) with F4 REPLACED by F4′»
+FOUND   R118 «for F1 (Ω_t ⊴ Ω_(t+1) under a Howard step, an unambiguous non-empty switch set)»
+FOUND   P-N5-XICYC «F1 (from [R15a]): Ω_t ⊴ Ω_(t+1) pointwise, for every step t.»
+FOUND   P-N5-XICYC «ext(v, (Λ, Π, k)) := (Λ, Π ∪ {v if v is more relevant than Λ}, k + 1)»
+FOUND   R15 «Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(σ)}.»
+FOUND   R118 «For every mover x, step t and successor y of x: Ω_(t+1)(x) ⊵ ext(x, Ω_t(y)).»
+FOUND   R118 «each vertex's Λ moves only to a vertex of strictly larger reward among at most 2M + 3 possible cycle nodes»
+FOUND   R118 «any parity game, Howard from any σ_0, under H0»
+FOUND   R118 «H0: every step t → t+1 switches some Even x with Λ_t(x) ≠ x and Λ_(t+1)(x) ≠ x.»
+FOUND   R118 «(a) every maximal run of p-steps has at most n_E steps;»
+FOUND   R118 «labelled C if some vertex's cycle node Λ changes, else R if Odd's optimal counterstrategy σ̄ (any fixed determ…»
+FOUND   P-N5-XICYC «G is any parity game on n vertices, with n_E Even vertices. Run Howard from any σ_0: every Even v goes to a ⊴-…»
+FOUND   R121 «If Λ_t(v) = Λ_(t+1)(v), then E_t(v) ≤ E_(t+1)(v).»
+FOUND   R121 «Every vertex more relevant than some e-vertex is an e-vertex, c_W, K0 or K3, by [DEF]»
+FOUND   R121 «sets of e-vertices compared lexicographically by their most relevant differing element»
+FOUND   R123 «For every genome G, every positional pair of IDEAL-CYC(G) and every vertex v, the cycle node of v's play has p…»
+FOUND   R123 «In IDEAL-CYC(G), for every genome G, every state t and every vertex v other than c_W and the e-vertices whose …»
+FOUND   R123 «At every state and every gate g, Ω_t(e_g) ≠ Ω_t(β_g). So LOC-GATE applies at every gate and state.»
+FOUND   R123 «Let G be any genome, t a state of a run of IDEAL-CYC(G), g a gate, a := σ̄_t(g), b := its other face, Ω := Ω_t…»
+FOUND   R123 «At every state σ̄_t(K2) = K1 and Ω_t(K1) ◁ Ω_t(K2).»
+FOUND   R123 «σ̄_t is optimal at every vertex at once against σ_t»
+FOUND   R123 «with class_t(v) := (Λ_t(v), E_t(v)), E_t(v) the e-vertices of Π_t(v), a step loud if some vertex changes class…»
+FOUND   R122 «an optimal counterstrategy being pointwise optimal (at every vertex its play value is ⊴ the value under every …»
+FOUND   R126 «every maximal window of quiet steps has at most N steps»
+FOUND   R126 «the minimum size of a set of movers meeting every cycle (self-loops count) of the Ξ-graph on the movers (an ed…»
+FOUND   R118 «no bound on R is claimed (OPEN)»
+FOUND   R122 «the Howard run of IDEAL-CYC(G) from any mover state has C = 0, R = 0 and T_CYC ≤ N»
+FOUND   R126 «it makes no new class of genomes on which T_CYC is polynomial, and at k = 1 it bounds the cycle nodes only (wh…»
+FOUND   TARGET «There is a deterministic algorithm A and a polynomial p such that for every parity game G, A on input G halts …»
+FOUND   TARGET «Polynomial only on a restricted class (bounded d, treewidth, Strahler/register number, ...).»
+TOTAL bullets 25 quotes 44 missing 0; RESULTS sha1 4117c8a7d0165cd8d3a880f9a405d9c6fc6a5089

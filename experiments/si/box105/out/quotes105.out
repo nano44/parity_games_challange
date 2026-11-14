@@ -1,0 +1,5 @@
+OK   a9699c30c docs/RESULTS.md: an IDEAL step moves every mover to the lexicographically least key (ga
+OK   8db300fe3 docs/new/P-N5-REACH.md: a gate determines its pad, its owner and its faces
+OK   8db300fe3 docs/new/P-N5-REACH.md: e-indices follow gate indices ([DEF]; unchanged in Γ3)
+OK   a9699c30c docs/RESULTS.md: (T-BOUND) on 𝓛^R_d, F(l) ≤ 2^(l+2) − 2
+QUOTES105 total 4 fail 0

@@ -1,0 +1,9 @@
+GAME n5-epoch/instances/ret14_n48.pg
+GAMES 1
+enum_states 16
+keep_chk 12
+loc_chk 95
+rhos 337
+states 16
+VIOLATIONS 0
+RC 0

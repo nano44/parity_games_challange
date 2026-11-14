@@ -1,0 +1,1 @@
+TOTAL genomes 400 {'k1': {'sccs': 160, 'ch': 130, 'lenonly': 9, 'lossy': 0, 'lossy_d1': 0, 'gain': 24, 'gain_d1': 0, 'esame': 97, 'esame_d1': 0, 'md1': 0, 'md2': 0, 'maxed': 1, 'lostE': 0}, 'k2+': {'sccs': 215, 'ch': 1478, 'lenonly': 167, 'lossy': 115, 'lossy_d1': 4, 'gain': 477, 'gain_d1': 0, 'esame': 719, 'esame_d1': 0, 'md1': 4, 'md2': 3, 'maxed': 3, 'lostE': 0}}

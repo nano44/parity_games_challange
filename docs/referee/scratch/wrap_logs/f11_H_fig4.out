@@ -1,0 +1,10 @@
+n 1 VER fig4 nodes 14 edges 27 maxprio 20 | T 8 2^n 2 9*2^n-10 8 states 9 | fact61 0 sinkex 0 w1all 0 sinkseek 0 eqval 0 tie 0
+n 2 VER fig4 nodes 24 edges 52 maxprio 32 | T 26 2^n 4 9*2^n-10 26 states 27 | fact61 0 sinkex 0 w1all 0 sinkseek 0 eqval 0 tie 0
+n 3 VER fig4 nodes 34 edges 80 maxprio 44 | T 62 2^n 8 9*2^n-10 62 states 63 | fact61 0 sinkex 0 w1all 0 sinkseek 0 eqval 0 tie 0
+n 4 VER fig4 nodes 44 edges 111 maxprio 56 | T 134 2^n 16 9*2^n-10 134 states 135 | fact61 0 sinkex 0 w1all 0 sinkseek 0 eqval 0 tie 0
+n 5 VER fig4 nodes 54 edges 145 maxprio 68 | T 278 2^n 32 9*2^n-10 278 states 279 | fact61 0 sinkex 0 w1all 0 sinkseek 0 eqval 0 tie 0
+n 6 VER fig4 nodes 64 edges 182 maxprio 80 | T 566 2^n 64 9*2^n-10 566 states 567 | fact61 0 sinkex 0 w1all 0 sinkseek 0 eqval 0 tie 0
+n 7 VER fig4 nodes 74 edges 222 maxprio 92 | T 1142 2^n 128 9*2^n-10 1142 states 1143 | fact61 0 sinkex 0 w1all 0 sinkseek 0 eqval 0 tie 0
+n 8 VER fig4 nodes 84 edges 265 maxprio 104 | T 2294 2^n 256 9*2^n-10 2294 states 2295 | fact61 0 sinkex 0 w1all 0 sinkseek 0 eqval 0 tie 0
+n 9 VER fig4 nodes 94 edges 311 maxprio 116 | T 4598 2^n 512 9*2^n-10 4598 states 4599 | fact61 0 sinkex 0 w1all 0 sinkseek 0 eqval 0 tie 0
+n 10 VER fig4 nodes 104 edges 360 maxprio 128 | T 9206 2^n 1024 9*2^n-10 9206 states 9207 | fact61 0 sinkex 0 w1all 0 sinkseek 0 eqval 0 tie 0

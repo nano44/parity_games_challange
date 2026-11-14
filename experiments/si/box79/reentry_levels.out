@@ -1,0 +1,38 @@
+REC_d10_tower_mu30.json sha1 cc94dc9c46ef63f7a3a54b536d9d3b38fdee5255 d 10
+  A l 0 holds
+  A l 1 FAILS: 0 -> 4 -> 10 -> 3 (levels 0 -> 2 -> 5 -> 1)
+  A l 2 FAILS: 0 -> 4 -> 10 -> 3 (levels 0 -> 2 -> 5 -> 1)
+  A l 3 FAILS: 0 -> 4 -> 10 -> 3 (levels 0 -> 2 -> 5 -> 1)
+  A l 4 FAILS: 0 -> 4 -> 10 -> 3 (levels 0 -> 2 -> 5 -> 1)
+  A l 5 FAILS: 0 -> 4 -> 10 -> 3 (levels 0 -> 2 -> 5 -> 1)
+  A l 6 FAILS: 0 -> 4 -> 10 -> 3 (levels 0 -> 2 -> 5 -> 1)
+  A l 7 FAILS: 0 -> 4 -> 10 -> 3 (levels 0 -> 2 -> 5 -> 1)
+  A l 8 FAILS: 0 -> 4 -> 10 -> 3 (levels 0 -> 2 -> 5 -> 1)
+  reading A failing l: {1, 2, 3, 4, 5, 6, 7, 8}
+  B l 0 holds
+  B l 1 FAILS: 0 -> 4 -> 10 -> 3 (levels 0 -> 2 -> 5 -> 1)
+  B l 2 FAILS: 1 -> 11 -> 3 (levels 0 -> 5 -> 1)
+  B l 3 FAILS: 1 -> 11 -> 3 (levels 0 -> 5 -> 1)
+  B l 4 FAILS: 1 -> 11 -> 3 (levels 0 -> 5 -> 1)
+  B l 5 FAILS: 5 -> 16 -> 14 -> 3 (levels 2 -> 8 -> 7 -> 1)
+  B l 6 FAILS: 5 -> 16 -> 14 -> 3 (levels 2 -> 8 -> 7 -> 1)
+  B l 7 FAILS: 5 -> 16 -> 14 -> 3 (levels 2 -> 8 -> 7 -> 1)
+  B l 8 FAILS: 2 -> 19 -> 17 (levels 1 -> 9 -> 8)
+  reading B failing l: {1, 2, 3, 4, 5, 6, 7, 8}
+  path 1 -> 11 -> 3: PRESENT (levels 0 -> 5 -> 1)
+  path 2 -> 5 -> 3: absent (levels 1 -> 2 -> 1)
+KILL_M2D_d6_mu13.json sha1 5301c716f68f219bda2806f29b317c94e0ed5df0 d 6
+  A l 0 holds
+  A l 1 FAILS: 0 -> 6 -> 2 (levels 0 -> 3 -> 1)
+  A l 2 FAILS: 0 -> 6 -> 2 (levels 0 -> 3 -> 1)
+  A l 3 FAILS: 0 -> 6 -> 2 (levels 0 -> 3 -> 1)
+  A l 4 FAILS: 0 -> 6 -> 2 (levels 0 -> 3 -> 1)
+  reading A failing l: {1, 2, 3, 4}
+  B l 0 holds
+  B l 1 FAILS: 0 -> 6 -> 2 (levels 0 -> 3 -> 1)
+  B l 2 FAILS: 0 -> 6 -> 2 (levels 0 -> 3 -> 1)
+  B l 3 FAILS: 1 -> 9 -> 7 -> 2 (levels 0 -> 4 -> 3 -> 1)
+  B l 4 holds
+  reading B failing l: {1, 2, 3}
+  path 1 -> 11 -> 3: absent (levels 0 -> 5 -> 1)
+  path 2 -> 5 -> 3: PRESENT (levels 1 -> 2 -> 1)

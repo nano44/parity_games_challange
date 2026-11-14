@@ -1,0 +1,4 @@
+MWR4_2.json T3 30 {'dmax': 9, 'deep': 13, 'qflip': 13, 'qint': 9, 'gates': 97, 'unm': 13, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 1, 'tight': 1, 'maxfl': 9}
+C98_4_5_3.json T3 19 {'dmax': 9, 'deep': 14, 'qflip': 52, 'qint': 45, 'gates': 52, 'unm': 38, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 25, 'tight': 0, 'maxfl': 6}
+C6G8_n54.json T3 17 {'dmax': 21, 'deep': 47, 'qflip': 64, 'qint': 55, 'gates': 150, 'unm': 51, 'sumf': 0, 'minf': 0, 'tie': 0, 'multi': 16, 'tight': 0, 'maxfl': 11}
+TOTAL genomes 3 dmax 21 deep 74 qflip 129 qint 109 gates 299 unm 102 sumf 0 minf 0 tie 0 multi 42 tight 1 maxfl 11

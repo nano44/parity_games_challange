@@ -1,0 +1,7 @@
+plat3 rand k1 ctrl 0 seed 2103 genomes 400 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 23 maxlen 4 maxpct 50 tail 3 T 7
+plat3 rand rand ctrl 0 seed 2103 genomes 400 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 53 maxlen 3 maxpct 50 tail 2 T 9
+plat3 rand dense ctrl 0 seed 2103 genomes 400 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 70 maxlen 3 maxpct 66 tail 3 T 10
+plat3 rand deep ctrl 0 seed 2103 genomes 400 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 77 maxlen 4 maxpct 30 tail 4 T 13
+plat3 rand noesc ctrl 0 seed 2103 genomes 400 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 45 maxlen 2 maxpct 40 tail 3 T 10
+plat3 rand esc ctrl 0 seed 2103 genomes 400 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 38 maxlen 3 maxpct 60 tail 4 T 6
+plat3 rand lvl0 ctrl 0 seed 2103 genomes 400 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 90 maxlen 3 maxpct 33 tail 3 T 11

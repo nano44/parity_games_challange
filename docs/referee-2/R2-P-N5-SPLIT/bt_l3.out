@@ -1,0 +1,23 @@
+R-D7a D7 old count 1 PASS
+R-D7a DATA old count 1 PASS
+R-U127 (a) old count 1 PASS
+R-U127 (b) old count 1 PASS
+R-U127 (c) old count 1 PASS
+R-U127 (d) old count 1 PASS
+rebuilt sha1 a8661c4b7998aafc02299c43dfe4e2c6320f73ee 9796 B; lane a8661c4b7998aafc02299c43dfe4e2c6320f73ee 9796 B; BYTE-EQUAL
+diff regions L-1 -> lane L-3: 10
+   delete | and RA-LOG / bounded multiplicity -> 
+   insert |  -> a
+   replace | properties -> property
+   insert |  -> da3308b5,
+   replace | FW16_2, 94df42b7, linear RA depth; MW32_2, 445031d1, multiplicity n, L-SI DATA cited); -> unit: max over (v, I, y) of the number of letters of RA(y), box198/pair198.out maxRA);
+   insert |  -> (unit: y-tops of one (v, I, y), max over (v, I, y); split199.out maxc)
+   insert |  -> (unit: distinct split pairs (u, b) of the y-tops of one (v, I, y), max over (v, I, y); split199.out maxSPL)
+   insert |  -> RA depth (longest RA chain) 4 / 8 / 12 / 16 on FW4/8/12/16_2 (REFEREE-2 36 R2-P-N5-SPLIT, claude/referee-2 4948ce5d, own
+   replace | 199) -> 199; unit: states of the HOW3 run, max over the 28 frozen instances, split199.out T3; 199 on MW32_2)
+   replace | 1-2, -> 1-4,
+absent 'RA-LOG' True
+absent 'MW32_2, 445031d1' True
+absent 'with fixes entries 1-2' True
+absent '|' True
+parens 273 273 FAILS 0

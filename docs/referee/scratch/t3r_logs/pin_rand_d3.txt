@@ -1,0 +1,2 @@
+RANDOM d 3 60 max-T histogram {1: 21, 2: 20, 3: 17, 4: 1, 5: 1}
+TOTAL runs 3840 T histogram {0: 558, 1: 2690, 2: 501, 3: 82, 4: 7, 5: 2} run disagreements 0 genome-only tests 60 genome-only disagreements 0

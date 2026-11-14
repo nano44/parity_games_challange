@@ -1,0 +1,1 @@
+full_iso_d3_s4_T3: max T 3 (ISO True)

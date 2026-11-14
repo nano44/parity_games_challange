@@ -1,0 +1,7 @@
+it 38 moves 6 runT 7
+it 85 moves 7 runT 7
+it 470 moves 7 runT 8
+it 1026 moves 7 runT 9
+it 1136 moves 8 runT 9
+it 7117 moves 8 runT 10
+it 8802 moves 8 runT 11

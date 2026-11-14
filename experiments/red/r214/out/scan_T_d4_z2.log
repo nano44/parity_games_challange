@@ -1,0 +1,2 @@
+MOVE d 4 t 13 z 2 r 4: UNSAT solve 3.3 s
+DONE z 2 max 3

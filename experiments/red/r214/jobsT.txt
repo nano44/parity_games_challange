@@ -1,0 +1,9 @@
+# m seed iters anneal seed  (R214 T table, Lead 03:25Z)
+7 801 200000000 3000 out/seed_d8.tw
+10 1101 200000000 3000 out/seed_d11.tw
+11 1201 200000000 3000 out/seed_d12.tw
+12 1301 200000000 3000 out/seed_d13.tw
+13 1401 200000000 3000 out/seed_d14.tw
+7 802 200000000 800 out/seed_d8.tw
+10 1102 200000000 800 out/seed_d11.tw
+11 1202 200000000 800 out/seed_d12.tw

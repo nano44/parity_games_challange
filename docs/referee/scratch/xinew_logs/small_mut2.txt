@@ -1,0 +1,1 @@
+seed 1 mut 2 {'genomes': 3000, 'steps': 5028, 'checked': 2399, 'viol': 1484, 'mono': 0, 'norise': 0, 'maxL': 6}

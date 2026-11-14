@@ -1,0 +1,14 @@
+GAMES 811
+MISSING 0
+RC 0
+RC0 813
+VIOLATIONS 0
+enum_skip 471
+enum_states 5021
+keep_chk 2764
+loc_chk 30669
+oddfb 29
+rhos 573261
+skip_big 2
+states 5492
+DONE

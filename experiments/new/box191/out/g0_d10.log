@@ -1,0 +1,26 @@
+start score (5, 5) N 20
+it 12 N 20 T 7 maxrun 7 C 0
+it 159 N 20 T 9 maxrun 4 C 2
+it 168 N 20 T 10 maxrun 5 C 2
+it 224 N 20 T 11 maxrun 5 C 3
+it 266 N 20 T 12 maxrun 5 C 3
+it 344 N 20 T 14 maxrun 4 C 5
+it 463 N 20 T 15 maxrun 4 C 5
+it 546 N 20 T 16 maxrun 4 C 5
+it 611 N 20 T 17 maxrun 5 C 6
+it 738 N 20 T 18 maxrun 5 C 5
+it 1116 N 20 T 19 maxrun 7 C 5
+it 1120 N 20 T 20 maxrun 8 C 6
+it 1316 N 20 T 21 maxrun 8 C 4
+it 1497 N 20 T 22 maxrun 8 C 4
+it 1647 N 20 T 23 maxrun 8 C 4
+it 1840 N 20 T 24 maxrun 9 C 4
+it 1856 N 20 T 25 maxrun 9 C 4
+it 2977 N 20 T 26 maxrun 9 C 5
+it 3243 N 20 T 27 maxrun 10 C 6
+it 3338 N 20 T 28 maxrun 10 C 6
+it 3989 N 20 T 29 maxrun 10 C 6
+it 4135 N 20 T 30 maxrun 11 C 5
+it 5107 N 20 T 31 maxrun 11 C 5
+it 5421 N 20 T 32 maxrun 11 C 5
+it 5534 N 20 T 33 maxrun 11 C 6

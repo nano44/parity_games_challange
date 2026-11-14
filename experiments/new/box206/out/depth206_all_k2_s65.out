@@ -1,0 +1,2 @@
+k2 seed 65 genomes 300 ctrl 0 all sumT 713 T 7 lam 18680 ch 2815 elfall 0 topfall 0 pfail 0 cfail 0 ufail 0 maxdepth 3 maxdeep_v 3 maxDE 4 loud 573 maxloud 1 | d0 2035 d1 669 d2 105 d3 6 | L-1 475 L0 97 L1 1
+  genomes by maxdepth: {0: 236, 1: 53, 2: 9, 3: 2}

@@ -1,0 +1,4 @@
+family wide seed 3209 count 400
+MUST-0:  k1 0  k2 0  k3a 0  k3c 0  k3d 0  k3e 0  k4 0  k5 0  l1 0  l2 0  l3 0  l3v 0  l4 0  l5 0  c4 0  w1 0  w2 0  w3 0  w3v 0  w4 0  w5 0  w_stall 0  w_beta 0  w_len 0  w_quiet 0  rh 0  p1 0  p2 0  p3 0  p4 0  p5v 0  p5h 0  p6 0  p7 0  p7s 0  tb 0
+RECORDS: genomes 400  states 1074  maxT 7  k=0 24  k=1 135  k=2 129  k=>2 112  maxPhi 6  stalls 28  stallloud 1  plateaus 56  maxplat 2  maxplat_pct_movers 50  intervals 934  maxwinlen 2  c_k4 12559  c_k5 680  ch1 67  ch2 409  ch3 409  ch3v 0  ch4 113  ch5 409  c_S 28  c_Y 74
+exit 0

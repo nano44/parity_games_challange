@@ -1,0 +1,21 @@
+it 1 n 190 xi 7 spec 7 OK
+it 16 n 190 xi 9 spec 6 OK
+it 22 n 190 xi 10 spec 6 OK
+it 29 n 190 xi 11 spec 5 OK
+it 57 n 190 xi 12 spec 5 OK
+it 58 n 190 xi 13 spec 5 OK
+it 151 n 190 xi 13 spec 6 OK
+it 230 n 190 xi 13 spec 7 OK
+it 255 n 190 xi 14 spec 6 OK
+it 325 n 190 xi 14 spec 7 OK
+it 682 n 190 xi 14 spec 8 OK
+it 776 n 190 xi 15 spec 9 OK
+it 822 n 190 xi 17 spec 9 OK
+it 834 n 190 xi 18 spec 9 OK
+it 1222 n 190 xi 19 spec 9 OK
+it 1441 n 190 xi 20 spec 8 OK
+it 2197 n 190 xi 20 spec 10 OK
+it 2447 n 190 xi 21 spec 9 OK
+it 2552 n 190 xi 21 spec 10 OK
+it 3388 n 190 xi 22 spec 10 OK
+FINAL best xi 22

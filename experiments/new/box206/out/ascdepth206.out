@@ -1,0 +1,9 @@
+WC16_2.json ctrl 0 genomes 1 loud 4 ldfail 0 maxld 16 maxA 16 gap 0
+WC8_2.json ctrl 0 genomes 1 loud 4 ldfail 0 maxld 8 maxA 8 gap 0
+MWR8_2.json ctrl 0 genomes 1 loud 54 ldfail 0 maxld 1 maxA 2 gap -1
+  ldfail at step 52 ld 3 A 2
+K1F34_n84.json ctrl 0 genomes 1 loud 52 ldfail 1 maxld 3 maxA 2 gap 1
+  ldfail at step 28 ld 6 A 4
+DHIB26_2804.json ctrl 0 genomes 1 loud 28 ldfail 1 maxld 6 maxA 5 gap 2
+  ldfail at step 46 ld 4 A 3
+CT12_cap200.json ctrl 0 genomes 1 loud 40 ldfail 1 maxld 4 maxA 3 gap 1

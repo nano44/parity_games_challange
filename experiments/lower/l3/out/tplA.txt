@@ -1,0 +1,1 @@
+TPL P 1 dir 1 0 g0 2 0 3 1 L0 [xc3 b1 r0 e1] [xc5 b1 r6 e0] st0 [xc4 b1 r7 e1] [xc3 b1 r2 e0] st0 | S0 [xc5 b0 r4 e1] [xc2 b1 r3 e1] dl1 st1 [xc1 b1 r1 e0] [xc3 b1 r6 e0] dl1 st1

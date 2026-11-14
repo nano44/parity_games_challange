@@ -1,0 +1,10 @@
+KILL_M2D_d6_mu13.json sha1 5301c716 lr True acyclic True | mine d 6 T 13 max mover 8 lev 4 Xi-target 1 moves 13 2d 12 >2d | moves [1, 1, 3, 3, 6, 2, 6, 6, 13, 7, 1, 1] | F [2, 6, 8, 12, 20, 2] | EQUAL True
+KILL_M2D_d8_mu21.json sha1 d96c2b36 lr True acyclic True | mine d 8 T 24 max mover 15 lev 7 Xi-target 1 moves 21 2d 16 >2d | moves [1, 1, 3, 1, 3, 4, 6, 7, 5, 5, 1, 1, 10, 11, 1, 21] | F [2, 4, 7, 13, 10, 2, 21, 22] | EQUAL True
+REC_d10_mu32.json sha1 b114f4cd lr True acyclic True | mine d 10 T 33 max mover 15 lev 7 Xi-target 1 moves 32 2d 20 >2d | moves [1, 1, 3, 1, 4, 4, 4, 8, 4, 8, 4, 4, 16, 16, 13, 32, 4, 3, 4, 1] | F [2, 4, 8, 12, 12, 8, 32, 45, 7, 5] | EQUAL True
+REC_d10_tower_mu30.json sha1 cc94dc9c lr True acyclic True | mine d 10 T 35 max mover 8 lev 4 Xi-target 1 moves 30 2d 20 >2d | moves [1, 1, 3, 3, 7, 7, 15, 15, 30, 7, 8, 2, 8, 1, 4, 1, 4, 1, 1, 1] | F [2, 6, 14, 30, 37, 10, 9, 5, 5, 2] | EQUAL True
+REC_d11_mu40.json sha1 bbdb33d9 lr True acyclic True | mine d 11 T 44 max mover 15 lev 7 Xi-target 1 moves 40 2d 22 >2d | moves [1, 1, 3, 1, 4, 4, 9, 9, 4, 10, 5, 6, 20, 20, 10, 40, 1, 5, 1, 5, 4, 5] | F [2, 4, 8, 18, 14, 11, 40, 50, 6, 6, 9] | EQUAL True
+REC_d12_mu42.json sha1 28e62d51 lr True acyclic True | mine d 12 T 48 max mover 15 lev 7 Xi-target 1 moves 42 2d 24 >2d | moves [1, 1, 3, 1, 4, 4, 9, 9, 4, 10, 7, 7, 21, 21, 11, 42, 1, 8, 1, 0, 3, 2, 4, 1] | F [2, 4, 8, 18, 14, 14, 42, 53, 9, 1, 5, 5] | EQUAL True
+REC_d7_mu17.json sha1 62917c18 lr True acyclic True | mine d 7 T 17 max mover 8 lev 4 Xi-target 1 moves 17 2d 14 >2d | moves [1, 1, 3, 3, 7, 3, 9, 8, 17, 8, 3, 4, 1, 1] | F [2, 6, 10, 17, 25, 7, 2] | EQUAL True
+REC_d8_mu24.json sha1 18d26cec lr True acyclic True | mine d 8 T 25 max mover 8 lev 4 Xi-target 1 moves 24 2d 16 >2d | moves [1, 1, 3, 2, 6, 6, 12, 12, 24, 6, 1, 5, 3, 1, 1, 1] | F [2, 5, 12, 24, 30, 6, 4, 2] | EQUAL True
+REC_d9_mu29.json sha1 2d034e7f lr True acyclic True | mine d 9 T 31 max mover 15 lev 7 Xi-target 1 moves 29 2d 18 >2d | moves [1, 1, 3, 1, 4, 4, 5, 1, 5, 6, 3, 13, 14, 14, 4, 29, 10, 1] | F [2, 4, 8, 6, 11, 16, 28, 33, 11] | EQUAL True
+ROWS EQUAL 9 / 9

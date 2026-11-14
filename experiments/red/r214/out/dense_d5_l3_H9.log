@@ -1,0 +1,2 @@
+MOVE d 5 t 9 z 6 r 9: SAT solve 2691.7 s
+  replay T 9 moves of z 9 target True (OK) -> ../r214/out/dense_d5_l3_H9.json

@@ -1,0 +1,9 @@
+GAME new/box54/out/switchbestexp_5.pg 
+GAMES 1
+enum_states 17
+keep_chk 12
+loc_chk 17
+rhos 34
+states 17
+VIOLATIONS 0
+RC 0

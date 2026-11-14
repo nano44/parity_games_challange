@@ -1,0 +1,13 @@
+start score (3, 3) N 10
+it 28 N 10 T 4 maxrun 2 C 2
+it 62 N 10 T 6 maxrun 2 C 3
+it 164 N 10 T 7 maxrun 1 C 5
+it 186 N 10 T 9 maxrun 2 C 5
+it 334 N 10 T 10 maxrun 4 C 3
+it 543 N 10 T 11 maxrun 2 C 6
+it 676 N 10 T 12 maxrun 7 C 3
+it 683 N 10 T 13 maxrun 7 C 4
+it 1230 N 10 T 14 maxrun 5 C 5
+it 1365 N 10 T 15 maxrun 4 C 5
+it 1555 N 10 T 16 maxrun 4 C 5
+FINAL best (16, 16) N 10

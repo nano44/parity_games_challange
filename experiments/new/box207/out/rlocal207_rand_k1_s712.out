@@ -1,0 +1,1 @@
+rand k1 seed 712 genomes 1000 max {'DR': 5, 'cint': 2, 'loudint': 3, 'flipint': 2, 'Rint': 2, 'T': 6} TOTALS deepnoR 0 efail 10 pR 23 rrep 0 ifail 0 qfail 0

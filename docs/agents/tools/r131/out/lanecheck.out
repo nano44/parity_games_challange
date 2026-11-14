@@ -1,0 +1,5 @@
+archive of claude/l-red-b 10dfedb6: experiments/red-b, docs/red-b, experiments/new/box203/inst: 606 files
+check.sh: rc 0 ; last line: red-b check PASS
+negative control (one byte appended to data/b6b/out/n5_k13.out): rc 1 ; mismatch line printed 1 ; last line: red-b check FAILED
+restored: rc 0 ; last line: red-b check PASS
+lanecheck: PASS

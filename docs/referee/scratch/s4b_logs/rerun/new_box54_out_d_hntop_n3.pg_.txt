@@ -1,0 +1,9 @@
+GAME new/box54/out/d_hntop_n3.pg
+GAMES 1
+enum_skip 4
+enum_states 18
+loc_chk 176
+rhos 3446
+states 22
+VIOLATIONS 0
+RC 0

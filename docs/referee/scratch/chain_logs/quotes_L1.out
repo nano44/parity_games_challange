@@ -1,0 +1,4 @@
+OK   ['RESULTS', 'END', 'PACKET'] | Theorem REACH3-CYC, CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome
+OK   ['RESULTS', 'PACKET'] | RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome and ESC3, W3 for acyclic Ξ-graphs
+OK   ['RESULTS', 'XICYC', 'END', 'PACKET'] | Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(σ)}.
+quotes 3 not found 0

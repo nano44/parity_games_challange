@@ -1,0 +1,9 @@
+GAME new/box59/out/fc_7.pg 
+GAMES 1
+enum_states 19
+keep_chk 12
+loc_chk 19
+rhos 38
+states 19
+VIOLATIONS 0
+RC 0

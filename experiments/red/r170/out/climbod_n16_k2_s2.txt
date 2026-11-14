@@ -1,0 +1,26 @@
+it 21 L 0 K 3 window None
+it 25 L 0 K 4 window None
+it 26 L 0 K 5 window None
+it 75 L 0 K 6 window None
+it 77 L 0 K 7 window None
+it 83 L 0 K 8 window None
+it 193 L 0 K 9 window None
+it 324 L 0 K 10 window None
+it 418 L 0 K 5 window None
+it 435 L 0 K 6 window None
+it 622 L 0 K 7 window None
+it 632 L 2 K 5 window (0, 2, 0)
+it 677 L 3 K 6 window (0, 3, 0)
+it 832 L 3 K 7 window (0, 3, 0)
+it 842 L 4 K 7 window (0, 4, 0)
+it 962 L 4 K 8 window (0, 4, 0)
+it 1006 L 4 K 9 window (0, 4, 0)
+it 1098 L 8 K 11 window (0, 8, 0)
+it 1141 L 9 K 11 window (0, 9, 0)
+it 1995 L 10 K 12 window (0, 10, 0)
+it 2271 L 11 K 13 window (0, 11, 0)
+it 2786 L 12 K 14 window (0, 12, 0)
+it 2802 L 13 K 15 window (0, 13, 0)
+it 4461 L 14 K 16 window (0, 14, 0)
+it 8152 L 15 K 17 window (0, 15, 0)
+BEST n 16 KO 2 seed 2 L 15 K 17 window (0, 15, 0)

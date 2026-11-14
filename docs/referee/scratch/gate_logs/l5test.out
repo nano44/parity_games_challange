@@ -1,0 +1,14 @@
+pairs parsed 9
+pair 1 old count 1 | old 170 ch | new 315 ch
+pair 2 old count 1 | old 207 ch | new 392 ch
+pair 3 old count 1 | old 42 ch | new 46 ch
+pair 4 old count 1 | old 33 ch | new 37 ch
+pair 5 old count 1 | old 59 ch | new 64 ch
+pair 6 old count 1 | old 46 ch | new 50 ch
+pair 7 old count 1 | old 36 ch | new 40 ch
+pair 8 old count 1 | old 72 ch | new 76 ch
+pair 9 old count 1 | old 56 ch | new 60 ch
+after nine: sha1 7ebcf7355be9838473f05a7defe913940b6fd723 12923 B
+tenth old count 1
+L-5 sha1 459fd88d2d1959647f6aeb065bf8ac58cce684f9 12923 B; newlines 1 bars 0 parens 238 238
+EQUAL

@@ -1,0 +1,5 @@
+FILE g4_L12_n62.pg n 62 N 8 M 16 K 15 L_FL 12 fallback at transition 13
+FL_trans 12
+fallback_at 13
+std_states 13
+VIOLATIONS 0

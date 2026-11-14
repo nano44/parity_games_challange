@@ -1,0 +1,17 @@
+== 06:35Z d 8 seed-file out/xb_d7.json
+start n 250 xi 14 spec 4
+it 2 n 250 xi 14 spec 5 OK
+it 10 n 250 xi 16 spec 5 OK
+it 11 n 250 xi 18 spec 5 OK
+it 35 n 250 xi 18 spec 7 OK
+it 67 n 250 xi 19 spec 7 OK
+it 80 n 250 xi 20 spec 7 OK
+it 329 n 250 xi 21 spec 7 OK
+it 343 n 250 xi 22 spec 7 OK
+it 364 n 250 xi 22 spec 8 OK
+it 463 n 250 xi 22 spec 9 OK
+it 523 n 250 xi 22 spec 10 OK
+it 614 n 250 xi 22 spec 11 OK
+it 642 n 250 xi 22 spec 12 OK
+it 994 n 250 xi 22 spec 15 OK
+it 1058 n 250 xi 22 spec 16 OK

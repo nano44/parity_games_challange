@@ -1,0 +1,12 @@
+K1L7_n48.json T 37 deep(ld>=2): [(30, 2, 'mov', 'sw1', 'fl1', 'CC'), (31, 2, 'mov', 'sw2', 'fl1', 'CC'), (33, 3, 'mov', 'sw4', 'fl2', 'CC'), (34, 4, 'mov', 'sw2', 'fl1', 'CC'), (35, 4, 'mov', 'sw1', 'fl0', '-'), (36, 4, 'mov', 'sw1', 'fl0', '-'), (37, 4, 'mov', 'sw1', 'fl0', '-')]
+   ld<=1 steps with CC: 10 of 27
+K1F21_n48.json T 31 deep(ld>=2): [(30, 2, 'mov', 'sw2', 'fl2', 'CC'), (31, 3, 'mov', 'sw1', 'fl1', 'CC')]
+   ld<=1 steps with CC: 19 of 28
+K1F34_n84.json T 52 deep(ld>=2): [(51, 2, 'mov', 'sw2', 'fl2', 'CC'), (52, 3, 'mov', 'sw1', 'fl1', 'CC')]
+   ld<=1 steps with CC: 32 of 50
+K1C16_n400.json T 51 deep(ld>=2): [(51, 2, 'mov', 'sw1', 'fl1', 'CC')]
+   ld<=1 steps with CC: 33 of 47
+B400_r32_a13d9661.json T 49 deep(ld>=2): [(49, 2, 'mov', 'sw1', 'fl1', 'CC')]
+   ld<=1 steps with CC: 32 of 48
+MWR8_2.json T 54 deep(ld>=2): []
+   ld<=1 steps with CC: 0 of 54

@@ -1,0 +1,19 @@
+== 06:01Z n 32 seed-file out/ps_n24.json
+start n 81 xi 53 spec 53
+it 815 n 82 xi 54 spec 54 OK
+it 926 n 79 xi 55 spec 55 OK
+it 1192 n 78 xi 56 spec 56 OK
+it 1298 n 78 xi 57 spec 57 OK
+it 2303 n 83 xi 58 spec 58 OK
+it 2531 n 85 xi 59 spec 59 OK
+it 2678 n 82 xi 60 spec 60 OK
+it 3300 n 87 xi 61 spec 61 OK
+it 3308 n 88 xi 63 spec 63 OK
+it 3825 n 86 xi 64 spec 64 OK
+it 4150 n 86 xi 65 spec 65 OK
+it 4235 n 87 xi 66 spec 66 OK
+it 4525 n 86 xi 67 spec 67 OK
+it 6082 n 86 xi 68 spec 68 OK
+it 6199 n 87 xi 69 spec 69 OK
+it 6836 n 87 xi 70 spec 70 OK
+FINAL best 70.070

@@ -1,0 +1,10 @@
+GAME n5-epoch/instances/gci3_n24.pg
+GAMES 1
+enum_states 16
+keep_chk 12
+loc_chk 27
+oddfb 1
+rhos 84
+states 16
+VIOLATIONS 0
+RC 0

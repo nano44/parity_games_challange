@@ -1,0 +1,10 @@
+IT 663 100 {'runs': 1, 'maxlen': 1, 'routeC': 0, 'viol': 0}
+IT 824 101 {'runs': 2, 'maxlen': 1, 'routeC': 1, 'viol': 0}
+IT 1604 102 {'runs': 2, 'maxlen': 1, 'routeC': 2, 'viol': 0}
+IT 2314 103 {'runs': 3, 'maxlen': 1, 'routeC': 3, 'viol': 0}
+IT 4722 104 {'runs': 4, 'maxlen': 1, 'routeC': 4, 'viol': 0}
+IT 8909 201 {'runs': 2, 'maxlen': 2, 'routeC': 1, 'viol': 0}
+IT 9474 202 {'runs': 3, 'maxlen': 2, 'routeC': 2, 'viol': 0}
+IT 13118 203 {'runs': 4, 'maxlen': 2, 'routeC': 3, 'viol': 0}
+IT 18742 204 {'runs': 5, 'maxlen': 2, 'routeC': 4, 'viol': 0}
+BEST 204 {'runs': 5, 'maxlen': 2, 'routeC': 4, 'viol': 0}

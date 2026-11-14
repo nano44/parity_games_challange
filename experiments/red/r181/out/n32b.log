@@ -1,0 +1,6 @@
+START n 32 8000
+IT 1408 LFL 8 gate 1 K 14
+IT 1612 LFL 8 gate 3 K 13
+IT 2550 LFL 8 gate 5 K 17
+IT 3927 LFL 8 gate 6 K 13
+BEST n 32 LFL 8 gate 6

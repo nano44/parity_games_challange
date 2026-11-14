@@ -1,0 +1,3 @@
+START 0
+IT 543 SCORE 115 ({'moves': 1, 'span': 0, 'odiff': 1, 'h': 17, 'X': 13, 'lamw': 1, 'K': 6}, {'moves': 1, 'span': 0, 'odiff': 1, 'h': 17, 'X': 13, 'lamw': 1, 'K': 6})
+BEST 115 ({'moves': 1, 'span': 0, 'odiff': 1, 'h': 17, 'X': 3, 'lamw': 1, 'K': 4}, {'moves': 1, 'span': 0, 'odiff': 1, 'h': 17, 'X': 3, 'lamw': 1, 'K': 4})

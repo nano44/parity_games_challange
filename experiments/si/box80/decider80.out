@@ -1,0 +1,18 @@
+climb_s2_snapshot.json level 6: 48 of 127 j-windows failing
+  member 12: decider(s) ((12, 1), (13, 1)) (owner level(s) [6, 6], rank(s) [56, 69]) owner moves : 16 (window, member)
+  member 12: decider(s) ((13, 1),) (owner level(s) [6], rank(s) [69]) PARKED owner : 16 (window, member)
+  member 13: decider(s) ((13, 1),) (owner level(s) [6], rank(s) [69]) PARKED owner : 16 (window, member)
+  member 13: decider(s) ((7, 0), (13, 1)) (owner level(s) [3, 6], rank(s) [91, 69]) PARKED owner : 4 (window, member)
+  member 13: decider(s) ((13, 1), (25, 0)) (owner level(s) [6, 12], rank(s) [69, 98]) PARKED owner : 4 (window, member)
+  member 13: decider(s) ((13, 1), (26, 1)) (owner level(s) [6, 13], rank(s) [69, 105]) PARKED owner : 4 (window, member)
+  member 13: decider(s) ((13, 1), (32, 0)) (owner level(s) [6, 16], rank(s) [69, 107]) PARKED owner : 2 (window, member)
+  member 13: decider(s) ((13, 1), (51, 0)) (owner level(s) [6, 25], rank(s) [69, 97]) PARKED owner : 1 (window, member)
+  member 13: decider(s) ((13, 1), (28, 0)) (owner level(s) [6, 14], rank(s) [69, 108]) PARKED owner : 1 (window, member)
+climb_w1_P0.json level 6: 48 of 127 j-windows failing
+  member 12: decider(s) ((12, 0), (23, 1)) (owner level(s) [6, 11], rank(s) [49, 58]) PARKED owner : 16 (window, member)
+  member 12: decider(s) ((23, 1),) (owner level(s) [11], rank(s) [58]) PARKED owner : 16 (window, member)
+  member 13: decider(s) ((23, 1),) (owner level(s) [11], rank(s) [58]) PARKED owner : 16 (window, member)
+  member 13: decider(s) ((7, 0), (23, 1)) (owner level(s) [3, 11], rank(s) [101, 58]) PARKED owner : 8 (window, member)
+  member 13: decider(s) ((23, 1), (28, 1)) (owner level(s) [11, 14], rank(s) [58, 108]) PARKED owner : 4 (window, member)
+  member 13: decider(s) ((2, 1), (23, 1)) (owner level(s) [1, 11], rank(s) [106, 58]) PARKED owner : 2 (window, member)
+  member 13: decider(s) ((23, 1), (32, 0)) (owner level(s) [11, 16], rank(s) [58, 110]) PARKED owner : 2 (window, member)

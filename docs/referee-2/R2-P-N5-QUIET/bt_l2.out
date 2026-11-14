@@ -1,0 +1,8 @@
+QT-L1 old in L-1 1 | old in L-2 0 | new in L-2 1
+QT-L2 old in L-1 1 | old in L-2 0 | new in L-2 1
+QT-L3 old in L-1 1 | old in L-2 0 | new in L-2 1
+QT-L4 old in L-1 1 | old in L-2 0 | new in L-2 1
+QT-L5 old in L-1 1 | old in L-2 0 | new in L-2 1
+QT-L6 old in L-1 1 | old in L-2 0 | new in L-2 1
+L-2 fed893462811ea10d0b99622dcbb31f7b50b6d47 5131 | L-1 + QT-L1..QT-L6 == L-2: True
+L-2 newlines 1 parens 96 96 neg False pipes 0 guillemets 2 2

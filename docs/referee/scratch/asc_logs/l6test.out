@@ -1,0 +1,5 @@
+R6 old occurs 1 | new occurs 0
+parens 133 133 min depth 0 | newlines 1 | bars 0 | predicted L-6 sha1 a23c61d384036ce3fa771e27e175a8dbf2331658 5449 B
+a23c61d384036ce3fa771e27e175a8dbf2331658  ascL6.txt
+5449
+cmp L-6 (claude/l-new 2f4167cd) vs rebuild: EQUAL

@@ -1,0 +1,74 @@
+R-D7a-1 old count 1
+R-D7a-2 old count 1
+R-U127a old count 1
+R-U127b old count 1
+R-U127c old count 1
+R-U127d old count 1
+sha1 a8661c4b7998aafc02299c43dfe4e2c6320f73ee 9796 B; lines 1 bars 0 parens 273 273
+absent? RA-LOG 0
+absent? MW32_2, 445031d1 0
+absent? bounded multiplicity 0
+--- replace
+  OLD: and
+  NEW: as
+--- replace
+  OLD: RA-LOG / bounded multiplicity as
+  NEW: a
+--- replace
+  OLD: properties
+  NEW: property
+--- insert
+  OLD: 
+  NEW: da3308b5, 
+--- replace
+  OLD: FW16_2,
+  NEW: unit:
+--- replace
+  OLD: 94df42b7,
+  NEW: max
+--- replace
+  OLD: linear
+  NEW: over
+--- replace
+  OLD: RA
+  NEW: (v,
+--- replace
+  OLD: depth;
+  NEW: I,
+--- replace
+  OLD: MW32_2,
+  NEW: y)
+--- replace
+  OLD: 445031d1,
+  NEW: of
+--- replace
+  OLD: multiplicity
+  NEW: the
+--- replace
+  OLD: n,
+  NEW: number
+--- replace
+  OLD: L-SI
+  NEW: of
+--- replace
+  OLD: DATA
+  NEW: letters
+--- replace
+  OLD: cited);
+  NEW: of RA(y), box198/pair198.out maxRA);
+--- insert
+  OLD: 
+  NEW: (unit: y-tops of one (v, I, y), max over (v, I, y); split199.out maxc) 
+--- insert
+  OLD: 
+  NEW: (unit: distinct split pairs (u, b) of the y-tops of one (v, I, y), max over (v, I, y); split199.out maxSPL) 
+--- insert
+  OLD: 
+  NEW:  RA depth (longest RA chain) 4 / 8 / 12 / 16 on FW4/8/12/16_2 (REFEREE-2 36 R2-P-N5-SPLIT, claude/referee-2 4948ce5d, own engine; L-SI 47 box 90, claude/l-si 4ded1e8d) and the per-pair multiplicity n on MW(n) (L-SI 47 box 90, claude/l-si 2d0344d3, not re-run by the lane or a referee), DATA only;
+--- replace
+  OLD: 199)
+  NEW: 199; unit: states of the HOW3 run, max over the 28 frozen instances, split199.out T3; 199 on MW32_2)
+--- replace
+  OLD: 1-2,
+  NEW: 1-4,
+CMP-EQUAL

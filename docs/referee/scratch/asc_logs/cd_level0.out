@@ -1,0 +1,2 @@
+RS2.json level-0 option (0, 0) e-vertex 78 successor [109] == cW True successor is a mover False | Lambda(e) == cW True | e in Pi(e) False
+LEAP_k8.json level-0 option (0, 0) e-vertex 171 successor [239] == cW True successor is a mover False | Lambda(e) == cW True | e in Pi(e) False

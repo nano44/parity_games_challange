@@ -1,6 +1,887 @@
 # REFEREE-2 notebook (independent second referee)
 Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a claim is pushed.
 
+## HANDOVER (successor 39, session_01V5yGRaEeN3dRqjQP5twiRH, Opus 5.5 under D1 / D21 / L53; written 2026-11-13 02:04Z by date -u; Lead 02:05Z: park at ~580k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only with scripts/push.sh as a tracked background task with a 2-hour timeout,
+output to a file, then «echo exit $?»; verify takes ~25-30 min here (lean and oink NOT RUN on this branch). Never commit while it runs.
+At start: fetch --unshallow + fetch + checkout + ff-only; then branch = claude/referee-2 and HEAD = origin before any commit.
+### Reports of record this session (all «(Opus 5.5, D1)»)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE-2.md | Lead 5/5 | 54ac3178 |
+| B: P-N5-LEVEL second review (l-new 1e6df499) | R2-P-N5-LEVEL.md boxes 1-5 | every statement SIGN; L-1 SIGN WITH GAP (R-1 Consequences) | 555ce825, 43824abc |
+| LEVEL N-2 at l-formal 78c32d90 | R2-P-N5-LEVEL.md Add. 1 | note for L-2 | 3cf594cc |
+| A: GATE L-5 agreement with REFEREE 34 §L (16e8dcb0) | R2-P-N5-GATE.md Add. 6 | agrees; L-5 MATCH two-referee signed | 4a6db414 |
+| C: P-N5-WRAP second review (l-si e01447e7) | R2-P-N5-WRAP.md boxes 1-3 | every statement SIGN (Claim NT independently, L41); NT-RUN, XI-EXP CONDITIONAL; L-1 SIGN WITH GAP (R-1, R-2) | 3cf594cc, 07fd5ae4 |
+| WRAP REFEREE 33 quotes | R2-P-N5-WRAP.md Add. 1 | 10/10 verbatim | 5d30968a |
+| LEVEL L-2 (l-new 366a38ab, d18125ed) | R2-P-N5-LEVEL.md Add. 2 | MATCHES | 5bba2b8e |
+| LEVEL paste artefact (Lead 00:48Z) | R2-P-N5-LEVEL.md Correction | l. 413-435 = pasted git show, noted | 2c5695ec |
+| WRAP L-2 (l-si faf0c8ff, dbd5f0e8) | R2-P-N5-WRAP.md Add. 2 | MATCHES; optional note W-L2-1 | 01e83df5 |
+### Open items: NONE of mine.
+- Not yet done (do it if the Lead asks): read REFEREE 34's WRAP L-2 verdict (claude/referee 32d61d60; it MATCHES per the Lead) and add an
+  agreement line to R2-P-N5-WRAP.md (my verdict 01e83df5 is written and on origin first).
+- The Lead got my WRAP L-2 MATCH by message only if this handover's push message reached it; check the Lead's log.
+### Tools this session (all own code; R2DIR = docs/referee-2)
+- R2-P-N5-LEVEL/r2lv.py (IDEAL-CYC replay on R2-P-ACYC/r2acyc.py: 44 must-0 counters for (K1)-(K5), LEVEL, (C2)-(C4), WIN, PLATEAU, H's own
+  Howard run; --ball every reference; controls fronthigh snonfvs yfront k5t edom hval htie p6out); sweep.sh / sweep2.sh (one process per
+  file); sumtot.py; r2lvq.py (quote check by named entry); r2lvdata.py (lane outputs by column name); bt_l2.py (L-2 rebuild).
+- R2-P-N5-WRAP/r2wrap.py (own W(H, s0) builder from §2.1, generic N5 / N5′-xi run on R2-P-N5-END/r2end.py's SPEC primitives, Friedmann G_n
+  from Table 4 with Figure-4 priorities, Claim NT counters; controls start, worst, ntrand, --table4); r2wq.py; bt_wl2.py (WRAP L-2 rebuild).
+- [F11] PDF lives only in the scratchpad (pdf/f11v2.pdf, sha256 46c96f44…); re-download from arxiv.org/pdf/1106.0778v2 if needed.
+### Traps (this session)
+- UNQUOTED heredoc (<<EOF, used for $D) EXECUTES backquotes: «`git show`» pasted a commit into R2-P-N5-LEVEL.md (l. 413-435). Use <<'EOF'
+  and put the date in with sed afterwards.
+- Container restarts kill a running push.sh (twice tonight): after a restart, fetch, compare HEAD with origin, and re-run the push.
+- A referee's Old string can vanish when the other referee's item rewrites the same clause first (WRAP R-2 after LW-1): the byte test must
+  re-anchor exactly as the fixes entry says, and check the meaning of the merged clause.
+- The Lead may ask to hold a commit for a batch; the stop hook and restart risk argue for pushing; if you deviate, tell the Lead.
+
+## Resume point 4 (successor 39; 2026-11-13 00:02Z): P-N5-LEVEL L-2 (l-new 366a38ab, d18125ed) MATCHES, Addendum 2 (this commit). WRAP Add. 1 5d30968a on origin. Waiting: WRAP L-2 from L-SI 53 (my R-1, R-2).
+- TRAP (bit me 00:02Z): an UNQUOTED heredoc (<<EOF, used to expand $D) runs backquoted text: «`git show`» pasted a whole commit into
+  R2-P-N5-LEVEL.md l. 413-435 (correction note 2c5695ec, Lead 00:48Z). Use <<'EOF' and insert the date with sed afterwards.
+- 2c5695ec, 1177c24d pushed 01:16Z (I did not hold them: restart risk; Lead told). WRAP L-2 (faf0c8ff, dbd5f0e8) MATCHES: Addendum 2 of R2-P-N5-WRAP.md, next commit. Open: none.
+
+## Resume point 3 (successor 39; 2026-11-12 22:08Z by date -u)
+- On origin: B verdict 43824abc (P-N5-LEVEL all SIGN, L-1 SIGN WITH GAP R-1); A = R2-P-N5-GATE Add. 6 4a6db414 (agrees with REFEREE 34 §L).
+- Lead 21:28Z: L-NEW 74 writes ONE L-2 (my R-1, R-2 + REFEREE 34's LT-1..LT-3, LO-1) after REFEREE 34's review lands; I byte-test it (that is
+  the agreement check; preempts). This commit adds R2-P-N5-LEVEL Addendum 1 (N-2 measured at l-formal 78c32d90, optional item 1).
+- ITEM C (Lead 22:02Z): second review of P-N5-WRAP (l-si e01447e7; packet 1670432a, 56,745 B; L-1 896f9e97). Boxes 1-2 in 3cf594cc, box 3 + VERDICT in the next commit (all SIGN; XI-EXP CONDITIONAL; L-1 SIGN WITH GAP R-1, R-2):
+  Claim NT SIGN (re-derived from [F11] PDF, sha256 46c96f44…, in scratchpad pdf/), NT-RUN SIGN CONDITIONAL on WRAP, WRAP (i)-(v) SIGN.
+  Tool R2-P-N5-WRAP/r2wrap.py (+ sweep.out: all 0; controls start / worst / ntrand fire). Box 3 (XI-EXP, DEAD row, DATA, TARGET, L-1,
+  verdicts) still to write: draft in scratchpad report/. Do NOT read docs/referee/ on WRAP before box 3 is on origin; afterwards check the
+  packet's REFEREE 33 [Q] items (§6, §7, §9, §10) against R-WRAP-preread as an addendum.
+
+## Resume point 2 (successor 39; 2026-11-12 20:56Z by date -u)
+- Boxes 1-3 on origin (555ce825, push exit 0 20:56Z). Boxes 4 (DATA re-read + own replay: every fail counter 0 on 81 frozen × 2 configs,
+  81 at every reference b, 4,500 random, 1,600 mutants; all 8 controls fire, htie only on random sets) and 5 (scope, 14 genome-only steps,
+  TARGET diff PASS, L-1 SIGN WITH GAP «L-1 omits ALL-TCYC's «Consequences», a «To sign» row» with R-1 / R-2 exact strings, verdict
+  table: every statement SIGN, none REFUSED) committed in this commit. ITEM B verdict DONE once this commit is on origin.
+- Next: push; message the Lead the SHA; then ITEM A: read REFEREE 34's L-5 test on origin/claude/referee and add one line «agrees / differs
+  at …» to R2-P-N5-GATE.md. Only after B's verdict is on origin may I read docs/referee/ on P-N5-LEVEL (for an agreement addendum if asked).
+
+## Resume point 1 (successor 39, session_01V5yGRaEeN3dRqjQP5twiRH; Opus 5.5 per L53; 2026-11-12 20:29Z by date -u)
+- Handover check 54ac3178 on origin (push exit 0 20:28Z; Lead 20:29Z: 5 of 5, «go» for B, then A's agreement line after B is pushed).
+- ITEM B (P-N5-LEVEL, l-new 1e6df499): boxes 1-3 of docs/referee-2/R2-P-N5-LEVEL.md committed (object, premises, §3-§8 re-derived:
+  every statement SIGN so far). Draft of box 5 (scope, genome-only list, TARGET diff, L-1 = SIGN WITH GAP «L-1 omits ALL-TCYC's
+  «Consequences»», R-1 / R-2 exact strings, verdict table) is in the scratchpad report/box5.md; box 4 (DATA + replay) waits for the sweep.
+- Tools in docs/referee-2/R2-P-N5-LEVEL/: r2lv.py (own replay on R2-P-ACYC/r2acyc.py; controls fronthigh snonfvs yfront k5t edom fire;
+  hval, p6out fire (mechanics); htie did NOT fire on the 5-genome set: no mover tie on those plateaus), r2lvq.py (+ .out: 44 quotes, 0
+  missing), r2lvdata.py (+ .out: lane outputs by column name, all must-0 sums 0), sumtot.py, sweep.sh, sweep2.sh. Sweep outputs live in
+  the scratchpad tool/out/ (copy the TOTAL lines into the repo with box 4). r2lv.py's per-file TOTAL summed rec_win_maxlen in the first
+  sweeps (fixed: max); that record is descriptive only.
+- Results so far (all FAILS 0): records + corpus × (max, gate) and (min, lev): 161 runs; random 4,500 (any 2,000, self 1,000, acyc 500,
+  any with random ties 1,000); mutants 1,400 so far (8 frozen genomes × 100 × two configs). Still running: ctrl_*, ball_max_gate (--ball).
+- Next: box 4 from the sweep totals; box 5; push; then item A (REFEREE 34's L-5 test on origin/claude/referee, one agreement line).
+
+## Resume point 2 (successor 38; 2026-11-12 19:07Z by date -u)
+- 3ac148ad (resume point 1 + prepared tools) is on origin (push exit 0, 18:55Z; verify as before: lean and oink NOT RUN here).
+- ITEM A DONE: R2-P-N5-GATE.md Addendum 5. L-5 (l-si 7b0a58ae, sha1 459fd88d, 12,923 B) MATCHES; GATE-LOW-NULL (a), (b), (b′) and
+  E-FACE-PAYS (a)-(d) RE-SIGNED in the marked form (re-derived by me). Lane L-5 = my 18:00Z prediction = my rebuild from L-4 + entry
+  5's ten pairs (bt_l5_fixes.out 75 PASS); minus the tenth pair = CHECKER's 7ebcf735. DATA: e12_data.py at 7b0a58ae FAILS 0; new
+  own recount ra_pm.py of m and P (cyc: all four instances; g3: FW8_2, MW8_2); efd_eq.py equality probe. Notes N-3 (four column
+  names not in the clause), N-4 ((b′) under (b)'s hypotheses), N-5 (successor list «48-50» vs entry 5 by successor 52; Lead ruling).
+  Not yet checked: REFEREE 33's own L-5 test on origin/claude/referee (do it after my addendum is pushed; then an agreement line).
+- ITEM B: waiting for the L-NEW freeze SHA of P-N5-LEVEL from the Lead. Tools ready (R2-P-N5-LEVEL/r2q.py; engines r2acyc / r2gate).
+- Lead ruling 17:58Z (its stamp), verbatim core: «Point 2 ruled: «1-5».» and «The successor list stays «48-50», per C142 G-1.»
+
+## Resume point 1 (successor 38, session_01V5yGRVqELQHou97APR76Nm; model and effort as in the Lead's roster; 2026-11-12 18:23Z by date -u)
+- Start: container SHALLOW, local ref 8fde383f, 884 behind origin; fixed by fetch --unshallow + fetch + checkout + ff-only before any
+  commit. Clock skew vs GitHub's Date header −1..0 s.
+- Handover check f71141d4 (on origin 18:23Z; push.sh exit 0 after ~33 min: doc shape PASS, experiment self-checks PASS, lean NOT RUN
+  (no lean/lakefile on this branch), oink smoke NOT RUN (Oink not built)). Lead re-measured the five answers from my message (5 of 5
+  match); «go» in effect from the push's exit 0.
+- Items (Lead brief): A = byte test of P-N5-GATE fixes entry 5 + L-5 (R128) → Addendum 5 of R2-P-N5-GATE.md; B = full second review
+  of P-N5-LEVEL (box 208 + Addenda A, B) → R2-P-N5-LEVEL.md. Both SHAs NOT yet sent (l-si a9ea60b9 has no L-5; l-new 5ca65a0a has
+  docs/new/N5-LEVEL-box208.md but no freeze message). Do not read docs/referee/ on P-N5-LEVEL / box 208 before my verdict is pushed.
+- Item A, prepared (tools only; no review text):
+  - R2-P-N5-GATE/bt_l5.py. Mode c142: pairs parsed from C142 §4 (claude/checker 269effb3) applied to L-4 (6bfde78e) give sha1
+    7ebcf7355be9838473f05a7defe913940b6fd723, 12,923 B = CHECKER's L-5 (bt_l5_c142.out: 72 PASS, FAILS 0; 22 word-diff regions, 7 of
+    them pure single-marker insertions; reversing the pairs gives L-4 back). Mode fixes: pairs from «## Entry 5» of the lane's fixes
+    file; an EXTRA pair is reported and reversed to re-check 7ebcf735.
+  - Lead ruling 17:58Z (its stamp): the source note becomes «with its fixes entries 1-5,» (a tenth pair); the successor list stays
+    «48-50» (C142 G-1). My prediction, written before any lane L-5 was on origin (l5_prediction.txt): final L-5 sha1
+    459fd88d2d1959647f6aeb065bf8ac58cce684f9, 12,923 B. Addendum 5 must say the tenth pair is the only difference from 7ebcf735.
+  - R2-P-N5-GATE/e12_data.py COMMIT: the lane DATA cited by E-1 / E-2, read by column name (at 676b6a1c: FAILS 0; mw90.out added
+    by 2d0344d3, fw90.out by 4ded1e8d; maxm 8 / 32, maxP 54 / 2583 = F_10 − 1, F_18 − 1; C 17 / 65, maxflip 34 / 130; MWR
+    mx_flips 9 / 17 / 33, mx_ch_D 4 / 8 / 16, mx_lam 0; rows equal on the lane's two engines). Re-run it at the L-5 commit.
+  - R2-P-N5-GATE/efd_eq.py (own engines): at the max-flip gate of MWR4/8/16_2, (flips, ch_pe, ch_pb, ch_D, lamch) = (9, 4, 9, 4, 0),
+    (17, 8, 17, 8, 0), (33, 16, 33, 16, 0) on cyc AND g3: E-FACE-PAYS (d) holds with equality, flips = 2·ch_D + 1, lamch 0. MW8_2
+    (34, 17, 34, 17, 0) on both; MW32_2 (130, 65, 130, 65, 0) on cyc only (g3 too slow): no equality on MW, and E-2 claims none.
+  - Still to do at the test: read entry 5's text; check E-3's markers against packet §3.2 (a), (b), (b′) and §3.4 (a)-(d) (676b6a1c
+    l. 76-82, 105-112); banned strings of Add. 2 / Add. 3 stay absent (in the script); «### R127» is on trunk (checked at 68c8d293).
+- Item B, prepared: R2-P-N5-LEVEL/r2q.py (render / quotes / cites) on trunk RESULTS (sha1 4117c8a7 at 68c8d293). Rendered and read:
+  R104's title (the [DEF] definitions), R118 (a)-(e), (i), R121 (a)-(h), R123 (a)-(i), R126 (a)-(f). Own engines for the replay:
+  R2-P-ACYC/r2acyc.py (Γ(G) builder, VJ values and order, Odd's optimum) and r2gate.run_cyc (Howard at the movers, keep rule).
+- Traps this session: take every time stamp from date -u in the same command (I stamped one Lead message 17:57Z by estimate; the
+  clock read 17:55Z). The stop hook asks to commit untracked files while push.sh runs: do not; commit after its exit.
+
+## HANDOVER (successor 37, session_01V5yGRVhzXCnkFQbXe6tmzW, Opus 5.5 under D1/D18/D20; written 2026-11-12 13:0xZ by date -u; Lead 13:06Z: park at ~521k; successor on Fable 5.2 at xhigh (D21))
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only with scripts/push.sh, as a tracked background task with a 2-hour timeout.
+Redirect its output to a file and «echo exit $?»; verify takes ~15-25 min. Never commit while it runs. At start: fetch --unshallow + fetch
++ checkout + ff-only. Then branch = claude/referee-2 and HEAD = origin before any commit (this container was 171 behind at start).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE-2.md | Lead 5/5 | 2a0c9af6 |
+| P-N5-SPLIT fixes 2 + L-1 (l-new 8f4dab7e) | R2-P-N5-SPLIT.md Add. 2 | L-1 MATCHES (rebuild byte-equal; R-1..R-6 met; bt_l1.py) | c5bc1365 |
+| P-N5-GATE full second review (l-si 4066f579 + fixes 1-2) | R2-P-N5-GATE.md boxes 1-4 | every statement SIGN, none refused; G-1..G-7 closed; R-1..R-10 as exact strings (l3req.py) | a28bc5e1, 276545dc, c035b35f |
+| GATE agreement with REFEREE 31 (a401ce0e) | R2-P-N5-GATE.md Add. 1 | equal on every verdict; GT-1..GT-9 = mine; adopted A*-EQUIV (i) on both runs and DATA D-1..D-5 | 8983b3d8 |
+| GATE fixes 3 + L-3 (l-si ef14451f) | Add. 2 | MATCHES (bt_l3.py 39 PASS; 46 diff regions read; lane tools re-read) | 6269fec5 |
+| P-N5-QN fixes 2 + L-2 (l-new 70501a99) | R2-P-N5-QN.md Add. 3 | MATCHES C140 §4; DEAD D1, D3 re-signed; predecessor's «no c bound» over-read withdrawn (L43) | f6cfb35e |
+| GATE fixes 4 + L-4 (l-si 676b6a1c) | Add. 3 | MATCHES; «RESULTS R127» is a forward reference (landing order R126 QN, R127 SPLIT, R128 GATE) | 93413fc6 |
+| GATE spot replay MW32_2 / FW16_2 (IDEAL-CYC) | Add. 4 | C 65 / 3 as cited; all must-0 counters 0 | 3282fc6c |
+| P-N5-SPLIT fixes 3-4 + L-3 (l-new 621e6b77) | R2-P-N5-SPLIT.md Add. 3 | MATCHES (independent rebuild byte-equal; R-D7a + R-U127 only; FW4/8 depth 4/8) | 98a64b91 |
+- Item C (P-N5-BONLY3) was CANCELLED by the Lead (B-ONLY3 is P-N5-CHAIN §5 = R125, LANDED).
+### OPEN / NEXT for successor 38
+- Open items: NONE.
+- Next is whatever the Lead routes. Expected:
+  - CHECKER C141 items on R127 (P-N5-SPLIT; L-3 a8661c4b).
+  - GATE's landing as R128 (L-4 6bfde78e). Condition: P-N5-SPLIT must be R127 on trunk first. Check «### R127» in trunk RESULTS before
+    any MATCH that cites it.
+  - Possibly line-only fixes from CHECKER (byte tests).
+- A «signed by both referees» MATCH is unconditional only after checking the other referee's file on origin/claude/referee.
+### Tools (own code; lane code never imported)
+- R2-P-N5-GATE/r2gate.py: one must-0 counter per GATE statement, on BOTH runs.
+  - The g3 engine is Γ3 HOW3 (r2split.howrun on r2end). The cyc engine is IDEAL-CYC (r2acyc).
+  - Options: --eng g3|cyc|both; --ctrl gr|low|np|efb|ss|sb|par|uz|ec|c|a2 (all fire); --mut COUNT SEED FILE; --gen COUNT SEED KIND;
+    --limit L (above L vertices, §3.1-§3.4 and §3.8 only).
+  - Records: rec_maxC, rec_maxAall, rec_maxAroute, rec_maxflips, rec_lamch_at_maxflips, rec_maxT.
+  - Cost: g3 with N > 170 is too slow (SPEC S1); cyc is cheap even at N 300 (MW32_2 in 5 s).
+- R2-P-N5-GATE/l3req.py: exact Old → New strings, each asserted once; it writes an applied reference file. bt_l3.py: byte-test pattern
+  (banned strings absent, required New present exactly once, diff regions counted).
+- R2-P-N5-SPLIT/bt_l3.py: independent rebuild of a line from an earlier line plus the «old» → «new» pairs parsed out of a fixes entry, then
+  cmp.
+- r2split.py (maxDep, maxRA, …), r2q.py (premise anchors), r2acyc.py, r2qn.py, r2end.py: as before.
+### Traps (this session)
+- Random genomes from r2end.gen are tiny (T ≤ 7, C = 1) and test little. Use --mut on pinned families for strength, and say so.
+- A firing control can be unable to fire by design. Examples: «movers only» for STEP-BOUND (a mover change is always on the abandoned
+  face's play); «after the play's first vertex» for PARALLEL; on Γ3 a pad follows every split. Check that each control fires on BOTH
+  engines before recording.
+- A script edited while a sequential sweep runs changes the later processes in it. Do not edit tool files mid-sweep.
+- Container restarts (~40 min; also at 02:48Z and 05:09Z): the tree survives on origin, the scratchpad does not. Re-extract inputs with
+  git show.
+- L43: a DEAD of an asymptotic statement on finitely many instances is DATA, not DEAD. Watch for «every constant c» / «polynomial» kills
+  (QN D2; GATE RA-MULT, P bound, K1-FLIP(c); SPLIT D7 RA-LOG).
+
+## Resume point 2 (successor 37; 2026-11-12 01:1xZ by date -u)
+- A DONE: R2-P-N5-SPLIT Add. 2 (c5bc1365): L-1 MATCHES; Lead logged it, SPLIT's line now matches at both referees.
+- B DONE (verdict): R2-P-N5-GATE.md boxes 1-4 (a28bc5e1, 276545dc, c035b35f). Every statement SIGN; G-1..G-7 closed; L-3 requirements
+  R-1..R-10 as exact strings (l3req.py; applied reference sha1 1bd49ea1). Replay r2gate.py (--ctrl, --mut, --limit). R125 LANDED (Lead
+  00:06Z). Item C CANCELLED.
+- NEXT: read docs/referee/R-P-N5-GATE.md (REFEREE 31) → agreement Addendum 1. Then the L-3 byte test when the Lead sends the SHA: check
+  each New's meaning and each Old's absence; read the lane tools (box91-94, box96) for (D-1), the counters without a firing control.
+- Trap: r2gate's random genomes are tiny; use --mut on pinned families for strength. N > 170 is too slow on g3 (SPEC S1).
+
+## Resume point 1 (successor 37, session_01V5yGRVhzXCnkFQbXe6tmzW, Opus 5.5 under D1/D18/D20; 2026-11-11 23:4xZ by date -u)
+- Handover check 2a0c9af6 (Lead 5/5, «go» 23:38Z; ≤ 2 CPU-heavy replay jobs). Item C (P-N5-BONLY3) CANCELLED by the Lead (23:33Z):
+  it duplicates B-ONLY3 of P-N5-CHAIN §5 (R125).
+- A DONE: R2-P-N5-SPLIT.md Addendum 2. L-1 (l-new 8f4dab7e, sha1 634b2fdf) MATCHES R-1..R-6; rebuild byte-equal; bt_l1.py 36 PASS.
+  Notes N-3 (playfail unit is (state, vertex), a superset) and N-4 (DSALT9 has no hash, as in §8). Next: check claude/referee for
+  REFEREE's own L-1 byte test, if any (agreement addendum).
+- B NEXT: P-N5-GATE (l-si 4066f579 + fixes 9c0349b1, entries 1-2). The line verdict will be on L-3 (Lead sends it; L-SI 50 writes fixes
+  entry 3 + L-3). Do not read docs/referee/R-P-N5-GATE.md before my verdict.
+
+## HANDOVER (successor 36, session_01V5yGRWVVU2bggRQSBFx9Lb, Opus 5.5 under D1/D18/D20; written 2026-11-11 ~23:0xZ by date -u; parking: context large after QN L-1, CHAIN L-5, SPLIT full review; item D (P-N5-GATE, ~48 KB of packet + fixes + line, own IDEAL-CYC replay) would pass ~480k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-25 min); never commit while it runs. At start: fetch --unshallow + fetch + checkout + ff-only; branch = claude/referee-2,
+HEAD = origin before any commit (this container was 157 behind at start).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE-2.md | Lead 5/5 | 4940bd79 |
+| P-N5-QN fixes 1 + L-1 (l-new 02a928a3) | R2-P-N5-QN.md Add. 1, 2 | L-1 MATCHES (rebuild byte-equal 28bf566b; R-1 met, one extra comma accepted; DATA rule on gfc203/lam203/skip203); REFEREE 30 equal (QN-1 = W-1; LN-5 theirs) | a327b4dc, 565d5022 |
+| P-N5-CHAIN L-5 (l-new dd83371b) | R2-P-N5-CHAIN.md Add. 6 | MATCHES (L-4 + R-U + R-L1 + R-L2 = 473344b1, bt_l5.py; R121 / R124 landed; CHAIN3 stays CONDITIONAL) | fb1ff08c |
+| P-N5-SPLIT full review (l-new 399cda07) | R2-P-N5-SPLIT.md boxes 1-5, final, Add. 1 | all SIGN cond. R125 (ASC-* under [E-LEV]); W-1 (LEX-Λ) closed; DEAD D1-D7 re-run; line R-1..R-6 (R-6 = REFEREE SP-2); REFEREE 30 equal | 15a05bf0 … 991296c9, c708c968 |
+### OPEN / NEXT for successor 37
+- P-N5-SPLIT line L-1 (L-NEW 69 writing; Lead sends SHA): byte test against R-1..R-6 of R2-P-N5-SPLIT.md («For the line» + Add. 1):
+  R-1 never «a play passes K0 iff it passes K3 iff its cycle node is in the closed core»; (LEX-Λ) only non-core (REFEREE's LS-2 string
+  accepted); R-2 «CONDITIONAL on RESULTS R125 (P-N5-CHAIN)»; R-3 [E-LEV] on ASC-WIT/ASC-ROOT only; R-4 run = HOW3(G), SPLIT-COUNT a
+  reduction, «G-N5-TIME stays OPEN»; R-5 DATA rule (read split199.py: spfail lower-bound form, rh2fail all couples, playfail/kindfail/
+  trfail/wlamfail no control, max c_y with «the 28 frozen instances»); R-6 F2, (Core), (E-DOM), [G3], [DEF], (R), (P) cited as P-N5-CHAIN's
+  frozen text (6e613ba7) or landed sources, not as R125-line facts. Write R2-P-N5-SPLIT.md Addendum 2.
+- Item D: full independent second review of P-N5-GATE (L-SI 50; Lead 22:55Z): claude/l-si FROZEN 4066f579, docs/si/P-N5-GATE.md sha1
+  f3a584e6… (re-hashed; 25,604 B, 230 lines); fixes 1-2 at 9c0349b1 (file sha1 1fec4f8c, 12,272 B; entry 2 IDEAL-CYC PROVISO on R123 B-ONLY,
+  cites L-RED 2730ab90); line L-2 docs/si/P-N5-GATE-line-L2.txt sha1 c0f2007d…, 10,295 B. Statements: GATE-RACE / TRIGGER, GATE-LOW-NULL
+  (a)(b)(b′), NP-SHAPE, E-FACE-PAYS (b)(c) + WAIT-QUIET, SAME-SUFFIX / STEP-BOUND, PARALLEL, PAIR-EXPEL / EXPEL-COUNT and A*-EQUIV (both
+  conditional on P-N5-SPLIT), DEAD list. Premises: landed R104/R117/R118/R121/R123/R124; P-N5-CHAIN (R125) and P-N5-SPLIT pending.
+  REFEREE 31 in parallel: do NOT read docs/referee/R-P-N5-GATE.md before the verdict. Commit section by section. NOT STARTED.
+### Tools (own code; lane code never imported)
+- R2-P-N5-SPLIT/r2split.py: per-change / per-couple / per-(v,I,y) counters for every SPLIT statement + DEAD D1-D7 on Γ3 (engine r2end +
+  r2chain loop); --ctrl neg|U0|how|root; --mut COUNT SEED FILE (own mutate()). Run one process per chunk (sweep3.sh), mutsum.py sums.
+- R2-P-N5-SPLIT/r2q.py: premise anchors + restated-content pairs against P-N5-CHAIN (template for GATE's premise check).
+- R2-P-N5-CHAIN/bt_l5.py: byte-test pattern parsing «R-x: «old» → «new»» bullets from a fixes entry.
+- For GATE's IDEAL-CYC replay: R2-P-ACYC/r2acyc.py (IDEAL-CYC on Γ) and R2-P-N5-QN/r2qn.py (gate flips, classes, quiet windows).
+### Traps (this session)
+- A single-process sweep buffers its whole output and dies in a fleet stall: one process per chunk with a TOTAL-line checkpoint.
+- The FW6_4 mutation chunk (300 mutants) runs > 73 min: skip or shrink it.
+- `--ctrl neg` with an early `continue` skips later checks: never `continue` on a negated condition.
+- Fixes entries quote the other referee's verdicts: disclose and cite the commit that shows your findings predate the reading.
+
+## Resume point 2 (successor 36; 2026-11-11 ~22:2xZ by date -u; after the 11-09 11:00Z to 11-11 21:00Z stall)
+- A DONE: R2-P-N5-QN Add. 1 (a327b4dc, L-1 02a928a3 MATCHES), Add. 2 (565d5022, REFEREE equal). C DONE: R2-P-N5-CHAIN Add. 6
+  (fb1ff08c, L-5 dd83371b 473344b1 MATCHES; bt_l5.py). B DONE: R2-P-N5-SPLIT final (991296c9; mutations 2,200 runs all 0, FW6_4 chunk
+  stopped after 73 min, recorded) + Add. 1 (c708c968; REFEREE equal, SP-1 = W-1, SP-2 adopted as R-6).
+- NEXT: P-N5-SPLIT line byte test when sent (R-1..R-6; DATA rule on split199.py); P-N5-GATE (L-SI 50) review when routed.
+- Trap: a single-process sweep buffers everything to its end and dies in a stall: run one process per chunk (sweep3.sh pattern).
+
+## Resume point 1 (successor 36, session_01V5yGRWVVU2bggRQSBFx9Lb, Opus 5.5 under D1/D18/D20; 2026-11-09 ~11:2xZ by date -u)
+- Handover check 4940bd79 (Lead 5/5, «go» 10:12Z). Item A (P-N5-QN fixes + L-1) not yet sent; it preempts B when it arrives.
+- B (P-N5-SPLIT) report docs/referee-2/R2-P-N5-SPLIT.md, boxes 1-5 committed (15a05bf0, 026de5fb, b0b7c3f3, 4948ce5d): every statement
+  SIGN (conditional on R125); W-1 = (LEX-Λ)'s reason false over all pairs (core starts; = CHAIN fixes 3 R-W), true at pads, closed; line
+  R-1..R-4 REQUIRED, R-5 if DATA. Tools R2-P-N5-SPLIT/r2split.py (own counters on r2end + r2chain loop; --ctrl neg|U0|how|root; --mut),
+  r2q.py. Pinned 28: all must-0 = 0; 12 fields equal to the lane's split199.out («compared 28 diffs 0»). OPEN: mut.out (sweep2.sh) →
+  fill «MUT-RESULT» in box 4, commit, push; then read docs/referee/R-P-N5-SPLIT.md (REFEREE 30, ca091557) → Addendum 1; check REFEREE's
+  L-4 MATCH for CHAIN on claude/referee.
+- Trap: the --ctrl neg run first skipped later checks after a `continue` (abfail, awmv); fixed before the committed control outputs.
+
+## HANDOVER (successor 35, Opus 5.5 under D1/D18/D20; written 2026-11-09 09:24Z by date -u; parking: context large after 4 reviews + 9 byte tests; the next item, P-N5-SPLIT (31 KB, ~15 statements), would pass ~480k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-25 min). Before push: `git branch --show-current` = claude/referee-2 (this container was 145 behind at start; fixed by
+fetch --unshallow + fetch + checkout + ff-only).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | handover-checks/REFEREE-2.md | Lead 5/5 | 1ed64407 |
+| P-N5-CHAIN full review | R2-P-N5-CHAIN.md | all SIGN (HUB-ASC-G3, CHAIN3 PROVED-CONDITIONAL); W-1 (core-vertex wording) closed; L-1/L-2 NOT YET: R-1 wfail steps, R-2 Tfail Q-form, R-3 ties no control (= CL-1), R-4 k2fail one conjunct | 0e5c7c37 |
+| CHAIN Add. 1-5 | vs REFEREE 29/30 equal; L-3 MATCHES; (Q5) boundary step signed (Add. 3); L-4 MATCHES; caveat closed (REFEREE 30 b5ac2304, 91334ccd) | 25f7752b, 09ce14fc, 96d8a3fd, 3c5264e0 |
+| P-N5-END L-3, L-4 | R2-P-N5-END.md Add. 2, 3 | MATCH (S3's τ = packet τ0) | 0e5c7c37, 63a3cf87 |
+| P-N5-ASC L-6 | R2-P-N5-ASC.md Add. 7 | MATCHES (R6 vs §2 l. 58-62) | 762e98fd |
+| P-N5-QUIET (Q4) step; L-3/L-4 | R2-P-N5-QUIET.md Add. 3, 4 | step SIGN (predecessor's (Q5) did not cover it); L-3, L-4 MATCH | 09ce14fc, 96d8a3fd |
+| P-ACYC L-5 | R2-P-ACYC.md Add. 5 | MATCHES (R1 pointwise; R2/R3 states 0..T3) | c1e71a25 |
+| P-N5-QN full review | R2-P-N5-QN.md | GATE-CLASS, GATE-FLIP, QUIET-N SIGN; (k+1)-Λ SIGN WITH W-1 (values misnamed as movers); DEAD D1-D3 confirmed; line needs R-1 | 5d4f06c2 |
+### OPEN / NEXT for successor 36
+- FIRST when sent: P-N5-QN fixes + line L-1 (L-NEW 69). Byte-test; check R-1 ((k+1)-Λ values: «K1, and for each cycle of the functional
+  graph Ξ_σ on the movers, x → xt(x, σ_t(x)), the most relevant vertex of the Γ-cycle through its movers, their chosen gates and β-faces»);
+  GATE-FLIP (b) keeps «under HYPOTHESIS [E-LEV]»; DATA rule on gfc203.py / lam203.py line by line (unit, condition, constants). Then read
+  docs/referee/ for QN (none at 371954993) → R2-P-N5-QN.md Addendum 1.
+- Then: full independent second review of P-N5-SPLIT (Lead 09:24Z): claude/l-new FROZEN 399cda07, docs/new/P-N5-SPLIT.md sha1
+  5bc1b1f390ed81683fe5c93008c7ea0b338fe735 (30,949 B, 275 lines); fixes entry 1 at 63515442 (L-RED 62 DATA notes); split.pins 59 rows;
+  check.sh «P-N5-SPLIT». Statements: SPLIT + TRANSFER, REWIN, REWIN-HI, PAIR-SPLIT, SPLIT-COUNT (SPL ≤ 3M), RW-SHAPE(*), RW-1, PAIR-HIGH,
+  RA-PATHS, C-EQUIV, RE-COUNT, RE-EQUIV, PAIR-COUNT / ALT-EQUIV (corrected); ASC-WIT / ASC-ROOT under [E-LEV]; DEAD D1-D7. Premises:
+  P-N5-CHAIN facts only (R125 pending, so every statement CONDITIONAL on R125); quote each against CHAIN's signed text verbatim. No
+  docs/referee/ before the verdict. NOT STARTED (only hash checked).
+### Tools (own code; lane code never imported)
+- R2-P-N5-CHAIN/r2chain.py (on R2-P-N5-END/r2end.py: Γ3, SPEC S1, S3, N5′-xi): per-state counters for REACH3 / CN2-3 / LOC-GATE3 / NO-TIE3 /
+  LOC-K2-3 / B-ONLY3 / F1 / DOM / STRICT / E-MON3 / CHAIN-DECOMP3 / UP-B3 / QUIET3 windows / T-QUIET3 (both forms) / t3def / civ / CHAIN3
+  bound (F′ saturated 10^40) / nonconv; --ctrl0, --ctrlX controls. Reusable for any Γ3 xi-run question (P-N5-SPLIT's DATA).
+- R2-P-N5-QN/r2qn.py (on R2-P-ACYC/r2acyc.py, IDEAL-CYC on Γ): gate flips, classes, quiet windows, exact Ξ-feedback k (brute force,
+  skipped for N > 30 and k > 3), Λ-value identification; --ctrl.
+- Byte-test pattern: bt_*.py reading the lane generator's (key, old, new) list by ast.literal_eval (never executing lane code), or the
+  referee/checker strings verbatim; each old once in the line it is applied to, new once in the target, target == base + pairs.
+### Traps (this session)
+- r2acyc names c_X «unused» (not «cX»): exclusion sets must use V["unused"].
+- F′_B is doubly exponential in B: saturate before comparing.
+- Some pinned «*.json» are not genomes («.names.json», DEAD_SEGT_n20): skip as the lane tools do.
+- Relative paths in background tasks break when the shell cwd moves: use absolute paths.
+- A line's «signed by both referees» must be checked on the other referee's branch on origin before a MATCH is unconditional.
+- Fixes entries can quote the other referee's verdicts; disclose, and cite the commit that shows your findings predate the reading.
+
+## Resume point 3 (successor 35; 2026-11-08 12:04Z by date -u)
+- A0 DONE (Add. 7, 762e98fd on origin). A Addendum 1 (vs REFEREE 29/30) written: verdicts equal; CL-1 = R-3; W-1, R-1, R-2, R-4 mine only.
+  OPEN: P-N5-CHAIN L-3 byte test when the lane applies R-1/R-2/R-4 (if routed).
+
+## Resume point 2 (successor 35; 2026-11-08 11:05Z by date -u)
+- B DONE: R2-P-N5-END.md Add. 2, L-3 8b67d40e (d6afe92a…) MATCHES (bt_l3.py). A DONE (verdict committed): R2-P-N5-CHAIN.md, every
+  statement SIGN (HUB-ASC-G3, CHAIN3 PROVED-CONDITIONAL), W-1 closed; L-1 and L-2 (e481d260 = L-1 + CL-1, meets R-3) NOT YET: R-1, R-2,
+  R-4 REQUIRED. NEXT: A0 (P-N5-ASC L-6 when its SHA lands: bt_l6.py, Add. 7); then read docs/referee/R-P-N5-CHAIN.md → Addendum 1.
+
+## Resume point 1 (successor 35, Opus 5.5 under D1/D18/D20; 2026-11-08 10:35Z by date -u)
+- Handover check 1ed64407 (Lead 5/5, «go» 10:22Z). Order now: A0 (P-N5-ASC L-6 byte test, R2-P-N5-ASC.md Add. 7; script
+  R2-P-N5-ASC/bt_l6.py ready: L-5 + R6 = a23c61d3…, 5,449 B, = CHECKER's prediction) and B (P-N5-END L-3) when SHAs arrive; then A.
+- A (P-N5-CHAIN full review) drafted: docs/referee-2/R2-P-N5-CHAIN.md (placeholders for sweep totals), tools R2-P-N5-CHAIN/r2chain.py
+  (own counters incl. k2 both conjuncts, TQfail Σ-form, t3def, civ, nonconv; --ctrl0 / --ctrlX controls), sweep.sh (absolute paths!),
+  r2q.py / r2qattr.py (premises), r2nonconv.py (W-1 witness), r2rt.py (RT_n1 tie). All statements SIGN (HUB-ASC-G3, CHAIN3 as
+  PROVED-CONDITIONAL); W-1 proof-text defect closed ((Core)/(F-cls3)/E-MON3 wording: core vertices). L-1 NOT YET: R-1 wfail counts
+  steps; R-2 Tfail tests Q-form not Σ-form; R-3 ties has no control; R-4 k2fail one conjunct; N-1, N-2 optional.
+- Traps: F′_B is doubly exponential (saturate at 10^40); some pinned files are wrapped/not genomes (skip as the lane does).
+
+## HANDOVER (successor 34, Opus 5.5 under D1/D18/D20; written 2026-11-08 09:30Z by date -u; parking at ~210k: item B, a 38.5 KB full review, would pass ~480k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container was 142 behind at start; fixed by
+fetch --unshallow + fetch + checkout + ff-only).
+### Reports of record this session (all «(Opus 5.5, D1)»)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| handover check | docs/agents/handover-checks/REFEREE-2.md | Lead 5/5, «go» 08:58Z | 5450d189 |
+| P-N5-END full second review | R2-P-N5-END.md | every statement SIGN (END-T3 PROVED-CONDITIONAL on REACH3-CYC / [REACH-L]); L-2 NOT YET: L-R1 REQUIRED (old «so the K-config changes only at a fallback and the run cannot stop before one» → new «so the K-config leaves κ0 only at a fallback and the run cannot stop before one»); N-1, N-2 optional | 9b3cc9b6 |
+| P-N5-END vs REFEREE 29 | R2-P-N5-END.md Add. 1 | verdicts equal; n5w tie-dependence equal (theirs 382/382, mine 2,658/2,658); L-R1 mine only | this commit |
+### OPEN / NEXT for successor 35
+- P-N5-END: when the lane writes L-3 (= L-2 + L-R1, + N-1 / N-2 optional), byte-test it against L-2 (old once in L-2, new once in L-3,
+  nothing else changed) and write Addendum 2 to R2-P-N5-END.md. L-2 file: claude/l-new 2fcee038 docs/new/P-N5-END-line-L2.txt (e8a8ac51…).
+- Item B: full second review of P-N5-CHAIN (Lead 09:13Z): claude/l-new FROZEN 93531b03, docs/new/P-N5-CHAIN.md sha1 6e613ba7…, 38,551 B;
+  L-1 at 71b75424 (docs/new/P-N5-CHAIN-line-L1.txt, sha1 bd152dd9…, 8,124 B); fixes docs/new/P-N5-CHAIN-fixes.md; pins chain.pins;
+  check.sh block «P-N5-CHAIN». Statements: ESC3-ALL, W3-ALL, Theorem REACH3-ALL; F1/F3/F4′/F5/F6/DOM/STRICT on HOW3; CN2-3, LOC-GATE3,
+  LOC-K2-3, B-ONLY3, NO-TIE3; QUIET3, T-QUIET3; E-MON3, CHAIN-DECOMP3, HUB-ASC-G3, UP-JUMP3, UP-B3; Theorem CHAIN3 (under HYPOTHESIS
+  [E-LEV], conditional on P-N5-END and P-N5-ASC §4); DEAD RUN-TRANSFER. Adversary reports (context only): L-RED 58 R223-reach.md,
+  R223-q2.md, R224-chain.md. docs/referee/R-P-N5-CHAIN.md only after my verdict is committed. Not started (nothing read).
+### Tools (own code; lane code never imported)
+- R2-P-N5-END/r2end.py: own Γ3 builder with R117's exact pad index order; SPEC S1 from SPEC text (FIX 2/4, Q2-Q4); S3 (FIX 1); N5 (S4a = S1
+  on the dual of H), N5′-xi (TIE rule), n5w (Even PI in H, keep σ unless strictly better); S4b; S4c (FIX 3); IDEAL (P-REALIZE §2);
+  counters E0-E4 / ENDGAME / lfail / Hfail / s4a_not_opt / sbar_opt_fail (--chkopt) / controls (--ctrl, --ctrl1); generator kinds
+  acyc / any / self. 7,614 genomes per mode in ~1 min. Reusable for any Γ3 N5 / N5′-xi run question (REACH3-ALL, CHAIN3 DATA).
+- R2-P-N5-END/r2q.py: every «…» of a packet + line against trunk sources by git show, with RESULTS-entry attribution (adapt the file list).
+### Traps (this session)
+- A line can carry a sentence that is true in the proof's local reading and false on its own (E1's «changes only at a fallback»); read
+  every line clause as a stand-alone RESULTS claim.
+- A counter set can miss a failure mode that only a tally catches (eg195: a run stopping at F or F + 1 trips no fail counter); check the
+  tally is pinned and diffed.
+- Large per-genome outputs: keep them out of the commit (move to the scratchpad) and commit totals + the regenerating script.
+
+## HANDOVER (successor 33, Opus 5.5 under D1/D18/D20; written 2026-11-08 08:0xZ by date -u; parking at ~300k: the next item, a full review, would pass ~480k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container's local branch was 134 behind at
+start; fixed by fetch + checkout + ff-only).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin unless marked)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| P-N5-ASC L-4 (R5) | R2-P-N5-ASC.md Add. 5 | MATCHES; own OLDHYP/GLOSS counters (r2cd5.py); Add. 4's miss of R5 recorded | 05eb5181 |
+| P-N5-ASC L-5 (R-A, R-I) | R2-P-N5-ASC.md Add. 6 | MATCHES (fe4d3f90…, 5,192 B; bt_l5.py); gates R121 | 388530af |
+| P-ACYC L-4 (R-G, R-B) | R2-P-ACYC.md Add. 4 | MATCHES (85bb221f…); G-1 / W-1 citation and «unique optimum» (at K2) checked | 79430e80 |
+| P-N5-QUIET full review | R2-P-N5-QUIET.md + Add. 1, 2 | all 8 SIGN (UP-T under [E-LEV]; ASC-T, UP-T after R121); Add. 1 agrees with REFEREE 28 (QT-L1/L3/L4 meet my W-2/W-3/W-1; QT-L2 corrects my F2 note); Add. 2: L-2 fed89346 MATCHES, D-1 / D-2 tool fixes verified on archive | 17a85958, 11a7a911, next commit after 388530af |
+### OPEN / NEXT ITEM for successor 34
+- Full independent second review of packet P-N5-END (L-NEW 63): frozen 131b4c1c, docs/new/P-N5-END.md sha1 5cae845b…, 22,967 B, fixes
+  entries 1-2, line L-2 (Lead 07:48Z: «L-2 2fcee038 / e8a8ac51»; measure it yourself). Pins experiments/new/box195/end.pins and check.sh
+  blocks «BOX 195 END», «P-N5-END». Do NOT read docs/referee/R-P-N5-END.md before the verdict is on origin.
+### Tools (own code; lane code never imported)
+- R2-P-N5-QUIET/r2quiet.py: IDEAL-CYC replay on R2-P-ACYC/r2acyc.py (own builder / VJ / Odd PI from two starts / brute force ≤ M 8);
+  counters CN2, LOC-GATE, ties, LOC-K2 (both conjuncts), B-ONLY, Q, W, exact L, wfail, Tfail, TQfail, crossflip, q2a, q2b, backflip,
+  multiflip; --gamma3 (Γ3 with R117 pads, Howard at movers); `cmp` (T vs T3); `gen COUNT SEED OUT` (own genomes with upward / self Ξ).
+  r2bestset.py (Γ3 vs Γ best/better sets along Γ3 runs), r2t3div.py, r2qq.py (premise quotes, RESULTS line finder), dump_rand191.py
+  (lane random set as data). r2cd5.py (R2-P-N5-ASC: CHAIN-DECOMP hypothesis counters).
+- Opened source: Friedmann arXiv 1106.0778 v2 §3 (definition of optimal counterstrategy, pointwise; Lemma 3.1 [VJ00] existence);
+  pdftotext l. 238-245; PDF sha1 a63a9293… (not committed). τ′ prints as «τ 0».
+### Traps (this session)
+- The DATA rule bit twice more: quiet194.py's L carried «+ 1» and counted steps (D-1); k2fail tested one conjunct (D-2). Read the tool's
+  constants and loop units, not only its condition.
+- A counter on Γ3 that names faces must use the gate's own successors (pads), not the e / β vertices (my first Γ3 run showed false
+  loc/bonly failures). Exclusion sets must be closed under single-successor predecessors (pe-pads of level-0 e's).
+- T3 ≠ T can come from tie-breaking alone (vertex-id order of pads): compare best-option SETS before calling a divergence real.
+- Stop hook nags while push.sh runs: never commit or start a second push during a push; say so and wait.
+
+## Resume point 1 (successor 33, Opus 5.5 under D1/D18/D20; 2026-11-08 05:4xZ by date -u)
+- Handover check e1c63bb5 (VERIFY PASS; Lead 5/5, «go» 05:24Z). Branch was 134 behind locally; fetch + checkout + ff-only fixed it.
+- Item A done: R2-P-N5-ASC.md Add. 5. L-4 (l-new a744677e, sha1 4017305a…, 5,198 B) = L-3 + REFEREE 28 R5 byte for byte (bt_l4.py);
+  MATCHES. Own counters (r2cd5.py): the old hypothesis is false on 8,284 / 33,102 plays; GLOSS 0, no e-vertex cycle node (N-1).
+  Correction recorded: Add. 4's «L-3 MATCHES» missed R5. Commits caa26282 + 05eb5181; push started 05:2xZ.
+- Item A2 (P-ACYC L-4 = L-3 + R-G + R-B, predicted 85bb221f…, 3,080 B; cite check of my predecessor's G-1 / W-1) WAITS for L-SI 45's SHA
+  from the Lead. Then R2-P-ACYC.md Add. 4.
+- Item B: R2-P-N5-QUIET.md written (not yet committed at this note). All 8 statements SIGN (UP-T under [E-LEV]). L-1 NOT YET:
+  - W-1: the Γ3 sentence over-claims;
+  - W-2: [OPT] source = R118 setting + Friedmann §3 (opened, PDF sha1 a63a9293; τ′ prints as «τ 0» in pdftotext);
+  - W-3: [E-LEV] stays a hypothesis;
+  - D-1: quiet194 L + 1, and wfail counts steps;
+  - D-2: k2fail tests one conjunct only.
+  - Tools: R2-P-N5-QUIET/r2quiet.py (on R2-P-ACYC/r2acyc.py; --gamma3, cmp), r2t3div.py, r2bestset.py, r2qq.py, bt_strings.py,
+    dump_rand191.py. Data sets are not committed: rand191 seed 2 (sha1 3ee6f09a…) via dump_rand191.py, own (ffdff1e9…) via
+    `r2quiet.py gen 1000 33`.
+  - NEXT after push: read docs/referee/R-P-N5-QUIET.md (REFEREE 28) and write the comparison Addendum 1; check its QT-L1..L6 spans
+    against mine by script.
+
+## HANDOVER (successor 32, Opus 5.5 under D1/D18/D20; written 2026-11-08 04:0xZ by date -u; parking at ~345k: the next item, a full review, would pass ~480k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container was clean at start).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| P-N5-ASC fix round 2 (L-2) | R2-P-N5-ASC.md Add. 3 | fixes entry 2 CORRECT; W-3 / W-4 met (upfail strict, read against UP-JUMP; check193 byte-equal); L-2 MATCHES | d3fed33c |
+| P-N5-ASC L-3 (C135) | R2-P-N5-ASC.md Add. 4 | L-3 = L-2 + C135 R1-R4 exactly; R2-R4 read in meaning; L-3 MATCHES | next commit after e1878470 |
+| P-ACYC (L-SI 43/44) full review | R2-P-ACYC.md + Add. 1-3 | all SIGN (LAMBDA-CONST gap G-1 closed by F-1; ACYC-XI conditional on R118 (k)+(l)); W-2 scope, W-3 τ unread, D-1..D-5, N-1, N-2 all met; Add. 1 vs REFEREE 28 agrees (AC-2 confirmed); L-3 MATCHES | bf02e618, 6c937bc6, d7ca68f4, this commit |
+### OPEN / NEXT ITEM for successor 33
+- Full independent second review of P-N5-QUIET (L-NEW): claude/l-new frozen 9329859d, docs/new/P-N5-QUIET.md sha1 066dfc7d… (20,022 B,
+  199 lines); fixes entry 1 at d9c49489; L-1 at df0d2a25 (sha1 62de9075…, 4,600 B; Lead 04:04Z, not yet measured by me). Statements:
+  LOC-GATE, CN2, LOC-K2, QUIET + T-QUIET, UP-T, ASC-T, B-ONLY, NO-TIE. Re-derive; premise quotes by script; own-engine DATA replay;
+  DATA rule on L-1 (read every counter's condition AND its cited tool against the clause); TARGET diff. docs/referee/R-P-N5-QUIET.md
+  (REFEREE 28) only after my verdict is on origin.
+### Tools (own code; lane code never imported)
+- R2-P-ACYC/r2acyc.py: own Γ(G)/Γ3(G) builder from R104/R117 text (--eorder gate|lev: R104 leaves the e-priority order open; L-NEW's
+  gamma3 uses (lev, gate)), own VJ valuation + order, Odd optimum by PI from two starts + brute force over all Odd strategies (M ≤ 9),
+  own Howard; counters notbeta/nonstrict/lamfail/w*/C/R/T. r2gen.py (own Ξ-acyclic generator). Reusable for any IDEAL-CYC / Γ3 Odd-side
+  question (σ̄, Λ maps). It does NOT implement N5′-xi or SPEC S1; for N5 runs I used the lane runner on a git archive with ONE added
+  counter (diffs on record) — say so when citing.
+### Traps (this session)
+- A DATA clause can be weaker than its words in TWO places: the counter's condition (P-N5-ASC upfail, P-ACYC «standard» read σ only) and
+  the cited TOOL (P-ACYC L-2 cited pacyc81.py for a τ test only fix1/pacyc81t.py makes). Check both.
+- Unstated construction choices move control counts (R104's e-priority order: 111/15/20 vs 121/15/25). Rebuild with the lane's choice
+  before calling a count mismatch.
+- Two referees' L-strings can overlap; test spans by script before routing (R2-P-ACYC/overlap.out).
+
+## Resume point 2 (successor 32; 2026-11-08 01:2xZ by date -u)
+- R2-P-ACYC on origin bf02e618 (VERIFY PASS). Item A done: R2-P-N5-ASC.md Addendum 3 (l-new a5dcf9c6, L-2 f109cb69): fixes entry 2
+  CORRECT, W-3/W-4 met (W-4 option (a): upfail strict, read against UP-JUMP; check193.sh on archive byte-equal, upfail 0 in 1,956),
+  L-2 MATCHES. NEXT: read docs/referee/ on P-ACYC (allowed now) and write a comparison addendum; then wait for the L-SI fix round.
+
+## Resume point 1 (successor 32, Opus 5.5 under D1/D18/D20; 2026-11-08 01:0xZ by date -u)
+- Handover check 51672d0e (VERIFY PASS; Lead score 5, GO 00:44Z). Trunk 37a4855e merged by merge commit 6146131a.
+- Item A (P-N5-ASC Add. 3 byte test) WAITS for L-NEW 62's fixes entry 2 + L-2 SHA from the Lead; do it at once when it comes, pause B.
+- Item B: P-ACYC (claude/l-si e3ac4b06; packet 0e9edcfd 16,852 B, L-1 bb12deec 2,085 B) reviewed: docs/referee-2/R2-P-ACYC.md.
+  BETA-ACYC, ACYC-LIN SIGN; ACYC-XI SIGN (conditional as labelled); LAMBDA-CONST SIGN WITH GAP G-1 (w* = K1 not shown; map false at K1
+  if w* = K2; W-1 repair). W-2 scope (header/§5: «N5′-xi lower bounds need Ξ-cyclic genomes» ignores post-fallback iterations).
+  W-3: pacyc81 «non-standard» reads σ only, standard state also fixes τ (data OK: τ standard on 812 states). D-1 (no-fallback count),
+  D-2 (control clause tool/states), D-3 (control counts depend on e-priority order: gate order 51/111/15/20), D-4 (2 more after
+  fallback: true 300/300 but no output), N-1 (pointwise optimality source). L-1 MATCHES after W-3, D-1, D-2.
+- Tools: R2-P-ACYC/r2acyc.py (own Γ/Γ3 builder, VJ, Odd PI from two starts + brute force over all Odd strategies, Howard; --eorder),
+  r2gen.py, r2q.py, bt_l1.py. REFEREE's report on P-ACYC may be read only after this report is on origin.
+
+## HANDOVER (successor 31, Opus 5.5 under D1/D18/D20; written 2026-11-08 00:0xZ by date -u; parking at ~380k as the Lead asked)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh as a tracked background task (redirect, «echo exit
+$?»; verify ~15-20 min). Before push: `git branch --show-current` = claude/referee-2 (this container started with a stale local ref
+cf5157fe; fixed by fetch + checkout + ff-only).
+### Reports of record this session (all «(Opus 5.5, D1)»; every SHA on origin)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| P-TOWER-FUEL (L-LOWER 5, R120) | R2-P-TOWER-FUEL.md + Add. 1, 2 | all SIGN; W-1 (Lemma 5 (iii) proof inequality false; repair), W-3 (§4 reading); L-2, L-3 MATCH; R120 landed | 4bede4dd, fa010874, e72661d0 |
+| P-N5-ASC (L-NEW 61) | R2-P-N5-ASC.md + Add. 1, 2 | all SIGN; W-1 (NOUP needs [E-LEV], control elevrev), W-2 (pins); Add. 1 agrees with REFEREE 27; Add. 2: entry 1 CORRECT, L-1 NOT YET (W-3 tmon unit incl. c_W, W-4 UP-JUMP counter weaker than the clause) | 533744a5, c4166c8b, this commit |
+### OPEN / NEXT ITEM for successor 32
+- P-N5-ASC L-2 (or an asc193.py fix for W-4 (a)): byte-test against Add. 2's W-3 / W-4 strings; if (a), re-run check193.sh on a git
+  archive and check upfail now tests «lev(nxt[z]) > lev(z's mover)» too. Everything else in L-1 already MATCHES.
+### Tools (own code; lane code never imported)
+- R2-P-N5-ASC/r2hub.py (exhaustive CS(M), M <= 6, B <= 3, 48 s), r2asc.py (IDEAL-CYC replay on my R2-N5-REALIZE builder + si.py Engine;
+  CTRL=elevrev control; `noup COUNT SEED`), r2q.py (premise quotes), bt_l1.py.
+- R2-P-TOWER-FUEL/r2tower.py (own text-genome parser + r2moves G; windows, slack, deciders, §5 counters), r2fuel.py, r2fr1.py, bt_l*.py.
+### Traps (this session)
+- A lane's DATA counter can test a weaker property than its clause (P-N5-ASC upfail, my round-1 miss): read the counter's condition
+  line by line against the lemma before calling a DATA clause OK.
+- A unit word can hide extra units (tmonunits includes c_W): read the counter's loop set.
+- Stop hook nags while push.sh runs: never start a second push; answer that the tracked push is in flight.
+
+## Resume point 3 (successor 31; 2026-11-07 22:2xZ by date -u)
+- P-TOWER-FUEL: Add. 2 (L-3 for C134 MATCHES, e72661d0); R120 landed (Lead 22:10Z).
+- P-N5-ASC (l-new 95dc76d7, packet 9c9cb50d): docs/referee-2/R2-P-N5-ASC.md. All statements SIGN. W-1: NOUP needs [E-LEV] (false
+  without it: CTRL=elevrev, 209 plays with ascents at U = 0) but §1 / table / title omit it. W-2: 5 cited box192 instances not in
+  asc.pins. D-1..D-3 for the line. Own tools: r2hub.py (exhaustive CS(M) M <= 6, B <= 3, 0 violations; F_0 tight), r2asc.py (IDEAL-CYC
+  replay, 13 instances + 300 NOUP genomes, all 0). REFEREE's report may be read only after this is on origin.
+
+## Resume point 2 (successor 31; 2026-11-07 15:5xZ by date -u)
+- P-TOWER-FUEL fix round 1 (l-lower 740f6c79, fixes 0902efb9, L-2 d866ca50): Add. 1, entry 1 CORRECT, L-2 MATCHES (bt_l2.out:
+  L-1 + M1..M7 == L-2; my W items met inside the Lead's merged strings; r2fr1.out: 16 distinct 5-windows, decider 32 at s_(a-1)).
+  REFEREE 807984e3 read after my report: agrees on every point (TF-1 = W-1, TF-4 = W-3, TF-2 = N-1).
+
+## Resume point 1 (successor 31, Opus 5.5 under D1/D18/D20; 2026-11-07 14:4xZ by date -u)
+- Handover check 7d7affb1 (pushed; Lead score 5). Trunk 9315f36c merged (no rebase).
+- P-TOWER-FUEL (l-lower 7f7ff6f5) refereed: docs/referee-2/R2-P-TOWER-FUEL.md. All statements SIGN. W-1 (packet): Lemma 5 (iii)
+  proof inequality |D| >= 2^r* false (651/1,010 RANK states; 2^r* > 2max|theta| false at 5), my ENC repair holds. W-3 (packet): §4
+  «Lemma 4 (b) is violated in exactly those windows» false literally (0/188 consecutive-move pairs). L-1 MATCHES after W-2 (a)-(c),
+  W-4 (a)-(c) (L-1+W sha1 1a4e8dcc…, 4,425 B). Lane check PASS; every §4/§5 count reproduced by my r2tower.py (2.4 s).
+- Tools: R2-P-TOWER-FUEL/r2tower.py (own text-genome parser + r2moves G; windows, slack, decider scopes, all §5 counters + extras),
+  r2fuel.py (§4 reading probe), r2quotes.py (premise quotes vs RESULTS), bt_l1.py.
+- NEXT: fix round byte test when L-LOWER answers; I may read docs/referee/ for this packet only after this report is on origin.
+
+## HANDOVER (successor 30, Opus 5.5 under D1/D18/D20; written 2026-11-07 13:4xZ by date -u; Lead 13:43Z: hand over at ~597k)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh in the background (redirect, «echo exit $?»;
+verify ~20-25 min). BEFORE push: `git branch --show-current` must print claude/referee-2 (this container started DETACHED with a stale
+local ref 8fde383f: first push failed exit 128 after VERIFY PASS). push.sh pushes only the verified SHA: commit during a running push is
+safe but needs a second push.
+### Reports of record this session (all «(Opus 5.5, D1)»; every listed SHA is on origin unless marked)
+| item | report | outcome | SHA |
+| --- | --- | --- | --- |
+| P-IDEAL-MOVES L-5 (C129) | R2-P-IDEAL-MOVES.md Add. 4 | L-5 MATCHES; E-1/E-2 re-measured (r2l5.out) | c420666d |
+| P-N5-REACH (R117) L-2, L-3, L-4 (C130) | R2-P-N5-REACH.md Add. 1-3 | L-2 after my W-3 (PAD set skips c_X); L-3, L-4 MATCH | c420666d, ddf42cb6, d4838991 |
+| P-M2D-DEAD L-3 | R2-P-M2D-DEAD.md Add. 2 | L-3 MATCHES; L-RED replay.out 9/9 reproduced (r2m2d9.out) | 59bfa452 |
+| P-N5-XICYC full review + L-3 + L-4 (R118, C132) | R2-P-N5-XICYC.md + Add. 1, 2 | all SIGN (§7, Cor. T3 conditional on R117 + every-genome ESC3/W3); my W-1 (F4) and G-1 (BR-SEG-G proof: DOM/F4 false on general games, r2dompex.out) CLOSED by F4′ + REFEREE's STRICT-G/PATH-G; L-3, L-4 MATCH | a0befd6c, 7891ba32, 5016a1a2 |
+| P-IDEAL-DBL full review + L-2 + L-3 (R119, C133) | R2-P-IDEAL-DBL.md + Add. 1, 2 | all SIGN; W-1 (PATH-RISE misquote), W-2 (DEAD paths/starts), W-3 (DATA per clause) met; L-2, L-3 MATCH | 2b425bb6, 1b9e3ea5, 37c733e2 (push running at writing) |
+### OPEN / NEXT ITEM for successor 31
+- Full independent review of packet P-TOWER-FUEL (L-LOWER 5): claude/l-lower 7f7ff6f5, docs/lower/P-TOWER-FUEL.md, line L-1 408470ad.
+  Re-hash first; premises vs trunk RESULTS (quote every one byte-exact: my W-1 on DBL was a misquoted PATH-RISE); own replays.
+- No other open item. Verdicts above need nothing more from REFEREE-2 unless CHECKER asks for a later fill.
+### Tools (own code; lane code never imported)
+- R2-P-IDEAL-MOVES/r2moves.py: own R104 IDEAL simulator (class G: run, key, chain, bset, val, ok_lr); r2l5.py (REDUCE-XI equalities).
+- R2-P-IDEAL-DBL/r2dbl.py: ALIGN, WINDOW-ONCE, DBL-EQ (a)-(c), PASS-FREEZE, HIT, ALT-MIN, TOWER-NEED per run; modes FILE…, `corpus
+  experiments/new` (63,223 runs, 39 s), `dead ROOT_SI`. r2reentry.out: DEAD-REENTRY level sets. bt_*.py byte tests.
+- R2-P-M2D-DEAD/r2m2d.py, r2m2d9.py (L-RED replay.out row compare).
+- R2-P-N5-XICYC/: r2vjg.py (own brute-force VJ valuation + Howard on small general games: DOM, F4X, STRICT, DOM⁺, p-runs);
+  r2howcyc.py (IDEAL-CYC Howard on my predecessor's Γ builder + si.py Engine, all §4 counters); r2xi3.py (own N5′-xi on Γ3 from S3 =
+  REACH3-CYC check, direct Howard-step test); r2xval.py (si.py Engine = brute VJ, 6,674 vertices); brseg_r2.py (H0 failures 388/2,072).
+- R2-P-N5-REACH/: r2reach.py (predecessor's Γ3 + SPEC loop), reachcheck_r2.py (lane counters + mine, c_X scope).
+### Traps (this session)
+- SHA QUOTING (three times): I typed SHAs into Lead messages before reading git output (3c1d24ab, 9e3a7fae, 76a6af5c — invented). Rule:
+  commit, read `git rev-parse HEAD` output, THEN message in a later step; never in the same parallel batch.
+- Time stamps: I wrote «…:1xZ» guesses ahead of `date -u` four times (fixed by later commits). Run `date -u +%H:%M` in the commit step.
+- Overclaiming wording: my N-3 «killed at l = 1 only» was wrong (fails l = 1..8 / 1..4); measure every l before saying «only».
+- Detached HEAD at container start (see top). A replay citation needs an output file on record (still true).
+
+## Resume point 5 (successor 30; 2026-11-07 10:0xZ by date -u)
+- P-IDEAL-DBL fix round (l-si 0ea6959f): Add. 1, L-2 MATCHES; W-1..W-3 met; my N-3 «l = 1 only» was wrong (own sets: tower l 1-8, KILL 1-4; r2reentry.out).
+
+## Resume point 4 (successor 30; 2026-11-07 08:5xZ by date -u)
+- P-IDEAL-DBL (l-si f5263d5a): docs/referee-2/R2-P-IDEAL-DBL.md. All signable items SIGN (MP-LIN, WINDOW-ONCE, DBL-EQ, PASS-FREEZE, HIT,
+  FUEL-EXACT, ALT-MIN, TOWER-NEED, 4 DEAD); AND-GATE (a)-(c) mapping faithful. W-1 packet: PATH-RISE misquoted (not R113's words).
+  L-1 MATCHES after W-2 (a)-(d) (DEAD paths/starts, REENTRY at l = 1) and W-3 (DATA clause by clause); L-1+W sha1 837e3b06….
+  Own r2dbl.py: CORPUS 63,223 runs 0 violations, LOWER, EXTRA (H6 levels 1-5) 0; DEAD replayed.
+- TRAP (three times today): a SHA typed into a Lead message before reading it from git output (3c1d24ab, 9e3a7fae, 76a6af5c: all invented). Check: commit first, copy the SHA from `git rev-parse HEAD` output, then message IN A LATER STEP (never in the same parallel batch as the commit).
+- P-N5-XICYC fix round (l-new 50c80a92): Add. 1, W-1 and G-1 closed (STRICT-G / PATH-G correct), L-3 MATCHES; all SIGN.
+
+## Resume point 3 (successor 30; 2026-11-07 08:2xZ by date -u)
+- P-N5-REACH L-4 (l-new fdf01b8c, C130 R1-R4): Add. 3, L-4 MATCHES (bt_l4.out). Waiting: P-N5-XICYC L-3 / fixes (L-NEW 59).
+
+## Resume point 2 (successor 30; 2026-11-07 07:4xZ by date -u)
+- P-N5-XICYC (l-new 86afce49; packet 149e2414, L-2 857d21c8): docs/referee-2/R2-P-N5-XICYC.md. §2-§4 SIGN (F4 after W-1: false as
+  stated when v ∈ Π; §4 uses are fine since movers have priority 0); §5 BR-SEG-G and RED-XI SIGN WITH GAPS G-1 (DOM/F4 false on general
+  games, r2dompex.out; repair: additive ext⁺ in Z×Z inside a constant-Λ window, DOM⁺ 0/16,384); §7 REACH3-CYC + Cor. T3 SIGN conditional
+  (no hidden Ξ-use in ESC3/W3; xi = Howard on 1,011 genomes); §8 DEAD SIGN (labels replayed). L-2 MATCHES after W-2 (ODD-FIXED statement),
+  W-3 (ONEP R not counted), W-4 (555 not from the cited command; 388/2,072 steps fail H0). HMZ 1008.0530 opened, correct.
+- Tools: R2-P-N5-XICYC/r2vjg.py (own brute-force VJ), r2howcyc.py (IDEAL-CYC Howard on my Γ builder + si.py Engine), r2xi3.py (N5'-xi).
+
+## Resume point 1 (successor 30; 2026-11-07 03:5xZ by date -u)
+- P-IDEAL-MOVES L-5 (l-new 571c75c5, C129): Addendum 4, entry 4 CORRECT, L-5 MATCHES (byte test bt_l5.out; E-1/E-2 measured r2l5.out).
+- P-N5-REACH L-2 (l-new 571c75c5): Addendum 1, W-1/W-2/RE-L1 applied correctly; L-2 MATCHES after W-3 (PAD count skips c_X:
+  693,030 vs 698,204 over every vertex; reachcheck_r2.out). L-2+W-3 sha1 46c2e507…, 3,687 B.
+- Pushed c420666d 04:47Z (2nd push). TRAP: container started on a DETACHED HEAD with a stale local branch ref (8fde383f); push.sh got
+  an empty branch name -> exit 128 after VERIFY PASS. Check before push.sh: `git branch --show-current` prints claude/referee-2.
+- P-N5-REACH L-3 (l-new 727163f0): Add. 2, L-3 MATCHES (bt_l3.out; RC-2 (a, b) order = subdiv.pad sorted order).
+- P-M2D-DEAD L-3 (l-lower afc85c57): Add. 2, L-3 MATCHES; replay.out 9/9 rows reproduced (r2m2d9.out). Queue empty.
+
+## Successor 30 handover check (Opus 5.5 under D1/D18/D20; 2026-11-07 03:5xZ by date -u)
+1. Branch claude/referee-2: ls-remote, local HEAD and origin ref all 9bd5656f at start (fetch --unshallow, ff-only: already up to date).
+   vs trunk claude/vibrant-johnson-nxvvxo 3c428cde: 3 ahead / 108 behind (merge-base 0a9e2a16); merged trunk with a merge commit (no
+   rebase) -> 4 ahead / 0 behind before this commit.
+2. Open work (all fix-round byte tests + meaning checks; none has arrived yet):
+   (a) P-M2D-DEAD L-3: wait for L-RED's committed output file for L-RED 52 (55557951), then L-LOWER 4's L-3; byte-test L-2 -> L-3, check
+       W-1′ is met (L-RED 52 cited with its output file, or dropped) and REFEREE PM-C1 wording; replay the output file against my r2m2d.py.
+   (b) P-N5-REACH L-2 (L-NEW 58): byte-test L-1 -> L-2; check W-1 (specific DEAD statement, no unquoted guillemets), W-2 (no «c_X»),
+       and REFEREE RE-L1 (read only after my report is pushed; it is, so I may read it for the fix round).
+   (c) P-IDEAL-MOVES L-5 (L-NEW 58): CHECKER C129 E-1, E-2, N-1; exact strings in docs/checker/C129.md (not on trunk at 3c428cde yet).
+3. GAPS rows owned by REFEREE-2: none (G-N5-TIME owner is L-NEW, «referees later»; no owner cell names REFEREE-2).
+4. D1 (active, D001; DECISIONS.md l. 7-8): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such
+   claim, including the fleet's own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save money.»
+   D18 (active, l. 333): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of
+   mathematics and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly,
+   and proceed without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   D20 (active, l. 423): «We have reset the weekly usage, so we can again work faster no?» (Lead readings L49 T^R_ISO scope, L50
+   MOVES-2D DEAD after referee review; both active in DECISIONS-INDEX).
+5. Trap: a RESULTS line citing a replay whose result is not on record (L-RED 52, W-1′). Check: for every cited replay, open the output
+   file at the cited SHA (`git cat-file -t`, `git show SHA:path`); a commit message alone is not a result. Also: Lead SHA not yet on
+   origin -> `git cat-file -t` after fetch, say so, do not hold the verdict.
+
+## Successor 29 handover check (Opus 5.5 under D1/D18/D20; 2026-11-06 23:1xZ by date -u)
+1. Branch claude/referee-2: ls-remote and local both 280d2313 at start (local clone was detached/behind 113; ff-only to 280d2313;
+   not shallow after fetch --unshallow). vs trunk claude/vibrant-johnson-nxvvxo 09476aba: 2 ahead / 178 behind; merged trunk (no rebase)
+   -> e98dea04, 3 ahead / 0 behind.
+2. Open work: (a) P-IDEAL-MOVES (l-new d86adc86; packet sha1 5ce2947d, L-1 819c5815; movescheck 8153717b / out 48740209) -> report
+   docs/referee-2/R2-P-IDEAL-MOVES.md; next step: re-hash, read statements, premise quotes vs RESULTS R104/R105/R110/R113, own simulator
+   for every DEAD instance, DATA clauses vs counter code, check.sh block. (b) P-IDEAL-IM drup row: successor 28's, may still land; I do
+   not touch R2-P-IDEAL-IM.md.
+3. GAPS rows owned by REFEREE-2: none (owner column has no REFEREE-2 row).
+4. D1 (active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's
+   own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save money.»
+   D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics
+   and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed
+   without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   D20 (active): «We have reset the weekly usage, so we can again work faster no?» (Lead readings L48 full pace; L49 T^R_ISO scope).
+5. Trap: stale/shallow clone gives false ahead/behind counts (succ. 28). Check: ls-remote vs rev-parse, fetch --unshallow, then rev-list.
+   Also: a DATA half not checked against the counter (KY-1, MOVE-RISE-R); check: every signed clause gets a counter line or a no-DATA entry.
+
+## HANDOVER (successor 29, Opus 5.5 under D1/D18/D20; written 2026-11-07 03:4xZ by date -u; Lead 03:32Z: hand over and park)
+Branch claude/referee-2. REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh in the background (redirect, «echo exit $?»;
+verify takes ~20 min). On non-fast-forward: fetch + merge (no rebase), push again.
+### Reports of record (all «(Opus 5.5, D1)»)
+| packet | report | outcome |
+| --- | --- | --- |
+| P-IDEAL-MOVES (l-new d86adc86; fixes 9995f5a2, d7b96be8, fd5c163f) | R2-P-IDEAL-MOVES.md + Add. 1-3 + post-note | all SIGN; L-1..L-4 MATCH (my miss: W-1 «not necessary», corrected by REFEREE MV-C1) |
+| P-M2D-DEAD (l-lower 87fcdf73; fix 8938e403) | R2-P-M2D-DEAD.md + Add. 1 | DEAD MOVES-2D SIGN; L-2 MATCHES after W-1′ (L-RED 55557951 has no output file) |
+| P-IDEAL-IM fix round 2 (l-si 80d1422a, C128) | R2-P-IDEAL-IM.md Add. 2 (succ. 28's report, appended) | entry 2 CORRECT, L-3 MATCHES; all C128 counts re-measured |
+| P-N5-REACH (l-new 73b3d1fd) | R2-P-N5-REACH.md | all SIGN; L-1 MATCHES after W-1 (SUBDIV quote), W-2 (c_X) |
+### OPEN (for successor 30)
+- P-M2D-DEAD: L-3 byte test when L-LOWER answers W-1′.
+- P-N5-REACH: fix round 1 byte test (W-1, W-2) when L-NEW 58 answers; N-1..N-4 notes only.
+- C129 / R116 L-5 tests (Lead will route).
+### Tools (own code)
+- R2-P-IDEAL-MOVES/r2moves.py: own R104 IDEAL simulator (class G, beta-SETS) + every P-IDEAL-MOVES counter + random L^R_d + --neg;
+  cmpgen.py (= lane Gen on 63,223 runs). R2-P-M2D-DEAD/r2m2d.py (membership, replay, all-starts mu).
+- R2-P-N5-REACH/r2reach.py: Gamma3 = my R2-N5-REALIZE builder + own pads (pad3) + own S3/FIX 1 (s3) + SPEC loop on si.py Engine;
+  FL runs, NO-REACH, SUBDIV; CTRL=mprio0 control. Byte-equal to box189 pins. L-COMP n5b.py --mode spec is a third engine.
+- R2-P-IDEAL-IM/fix2/: instrumented imcheck_r2.py / compose_r2.py (counters only).
+### Traps (this session)
+- A Lead-cited SHA (L50 at 6ca995ed) may not be on origin yet: check `git cat-file -t`, say so, do not hold the verdict.
+- My own wording fixes can overclaim (W-1 «sufficient, not necessary»): state only what the packet proves.
+- «Independent replay» in a line needs a result on record (output file), not only a commit message.
+- `git rev-parse --short A B` fails in this git; use one ref per call.
+
+## Resume point 3 (successor 29; 2026-11-07 03:1xZ by date -u)
+- R2-P-M2D-DEAD (6eba8b93): SIGN; L-1 W-1 (unopened L-SI replay). R2-P-IDEAL-IM Add. 2 (0a9e2a16): C128 round CORRECT / L-3 MATCHES.
+- R2-P-N5-REACH (this push): all SIGN; L-1 W-1 (DEAD SUBDIV quote), W-2 (c_X). Tool R2-P-N5-REACH/r2reach.py builds Gamma3 with my
+  R2-N5-REALIZE builder + own pads + own S3, SPEC loop on si.py Engine; FL = L on all 14 corpus genomes; pins byte-equal.
+- Pending: P-M2D-DEAD L-2 byte test when routed; P-N5-REACH fix round when routed. Context large: park ~600k with handover.
+
+## Resume point 2 (successor 29; 2026-11-07 02:1xZ by date -u)
+- P-IDEAL-MOVES fix rounds 1-3: Add. 1 (L-2), Add. 2 (L-3; agreed REFEREE MV-C1, my W-1 overclaimed «not necessary»), Add. 3 (L-4) all
+  CORRECT / MATCHES; L50 opened at 6ca995ed (post-note). Pushed 88c0c6d6 + this.
+- NEXT: P-M2D-DEAD (L-LOWER 3, MOVES-2D dead-end record; kill instances KILL_M2D_d6_mu13 5301c716…, KILL_M2D_d8_mu21 d96c2b36… at
+  l-lower 4d747490): replay with own r2moves.py G class (check ok_lr, acyclic, μ per Ξ-target of level ≥ 1); own report before docs/referee/.
+- Trap: a push can race successor 28 / Lead; on non-fast-forward fetch + merge (no rebase) and push again.
+
+## Resume point 1 (successor 29; 2026-11-06 23:3xZ by date -u)
+- P-IDEAL-MOVES (l-new d86adc86) refereed: docs/referee-2/R2-P-IDEAL-MOVES.md. All statements SIGN (no gap); DEAD-SEG, DEAD-LEV
+  recomputed by my own simulator; L-1 MATCHES after W-1 (MOVES-2D is sufficient, not equivalent) and W-2 (antecedent of «the two
+  movers»). §6 DATA notes D-1..D-3 (not signed), filled by my counters.
+- Tools: R2-P-IDEAL-MOVES/r2moves.py (own R104 simulator + every lemma counter + random L^R_d generator + --neg control);
+  cmpgen.py (my runs = lane Gen runs on 63,223 runs). Corpus counts equal movescheck.out exactly.
+
+## Successor 28 handover check (Opus 5.5 under D1/D18/D20; 2026-11-05 23:44Z by date -u)
+1. Branch claude/referee-2: ls-remote and local both 8fde383f (as expected). Shallow clone: rev-list said 0/8726, a false count;
+   after fetch --deepen=3000: 0 ahead / 93 behind trunk claude/vibrant-johnson-nxvvxo b5d154ad; 8fde383f is its ancestor;
+   fast-forwarded to b5d154ad (0 / 0 after).
+2. Open work: P-IDEAL-KEYS (l-new b302bbf5; P-IDEAL-KEYS.md sha1 62b35bf7, 282 lines; line L-1 sha1 f36c6402, 1 line, both re-hashed
+   and matching) -> report docs/referee-2/R2-P-IDEAL-KEYS.md; next step: read statements, premise quotes vs RESULTS R104/R105/E-2/R110,
+   own simulator from R104 for the three DEAD instances, check.sh block, L-1 clause diff. Nothing else open (succ. 27: OPEN none).
+3. GAPS rows owned by REFEREE-2: none (REFEREE-2 appears only in notes of other rows, e.g. G-S5-6 data, closed G-Bthr/G-K5).
+4. D1 (active, DECISIONS.md l. 7-8): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+   including the fleet's own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save money.»
+   D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches, especially by connecting ideas from areas of mathematics
+   and computer science that are not usually studied together. Make reasonable assumptions where needed, state them briefly, and proceed
+   without asking me questions. Clearly distinguish proven results from conjectures and open problems.»
+   D20 (active): «We have reset the weekly usage, so we can again work faster no?» (Lead reading L48: full pace, gates on demand).
+5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1), and a binder quoted without its erratum (E-2).
+   Check: every premise quote grepped verbatim in docs/RESULTS.md, and the Erratum E-2 text read next to every KEYFLIP use.
+
+## Resume point 1 (successor 28; 2026-11-05 23:51Z by date -u)
+- P-IDEAL-KEYS (l-new b302bbf5) refereed: report docs/referee-2/R2-P-IDEAL-KEYS.md. All statements SIGN (no gap); L-1 MATCHES after
+  W-1 (define A_s(h)), W-2 (PAIR-KF / RETURN-COUNT DATA index ranges), W-3 (guillemet paraphrases -> verbatim quotes). F-1 packet quotes
+  not verbatim (box 165 «·», box 166), F-2 «top mover» = gadget top (level 4, τ = 5). R-1: tower DEAD only over a fixed clock / within
+  one run (box 169 itself predicted T ≥ F(l)).
+- Tools: R2-P-IDEAL-KEYS/r2sim.py (own simulator from R104, β-set comparison), r2lemmas.py (all lemma checks + controls; CORPUS=env).
+- Trap noticed: the clone was shallow; rev-list counts vs trunk are false until fetch --deepen.
+
+## HANDOVER (successor 28, Opus 5.5 under D12/D20; written 2026-11-06 21:44Z by date -u; context large, parking after P-IDEAL-IM)
+Branch claude/referee-2 (head bdbf0dde pushed + local IM draft commits). REFEREE-2 owns no GAPS rows. Push only via scripts/push.sh in
+the background (redirect, echo exit). Long machine jobs: launch with `setsid nohup bash -c "..." &` (harness background tasks are
+killed at 2 h; a container restart at ~21:40Z on 11-06 killed everything, but scratch files survived).
+### Reports of record (all «(Opus 5.5, D12)»)
+| packet | report | outcome |
+| --- | --- | --- |
+| P-IDEAL-KEYS (l-new b302bbf5; fixes 1a178aff, 432edf82) | R2-P-IDEAL-KEYS.md + Add. 1, 2 | all SIGN; TOWER SIGN; L-1..L-3 MATCH (my misses KY-1, P-1) |
+| P-TR3 (l-comp d03d8370; fixes d3e3cde8, 9c70c980) | R2-P-TR3.md + Add. 1, 2 | upper SIGN WITH GAPS TR3-G1/G2, lower SIGN; drup.c audited; own r2rup.c; L-3 MATCHES |
+| P-IDEAL-ALIGN (l-new cb8e0dca; c787aab1, e0d49b59) | R2-P-IDEAL-ALIGN.md + Add. 1, 2 | 7 SIGN; L-1..L-3 MATCH |
+| Note E-3 (trunk 82a5f384, cfd25b61) | R2-NOTE-E3.md + confirmation | SIGN with E3-W1 (applied) |
+| P-IDEAL-RISE (l-new 2f4d96de; 0320ab9e, 0548afaa) | R2-P-IDEAL-RISE.md + Add. 1, 2 | all SIGN, 4 certificates re-verified (r2cert.py); L-1..L-3 MATCH (my miss: MOVE-RISE-R DATA) |
+| P-IDEAL-IM (l-si cb2b0c60) | R2-P-IDEAL-IM.md (DRAFT until the drup row is filled) | §0-§5 SIGN; encoder audited faithful; CNF 7e611c8b and proof 32be84e4 regenerated byte-identically; W-1, W-2 required |
+### OPEN
+- P-IDEAL-IM: DONE (drup.c VERIFIED 6,531,220 lemmas on the regenerated proof, 23:55Z; report final). My r2rup.c re-check was still
+  running detached (about 30 %) when I parked; it is not part of the report (a successor may append its result if the container
+  keeps it: scratch imcnf/r2rup.log).
+- NEXT (for successor 29): P-IDEAL-MOVES (l-new d86adc86; packet 5ce2947d, L-1 819c5815; movescheck 8153717b / 48740209).
+### Tools (own code)
+- R2-P-IDEAL-KEYS/r2sim.py (R104 simulator, beta-sets), r2lemmas.py; R2-P-TR3/r2rup.c (own RUP checker, fuzzed), fuzz_drup.py;
+  R2-P-IDEAL-ALIGN/r2align.py (ladder generator, isLR); R2-P-IDEAL-RISE/r2cert.py (exact LP certificate checker, PHX/PBG), r2rise.py;
+  R2-P-IDEAL-IM/r2cstep.py (R110 c-step, exhaustive T_k, checks()).
+### Traps (mine this session)
+- «cd X && (A) & (B) &» backgrounds the cd with A; races with files written by another background job; `cat > f` without a heredoc
+  hangs on stdin; pkill -f matching the parent shell's command line.
+- pysat get_proof() holds the whole proof in RAM: stream s.solver.prfile instead.
+- Check every «Does NOT claim» arithmetic and every DATA half against the counter (KY-1, MOVE-RISE-R, BIT-CHAIN (ii)).
+
+## Resume point 6 (successor 28; 2026-11-06 13:57Z by date -u)
+- ALIGN Add. 2 (a4d3bc41), Note E-3 confirmation (0bdc659c; SIGN stands at cfd25b61).
+- P-IDEAL-RISE (l-new 2f4d96de): R2-P-IDEAL-RISE.md. All SIGN; the 4 certificates re-verified by my own r2cert.py (exact, unique,
+  >= 0, bounds 22, 8, beta_3, beta_4 equal to the tool's p/q). L-1 needs W-1 (certificate «range» = sup - inf over ALL genomes and
+  states; the certificates mix genomes) and W-2 (RISE_A does not count (a)'s identity).
+- Tools: R2-P-IDEAL-RISE/r2cert.py (PHX, PBG features), r2rise.py (PHIK, RISE, tau_main).
+
+## Resume point 5 (successor 28; 2026-11-06 12:13Z by date -u)
+- P-IDEAL-ALIGN Add. 1 (ddca4cc7), P-TR3 Add. 2 (ee1d6e18) pushed. Note E-3 draft (trunk 82a5f384, 4a64b0d5): R2-NOTE-E3.md, SIGN with
+  E3-W1 (cite as «DEAD (with RESULTS R112's machine trust base)», drop «unconditional within RESULTS»). Predecessor's l. 85 ruling lifted:
+  its closing conditions (l. 86-88) are met by landed R112.
+
+## Resume point 4 (successor 28; 2026-11-06 04:16Z by date -u)
+- P-TR3 Add. 1 (l-comp d3e3cde8): fixes CORRECT, L-2 MATCHES (4 replacements; F3 16/16 DIMACS identical both cnf.py; drup2.c fuzz 0).
+- P-IDEAL-KEYS Add. 2 (l-new 432edf82): entry 2 CORRECT, L-3 MATCHES (C124 §5 single replacement). Both in commit 7ff32432.
+- P-IDEAL-ALIGN (l-new cb8e0dca): report R2-P-IDEAL-ALIGN.md, 7 SIGN, L-1 MATCHES (P-1 define g, P-2 «improving» only for d >= 3).
+  Tool R2-P-IDEAL-ALIGN/r2align.py (imports R2-P-IDEAL-KEYS/r2sim.py).
+
+## Resume point 3 (successor 28; 2026-11-06 02:39Z by date -u)
+- P-TR3 (l-comp d03d8370): report docs/referee-2/R2-P-TR3.md. T^R(3) <= 8 SIGN WITH GAPS TR3-G1 (own RUP checker, 1 of 16 proofs
+  regenerated by me: cube 10, sha1 cae6998b = table, drup both modes + my r2rup.c VERIFIED 485,366) and TR3-G2 (encoding audit = succ. 27
+  R2-T3R-audit, carried over; audited cnf.py fd882af1 gives the certified DIMACS sha1s for cubes 0, 1, 10, 15). Lower bound SIGN (witness
+  replayed by r2sim.py). drup.c sound (read every line; fuzz 0 unsound); D-1 hang on malformed token. L-1: L-a (cite R110), L-b
+  («acyclic»), L-d (source note + ENCODING.md) required, L-c optional.
+- Traps (mine): «cd X && (A) & (B) &» backgrounds the cd with A — B runs in the old cwd (3 runs failed, files in repo root, deleted);
+  a job reading a file another background job is still writing (race). Use absolute paths, create inputs before launching.
+
+## Resume point 2 (successor 28; 2026-11-06 01:26Z by date -u)
+- P-IDEAL-KEYS fixes entry 1 + L-2 (l-new 1a178aff): Addendum 1. Fixes CORRECT, TOWER SIGN (replaces DEAD tower), L-2 MATCHES (byte test
+  R1-R10). My misses: KY-1 (7 = 1 + desc(6) arithmetic; my own output showed it), P-1 (keycheck checks KP, line says keys).
+- Trap: check the arithmetic of every «Does NOT claim» parenthetical against my own output, not only the statements.
+
+## Successor 27 handover check (Opus 5.5 under D12/D19; 2026-11-04 07:27Z by date -u)
+1. Branch claude/referee-2: ls-remote and local both 993c1710 (no stale clone this time); trunk claude/vibrant-johnson-nxvvxo e951db48
+   merged by fast-forward (993c1710 was its ancestor: 0 ahead / 20 behind before, 0 / 0 after).
+2. Open work: P-IDEAL-M2 (l-new 6bcfa0de) -> report docs/referee-2/R2-P-IDEAL-M2.md; next step: re-hash, paper check, own simulator.
+   Nothing else open (succ. 26 queue empty).
+3. GAPS rows owned by REFEREE-2: none (REFEREE-2 appears only in closed rows' notes).
+4. D1 (active, DECISIONS.md l. 7-8): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim,
+   including the fleet's own, as wrong until it passes the gauntlet below.» «Never downgrade the referee to save money.»
+   D12 (active): «WE can run referees on opus too temperoraly». D19 (active): «we have 9% usage left until tomorrow night, make use of it».
+5. Trap: premise routes taken from docs/lit instead of RESULTS (C115 E-1). Check: every premise quote grepped verbatim in docs/RESULTS.md.
+
+## HANDOVER (successor 27, Opus 5.5 under D12/D19; written 2026-11-05 13:38Z by date -u; context ~525k)
+Branch claude/referee-2 (trunk fast-forwarded 2026-11-05 11:11Z, no merge commit needed). REFEREE-2 owns no docs/GAPS.md rows. Every push
+via scripts/push.sh in the background (redirect, echo exit; verify ~20-35 min; it pushes only the commit it verified, so push again
+after committing during a verify). All VERIFY PASS.
+### Reports of record (all «(Opus 5.5, D12)»)
+| packet | object | report | outcome |
+| --- | --- | --- | --- |
+| P-IDEAL-M2 | l-new 6bcfa0de; L-2 4d244698 | R2-P-IDEAL-M2.md, -L2.md | 7 SIGN; L-2 MATCHES; agreed REFEREE M2-G1 (my miss: LOCAL own-mover form) |
+| R105 CHAINED (Lead ask) | RESULTS R105 line | R2-R105-chained.md | instance diff_n2 (deg 3, N 2): line reading breaks CHAIN-BACK (i); now Erratum E-2 |
+| P-IDEAL-SEG | l-new 8291ecf7; fixes 6eb389a6 | R2-P-IDEAL-SEG.md | 4 SIGN; L-1 MATCHES; F-1 (maxratio remark), F-2 (quote) fixed, CORRECT |
+| P-IDEAL-SLOT | l-new e46e98a4; L-2 6eb389a6; L-3 b261c3f9; L-4 d488d06d | R2-P-IDEAL-SLOT.md, -SLOT-L2.md (Add. 1, 2) | 7 SIGN; SL-L1 (LIFT common W-target A; control lift_split_ctrl.json), SL-L2 («over 𝓛_d»); L-4 MATCHES (DATA per C121 §5) |
+| P-IDEAL-FLIP | l-new 9effea1f; fixes+L-2 4c2e5124 | R2-P-IDEAL-FLIP.md, -FLIP-L2.md | 5 SIGN + DEAD SC-ISO SIGN WITH GAP G-FLIP-1; L-1, L-2 MATCH; F-a/F-b SIGN |
+| T^R(3) audit (G-FLIP-1 (b)) | l-comp 6f19564f box27 cnf.py fd882af1 | R2-T3R-audit.md | encoding faithful, SYM sound, 16/16 cubes UNSAT re-run, pin 0/414: G-FLIP-1 CLOSES on my side (no DRAT) |
+### OPEN: none on my side. Pending at the Lead: drop «CONDITIONAL» from FLIP's DEAD (L-3 or erratum) after the other referee's audit.
+### Tools (own code; lane code never imported, except cnf.py as the audited artifact)
+- R2-P-IDEAL-M2/m2_check.py: IDEAL simulator from R104 (β-sets), all M2 / R105 counters, rand_genome (LADDER=1), mut climbs. Reads env NEG
+  (old-state keys) — do not reuse the name NEG in tools that import it.
+- R2-P-IDEAL-SEG/seg_check.py (SEG on every sub-interval, own freeze), R2-P-IDEAL-SLOT/slot_check.py (SHIFT, LIFT, 𝓛_d generator,
+  SEG-CAP chain), R2-P-IDEAL-FLIP/flip_check.py (c-step, forced runs, H_q, G^swap, exact FLIP-1 search; control FNEG),
+  R2-R105-chained/chained_check.py, R2-T3R-audit/pin_mine.py (CNFPY=path to an encoder with build(d, L)).
+- Scratch (container-local): worktrees wm2, wseg, wslot, wflip; lred (L-RED 5f3e89e1 r178/r187/r199/r200 for box160/iso.py with LRED=);
+  lcomp (l-comp 6f19564f box27).
+### Traps (mine this session)
+- LOCAL «states on its chain» includes the option's own mover: check own-mover moves in every LOCAL use (REFEREE M2-G1).
+- Paper-check «Does NOT claim» parentheticals (SEG F-1 maxratio, FLIP F-1 «in 𝓛_d»): they were false twice.
+- Line clauses that state a construction loosely (SLOT LIFT): test the loose reading with a control instance.
+- Scope of a remark bound to a subclass (SLOT SL-L2: bound over pure ladders vs over 𝓛_d).
+- Env-var names shared between imported tools (NEG): spurious control hits.
+- A lane log that does not print a flag (ISO): prove the setting from the CNF size or re-run with the flag unset.
+
+## Resume point 7 (successor 27; 2026-11-05 12:49Z by date -u)
+- FLIP report dc622d03 pushed. T^R(3) audit (l-comp 6f19564f box27, cnf.py fd882af1): R2-T3R-audit.md. Encoding faithful; SYM sound;
+  16 cubes cover all starts; ISO off proven by CNF size (58,896 vs 30,994 with ISO); my re-run 16/16 UNSAT; pin test vs MY simulator
+  0 disagreements on 414 pairs. G-FLIP-1 CLOSES on my side (caveat: no DRAT). Extracted l-comp copy in $SCRATCH/lcomp.
+- FLIP fixes entry 1 + L-2 (l-new 4c2e5124): F-a/F-b SIGN, F-c correct, L-2 MATCHES (byte test): R2-P-IDEAL-FLIP-L2.md.
+- FLIP L-3 (l-new 47b4e165, 4089bd73; C122 R1-R4) MATCHES (Addendum 1). Re-parked.
+
+## Resume point 6 (successor 27; 2026-11-05 11:17Z by date -u)
+- SLOT L-4 MATCHES (c11e2490). P-IDEAL-FLIP (l-new 9effea1f; packet 92803bd5, line 36418d16): R2-P-IDEAL-FLIP.md. W-ONLY, NOW-ONCE, SWAP,
+  FLIP-1 SIGN; DEAD SC-ISO SIGN WITH GAP G-FLIP-1 (machine premise T^R(3) <= 8; close = independent encoding + referee encoding check).
+  L-1 MATCHES. N-1 SWAP-RUN caveat unnecessary (any q works); F-1 «two genomes in 𝓛_d» false for H_q (cap via SHIFT, T*(d-1)).
+  Tool R2-P-IDEAL-FLIP/flip_check.py (FNEG control; NEG is read by m2_check!). Lane query re-run with L-RED 5f3e89e1 in $SCRATCH/lred.
+- TRAP (new): env-var names shared between my tools (m2_check reads NEG): use distinct names per tool.
+
+## Resume point 5 (successor 27; 2026-11-04 14:38Z by date -u)
+- L-3 (b261c3f9, 0c51ce6d) MATCHES (byte test True). L-4 (d488d06d, 008b10ad; DATA per C121 §5) MATCHES (Addendum 2).
+- SLOT report cdf8e962 pushed. L-2 (l-new 6eb389a6, 55e74726) crossed: SL-L1 MET, SL-L2 NOT MET (insert «over 𝓛_d»): R2-P-IDEAL-SLOT-L2.md.
+  SEG fixes entry 1 (2e3dd532): F-1, F-2 CORRECT.
+
+## Resume point 4 (successor 27; 2026-11-04 13:17Z by date -u)
+- SEG: 9a746361 pushed; Lead 13:14Z: REFEREE agrees; F-1/F-2 to L-NEW fixes entry 1. docs/referee/ SEG may be read now.
+- P-IDEAL-SLOT (l-new e46e98a4; packet 62901b5f, line 17236fb1, lift_max_d4_L13 33fec48f): R2-P-IDEAL-SLOT.md, all 7 SIGN, no gap.
+  L-1 REQUIRED SL-L1 (LIFT clause must state the common W-target A; split A/B changes the run: lift_split_ctrl.json, T 0 -> 1) and
+  SL-L2 (SANDWICH remark only over L_d, not over degree-1-free ladders). Tool R2-P-IDEAL-SLOT/slot_check.py. Worktree $SCRATCH/wslot.
+
+## Resume point 3 (successor 27; 2026-11-04 12:31Z by date -u)
+- P-IDEAL-SEG (l-new 8291ecf7; packet 7fa84784, line a18f6f0c, max_d5_L15 ba963ace): report R2-P-IDEAL-SEG.md: SEG, SEG-ONCE,
+  LEVEL-PRODUCT, DEAD REPLAY all SIGN, no gap; L-1 MATCHES (P-1..P-4 optional). F-1 §5 maxratio remark («only one degree-2 mover») false:
+  r150_049 has none. F-2 §4 proposal quote not verbatim to N5-SEG-box157.md l. 24. Tool R2-P-IDEAL-SEG/seg_check.py (all sub-intervals).
+  Worktree $SCRATCH/wseg. NEXT: push, report; then docs/referee/ may be read.
+
+## Resume point 2 (successor 27; 2026-11-04 08:27Z by date -u)
+- Report e01175f6 pushed (VERIFY PASS), Lead messaged 08:09Z. Lead 08:27Z: L-2 round routed to L-NEW; asked (a) my view of REFEREE M2-G1,
+  (b) R105 CHAINED line-vs-packet DATA for Erratum E-2.
+- docs/referee-2/R2-R105-chained.md: instance diff_n2.json (degree 3, N 2, t 2, h_1 = h_2 = 0); LINE reading breaks CHAIN-BACK (i) at all
+  35,116 DIFF steps; (ii) T <= N(1+U') 0 failures on 926,555 runs (climbs reach slack 0), unproved; no DIFF at degree <= 2 (XI-NEW).
+  P-IDEAL-M2 unaffected. AGREE M2-G1 (LOCAL line form includes x; needs P-IDEAL-RED LOCAL (a)/(b)): my miss.
+- TRAP (new): a «depends only on the states on its chain» quote includes the option's own mover; check own-mover moves in every LOCAL use.
+
+## Resume point 1 (successor 27; 2026-11-04 07:33Z by date -u)
+- P-IDEAL-M2 (l-new 6bcfa0de; packet bc47b06c, line 0160d1e3): report docs/referee-2/R2-P-IDEAL-M2.md. All 7 statements SIGN, no gap.
+  Line L-1 REQUIRED M2-L1 (bind KF_x, moves(x)), M2-L2 (34,934 runs are all-start only for N <= 8; 8 of 200 genomes N 9-10). P-1..P-3 optional.
+- Tool R2-P-IDEAL-M2/m2_check.py (own simulator from R104 text, beta sets; json / ALLN / rand / LADDER / mut climb / NEG=1). Reproduces lane
+  totals exactly (468/222/300/919/707/333; 34,934/38,676/2,148/5,188; 3,981/298). Worktree $SCRATCH/wm2 = l-new 6bcfa0de.
+- Finding: landed R105 statement omits «as a mover other than h_t» in CHAINED (its packet has it); h_(t-1) = h_t occurs at degree >= 3.
+- L-2 (l-new 4d244698, fixes 66fd6173, L2 c890f268): MATCHES (R2-P-IDEAL-M2-L2.md); entry 1 CORRECT (M2-G1 closed). Optional P-4, P-5.
+
+## HANDOVER (successor 26, Opus 5.5 under D15; written 2026-11-04 04:17Z by date -u; context ~490k; Lead 04:16Z: report, then park)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows. Every push via
+scripts/push.sh in the background (redirect, echo exit; verify takes ~20-25 min), VERIFY PASS each time.
+### Reports of record (all «(Opus 5.5, D15)»)
+| packet | object | report | lines | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-REALIZE (R104 LANDED) | l-red e609c5d2, 067f06b6 | R2-N5-REALIZE.md (+ Add. 1 joint list, Add. 2 VJ-LOC correction) | L-1 MATCHES (R2-N5-REALIZE-L1.md), L-2 MATCHES (R2-N5-REALIZE-L2.md) | all SIGNED; G-REAL-1 closed; own tool R2-N5-REALIZE/realize_check.py |
+| P-IDEAL-RED (R105 LANDED 02:59Z) | l-new 0ebddcf5, 06f2c186 | R2-P-IDEAL-RED.md | fixes+L-1 REQUIRED (R2-P-IDEAL-RED-L1.md), L-2 MATCHES (R2-P-IDEAL-RED-L2.md) | 16 SIGN; tool R2-P-IDEAL-RED/ideal_check.py |
+| P-IDEAL-CUBE | l-new d97555d4, 366afedc | R2-P-IDEAL-CUBE.md | L-1 REQUIRED LC-1/LC-2, L-2 MATCHES (R2-P-IDEAL-CUBE-L2.md, l-new a0bb2694, 449421e4) | 4 SIGN; [WW22] v1 verbatim; tool R2-P-IDEAL-CUBE/cube_check.py |
+### OPEN: none. CHECKER may land P-IDEAL-CUBE (after R105, which has landed). A successor takes the next packet.
+### Tools (own code; lane code never imported)
+- R2-P-IDEAL-RED/ideal_check.py: IDEAL model simulator (sets, top-rank; keys under new state), every P-IDEAL-RED statement, several pi,
+  both tie rules, INTERVAL-RESTRICT builds and runs H; NEG=old control; random genome generator rand_genome(rng, Nmax, dmax, degmax).
+- R2-P-IDEAL-CUBE/cube_check.py: imports ideal_check; cube orientation, every face (USO/COMB/ORI/ACYC), MULTI->SINGLE, ladder L_K + DP LP.
+- R2-N5-REALIZE/realize_check.py: Gamma(G) builder (byte-identical to pins), SPEC N5 loop recording sigma_new before S4c, BF / MUT controls.
+- [WW22] e-print v1 in $SCRATCH/ww22 (container-local; sha256 88e1f1b7…); re-fetch https://arxiv.org/e-print/2207.05985 if needed.
+### Traps (mine this session; each was caught by CHECKER or REFEREE first)
+- Premise routes only from RESULTS, never docs/lit (C115 E-1: VJ00 5.8 «1 => 2» is NOT landed; R36 (c) is the one-player carrier).
+- Paper-check «Does NOT claim» / negative remarks too (IR-1: MONO's remark was false).
+- Bind every count's index range in a line (REFEREE L-1d: U over t in [2, T]).
+- Binder pass on lines: undefined symbols (eps, A) and DATA clauses that depend on unstated parameters (gate order in L_K).
+- Background waiters: copy the task id from the tool result exactly (I twice waited on a wrong id); never pkill -f a pattern in my own command.
+- Always run date -u alone and copy it into stamps (one message went out «approx.»).
+
+## Resume point 1 (successor 26, Opus 5.5 under D15; 2026-11-02 04:19Z by date -u)
+- Start: ls-remote first; local container stale at cf5157fe, ff to 770a9a9c (succ. 25 handover); trunk 803e0545 merged (git merge).
+  STEP 0 answers messaged to the Lead 04:03Z (handover-checks file is a Lead path: not written by me).
+- P-N5-REALIZE (l-red e609c5d2, 067f06b6, line 53dd6e9f): report docs/referee-2/R2-N5-REALIZE.md. All to-sign items SIGNED.
+  G-REAL-1 (minor, closed): §1 restates 1E-N3 as P2 for sigma_j at non-fallback transitions only; the proof uses P1 (SBAR, TAU, K (c))
+  and P2 for S4a's sigma_new BEFORE S4c (REALIZE step j < L would be circular). Closed by R57 (b) / L45 / R102 form plus (R1); and
+  directly: a trace of S1 on dual(H) at a standard state (K0 skipped, c_W BFS with no restriction, K2 LONGEST gives K0 -> K3).
+  Line REQUIRED REAL-L1 (1E-N3 gloss), REAL-L2 (parity direction of the IDEAL order unstated). P-1, P-2 optional.
+- Tool R2-N5-REALIZE/realize_check.py: own builder (BUILD byte-identical to 4 pins), own IDEAL, SPEC loop with sigma_new;
+  BF=m (all Odd strategies; rho unique optimum); MUT=noesc / eorder controls fire, eprio 0; cyc scope: 134/294 sbar != beta at state 0.
+  Lane DATA reproduced exactly (lemck, realck, t2, pinck, Oink). Worktree $SCRATCH/wreal = l-red e609c5d2 (tools/oink symlinked).
+- Report pushed bcd43b5a (VERIFY PASS); Lead messaged 04:51Z. Then read REFEREE 22 (05b865e0): agree its REAL-L1 (e-index order not in line;
+  my MUT=eorder is a failing instance), my miss. Addendum 1 a22cf5d8: joint line list.
+- REALIZE L-1 (l-red 02dfc35c, line-L1 1d72ee31, fixes 864cad59): MATCHES (R2-N5-REALIZE-L1.md); byte test True on 8 replacements;
+  MUT=border (beta indices reversed) 0 violations: only the e-order matters.
+- CHECKER C115 FAIL E-1: [VJ-LOC] = VJ00 5.8 «1 ⇒ 2» is NOT landed (R15 (iii)); carrier R36 (c) on G^d. My miss (took it from docs/lit T21).
+  REALIZE L-2 (l-red c374be8f, b44456d1, fixes 64f062c2): MATCHES (R2-N5-REALIZE-L2.md); byte test True; R36 (c) coverage confirmed;
+  R2-N5-REALIZE.md Addendum 2 corrects my row. TRAP: premise routes only from RESULTS, never from docs/lit. Queue empty.
+- 2026-11-03 20:46Z (date -u): P-IDEAL-RED (l-new 0ebddcf5, 06f2c186, 261 lines; D19 / L47): report R2-P-IDEAL-RED.md, all 16 statements
+  SIGN (U-EQ precision N-1: U <= T - 1 false at T = 0). Premise = R104 definition only (checked vs RESULTS l. 9864). Tool
+  R2-P-IDEAL-RED/ideal_check.py (sets, not ENC; 3 random pi; both tie rules; H built and run): 0 viol on 110,410 runs; NEG=old fires.
+  Lane w99 strings reproduced exactly (worktree $SCRATCH/wideal). Degree <= 2 needed: KEYFLIP / TOP-MONO fail at degree 3 (info).
+- 2026-11-03 23:03Z (date -u): IDEAL-RED fixes entry 1 + line L-1 (l-new b115ff3a, fixes 727b6f0c, L1 44d0287a): fixes CORRECT; L-1 needs L-R1 (eps
+  undefined, X case), L-R2 (A undefined), L-R3 (labels agree only from a+2). MY MISS: MONO's false «Does NOT claim» remark (REFEREE 23
+  IR-1). TRAP: paper-check negative remarks too. Report R2-P-IDEAL-RED-L1.md.
+- 2026-11-04 00:09Z (date -u): IDEAL-RED line L-2 (l-new ffeb9736, 65ba7ca7, fixes 2e8c3630): MATCHES (R2-P-IDEAL-RED-L2.md); byte
+  test True; 4 required + optional 5-8. Missed REFEREE L-1d in L-1 (U range unbound). TRAP: bind every count's index range. Queue empty.
+- 2026-11-04 02:50Z (date -u): P-IDEAL-CUBE (l-new d97555d4, 366afedc; line 99ae8fac): all SIGN (DECOMP o-c, MULTI->SINGLE, T<=LP,
+  LADDER-LP). [WW22] v1 e-print opened (sha256 88e1f1b7), Def. 3/4, §2.2, Thm 18 quotes verbatim. Line REQUIRED LC-1 (IDEAL-run-empty
+  DATA needs gates increasing in k; decreasing gives T 1), LC-2 (W-key «must carry» = READING). Tool R2-P-IDEAL-CUBE/cube_check.py.
+
+## HANDOVER (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; written 2026-11-02 03:32Z by date -u; context ~505k; Lead 03:35Z: hand over and park)
+Branch claude/referee-2, merged with trunk (git merge, no rebase) before pushes. REFEREE-2 owns no docs/GAPS.md rows.
+### Reports of record (all "(Opus 5.5, D15)"; every push via scripts/push.sh exit 0, VERIFY PASS)
+| packet | object (sha1) | report | lines | outcome |
+| --- | --- | --- | --- | --- |
+| P-N5-ROOT (R100) | f06f493e (l-new ed2fdaf2) | R2-N5-ROOT114.md d1c493fb | L-1 83c1838f (+Add. 1 L43), L-2 3bb41a4c, L-3 35d1062b MATCH | all SIGNED; ROOT114-L1 (k unbound: false at k = q, w_re3_1 k 6) |
+| P-N5-ODD (R98) | line L-3 f83b169e | R2-N5-ODD-L3.md d61827c5 | MATCHES | C108 E-1/N-1 |
+| P-N5-STAIR (R99) | line L-3 9db0b169 | R2-N5-STAIR-L3.md faa8dac9 | MATCHES | P-1 attribution confirmed |
+| P-N5-GATE (R101) | ac88915d (l-new 516717da) | R2-N5-GATE.md e35e8280 | L-1 9b30c652 MATCHES | all SIGNED; GATE-L1 lend107 106 not 107; Lemma S class-free |
+| P-N5-S4B (R102) | f1b65da5 (l-si 68fa36619) | R2-N5-S4B.md 1b9ef2e1 | L-1 0e8ae566 MATCHES | S4B-OPT/KEEP SIGNED; L42 lifted (L45) |
+| R24 L44 check | R24 (a), (b) | R2-R24-L44.md d96d2f9e | — | Lemma R, TB choice form CLASS-FREE (L46) |
+| P-N5-ANCHOR (R103, CLOSED C114) | ad97ad88 (l-new f009a9a1) | R2-N5-ANCHOR.md b431ec81 | L-1 f6b60cfc (REQ κ), L-2 dc7db0e7 MATCHES | all SIGNED; (R1) holds; G-ANC-1 corner vacuous |
+### OPEN: none. Every item sent to me is answered and pushed; my queue is empty (confirmed 03:3xZ).
+### Method (per packet)
+1. Fetch, re-hash packet + line (git show C:file | sha1sum). Do not open docs/referee/ for the packet before own report is pushed.
+2. Paper check every step against cited landed labels (RESULTS.md on trunk, DECISIONS L-readings) and SPEC docs/new/N5-ssi-global.md.
+3. Own tool in docs/referee-2/R2-<PKT>/ built on R2-N5-LATEP/latep_check.py (N5 loop, Engine, dual, pval) + R2-N5-WRUN/wrun_check.read_start
+   (validated starts). Add BND/boundary probes for every quantifier edge (found ROOT114-L1 this way).
+4. Corpus: experiments/si/anc58/corpus_fixed.lst (l-si) has 1,132 lines but only 813 DISTINCT: its 319 start-less lines repeat
+   experiments/new/box59/sbcg.lst. Dedup with awk '!seen[$0]++', split NF>1 (runs=0) / NF==1 (runs=1, default start), split -n l/3
+   for parallel jobs. Older packets' «1,132» counts double-count (reported to Lead; E-1 erratum exists).
+5. Pins in a worktree of the packet commit ($SCRATCH/w*), Oink via docs/referee-2/R2-N5-ROOT114/oink_pins.py tools/oink/build/oink PREFIX LIST
+   (scripts/setup_oink.sh first in a fresh container).
+6. Line: token diff (git diff --no-index --word-diff=plain --word-diff-regex='[^[:space:]]+'), byte test by exact replacement (watch
+   repeated phrases: replace the right occurrence), binder pass (free symbols: κ in ANCHOR L-1), DATA numbers, L41 / L43 / L44 / L46 tags.
+### Re-run commands (from repo root)
+- python3 docs/referee-2/R2-N5-ROOT114/root_check.py files LIST RUNS PREFIX   (DESC-ROOT, ORIGIN-NEW, NEW-FUEL, BND_*)
+- python3 docs/referee-2/R2-N5-GATE/gate_check.py files LIST RUNS PREFIX      (SQZ, SETTLE/BRACKET-MON, CONSISTENT-RED)
+- python3 docs/referee-2/R2-N5-S4B/s4b_check.py files LIST RUNS PREFIX       (S4b on H′ brute force; MUT=1 control; CAP=1024)
+- python3 docs/referee-2/R2-N5-ANCHOR/anchor_check.py files LIST RUNS PREFIX  (choice rule movers/non-movers/corners; FL runs; DUMP=1)
+### Traps (mine this session)
+- A clause «k − 1 ∈ F» with k unbound admits k = q (the cut transition): probe the boundary transition of every run-scoped lemma.
+- Lane phase counts may group transitions by FIRST state only (gate.py): compare with the packet's own definition.
+- L46's corner clause («play passes x») is vacuous for fully optimal options (path to c avoids x); only the cycle part can pass x.
+- ODIFF-type counts depend on which state's set is used (source state vs either).
+- push.sh pushes only the commit it verified; commit during verify, then push again. Never pipe push.sh/verify.sh.
+- Wait on PIDs / output files with Monitor until-loops, never pgrep -f on a pattern in the waiter's own command line.
+
 ## Resume point 1 (successor 25, session_01V5yGRaPp26T6iMUpCRmXsW, Opus 5.5 under D15; 2026-10-31 18:45Z by date -u)
 - Start: origin head cf5157fe (is-ancestor OK, last pushers all succ. 24); trunk merged; Lead messaged 18:36Z.
 - P-N5-ROOT (l-new ed2fdaf2, f06f493e, line 954af7be): report docs/referee-2/R2-N5-ROOT114.md. All SIGNED, no packet gap.
@@ -18,7 +899,18 @@ Rule: do not read docs/referee/ or notes/REFEREE.md before my own report on a cl
   needs no C^1O (box 21 §2.2: VJ00 (11) on G, G^d + Lemma R + R15 (a)(d)). Line REQUIRED GATE-L1: lend107 is 106 in-phase W-changes, not
   107 (lane gate.py groups by first state, counting the closing transition); fbg_K12 403 exact. Corpus DATA reproduced (INC 12,433 /
   17,841; 575 INC-0; 116 vs 118 exceeding). Tool R2-N5-GATE/gate_check.py, phases.py. Worktree $SCRATCH/wgate = l-new 516717da.
-- NEXT: GATE line revision word-diff when the Lead sends it. Context ~300k at GATE report.
+- GATE L-1 (afb8b99e, d677161c) MATCHES 9b30c652.
+- P-N5-S4B (l-si 68fa36619, f1b65da5, line f8559b5e): report docs/referee-2/R2-N5-S4B.md. S4B-OPT, S4B-KEEP SIGNED; line MATCHES (P-1
+  optional: N-1E-1 + arena-input confirmation). S4b = S1 procedure on H' (its G_sigma). DATA exact (7,772 / 6,719 / 290,345 / 1,053 / 36).
+  Tool R2-N5-S4B/s4b_check.py. Worktree $SCRATCH/ws4b = l-si 68fa36619.
+- S4B L-1 (96fb62cb3, 95373010) MATCHES; dedup counts 5,726 / 5,058 / 668 reproduced on 813 distinct lines. FINDING: box 53 corpus
+  (1,132) = 813 distinct + 319 start-less alt_all lines repeating sbcg lines: corpus DATA in STAIR / ODD / ROOT / GATE double-counts them.
+- R24 L44 check d96d2f9e: Lemma R, TB choice form CLASS-FREE (L46 recorded; L46 misattributes the corner clause to me).
+- P-N5-ANCHOR (l-new f009a9a1, ad97ad88, line 7f140d0c): report docs/referee-2/R2-N5-ANCHOR.md. All SIGNED; (R1) holds (TB steps 1,
+  3-5 + Lemma R describe S1 output at every vertex); G-ANC-1 corner clause vacuous on fully optimal TIE (closed). Line REQUIRED
+  ANCHOR-L1 (state the (R1) ruling), ANCHOR-L2 (define TIE as fully W'-optimal). Pins exact; corpus 20/42/23, GCH 3; ODIFF count 2 at
+  source-state ODIFF (13 either-state). Tool R2-N5-ANCHOR/anchor_check.py. Worktree $SCRATCH/wanc.
+- NEXT: whatever the Lead sends. Context ~385k.
 
 ## HANDOVER (successor 24, session_01V5yGRZwUkPZRndvKiAAuAD, Opus 5.5 under D15; written 2026-10-31 15:3xZ by date -u; context ~480k; Lead 15:17Z: handover and park)
 Branch claude/referee-2, merged with trunk (git merge, no rebase) before every push. REFEREE-2 owns no docs/GAPS.md rows.

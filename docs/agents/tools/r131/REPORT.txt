@@ -1,0 +1,162 @@
+REPORT of the R131 build (docs/agents/tools/r131/build.sh). RESULT: BUILD PASS: every check passed.
+Sources read at the heads fetch.txt records (Sat Nov 14 13:41:37 UTC 2026).
+
+1. WHAT WAS BUILT
+  docs/agents/R131-draft.md: sha1 fff9aa3788cb1bb1c87ce905c6aad47d183e379a, 634 lines. Header l. 1-43; entry block l.
+    45-407 (363 lines: title + 362 bullet lines; sha1 17b216c93c1f06b5dabc02e966c9135b040a1e9e); proposal paragraph l.
+    409-422; UPDATE line l. 423 (sha1 0eeeafed601596b4076c8760fe72f61bf776a81b without its newline, unfilled; 7414
+    bytes); Addendum from l. 425.
+  Title = '### R131 [refereed-only] ' + line L-3 verbatim (docs/red-b/P-N5-EXP-line-L3.txt at claude/l-red-b 10dfedb6,
+    sha1 fd9074a3b9961f59a1b64d5acdaa28529306ede9, 7267 bytes) + ', CHECKER PASS (docs/checker/C148.md, checker
+    <open-slot word>)'. THE LINE IS A STAND-IN for the line of record L-4.
+  Tools (all under docs/agents/tools/r131/, untracked): cfg.json (every moving input), fetch.sh (the only network
+    step; writes fetch.txt), lib131.py, datafacts.py, updlib.py, fill131.py (builds the draft; every quotation located
+    by script), tools/lanecheck.sh, tools/upd.py, tools/data.py, tools/prem.py, tools/shape.py, tools/lp.py,
+    tools/sweep.py, tools/landtest.py, tools/mkadd.py, tools/report.py, build.sh, land131.py, out/ (tool outputs,
+    ledger.json, hashes.json, draft.p1.md). tmp/ is removed at the end of every build.
+  Nothing was added, committed, merged, pushed, rebased or stashed; scripts/push.sh and scripts/verify.sh were not
+    run; RESULTS, GAPS, NOW were read, never written (land131.py was run as DRYRUN only, into tmp/).
+
+2. CHECKS (out/<name>.out; last line of each)
+  lanecheck      rc 0  lanecheck: PASS
+  fill           rc 0  fill131: pass-1 draft 424 lines; block 363 lines (sha1 17b216c93c1f06b5dabc02e966c9135b040a1e9e); UPDATE sha1 0eeeafed601596b4076c8760fe72f61bf776a81b
+  upd            rc 0  upd: PASS
+  data           rc 0  data: 32 checks, 0 failed; PASS
+  prem           rc 0  prem: PASS
+  shape          rc 0  shape: PASS
+  lp             rc 0  lp: PASS
+  sweep          rc 0  sweep: PASS
+  landtest       rc 0  landtest: PASS
+  mkadd          rc 0  mkadd: wrote docs/agents/R131-draft.md: 634 lines, sha1 fff9aa3788cb1bb1c87ce905c6aad47d183e379a; Addendum 210 lines from line 425
+  post_shape     rc 0  shape: PASS
+  post_lp        rc 0  lp: PASS
+  post_sweep     rc 0  sweep: PASS
+  post_landtest  rc 0  landtest: PASS
+
+3. DRYRUN (land131.py 5555555 DRYRUN, on a COPY of the draft with the open-slot words replaced and hashes recomputed; fixed stamp)
+  T1 the draft as it is (8 open-slot tokens besides the checker token; stand-in line True): rc 2, refused: as expected
+  T2 land131: DRYRUN into dry2, stamp 2099-01-13 00:00Z, checker 5555555
+  T2   RESULTS: 17367 -> 17731 lines (+364 = block 363 + 1 empty); R131 at l. 16725-17087, the Erratum line moves l.
+    16725 -> l. 17089; pipes 1483 -> 1483 (title 0)
+  T2   GAPS: 23 -> 23 lines; row G-N5-TIME l. 11 -> l. 23 (status open -> closed, under the closed table); row pipes
+    76 -> 76; file pipes 198 -> 198; UPDATE 7414 bytes
+  T2   GAPS row starts '| G-N5-TIME | major | L-NEW (L-LIT T22; referees later) | closed | N5 '
+  T2   GAPS UPDATE starts 'UPDATE 2099-01-13 00:00Z: RESULTS R131 (P-N5-EXP; CHECKER C148 5555555) [refereed-only]
+    LANDED:'
+  T2   GAPS row ends '-B successors 5-7). G-N5-TIME is answered NO for N5 from S3 (through RESULTS R117 as landed,
+    refereed-only). |'
+  T2   NOW: R17-R130 -> R17-R131 (1 place)
+  T2   scripts/check_docs.py on the copies: rc 0
+  T2 land131: DRYRUN done (nothing in the repository was written)
+  T2 sha1 of the results: RESULTS 9ed60ce103dda557ee261d8053057db5cf30324b GAPS
+    927ccf69eae28c0b49fe3f6b07c1e2178a64b962 NOW ad30d9d4b40a52310c50872174e8b9d2426db016
+  T2 OK   RESULTS: one R131 heading at l. 16725, block l. 16725-17087, empty l. 17088, Erratum line l. 17089
+  T2 OK   RESULTS: pure insertion (the 16724 lines before and the 644 lines after are unchanged), 17367 -> 17731 lines
+  T2 OK   RESULTS: the inserted block is the copy's block with the checker token filled (checker 5555555) once, no
+    open-slot word, no fill token)
+  T2 OK   RESULTS: headings 131, the last two R130 R131; pipes 1483 -> 1483
+  T2 OK   GAPS: the row is the old row with status closed and ' ' + UPDATE + ' ¦' appended, nothing else (239722 ->
+    246956 characters)
+  T2 OK   GAPS: row l. 11 -> l. 23, below the closed heading (l. 12), the last table row of the file; every other line
+    unchanged; 23 -> 23 lines
+  T2 OK   GAPS: check_docs cells of the row: id G-N5-TIME, severity major, owner present True, status closed; row
+    pipes 76 -> 76
+  T2 OK   GAPS: RESULTS UPDATEs on the row 60 -> 61, the last three R129 R130 R131
+  T2 OK   NOW: 1 line(s) differ, 84 -> 84 lines; only the cfg replacements
+  T2 OK   draft copy: first line ends with the landing note, the rest unchanged
+  T2 OK   scripts/check_docs.py on the copies: rc 0
+  T2 OK   negative control (the landed title without its label): check_docs rc 1, message names the entry True
+  T3 the copy with one letter of the block changed, T2's hashes: rc 2: land131: REFUSED: the draft's entry block (sha1
+    00ed6a32fb56df73378ca83f9ed3cadf42f47009, 363 lines) is not the block build.sh recorded (sha1
+    1c4a2ae5422b6821cd77efc0e49397547f456ee8, 363 lines)
+  T4 the copy with one more open-slot word in its header: rc 2: land131: REFUSED: the draft holds the open-slot word 2
+    times; only the title's checker token may carry it (other lines: [2])
+
+4. OPEN SLOTS (each carries the open-slot word in the draft; land131.py refuses while any remains): 8 besides the checker token
+  - the line of record L-4 (stand-in L-3): title, UPDATE, the bullet 'The RESULTS line'.
+  - fixes entry 9 (Fixes bullet).
+  - REFEREE stage 5b: its section 14, the line word by word, fixes entries 7 to 9, the final signature line naming the
+    line by sha1 (Signatures bullet).
+  - REFEREE-2's line check; its signature names fixes entries 1-5 only (Signatures bullet).
+  - the checker token of the title (filled by land131.py <checker-sha>).
+
+5. FLAGS (the builder's reading; nothing in the line or in any quoted text was changed)
+  - G-LINE (blocking until the second run): the build stands on L-3; the line of record L-4 and fixes entry 9 were not
+    on origin at the fetch (claude/l-red-b 10dfedb6).
+  - G-SLOTS (blocking): no referee has checked fixes entries 7 and 8 or any line after L-1. REFEREE's signature line
+    names entries 1-6 (stage 5a, 9ec40ff9), REFEREE-2's names 1-5 (Addendum 2); the line's closing parenthesis names
+    entries 1-7. REFEREE-2's reading F-1 of clause (R3) is taken over by the lane in fixes 7.1, not yet confirmed by
+    the statement's author (REFEREE).
+  - G-K12 (wording inside the line, for the lane / the Lead): the correctness clause says 'DATA for k ≤ 12: winners =
+    Zielonka's' while part (3) of the same line has k = 13 (winners equal to Zielonka's, one engine) and REFEREE's
+    stage-5a table says 'DATA for k ≤ 13'. The entry text says 'for k ≤ 12 on two engines and at k = 13 on one'.
+  - G-R245 (note): the line gives L-RED 70's engine n5s237 'for k = 3 … 8'; R245 at c7ed9b8b also carries k = 9 and k
+    = 10 in two addenda (REFEREE's stage 5a notes that R245's own list says N5 beyond k = 8 is not established). An
+    understatement, not an overclaim.
+  - G-STATUS (note): the line keeps 'CONDITIONAL until two referees sign' (Lead ruling of 16:46Z on 2026-11-13; the
+    landed form of R130) and '(Theorem EXP-IDEAL, PROVED lane; …)'.
+  - G-5E (note): the coordinator's message names notes N-5a to N-5e; REFEREE's report at 9ec40ff9 has four, N-5a to
+    N-5d (its l. 765-771). The entry lists four.
+  - G-N5a (note): fixes entry 2 (d) tags a REFEREE-2 quotation 'l. 248-249'; it is at l. 247-249 (REFEREE's N-5a). The
+    draft quotes REFEREE-2's report directly, with script-computed lines.
+  - G-1E-N3 (substance, stated in the entry): everything about N5 is PROVED-CONDITIONAL on RESULTS R117 (and R124) as
+    landed, under SPEC's standing premise 1E-N3, which is not proved in the fleet. Unconditional: Theorem EXP-IDEAL
+    (a)-(c) and 'IDEAL-ACYC-POLY is false'.
+  - G-L43 (substance, stated in the entry): no measured run exceeds n² (largest N5 run: k = 13, 8,193 iterations, n² =
+    2,325,625; the model alone to k = 20); 2^k − 1 > n² first at k = 23 (n = 2,875), by arithmetic. The dead end rests
+    on the proof.
+  - G-BOX108 (note): L-SI's box 108 has ONE referee's check (REFEREE-2's R2-box108.md; REFEREE compared, did not
+    referee): supporting evidence, not a premise.
+  - G-U (the UPDATE's form; Lead / CHECKER to accept): built by the landed procedure (the same function rebuilds R128,
+    R129, R130's landed UPDATEs byte for byte). Choices: (i) the three labels are moved behind their clauses, each
+    clause ending where cfg.json 'clause_end' says; (ii) '; obstruction RIPPLE (' is KEPT (R130 turned its boundary ';
+    obstruction W-FLAT (' into ': '; here part (3) follows, so nothing is replaced); (iii) only '; not M3 or M4, not a
+    TARGET.md claim' is dropped; 'TARGET.md §2 (M4) stays OPEN' and the L41 scope tail stay; (iv) the ending is the
+    ruled sentence. All four are cfg.json 'update' values.
+  - G-S (GAPS layout): the Closed table of docs/GAPS.md has an empty line inside it (l. 18, between G1 and G-FDL).
+    land131.py appends the row after the LAST row of the section (G-DOM), as the file's last line. cfg.json
+    gaps.closed_position = 'end_of_first_block' puts it after G1 (l. 17) instead.
+  - G-NOW: as briefed, land131.py changes only 'R17-R130' -> 'R17-R131' (one place, the M4 row). R130's landing
+    (a41e21c0) changed TWO counters: 'R17-R129' -> 'R17-R130' and, on NOW l. 2, 'R31-R129' -> 'R31-R130'. To mirror it
+    add ["R31-R130", "R31-R131", 1] to cfg.json now.replacements.
+  - G-TRUNK (note): the draft reads trunk files by git show at aeb90ac1 (origin's trunk head at the fetch). The local
+    HEAD may be ahead (Lead commits; uncommitted edits of docs/DECISIONS*.md were present in the working tree during
+    the build and were not touched). land131.py works on the working tree and checks anchors, not sha1s.
+  - G-LEN (note): the entry block has 363 lines (R130's had 199, R128's 240): the four verdict tables of the two
+    referees are printed row by row by script. If the Lead wants it shorter, drop the table rows in fill131.py
+    ('Claims signed').
+  - G-LEAD-EDIT (i): the cost-model clause ('each iteration costs at least one step in TARGET.md §3's cost model') is
+    in the TARGET.md diff bullet, with TARGET.md §3 and the packet's sentence quoted.
+  - G-ADJ (quotations adjusted): none was altered. Table cells of the referees are printed as the reports print them
+    (no guillemets around a cell; guillemet groups inside a cell are entered as quotations of that report).
+
+6. NOT VERIFIED BY THE BUILDER
+  - The mathematics: no proof step was re-derived; the entry reports the referees' verdicts.
+  - The lane's DATA was not regenerated: numbers are read from the pinned outputs (sha1 pins checked against the git
+    objects); only the lane's fast check.sh was re-run in a git archive. No N5 engine, no Oink, no Lean, no
+    scripts/verify.sh.
+  - The referees' own logs (docs/referee/scratch/, docs/referee-2/R2-P-N5-EXP/) were not opened; L-NEW's P-N5-KEY1P
+    was not opened.
+  - REFEREE-2's R2-box108.md and L-SI's box 108 were read for their verdict and independence lines only.
+  - The CHECKER file docs/checker/C148.md does not exist yet; land131.py does not look the checker sha up.
+
+7. CFG CHANGES FOR THE SECOND RUN (then: bash fetch.sh; bash build.sh)
+  - heads: the new 40-hex heads of l-red-b, referee, referee-2 (copy them from fetch.txt after bash fetch.sh);
+    trunk.commit if origin's trunk moved (build fails with a clear message if cfg and fetch.txt disagree).
+  - line: name "L-4", path "docs/red-b/P-N5-EXP-line-L4.txt" (or the lane's name), commit (the commit that added it),
+    stand_in false, expect_sha1, expect_bytes; optionally line.history: a fill list (text / quote items) for the
+    sentence on L-4 in 'The RESULTS line'.
+  - fixes: expected_entries 9, expect_sha1, expect_lines of the file at the new head; slots.entry9: open false and a
+    fill list, e.g. [{"text": "Entry 9 (L-RED-B 7): the line L-4,"}, {"src": "FIX", "quote": "<verbatim words of entry
+    9>"}]. fill131.py asserts the append-only chain through entry8_commit and the head; add nothing else.
+  - referee.stages: append ["stage 5b", "<40-hex commit>"] (the build fails if git blame shows a commit that cfg does
+    not list); slots.stage5b: open false and a fill list quoting its final signature line and its verdict on the line,
+    e.g. {"src": "REF1", "quote": "..."}.
+  - referee2.stages: append its new addendum's commit; slots.r2_line: open false and a fill list quoting its line
+    check.
+  - update.labels[1].clause_end is already written to match both L-3 and L-4; if the line's labels or scope words
+    change, the build refuses and names the string that no longer occurs exactly once.
+  - If a quotation that fill131.py takes from a report no longer occurs exactly once (a report grew), the build stops
+    with 'AMBIGUOUS' or 'NOT FOUND' and the string: give it an occurrence number in fill131.py (third argument of q).
+  - After the second run: python3 docs/agents/tools/r131/land131.py <checker-sha> DRYRUN <dir> must run without
+    REFUSED; then the same without DRYRUN lands (it writes four working-tree files and commits nothing).

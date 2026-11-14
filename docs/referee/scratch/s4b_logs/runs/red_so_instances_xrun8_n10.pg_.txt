@@ -1,0 +1,9 @@
+GAME red/so/instances/xrun8_n10.pg 
+GAMES 1
+enum_states 11
+keep_chk 10
+loc_chk 22
+rhos 33
+states 11
+VIOLATIONS 0
+RC 0

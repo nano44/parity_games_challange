@@ -1,0 +1,9 @@
+GAME red/seg/instances/runquad_K3_m4_n54.pg
+GAMES 1
+enum_states 3
+keep_chk 1
+loc_chk 18
+rhos 272
+states 3
+VIOLATIONS 0
+RC 0

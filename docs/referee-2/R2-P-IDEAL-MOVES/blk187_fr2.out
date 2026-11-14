@@ -1,0 +1,2 @@
+P-IDEAL-MOVES: movescheck 0 violations, 4 DEAD instances re-run (output = frozen movescheck.out); pins packet 5ce2947d, line L-1 819c5815, tool 8153717b, output 48740209, instances 8bca9764 3bf6a4a4 16be2e59 7c158e2f, fixes 8d6223a2, line L-2 f3692aaa, line L-3 d3983c68: PASS
+exit 0

@@ -1,0 +1,138 @@
+rand seed 1953 mode xi runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 13
+esc seed 1953 mode xi runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 7
+noesc seed 1953 mode xi runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 12
+deep seed 1953 mode xi runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 18
+dense seed 1953 mode xi runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 13
+late seed 1953 mode xi runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 12
+lvl0 seed 1953 mode xi runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 14
+acyc seed 1953 mode xi runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 8
+LEAP_k64.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 132
+RS2_L16M6.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 28
+RS2_L2M6.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 14
+RS2_L32M6.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 44
+RS2_L4M6.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 16
+rd3_d4.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 21
+CLR_k8s16.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 31
+FPORT_n2.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 17
+FPORT_n3.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 19
+LEAP_k8.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 20
+RS2.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 13
+RS2_L8M6.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 20
+RS3.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 16
+RSG_K4.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 10
+DEAD_SEGT_n20.json skipped (not a genome with a start)
+cR_d2_w8_R22.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 27
+rd2_d10.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 29
+rd2_d3.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 12
+rd2_d4.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 14
+rd2_d5.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 19
+rd2_d6.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 19
+rd2_d7.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 26
+rd2_d8.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 19
+rd2_d9.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 24
+rd3_d3.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 15
+rd3_d4.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 21
+rd3_d5.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 21
+rd3_d6.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 25
+rd3_d7.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 28
+rf_d3.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 12
+rf_d4.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 15
+rf_d5.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 14
+DEAD_SEG2P_d4_N8.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 13
+DEAD_SEG2P_d7_N14.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 22
+DEAD_SEG2P_d9_N18.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 24
+cyc2_d7.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 24
+cyc2_d8.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 25
+cyc_d3.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 12
+cyc_d4.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 15
+cyc_d5.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 16
+cyc_d6.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 22
+cyc_d7.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 20
+cyc_d8.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 20
+KILL_M2D_d6_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 10
+RECT_d11_T59_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 8
+REC_d10_tower_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 6
+A_d4_W2_k2.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 8
+A_d4_W3_k3.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 8
+A_d5_W2_k3.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 6
+A_d6_W2_k2.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 6
+KILL_M2D_d6_mu13_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 10
+KILL_M2D_d8_mu21_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 8
+RECT_d11_T59_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 8
+REC_d10_mu32_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 10
+REC_d10_tower_mu30_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 6
+REC_d11_mu40_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 8
+REC_d12_mu42_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 7
+REC_d7_mu17_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 11
+REC_d8_mu24_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 12
+REC_d9_mu29_norm.json mode xi runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 9
+rand seed 1953 mode spec runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 7
+esc seed 1953 mode spec runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 6
+noesc seed 1953 mode spec runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 7
+deep seed 1953 mode spec runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 9
+dense seed 1953 mode spec runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 7
+late seed 1953 mode spec runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 8
+lvl0 seed 1953 mode spec runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 9
+acyc seed 1953 mode spec runs 300 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 300)] maxxi 6
+LEAP_k64.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 3
+RS2_L16M6.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+RS2_L2M6.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+RS2_L32M6.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+RS2_L4M6.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+rd3_d4.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 6
+CLR_k8s16.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 5
+FPORT_n2.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 5
+FPORT_n3.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 5
+LEAP_k8.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 3
+RS2.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+RS2_L8M6.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+RS3.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+RSG_K4.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+DEAD_SEGT_n20.json skipped (not a genome with a start)
+cR_d2_w8_R22.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+rd2_d10.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 5
+rd2_d3.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 6
+rd2_d4.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 7
+rd2_d5.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 5
+rd2_d6.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+rd2_d7.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 5
+rd2_d8.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 6
+rd2_d9.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+rd3_d3.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 5
+rd3_d4.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 6
+rd3_d5.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 6
+rd3_d6.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 5
+rd3_d7.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 6
+rf_d3.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 5
+rf_d4.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+rf_d5.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+DEAD_SEG2P_d4_N8.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+DEAD_SEG2P_d7_N14.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 5
+DEAD_SEG2P_d9_N18.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 4
+cyc2_d7.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 10
+cyc2_d8.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 10
+cyc_d3.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 7
+cyc_d4.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 8
+cyc_d5.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 11
+cyc_d6.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 10
+cyc_d7.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 11
+cyc_d8.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 9
+KILL_M2D_d6_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 16
+RECT_d11_T59_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 62
+REC_d10_tower_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 38
+A_d4_W2_k2.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 12
+A_d4_W3_k3.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 18
+A_d5_W2_k3.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 16
+A_d6_W2_k2.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 14
+KILL_M2D_d6_mu13_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 16
+KILL_M2D_d8_mu21_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 27
+RECT_d11_T59_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 62
+REC_d10_mu32_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 36
+REC_d10_tower_mu30_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 38
+REC_d11_mu40_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 47
+REC_d12_mu42_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 51
+REC_d7_mu17_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 20
+REC_d8_mu24_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 28
+REC_d9_mu29_norm.json mode spec runs 1 e0fail 0 e1fail 0 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 1)] maxxi 34
+ctrl1 rand seed 195 mode xi runs 100 e0fail 0 e1fail 0 e2fail 100 e3fail 100 e4fail 100 stopfail 100 finsbar 100 fintie 100 nofb 0 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((1, 3), 100)] maxxi 13
+ctrl2 rand seed 195 mode xi runs 100 e0fail 200 e1fail 200 e2fail 0 e3fail 0 e4fail 0 stopfail 0 finsbar 0 fintie 0 nofb 100 late 0 capped 0 acyc 0 lfail 0 tally(F?,post) [((0, None), 100)] maxxi 2

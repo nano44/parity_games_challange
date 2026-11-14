@@ -1,0 +1,47 @@
+up_d3.json n 6 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+up_d4.json n 8 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:2 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+up_d5.json n 10 RUN p1:2 p2:2 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:8 p2:5 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+up_d6.json n 12 RUN p1:3 p2:2 p3:1 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:61 p2:19 p3:6 p4:0 p6:0 p8:0 p2^pi:0
+up_d5_s15.json n 10 RUN p1:2 p2:1 p3:1 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:18 p2:13 p3:1 p4:0 p6:0 p8:0 p2^pi:0
+up_d6_s16.json n 12 RUN p1:2 p2:2 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:58 p2:31 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+up_d7_s7.json n 14 RUN p1:3 p2:2 p3:1 p4:1 p6:0 p8:0 p2^pi:0 | ALLSTART 
+up_d8_s8.json n 16 RUN p1:2 p2:2 p3:2 p4:1 p6:0 p8:0 p2^pi:0 | ALLSTART 
+lag_min_d2.json n 4 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+g4_L12.json n 8 RUN p1:3 p2:3 p3:1 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:7 p2:7 p3:2 p4:0 p6:0 p8:0 p2^pi:0
+x3_L8.json n 6 RUN p1:1 p2:1 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:1 p2:1 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+dc_d10.json n 20 RUN p1:5 p2:4 p3:4 p4:3 p6:1 p8:1 p2^pi:0 | ALLSTART 
+dc_d12.json n 24 RUN p1:8 p2:6 p3:6 p4:4 p6:3 p8:1 p2^pi:0 | ALLSTART 
+dc_d3.json n 6 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+dc_d4.json n 8 RUN p1:1 p2:1 p3:1 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:3 p2:3 p3:1 p4:0 p6:0 p8:0 p2^pi:0
+dc_d5.json n 10 RUN p1:2 p2:2 p3:2 p4:2 p6:0 p8:0 p2^pi:0 | ALLSTART p1:9 p2:7 p3:6 p4:5 p6:0 p8:0 p2^pi:0
+dc_d6.json n 12 RUN p1:1 p2:1 p3:2 p4:2 p6:0 p8:0 p2^pi:0 | ALLSTART p1:39 p2:38 p3:37 p4:31 p6:4 p8:0 p2^pi:0
+dc_d7.json n 14 RUN p1:3 p2:3 p3:3 p4:2 p6:0 p8:0 p2^pi:0 | ALLSTART 
+dc_d8.json n 16 RUN p1:5 p2:4 p3:4 p4:4 p6:2 p8:0 p2^pi:0 | ALLSTART 
+mc_d4.json n 8 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+mc_d6.json n 12 RUN p1:2 p2:1 p3:1 p4:1 p6:0 p8:0 p2^pi:0 | ALLSTART p1:36 p2:32 p3:24 p4:13 p6:0 p8:0 p2^pi:0
+mc_d8.json n 16 RUN p1:5 p2:4 p3:2 p4:2 p6:1 p8:0 p2^pi:0 | ALLSTART 
+mcup_d8.json n 16 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART 
+lag1.json n 6 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+lag1u.json n 6 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+lag2c_d4.json n 8 RUN p1:2 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:3 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+nest_d3_L4.json n 6 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+uc_d10.json n 20 RUN p1:5 p2:3 p3:3 p4:2 p6:1 p8:0 p2^pi:0 | ALLSTART 
+uc_d4.json n 8 RUN p1:2 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:9 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+uc_d6.json n 12 RUN p1:2 p2:1 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:6 p2:2 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+uc_d8.json n 16 RUN p1:4 p2:1 p3:1 p4:1 p6:1 p8:0 p2^pi:0 | ALLSTART 
+small_d2.json n 4 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+rk_d10.json n 20 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART 
+rk_d3.json n 6 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+rk_d4.json n 8 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+rk_d6.json n 12 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+rk_d8.json n 16 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART 
+rw_d3_s1.json n 6 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+rw_d3_s2.json n 6 RUN p1:1 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:1 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+rw_d4_s1.json n 8 RUN p1:1 p2:1 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:12 p2:4 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+rw_d4_s2.json n 8 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+rw_d6_s1.json n 12 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+rw_d6_s2.json n 12 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:2 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+rw_d8_s1.json n 16 RUN p1:1 p2:1 p3:1 p4:1 p6:1 p8:1 p2^pi:0 | ALLSTART 
+rw_d8_s2.json n 16 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART 
+rwall_d6.json n 12 RUN p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0 | ALLSTART p1:0 p2:0 p3:0 p4:0 p6:0 p8:0 p2^pi:0
+TOTAL (run, allstart): p1:68,275 p2:48,162 p3:36,77 p4:26,49 p6:10,4 p8:3,0 p2^pi:0,0

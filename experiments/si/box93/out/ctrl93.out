@@ -1,0 +1,6 @@
+engine own instance N+M gates flips np_rel np_unl npside npsub npboth npkind relfail unlfail dfail k1c2 k1both relL relE relG mx_flips mx_ch_pe mx_ch_pb mx_lam_pe mx_ech_pe mx_gam_pe mx_lam_pb mx_ech_pb mx_gam_pb mx_ch_D
+ctrl=swap own MW8_2.json 261 177 42 17 17 0 0 0 0 0 0 0 1 1 0 17 0 34 17 34 0 17 0 0 34 0 17
+ctrl=swap own C6G8_n54.json 204 150 73 4 10 0 0 0 0 4 0 0 1 1 11 20 0 11 9 12 1 7 1 2 10 0 9
+engine own instance N+M gates flips np_rel np_unl npside npsub npboth npkind relfail unlfail dfail k1c2 k1both relL relE relG mx_flips mx_ch_pe mx_ch_pb mx_lam_pe mx_ech_pe mx_gam_pe mx_lam_pb mx_ech_pb mx_gam_pb mx_ch_D
+ctrl=tight own MW8_2.json 261 177 42 17 17 0 0 0 0 176 8 0 1 1 0 17 0 34 17 34 0 17 0 0 34 0 17
+ctrl=tight own C6G8_n54.json 204 150 73 4 10 0 0 0 0 92 5 0 1 1 11 20 0 11 9 12 1 7 1 2 10 0 9

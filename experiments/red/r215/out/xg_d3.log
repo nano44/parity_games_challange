@@ -1,0 +1,15 @@
+== 05:06Z d 3 seed-file 
+start n 100 xi 5 spec 4
+it 2 n 100 xi 5 spec 3 OK
+it 7 n 100 xi 6 spec 4 OK
+it 9 n 100 xi 7 spec 4 OK
+it 23 n 100 xi 8 spec 4 OK
+it 37 n 100 xi 8 spec 3 OK
+it 189 n 100 xi 9 spec 4 OK
+it 212 n 100 xi 9 spec 3 OK
+it 228 n 100 xi 10 spec 4 OK
+it 272 n 100 xi 10 spec 3 OK
+it 384 n 100 xi 11 spec 3 OK
+it 949 n 100 xi 12 spec 3 OK
+it 10359 n 100 xi 13 spec 3 OK
+FINAL best 10.013

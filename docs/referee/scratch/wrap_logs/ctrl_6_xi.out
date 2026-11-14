@@ -1,0 +1,19 @@
+mode xi family rand seed 3310 games 300 nmax 8 CTRL 6 PERM 0 | maxT 3 sumT 231 maxF 4 max|W| 154
+s3fail 282
+nonstd 558
+nohoward 22
+fbwrong 50
+endwrong 50
+wrong 0
+size 282
+w1 0
+w4a 0
+w4b 344
+w4c 277
+w4d 49
+w5 1404
+w6 640
+w8 0
+v5 0
+rem2 0
+rem3 0

@@ -1,0 +1,21 @@
+name cyclic N+M nstd s0 nfb nhow states
+WC4_2.json 1 60 0 0 0 0 5
+WC16_2.json 1 216 0 0 0 0 5
+FW8_2.json 1 371 0 0 0 0 30
+FW16_2.json 1 787 0 0 0 0 54
+MW8_2.json 1 261 0 0 0 0 56
+MW32_2.json 1 957 0 0 0 0 200
+C6G8_n54.json 1 204 0 0 0 0 18
+RWX_n95.json 1 328 0 0 0 0 13
+DWT20_2803.json 1 364 0 0 0 0 23
+DHIB26_2804.json 1 400 0 0 0 0 29
+DHIB18_2805.json 1 400 0 0 0 0 20
+k1fail_202.json 1 60 0 0 0 0 5
+Ku_4.json 1 145 0 0 0 0 29
+Ku_8.json 1 261 0 0 0 0 53
+Ku_16.json 1 493 0 0 0 0 101
+Kprev_8.json 1 261 0 0 0 0 53
+MWR4_2.json 1 145 0 0 0 0 31
+MWR8_2.json 1 261 0 0 0 0 55
+MWR16_2.json 1 493 0 0 0 0 103
+TOTAL genomes 19 cyclic 19 nstd 0 s0 0 nfb 0 nhow 0 states 883

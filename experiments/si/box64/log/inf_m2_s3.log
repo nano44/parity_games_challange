@@ -1,0 +1,7 @@
+it 5 best (5, 2) T [2, 4, 5] Tinf 5 LP 9
+it 20 best (6, 2) T [2, 4, 5] Tinf 6 LP 8
+it 53 best (7, 2) T [2, 3, 5] Tinf 7 LP 8
+it 168 best (7, 3) T [3, 4, 5] Tinf 7 LP 8
+it 693 best (8, 4) T [4, 5, 6] Tinf 8 LP 10
+it 9600 best (9, 2) T [2, 4, 5] Tinf 9 LP 10
+FINAL inf m 2 seed 3 best (9, 2) restarts 5

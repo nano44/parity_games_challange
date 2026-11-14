@@ -1,0 +1,3 @@
+NOUP random genomes 300 seed 31 Xi-cyclic 142 CTRL elevrev
+CTRL elevrev CDEC 0 CDEC_units 3883 EDOM 0 EDOM_units 300 EMON 0 EMON_units 9594 HUBG 0 HUBG_units 11522 LAMX 0 LAMX_units 21116 UPB 209 UPB_units 21116 UPJ 222 UPJ_units 222
+INFO maxDE 3 maxDE_B0 3 maxU 0 maxasc 2 noup_maxasc 2 noup_plays 21116 runs 300 states 583

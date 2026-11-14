@@ -1,0 +1,3 @@
+class PHX d 2 genomes 2000 transitions 21960 distinct-dec-rows 7035 distinct-states 8251 features 70
+FEASIBLE min max Phi = 8.0000
+weights: k1=4.5 k3=4 pair1_1100=-4 u3=-3.5 zH0_3=-3 pair0_0100=-3 pair0_0011=3 zH0_2=-3 u0=3 uH0_1=-3 zH0_4=-3 z3=2.5 pair1_0010=2 k2=1.5 pair0_0000=-1.5 pair1_0000=1.5 pair0_1011=1.5 z1=1.5 pair0_0101=-1.5 pair1_1010=1.5 pair0_0111=1.5 pair0_1110=-1.5 pair0_0010=1.5 pair1_0100=-1.5 pair0_1001=1.5 pair0_1100=-1.5 pair1_1110=-1.5 pair1_0111=1.5 k0=1.5 pair1_1101=-0.5 pair1_1011=0.5 zH1_3=-0.5 zH1_2=-0.5 zH1_4=-0.5 zH1_1=-0.5 pair1_0001=-0.5 const=2.35e-14

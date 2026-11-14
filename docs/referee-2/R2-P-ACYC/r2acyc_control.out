@@ -1,0 +1,14 @@
+rd2_d3.json | N 6 | acyclic 0 | G: T 9 notbeta 13 nonstrict 13 lamfail 147 wstar_not_K1 0 C 3 R 5 | G3: T 9 notbeta 13 nonstrict 13 lamfail 270 wstar_not_K1 0 C 3 R 5
+rd2_d4.json | N 8 | acyclic 0 | G: T 9 notbeta 32 nonstrict 32 lamfail 436 wstar_not_K1 0 C 3 R 6 | G3: T 9 notbeta 32 nonstrict 32 lamfail 802 wstar_not_K1 0 C 3 R 6
+rd3_d3.json | N 6 | acyclic 0 | G: T 6 notbeta 9 nonstrict 9 lamfail 202 wstar_not_K1 0 C 3 R 1 | G3: T 6 notbeta 9 nonstrict 9 lamfail 376 wstar_not_K1 0 C 3 R 1
+rf_d4.json | N 8 | acyclic 0 | G: T 12 notbeta 27 nonstrict 27 lamfail 438 wstar_not_K1 0 C 6 R 4 | G3: T 12 notbeta 27 nonstrict 27 lamfail 804 wstar_not_K1 0 C 6 R 4
+RS2.json | N 18 | acyclic 0 | G: T 10 notbeta 30 nonstrict 30 lamfail 88 wstar_not_K1 0 C 0 R 4 | G3: T 10 notbeta 30 nonstrict 30 lamfail 165 wstar_not_K1 0 C 0 R 4
+TOTAL G: genomes 5 acyclic 0 states 51 pairs 923 notbeta 111 nonstrict 111 lamfail 1311 wstar_not_K1 0 C 15 R 20 T_gt_N 3 howard_ties 0 pi_startdep 0 brute_states 0 brute_noopt 0 brute_eface 0 brute_valdiff 0 T3_ne_T 0 mover_seq_ne 0
+TOTAL G3: genomes 5 acyclic 0 states 51 pairs 923 notbeta 111 nonstrict 111 lamfail 2417 wstar_not_K1 0 C 15 R 20 T_gt_N 3 howard_ties 0 pi_startdep 0 brute_states 0 brute_noopt 0 brute_eface 0 brute_valdiff 0 T3_ne_T 0 mover_seq_ne 0
+TOTAL Grand: genomes 5 acyclic 0 states 25 pairs 445 notbeta 40 nonstrict 40 lamfail 591 wstar_not_K1 0 C 0 R 0 T_gt_N 0 howard_ties 0 pi_startdep 0 brute_states 0 brute_noopt 0 brute_eface 0 brute_valdiff 0 T3_ne_T 0 mover_seq_ne 0
+TOTAL G3rand: genomes 5 acyclic 0 states 25 pairs 445 notbeta 55 nonstrict 55 lamfail 1175 wstar_not_K1 0 C 0 R 0 T_gt_N 0 howard_ties 0 pi_startdep 0 brute_states 0 brute_noopt 0 brute_eface 0 brute_valdiff 0 T3_ne_T 0 mover_seq_ne 0
+max T/N on Γ: 1.500
+
+real	0m0.103s
+user	0m0.095s
+sys	0m0.008s

@@ -1,0 +1,18 @@
+SL41_d28.txt | T 290 caps 6 F(6) 222 | closure(q5=10) meets levels >= 6: True | q5 movers {10: 63}
+   6-windows 127 of length 1: 0 -> WINDOW-CAP bound 254
+   5-windows: {('inner', 'PULSE>=2', 'trigger level>=6'): 40, ('outer', 'PULSE>=2', 'trigger level>=6'): 23} | PULSE>=2 windows by lowest trigger level: {'min trigger level 15': 16, 'min trigger level 6': 47}
+G7_best_d28.txt | T 270 caps 6 F(6) 222 | closure(q5=10) meets levels >= 6: True | q5 movers {10: 63}
+   6-windows 127 of length 1: 30 -> WINDOW-CAP bound 224
+   5-windows: {('inner', 'PULSE1'): 9, ('inner', 'PULSE>=2', 'trigger level>=6'): 32, ('outer', 'PULSE1'): 7, ('outer', 'PULSE>=2', 'trigger level>=6'): 15} | PULSE>=2 windows by lowest trigger level: {'min trigger level 6': 47}
+LCOMP_D_l6z_best.txt | T 249 caps 6 F(6) 190 | closure(q5=10) meets levels >= 6: True | q5 movers {10: 63}
+   6-windows 127 of length 1: 24 -> WINDOW-CAP bound 230
+   5-windows: {('inner', 'PULSE1'): 24, ('inner', 'PULSE>=2', 'trigger level>=6'): 17, ('outer', 'PULSE>=2', 'trigger level>=6'): 22} | PULSE>=2 windows by lowest trigger level: {'min trigger level 15': 8, 'min trigger level 7': 31}
+LCOMP_L6Z_TEST1_d28.txt | T 258 caps 6 F(6) 160 | closure(q5=10) meets levels >= 6: True | q5 movers {10: 63}
+   6-windows 127 of length 1: 40 -> WINDOW-CAP bound 214
+   5-windows: {('inner', 'PULSE1'): 39, ('inner', 'PULSE>=2', 'trigger level>=6'): 1, ('outer', 'PULSE1'): 1, ('outer', 'PULSE>=2', 'trigger level>=6'): 22} | PULSE>=2 windows by lowest trigger level: {'min trigger level 15': 7, 'min trigger level 7': 16}
+LCOMP_L6_BEST_D_l6_d28.txt | T 200 caps 6 F(6) 134 | closure(q5=10) meets levels >= 6: True | q5 movers {10: 63}
+   6-windows 127 of length 1: 68 -> WINDOW-CAP bound 186
+   5-windows: {('inner', 'PULSE1'): 40, ('inner', 'PULSE>=2', 'trigger level>=6'): 1, ('outer', 'PULSE1'): 12, ('outer', 'PULSE>=2', 'trigger level>=6'): 10} | PULSE>=2 windows by lowest trigger level: {'min trigger level 15': 7, 'min trigger level 18': 4}
+LCOMP_L6_TEST1_d28.txt | T 202 caps 6 F(6) 117 | closure(q5=10) meets levels >= 6: True | q5 movers {10: 63}
+   6-windows 127 of length 1: 72 -> WINDOW-CAP bound 182
+   5-windows: {('inner', 'PULSE1'): 40, ('outer', 'PULSE1'): 12, ('outer', 'PULSE>=2', 'trigger level>=6'): 11} | PULSE>=2 windows by lowest trigger level: {'min trigger level 13': 3, 'min trigger level 7': 8}

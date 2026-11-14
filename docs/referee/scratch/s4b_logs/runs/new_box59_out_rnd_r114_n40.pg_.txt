@@ -1,0 +1,9 @@
+GAME new/box59/out/rnd/r114_n40.pg 
+GAMES 1
+enum_states 3
+keep_chk 1
+loc_chk 22
+rhos 704
+states 3
+VIOLATIONS 0
+RC 0

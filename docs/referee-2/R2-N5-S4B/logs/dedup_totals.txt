@@ -1,0 +1,8 @@
+KEEP_checks 2976
+odd_fallbacks 29
+rhos 213311
+runs 813
+starts_valid 94
+states_It 5726
+states_enumerated 5058
+states_not_enumerated 668

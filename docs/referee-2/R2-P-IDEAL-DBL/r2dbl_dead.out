@@ -1,0 +1,9 @@
+D1 dense_d5_l3_H10 start 1100110110: T 10 moves(6) 10 level 3 Xi-target True | max moves levels 0-2 4 | strict Xi-descendants of 6 [0, 2, 3, 4, 5, 7, 8, 9] max moves 4
+D2 REC_d10_tower_mu30 stored start 00111111010010111010 : T 35 F(0..3) [2, 6, 14, 30] doubling levels [1, 2, 3]
+D3 passfreeze77_d5 stored start 1101111101 : T 10 F [2, 2, 2, 6, 6] doubling [3] moves(8,9) 0 0 upward options of pair 4 []
+D4 REC_d10_tower_mu30.json upward (x, lev x) -> fuel target (y, lev y) with an option -> (z, lev z), lev z <= lev x: [(4, 2, 10, 5, 3, 1), (9, 4, 10, 5, 3, 1)]
+D4 KILL_M2D_d6_mu13.json upward (x, lev x) -> fuel target (y, lev y) with an option -> (z, lev z), lev z <= lev x: [(2, 1, 5, 2, 3, 1), (4, 2, 6, 3, 2, 1), (6, 3, 9, 4, 7, 3), (6, 3, 9, 4, 3, 1)]
+dense_d5_l3_H10.json L^R and acyclic True d 5
+passfreeze77_d5.json L^R and acyclic True d 5
+lower/REC_d10_tower_mu30.json L^R and acyclic True d 10
+lower/KILL_M2D_d6_mu13.json L^R and acyclic True d 6

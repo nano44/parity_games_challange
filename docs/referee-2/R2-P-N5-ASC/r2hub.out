@@ -1,0 +1,6 @@
+M 1 forests 1 SKELETON units 1 violations 0 | B 0: max 2, F_B 2, OK B 1: max 2, F_B 15, OK B 2: max 2, F_B 678, OK B 3: max 2, F_B 1379055, OK
+M 2 forests 3 SKELETON units 6 violations 0 | B 0: max 4, F_B 4, OK B 1: max 4, F_B 231, OK B 2: max 4, F_B 747061, OK B 3: max 4, F_B 7813401928101, OK
+M 3 forests 16 SKELETON units 48 violations 0 | B 0: max 7, F_B 7, OK B 1: max 8, F_B 1924, OK B 2: max 8, F_B 144369277, OK B 3: max 8, F_B 812857037518606444, OK
+M 4 forests 125 SKELETON units 500 violations 0 | B 0: max 11, F_B 11, OK B 1: max 16, F_B 10185, OK B 2: max 16, F_B 8713674921, OK B 3: max 16, F_B 6377962972824605924265, OK
+M 5 forests 1296 SKELETON units 6480 violations 0 | B 0: max 16, F_B 16, OK B 1: max 29, F_B 39711, OK B 2: max 32, F_B 244429345786, OK B 3: max 32, F_B 9260584287612653173458411, OK
+M 6 forests 16807 SKELETON units 100842 violations 0 | B 0: max 22, F_B 22, OK B 1: max 50, F_B 124915, OK B 2: max 64, F_B 4025769364093, OK B 3: max 64, F_B 4181359295000397460209863485, OK

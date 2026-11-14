@@ -1,0 +1,4 @@
+START 0
+IT 180 SCORE 115 ({'moves': 1, 'span': 0, 'odiff': 0, 'h': 4, 'X': 17, 'lamw': 1, 'K': 4}, {'moves': 1, 'span': 0, 'odiff': 0, 'h': 4, 'X': 17, 'lamw': 1, 'K': 4})
+IT 11126 SCORE 225 ({'moves': 2, 'span': 1, 'odiff': 0, 'h': 8, 'X': 17, 'lamw': 1, 'K': 5}, {'moves': 2, 'span': 1, 'odiff': 0, 'h': 8, 'X': 17, 'lamw': 1, 'K': 5})
+BEST 225 ({'moves': 2, 'span': 1, 'odiff': 0, 'h': 8, 'X': 5, 'lamw': 1, 'K': 2}, {'moves': 2, 'span': 1, 'odiff': 0, 'h': 8, 'X': 5, 'lamw': 1, 'K': 2})

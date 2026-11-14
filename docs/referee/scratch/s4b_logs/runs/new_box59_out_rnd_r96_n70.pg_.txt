@@ -1,0 +1,9 @@
+GAME new/box59/out/rnd/r96_n70.pg 
+GAMES 1
+enum_skip 2
+enum_states 1
+loc_chk 35
+rhos 16
+states 3
+VIOLATIONS 0
+RC 0

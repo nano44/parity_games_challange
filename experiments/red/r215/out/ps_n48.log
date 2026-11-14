@@ -1,0 +1,12 @@
+== 06:29Z n 48 seed-file out/ps_n40.json
+start n 128 xi 87 spec 87
+it 355 n 138 xi 88 spec 88 OK
+it 1496 n 133 xi 89 spec 89 OK
+it 1705 n 133 xi 90 spec 90 OK
+it 1727 n 133 xi 91 spec 91 OK
+it 1802 n 132 xi 92 spec 92 OK
+it 1953 n 135 xi 93 spec 93 OK
+it 1965 n 134 xi 94 spec 94 OK
+it 2903 n 141 xi 95 spec 95 OK
+it 3368 n 137 xi 96 spec 96 OK
+it 3636 n 143 xi 97 spec 97 OK

@@ -1,0 +1,21 @@
+== ESC3: 6 steps, 620 chars, verbatim from trunk c8f42538f docs/new/P-N5-REACH.md
+ESC3.1 [-] ### 6.5 Lemma ESC3 (S4a keeps σ off the movers;
+ESC3.2 [ACYC] IDEAL-ACYC).
+ESC3.3 [xt(] In the standard state, Iσ ∋ (K0, K1) (so Iσ ≠ ∅), and every pointwise optimum of S4a's arena H agrees with σ at every Even vertex that is not a mover. β_g with xt(g) a mover: its options in H are within {xt(g), pb_g}.
+ESC3.4 [xt(] In H Odd follows τ (pe at gates), so every H-play from xt(g) is mover → pad → gate → pe → e → … → c_W, node c_W (even); every H-play from pb_g → u ends in an odd cycle (K3 (d)): REWARD, xt(g) is strictly better; β_g is on no cycle of H; so a pointwise optimum chooses xt(g).
+ESC3.5 [-] Core: K3 (d).
+ESC3.6 [-] Pads, e, c_X, c_W, β_g with xt = X: one successor. ∎
+== W3: 10 steps, 1303 chars, verbatim from trunk c8f42538f docs/new/P-N5-REACH.md
+W3.1 [-] ### 6.6 Lemma W3 (W graded and constant; the arena optimum;
+W3.2 [ACYC] IDEAL-ACYC).
+W3.3 [-] In every standard state, and for every s:
+W3.4 [-] (i) W, the value of the (σ, τ)-play: from a mover x of level ℓ the play is x → m → g → pe_g → e_g → (level ℓ − 1) → … → c_W, five steps per level, through vertices below c_W; so W(x) = (c_W, ∅, 5ℓ + 5), W(m_(x,k)) = (c_W, ∅, 5ℓ + 4) for the pad on the play, W(g) = (c_W, ∅, 5ℓ + 3), W(pe_g) = (c_W, ∅, 5ℓ + 2), W(e_g) = (c_W, ∅, 5ℓ + 1);
+W3.5 [xt(] W(β_g) = (c_W, ∅, 5·lev(xt(g)) + 6) when xt(g) is a mover; on β_g with xt = X, pβ, pb, K ∪ {pA, s, q, r}, c_X, c_W the play never meets a mover, so W there does not depend on s.
+W3.6 [-] Every vertex's W depends on lev only, not on s or on the chosen option: W is the SAME in every standard state.
+W3.7 [-] (LENGTH values, re-counted.)
+W3.8 [-] (ii) In H every play from a gate of a level-ℓ mover follows τ (pe), and every option of a mover in H is a pad m_(x,k) leading to its gate, so it ends at c_W after exactly the steps of (i) and meets nothing above c_W: W*(m_(x,k)) = (c_W, ∅, 5ℓ + 4) for EVERY option m_(x,k) in H, W*(x) = (c_W, ∅, 5ℓ + 5), W′ := W*.
+W3.9 [-] - (iii) For every mover x: x's W′-cycle node is c_W ≠ x; every option y ∈ R(x) := {σ(x)} ∪ Iσ(x) satisfies W′(x) = x ⊕ W′(y); none is a corner (y's play visits only levels < lev(x) before c_W).
+W3.10 [-] So TIE(x) = R(x). ∎
+OK   [IDEAL-ACYC; K3 and TAU3 every genome]
+OK   RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome and ESC3, W3 for acyclic Ξ-graphs
+OK   P-N5-XICYC §7 reads ESC3's and W3's proofs for every genome

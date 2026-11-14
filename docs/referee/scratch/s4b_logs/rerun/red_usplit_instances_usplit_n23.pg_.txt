@@ -1,0 +1,9 @@
+GAME red/usplit/instances/usplit_n23.pg
+GAMES 1
+enum_states 9
+keep_chk 8
+loc_chk 9
+rhos 18
+states 9
+VIOLATIONS 0
+RC 0

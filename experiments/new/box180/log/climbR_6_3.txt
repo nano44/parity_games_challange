@@ -1,0 +1,1 @@
+climbR_d6_s3: best maxR 4 at (7, 1) with T 6 (N 12)

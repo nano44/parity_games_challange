@@ -1,0 +1,4 @@
+GAME red/n5inj/instances/frz24.pg red/n5inj/instances/frz24.start
+GAMES 1
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,13 @@
+== MUT=border all 19 genomes in r178/out (glob; 3 are Xi-cyclic: ACYC flags them, outside scope)
+REALIZE-CHECK IDEAL_cyclic_genomes 3 IDEAL_steps 568 IDEAL_stuck 16 games 19 mover_checks 10809 mover_checks_multi 4647 mover_checks_single 6162 states 584 stop_fallbacks 16
+VIOLATIONS 3 ACYC 3
+  first ACYC cyc_d2_k2_W2.json
+== MUT=border perturb 100 31
+REALIZE-CHECK IDEAL_steps 1292 IDEAL_stuck 100 games 100 mover_checks 28896 mover_checks_multi 13654 mover_checks_single 15242 perturb_tries 144 states 1392 stop_fallbacks 100
+VIOLATIONS 0 
+== MUT=border random 200 12 4 2
+REALIZE-CHECK BND_L0_games 27 BND_N1_games 5 IDEAL_opt 22 IDEAL_steps 199 IDEAL_stuck 178 games 200 mover_checks 3039 mover_checks_multi 1281 mover_checks_single 1758 states 399 stop_fallbacks 200
+VIOLATIONS 0 
+== MUT=border the 7 champions
+REALIZE-CHECK IDEAL_steps 296 IDEAL_stuck 7 games 7 mover_checks 5988 mover_checks_multi 2672 mover_checks_single 3316 states 303 stop_fallbacks 7
+VIOLATIONS 0 

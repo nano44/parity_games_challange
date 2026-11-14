@@ -1,0 +1,4 @@
+RSG_K4.json U(G) 1 max ascents 1 OK | {'maxasc': 1, 'emon_units': 623, 'emon_viol': 0, 'cd_units': 450, 'cd_viol': 0, 'uj_units': 164, 'uj_viol': 0, 'maxDE': 7, 'ties': 0, 'T': 7, 'U': 1}
+cR_d2_w8_R22.json U(G) 9 max ascents 3 OK | {'maxasc': 3, 'emon_units': 2648, 'emon_viol': 0, 'cd_units': 1694, 'cd_viol': 0, 'uj_units': 457, 'uj_viol': 0, 'maxDE': 11, 'ties': 0, 'T': 24, 'U': 9}
+rd2_d9.json U(G) 20 max ascents 3 OK | {'maxasc': 3, 'emon_units': 2415, 'emon_viol': 0, 'cd_units': 2154, 'cd_viol': 0, 'uj_units': 1417, 'uj_viol': 0, 'maxDE': 18, 'ties': 0, 'T': 21, 'U': 20}
+RS3.json U(G) 6 max ascents 2 OK | {'maxasc': 2, 'emon_units': 3185, 'emon_viol': 0, 'cd_units': 812, 'cd_viol': 0, 'uj_units': 42, 'uj_viol': 0, 'maxDE': 7, 'ties': 0, 'T': 13, 'U': 6}

@@ -1,0 +1,33 @@
+W0 [1,2] key 0 own () parent () moves [(1, 13, 0)] FAIL
+W1 [3,3] key 1 own ((11, 1),) parent () moves [(3, 13, 1)] FAIL
+W9 [20,21] key 1 own ((11, 1),) parent ((9, 1),) moves [(20, 13, 1)] FAIL
+W10 [22,23] key 0 own ((10, 1),) parent ((9, 1),) moves [(22, 13, 0)] FAIL
+W17 [39,40] key 1 own ((11, 1),) parent ((9, 1),) moves [(39, 13, 1)] FAIL
+W18 [41,42] key 0 own ((10, 1),) parent ((9, 1),) moves [(41, 13, 0)] FAIL
+W25 [57,58] key 1 own ((11, 1),) parent ((9, 1),) moves [(57, 13, 1)] FAIL
+W26 [59,60] key 0 own ((10, 1),) parent ((9, 1),) moves [(59, 13, 0)] FAIL
+W33 [75,76] key 1 own ((11, 1),) parent ((9, 1),) moves [(75, 13, 1)] FAIL
+W34 [77,78] key 0 own ((10, 1),) parent ((9, 1),) moves [(77, 13, 0)] FAIL
+W41 [93,94] key 1 own ((11, 1),) parent ((9, 1),) moves [(93, 13, 1)] FAIL
+W42 [95,96] key 0 own ((10, 1),) parent ((9, 1),) moves [(95, 13, 0)] FAIL
+W49 [112,113] key 1 own ((11, 1),) parent ((9, 1),) moves [(112, 13, 1)] FAIL
+W50 [114,115] key 0 own ((10, 1),) parent ((9, 1),) moves [(114, 13, 0)] FAIL
+W57 [130,131] key 1 own ((11, 1),) parent ((9, 1),) moves [(130, 13, 1)] FAIL
+W58 [132,133] key 0 own ((10, 1),) parent ((9, 1),) moves [(132, 13, 0)] FAIL
+W65 [148,149] key 1 own ((11, 1),) parent ((9, 1),) moves [(148, 13, 1)] FAIL
+W66 [150,151] key 0 own ((10, 1),) parent ((9, 1),) moves [(150, 13, 0)] FAIL
+W73 [166,167] key 1 own ((11, 1),) parent ((9, 1),) moves [(166, 13, 1)] FAIL
+W74 [168,169] key 0 own ((10, 1),) parent ((9, 1),) moves [(168, 13, 0)] FAIL
+W81 [185,186] key 1 own ((11, 1),) parent ((9, 1),) moves [(185, 13, 1)] FAIL
+W82 [187,188] key 0 own ((10, 1),) parent ((9, 1),) moves [(187, 13, 0)] FAIL
+W89 [203,204] key 1 own ((11, 1),) parent ((9, 1),) moves [(203, 13, 1)] FAIL
+W90 [205,206] key 0 own ((10, 1),) parent ((9, 1),) moves [(205, 13, 0)] FAIL
+W97 [221,222] key 1 own ((11, 1),) parent ((9, 1),) moves [(221, 13, 1)] FAIL
+W98 [223,224] key 0 own ((10, 1),) parent ((9, 1),) moves [(223, 13, 0)] FAIL
+W105 [239,240] key 1 own ((11, 1),) parent ((9, 1),) moves [(239, 13, 1)] FAIL
+W106 [241,242] key 0 own ((10, 1),) parent ((9, 1),) moves [(241, 13, 0)] FAIL
+W113 [258,259] key 1 own ((11, 1),) parent ((9, 1),) moves [(258, 13, 1)] FAIL
+W114 [260,261] key 0 own ((10, 1),) parent ((9, 1),) moves [(260, 13, 0)] FAIL
+W121 [276,277] key 1 own ((11, 1),) parent ((9, 1),) moves [(276, 13, 1)] FAIL
+W122 [278,279] key 0 own ((10, 1),) parent ((9, 1),) moves [(278, 13, 0)] FAIL
+windows 127 fail 32

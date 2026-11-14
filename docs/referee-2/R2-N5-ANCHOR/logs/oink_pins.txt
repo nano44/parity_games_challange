@@ -1,0 +1,4 @@
+new/box133/odxi_n37.pg n 37 start_ok True N5_iters 16 oink_exit 0 oink_verified True regions_equal True evenwins 37
+new/box134/inst/odxi_min_n12.pg n 12 start_ok True N5_iters 2 oink_exit 0 oink_verified True regions_equal True evenwins 12
+new/box134/inst/odxi_lasso_n13.pg n 13 start_ok True N5_iters 4 oink_exit 0 oink_verified True regions_equal True evenwins 13
+new/box134/inst/odxi_many_n32.pg n 32 start_ok True N5_iters 26 oink_exit 0 oink_verified True regions_equal True evenwins 32

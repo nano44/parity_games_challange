@@ -1,0 +1,18 @@
+m 1: distinct (transition, b_0) functions over all in-level gate orders: 14
+m 1 part 0/1 graphs 7 distinct_tables 12
+T_0(1) 2
+T_1(1) 3
+witness T 2 k 0 xt -1 -1 -1 2 rank 0 3 1 2 par 0 0 0 1 gate 0 2 1 3 16 17 18 19 start 1
+witness T 3 k 1 xt -1 -1 -1 2 rank 0 3 1 2 par 0 0 0 1 gate 0 2 1 3 16 17 18 19 start 8
+PAIR pre 0 post 0 MID witness xt -1 -1 2 2 rank 0 1 2 3 par 0 0 0 0 gate 0 2 1 3 16 17 18 19 start 1
+PAIR pre 0 post 0 STUCK witness xt -1 -1 2 2 rank 0 1 2 3 par 0 0 0 0 gate 0 2 1 3 16 17 18 19 start 12
+PAIR pre 0 post 1 MID witness xt -1 -1 2 2 rank 0 1 2 3 par 0 1 0 0 gate 0 2 1 3 16 17 18 19 start 4
+PAIR pre 0 post 1 STUCK witness xt -1 -1 2 2 rank 0 1 2 3 par 0 0 0 0 gate 0 2 1 3 16 17 18 19 start 0
+PAIR pre 0 post 2 STUCK witness xt -1 -1 -1 2 rank 0 3 1 2 par 0 0 0 1 gate 0 2 1 3 16 17 18 19 start 0
+PAIR pre 1 post 0 MID witness xt -1 -1 -1 2 rank 0 3 1 2 par 0 0 0 1 gate 0 2 1 3 16 17 18 19 start 1
+PAIR pre 1 post 0 STUCK witness xt -1 -1 2 2 rank 0 1 2 3 par 0 0 0 0 gate 0 2 1 3 16 17 18 19 start 1
+PAIR pre 1 post 1 STUCK witness xt -1 -1 2 2 rank 0 1 2 3 par 0 1 0 0 gate 0 2 1 3 16 17 18 19 start 4
+PAIR pre 1 post 2 STUCK witness xt -1 -1 -1 2 rank 0 3 1 2 par 0 0 0 1 gate 0 2 1 3 16 17 18 19 start 8
+PAIR pre 2 post 0 STUCK witness xt -1 -1 -1 2 rank 0 3 1 2 par 0 0 0 1 gate 0 2 1 3 16 17 18 19 start 1
+GAIN g*(1) part 0/1 = 2
+GAIN witness g 2 V1 3 M 1 xt -1 -1 -1 2 rank 0 3 1 2 par 0 0 0 1 gate 0 2 1 3 16 17 18 19 upper 2

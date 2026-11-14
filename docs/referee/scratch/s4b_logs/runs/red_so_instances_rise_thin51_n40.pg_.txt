@@ -1,0 +1,8 @@
+GAME red/so/instances/rise_thin51_n40.pg 
+GAMES 1
+enum_states 1
+loc_chk 15
+rhos 16
+states 1
+VIOLATIONS 0
+RC 0

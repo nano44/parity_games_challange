@@ -1,0 +1,9 @@
+GAME new/box54/out/hf/tc_5.pg 
+GAMES 1
+enum_skip 2
+enum_states 15
+loc_chk 147
+rhos 7644
+states 17
+VIOLATIONS 0
+RC 0

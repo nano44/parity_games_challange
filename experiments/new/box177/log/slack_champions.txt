@@ -1,0 +1,367 @@
+== dd_d5_F14.json N 10 T 14
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound 10 PATH-bound   27 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  3 PATH-bound    3 | windows with flip+rise 0
+  lev 1 x  2 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    8 | windows with flip+rise 2
+  lev 1 x  3 moves  1 | KF-bound  3 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 2 x  4 moves  3 | KF-bound  4 RET-bound 13 PATH-bound   25 | windows with flip+rise 2
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound  5 PATH-bound    6 | windows with flip+rise 2
+  lev 3 x  6 moves  7 | KF-bound  7 RET-bound 11 PATH-bound   22 | windows with flip+rise 6
+  lev 3 x  7 moves  7 | KF-bound  7 RET-bound  8 PATH-bound   15 | windows with flip+rise 6
+  lev 4 x  8 moves  3 | KF-bound 15 RET-bound  4 PATH-bound    4 | windows with flip+rise 2
+  lev 4 x  9 moves  2 | KF-bound 15 RET-bound  2 PATH-bound    2 | windows with flip+rise 1
+  F(l) by level [2, 3, 6, 14, 7]
+  PATH-RISE violations 0
+== max_d4_L13.json N 8 T 13
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound 11 PATH-bound   33 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  3 | KF-bound  3 RET-bound 11 PATH-bound   25 | windows with flip+rise 2
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    7 | windows with flip+rise 2
+  lev 2 x  4 moves  3 | KF-bound  4 RET-bound  9 PATH-bound   17 | windows with flip+rise 2
+  lev 2 x  5 moves  1 | KF-bound  4 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 3 x  6 moves  4 | KF-bound  5 RET-bound  8 PATH-bound   12 | windows with flip+rise 3
+  lev 3 x  7 moves  3 | KF-bound  5 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  F(l) by level [2, 3, 4, 4]
+  PATH-RISE violations 0
+== max_d5_L15.json N 10 T 15
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  5 PATH-bound   13 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  3 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 1 x  3 moves  2 | KF-bound  3 RET-bound  3 PATH-bound    4 | windows with flip+rise 1
+  lev 2 x  4 moves  3 | KF-bound  3 RET-bound  7 PATH-bound   10 | windows with flip+rise 2
+  lev 2 x  5 moves  2 | KF-bound  3 RET-bound  3 PATH-bound    3 | windows with flip+rise 1
+  lev 3 x  6 moves  3 | KF-bound  4 RET-bound  9 PATH-bound   29 | windows with flip+rise 2
+  lev 3 x  7 moves  3 | KF-bound  4 RET-bound  9 PATH-bound   18 | windows with flip+rise 2
+  lev 4 x  8 moves  2 | KF-bound  4 RET-bound  2 PATH-bound    2 | windows with flip+rise 1
+  lev 4 x  9 moves  4 | KF-bound  4 RET-bound  6 PATH-bound    7 | windows with flip+rise 3
+  F(l) by level [2, 2, 3, 3, 3]
+  PATH-RISE violations 0
+== TR_d6_T18.json N 12 T 18
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  7 PATH-bound   15 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  3 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 1 x  3 moves  2 | KF-bound  3 RET-bound  3 PATH-bound    4 | windows with flip+rise 1
+  lev 2 x  4 moves  3 | KF-bound  3 RET-bound  8 PATH-bound   11 | windows with flip+rise 2
+  lev 2 x  5 moves  2 | KF-bound  3 RET-bound  3 PATH-bound    3 | windows with flip+rise 1
+  lev 3 x  6 moves  3 | KF-bound  4 RET-bound 14 PATH-bound   39 | windows with flip+rise 2
+  lev 3 x  7 moves  3 | KF-bound  4 RET-bound 11 PATH-bound   23 | windows with flip+rise 2
+  lev 4 x  8 moves  2 | KF-bound  4 RET-bound  2 PATH-bound    2 | windows with flip+rise 1
+  lev 4 x  9 moves  4 | KF-bound  4 RET-bound  6 PATH-bound    7 | windows with flip+rise 3
+  lev 5 x 10 moves  4 | KF-bound  4 RET-bound  7 PATH-bound   15 | windows with flip+rise 3
+  lev 5 x 11 moves  2 | KF-bound  4 RET-bound  2 PATH-bound    3 | windows with flip+rise 1
+  F(l) by level [2, 2, 3, 3, 3, 4]
+  PATH-RISE violations 0
+== TR_d7_T20.json N 14 T 20
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  4 PATH-bound   23 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  4 PATH-bound    5 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  3 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 1 x  3 moves  2 | KF-bound  3 RET-bound  3 PATH-bound    4 | windows with flip+rise 1
+  lev 2 x  4 moves  3 | KF-bound  3 RET-bound  7 PATH-bound   15 | windows with flip+rise 2
+  lev 2 x  5 moves  2 | KF-bound  3 RET-bound  3 PATH-bound    3 | windows with flip+rise 1
+  lev 3 x  6 moves  3 | KF-bound  4 RET-bound  9 PATH-bound   48 | windows with flip+rise 2
+  lev 3 x  7 moves  3 | KF-bound  4 RET-bound  8 PATH-bound   25 | windows with flip+rise 2
+  lev 4 x  8 moves  2 | KF-bound  4 RET-bound  2 PATH-bound    2 | windows with flip+rise 1
+  lev 4 x  9 moves  4 | KF-bound  4 RET-bound  7 PATH-bound    8 | windows with flip+rise 3
+  lev 5 x 10 moves  1 | KF-bound  4 RET-bound  4 PATH-bound   16 | windows with flip+rise 0
+  lev 5 x 11 moves  1 | KF-bound  4 RET-bound  3 PATH-bound    6 | windows with flip+rise 0
+  lev 6 x 12 moves  3 | KF-bound  3 RET-bound  5 PATH-bound   22 | windows with flip+rise 2
+  lev 6 x 13 moves  2 | KF-bound  3 RET-bound  4 PATH-bound    5 | windows with flip+rise 1
+  F(l) by level [2, 2, 3, 3, 3, 2, 0]
+  PATH-RISE violations 0
+== Tstar_d10_T46.json N 40 T 46
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound 10 PATH-bound   24 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    3 | windows with flip+rise 0
+  lev 1 x  2 moves  2 | KF-bound  3 RET-bound 19 PATH-bound   74 | windows with flip+rise 1
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  3 PATH-bound    5 | windows with flip+rise 2
+  lev 2 x  4 moves  1 | KF-bound  4 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound 10 PATH-bound   19 | windows with flip+rise 2
+  lev 3 x  6 moves  4 | KF-bound  4 RET-bound 10 PATH-bound   30 | windows with flip+rise 3
+  lev 3 x  7 moves  3 | KF-bound  4 RET-bound  3 PATH-bound    5 | windows with flip+rise 2
+  lev 4 x  8 moves  4 | KF-bound  5 RET-bound 19 PATH-bound  149 | windows with flip+rise 3
+  lev 4 x  9 moves  4 | KF-bound  5 RET-bound 22 PATH-bound   93 | windows with flip+rise 3
+  lev 5 x 10 moves  4 | KF-bound  5 RET-bound  5 PATH-bound    7 | windows with flip+rise 3
+  lev 5 x 11 moves  5 | KF-bound  8 RET-bound 12 PATH-bound   21 | windows with flip+rise 4
+  lev 6 x 12 moves  5 | KF-bound  8 RET-bound  9 PATH-bound   13 | windows with flip+rise 4
+  lev 6 x 13 moves  5 | KF-bound  8 RET-bound  9 PATH-bound   36 | windows with flip+rise 4
+  lev 7 x 14 moves  3 | KF-bound  9 RET-bound  9 PATH-bound   38 | windows with flip+rise 2
+  lev 7 x 15 moves  7 | KF-bound  9 RET-bound 14 PATH-bound   52 | windows with flip+rise 6
+  lev 8 x 16 moves  7 | KF-bound  8 RET-bound 17 PATH-bound   60 | windows with flip+rise 6
+  lev 8 x 17 moves  7 | KF-bound 14 RET-bound 18 PATH-bound   68 | windows with flip+rise 6
+  lev 9 x 18 moves  1 | KF-bound  7 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 9 x 19 moves  4 | KF-bound  8 RET-bound 12 PATH-bound   55 | windows with flip+rise 3
+  F(l) by level [2, 3, 4, 4, 4, 5, 8, 7, 10, 5]
+  PATH-RISE violations 0
+== Tstar_d5_T17.json N 20 T 17
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  9 PATH-bound   21 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    8 | windows with flip+rise 2
+  lev 1 x  3 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 2 x  4 moves  3 | KF-bound  4 RET-bound  9 PATH-bound   20 | windows with flip+rise 2
+  lev 2 x  5 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    5 | windows with flip+rise 2
+  lev 3 x  6 moves  7 | KF-bound  7 RET-bound  9 PATH-bound   18 | windows with flip+rise 6
+  lev 3 x  7 moves  3 | KF-bound  7 RET-bound  7 PATH-bound   12 | windows with flip+rise 2
+  lev 4 x  8 moves  3 | KF-bound  8 RET-bound  3 PATH-bound    3 | windows with flip+rise 2
+  lev 4 x  9 moves  1 | KF-bound  4 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  F(l) by level [2, 3, 6, 7, 4]
+  PATH-RISE violations 0
+== Tstar_d6_T25.json N 24 T 25
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  8 PATH-bound   34 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  9 PATH-bound   16 | windows with flip+rise 2
+  lev 2 x  4 moves  4 | KF-bound  4 RET-bound 10 PATH-bound   21 | windows with flip+rise 3
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  lev 3 x  6 moves  3 | KF-bound  8 RET-bound 10 PATH-bound   55 | windows with flip+rise 2
+  lev 3 x  7 moves  4 | KF-bound  5 RET-bound 16 PATH-bound   52 | windows with flip+rise 3
+  lev 4 x  8 moves  4 | KF-bound  5 RET-bound  5 PATH-bound    6 | windows with flip+rise 3
+  lev 4 x  9 moves  5 | KF-bound  5 RET-bound 11 PATH-bound   18 | windows with flip+rise 4
+  lev 5 x 10 moves  4 | KF-bound  5 RET-bound  9 PATH-bound   11 | windows with flip+rise 3
+  lev 5 x 11 moves  5 | KF-bound 10 RET-bound 11 PATH-bound   33 | windows with flip+rise 4
+  F(l) by level [2, 3, 7, 4, 9, 4]
+  PATH-RISE violations 0
+== Tstar_d7_T31.json N 28 T 31
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  8 PATH-bound   44 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  9 PATH-bound   16 | windows with flip+rise 2
+  lev 2 x  4 moves  4 | KF-bound  4 RET-bound 10 PATH-bound   21 | windows with flip+rise 3
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  lev 3 x  6 moves  3 | KF-bound  5 RET-bound 12 PATH-bound   65 | windows with flip+rise 2
+  lev 3 x  7 moves  4 | KF-bound  5 RET-bound 16 PATH-bound   62 | windows with flip+rise 3
+  lev 4 x  8 moves  4 | KF-bound  6 RET-bound  5 PATH-bound    6 | windows with flip+rise 3
+  lev 4 x  9 moves  5 | KF-bound  6 RET-bound 11 PATH-bound   18 | windows with flip+rise 4
+  lev 5 x 10 moves  4 | KF-bound  6 RET-bound  9 PATH-bound   11 | windows with flip+rise 3
+  lev 5 x 11 moves  5 | KF-bound  6 RET-bound 11 PATH-bound   33 | windows with flip+rise 4
+  lev 6 x 12 moves  5 | KF-bound  6 RET-bound 11 PATH-bound   38 | windows with flip+rise 4
+  lev 6 x 13 moves  5 | KF-bound  9 RET-bound 11 PATH-bound   43 | windows with flip+rise 4
+  F(l) by level [2, 3, 4, 5, 8, 5, 11]
+  PATH-RISE violations 0
+== Tstar_d8_T33.json N 32 T 33
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound 10 PATH-bound   23 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  2 RET-bound 11 PATH-bound   54 | windows with flip+rise 0
+  lev 1 x  3 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    3 | windows with flip+rise 0
+  lev 2 x  4 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 2 x  5 moves  3 | KF-bound  3 RET-bound  9 PATH-bound   19 | windows with flip+rise 2
+  lev 3 x  6 moves  4 | KF-bound  4 RET-bound 10 PATH-bound   25 | windows with flip+rise 3
+  lev 3 x  7 moves  3 | KF-bound  4 RET-bound  3 PATH-bound    5 | windows with flip+rise 2
+  lev 4 x  8 moves  3 | KF-bound  5 RET-bound 13 PATH-bound   79 | windows with flip+rise 2
+  lev 4 x  9 moves  4 | KF-bound  5 RET-bound 16 PATH-bound   75 | windows with flip+rise 3
+  lev 5 x 10 moves  4 | KF-bound  5 RET-bound  5 PATH-bound    7 | windows with flip+rise 3
+  lev 5 x 11 moves  5 | KF-bound  5 RET-bound 11 PATH-bound   21 | windows with flip+rise 4
+  lev 6 x 12 moves  4 | KF-bound  5 RET-bound  9 PATH-bound   13 | windows with flip+rise 3
+  lev 6 x 13 moves  5 | KF-bound  5 RET-bound  9 PATH-bound   31 | windows with flip+rise 4
+  lev 7 x 14 moves  5 | KF-bound  5 RET-bound 11 PATH-bound   37 | windows with flip+rise 4
+  lev 7 x 15 moves  5 | KF-bound  5 RET-bound 13 PATH-bound   51 | windows with flip+rise 4
+  F(l) by level [1, 2, 3, 4, 4, 4, 0, 5]
+  PATH-RISE violations 0
+== Tstar_d9_T42.json N 36 T 42
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  9 PATH-bound   21 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  3 | KF-bound  3 RET-bound 15 PATH-bound   65 | windows with flip+rise 2
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    7 | windows with flip+rise 2
+  lev 2 x  4 moves  1 | KF-bound  4 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound 10 PATH-bound   16 | windows with flip+rise 2
+  lev 3 x  6 moves  4 | KF-bound  5 RET-bound 12 PATH-bound   26 | windows with flip+rise 3
+  lev 3 x  7 moves  3 | KF-bound  5 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  lev 4 x  8 moves  4 | KF-bound  5 RET-bound 16 PATH-bound  109 | windows with flip+rise 3
+  lev 4 x  9 moves  4 | KF-bound  5 RET-bound 18 PATH-bound   82 | windows with flip+rise 3
+  lev 5 x 10 moves  4 | KF-bound  5 RET-bound  5 PATH-bound    6 | windows with flip+rise 3
+  lev 5 x 11 moves  4 | KF-bound  9 RET-bound 12 PATH-bound   18 | windows with flip+rise 3
+  lev 6 x 12 moves  5 | KF-bound  9 RET-bound  9 PATH-bound   11 | windows with flip+rise 4
+  lev 6 x 13 moves  5 | KF-bound  9 RET-bound 10 PATH-bound   31 | windows with flip+rise 4
+  lev 7 x 14 moves  3 | KF-bound  8 RET-bound  9 PATH-bound   33 | windows with flip+rise 2
+  lev 7 x 15 moves  7 | KF-bound  8 RET-bound 11 PATH-bound   38 | windows with flip+rise 6
+  lev 8 x 16 moves  8 | KF-bound 11 RET-bound 12 PATH-bound   43 | windows with flip+rise 7
+  lev 8 x 17 moves  7 | KF-bound 11 RET-bound 19 PATH-bound   60 | windows with flip+rise 6
+  F(l) by level [2, 3, 4, 5, 4, 4, 7, 10, 7]
+  PATH-RISE violations 0
+== c1L_Tstar_d7_T31.json N 30 T 34
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  9 PATH-bound   56 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  9 PATH-bound   16 | windows with flip+rise 2
+  lev 2 x  4 moves  4 | KF-bound  4 RET-bound 10 PATH-bound   21 | windows with flip+rise 3
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  lev 3 x  6 moves  3 | KF-bound  5 RET-bound 12 PATH-bound   65 | windows with flip+rise 2
+  lev 3 x  7 moves  4 | KF-bound  5 RET-bound 16 PATH-bound   62 | windows with flip+rise 3
+  lev 4 x  8 moves  4 | KF-bound  6 RET-bound  5 PATH-bound    6 | windows with flip+rise 3
+  lev 4 x  9 moves  5 | KF-bound  6 RET-bound 11 PATH-bound   18 | windows with flip+rise 4
+  lev 5 x 10 moves  4 | KF-bound  6 RET-bound  9 PATH-bound   11 | windows with flip+rise 3
+  lev 5 x 11 moves  5 | KF-bound  6 RET-bound 11 PATH-bound   33 | windows with flip+rise 4
+  lev 6 x 12 moves  5 | KF-bound  6 RET-bound 11 PATH-bound   38 | windows with flip+rise 4
+  lev 6 x 13 moves  5 | KF-bound  9 RET-bound 11 PATH-bound   43 | windows with flip+rise 4
+  lev 7 x 28 moves  3 | KF-bound  6 RET-bound 13 PATH-bound   55 | windows with flip+rise 2
+  lev 7 x 29 moves  3 | KF-bound 12 RET-bound 10 PATH-bound   61 | windows with flip+rise 2
+  PATH-RISE violations 0
+== c1_Tstar_d5_T17.json N 22 T 20
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  8 PATH-bound   26 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    8 | windows with flip+rise 2
+  lev 1 x  3 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 2 x  4 moves  3 | KF-bound  4 RET-bound  9 PATH-bound   20 | windows with flip+rise 2
+  lev 2 x  5 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    5 | windows with flip+rise 2
+  lev 3 x  6 moves  7 | KF-bound  7 RET-bound  9 PATH-bound   18 | windows with flip+rise 6
+  lev 3 x  7 moves  3 | KF-bound  7 RET-bound  7 PATH-bound   12 | windows with flip+rise 2
+  lev 4 x  8 moves  3 | KF-bound  8 RET-bound  3 PATH-bound    3 | windows with flip+rise 2
+  lev 4 x  9 moves  1 | KF-bound  4 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 5 x 20 moves  2 | KF-bound  7 RET-bound  9 PATH-bound   30 | windows with flip+rise 1
+  lev 5 x 21 moves  4 | KF-bound  7 RET-bound  8 PATH-bound   23 | windows with flip+rise 3
+  PATH-RISE violations 0
+== c1_Tstar_d6_T25.json N 26 T 28
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  8 PATH-bound   34 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  9 PATH-bound   16 | windows with flip+rise 2
+  lev 2 x  4 moves  4 | KF-bound  4 RET-bound 10 PATH-bound   21 | windows with flip+rise 3
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  lev 3 x  6 moves  3 | KF-bound  8 RET-bound 10 PATH-bound   62 | windows with flip+rise 2
+  lev 3 x  7 moves  4 | KF-bound  5 RET-bound 16 PATH-bound   59 | windows with flip+rise 3
+  lev 4 x  8 moves  4 | KF-bound  5 RET-bound  5 PATH-bound    6 | windows with flip+rise 3
+  lev 4 x  9 moves  5 | KF-bound  5 RET-bound 11 PATH-bound   18 | windows with flip+rise 4
+  lev 5 x 10 moves  4 | KF-bound  5 RET-bound  9 PATH-bound   11 | windows with flip+rise 3
+  lev 5 x 11 moves  5 | KF-bound 10 RET-bound 11 PATH-bound   33 | windows with flip+rise 4
+  lev 6 x 24 moves  5 | KF-bound  5 RET-bound 14 PATH-bound   25 | windows with flip+rise 4
+  lev 6 x 25 moves  4 | KF-bound  5 RET-bound  9 PATH-bound   36 | windows with flip+rise 3
+  PATH-RISE violations 0
+== c1_Tstar_d7_T31.json N 30 T 34
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  9 PATH-bound   61 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  9 PATH-bound   16 | windows with flip+rise 2
+  lev 2 x  4 moves  4 | KF-bound  4 RET-bound 10 PATH-bound   21 | windows with flip+rise 3
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  lev 3 x  6 moves  3 | KF-bound  5 RET-bound 12 PATH-bound   65 | windows with flip+rise 2
+  lev 3 x  7 moves  4 | KF-bound  5 RET-bound 16 PATH-bound   62 | windows with flip+rise 3
+  lev 4 x  8 moves  4 | KF-bound  6 RET-bound  5 PATH-bound    6 | windows with flip+rise 3
+  lev 4 x  9 moves  5 | KF-bound  6 RET-bound 11 PATH-bound   18 | windows with flip+rise 4
+  lev 5 x 10 moves  4 | KF-bound  6 RET-bound  9 PATH-bound   11 | windows with flip+rise 3
+  lev 5 x 11 moves  5 | KF-bound  6 RET-bound 11 PATH-bound   33 | windows with flip+rise 4
+  lev 6 x 12 moves  5 | KF-bound  6 RET-bound 11 PATH-bound   38 | windows with flip+rise 4
+  lev 6 x 13 moves  5 | KF-bound  9 RET-bound 11 PATH-bound   43 | windows with flip+rise 4
+  lev 7 x 28 moves  3 | KF-bound 12 RET-bound 14 PATH-bound   60 | windows with flip+rise 2
+  lev 7 x 29 moves  5 | KF-bound  6 RET-bound 10 PATH-bound   66 | windows with flip+rise 4
+  PATH-RISE violations 0
+== c1_Tstar_d9_T42.json N 38 T 44
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  9 PATH-bound   21 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  3 | KF-bound  3 RET-bound 15 PATH-bound   65 | windows with flip+rise 2
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    7 | windows with flip+rise 2
+  lev 2 x  4 moves  1 | KF-bound  4 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound 10 PATH-bound   16 | windows with flip+rise 2
+  lev 3 x  6 moves  4 | KF-bound  5 RET-bound 12 PATH-bound   26 | windows with flip+rise 3
+  lev 3 x  7 moves  3 | KF-bound  5 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  lev 4 x  8 moves  4 | KF-bound  5 RET-bound 16 PATH-bound  109 | windows with flip+rise 3
+  lev 4 x  9 moves  4 | KF-bound  5 RET-bound 18 PATH-bound   82 | windows with flip+rise 3
+  lev 5 x 10 moves  4 | KF-bound  5 RET-bound  5 PATH-bound    6 | windows with flip+rise 3
+  lev 5 x 11 moves  4 | KF-bound  9 RET-bound 12 PATH-bound   18 | windows with flip+rise 3
+  lev 6 x 12 moves  5 | KF-bound  9 RET-bound  9 PATH-bound   11 | windows with flip+rise 4
+  lev 6 x 13 moves  5 | KF-bound  9 RET-bound 10 PATH-bound   31 | windows with flip+rise 4
+  lev 7 x 14 moves  3 | KF-bound  8 RET-bound  9 PATH-bound   33 | windows with flip+rise 2
+  lev 7 x 15 moves  7 | KF-bound  8 RET-bound 11 PATH-bound   38 | windows with flip+rise 6
+  lev 8 x 16 moves  8 | KF-bound 11 RET-bound 12 PATH-bound   43 | windows with flip+rise 7
+  lev 8 x 17 moves  7 | KF-bound 11 RET-bound 19 PATH-bound   60 | windows with flip+rise 6
+  lev 9 x 36 moves  8 | KF-bound 11 RET-bound 15 PATH-bound   65 | windows with flip+rise 7
+  lev 9 x 37 moves  1 | KF-bound 11 RET-bound 17 PATH-bound   73 | windows with flip+rise 0
+  PATH-RISE violations 0
+== c2_Tstar_d5_T17.json N 22 T 21
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  9 PATH-bound   38 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    8 | windows with flip+rise 2
+  lev 1 x  3 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 2 x  4 moves  3 | KF-bound  4 RET-bound  9 PATH-bound   20 | windows with flip+rise 2
+  lev 2 x  5 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    5 | windows with flip+rise 2
+  lev 3 x  6 moves  7 | KF-bound  7 RET-bound  9 PATH-bound   18 | windows with flip+rise 6
+  lev 3 x  7 moves  3 | KF-bound  7 RET-bound  7 PATH-bound   12 | windows with flip+rise 2
+  lev 4 x  8 moves  3 | KF-bound  8 RET-bound  3 PATH-bound    3 | windows with flip+rise 2
+  lev 4 x  9 moves  1 | KF-bound  4 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 5 x 20 moves  7 | KF-bound  7 RET-bound 10 PATH-bound   29 | windows with flip+rise 6
+  lev 5 x 21 moves  6 | KF-bound  7 RET-bound 12 PATH-bound   35 | windows with flip+rise 5
+  PATH-RISE violations 0
+== c2_Tstar_d6_T25.json N 26 T 29
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  6 PATH-bound   42 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  9 PATH-bound   16 | windows with flip+rise 2
+  lev 2 x  4 moves  4 | KF-bound  4 RET-bound 10 PATH-bound   21 | windows with flip+rise 3
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  lev 3 x  6 moves  3 | KF-bound  8 RET-bound 10 PATH-bound   55 | windows with flip+rise 2
+  lev 3 x  7 moves  4 | KF-bound  5 RET-bound 16 PATH-bound   52 | windows with flip+rise 3
+  lev 4 x  8 moves  4 | KF-bound  5 RET-bound  5 PATH-bound    6 | windows with flip+rise 3
+  lev 4 x  9 moves  5 | KF-bound  5 RET-bound 11 PATH-bound   18 | windows with flip+rise 4
+  lev 5 x 10 moves  4 | KF-bound  5 RET-bound  9 PATH-bound   11 | windows with flip+rise 3
+  lev 5 x 11 moves  5 | KF-bound 10 RET-bound 11 PATH-bound   33 | windows with flip+rise 4
+  lev 6 x 24 moves  5 | KF-bound  5 RET-bound 11 PATH-bound   38 | windows with flip+rise 4
+  lev 6 x 25 moves  3 | KF-bound  5 RET-bound  9 PATH-bound   41 | windows with flip+rise 2
+  PATH-RISE violations 0
+== c3_Tstar_d5_T17.json N 22 T 21
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  9 PATH-bound   31 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    8 | windows with flip+rise 2
+  lev 1 x  3 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 2 x  4 moves  3 | KF-bound  4 RET-bound  9 PATH-bound   20 | windows with flip+rise 2
+  lev 2 x  5 moves  3 | KF-bound  3 RET-bound  5 PATH-bound    5 | windows with flip+rise 2
+  lev 3 x  6 moves  7 | KF-bound  7 RET-bound  9 PATH-bound   18 | windows with flip+rise 6
+  lev 3 x  7 moves  3 | KF-bound  7 RET-bound  7 PATH-bound   12 | windows with flip+rise 2
+  lev 4 x  8 moves  3 | KF-bound  8 RET-bound  3 PATH-bound    3 | windows with flip+rise 2
+  lev 4 x  9 moves  1 | KF-bound  4 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 5 x 20 moves  6 | KF-bound  7 RET-bound 11 PATH-bound   28 | windows with flip+rise 5
+  lev 5 x 21 moves  4 | KF-bound  7 RET-bound 11 PATH-bound   22 | windows with flip+rise 3
+  PATH-RISE violations 0
+== c3_Tstar_d6_T25.json N 26 T 29
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  8 PATH-bound   34 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  9 PATH-bound   16 | windows with flip+rise 2
+  lev 2 x  4 moves  4 | KF-bound  4 RET-bound 10 PATH-bound   21 | windows with flip+rise 3
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  lev 3 x  6 moves  3 | KF-bound  8 RET-bound  9 PATH-bound   65 | windows with flip+rise 2
+  lev 3 x  7 moves  4 | KF-bound  5 RET-bound 15 PATH-bound   62 | windows with flip+rise 3
+  lev 4 x  8 moves  4 | KF-bound  5 RET-bound  5 PATH-bound    6 | windows with flip+rise 3
+  lev 4 x  9 moves  5 | KF-bound  5 RET-bound 11 PATH-bound   18 | windows with flip+rise 4
+  lev 5 x 10 moves  4 | KF-bound  5 RET-bound  9 PATH-bound   11 | windows with flip+rise 3
+  lev 5 x 11 moves  5 | KF-bound 10 RET-bound 11 PATH-bound   33 | windows with flip+rise 4
+  lev 6 x 24 moves  5 | KF-bound  5 RET-bound 14 PATH-bound   25 | windows with flip+rise 4
+  lev 6 x 25 moves  3 | KF-bound  5 RET-bound 10 PATH-bound   28 | windows with flip+rise 2
+  PATH-RISE violations 0
+== fa_d2_k2_W2.json N 4 T 4
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    3 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    4 | windows with flip+rise 0
+  lev 1 x  3 moves  1 | KF-bound  1 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  F(l) by level [0, 1]
+  PATH-RISE violations 0
+== g4_L12.json N 8 T 12
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  7 PATH-bound   20 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  2 moves  3 | KF-bound  3 RET-bound  9 PATH-bound   22 | windows with flip+rise 2
+  lev 1 x  3 moves  1 | KF-bound  3 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 2 x  4 moves  4 | KF-bound  4 RET-bound  9 PATH-bound   17 | windows with flip+rise 3
+  lev 2 x  5 moves  3 | KF-bound  4 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  lev 3 x  6 moves  4 | KF-bound  4 RET-bound  9 PATH-bound   12 | windows with flip+rise 3
+  lev 3 x  7 moves  4 | KF-bound  4 RET-bound  5 PATH-bound    7 | windows with flip+rise 3
+  F(l) by level [2, 3, 3, 4]
+  PATH-RISE violations 0
+== tri_d5_L12.json N 10 T 12
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  8 PATH-bound   19 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  4 PATH-bound    5 | windows with flip+rise 0
+  lev 1 x  2 moves  3 | KF-bound  3 RET-bound  7 PATH-bound   17 | windows with flip+rise 2
+  lev 1 x  3 moves  1 | KF-bound  3 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 2 x  4 moves  2 | KF-bound  2 RET-bound  9 PATH-bound   23 | windows with flip+rise 1
+  lev 2 x  5 moves  1 | KF-bound  2 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 3 x  6 moves  3 | KF-bound  4 RET-bound  4 PATH-bound    5 | windows with flip+rise 2
+  lev 3 x  7 moves  2 | KF-bound  4 RET-bound  3 PATH-bound    3 | windows with flip+rise 1
+  lev 4 x  8 moves  3 | KF-bound  6 RET-bound  6 PATH-bound   11 | windows with flip+rise 2
+  lev 4 x  9 moves  3 | KF-bound  6 RET-bound  6 PATH-bound    7 | windows with flip+rise 2
+  F(l) by level [2, 1, 3, 5, 8]
+  PATH-RISE violations 0
+== iso_d4_st9.json N 8 T 11
+  lev 0 x  0 moves  1 | KF-bound  1 RET-bound  6 PATH-bound   13 | windows with flip+rise 0
+  lev 0 x  1 moves  1 | KF-bound  1 RET-bound  6 PATH-bound   13 | windows with flip+rise 0
+  lev 1 x  2 moves  1 | KF-bound  3 RET-bound  2 PATH-bound    2 | windows with flip+rise 0
+  lev 1 x  3 moves  3 | KF-bound  3 RET-bound  6 PATH-bound   12 | windows with flip+rise 2
+  lev 2 x  4 moves  3 | KF-bound  4 RET-bound  3 PATH-bound    4 | windows with flip+rise 2
+  lev 2 x  5 moves  1 | KF-bound  4 RET-bound  1 PATH-bound    1 | windows with flip+rise 0
+  lev 3 x  6 moves  3 | KF-bound  5 RET-bound  5 PATH-bound    9 | windows with flip+rise 2
+  lev 3 x  7 moves  3 | KF-bound  5 RET-bound  5 PATH-bound    6 | windows with flip+rise 2
+  F(l) by level [2, 3, 4, 3]
+  PATH-RISE violations 0

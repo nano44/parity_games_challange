@@ -1,0 +1,7 @@
+3 0 0 600 300000 seedsL/max_d4_L13.txt
+4 0 0 601 300000 seedsL/dd_d5_F14.txt
+4 0 0 602 300000 seedsL/TR_d5_T16.txt
+5 0 0 603 200000 keep/TRL_d6_22.txt
+5 0 0 604 200000 seedsL/ext_d6_dd_top1.txt
+5 0 0 605 200000 seedsL/ext_d6_dd_bot1.txt
+6 0 0 606 60000 keep/TRL_d7_26.txt

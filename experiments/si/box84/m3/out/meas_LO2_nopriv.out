@@ -1,0 +1,14 @@
+LO2_nopriv.json N 47 M 82 n 299 T 10 R 3 C 1 labels pRRpCppppR
+  RF [0, 1, 2, 0] GF [0, 2, 3, 0] bits(B2..B1) 00 00 01 10 10 00 00 00 00 00 00
+  premature resets at [5] hubH 3 SumD 415 maxD 4
+  t 0 hub -
+  t 1 hub -
+  t 2 hub B1.SET
+  t 3 hub B2.SET
+  t 4 hub B2.SET
+  t 5 hub B2.LOW
+  t 6 hub B2.LOW
+  t 7 hub B2.LOW
+  t 8 hub B2.LOW
+  t 9 hub B2.LOW
+  t 10 hub B2.LOW

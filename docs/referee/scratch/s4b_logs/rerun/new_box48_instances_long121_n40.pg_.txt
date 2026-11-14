@@ -1,0 +1,9 @@
+GAME new/box48/instances/long121_n40.pg
+GAMES 1
+enum_states 23
+keep_chk 18
+loc_chk 51
+rhos 91
+states 23
+VIOLATIONS 0
+RC 0

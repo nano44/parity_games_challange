@@ -1,0 +1,23 @@
+OK   ['RESULTS', 'REACH', 'END', 'ASC', 'QUIET', 'PACKET'] | Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β
+OK   ['RESULTS', 'REACH', 'END', 'ASC', 'PACKET'] | each with a W-target of level lev(x) − 1 (none at level 0)
+OK   ['RESULTS', 'REACH', 'END', 'ASC', 'QUIET', 'PACKET'] | β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone
+OK   ['RESULTS', 'REACH', 'END', 'ASC', 'QUIET', 'PACKET'] | e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+OK   ['RESULTS', 'REACH', 'END', 'ASC', 'QUIET', 'PACKET'] | an unused even self-loop of priority 2; c_W's priority top is the least even number at least 2 above every oth
+OK   ['RESULTS', 'REACH', 'END', 'ASC', 'QUIET', 'PACKET'] | a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2}, K3 (Even, to
+OK   ['RESULTS', 'END', 'PACKET'] | obtained from Γ(G) by 4M + 4 single-successor Even pads of priority ≤ 2 (pA on K0 → K3, s on K1's loop, q on K
+OK   ['REACH', 'PACKET'] | σ(x) = m_(x,s(x)); σ(β_g) = xt(g) if xt(g) is a mover, pb_g otherwise; σ(K0) = pA, σ(K1) = s, σ(K3) = K2; τ(g)
+OK   ['RESULTS', 'PACKET'] | RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome and ESC3, W3 for acyclic Ξ-graphs
+OK   ['RESULTS', 'REACH', 'PACKET'] | S3's start pair on Γ3(G) is the standard state of Γ3 for the genome start s_0.
+OK   ['REACH', 'PACKET'] | every cycle contains a vertex of Γ
+OK   ['REACH', 'END', 'PACKET'] | In the standard state, Iτ = ∅, so S4b leaves τ unchanged.
+OK   ['RESULTS', 'PACKET'] | with σ̄(K2) = r proved for every genome in P-N5-XICYC's fixes
+OK   ['RESULTS', 'END', 'PACKET'] | N5′-xi from S3 on Γ3(G) visits only standard states and makes Howard steps at the movers until its first fallb
+OK   ['RESULTS', 'END', 'PACKET'] | Theorem REACH3-CYC, CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome
+OK   ['XICYC', 'END', 'PACKET'] | SPEC S1-S5 with ONE change in S4a. At every Even v with |A(v)| ≥ 2 that is not its own H-cycle node, σ_new(v) 
+OK   ['RESULTS', 'XICYC', 'END', 'PACKET'] | Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(σ)}.
+OK   ['XICYC', 'QUIET', 'PACKET'] | first the reward of Λ (an even priority p gives +p, an odd one −p, with priorities made injective by rank); th
+OK   ['XICYC', 'QUIET', 'PACKET'] | σ̄_t is optimal at every vertex at once ([VJ])
+OK   ['RESULTS', 'QUIET', 'PACKET'] | (Odd's best reply σ̄_k is pointwise optimal in G_{σ_k})
+OK   ['RESULTS', 'REACH', 'END', 'PACKET'] | used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima; and S4a's σ_new … is a pointwise op
+OK   ['END', 'PACKET'] | For every genome G, N5′-xi from S3 on Γ3(G) has exactly one fallback, at an iteration F ≥ 1, and makes exactly
+quotes 22 not found 0

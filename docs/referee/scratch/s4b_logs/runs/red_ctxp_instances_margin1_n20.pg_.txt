@@ -1,0 +1,8 @@
+GAME red/ctxp/instances/margin1_n20.pg 
+GAMES 1
+enum_states 4
+loc_chk 29
+rhos 1926
+states 4
+VIOLATIONS 0
+RC 0

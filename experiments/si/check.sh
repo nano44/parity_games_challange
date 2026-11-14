@@ -1187,3 +1187,129 @@ case "$o" in *"OPTV 215 "*) ;; *) echo "box 63: mutation control: $o"; exit 1;; 
 o=$(awk '{for(i=1;i<=NF;i++){if($i=="STATES")a+=$(i+1); if($i=="CHECKED")b+=$(i+1); if($i=="OPTV"||$i=="S4AV")c+=$(i+1); if($i=="ODDFB")d+=$(i+1); if($i=="TAUNEW_EQ_RUN")e+=$(i+1)}} END{print a, b, c, d, e}' anc58/s4bopt_corpus.txt)
 [ "$o" = "7772 6719 0 36 7736" ] || { echo "box 63: s4bopt corpus totals: $o"; exit 1; }
 echo "si (box 63: S4B-OPT): PASS"
+# P-N5-S4B (FROZEN packet, box 63; line docs/si/P-N5-S4B-line.txt): must not change. Data pins: «box 63».
+echo "f1b65da522d927406a403ae5d023bb48ac73d022  ../../docs/si/P-N5-S4B-box63.md" | sha1sum -c --quiet
+echo "f8559b5e539a461a0fac89a5a9bf6f4432721c74  ../../docs/si/P-N5-S4B-line.txt" | sha1sum -c --quiet
+echo "si (P-N5-S4B pinned): PASS"
+# P-N5-S4B line revision L-1 (fixes entries 1-2: REFEREE S4B-L1 / S4B-L2): must not change; de-duplicated DATA counts (813 distinct lines).
+echo "95373010d54c69907308d224fa1111127055b8f5  ../../docs/si/P-N5-S4B-line-L1.txt" | sha1sum -c --quiet
+o=$(python3 -I -c "
+seen={}
+for l in open('anc58/s4bopt_corpus.txt'):
+    pre,_,post=l.partition(' S4BOPT ')
+    a=pre[5:].strip()
+    if a in seen: continue
+    t=post.split(); seen[a]={t[i]:int(t[i+1]) for i in range(1,len(t)-1,2)}
+s=lambda k: sum(d[k] for d in seen.values())
+print(len(seen), s('STATES'), s('CHECKED'), s('SKIPPED'), s('RHOS'), s('OPTV'), s('ODDFB'), s('S4AV'))")
+[ "$o" = "813 5726 5058 668 213311 0 29 0" ] || { echo "P-N5-S4B L-1: distinct counts: $o"; exit 1; }
+echo "si (P-N5-S4B L-1 pinned, distinct counts): PASS"
+# box 64 (FLIPOR: SAME-CUBE / FLIP-PATH / BIT-CHAIN; docs/si/N5-FLIPOR-box64.md)
+bash box64/check64.sh
+echo "si (box 64: FLIPOR): PASS"
+# box 65 (FOOT: GAIN-IND, footprint route fails, g*(1) = 2, g*(2) = 4; docs/si/N5-FOOT-box65.md)
+bash box65/check65.sh
+echo "si (box 65: FOOT): PASS"
+# box 66 (FRONT: exact one-flip (pre, post) set at m = 1, 2; m = 3 pins replayed with L-NEW Gen; docs/si/N5-FRONT-box66.md)
+bash box66/check66.sh
+echo "si (box 66: FRONT): PASS"
+# box 67 (FRONT2: per-tau one-flip table D(m, tau) at m = 1, 2; docs/si/N5-FRONT2-box67.md)
+bash box67/check67.sh
+echo "si (box 67: FRONT2): PASS"
+# box 68 (REFUTE: Lemma COMPOSE + negative control; docs/si/N5-REFUTE-box68.md)
+bash box68/check68.sh
+echo "si (box 68: REFUTE/COMPOSE): PASS"
+# box 69 (MECH: improvement monotonicity separates the m = 2 cap; docs/si/N5-MECH-box69.md)
+bash box69/check69.sh
+echo "si (box 69: MECH): PASS"
+# box 70 (FRAME: SAT frame ABS-m + IM, m = 2 validation; docs/si/N5-FRAME-box70.md)
+bash box70/check70.sh
+echo "si (box 70: FRAME): PASS"
+# box 71 (FRAME-K: k-flip frame m = 2 validation + DRUP check; docs/si/N5-FRAMEK-box71.md)
+bash box71/check71.sh
+echo "si (box 71: FRAME-K): PASS"
+# box 73 (SUM1: exact m = 2 frame enumeration, FRONT-2', pq realisation; docs/si/N5-SUM1-box73.md)
+bash box73/check73.sh
+echo "si (box 73: SUM1): PASS"
+# box 74 (FLIPS: top-pair key-order flips in the frame; realised genomes; docs/si/N5-FLIPS-box74.md)
+bash box74/check74.sh
+echo "si (box 74: FLIPS): PASS"
+# box 75 (packet P-IDEAL-IM: IM, BIT-CHAIN, KEY-DIR, VALUE-MONO, COMPOSE, FRAME, MACHINE T_1(3) = 10; docs/si/P-IDEAL-IM.md)
+bash box75/check75.sh
+echo "si (box 75: P-IDEAL-IM): PASS"
+# box 76 (TROPICAL-WINDOW: WINDOW-ONCE, ALT-MIN, HIT; DEAD SUM-COUPLE, RISE-N, SPAWN-2; docs/si/N5-TROPICAL-box76.md)
+bash box76/check76.sh
+echo "si (box 76: TROPICAL-WINDOW): PASS"
+# box 78 (RE-ENTRANT fuel search; landed potentials and RANK on the records; docs/si/N5-TROPICAL-box76.md §12)
+bash box78/check78.sh
+echo "si (box 78): PASS"
+# box 79 (packet P-IDEAL-DBL, frozen: WINDOW-ONCE, DBL-EQ, PASS-FREEZE, HIT, FUEL-EXACT, ALT-MIN, TOWER-NEED; DEAD x4)
+bash box79/check79.sh
+echo "si (box 79: P-IDEAL-DBL frozen): PASS"
+# box 80 (TOWER proof side: PULSE-NEST, ZONE, INSERT-PASS, STRETCH-NEED; docs/si/N5-TOWER-box80.md)
+bash box80/check80.sh
+echo "si (box 80: TOWER stretch): PASS"
+# box 81 (BRIDGE: ascent census on IDEAL-CYC / Gamma3; BETA-ACYC, ACYC-LIN; xcheck; docs/si/box81-bridge.md)
+bash box81/check81.sh
+echo "si (box 81: BRIDGE): PASS"
+# box 82 (CYCLIC TOWERS: HS2_d3 Xi-cycle scans, climbs, CAP-R; docs/si/box82-cyctower.md)
+bash box82/check82.sh
+echo "si (box 82: CYCLIC TOWERS): PASS"
+# box 83 (LADDER-R at h = 2..6: built and measured; Lemma LOCK-UP, Corollary LADDER-2; docs/si/box83-ladder.md)
+bash box83/check83.sh
+echo "si (box 83: LADDER-R): PASS"
+# box 84 (HUB PAIR «MIRROR» milestone 1: breaks LOCK-UP's single-target hypothesis; linear, not doubling; docs/si/box84-hubpair.md)
+bash box84/check84.sh
+echo "si (box 84: HUB PAIR): PASS"
+
+# box 85 (TWO COPIES PER LEVEL: DEAD as a counter; Lemma FLIP-U, Corollary LOW-NULL, Lemma POOL-ALT; docs/si/box85-twocopies.md)
+bash box85/check85.sh
+
+# box 86 (Q1 LAG TOWER: DEAD as a counter at h = 2, 3; Lemmas SAME-E-MERGE, ACCESS-LATCH, LEAPFROG; docs/si/box86-lagtower.md)
+bash box86/check86.sh
+
+# box 87 (Lemma LEAPFROG-ASC: shared-e leapfrogs need ascents; census on boxes 84-86; docs/si/box87-leapfrog.md)
+bash box87/check87.sh
+# box 88 (NEST-CHARGE: type-II nesting charged to e-set heights; leap88 census per-bit + ALL; docs/si/box88-nest.md)
+bash box88/check88.sh
+# box 89 (MULTIPLY on D_U at a bit's waiting hub: D_U(w) <= T + 1, climbs; docs/si/box89-multiply.md)
+bash box89/check89.sh
+# box 90 (FW staircase: P exponential with C 3 on N5'-xi runs; window k: C = k + 1; docs/si/box90-ra.md)
+bash box90/check90.sh
+# box 91 (PARALLEL / PAIR-EXPEL / GATE-RACE census, two engines; docs/si/box91-expel.md)
+bash box91/check91.sh
+# box 92 (GATE-LOW-NULL census, two engines; CONJECTURE WAIT-CLOSED; docs/si/box92-closed.md)
+bash box92/check92.sh
+# box 93 (K7: NP-SHAPE / E-FACE-PAYS census, two engines; K6 lag towers at h = 4, 5; docs/si/box93-k7k6.md)
+bash box93/check93.sh
+# box 94 (nested MW / doubler counters: ADD, not multiply; SAME-SUFFIX; docs/si/box94-nest.md)
+bash box94/check94.sh
+# box 95 (P-N5-GATE fixes entries 1-5 + lines L-1..L-5, each rebuilt by its fixN script; docs/si/P-N5-GATE-fixes.md)
+bash box95/check95.sh
+# P-N5-GATE line revision L-5 (fixes entry 5: CHECKER C142's nine pairs + the Lead's tenth pair): must not change.
+echo "459fd88d2d1959647f6aeb065bf8ac58cce684f9  ../../docs/si/P-N5-GATE-line-L5.txt" | sha1sum -c --quiet
+echo "si (P-N5-GATE L-5 pinned): PASS"
+# box 96 (PROVISO on IDEAL-CYC, B-ONLY3 on Gamma3: d96 two engines; docs/si/box96-bonly3.md)
+bash box96/check96.sh
+# box 97 ([STD3] for every genome up to the first fallback: REACH3-ALL re-derived; std97 census; docs/si/box97-std3.md)
+bash box97/check97.sh
+# box 98 (CHAIN3 U-dependence reading; asc98 / climb98, two engines; CONJECTURE U-FREE; docs/si/box98-udep.md)
+bash box98/check98.sh
+# box 99 (U-FREE proof side: Lemma SCC-RED, CAP; CONJECTURE SCC-LIN; scc99 census; docs/si/box99-ufree.md)
+bash box99/check99.sh
+# box 100 (SCC-LIN inside one SCC: TWO-CROSS, DEPTH-COUNT3, WINDOW; LAM-GAP / DEEP3 conjectures; docs/si/box100-scclin.md)
+bash box100/check100.sh
+# box 101 (Lemma LAM-GAP on random one-player games; docs/si/box101-lamgap.md)
+bash box101/check101.sh
+# box 102 (DEEP3 proof side: CORE-ABOVE, PROPAGATE, DEEP3 <= MOVER-DEEP3; deep102 counters; docs/si/box102-deep3.md)
+bash box102/check102.sh
+# box 103 (MOVER-DEEP3 at k = 1: GAIN-COUNT, NOLOSS-k1 counters; docs/si/box103-moverdeep.md)
+bash box103/check103.sh
+# box 104 (D18 big map: Lemma WRAP, FREE-REACH, Friedmann's counter under N5'-xi; frozen outputs; docs/si/box104-map.md)
+bash box104/check104.sh
+# box 105 (O2, proof side: KEY(G*), Lemma KEY-MODEL, KEY-MONO*, DEPTH-BOUND*; quotes; D1 when present; docs/si/box105-key.md)
+bash box105/check105.sh
+# packet P-N5-WRAP (dead-end packet for N5'-xi: Lemma WRAP on W, Claim NT, XI-EXP CONDITIONAL; quotes, instance sha1, DATA lines, frozen sha1; docs/si/P-N5-WRAP.md)
+bash pwrap/checkW.sh
+# box 106 (exact d = 2 maximum of KEY on the free ladder: layer 1 skeleton enumeration; docs/si/box106-exact2.md)
+bash box106/check106.sh

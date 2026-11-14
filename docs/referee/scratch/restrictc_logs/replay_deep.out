@@ -1,0 +1,5 @@
+family deep seed 3202 count 200
+MUST-0:  i_img 0  i_own 0  i_edge 0  i_start 0  i_rel 0  i_par 0  ii_val 0  ii_br 0  ii_sbar 0  ii_rand 0  cn_pad 0  iii_step 0  iii_stut 0  iv_brseg 0
+RECORDS: pairs 732  randpairs 2196  openpairs 309  lit 24  gtNC 0  tdiff 0  mpadchg 355  maxwin 3  c_mpad 355  c_open 284  c_iv 9
+LITERAL (iv) example: deep_3202_1 C=[0] |R|=1 a=t0=0 T3=3 window 3 steps
+exit 0

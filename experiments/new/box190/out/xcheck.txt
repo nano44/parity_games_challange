@@ -1,0 +1,18 @@
+XCHECK C14 Gamma3: agree+correct 14/14, iterations [8, 8, 6, 6, 10, 8, 8, 10, 6, 8, 7, 11, 12, 9]
+XCHECK random seeds 1..10000: agree+correct 10000/10000, max iterations 13
+XCHECK pgs:switchbestexp N 1..7: agree+correct 7/7, iterations [20, 32, 41, 47, 55, 62, 68]
+XCHECK pgs:switchallexp N 1..7: agree+correct 7/7, iterations [5, 8, 7, 8, 10, 12, 14]
+XCHECK pgs:friedmannsubexp N 1..7: agree+correct 7/7, iterations [4, 10, 15, 19, 23, 27, 31]
+XCHECK pgs:fearnleysubexp N 1..7: agree+correct 7/7, iterations [4, 8, 12, 14, 16, 18, 21]
+XCHECK pgs:recursiveladder N 1..7: agree+correct 7/7, iterations [0, 2, 2, 4, 4, 6, 6]
+XCHECK tc N 1..12: agree+correct 12/12, iterations [1, 4, 7, 17, 16, 20, 20, 34, 24, 35, 30, 34]
+XCHECK tc+ N 1..9: agree+correct 9/9, iterations [0, 3, 7, 11, 16, 26, 24, 30, 33]
+XCHECK counter_m N 1..10: agree+correct 10/10, iterations [1, 2, 2, 3, 3, 4, 4, 5, 5, 6]
+XCHECK counter_symsi N 1..10: agree+correct 10/10, iterations [7, 13, 25, 22, 31, 37, 42, 48, 49, 55]
+XCHECK counter_rr N 1..10: agree+correct 10/10, iterations [0, 1, 1, 2, 2, 2, 2, 2, 2, 2]
+XCHECK counter_dp N 1..10: agree+correct 10/10, iterations [2, 2, 4, 4, 6, 6, 8, 8, 10, 10]
+XCHECK counter_core N 1..10: agree+correct 10/10, iterations [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+XCHECK counter_qpt N 1..10: agree+correct 10/10, iterations [0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+XCHECK counter_ortl N 1..10: agree+correct 10/10, iterations [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+XCHECK counter_rob N 1..10: agree+correct 10/10, iterations [3, 5, 7, 10, 13, 16, 19, 22, 25, 28]
+XDONE

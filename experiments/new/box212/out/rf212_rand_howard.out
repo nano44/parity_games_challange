@@ -1,0 +1,1 @@
+rand 2121 300 rand,cyc,self,up,down,dense,flat RULE howard K2tested 900000 Tmax 5 Tsum 440 bchecked 440 lagstates 631 nonstalls 618 nsmax 4 nspctP 5 plateaus 12 platmax 2 runs 300 stalls 13 tailmax 4

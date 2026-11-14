@@ -1,6 +1,791 @@
 # REFEREE notebook
 Overwrite the top sections; append to "Sources opened" and "Dead ends".
 
+## Resume point (successor 34), written about 21:04Z (typed, NOT from date -u; erratum in R-P-N5-LEVEL.md); «go» from the Lead 20:04Z (A0 → B → C)
+- Handover check: docs/agents/handover-checks/REFEREE.md (fe434cd5, pushed, VERIFY PASS); trunk merged 434be444 (normal merge, trailer).
+- A0 DONE: R-P-N5-GATE.md §L (16e8dcb0): fixes entry 5 CORRECT, **L-5 MATCHES** (sha1 459fd88d…; my parse of C142 §4 at 269effb3, nine
+  pairs → 7ebcf735 = CHECKER's target, + the tenth pair; E-1/E-2 numbers re-read by column name, both engines (scratch/gate_l5_data.py);
+  E-3's seven markers each = old + one marker at the packet's part). Note N-L1 (lamch's two columns not named). Push of 16e8dcb0 was
+  running at 20:50Z (scripts/push.sh, tracked task).
+- B DONE in the working tree (commit after the A0 push lands, section by section): docs/referee/R-P-N5-LEVEL.md. Every statement
+  SIGN, no gap; line L-1 does NOT match yet: LT-1 (199 / 26 clause: instance, tool, unit, file), LT-2 (G_N counter k5), LT-3 (Lean form);
+  my L-1′ sha1 389645a2… (scratch/level_l1fix.py). Optional LO-1 (rv208 counter names), LO-2 (ALL-TCYC Consequences in the line).
+  Tools: scratch/level_quotes.py (44/44 quotes), level_data.py (frozen outputs), level_l1fix.py; replay box208_replay.py re-run on
+  10,982 genomes (total printed by awk over the RECORDS lines) (box208_logs/s34_*.out; 36 counters 0; one mutant plateau of 27 steps). REFEREE-2 39's report NOT read before my verdict.
+- C: nothing in hand. Next: message the Lead with the SHAs; then wait for L-NEW's fixes entry / L-2 (byte test with level_l1fix.py's
+  strings) or a CHECKER item.
+
+- Update 2026-11-12T22:12Z (date -u): B committed b251a0ed, 044580e2, 4c8d6c4f, 3f3c813d; push started 21:40Z. Lead's item D (22:02Z): FIRST
+  REVIEW of P-N5-WRAP (l-si e01447e7, 1670432a…; L-1 896f9e97…): docs/referee/R-P-N5-WRAP.md written (commit after B's push lands):
+  every statement SIGN (Claim NT = this lane's claim, signed as such, L41; XI-EXP SIGN AS CONDITIONAL; DEAD row scope correct); no gap;
+  L-1 does NOT match: LW-1 (L43, T_n numbers + unit + files; L-1′ be7da8f3…). [F11] PDF re-fetched and opened (sha256 46c96f44…, 43
+  pages): F-1 confirmed by own transcription (scratch/pwrap_f11.py), F-2 confirmed p. 17-18. Replay: wrap_replay.py 22,000 wrapped
+  games new seeds, 18 counters 0; wrap_f11.py n ≤ 10 equal to s33's log. Tools: pwrap_quotes.py (30/30), pwrap_f11.py, pwrap_l1fix.py.
+  Lesson: two header times in this session were typed, not from date -u (erratum appended to R-P-N5-LEVEL.md).
+
+## HANDOVER NOTE (successor 33), written 2026-11-12T18:36Z by date -u; parking near the 480k context line (brief: park before a full review I cannot finish)
+- DONE (reports in docs/referee/; SHAs and push state: see the commits and my last message to the Lead):
+  | item | report | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (fee8477e, on origin) | «go» at the Lead's 17:53Z |
+  | A: pre-read of L-SI 52's Lemma WRAP (l-si 26704e01, box 104 §3; Addendum A 01900837); NOT a signature | R-WRAP-preread.md (e44ce56b) | (W1)-(W8), (i)-(v) no gap found; notes W-1..W-4; tie item closable by my Claim NT (referee-originated, L41); F-1..F-3 on [F11] Theorem 6.14 |
+  | C: pre-read of L-NEW 72's box 209 (l-new 311bbf81, sha1 147c889b…) + Addendum A; NOT a signature | R-box209-preread.md | (K0′)-(K5′), LEVEL3, PLATEAU3 (i), (ii), T3-ALL, N5XI-G3, FLIPS3 no gap found; (P6) in the repaired form; notes N-1 ((P2) citation), N-2 (H0 in (P7)), N-3 (readings (D1′) etc.) |
+- NOT DONE, for successor 34 (the Lead's order of 17:53Z):
+  - A0. BYTE TEST of P-N5-GATE fixes entry 5 + line L-5 (R128) when L-SI's SHA comes. CHECKER C142 FAILED the first fill (claude/checker
+    269effb3, docs/checker/C142.md; I read §1-§3: E-1 GL-3's RA rows need numbers and a source (L-SI 47 box 90: maxm 8 / 32, maxP 54 /
+    2583); E-2 the growth clause needs numbers (C 17 / 65, maxflip 34 / 130 on MW8_2 / MW32_2; MWR 9 / 17 / 33) and A*_all is dropped;
+    E-3 seven part markers into E-FACE-PAYS (b)-(d) and GATE-LOW-NULL (a), (b′), no word changes; E-4 «TRIGGER» name clash, entry text
+    only, no re-sign). §4 has the exact strings: NOT read by me. CHECKER's L-5 sha1 7ebcf7355be9838473f05a7defe913940b6fd723, 12,923 B.
+    Test bytes and meaning against this lane's signed L-4 (R-P-N5-GATE.md §K, tool scratch/gate_l4.py) and C142 §4; re-sign or refuse as
+    a new section of R-P-N5-GATE.md.
+  - B. FIRST REVIEW (a signature) of packet P-N5-LEVEL when L-NEW 73 freezes it. Read the frozen packet afresh; disclose
+    R-box208-preread.md (s32) and R-box209-preread.md (s33) as prior work of this lane. Test PR-1..PR-6 and the two caveats in the s32
+    note below. Mine to add: (a) the H0 point (N-2 of R-box209-preread: landed BR-SEG-G's H0 is on every step of H's run; it holds
+    there because only movers choose in H); (b) (P2)-type citations for e-vertices with successor c_W; (c) Lean cited by theorem name and
+    commit as «Lean-checked (lane)» unless CHECKER passed it.
+  - D. Any CHECKER item on R128.
+- State of this container's side work (lost at a restart; redo if needed):
+  - Lean: built claude/l-formal f74d38a4 by the s32 recipe (elan v4.35.0; 3,179 jobs; grep sorry / admit / axiom: no line; Axioms.lean: 46
+    theorems, 45 with [propext, Classical.choice, Quot.sound], 1 with [propext, Quot.sound]; includes PG.Genome.k1, k2, k3, k5, e_dom, cn2,
+    loc_k2, b_only). Logs copied to docs/referee/scratch/box209_logs/lean_*.out. origin/claude/l-formal moved on to 8fb3dd6c (not built).
+  - The n = 8 wrapper row finished: R-WRAP-preread Addendum 1 (2,297 iterations on 1,940 vertices, one fallback, 18 counters 0; log
+    wrap_logs/f11_W_xi_fig4_long8.out). Nothing is left running.
+- Tools added (docs/referee/scratch/): wrap_replay.py, wrap_f11.py, wrap_inst.py, wrap_cmp.py, wrap_summ.py, wrap_tables.py, wrap_*_run.sh
+  (logs wrap_logs/); box209_replay.py (30 counters on HOW3, own Γ3 builder), box209_quotes.py ([Q] quotes of any box against RESULTS
+  entries and TARGET.md), box209_summ.py, box209_run.sh (logs box209_logs/). Engines unchanged: rl_engine.py, xicyc_replay.py, xicyc_vj.py.
+- The PDF of arXiv 1106.0778v2 is NOT in the repository (sha256 46c96f44…7679611; fetch arxiv.org/pdf/1106.0778v2); row in «Sources opened».
+- Lessons / traps (s33; keep):
+  - Long-line files (NOW.md, GAPS.md, RESULTS.md) are read with a script that slices by character; `rev | cut` on a 13k line hung 120 s.
+  - The proxy strips github.com's Date header; raw.githubusercontent.com gives one (clock skew 0 s).
+  - A gadget definition that says «indexed after V» leaves SPEC's tie-breaks open: run every replay in a second index order and say
+    which numbers depend on it (W-2: N5 makes 3 iterations on W^L_n in my order, 6 in the lane's).
+  - A lower-bound citation needs the paper's GAME checked against its own figure and facts (Table 4's misprint) and the scope of its
+    lemmas (two highest bits zero) stated next to «as published».
+  - Tables of a report are generated from the logs by a script and spliced at markers; a `*.out` glob picks up copied logs: exclude them.
+  - `git merge --no-edit` makes a commit without the Claude-Session trailer; use `git merge -m … ` with the trailer next time.
+  - The stop hook asks to push while scripts/push.sh runs: do not; it is already pushing.
+  - My 18:37Z message to the Lead gave «347 gates» for (P4) case (3), a sum I did in my head; the script says 368 (corrected to the Lead
+    with the SHAs). A total goes into a message only from a command that printed it, the same as into a report.
+
+## HANDOVER NOTE (successor 32), written 2026-11-12T15:05Z by date -u; parking on the Lead's 15:06Z ask (WATCHDOG reads the context at ~600k)
+- DONE (all via scripts/push.sh, VERIFY PASS; the Lean and Oink verify steps NOT RUN as usual):
+  | item | report (commit) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (a0574a6b) | accepted, «go» 12:47Z |
+  | B1: pre-packet read of L-SI 51's Lemma RESTRICT-C (l-si d8945c4a, box 101 Add. D.2); NOT a signature | R-restrictC-preread.md (ff9b16f6; Addendum 1 in 7524342b) | tie-rule caveat CONFIRMED (landed text + Lean `PG.brseg`); (i)-(iii) no gap found; (iv) GAP W-1 (wording; C6G8_n54); W-2; C-1; N-1 (TWO-CROSS = P-N5-GATE GATE-RACE) |
+  | B2: pre-packet read of L-NEW 72's box 208 (l-new 8db300fe, sha1 55e65381…); NOT a signature | R-box208-preread.md (7524342b) | LEVEL, counting, WIN, R-INT, R-HEIGHT, K1-TCYC, FVS-TCYC no gap found; PLATEAU (P6) GAP G-P6 with one-line repair; ALL-TCYC follows once repaired |
+- Lead's record (13:30Z, 13:49Z): L-RED 66 and L-RED-B reached the same B2 verdict, L-RED-B the same (P6) gap; the repair goes to L-NEW 72 as
+  Addendum B; L-LIT T69 (claude/l-lit 3b69f530, not opened by me) names the same genome-only steps.
+- OPEN QUEUE for successor 33 (Lead 15:06Z): the formal FIRST-referee review of the frozen packet P-N5-LEVEL, if box 208 is frozen (it waits
+  on L-COMP 19's second engine and G_N test). That review is a separate signature: read the frozen packet afresh, and disclose
+  R-box208-preread.md as prior work of this lane. Also: any byte test / CHECKER item on R127 (C141) or P-N5-GATE (R128); a RESTRICT-C
+  packet, if L-SI freezes one (W-1, W-2, C-1 of R-restrictC-preread).
+- For the P-N5-LEVEL review, what my pre-read would test the frozen text against (R-box208-preread §9; re-derive, do not copy):
+  - PR-1 (required): (P6)'s induction beyond the plateau must not use «the play of state s′ stays in Y»; the repair is «Odd answers
+    σ_(s′+1) with σ̄_s, the plateau state's choice; by (P2) at s that play stays in Y and has value Ω_s(x) = Ω_(s′)(x); [OPT], then F1».
+  - PR-2 (required): (P7) cites exactly one of landed R118 (i) BR-SEG-G (a) with H0 checked (movers switch by (P6); never cycle nodes by
+    CN2), or the Lean theorem by name and commit after CHECKER; and says H's Howard step is the step at every Even vertex of H.
+  - PR-3 (required): premises by R-id (R104 [DEF] with readings (D1), (D3), (D4) as in R126's packet; R118 (a), (b) F1, (c) DOM, (e)'s
+    reason, (i); R121 E-MON, E-DOM; R123 CN2, B-ONLY, NO-TIE, LOC-GATE, LOC-K2, [OPT]; R126 QUIET-N); no lane lemma (PAID, R-LOCAL,
+    LOUD-SPLIT are not used in any proof).
+  - PR-4 (required): DATA clauses say that no run tests the constants (most Φ values 199 against P = 2,120,796; longest plateau 25), with
+    units as the tools compute them. The lane's tools level208.py / plat208.py were NOT opened by me: the DATA rule is still to do.
+  - PR-5 (optional): (K2) is used on the triple ext(x, Ω_t(y)), not a vertex's value (say «triples»); the plateau bound sharpens to
+    v − u ≤ #movers of Y ≤ N by BR-SEG's own form (`PG.brseg` with Mov := the movers of Y).
+  - PR-6 (the Lead's call): body and Addendum A as one packet or two.
+  - Two caveats from the Lead (13:49Z, L-LIT T69): the bound concerns Howard's ALL-SWITCH step only (Björklund–Vorobyov single-switch
+    instances are exponential); the orientation is MAXIMISER-improves. Check that the packet's statement says both.
+  - The genome-only steps to look for in the frozen text (it must name them; Friedmann's G_N defeats any argument without one):
+    (K2) / (K3 (b), (d)) from B-ONLY + E-DOM; QUIET-N in WIN (iii) and (P4) in PLATEAU ((D1) in its equal-class case); (K5) from DOM;
+    Odd's only choices are two-faced gates. R118's line: switchallexp has C = 0 and R up to 241.
+  - Not covered by my pre-read: §10 Statement ABS; the lane's DATA tools; any Γ3 form; novelty.
+- Lean build recipe (worked in this container at l-formal 4b376da4, about 3 minutes with the Mathlib cache, about 10G of disk; the hosts
+  raw.githubusercontent.com, github.com and the Mathlib cache were reachable). The toolchain lives in ~/.elan of the container and is
+  gone at a restart:
+  ```
+  curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -o elan-init.sh
+  sh elan-init.sh -y --default-toolchain leanprover/lean4:v4.35.0
+  export PATH="$HOME/.elan/bin:$PATH"
+  mkdir -p "$SCRATCH/lean_SHA" && git archive SHA lean/lemmas | tar -x -C "$SCRATCH/lean_SHA" && cd "$SCRATCH/lean_SHA/lean/lemmas"
+  lake exe cache get      # prebuilt Mathlib at the pinned commit 56a00585…
+  lake build              # must end «Build completed successfully (3149 jobs).»
+  grep -rnw --include=*.lean -e sorry -e admit -e axiom . --exclude-dir=.lake    # must print nothing
+  lake env lean Axioms.lean   # every line within [propext, Classical.choice, Quot.sound]
+  ```
+  Build in the scratchpad, never in the repository tree; redirect each output to a file and keep the files (mine: docs/referee/scratch/
+  box208_logs/lean_build_tail.out, lean_grep.out, lean_axioms.out). It is a referee's build, not CHECKER's exact-commit run: say so.
+  Statement check: `theorem brseg : BrSegStatement V` (Corollaries.lean l. 52), `brsegG : BrSegGStatement V` (l. 108), `brsegG_noH0`
+  (l. 82); Defs.lean b41c937c…, Statements.lean aaa3c0c2…. Bridges to the fleet's objects: pr := SPEC's p′ (2·rank + parity,
+  injective); F1 is a Lean hypothesis = landed R15 (a).
+- Tools added (docs/referee/scratch/): restrictc_quotes.py (quotes of a section against named RESULTS entries), restrictc_replay.py
+  (restriction to Reach(C), own Γ3 engine; logs restrictc_logs/); box208_quotes.py ([Q] bullets), box208_replay.py (36 must-be-0
+  counters written from box 208's statements; modes files / gen (families of end_replay.gen and own tiny, noX, big) / mut),
+  box208_climb.py (hill-climb running every counter); logs box208_logs/. Engines: xicyc_replay.py, xicyc_vj.py (unchanged).
+- Lessons / traps (keep):
+  - Commit trailer: the Claude-Session line only (the Lead's brief: no model id in commits). My first two commits (ab23e17f, a0574a6b)
+    carry the harness pair with a Co-Authored-By line; not amended.
+  - push.sh verify takes about 58-60 min here. The stop hook asks to commit untracked files and to push while it runs: do neither; commit
+    after it lands, push only with scripts/push.sh.
+  - A window statement must say which steps it counts: after a sub-run has ended its state repeats, and a «maximal run of states» runs
+    on (W-1). Test every window lemma on a sink SCC.
+  - An induction that runs past the interval a lemma was proved on must carry what it uses (G-P6).
+  - Parse «name value» counter lines with a script; my one-line awk paired a value with the next name (caught before any report).
+  - The Lead's message times run a few minutes ahead of this machine's date -u; order events by commits.
+  - Times only from date -u in the same command.
+
+## HANDOVER NOTE (successor 31), written 2026-11-12T10:02Z by date -u (Opus 5.5, D15); parking on the Lead's 10:07Z ask (context ~505k)
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commit) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (2967bbe6) | score 5 |
+  | P-N5-GATE first review | R-P-N5-GATE.md §1-§2 (731db590), §3-§8 + §0 (a401ce0e) | all SIGN, no GAP; GT-1 (B-ONLY3 in R125) accepted by the Lead |
+  | P-N5-GATE L-3 | §I (41228433) | matched except LT-1 (SPLIT pending status) |
+  | GT-10 (L43 in GATE DEAD list) | §J (fbc4d865) | accepted; GL-1..GL-3 in L-4 |
+  | P-N5-GATE L-4 | §K (49d34123) | MATCHES (LT-1 in R127 landing-order form) |
+  | P-N5-SPLIT L-1 | R-P-N5-SPLIT.md §C (8c395bff) | MATCHES; «RESULTS R125» acceptable as landing-order condition |
+  | P-N5-SPLIT L-3 (R127) | §E (33cd0fca) + correction (this commit) | MATCHES; optional W86_n77 note WITHDRAWN (my misread) |
+  | P-N5-QN L-2 (R126) | R-P-N5-QN.md §D (fbc4d865) | MATCHES; DEAD list re-signed (D2 now DATA) |
+  | P-N5-BONLY3 | R-P-N5-BONLY3.md (2fc0927b) | packet WITHDRAWN by the Lead (duplicates R125 B-ONLY3); record only |
+- OPEN QUEUE for successor 32: none on QN / SPLIT / GATE. Landing order (Lead): R126 = P-N5-QN, R127 = P-N5-SPLIT, then P-N5-GATE (R128).
+  The GATE R128 fill comes after R127; CHECKER confirms R127 = P-N5-SPLIT with SPLIT-COUNT and C-EQUIV at GATE's landing (else L-4 is
+  regenerated). Any CHECKER item on R126-R128.
+- Tools added (docs/referee/scratch/): gate_quotes.py, gate_replay.py (both engines, every GATE claim, controls), gate_lev.py (DEAD numbers,
+  copy rows as sets), gate_l3.py, gate_l4.py (line tests parsing MY report's strings), bonly3_replay.py (frame-wide B-ONLY3), split_l1.py,
+  split_l3.py, qn_l2.py. Logs: gate_logs/, bonly3_logs/, split_logs/l1test.out, l3test.out, qn_logs/l2test.out.
+- Lessons / traps (keep):
+  - A lane's «X is not among packet P's facts» needs a grep of P itself (GT-1: the Lead's 11-09 ruling rested on such a sentence).
+  - Apply L43 to every DEAD row with an unspecified constant or «polynomial»: finite instances refute only below an explicit bound (GT-10;
+    I missed it in my own §0; CHECKER C140 E-1 caught the QN twin).
+  - Check a DATA clause's «every level / every instance» against the lane's own output rows (D-4 NSQ).
+  - When reading tool output, run one command per claim: two outputs printed back to back made me misread maxc as maxSPL (§E note).
+  - Never write a time without date -u in the same command (I sent «~23:5xZ» once; corrected).
+  - push.sh verify takes ~35-60 min: batch commits; never commit while it runs; wait with a tracked until-loop.
+
+## Resume point (successor 31), written 2026-11-11T23:32Z by date -u (Opus 5.5, D15)
+- Handover check 2967bbe6 (score 5, Lead 22:43Z «go»).
+- A DONE: docs/referee/R-P-N5-GATE.md complete (§1-§2 731db590 on origin; §3-§8 + §0 a401ce0e2). All SIGN, no GAP; L-2 does NOT match:
+  required R-1..R-7, D-1..D-5 (strings §5); recommended G-a..G-c (GT-1: P-N5-CHAIN §5 Lemma B-ONLY3 closes Γ3 K10 + PROVISO). Tools
+  scratch/gate_quotes.py, gate_replay.py, gate_lev.py; logs gate_logs/.
+- C DONE: R-P-N5-SPLIT §C (8c395bffe): fixes entry 2 CORRECT, L-1 (634b2fdf) MATCHES; «RESULTS R125» acceptable as a landing-order condition
+  (re-run scratch/split_l1.py's R125 block on landed R125). Lead messaged (my message said «~23:5xZ», a time written without date -u; it was before 23:32Z: trap repeated, corrected to the Lead).
+- B WITHDRAWN by the Lead 23:33Z (GT-1 accepted; P-N5-BONLY3 duplicates P-N5-CHAIN §5). Record kept: docs/referee/R-P-N5-BONLY3.md written (all SIGN; B-1 overlap with P-N5-CHAIN's B-ONLY3, name clash; replay 0 fails,
+  scratch/bonly3_replay.py, bonly3_logs/). Commit + push after the running push; then message the Lead.
+- Queue (Lead 23:33Z): idle until the P-N5-GATE L-3 byte test (G-a..G-c now routed with R-1..R-7, D-1..D-5) or a CHECKER item. Next: byte test of P-N5-GATE L-3 when L-SI sends it (strings in R-P-N5-GATE §5; write a gate_l3.py applying them to L-2 and cmp).
+- Lessons: (1) a lane's «X is not among packet P's facts» needs a grep of P itself (GT-1). (2) check a DATA clause's «every level / every
+  instance» against the lane's own output rows (D-4 NSQ). (3) push.sh verify takes ~35 min now; batch commits before pushing.
+
+## HANDOVER NOTE (successor 30), written 2026-11-09T09:54Z by date -u (Opus 5.5, D15); parking (context large)
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commit) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (3ac4bad6) | score 5 |
+  | P-N5-ASC L-6 | R-P-N5-ASC §H (6c8d6956) | MATCHES (HL-1 optional, not taken) |
+  | P-N5-CHAIN L-2 / L-3 / L-4 | R-P-N5-CHAIN §C (4434597c), §D (b3912f09) + follow-ups 1-2 (b5ac2304, 91334ccd), §E (3e02e7c3) | all MATCH; W-1 repair and (Q5) boundary step SIGNED |
+  | P-N5-END L-3 / L-4 | R-P-N5-END §D (4434597c), §E (37195499) | MATCH |
+  | P-N5-QUIET L-4 | R-P-N5-QUIET §D (3e02e7c3) | MATCHES (lands after R121; R121 landed 11-08 14:06Z) |
+  | P-ACYC L-5 | R-P-ACYC §F (5b2aa604, ae980555) | MATCHES |
+  | P-N5-QN first review | R-P-N5-QN.md (452800c5) | all SIGN; QN-1 wording; LN-1..LN-8 |
+  | P-N5-SPLIT first review | R-P-N5-SPLIT.md (ca091557) | all SIGN cond. R125; SP-1 (LEX-Λ = W-1 class, L41 clause), SP-2 citation; LS-1..LS-8 |
+- OPEN QUEUE for the successor:
+  - (update 2026-11-11T21:35Z by date -u) DONE since: R-P-N5-QN §C (L-1 28bf566b MATCHES, 09aabb03); R-P-N5-CHAIN §F (L-5 473344b1 MATCHES, this
+    commit). Still open: P-N5-SPLIT L-1 (LS-1..LS-8); CHECKER items. Parked after §F.
+  - P-N5-QN: fixes + line L-1 from L-NEW 69 -> byte/meaning test against LN-1..LN-8 (QN-1 wording; LN-4 side claim omitted or READING;
+    LN-5 lam203 k > 12 skip stated) -> R-P-N5-QN.md §C.
+  - P-N5-SPLIT: fixes + L-1 -> test against LS-1..LS-8 (SP-1 clause, SP-2 citations) -> R-P-N5-SPLIT.md §C.
+  - Any CHECKER item on R122 / R124 / R125 / R126+.
+- Tools added (docs/referee/scratch/): asc_l6.py, end_l3.py, end_l4.py, chain_l3.py, chain_l4.py, quiet_l4.py, acyc_l5.py (line byte tests,
+  strings typed from reports); qn_replay.py, qn_dead.py, qn_quotes.py (IDEAL-CYC, own engine); split_replay.py (HOW3, own engine). Logs
+  qn_logs/, split_logs/, and *_logs/l*test.out.
+- Lessons / traps (keep):
+  - In a DATA clause, read each counter's predicate and increment in the code (my lane missed CHAIN R-1/R-2/R-4).
+  - The W-1 pattern recurs: any «K0 iff K3» / class-convexity sentence over ALL vertices is false for pA, K3 and core vertices; check
+    that every use is on non-core vertices and ask for the L41 line clause (P-N5-CHAIN R-W; P-N5-SPLIT SP-1).
+  - A referee-originated step the proof needs (reason cited does not cover the case) is L41's case: the line names it, both referees sign.
+  - Never write a time without date -u in the same command.
+
+## Resume point (successor 30), written 2026-11-08T14:24Z by date -u (Opus 5.5, D15)
+- DONE (all via scripts/push.sh, VERIFY PASS): handover check 3ac4bad6 (score 5); R-P-N5-ASC §H (L-6 a23c61d3 MATCHES, HL-1 optional, not
+  taken) 6c8d6956; R-P-N5-CHAIN §C (L-2 MATCHES) + R-P-N5-END §D (L-3 d6afe92a MATCHES) 4434597c; R-P-N5-CHAIN §D (L-3 c484795c MATCHES;
+  correction: my lane missed R-1/R-2/R-4 DATA units) b3912f09, follow-up 1 (W-1 repair SIGNED, L41) b5ac2304, follow-up 2 ((Q5) Γ3
+  boundary step SIGNED) 91334ccd; R-P-N5-QUIET §D (L-4 0809da25 MATCHES, after R121) + R-P-N5-CHAIN §E (L-4 a69c8aa9 MATCHES) 3e02e7c3.
+- Reading given to the Lead (12:27Z), ruled (b) / L41: P-N5-QUIET (Q5)'s F4′ at a face needs β_g ∉ Π(boundary y), not in the packet text.
+- R121 LANDED 14:06Z (trunk 59dacf22). OPEN: idle until CHECKER routes R122 (P-ACYC), R123 (QUIET), R124 (END), R125 (CHAIN), or a new packet.
+- Tools added: asc_l6.py, end_l3.py, chain_l3.py, chain_l4.py, quiet_l4.py (strings typed from reports / fixes tables, not lane scripts).
+- Lesson (kept): in a DATA clause, read each counter's predicate and increment in the code, not only its output and header (R-1/R-2/R-4).
+- Trap: never write a time without date -u (I wrote «13:3xZ» once in a Lead message; corrected at once).
+
+## HANDOVER NOTE (successor 29), written 2026-11-08T09:27Z by date -u (Opus 5.5, D15); parking on the Lead's 09:17Z ask (context large)
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commits) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (8505df48) | score 5 |
+  | P-N5-ASC L-4 / L-5 | R-P-N5-ASC.md §F (52e6e77b), §F add. 1 (055758ba: N-I R-I optional, N-A R-A required), §G (d17b305e) | L-5 fe4d3f90 MATCHES |
+  | P-ACYC L-4 | R-P-ACYC.md §E (055758ba) | L-4 85bb221f MATCHES |
+  | P-N5-QUIET L-2 | R-P-N5-QUIET.md §C (407f4a21) | L-2 fed89346 MATCHES; D-1 / D-2 tool fixes checked |
+  | P-N5-END | R-P-N5-END.md (e4cb208a), §C (407f4a21) | all SIGN (END-T3 cond.); L-2 e8a8ac51 MATCHES LN-1..LN-8; EL-1, EL-2 optional |
+  | P-N5-CHAIN | R-P-N5-CHAIN.md (DRAFT d49281a7; first review 36d2932d) | all SIGN with labels; L-1 NOT YET: CL-1 (Form A ruled by Lead 09:17Z) |
+- OPEN QUEUE for the successor:
+  - P-N5-CHAIN fixes entry 1 + L-2 from L-NEW 65: byte test L-1 (bd152dd9) + CL-1 = L-2, predicted sha1
+    e481d260884807424c545bd3f3cdd7fbfb25f05c, 8,248 B: run scratch/chain_linefix.py on L-1 and cmp with L-2; check CN-1 in the fixes
+    entry (§9's «every fail counter has one» false for ties); CO-1 optional. Write R-P-N5-CHAIN.md §C.
+  - Any CHECKER items on P-N5-ASC / P-N5-QUIET / P-N5-END / P-ACYC.
+- Rulings I made: [1E-N3] (not [OPT]) for SPEC-run σ̄ / S4a (P-N5-END); [OPT] = R118 σ̄ + R21 (a) for defined models (HOW3, IDEAL-CYC).
+  EXACT-L depends on SPEC's S1 tie-breaks (my n5w engine: F = 1 on 382/382 acyc genomes with L >= 1); ENDGAME-3-N5 does not.
+- Tools (docs/referee/scratch/): end_replay.py (own N5-w / N5′-xi engine; modes n5w / xi; CTRL=1/2; hook=; own generator gen()),
+  end_exactl.py (L-COMP n5b --mode spec on my Γ3; arg experiments/n5-second), end_tiedep.py, end_quotes.py, end_l2quotes.py,
+  chain_replay.py (own HOW3 + QUIET3 / ASC3 counters + REACH3-ALL), chain_quotes.py, chain_linefix.py, asc_l4.py, asc_l4na.py, asc_l5.py,
+  acyc_l4.py. Logs end_logs/, chain_logs/, asc_logs/, acyc_logs/, quiet_logs/.
+- Traps (keep):
+  - mkl2_195.py and quote scripts need trunk objects: git fetch origin claude/vibrant-johnson-nxvvxo first.
+  - n5w is NOT SPEC N5 (ties differ): never use it for exact counts. CTRL=2 in chain_replay also triggers end_replay's control.
+  - Every push here takes 10+ min in verify: track it, never commit while it runs (pgrep), check origin after a restart.
+  - Report section names: when the Lead asks for «§8» and §8 exists, add a new §C and say so.
+
+## Resume point (successor 29), written 2026-11-08T09:16Z by date -u (Opus 5.5, D15)
+- DONE: R-P-N5-CHAIN first review (frozen 93531b03, L-1 71b75424): all SIGN (HUB-ASC-G3 cond. on P-N5-ASC §4; UP-JUMP3/UP-B3 under
+  [E-LEV]; CHAIN3 under [E-LEV], cond. on P-N5-END + P-N5-ASC §4); DEAD RUN-TRANSFER confirmed (RT_n1 exact tie, own engine).
+  L-1 NOT YET: CL-1 (control sets unnamed; «every fail counter has one» false: ties has no control); predicted L-2 e481d260…, 8,248 B
+  (scratch/chain_linefix.py). CN-1 for the fixes entry; optional CO-1. R224 read after the verdict: agrees; it also missed ties.
+- NEXT: fixes entry + L-2 byte test (chain_linefix.py) when the Lead sends it.
+
+## Resume point (successor 29), written 2026-11-08T08:03Z by date -u (Opus 5.5, D15)
+- DONE since 05:59Z: R-P-N5-ASC §F add. 1 (N-I R-I optional, N-A R-A required) + R-P-ACYC §E (L-4 85bb221f MATCHES), 055758ba;
+  R-P-N5-ASC §G (L-5 fe4d3f90 MATCHES), d17b305e; R-P-N5-QUIET §C (L-2 fed89346 MATCHES; D-1 / D-2 tool fixes checked; Form B replayed
+  EQUAL) and R-P-N5-END §C (L-2 e8a8ac51 MATCHES LN-1..LN-8; optional EL-1, EL-2), commit after d17b305e.
+- OPEN: none queued. Trap: mkl2_195.py needs trunk c8f42538 objects (git fetch origin claude/vibrant-johnson-nxvvxo first).
+- Tools added: asc_l4na.py, asc_l5.py, acyc_l4.py, end_l2quotes.py. Worktrees $SCRATCH/lend (2fcee038), lnew (e28e962d), lsi (0bc6f028),
+  lq2 (559cdffc).
+
+## Resume point (successor 29), written 2026-11-08T05:59Z by date -u (Opus 5.5, D15)
+- DONE: handover check 8505df48 (score 5, «go» 05:47Z). A: R-P-N5-ASC §F (52e6e77b): L-4 4017305a MATCHES (L-3 + exactly R5).
+- DONE: C: R-P-N5-END first review (this commit): all statements SIGN (END-T3 as PROVED-CONDITIONAL on REACH3-CYC ⇐ [REACH-L]);
+  no GAP; [1E-N3] is the right premise (SPEC runs), not [OPT]. Optional EN-1..EN-4; line requirements LN-1..LN-8 (no L-1 yet).
+  Finding: EXACT-L depends on SPEC's S1 tie-breaks (my n5w: F = 1 on 382/382 acyc genomes with L >= 1); ENDGAME-3-N5 does not.
+- WAITING: A2 (P-ACYC L-4 SHA from the Lead), B (P-N5-QUIET L-2 SHA), P-N5-END L-1 SHA (L-NEW 64) -> byte/meaning test vs LN-1..LN-8.
+- Tools: scratch/end_replay.py (own engine: modes xi / n5w, controls CTRL=1/2, own generator), end_exactl.py (L-COMP n5b --mode spec on
+  my Γ3 + my checks; arg = experiments/n5-second), end_tiedep.py, end_quotes.py, asc_l4.py. Worktrees $SCRATCH/lend (131b4c1c),
+  $SCRATCH/lnew (a744677e). Trap: n5w is NOT SPEC N5 (ties differ): never use it for exact counts.
+
+## HANDOVER NOTE (successor 28), written 2026-11-08T04:53Z by date -u (Opus 5.5, D15); parking near the context line
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commits) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (0f3fb25c) | score 5 |
+  | P-ACYC (L-SI 43/44) | R-P-ACYC.md (d3d0a600), §C (c865da81), §D (17c81b70, time fix d4423d6d) | all SIGN; L-3 03453361 MATCHES |
+  | P-N5-ASC | R-P-N5-ASC.md §D (94062059: L-2 MATCHES), §E (013f821b) | L-3 = L-2 + R1-R4 PASS; R5 REQUIRED (CHAIN-DECOMP hypothesis) |
+  | P-N5-QUIET (L-NEW 62/63) | R-P-N5-QUIET.md (6ae1fc04, a233f356) | all SIGN (ASC-T / UP-T conditional on R121); L-1 NOT YET: QT-L1..QT-L6 |
+- OPEN QUEUE for the successor:
+  - P-N5-ASC: L-4 = L-3 + R5 (expected sha1 4017305a…, 5,198 B; scratch/asc_l3.py + the R5 strings in §E) -> byte test, §F.
+  - P-N5-QUIET: fixes entry 2 / L-2 = L-1 + QT-L1..QT-L6 (expected fed89346…, 5,131 B; scratch/quiet_linefix.py) -> byte test, §C.
+- Tools (docs/referee/scratch/): acyc_replay.py, acyc_xi.py (taubad, post-fallback), acyc_quotes.py, acyc_linefix.py, acyc_l2.py,
+  acyc_l3.py, acyc_f1old.py; quiet_replay.py (own engine, all box194 counters), quiet_quotes.py, quiet_linefix.py; asc_l2.py, asc_l3.py,
+  asc_cd_l0.py. Logs acyc_logs/, quiet_logs/, asc_logs/.
+- Traps (keep): I wrote wrong times THREE times this session (03:14 for 03:11, 04:05 for 04:03, 00:52 for 00:48): run date -u and paste
+  its output into the text (D=$(date -u ...)). A container restart killed a push mid-verify: check origin after a restart and re-push.
+  Never commit while push.sh runs (pgrep first).
+- Rulings I made: [OPT] for IDEAL-CYC's σ̄_t comes from R118 (b) (P-N5-XICYC l. 75) + R21 (a), NOT R57 (b) (SPEC S1 output).
+  [E-LEV] is a hypothesis (R104 (vi) l. 10085: e-priorities «immaterial»).
+
+## Resume point (successor 28), written 2026-11-08T03:11Z by date -u (Opus 5.5, D15)
+- DONE: R-P-N5-QUIET first review (this commit): CN2, LOC-GATE, LOC-K2, B-ONLY, NO-TIE, QUIET (G-1 closed by NO-TIE), T-QUIET SIGN;
+  ASC-T / UP-T SIGN conditional on R121 landing first (UP-T under HYPOTHESIS [E-LEV]). [OPT] from R118 (b) l. 75 + R21 (a), not R57 (b).
+  [E-LEV] hypothesis (R104 (vi) says «immaterial»). Γ3 sentence OVERCLAIM. L-1 NOT YET: QT-L1..QT-L6 (predicted fed89346…, 5,131 B).
+  Data all EQUAL (quiet_replay.py, own engine); the lane's quiet194.py tests L + 1 (note only).
+- NEXT: fixes entry 2 / L-2 byte test (quiet_linefix.py). Worktree $SCRATCH/lq at df0d2a25. Context is getting large: park soon.
+
+## Resume point (successor 28), written 2026-11-08T02:39Z by date -u (Opus 5.5, D15)
+- DONE: R-P-ACYC first review d3d0a600; R-P-N5-ASC §D 94062059 (L-2 MATCHES).
+- DONE: R-P-ACYC §C (this commit): fixes entry 1 (l-si 01a68edc) CORRECT; L-2 3a3096a4… MATCHES (rebuilt from L-1 by acyc_l2.py); all
+  statements SIGN (ACYC-XI PROVED-CONDITIONAL); optional AC-7 (header «mover phase (its first N + 1 iterations)»).
+- OPEN QUEUE: none. Tools added: acyc_l2.py, acyc_f1old.py; acyc_xi.py now also counts taubad and post-fallback iterations.
+
+## Resume point (successor 28), written 2026-11-08T00:48Z by date -u (Opus 5.5, D15)
+- DONE: handover check 0f3fb25c (VERIFY PASS; Lead score 5, «go» 00:38Z). Stale local branch again (1198 behind): fixed, trunk merged.
+- DONE: P-ACYC (L-SI 43, l-si e3ac4b06) first review -> docs/referee/R-P-ACYC.md (this commit). BETA-ACYC SIGN; LAMBDA-CONST,
+  ACYC-LIN SIGN WITH GAP LC-1 (w* = K1 / unique K2 optimum never shown; one-line repair given); ACYC-XI SIGN as PROVED-CONDITIONAL
+  WITH GAP LC-1 (inherited). Required: AC-2 (attained only at N = 1), AC-3 (§5 / Scope overreach: R118 (l) is about the mover phase
+  only), AC-4; L-1 NOT YET: AC-L1..AC-L5 (predicted L-2 sha1 c8ed32a8…, 2,638 B). Data all EQUAL with own engine; check81.sh PASS.
+- NEXT: fixes entry + L-2 from L-SI -> byte test (acyc_linefix.py) and LC-1 repair check.
+- Tools: scratch/acyc_replay.py (own VJ + builder; modes files / agen / starts), acyc_xi.py (N5'-xi = L-NEW n5v from box81/ref; rest
+  mine), acyc_quotes.py (per-entry joined search), acyc_tn.py, acyc_depth.py, acyc_linefix.py; logs acyc_logs/. Worktree $SCRATCH/lsi.
+- FINDING (DATA only): T_CYC <= d + 1 on 1,500 acyclic runs; T = N only at N = 1.
+
+## HANDOVER NOTE (successor 27), written 2026-11-07T23:51Z by date -u (Opus 5.5, D15); parking near the context line on the Lead's 23:52Z ask
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commits) | final state |
+  | --- | --- | --- |
+  | handover check | docs/agents/handover-checks/REFEREE.md (e67241df, cb95edbf) | score 5 |
+  | P-TOWER-FUEL (L-LOWER 5/6/7) | R-P-TOWER-FUEL.md (807984e3), §C (d39fc93a), §C add. 1 (af752251) | all SIGN; L-2 MATCHES; L-3 MATCHES; R120 landed 5470cc0c |
+  | P-N5-ASC (L-NEW 61/62) | R-P-N5-ASC.md (26b2b516), §C (this commit) | all SIGN; fixes entry 1 CORRECT; L-1 (08cced78) MATCHES |
+- OPEN QUEUE: none from me. Next for P-N5-ASC: CHECKER / landing; a later line (L-2) gets a byte test by the next successor.
+- Tools (docs/referee/scratch/):
+  - tf_replay.py (own 𝓛^R_d loader + counters on t3r_sim), tf_units.py, tf_linefix.py, tf_fix1.py, tf_l3.py, tf_quotes.py,
+    tf_fixquotes.py; logs tf_logs/.
+  - asc_quotes.py (joined-line quote search: RESULTS sub-entries are WRAPPED, single-line search gives false NONE), asc_cs.py (CS(M)
+    DP; never print F_B for big B: doubly exponential), asc_game.py and asc_elevrev.py (IDEAL-CYC on xicyc_vj / xicyc_replay; EORD
+    rev control); logs asc_logs/.
+- Traps (keep):
+  - Time strings: run date -u right before writing (I wrote 14:12Z for 14:09Z; fixed cb95edbf).
+  - Pins paths: box193 asc.pins uses DOCS/ → ../../../docs/new/ from box193 (my first pins run used ../../ and «failed»).
+  - The DATA rule on my own fix texts: every number I proposed was produced by my script first (tf_units.py).
+  - verify.sh writes untracked experiments/new/box191/out/eq_mismatch_*.json; never git add -A.
+  - Stale local branch at session start (959 behind): fetch --unshallow, checkout, ff-only, compare HEAD with origin.
+- MY MISSES this session (REFEREE-2 caught): P-TOWER-FUEL L-1 «cv» not in the notation list; «24 runs» without the set.
+
+## Resume point (successor 27), written 2026-11-07T22:30Z by date -u (Opus 5.5, D15)
+- DONE: P-TOWER-FUEL complete (807984e3, §C d39fc93a, §C add. 1 af752251; R120 landed 5470cc0c).
+- DONE: P-N5-ASC (L-NEW 61, l-new 95dc76d7) first review -> docs/referee/R-P-N5-ASC.md (this commit). All statements SIGN
+  (UP-JUMP / UP-B / NOUP under [E-LEV]); required AS-2 (NOUP missing from the [E-LEV] scope at packet l. 20, 46), AS-D1 (unit counts of
+  tmonfail / decfail / edomfail / upfail), AS-D2 (five box192 instances cited, not in asc.pins); AS-3 condition on the future line.
+  Own data equal: CS maxima M <= 5 (B 0, 1), RMON-2 witness, 4 instances U(G) / max ascents.
+- NEXT: fixes entry / line from L-NEW -> byte test. Context ~330k at this point: a successor should take the fix rounds if long.
+- Tools: scratch/asc_quotes.py, asc_cs.py (own CS DP; do NOT print F_B for large B: doubly exponential), asc_game.py (on
+  xicyc_vj / xicyc_replay). Worktree $SCRATCH/lnew at 95dc76d7.
+
+## Resume point (successor 27), written 2026-11-07T14:42Z by date -u (Opus 5.5, D15)
+- DONE: handover check e67241df + cb95edbf (time fix), VERIFY PASS, Lead score 5, «go» 14:36Z.
+- DONE: P-TOWER-FUEL full first review -> docs/referee/R-P-TOWER-FUEL.md (this commit). MOVE, DOUBLE-EQ (E1)-(E5), PULSE-NEST,
+  GAP-NEST, DOMINANCE-FREEZE (a)(b), CROSS-ECONOMY (i)(ii) SIGN; (iii) SIGN WITH GAP TF-1 (proof inequality |D| >= 2^R false, fails
+  57/86 RANK states; repaired proof via Lemma 4 (a) on 2j's chains). L-1 NOT YET: TF-L1..L3 required (units / undefined «fail» /
+  decider scope: 48/48 only for «some state s_(a-1)..s_(e-1)»; 32/48 at s_(a-1), 16/48 at every state). Optional TF-L4, TF-L5, TF-2.
+- DONE (15:52Z): §C fix round 1 (l-lower 740f6c79): fixes entry 1 CORRECT, L-2 d866ca50 MATCHES; (iii) now SIGN. Misses: W-2 (a) cv, W-4 (a) corpus set (REFEREE-2).
+- Tools: scratch/tf_replay.py (own loader + counters on t3r_sim), tf_units.py, tf_quotes.py, tf_linefix.py; logs tf_logs/.
+  Worktree $SCRATCH/llow at 7f7ff6f5.
+- Trap this session: wrote 14:12Z for a 14:09Z time in the handover check (fixed cb95edbf). Run date -u immediately before writing.
+
+## HANDOVER NOTE (successor 26), written 2026-11-07T13:41Z by date -u (Opus 5.5, D15); parked at ~481k context on the Lead's 13:43Z ask
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual; origin claude/referee 07a950ae before this commit):
+  | item | report (commits) | final state |
+  | --- | --- | --- |
+  | STEP 0 | notes (ee57bdad) | five answers sent |
+  | P-N5-XICYC (L-NEW 59) | R-P-N5-XICYC.md (695b610c), §C (42648076), §C add. 1 (43f27f3b, c352039c) | all SIGN after XC-1..4; L-3 MATCHES; R118 L-4 MATCHES |
+  | P-N5-REACH (R117) | R-P-N5-REACH.md §C add. 2 (419cc268) | fixes entry 3 CORRECT, L-4 MATCHES; K3 every genome settled |
+  | P-IDEAL-DBL (L-SI 41/42) | R-P-IDEAL-DBL.md (d7885be4), §C (34589c09), §C add. 1 (07a950ae) | all SIGN; L-2 MATCHES; R119 L-3 MATCHES |
+- OPEN QUEUE (for successor 27):
+  - P-TOWER-FUEL (L-LOWER 5), full review, frozen at claude/l-lower 7f7ff6f587c88fcfc5302905732c975f5e75ce4d (handover head 4d1c4e4b).
+    Files: docs/lower/P-TOWER-FUEL.md; L-1 docs/lower/P-TOWER-FUEL-line-L1.txt (sha1 408470ad…, 3,699 B); check block
+    experiments/lower/l5/p_tower_check.py (in experiments/lower/check.sh). Claims: MOVE (from R113 ALIGN), DOUBLE-EQ (E1)-(E5), PULSE-NEST
+    (L-SI 42 credited), GAP-NEST, DOMINANCE-FREEZE (a)(b), CROSS-ECONOMY (i)-(iii) (thresholds θ; mirror form needs RANK). Premises:
+    R104 definition, R105 ENC, R110 𝓛^R_d, R113 ALIGN. DATA instances: I-ROOM G7_best_d28 (b995fff2…), I-FUEL SL41_d28 (c1b46c31…),
+    DATA §5 over 24 runs. Do NOT read docs/referee-2/ for it before the report is pushed.
+    Hints: DOUBLE-EQ is close to P-IDEAL-DBL's DBL-EQ (my R-P-IDEAL-DBL §3 re-derivation); reuse docs/referee/scratch/dbl_replay.py (F, windows,
+    doubling, key orders on t3r_sim) and dbl_reentry_levels.py; premise quotes: check verbatim against RESULTS (script in my DBL work:
+    find every «…» of §0 in docs/RESULTS.md at the trunk SHA; my DBL review caught a non-RESULTS «quote» that way).
+- Tools (docs/referee/scratch/):
+  - xicyc_vj.py: own VJ engine (values, cmp, ext, Odd local improvement + brute force).
+  - xicyc_replay.py: Γ/Γ3 builder (equal to gamma3.build on 322 genomes).
+  - xicyc_reach3.py, xicyc_oddfixed.py (forced R-step test), xicyc_sae.py (SPEC S3 start).
+  - dbl_replay.py / dbl_dead_static.py / dbl_corpus.py / dbl_reentry_levels.py (on t3r_sim). Logs in xicyc_logs/, dbl_logs/.
+- Traps (keep):
+  - DATA RULE ON MY OWN FIX TEXTS, twice this session: DB-L2's «l = 1, …, 4» was unmeasured (silently assumed an extra condition); the lane
+    measured it right. Measure every set or count you write into a fix text with your own script first.
+  - Times: run `date -u` right before writing; I mis-wrote 07:48Z and 12:43Z (corrected 1161acc1, c352039c).
+  - verify.sh writes untracked experiments/new/box191/out/eq_mismatch_*.json into this checkout: delete, never commit (stop hook nags).
+  - Detached HEAD + stale clone at session start: fetch --unshallow, checkout claude/referee, compare with ls-remote.
+  - Push chaining: wait on the push.sh PID from pgrep output; push.sh pushes only the verified commit when HEAD moved.
+
+## Resume point (successor 26), written 2026-11-07T09:17Z by date -u (Opus 5.5, D15)
+- DONE (all via scripts/push.sh, VERIFY PASS; Lean / Oink NOT RUN as usual):
+  | item | report (commit) | verdict |
+  | --- | --- | --- |
+  | STEP 0 | notes (ee57bdad) | five answers sent 07:46Z |
+  | ITEM 1 P-N5-XICYC | R-P-N5-XICYC.md (695b610c) | §4/§5/§6/§7/§8 SIGN (gaps XC-1..XC-4); L-2 NOT YET (XC-L1..L4) |
+  | R117 L-4 byte test | R-P-N5-REACH.md §C add. 2 (419cc268) | fixes entry 3 CORRECT, L-4 MATCHES; K3 / N-1 settled for every genome |
+  | ITEM 2 P-IDEAL-DBL | R-P-IDEAL-DBL.md (d7885be4) | §1-§4 SIGN; DEAD SIGN, RE-ENTRY with DB-2; DB-Q1; L-1 NOT YET (DB-L1, DB-L2) |
+  | ITEM 3 XICYC fix round | R-P-N5-XICYC.md §C (42648076; push started 09:16Z) | fixes entry 2 CORRECT, L-3 MATCHES; all XC closed |
+- WAITING (Lead 09:20Z: queue empty, idle, no polling): DBL fixes entry 1 + L-2 from L-SI 42 (DB-Q1, DB-2, DB-3, DB-L1, DB-L2 +
+  REFEREE-2 W-1..W-3; the Lead has the RE-ENTRY level set MEASURED by script: REFEREE-2 says l = 1 only for the tower instance, I said
+  l = 1..4 — check the measured set against dbl_dead_static.py when it arrives).
+- Tools (docs/referee/scratch/): xicyc_*.py (own VJ engine, Γ/Γ3 builder, reach3 replay vs n5v «xi», DEAD forced-R test, sae runner),
+  dbl_replay.py / dbl_dead_static.py / dbl_corpus.py (on t3r_sim; corpus read from git at l-new 9995f5a2). Logs in xicyc_logs/,
+  dbl_logs/. Worktrees in scratchpad: lnew 86afce49, lnew_frz fd1266a5, lnx 50c80a92, lnr fdf01b8c, lsi f5263d5a.
+- MY MISSES: resume-point time first written 07:48Z without date -u (corrected 1161acc1); K3 «every genome» signed by s25 without the
+  SBAR3 dependency (recorded in R-P-N5-REACH §C add. 2).
+- Trap: verify.sh's experiments/new check writes untracked experiments/new/box191/out/eq_mismatch_*.json into this checkout; delete,
+  never commit (not this lane's files).
+
+## Resume point (successor 26), written 2026-11-07T07:46Z by date -u (Opus 5.5, D15)
+- DONE: STEP 0 (ee57bdad; answers sent 07:46Z). ITEM 1 R-P-N5-XICYC.md (695b610c): §4 SIGN (BR-SEG/T-CYC/ONEP-POLY with gap XC-1 =
+  F4 false as stated, restricted F4′ suffices), BR-SEG-G / RED-XI SIGN WITH GAP XC-2 (DOM false on general games, 3-vertex instance;
+  repaired STRICT-G / PATH-G in report §2.2), REACH3-CYC + Cor. T3 SIGN conditional with XC-3 (K3 (b) cites SBAR3; every-genome
+  σ̄(K2) = r proof §3.2) and XC-4 ([1E-N3] unnamed); DEAD SEG-2P / ODD-FIXED SIGN rule-free. L-2 byte test MATCHES; L-2 NOT YET:
+  XC-L1 (555 not printed), XC-L2 (switchallexp N 6, 7 unpinned), XC-L3 («bad stops» does not read the fallback flag), XC-L4.
+- IN FLIGHT: push of ee57bdad + 695b610c (+ this). Then message the Lead with the verdicts.
+- NEXT: §C of XICYC when fixes entry 2 / L-3 arrive; ITEM 2 P-IDEAL-DBL (L-SI 42) when the Lead sends SHAs.
+- Tools (docs/referee/scratch/xicyc_*.py): own VJ engine (xicyc_vj: values, cmp, ext, Odd local improvement, brute force), own Γ/Γ3
+  builder (xicyc_replay.build, equal to gamma3.build on 322 genomes), reach3 replay against box190 n5v «xi», DEAD / ODD-FIXED forced
+  R-step test, sae runner with SPEC S3 start. Worktrees in scratchpad: lnew (86afce49), lnew_frz (fd1266a5).
+- Trap seen: verify.sh's experiment checks write untracked files (experiments/new/box191/out/eq_mismatch_*.json, __pycache__) into
+  the checkout; never `git add -A`.
+
+## Successor 26 handover check, written 2026-11-07T07:29Z by date -u (Opus 5.5, D15)
+- Stale-clone check: clone came up DETACHED («HEAD detached from refs/heads/claude/referee») and shallow. ls-remote claude/referee =
+  e74638b6; fetch --unshallow; checkout claude/referee; ff-only; HEAD = origin/claude/referee = ls-remote = e74638b6.
+1. Branch claude/referee, head e74638b6 at start: 0 ahead / 406 behind trunk claude/vibrant-johnson-nxvvxo 6f9cc0b0 (merge-base
+   e74638b6, i.e. trunk already contains my head). Fast-forwarded to 6f9cc0b0 (0 / 0); this commit makes 1 ahead.
+2. Open work:
+   - ITEM 1: full review of P-N5-XICYC (L-NEW 59, box 191; frozen l-new fd1266a5, L-2 + fixes entry 1 at 86afce49). Next: re-hash the
+     five objects, run check.sh blocks, review §4-§8 + Corollary T3, DATA rule on L-2 clause by clause, own replays (Howard on Γ3,
+     BR-SEG, DEAD instances) -> docs/referee/R-P-N5-XICYC.md. docs/referee-2/ not read on this item before my push.
+   - ITEM 2: P-IDEAL-DBL (L-SI 42) after item 1; waits for the Lead's SHAs (freezes after R116 lands).
+3. docs/GAPS.md rows owned by REFEREE: none. G-N5-TIME (major, open; owner L-NEW, «referees later») is the row item 1 feeds.
+4. Rulings (verbatim), status in docs/DECISIONS-INDEX.md:
+   - D1 (active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.» and «Never downgrade the referee to save money.»
+   - D18 (active): «Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from
+     conjectures and open problems.»
+   - D20 (active): «We have reset the weekly usage, so we can again work faster no?» (Lead readings L48-L50 under it, active.)
+5. Trap: DETACHED HEAD + stale clone at start (again this session: detached, 406 behind trunk). Check: `git branch --show-current`
+   must print claude/referee and HEAD must equal ls-remote before any push.sh. Second trap kept: the DATA rule applies to my own fix
+   texts (s25 RE-L1); every count is checked against the counter's loop bounds and «continue» lines.
+
+## HANDOVER NOTE (successor 25), date -u 2026-11-07T05:2xZ at writing (see the commit time); Opus 5.5, D15; parked on the Lead's 05:22Z ask
+- DONE (all pushed via scripts/push.sh, VERIFY PASS; Lean and Oink steps NOT RUN as usual):
+  | packet | report (commits) | final state |
+  | --- | --- | --- |
+  | STEP 0 handover check | notes (e1815909) | five answers sent |
+  | P-IDEAL-MOVES | R-P-IDEAL-MOVES.md §C, add. 1-3 (72f4b2f3, e7047ace, 2fe03939, cc9f4afd) | L-5 MATCHES (C129); all SIGN |
+  | P-IDEAL-IM | R-P-IDEAL-IM.md §C add. 1 (0c2a7c5b), Addendum 1 (47d6cfdf) | L-3 MATCHES (C128); own ref_rup_del VERIFIED; R115 LANDED citing it |
+  | P-M2D-DEAD | R-P-M2D-DEAD.md (c011995c), §C (008039cc), add. 1 (70ec6882) | DEAD SIGN; L-3 MATCHES |
+  | P-N5-REACH | R-P-N5-REACH.md (f66942c1), §C (cc9f4afd), add. 1 (85cc9ebb) | §2-§9 SIGN; L-3 MATCHES |
+- IN FLIGHT: nothing.
+- NEXT (Lead 05:22Z, for successor 26): P-IDEAL-DBL (L-SI 41; freezes once R116 lands); the cnf2 encoder audit (L-COMP 10), if its d 4
+  results come in.
+- Tools (docs/referee/scratch/; run with python3 -I; build C with gcc -O2):
+  - ref_rup_del.c: own RUP checker that APPLIES deletions (set lookup; unmatched deletions ignored; top-level units kept; RUP only).
+    It checked the 6.53M-lemma IM proof in 11,862 s (ref_rup without deletions took > 5 h).
+    - Controls (rebuild them if you change the code): a non-RUP lemma is rejected; deleting needed clauses makes the next lemma fail;
+      duplicates are deleted one copy at a time; Glucose proofs of PHP 8 and random 3-SAT (250, 300 vars) VERIFIED, agreeing with
+      ref_rup; the unmatched count equals a Python multiset replay (134 on rnd 300: Glucose deletes clauses it never logged).
+    - The checker stops at the first top-level conflict, so its lemma count excludes the final empty clause (same as drup.c).
+  - t3r_sim.py (s24's IDEAL simulator from R104 text; MUT=oldkeys/parity/minrank controls).
+    - m2d_replay.py: per-step tables and moves(z) on top of it.
+    - m2d_member.py: membership (i)-(vii) from R104 / R110 text.
+  - reach_replay.py: L-COMP's n5b (spec mode; trace / fbtrace hooks) on a Γ3 .pg; FL run measured with my own play valuation; mover
+    choices against t3r_sim's IDEAL states.
+  - subdiv_replay.py: own G^pad builder (edges sorted (a, b)) + n5b.
+  - IM certificate pipeline (scratchpad only, lost on restart; recreate as described):
+    - regenerate the CNF with the frozen encoder: `DUMP=dir DUMPONLY=1 python3 -I frame_P-IDEAL-IM.py 3 t1 11` in a worktree at l-si
+      cb2b0c60;
+    - Glucose 4: pysat Solver(name="glucose4", with_proof=True), write get_proof() lines (~41 min, 2.4 GB);
+    - then ref_rup_del;
+    - run all of it detached (setsid nohup) and resumable (check the proof sha1 first).
+  - DATA-rule instrumentation pattern: copy the lane counter (imcheck.py, compose.py, movescheck.py) from `git archive <frozen sha>`,
+    add counters by exact string replacement with an assert, then check that the original output lines stay byte-equal.
+- Traps (keep):
+  - GUESSED TIMESTAMPS: I wrote «03:0xZ» etc. without running date -u (wrong by up to 30 min; corrected in 3fb22563, then repeated
+    once in my own resume point). Run `date -u` immediately before writing any time; otherwise write «see the commit».
+  - DATA RULE applies to the referee's OWN fix texts: my RE-L1 said «(state, vertex, world) triples» while the counter skips c_X (fixed
+    by REFEREE-2's W-3). For every count you write, read the counter's loop bounds and «continue» lines.
+  - DETACHED HEAD at session start: the clone came up «HEAD detached from refs/heads/claude/referee». Do `git fetch --unshallow`, then
+    `git checkout -B claude/referee origin/claude/referee`, and compare with ls-remote before the first commit.
+  - Push chaining: wait on the push's PID (`while kill -0 PID`). Copy the PID from pgrep output; a retyped wrong PID ran two pushes at
+    once. `pgrep -f scripts/push.sh` inside a bash -c that contains that text matches itself (deadlock).
+  - push.sh pushes only the verified commit if HEAD moves during verify: re-push afterwards. Background waiters without an explicit
+    long timeout are killed after 30 min (the job they watch keeps running).
+  - A DEAD statement must name the exact object killed, index orders included: N5 depends on vertex indices (P-N5-REACH RC-2).
+  - A line may cite a replay only via a committed result or code you re-ran yourself (P-M2D-DEAD PM-C1 → replay.out).
+
+## Resume point (successor 25), date -u 2026-11-07T03:58Z (Opus 5.5, D15)
+- DONE (all in docs/referee/; pushes via scripts/push.sh, verify PASS unless noted):
+  | item | report | verdict |
+  | --- | --- | --- |
+  | STEP 0 | notes (e1815909) | five answers |
+  | P-IDEAL-MOVES §C / add. 1-3 | R-P-IDEAL-MOVES.md (72f4b2f3, e7047ace, 2fe03939, cc9f4afd) | MV-C1 → L-3 MATCHES; L-4 MATCHES; L-5 MATCHES (C129) |
+  | P-IDEAL-IM §C add. 1 + Addendum 1 | R-P-IDEAL-IM.md (0c2a7c5b, 47d6cfdf) | L-3 MATCHES (C128); own ref_rup_del VERIFIED 6,531,220 lemmas |
+  | P-M2D-DEAD | R-P-M2D-DEAD.md (c011995c, §C 008039cc) | DEAD SIGN; L-2 NOT YET: PM-C1 (L-RED pointer → lowrep.py) |
+  | P-N5-REACH | R-P-N5-REACH.md (f66942c1, §C cc9f4afd) | §2-§9 SIGN; L-2 NOT YET: RC-1 (PAD set, MY miss), RC-2 (SUBDIV pad index order) |
+- WAITING: L-3 byte tests for P-M2D-DEAD (PM-C1; expect sha1 de6c3916…) and P-N5-REACH (RC-1 + RC-2; expect 13d0ce80…).
+- MY MISSES this session:
+  - report headers / messages with GUESSED times (corrected in 3fb22563). Rule: run `date -u` before writing any time.
+  - RE-L1's PAD wording ((state, vertex, world) without «vertex ≠ c_X»): the DATA rule applies to my own fix texts too.
+- Tools added (docs/referee/scratch/): ref_rup_del.c (RUP + deletions; controls in scratchpad ctl/), m2d_replay.py, m2d_member.py,
+  reach_replay.py (n5b trace/fbtrace + own play valuation vs t3r_sim), subdiv_replay.py (own G^pad builder).
+- Traps:
+  - push chaining: `pgrep -f scripts/push.sh` inside a bash -c whose text contains «scripts/push.sh» matches itself (deadlock). Wait on
+    the PID instead (`while kill -0 PID`), and copy the PID from pgrep output; never retype it. A wrong PID made two pushes run at
+    once.
+  - push.sh pushes only the verified commit when HEAD moves during verify; re-push after.
+  - Scratchpad worktrees: lnew_reach (73b3d1fd), llower (87fcdf73), lnew (d7b96be8), lsi (cb2b0c60); the 2.4 GB im/proof.drup can be
+    deleted.
+
+## Successor 25 handover check, written 2026-11-06T23:4xZ by date -u (Opus 5.5, D15)
+- Stale-clone check: ls-remote claude/referee = bc2bdd5a; fetched --unshallow (9,374 commits, not shallow); ff-only up to date;
+  HEAD = origin/claude/referee = ls-remote = bc2bdd5a56f3f9a7.
+1. Branch claude/referee, head bc2bdd5a (before this commit); vs trunk claude/vibrant-johnson-nxvvxo: 3 ahead, 265 behind
+   (merge-base 3489d797; git rev-list --left-right --count at 23:4xZ).
+2. Open work:
+   - STEP 2 «R-P-IDEAL-IM Addendum 1»: CNF regenerated at l-si cb2b0c60 (frame sha1 c3b3a232…), sha1 7e611c8b… EQUAL (20,843 vars,
+     96,580 clauses); Glucose 4 proof generation running detached (scratchpad im/run_gen.sh → im/check.sh → ref_rup_del). Next: record
+     the proof sha1 (expect 32be84e4…), ref_rup_del verdict, lemma/deletion counts, wall time; write the addendum; push.
+   - New tool scratch/ref_rup_del.c (ref_rup.c + deletions applied by set lookup; top-level units kept: sound). Controls: hand cases
+     (non-RUP lemma rejected; deletion of needed clauses makes the next lemma fail; duplicate copies deleted one at a time) and three
+     Glucose proofs with deletions (PHP 8, random 3-SAT 250/300 vars): VERIFIED, agreeing with ref_rup; unmatched-deletion count
+     (134 on rnd 300) equal to an independent Python multiset replay (scratch/../ctl replay, Glucose deletes clauses it never logged).
+   - STEP 1 P-IDEAL-MOVES §C byte test: waiting for the Lead's SHA/sha1s of L-NEW 57's fixes entry 1 and line L-2.
+3. docs/GAPS.md rows I own: none as owner. G-N5-TIME (major, open) names «referees later» after L-NEW / L-LIT T22.
+4. Owner rulings (all «active» in DECISIONS-INDEX):
+   - D1: "A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the fleet's own,
+     as wrong until it passes the gauntlet below." and "Never downgrade the referee to save money." (active)
+   - D18: "Focus on N5 and work toward proving it. Explore novel approaches ... Clearly distinguish proven results from conjectures
+     and open problems." (active)
+   - D20: "We have reset the weekly usage, so we can again work faster no?" (active; Lead reading L48 full pace, stop on paid overage)
+5. Trap: the DATA rule (missed three times by s24: C124 E-1, C125 E-1 (ii), C127 E-1): a DATA count attached to a signed clause whose
+   counter has a different unit, set or statement scope. Check now: read the counter code and compare unit, set and scope clause by
+   clause, or require an explicit no-DATA entry. (Also: container restarts kill jobs: every long run is detached and resumable.)
+
+## HANDOVER NOTE (successor 24), written 2026-11-06T22:xxZ by date -u (Opus 5.5, D15); context ~near park; origin c82fac5c + this commit
+- DONE (successor 24; all pushed, verify PASS; reports in docs/referee/):
+  | item | report | verdict |
+  | --- | --- | --- |
+  | handover check | notes (d9a2847b) | 5 answers |
+  | T^R(3) ≤ 8 audit (L-COMP box 27) | R-T3R-audit.md (+§C vs REFEREE-2, add. 1 Glucose, add. 2 T3-G2 closed) | FAITHFUL WITH GAPS; T3-G1 later closed by R-P-TR3 Add. 1 |
+  | P-IDEAL-FLIP | R-P-IDEAL-FLIP.md §C add. 1 (L-3), §D Note E-3 SIGN + confirmation | MATCHES; SIGN |
+  | P-IDEAL-KEYS (R111) | R-P-IDEAL-KEYS.md (+§C, add. 1) | all SIGN; tower relabelled; L-3 MATCHES |
+  | P-TR3 (R112) | R-P-TR3.md (+§C, Addendum 1 16/16 ref_rup, §C add. 1) | SIGN machine-certified; L-3 MATCHES |
+  | P-IDEAL-ALIGN (R113) | R-P-IDEAL-ALIGN.md (+§C, add. 1) | all SIGN; L-3 MATCHES |
+  | P-IDEAL-RISE | R-P-IDEAL-RISE.md (+§C, add. 1) | all SIGN, 4 certs re-verified; L-3 MATCHES |
+  | P-IDEAL-IM | R-P-IDEAL-IM.md (0e24d8ca) | all SIGN; COMPOSE-LB gap IM-G1; encoder FAITHFUL; L-1 MATCHES |
+  | P-IDEAL-MOVES | R-P-IDEAL-MOVES.md (c82fac5c) | all SIGN; L-1 MATCHES; optional MV-L1 |
+- IN FLIGHT (for successor 25): P-IDEAL-IM certificate addendum.
+  - drup.c re-run on my regenerated proof (byte-identical, sha1 32be84e4…): VERIFIED 6,531,220 lemmas, 7,577 s (scratchpad im/drup.log,
+    not committed; record it).
+  - My ref_rup on the same proof was still running at park (scratchpad im/gen.log; the scratchpad is lost on restart). If gone:
+    regenerate with `DUMP=… DUMPONLY=1 python3 -I frame_P-IDEAL-IM.py 3 t1 11` at l-si cb2b0c60 (sha1 7e611c8b), Glucose 4 with proof
+    (~36 min, 2.4 GB, ~8 GB RAM), then ref_rup (deletions ignored: >5 h; consider a ref_rup variant applying deletions).
+  - Write «R-P-IDEAL-IM Addendum 1» with both results.
+- OPEN: IM-G1 fixes entry (L-SI); MOVES optional MV-L1. Routing by the Lead.
+- Things only I know (s24):
+  - DATA RULE (three misses: C124 E-1, C125 E-1 (ii), C127 E-1): every signed clause of a line needs a lane counter of matching unit, set
+    AND statement scope, or an explicit no-DATA entry. Read the counter code; compare clause by clause.
+  - Byte tests: scratch/keys_l2_bytetest.py (L-n from fixes «- Rn «old» → «new»», «### Line L-2» or «- Line L-2» heading); for CHECKER
+    replacements parse the CHECKER file itself.
+  - Certificate check: scratch/cert_check.py (PHX / PBG, exact Fractions, own features by set order).
+  - ref_rup.c: own RUP checker, strict header, deletions ignored (slow on > 5M lemmas).
+  - Pitfalls: t3r_sim.in_LR(G) without d accepts odd N; itertools.product over 2^30 starts OOM; Glucose proof generation holds GBs;
+    container restarts kill background pushes (check logs, re-push).
+
+## Resume point (successor 24), written 2026-11-06T14:4xZ by date -u (Opus 5.5, D15); origin 33d148cd
+- Reports of record (all pushed, verify PASS): R-T3R-audit (+§C, add. 1-2); R-P-IDEAL-FLIP §C add. 1 (L-3), §D (Note E-3 SIGN) +
+  confirmation; R-P-IDEAL-KEYS (+§C, add. 1); R-P-TR3 (+§C, Addendum 1 TR-G1 CLOSED 16/16 by ref_rup, §C add. 1 L-3); R-P-IDEAL-ALIGN
+  (+§C, add. 1 L-3); R-P-IDEAL-RISE (all SIGN, 4 certs re-verified; L-1 NOT YET RI-L1).
+- OPEN: RISE §C when L-NEW sends fixes/L-2 (RI-L1 required).
+- Tools (scratch/): t3r_sim.py (own sim; in_LR(G) WITHOUT d does not reject odd N: pass d or check N even), t3r_pin.py, t3r_cube.py,
+  t3r_dimacs.py, ref_rup.c (own RUP checker; build gcc -O2), keys_probe/keys_check.py, keys_l2_bytetest.py (generic «old» → «new»
+  replacement byte test: parses «  - Rn ...» items between «### Line L-2» and «- Word diff»), align_probe.py, rise_probe.py,
+  cert_check.py (exact LP certificate re-check, PHX / PBG features from P-IDEAL-RISE §5).
+- MY MISSES this session: KEYS L-2 DATA (C124 E-1); ALIGN AL-L1 (ii) my own fix text (C125 E-1 (ii)). RULE: every DATA count must match
+  the counter's unit and set AND the scope of the statement it is attached to.
+- Memory trap: building itertools.product over 2^30 starts OOM-killed a probe; compute counts first. Glucose proofs held in pysat use
+  several GB; run one generation at a time.
+- Container restarts kill background pushes / jobs: after a restart check push logs (empty log + no verify = re-push).
+
+## Resume point (successor 24), written 2026-11-06T04:3xZ by date -u (Opus 5.5, D15)
+- DONE since 00:2xZ: R-P-IDEAL-KEYS §C (L-2 MATCHES) and §C add. 1 (L-3 MATCHES); R-P-TR3 (5a5b94cf: drup.c SOUND, P-TR3 SIGNED
+  machine-certified, TR-1, TR-L1/L2) and §C (L-2 MATCHES, fixes entry 1 CORRECT).
+- IN FLIGHT: scratchpad rest.sh: ref_rup on the 13 other cubes (proofs regenerated, deleted after the check) -> R-P-TR3 add. 1
+  closing TR-G1; then tell the Lead (fixes entry 2 for the line count if wanted).
+- NEXT: P-IDEAL-ALIGN (l-new cb8e0dca; d8acdece/180; L-1 e46b0417): full review as for KEYS.
+- MY MISS (KEYS L-2): passed a DATA phrase whose unit and set did not match keycheck.py's counter (C124 E-1). Rule: test every DATA
+  clause against the tool's counter code (unit + set).
+
+## Resume point (successor 24), written 2026-11-06T00:2xZ by date -u (Opus 5.5, D15)
+- Since 16:0xZ: R-T3R-audit §C vs REFEREE-2 (bfeca123), add. 1 Glucose 16/16 UNSAT, add. 2 T3-G2 CLOSED by R110; R-P-IDEAL-FLIP §C
+  add. 1 L-3 MATCHES (5c02d44d).
+- STEP 2: docs/referee/R-P-IDEAL-KEYS.md (l-new b302bbf5, 62b35bf7/282, L-1 f36c6402). §2-§6 all SIGN, DEAD PM SIGN, PMV SIGN WITH GAP
+  KY-1 (false «7 = 1 + desc(6)»), tower DEAD REFUSED KY-G1 (box 169 predicts T ≥ F(l) itself; «fixed clock» not in source). L-1 NOT
+  YET: KY-L1. Tools scratch/keys_probe.py, keys_check.py (controls RETURN_OWN, CASCADE_PREV). §C next when the Lead routes fixes/L-2.
+- QUEUE: P-TR3 (L-COMP drup.c + Glucose proofs) has priority when it arrives: audit drup.c (RUP only, empty clause reached, input =
+  recorded DIMACS sha1 in scratch/t3r_logs/dimacs_sha1.txt), re-run on the proofs.
+- Container restarts often: scratchpad worktrees (lcomp 6f19564f, lnew_keys b302bbf5) may vanish; re-add with git worktree add --detach.
+
+## Resume point (successor 24), written 2026-11-05T16:0xZ by date -u (Opus 5.5, D15)
+- STEP 0 pushed d9a2847b (verify PASS), answers sent to the Lead 14:44Z. Tools 2dfbf372 (verify PASS).
+- STEP 1 DONE: docs/referee/R-T3R-audit.md on L-COMP 9 box 27 (l-comp 6f19564f). Verdict FAITHFUL WITH GAPS: T3-G1 (no DRAT/LRAT;
+  upper bound rests on solver UNSAT), T3-G2 (𝓛^R_d / T^R defined only in P-IDEAL-FLIP §1, not in RESULTS). T^R(3) ≥ 8 PROVED by
+  instance (own sim). Cubes 16/16 UNSAT CaDiCaL 1.9.5 (5,289 s) and Kissat 4.0.4 (6,633 s), byte-identical DIMACS (sha1 list).
+  Glucose 4 pass running (cube 1 UNSAT) -> addendum. I did NOT read docs/referee-2/ before the push; §C next if the Lead asks.
+- Things only I know (s24):
+  - ext/own_R_d3_L8.json = out/R_d3_L8.json (same genome); ENCODING.md's «two length-8 genomes» are R_d3_L8 and dbl_d3_F6.
+  - pysat here has kissat404 (works, no proof logging) and cadical195 (with_proof gives empty proof); building cadical/kissat/
+    drat-trim from GitHub source was REFUSED by the permission policy. A certificate needs a session allowed to build them.
+  - Tools: scratch/t3r_sim.py (own sim, MUT), t3r_pin.py (pins, state-for-state, genome-only), t3r_cube.py / t3r_dimacs.py,
+    t3r_climb.py (weak). L-COMP worktree in my scratchpad (lost on restart: re-add with git worktree add --detach … 6f19564f).
+
+## Successor 24 handover check, written 2026-11-05T14:2xZ by date -u (Opus 5.5, D15)
+Start: ls-remote origin claude/referee = 74fae0fa = HEAD after fetch + ff-only («Already up to date»; no stale clone, no other writer).
+Trunk claude/vibrant-johnson-nxvvxo 61a1175c merged (59c4c3e6, clean). Oink setup_oink.sh started in the background.
+1. Branch claude/referee. Head at start 74fae0fa: 2 ahead of / 180 behind trunk 61a1175c (merge-base e51a0b37). After the merge
+   59c4c3e6: 3 ahead, 0 behind (this commit makes 4 ahead).
+2. Open work: FL-G1 of R-P-IDEAL-FLIP (DEAD SC-ISO CONDITIONAL on the machine premise T^R(3) ≤ 8). Next step (Lead brief, STEP 1):
+   independent audit of L-COMP 9 box 27 (claude/l-comp 6f19564f, experiments/comp/box27/: cnf.py, ENCODING.md, pinck.py, log/R_d3_L9/)
+   against R104's IDEAL-ACYC text and the 𝓛^R_d definition in R105-R109: clause map, own independent checker, re-run of the 16
+   T ≥ 9 cubes with CaDiCaL/kissat, DRAT/LRAT if feasible -> docs/referee/R-T3R-audit.md. STEP 2 (premise packet) waits for routing.
+   docs/referee-2/ on this item is not read before my report is pushed.
+3. GAPS rows owned by REFEREE: none (open table GAP-A, GAP-C, G-S5-6, G-NEST, G-N1-LB, G-N5-TIME; referees appear in G-N5-TIME as
+   «referees later»).
+4. Rulings (verbatim), status in docs/DECISIONS-INDEX.md:
+   - D1 (active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.» and «Never downgrade the referee to save money.»
+   - D18 (active): «Focus on N5 and work toward proving it. [...] Clearly distinguish proven results from conjectures and open problems.»
+   - D20 (active, 2026-11-05): «We have reset the weekly usage, so we can again work faster no?» Lead reading L48 (active): full pace;
+     stop on paid overage; gates on demand.
+5. Trap: R105-E1 (s23's own miss): P-IDEAL-RED L-2 was MATCHED although its CHAINED definition lacked «as a mover other than h_t».
+   Check now: every DEFINITION in a line or encoding is diffed against the source text (here: each clause family of cnf.py against
+   R104 / 𝓛^R_d wording, not only the target length), before a verdict.
+
+## HANDOVER NOTE (successor 23), written 2026-11-05T12:55Z by date -u (Opus 5.5, D15); context ~480k
+- Head after this commit: see git log; every item pushed by scripts/push.sh (verify PASS each time). Lead: session_014FBi6o334DvwT5Uw2kDfoN.
+- DONE (successor 23): R-XI-NEW-precheck; R-P-IDEAL-RED (+§C, add. 1); R-P-IDEAL-CUBE (+§C); R-P-IDEAL-M2 (+§C, R105 line check);
+  R-P-IDEAL-SEG; R-P-IDEAL-SLOT (+§C, add. 1, add. 2); R-P-IDEAL-FLIP (+§C). All in docs/referee/.
+- OPEN: P-IDEAL-FLIP FL-G1 (CONDITIONAL DEAD until T^R(3) ≤ 8 lands as its own item; L-COMP 9 6f19564f; REFEREE-2 auditing).
+- Things only I know (s23):
+  - MY MISS R105-E1: I MATCHED P-IDEAL-RED L-2 whose CHAINED lacked «as a mover other than h_t». Rule since: diff every DEFINITION.
+  - RESULTS LINE forms can be coarser than the packet forms a proof needs (M2-G1: LOCAL summary vs LOCAL (a)/(b)).
+  - Tools in docs/referee/scratch/: xinew_probe.py (β-SET simulator from R104 text; genome(), run(), check()), xinew_lane.py (lane
+    JSON loader), cube_probe.py (USO/LP), m2_probe.py, seg_probe.py (weak data), slot_probe.py (SHIFT/LIFT, MUT control),
+    flip_probe.py (c-step, forced runs, exhaustive V_k). Lane JSON: opts[x][k] = [wt (−1 none), xt (−1 = X), β index]; br/bp/gate.
+  - Byte tests: take quoted text from the CHECKER file itself; join wrapped lines with single spaces.
+  - Line-level DATA must be scoped per statement (C120); DEAD needs an established explicit bound (L43), else CONDITIONAL (L42).
+
+## Resume point (successor 23), written 2026-11-03T20:3xZ by date -u (Opus 5.5, D15)
+- STEP 0 handover check pushed 798f9308 (verify PASS). STAMP CORRECTION: its heading says 20:05Z; the commit was written ~19:59Z
+  (date -u read 20:01Z right after). Not amended.
+- STEP 1 pre-check: docs/referee/R-XI-NEW-precheck.md. R178 XI-NEW IDEAL half SOUND on R104; (i) SOUND; (ii) SOUND with gap XI-G1
+  (monotonicity unproved in R178; proof given §3); (iii) NOT CHECKED (R177); real-N5 half XI-G2 not a proof. Tool
+  scratch/xinew_probe.py (from R104's text; MUT 1/2 controls bite), xinew_logs/.
+- STEP 1 pushed a4e7b4a9 (verify PASS). Lead scored the handover check 5/5; D19 + L47 on trunk 8c37ab0b.
+- STEP 2 P-IDEAL-RED (l-new 0ebddcf5, sha1 06f2c186…, 261 lines): docs/referee/R-P-IDEAL-RED.md. 15 SIGN, U-EQ SIGN WITH GAP U-1
+  («U ≤ T − 1» false at T = 0); REQUIRED IR-1 (MONO's «non-current option values not monotone» remark is FALSE: v = ε + cv(xt));
+  optional P-1..P-3. w99 re-run MATCHES; own sim (xinew_lane.py) T equal on 46 corpus genomes.
+- §C (23:02Z) on l-new b115ff3a (fixes 727b6f0c, line L-1 44d0287a): U-1 and IR-1 CLOSED, P-1..P-3 correct, all 16 SIGNED;
+  F-4 deg>=3 DATA reproduced (deg3_probe.py: KEYFLIP 343, TOP-MONO 8,105 fails / 2,950 runs). Line L-1 NOT YET: REQUIRED
+  L-1a (ENC: ε undefined, X case), L-1b (A undefined), L-1d (U over t in [2,T]), L-1e (labels agree from a+2); optional L-1c, f-h.
+- §C add. 1 on line L-2 (l-new ffeb9736, sha1 65ba7ca7): 10 hunks = entry 2 = L-1a,b,d,e + optional c,f,g,h; MATCHES. OPEN: none.
+- P-IDEAL-CUBE (l-new d97555d4, sha1 366afedc, 186 l.): R-P-IDEAL-CUBE.md. DECOMP, MULTI→SINGLE, T ≤ LP, LADDER-LP SIGN; [WW22]
+  = arXiv:2207.05985 v1 only (13 Jul 2022), single shared counter: Def 3/4, Thm 18 correct (two restatable thms in intro). Line L-1
+  NOT YET: CUBE-L1 (READING «W-key must carry» as fact). CUBE-P1: lands after R105. Tool cube_probe.py.
+- CUBE §C (l-new a0bb2694, L-2 449421e4): 8 hunks = entry 2; CUBE-L1/L2/L3 met; R105 landed (CUBE-P1 met); gate-order DATA
+  checked (T 0 increasing / 1 decreasing, K 1..7). L-2 MATCHES. OPEN: none.
+- P-IDEAL-M2 (l-new 6bcfa0de, bc47b06c/171): R-P-IDEAL-M2.md. 5 SIGN; TRIGGER, MIN-FLIP SIGN WITH GAP M2-G1 (LOCAL line summary too
+  coarse: own mover may move; cite R105 LOCAL (a)/(b)). DEAD max_d4_L13 T 13 > 12 recomputed. L-1 NOT YET: M2-L1 (34,934 runs not all-start).
+  Tool m2_probe.py. Trap: the RESULTS LINE form of a lemma can be coarser than the packet form a proof needs.
+- M2 §C (l-new 4d244698, L-2 c890f268): entry 1 closes M2-G1; 15 hunks = entry 2; L-2 MATCHES; all 7 SIGNED.
+- MY MISS (R105-E1): I MATCHED P-IDEAL-RED L-2 although its CHAINED definition lacks «as a mover other than h_t» (packet §4).
+  Lesson: match every DEFINITION of a line against the packet's §0, not only the claims. Also R105-E2: TOP-MONO «above y_t» unanchored (π).
+- P-IDEAL-SEG (l-new 8291ecf7, 7fa84784/152): R-P-IDEAL-SEG.md. SEG, SEG-ONCE, LEVEL-PRODUCT, DEAD REPLAY all SIGN; max_d5_L15 T 15
+  recomputed, states equal; L-1 MATCHES (definition diff done); optional SEG-L1 (l ≥ −1). Tool seg_probe.py (weak: T ≤ 4).
+- P-IDEAL-SLOT (l-new e46e98a4, 62901b5f/192): R-P-IDEAL-SLOT.md. All 7 SIGN (SEG copy verbatim). L-1 NOT YET: SLOT-L1 (SHIFT
+  «removing one level»), SLOT-L2 (LIFT construction missing; mixed W-targets A/B would break keys). Tool slot_probe.py (MUT bites 1,007).
+- SLOT §C (l-new 6eb389a6, L-2 55e74726): 21 hunks = entry 1; SLOT-L1/L2/L3 met; L-2 MATCHES. SEG fixes entry 1 (F-1, F-2) correct.
+- SLOT §C add. 1 (l-new b261c3f9, L-3 0c51ce6d): one hunk «over 𝓛_d» (REFEREE-2 SL-L2); L-3 MATCHES.
+- SLOT §C add. 2 (l-new d488d06d, L-4 008b10ad): byte test vs C121 §5 E-1 text True; counts 59/55, 34,934/1,936 re-measured; L-4 MATCHES.
+- P-IDEAL-FLIP (l-new 9effea1f, 92803bd5/236): R-P-IDEAL-FLIP.md. W-ONLY, NOW-ONCE, SWAP, SWAP-RUN, FLIP-1 SIGN; DEAD SC-ISO CONDITIONAL
+  (machine T^R(3) ≤ 8; L42), implication T^R(3) ≥ 9 signed. L-1 NOT YET: FL-L1 (NOW-ONCE (b) ISO), FL-L2 (SWAP-RUN q; role exchange
+  works), FL-L3 (CONDITIONAL label). Tool flip_probe.py (exhaustive V_k).
+- FLIP §C (l-new 4c2e5124, L-2 8099415b): F-a (b′) and F-b SIGN; F-c correct; 3 hunks; L-2 MATCHES. OPEN: FL-G1 (T^R(3) ≤ 8 machine;
+  L-COMP 9 6f19564f, REFEREE-2 auditing).
+- Things only I know (s23): every option value is monotone in IDEAL-ACYC (MONO + ENC recursion); check.py tests current values only.
+  check.py compares Ξ via ENC integers; my xinew_probe compares β-sets (tests ENC too).
+- D19 and L47 not yet in docs/DECISIONS.md at trunk 6a6bd43a (told the Lead).
+
+## Successor 23 handover check, written 2026-11-03T20:05Z by date -u (Opus 5.5, D15)
+Start: ls-remote origin claude/referee = 803a6983 = fetched HEAD after ff-only (no stale clone; no other writer). Trunk
+claude/vibrant-johnson-nxvvxo 6a6bd43a merged (4b51df7c, clean). Oink built at 8fbf0a7 (setup_oink.sh EXIT 0).
+1. Branch claude/referee. Head at start 803a6983: 1 ahead of / 191 behind trunk 6a6bd43a. After the merge 4b51df7c: 2 ahead, 0 behind
+   (this commit makes 3 ahead).
+2. Open work: none inherited (s22 IN FLIGHT none). New, from the Lead's brief: STEP 1 independent pre-check of R178 Lemma XI-NEW
+   (l-red docs/red/R178-ideal.md §2) against R104's IDEAL-ACYC model -> docs/referee/R-XI-NEW-precheck.md (next step: read §1-§2 and
+   R104, check statement/hypotheses/proof). STEP 2 P-IDEAL-RED (L-NEW 50), waiting for the Lead to route the frozen SHA + sha1.
+3. GAPS rows owned by REFEREE: none (docs/GAPS.md open table: GAP-A, GAP-C, G-S5-6, G-NEST, G-N1-LB, G-N5-TIME; none owned by REFEREE;
+   referees appear in G-N5-TIME as «referees later»).
+4. Rulings (verbatim), status in docs/DECISIONS-INDEX.md:
+   - D1 (active): «A claimed polynomial algorithm is far more likely to be wrong than right. Treat every such claim, including the
+     fleet's own, as wrong until it passes the gauntlet below.» and «Never downgrade the referee to save money.»
+   - D18 (active): «Focus on N5 and work toward proving it. [...] Clearly distinguish proven results from conjectures and open problems.»
+   - D12 (active; carried on by D15/L37, label "(Opus 5.5, D15)"): «WE can run referees on opus too temperoraly»
+   - D19 (quoted from the Lead's brief, 2026-11-03): «we have 9% usage left until tomorrow night, make use of it». NOT YET in
+     docs/DECISIONS.md or docs/DECISIONS-INDEX.md at trunk 6a6bd43a (index ends at L46; L47 also absent).
+5. Trap: C115 E-1 (s22). A premise taken from a docs/lit note («unaffected») was signed although RESULTS records that route as NOT
+   established (VJ00 Lemma 5.8 «1 ⇒ 2»). Check now: every premise of a signed item is grepped in docs/RESULTS.md and must be a landed,
+   signed item or a proof carried in the packet; docs/lit is never a premise.
+
+## HANDOVER (successor 22 -> successor 23), written 2026-11-03T19:16Z by date -u (Opus 5.5 under D15; label "(Opus 5.5, D15)")
+Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee, mine alone since 2026-11-01 01:28Z; head at this handover = the commit
+that adds this section (previous head 45f3c09f). Start: fetch, ff-only, is-ancestor this handover, merge trunk claude/vibrant-johnson-nxvvxo,
+then run scripts/setup_oink.sh in the background. Push ONLY via `scripts/push.sh > file 2>&1; echo EXIT $? >> file`, in the background
+(verify takes ~25-30 min). Do NOT commit while a push runs. Reports never read docs/referee-2/ for a packet before my own is pushed.
+### DONE (successor 22; all pushed, verify PASS)
+| item | report | verdict | SHA |
+| --- | --- | --- | --- |
+| P-N5-GATE GATE-L1 recount | R-N5-GATE.md Add. 1 | concurred with REFEREE-2: lend107 106 in-phase (107 first-state grouping) | c9644446, c49c75eeb |
+| P-N5-GATE line L-1 | R-N5-GATE.md §C | MATCHES | ffbdc404 |
+| P-N5-S4B (R102) | R-N5-S4B.md (+ §C L-1 MATCHES) | S4B-OPT, S4B-KEEP SIGNED; 1E-N3 covers S4b; S4B-L1/L2 met | 062cd734, 2e6467fd |
+| R24 under L44 (-> L46) | R-R24-L44.md (+ Add. 1) | Lemma R, TB CLASS-FREE; choice form needs CF-1 citation + bridge B | 472f0dcd, 732198a9 |
+| P-N5-ANCHOR (R103) | R-N5-ANCHOR.md (+ §C, add. 1) | all SIGNED; (R1) covered; ANC-1, ANC-L1/L2/L3 met; L-2 MATCHES | 732198a9, 0647ff33, e002db99 |
+| P-N5-REALIZE (R104) | R-N5-REALIZE.md (+ §C, add. 1) | all SIGNED; REAL-L1 met; C115 E-1 (my error) re-routed to R36 (c) P1; L-2 MATCHES | 05b865e0, 5cc6be95, 45f3c09f |
+### IN FLIGHT: none.
+### NEEDS: none. Next: P-IDEAL-RED (L-NEW 50) under owner ruling D19, routed by the Lead to successor 23.
+### Things only I know (successor 22)
+- CORNER WORDING (L46 / CF-1, my own ambiguity). «An option whose play passes x is a corner» must mean x occurs on the option's play
+  BEFORE its cycle node. Read on the full lasso, it excludes σ_j(x) itself whenever x lies on its own W-cycle (x ≠ c, level ≥ 1), and the
+  choice rule then «fails» exactly where FL-ANCHOR §4 (i) needs it. With the formal ⊕, T_x already excludes real corners (wrong length).
+  R-N5-ANCHOR §1 ANC-1; R-R24-L44 Add. 1. My first L44 DATA silently skipped those vertices (1,371 + 1,393). tbcf_probe.py CORNER=pre
+  tests them: 0 violations.
+- C115 E-1 LESSON. Premises come from LANDED RESULTS only, never from docs/lit. I signed [VJ-LOC] = VJ00 Lemma 5.8 «1 ⇒ 2» on T21 (c)'s
+  «Unaffected». RESULTS records that route as NOT established (R15 (iii) l. 649-650; R36 Reading). The landed route for one-player local
+  optimality is R36 (c) Lemma P1. Apply it on G^d for Odd's one-player game: Fact DUAL keeps the value triples and reverses the order.
+  Before signing a premise list, grep each cited lemma in docs/RESULTS.md: is it a signed item or a recorded open premise?
+- R104's MODEL STATEMENT (REALIZE).
+  - What it says: every IDEAL genome with an ACYCLIC Ξ-graph runs, state for state, as ONE real N5 FL run of the STAB+K+ESC game, with
+    n = N + 3M + 6 and FROM THE GIVEN start pair (σ_0, τ_0). Hence FL-POLY (every start pair) ⇒ IDEAL-ACYC-POLY, with q(t) = p(3t + 6),
+    and a super-polynomial IDEAL-ACYC family transfers from that start pair only.
+  - What it does not say: it bounds nothing, says nothing about the S3 default start, and does not cover Ξ-cyclic genomes (they do
+    mismatch); the converse is not claimed; no FL run exists if L = 0.
+  - Load-bearing details: e-vertices are INDEXED in gate-index order (the root-first key compares indices; KEY (b)); Lemma W (iii) makes
+    bridge B redundant, but Lemma R + TB steps 1, 3-5 are essential (the κ-least choice); the IDEAL stop is an S4c fallback, because
+    (K0, K1) ∈ Iσ always.
+  - My own check (realize_probe.py) did NOT verify mover states = IDEAL: that needs the lane's simulator.
+- (R1) ruling (R103): the choice rule holds at non-movers. TB steps 3-5 + Lemma R describe S1's choice at every vertex that is not its own
+  cycle node. TB's mover hypothesis is used only for the strict «differ». It does not depend on FL.
+- Corpus traps:
+  - anc58/corpus_fixed.lst has 1,132 lines but 813 distinct (319 repeats, RESULTS Erratum E-1): name logs per LINE, de-duplicate.
+  - A «pg» line without a start means S3's start: force STARTF=/nonexistent, or the probe picks up a sibling .start.
+  - Lane starts can be PARTIAL (n5x start_pair fills them from S3): use s4b_probe.py PARTIAL=1 / partial_start().
+- Probe validity: «val(w) vs val(τ(v))» is not a valid local test at cycle nodes; use a one-switch deviation (s4b_probe LOC).
+- Tools added (docs/referee/scratch/): gate_strict.py, s4b_probe.py (+ partial_start), tbcf_probe.py (MUT, CORNER=pre),
+  anchor_probe.py, realize_probe.py; logs in gate_logs/, s4b_logs/, tbcf_logs/, anchor_logs/, realize_logs/.
+- Wrong session trailer on c9644446 (s21's id); recorded at c49c75eeb, not amended.
+
+## Resume point (successor 22), started 2026-11-01T01:28Z by date -u (Opus 5.5, D15)
+- Start: HEAD = origin 65b74579 (is-ancestor OK; no other writer); trunk f726271a merged (bcca22c9); Oink built; Lead told 01:29Z.
+- GATE-L1 (REFEREE-2 e35e8280) CONCURRED: R-N5-GATE.md Addendum 1 (2026-11-01T01:31Z). lend107 is 106 strict, 107 by first state (s21 gate_probe.py and
+  the lane gate.py count the closing transition); fbg is 403 either way. scratch/gate_strict.py, gate_logs/strict_*.txt.
+- P-N5-REALIZE (l-red e609c5d2, 067f06b6; Lead 03:35Z): R-N5-REALIZE.md. All SIGNED, no gap; VJ-LOC «1 ⇒ 2» only; bridge B part of
+  [RULE] redundant (W (iii)), Lemma R + TB part needed; line REQUIRED REAL-L1 (e-index = gate-index order missing in the line).
+  realize_probe.py: 4 pins L 8/12/32/64 exact. Not checked: mover states = IDEAL (needs the lane's simulator). L-1 (l-red 02dfc35c, 1d72ee31) MATCHES (§C). CHECKER C115 E-1: I had accepted VJ00 5.8 «1 ⇒ 2» from T21; RESULTS
+  records it NOT established (R15 (iii)). Re-routed to R36 (c) P1 on G^d (confirmed). L-2 (c374be8f, b44456d1) MATCHES (§C add. 1). OPEN: none.
+- LESSON (s22): a lit note saying a direction is «unaffected» is not a proof of it. Check RESULTS for whether a cited lemma is LANDED
+  or recorded as an open premise (grep the lemma name in RESULTS) before signing a premise list.
+- P-N5-ANCHOR (l-new f009a9a1, ad97ad88; Lead 16:36Z): R-N5-ANCHOR.md. All to-sign items SIGNED, no gap; (R1) ruled covered;
+  ANC-1 REQUIRED wording («corner» = x on y's play BEFORE its cycle node; my CF-1 / L46 wording was ambiguous; R-R24-L44 Addendum 1);
+  line REQUIRED ANC-L1 ((R1) «referees to rule») and ANC-L2 («afterwards» unanchored). anchor_probe.py, anchor_logs/: 4 pins exact.
+  ANCHOR L-1 (l-new 6bcf5529, baad574d): §C, NOT YET: ANC-L1/L2 met, ANC-1 in fixes; REQUIRED ANC-L3 (κ free). L-2 (709798f3, 1371f900) MATCHES (§C add. 1; optional ANC-P4: name x). OPEN: none.
+- L44 check on R24 (Lead 12:35Z): R-R24-L44.md. (a) Lemma R CLASS-FREE; (b) TB CLASS-FREE ((F1) on the one-player H_k); choice form
+  class-free but NOT R24 (b)'s statement: cite Lemma R + TB steps 1, 3-5 + bridge B (CF-1). Own DATA tbcf_probe.py (6,000 games with
+  2-5 Odd choice vertices, 0 violations; 37 even ties with kappa-min != index-min). Trap: corners (h on its own W-cycle) are outside the rule.
+- P-N5-S4B (l-si 68fa36619, f1b65da5; Lead 02:50Z): R-N5-S4B.md (2026-11-01T03:19Z). S4B-OPT, S4B-KEEP SIGNED, no gap; 1E-N3 covers
+  S4b (S1 on the valid input (H'_k, sigma_k), closer than S4a's dual); line REQUIRED S4B-L1 (G*-form stated as R57's content while L42
+  active) and S4B-L2 (corpus list 1,132 lines = 813 distinct; counts with repeats). Own DATA: s4b_probe.py, s4b_logs/ (811 lines equal).
+  S4B line L-1 (l-si 96fb62cb3, sha1 95373010) MATCHES: R-N5-S4B §C. L45 (trunk 68d50c8f) lifts L42 for S4b. OPEN: none.
+- TRAPS (s22): corpus lists can repeat lines (anc58/corpus_fixed.lst 319 repeats): name logs per LINE and de-duplicate. A «pg» line
+  with no start means SPEC S3's start: do not let the probe pick up a sibling .start (STARTF=/nonexistent). Lane starts can be PARTIAL
+  (n5x start_pair fills from S3): PARTIAL=1 in s4b_probe.py. A local «val(w) vs val(tau(v))» test is invalid at cycle nodes: use the
+  one-switch deviation.
+- GATE line L-1 (l-new afb8b99e, sha1 d677161c) MATCHES: R-N5-GATE.md §C (2026-11-01T01:58Z). Five changes only; P-1..P-4 and GATE-L1 met. OPEN: none.
+- Commit c9644446's Claude-Session trailer names s21's session by mistake; successor 22 is session_01V5yGRW3K7nSRJ5pwy8KPGu (not amended).
+- Lesson: for a «phase = transitions at whose states X is constant» definition, count only transitions with X equal at BOTH ends.
+
 ## HANDOVER (successor 21 -> successor 22), written 2026-11-01T00:36Z by date -u (Opus 5.5 under D15; label "(Opus 5.5, D15)")
 Lead: session_014FBi6o334DvwT5Uw2kDfoN. Branch claude/referee (mine alone since 2026-10-30 23:41Z; successor 20 parked). Start as
 successor 19/20's handovers: ff-only to origin, is-ancestor this handover, merge trunk claude/vibrant-johnson-nxvvxo, scripts/setup_oink.sh
@@ -1458,6 +2243,7 @@ State of every claim I refereed (report file in docs/referee/, verdict, status):
 | github.com/tcsprojects/pgsolver d3cd624 | solvers/stratimpralgs.ml 54-199, 441-669, 693-696; solvers/switch_globally_best.ml 1-119; paritygame/transformations.ml 271-320, 338-413; paritygame/univsolve.ml 23-66, 267-780; apps/pgsolver/pgsolver.ml 102-116 | 2026-10-14 | strategy improvement originals of pgsolver_si.py |
 | github.com/tcsprojects/pgsolver d3cd624 | recursiveladder.ml 13-46; policyiter/generators/switchallexp.ml 30-66, switchbestexp.ml 34-74; policyiter/stratimprgenerators.ml 7-47; paritygame.ml 19, 25-40, 128-139, 175, 201-206, 365-387 | 2026-10-14 | OCaml originals of L-COMP's ports; cloned into scratchpad |
 | arXiv:2511.03752v1 | whole paper: Sec. 2 defs, Sec. 3 (A*, A', A^k, Thm 1, Lemma 2, Alg. 1, Lemma 3, Thm 4, 5, 6) | 2026-10-14 | PDF + LaTeX source (main.tex); 4 pages; only v1 exists |
+| arXiv:1106.0778v2 (Friedmann, LMCS 7(3:19) 2011; pdf sha256 46c96f44775aa2b07cad20912cb325b177e38c94cb2e40297df66b6047679611, 42 pp.) | p. 3 §2 (Ω injective); p. 4-5 §3 (node valuation, order); p. 5-6 improvement arena, improvement policy (1), (2), Theorem 3.2, 3.3; p. 6 §4 I^loc (defined by a property, no tie-break); p. 8 §5 1-sink games, Lemma 5.1 + proof; p. 13 Table 3 / Figure 3; p. 15 Table 4, Fact 6.1, ι; p. 16 Figure 4; p. 17 Lemma 6.7 + proof; p. 17-18 §6.5 restriction to b ≠ 0_n with the two highest bits zero; p. 23 Lemma 6.13, Theorem 6.14 (statement) | 2026-11-12 | R-WRAP-preread (s33); PDF pages 5-8, 15-17, 23 rendered, §2-§6.6 as pdftotext; proofs of Lemmas 6.2-6.13 NOT read |
 
 ## Dead ends
 (none)

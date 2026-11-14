@@ -1,0 +1,16 @@
+rd3_d4.json N 8 M 20 n 74 T 18 Q 15 W 2 L 8333 wfail 0 Tfail 0 crossflip 0 DEtot 10 sumDE 488
+RS2_L32M6.json N 77 M 148 n 527 T 41 Q 9 W 32 L 3492236 wfail 0 Tfail 0 crossflip 0 DEtot 4 sumDE 36
+CLR_k8s16.json N 53 M 99 n 356 T 28 Q 28 W 0 L 1093415 wfail 0 Tfail 0 crossflip 0 DEtot 15 sumDE 1176
+FPORT_n2.json N 54 M 92 n 336 T 14 Q 8 W 3 L 964365 wfail 0 Tfail 0 crossflip 0 DEtot 4 sumDE 441
+FPORT_n3.json N 76 M 133 n 481 T 16 Q 9 W 3 L 2791386 wfail 0 Tfail 0 crossflip 0 DEtot 4 sumDE 646
+LEAP_k8.json N 37 M 67 n 244 T 17 Q 17 W 0 L 357831 wfail 0 Tfail 0 crossflip 0 DEtot 18 sumDE 212
+RS2.json N 18 M 30 n 114 T 10 Q 6 W 4 L 37963 wfail 0 Tfail 0 crossflip 0 DEtot 4 sumDE 27
+RS2_L8M6.json N 29 M 52 n 191 T 17 Q 9 W 8 L 172460 wfail 0 Tfail 0 crossflip 0 DEtot 4 sumDE 36
+RS3.json N 38 M 67 n 245 T 13 Q 9 W 2 L 367292 wfail 0 Tfail 0 crossflip 0 DEtot 7 sumDE 75
+RSG_K4.json N 14 M 23 n 89 T 7 Q 7 W 0 L 18152 wfail 0 Tfail 0 crossflip 0 DEtot 7 sumDE 87
+cR_d2_w8_R22.json N 16 M 32 n 118 T 24 Q 24 W 0 L 38337 wfail 0 Tfail 0 crossflip 0 DEtot 16 sumDE 907
+rd2_d9.json N 18 M 36 n 132 T 21 Q 21 W 0 L 53677 wfail 0 Tfail 0 crossflip 0 DEtot 21 sumDE 1413
+rd2_d10.json N 20 M 40 n 146 T 26 Q 21 W 3 L 72641 wfail 0 Tfail 0 crossflip 0 DEtot 16 sumDE 1433
+rd3_d7.json N 14 M 37 n 131 T 25 Q 16 W 4 L 44570 wfail 0 Tfail 0 crossflip 0 DEtot 13 sumDE 827
+rf_d5.json N 10 M 20 n 76 T 11 Q 11 W 0 L 10221 wfail 0 Tfail 0 crossflip 0 DEtot 11 sumDE 453
+rand count 1000 seed 2: wfail 0 Tfail 0 crossflip 0 maxW 4 maxT 8 maxWoverN 1.0

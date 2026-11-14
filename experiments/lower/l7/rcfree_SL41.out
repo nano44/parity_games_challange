@@ -1,0 +1,2 @@
+(a) one option of 10 or 55 : acyclic RC-free genomes 104 ; SL41 trajectory feasible: 0 ; movers in the open set (genomes): [(10, 104), (8, 100), (19, 100), (30, 100), (17, 96), (4, 94)] ; 7 s
+(b) both options of 10 : acyclic RC-free genomes 2704 ; SL41 trajectory feasible: 0 ; movers in the open set (genomes): [(10, 2704), (8, 2601), (17, 2600), (27, 2594), (9, 2593), (12, 2591)] ; 175 s

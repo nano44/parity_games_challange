@@ -1,0 +1,2 @@
+RANDOM games 10000 n 1..40: spec: wrong 0, max iterations 13; xi: wrong 0, max iterations 13
+DONE

@@ -1,0 +1,8 @@
+GAME red/carry/instances/lemmaS_viol_n20.pg 
+GAMES 1
+enum_states 4
+loc_chk 14
+rhos 66
+states 4
+VIOLATIONS 0
+RC 0

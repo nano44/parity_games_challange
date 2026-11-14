@@ -1,0 +1,2 @@
+# fbg_K12_m6_m24.pg 2f035ca0 + fbg_K12_m6_m24_fixed.start 9f03f81f (copied to scratch; s22 run 2026-11-01, earlier loop version, same counts by construction: lambda constant)
+K 404 n 290 stretch 1 404 len 403 lam-changes at [] strict 403 first-state 403 fallbacks 0

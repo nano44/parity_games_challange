@@ -1,0 +1,8 @@
+GAME si/root/instances/cone_n65.pg 
+GAMES 1
+enum_states 1
+loc_chk 3
+rhos 6
+states 1
+VIOLATIONS 0
+RC 0

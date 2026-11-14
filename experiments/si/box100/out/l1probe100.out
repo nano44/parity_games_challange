@@ -1,0 +1,15 @@
+C98_2_2_3.json N_C 4 M_C 10 sbar 5 runs 24 maxL1 6 L1/N_C 1.5 L1/M_C 0.6 maxLamSteps 3 maxLamGap 4
+C98_2_3_3.json N_C 6 M_C 14 sbar 7 runs 36 maxL1 7 L1/N_C 1.167 L1/M_C 0.5 maxLamSteps 5 maxLamGap 2
+C98_3_3_3.json N_C 9 M_C 22 sbar 9 runs 48 maxL1 8 L1/N_C 0.889 L1/M_C 0.364 maxLamSteps 7 maxLamGap 3
+C98_3_4_3.json N_C 12 M_C 29 sbar 8 runs 42 maxL1 7 L1/N_C 0.583 L1/M_C 0.241 maxLamSteps 5 maxLamGap 2
+C98_4_4_3.json N_C 16 M_C 40 sbar 9 runs 48 maxL1 7 L1/N_C 0.438 L1/M_C 0.175 maxLamSteps 4 maxLamGap 3
+C98_4_5_3.json N_C 19 M_C 49 sbar 16 runs 90 maxL1 8 L1/N_C 0.421 L1/M_C 0.163 maxLamSteps 7 maxLamGap 3
+C98_5_5_3.json N_C 24 M_C 56 sbar 9 runs 48 maxL1 12 L1/N_C 0.5 L1/M_C 0.214 maxLamSteps 8 maxLamGap 2
+MWR4_2.json N_C 44 M_C 91 sbar 13 runs 72 maxL1 30 L1/N_C 0.682 L1/M_C 0.33 maxLamSteps 28 maxLamGap 26
+MWR8_2.json N_C 80 M_C 171 sbar 21 runs 120 maxL1 54 L1/N_C 0.675 L1/M_C 0.316 maxLamSteps 53 maxLamGap 50
+C6G8_n54.json N_C 50 M_C 144 sbar 20 runs 114 maxL1 14 L1/N_C 0.28 L1/M_C 0.097 maxLamSteps 12 maxLamGap 9
+RWX_n95.json N_C 87 M_C 222 sbar 15 runs 84 maxL1 14 L1/N_C 0.161 L1/M_C 0.063 maxLamSteps 14 maxLamGap 11
+DWT20_2803.json N_C 94 M_C 246 sbar 25 runs 144 maxL1 12 L1/N_C 0.128 L1/M_C 0.049 maxLamSteps 8 maxLamGap 5
+DHIB18_2805.json N_C 94 M_C 294 sbar 21 runs 120 maxL1 17 L1/N_C 0.181 L1/M_C 0.058 maxLamSteps 12 maxLamGap 6
+DHIB26_2804.json N_C 102 M_C 283 sbar 31 runs 180 maxL1 17 L1/N_C 0.167 L1/M_C 0.06 maxLamSteps 12 maxLamGap 8
+MWR16_2.json N_C 152 M_C 331 sbar 37 runs 216 maxL1 102 L1/N_C 0.671 L1/M_C 0.308 maxLamSteps 100 maxLamGap 98

@@ -1,0 +1,21 @@
+(j2t of l4/rec/H5_d20_F62.json) H5_d20_F62.txt J 4
+   16 ('pulse1', 'decider-not-moved') e.g. (window start, u1, u2, f, q, supplier, rank) (1, 2, 3, 8, 9, 14, 73)
+   15 ('pulse2', 'decider-not-moved') e.g. (window start, u1, u2, f, q, supplier, rank) (7, 7, 9, 8, 9, 6, 46)
+../l4/rec/H6_d24_F126.txt J 4
+   15 ('pulse2', 'decider-not-moved') e.g. (window start, u1, u2, f, q, supplier, rank) (9, 9, 11, 8, 9, 24, 90)
+   15 ('pulse3', 'decider-not-moved') e.g. (window start, u1, u2, f, q, supplier, rank) (1, 3, 6, 8, 9, 19, 81)
+   1 ('pulse4', 'decider-not-moved') e.g. (window start, u1, u2, f, q, supplier, rank) (109, 109, 113, 8, 9, 19, 81)
+../l4/rec/H6_d24_F126.txt J 5
+   31 ('pulse1', 'KEY@u1+0 lev5') e.g. (window start, u1, u2, f, q, supplier, rank) (3, 3, 4, 11, 10, 11, 39)
+   31 ('pulse1', 'XI@u1+0 lev5') e.g. (window start, u1, u2, f, q, supplier, rank) (6, 7, 8, 11, 10, 11, 80)
+   1 ('pulse1', 'other@u1+0 lev5') e.g. (window start, u1, u2, f, q, supplier, rank) (1, 1, 2, 11, 10, 11, 80)
+../l5/rec/SL41_d28.txt J 5
+   31 ('pulse2', 'KEY@u1+0 lev5') e.g. (window start, u1, u2, f, q, supplier, rank) (12, 12, 14, 11, 10, 11, 79)
+   16 ('pulse2', 'XI@u1+0 lev5') e.g. (window start, u1, u2, f, q, supplier, rank) (6, 7, 9, 11, 10, 11, 81)
+   16 ('pulse2', 'decider-not-moved') e.g. (window start, u1, u2, f, q, supplier, rank) (1, 3, 5, 11, 10, 10, 55)
+../l5/rec/SL41_d28.txt J 6
+   15 ('pulse1', 'XI@u1+0 lev10') e.g. (window start, u1, u2, f, q, supplier, rank) (19, 19, 20, 13, 12, 20, 91)
+   8 ('pulse1', 'XI@u1+0 lev9') e.g. (window start, u1, u2, f, q, supplier, rank) (17, 17, 18, 13, 12, 19, 95)
+   31 ('pulse1', 'decider-not-moved') e.g. (window start, u1, u2, f, q, supplier, rank) (12, 12, 13, 13, 12, 22, 84)
+   1 ('pulse1', 'other@u1+0 lev10') e.g. (window start, u1, u2, f, q, supplier, rank) (1, 1, 2, 13, 12, 20, 91)
+   24 ('pulse2', 'decider-not-moved') e.g. (window start, u1, u2, f, q, supplier, rank) (9, 9, 11, 13, 12, 34, 105)

@@ -1,0 +1,53 @@
+buchi_unfold(3) == Zielonka on 22100 games (n<=3, two-player)
+anp_symmetric(3,2) == Zielonka on 74418 games (n<=3, priorities 0..2)
+minimal depth for n=1: 0 (= 2n-2)
+minimal depth for n=2: 2 (= 2n-2)
+minimal depth for n=3: 4 (= 2n-2)
+B_1(2) = 2 (SAT, witness verified on Q_2)
+B_1(3) = 4 (SAT, witness verified on Q_3)
+vec5.ref_W == Zielonka on all one-player Büchi games with k <= 3 vertices
+L-LOWER CHECK PASS
+family A: T = 2d and moves(2l+1) = 2*floor(2l/3)+1 for d = 3..20
+sim.py == box150 Gen on 2371 runs
+TRICHECK files 6 violations {'TRIMU': 0, 'TRI': 0, 'TRI1': 0, 'FB': 0, 'FBI': 0, 'FBM': 0, 'FBM2': 0} info {'runs': 2321, 'tri_runs': 2209, 'tri_eq2d': 8, 'fb_runs': 2321, 'maxT': 16, 'fbm2_eq': 40}
+DEAD MOVES-2D: kill/KILL_M2D_d6_mu13.json: d 6, mover 8 (level 4, Xi-target) moves 13 > 2d, T 13; box150 Gen agrees
+DEAD MOVES-2D: kill/KILL_M2D_d8_mu21.json: d 8, mover 15 (level 7, Xi-target) moves 21 > 2d, T 24; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d7_mu17.json: d 7, mover 8 (level 4, Xi-target) moves 17 > 2d, T 17; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d8_mu24.json: d 8, mover 8 (level 4, Xi-target) moves 24 > 2d, T 25; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d9_mu29.json: d 9, mover 15 (level 7, Xi-target) moves 29 > 2d, T 31; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d10_mu32.json: d 10, mover 15 (level 7, Xi-target) moves 32 > 2d, T 33; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d10_tower_mu30.json: d 10, mover 8 (level 4, Xi-target) moves 30 > 2d, T 35; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d11_mu40.json: d 11, mover 15 (level 7, Xi-target) moves 40 > 2d, T 44; box150 Gen agrees
+DEAD MOVES-2D: kill/REC_d12_mu42.json: d 12, mover 15 (level 7, Xi-target) moves 42 > 2d, T 48; box150 Gen agrees
+T record: kill/RECT_d11_T59.json: d 11, T 59; box150 Gen agrees
+T record: kill/RECT_d13_T66.json: d 13, T 66; box150 Gen agrees
+T record: kill/RECT_d13_T99.json: d 13, T 99; box150 Gen agrees
+T record: kill/RECT_d14_F46.json: d 14, T 65; box150 Gen agrees
+T record: kill/RECT_d14_T107.json: d 14, T 107; box150 Gen agrees
+T record: kill/RECT_d15_T114.json: d 15, T 114; box150 Gen agrees
+L3 CHECK PASS
+P-M2D-DEAD kill/KILL_M2D_d6_mu13.json: sha1 ok, two implementations agree (T 13), mover 8 moves 13 > 2d = 12, membership ALL PASS
+P-M2D-DEAD kill/KILL_M2D_d8_mu21.json: sha1 ok, two implementations agree (T 24), mover 15 moves 21 > 2d = 16, membership ALL PASS
+P-M2D-DEAD line files L-1, L-2, L-3 and fixes (entries 1, 2) pinned
+P-M2D-DEAD CHECK PASS
+DRV-RELAX replay REC_d10_tower_mu30: 35 steps state-identical
+DRV-RELAX replay RECT_d13_T99: 99 steps state-identical
+DOUBLE-EQ'/FROZEN-WINDOW: late_windows 82 late_viol 0 runs 131858 dbl_levels 684 eq_viol 0 fw_hyp 0 fw_viol 0 adj_windows 0 adj_viol 0 dd_tg 1
+RECF4_d14_F52.json: sha1 1e0b0a58 T 73 F [2, 5, 12, 26, 52, 39, 21, 8, 6, 2, 2, 2, 3, 0]
+RECF4_d16_F53.json: sha1 9b08c289 T 73 F [2, 5, 12, 26, 53, 40, 25, 18, 16, 2, 3, 3, 4, 3, 4, 3]
+RECF4_d20_F56.json: sha1 1167b8a6 T 71 F [2, 6, 13, 28, 56, 42, 16, 8, 4, 4, 2, 3, 4, 3, 3, 3, 4, 4, 3, 2]
+RECF4_d20_F60.json: sha1 354b7d44 T 67 F [2, 6, 14, 30, 60, 34, 32, 19, 11, 8, 10, 9, 6, 2, 4, 4, 3, 1, 1, 2]
+DBL4_d20_F30.json: sha1 43704358 T 30 F [0, 2, 6, 14, 30, 20, 16, 9, 8, 7, 6, 6, 4, 2, 3, 2, 0, 0, 1, 1]
+H5_d20_F62.json: sha1 2204079d T 136 F [2, 6, 14, 30, 62, 94, 63, 32, 16, 8, 8, 8, 4, 5, 5, 5, 5, 3, 4, 3]
+H6_d24_F126.json: sha1 fb37fec9 T 209 F [2, 6, 14, 30, 62, 126, 95, 33, 32, 16, 16, 15, 9, 8, 9, 8, 5, 4, 3, 2, 2, 2, 0, 1]
+L4 CHECK PASS
+pins OK: 4 files
+G7_best_d28: 119 j-windows at j = 1..5; the 30 (5-window, PULSE or GAP) units lie on 16 distinct 5-windows of 63
+G7_best_d28: T 270, levels 0-5 capped; 7-capped PULSE/GAP violations: levels 1-4: 0; level 5: 30 = 15 pulses + 14 gaps of type (9, 1) + 1 pulse of the first window
+SL41_d28: T 290, levels 0-5 capped; 7-capped PULSE/GAP violations at levels 1-5: 0
+both: level 6 has 127 windows, 48 without exactly one move of each member of pair 6
+SL41_d28: option 19 decides 12 or 13 at s_(a-1) in 32, at every pre-state in 16 of the 48; decider not constant on 188 of 188 consecutive-move pairs of 12, 13
+SL41_d28: pair 6 is CROSS onto (22, 11); (rank 87, mover 9, option 1) decides 12 or 13 in all 48 failing 6-windows and in none of the 79 others
+corpus: 24 runs (stored start): KILL_M2D_d6_mu13.json, KILL_M2D_d8_mu21.json, RECT_d11_T59.json, RECT_d13_T66.json, RECT_d13_T99.json, RECT_d14_F46.json, RECT_d14_T107.json, RECT_d15_T114.json, REC_d10_mu32.json, REC_d10_tower_mu30.json, REC_d11_mu40.json, REC_d12_mu42.json, REC_d7_mu17.json, REC_d8_mu24.json, REC_d9_mu29.json, DBL4_d20_F30.json, H5_d20_F62.json, H6_d24_F126.json, RECF4_d14_F52.json, RECF4_d16_F53.json, RECF4_d20_F56.json, RECF4_d20_F60.json, G7_best_d28, SL41_d28
+counters: {'levels': 62, 'E3_units': 7069, 'E5_hyp': 61, 'E3': 0, 'E4': 0, 'E5': 0, 'windows': 757, 'PN_units': 757, 'PN_viol': 0, 'PN_tight': 215, 'GN_units': 260, 'GN_viol': 0, 'GN_tight': 12, 'DF_pairs': 1390, 'DF_viol': 0, 'DFa_pairs': 65885, 'DFa_viol': 0, 'CE_pairs': 4, 'CE_windows': 65, 'CE_viol': 0, 'CE3_units': 43, 'CE3_viol': 0}
+P-TOWER-FUEL CHECK PASS

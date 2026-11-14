@@ -1,0 +1,122 @@
+{
+"S1-rank": [
+"7fa6aff4a",
+"injective priorities: rank(v) = position of v in V sorted by (Ω(v), v); p'(v) = 2·rank(v) + (Ω(v) mod 2)."
+],
+"S1-val": [
+"7fa6aff4a",
+"valuation of v under (σ, σ̄): (c, P, ℓ), c = the most relevant (max p') vertex of the cycle the play from v ends in, P = set of vertices on the play before reaching c with p' > p'(c), ℓ = number of steps to reach c."
+],
+"S1-ord": [
+"7fa6aff4a",
+"order (better for Even): compare reward of c (p'(c) if even, −p'(c) if odd); then P by the signed weight Σ_{u∈P} (+2^rank(u) if Ω(u) even else −2^rank(u)); then ℓ: if c is odd, longer is better for Even; if c even, shorter is better."
+],
+"S1-xi": [
+"7fa6aff4a",
+"Ξσ = valuation of every vertex under σ and Odd's OPTIMAL counterstrategy σ̄ (minimising this order at every vertex at once)."
+],
+"S1-dual": [
+"7fa6aff4a",
+"Odd's side: everything on the DUAL game G^d (owner swapped, Ω + 1); τ is an \"Even\" strategy of G^d; Ξτ, τ̄ (= Even's optimal counterstrategy to τ, as a G^d-Odd strategy), Iτ computed there."
+],
+"S2": [
+"7fa6aff4a",
+"S2 Improving edges: Iσ = {(v, w) : owner(v) = Even, w ≠ σ(v), Ξσ(w) strictly better than Ξσ(σ(v))}; Iτ the same on G^d for τ."
+],
+"S4": [
+"7fa6aff4a",
+"S4 Iteration (one iteration = one pass with Iσ ∪ Iτ ≠ ∅; both steps computed from the SAME (σ, τ), applied together):"
+],
+"S4a": [
+"7fa6aff4a",
+"a. If Iσ ≠ ∅: A(v) = {σ(v)} ∪ {w : (v, w) ∈ Iσ} for Even v. Arena H: Even v keeps only edges to A(v); Odd v keeps only the edge to τ(v). σ_new = Odd's optimal counterstrategy (S1 procedure) in the dual of H to the dual-Even strategy τ, read as an Even strategy of G. (Even's one-player optimum against τ among \"keep or take an improving edge\".) Else σ_new = σ."
+],
+"S4b": [
+"7fa6aff4a",
+"b. If Iτ ≠ ∅: A(v) = {τ(v)} ∪ {w : (v, w) ∈ Iτ} for Odd v. Arena H': Odd v keeps only edges to A(v); Even v only the edge to σ(v). τ_new = Odd's optimal counterstrategy (S1 procedure on H', not dual) to σ. Else τ_new = τ."
+],
+"S4c": [
+"7fa6aff4a",
+"c. FALLBACK, if σ_new = σ and τ_new = τ: if Iσ ≠ ∅, for every Even v with an improving edge set σ_new(v) = the w with (v, w) ∈ Iσ maximising (Ξσ(w), w) (best valuation, ties: larger index); otherwise do the same for Odd on Iτ with G^d's valuations. Count it."
+],
+"S5": [
+"7fa6aff4a",
+"S5 Stop when Iσ = Iτ = ∅."
+],
+"FIX1": [
+"7fa6aff4a",
+"FIX 1 (S3, A2). Even's v: σ0(v) = argmax over successors w of (r(w), w if r(w) even else −w), r(w) = Ω(w) if Ω(w) even else −Ω(w): highest even priority, else lowest odd priority; equal priorities: largest index if even, smallest if odd. Odd's v (the rule on G^d), in G's terms: highest ODD Ω(w), else lowest EVEN Ω(w); equal priorities: largest index if Ω(w) odd, smallest if even."
+],
+"FIX3": [
+"7fa6aff4a",
+"FIX 3 (S4c, A7). In a fallback iteration with Iσ ≠ ∅ only σ changes (τ_new = τ); n5.py l. 61-62. Odd falls back only if Iσ = ∅."
+],
+"N5XI": [
+"7fa6aff4a",
+"SPEC S1-S5 with ONE change in S4a. At every Even v with |A(v)| ≥ 2 that is not its own H-cycle node, σ_new(v) := the Ξσ-best element of TIE(v) := {w ∈ A(v) : W*(v) = v ⊕ W*(w)}. Ties go by SPEC's choice, then the larger index. Here A(v) = {σ(v)} ∪ Iσ(v)."
+],
+"1E-N3": [
+"7fa6aff4a",
+"used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima; and S4a's σ_new, S1's output on the dual of the one-player arena in which Even y keeps {σ(y)} ∪ Iσ(y) and Odd follows τ, is a pointwise optimum of that arena, before S4c)"
+],
+"DUAL-a": [
+"7fa6aff4a",
+"«The order of G^d is the REVERSE of the order of Γ»; «So Iτ(v) = {w ≠ τ(v) : Ξτ(w) ◁ Ξτ(τ(v))} (strictly better for Odd in Γ's order),» «and τ̄ maximises Γ's order at every vertex.»"
+],
+"R15-a": [
+"7fa6aff4a",
+"(a) Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(σ)}."
+],
+"R15-c": [
+"7fa6aff4a",
+"(c) Theorem: with φ(σ) = Σ_{v ∈ M⊕, Λσ(v) = v} ε(v)·k_σ(σ(v)) (ε = +1 on R−, −1 on R+) and σ ≺ σ⁺ iff Ωσ ◁ Ωσ⁺ or (Ωσ = Ωσ⁺ and φ(σ) < φ(σ⁺)), ≺ is a strict partial order on strategies and every non-empty switch of improvements goes strictly up in ≺. Consequence: no strategy repeats in any VJ00 strategy-improvement run with any non-empty selection rule; φ is an integer with |φ| ≤ n(n−1)."
+],
+"R15-d": [
+"7fa6aff4a",
+"(d) N5: every iteration applies Switch_I with ∅ ≠ I ⊆ Iσ to Even's σ (on G) and/or with ∅ ≠ I ⊆ Iτ to Odd's τ (on G^d), and changes at least one of them (S4a/S4b, or the S4c fallback, a switch-all); Iσ depends on σ alone (Ωσ is against ⊖'s optimal reply, not against τ). Hence no (σ, τ) state repeats and N5 terminates within h(≺_G) + h(≺_{G^d}) iterations; at most 4n(n−1) consecutive N5 iterations leave both Ωσ and Ωτ unchanged (two potentials φ, φ^d)."
+],
+"RULE": [
+"7fa6aff4a",
+"with RESULTS R24 (a) Lemma R and R24 (b)'s choice rule (TB proof steps 1, 3-5; fixes §2.3) with RESULTS R103's bridge B, whose proof uses no 𝒞^1O hypothesis (Lead reading L46 and its amendment), applied at every Even vertex that is not its own W′-cycle node, non-movers included (RESULTS R103's (R1) ruling)"
+],
+"NT": [
+"e44ce56bf",
+"(T-2) **Claim NT (no tie on a 1-sink game; mine).** Let G with ι be a 1-sink game in [F11] §5's sense, with sink x, and σ a player-0 strategy with Ξ_ι ⊴ Ξ_σ. Then Ξ_σ(u) ≠ Ξ_σ(u′) for all nodes u ≠ u′. Proof. By Sink Seeking (p. 8) every Ξ_σ(u) has cycle component x; every other node is more relevant than x (Sink Existence), so the cycle is x's loop and the path component of Ξ_σ(u) is the set of ALL nodes of the play from u before x, u itself included (the paper's own remark, p. 8: «the path-length component equals the cardinality of the path component»). Ξ_σ(x) = (x, ∅, 0) differs from every other value. If u, u′ ≠ x had equal values, u′ would lie on u's play and u on u′'s play; plays are positional, so u's play would return to u before reaching x: a cycle without x, against Sink Seeking. ∎"
+],
+"T-3": [
+"e44ce56bf",
+"(T-3) G_n with ι_(G_n) is a 1-sink game: [F11] Lemma 6.7 with Lemma 5.1 (p. 17, p. 8). I re-read both proofs. 6.7 (1): under τ(e_i) = h_i the edges of Table 4 allow no cycle but x's loop (s → f_j or x; r → g_j or x; f, e, h, k, g only move to k, x or a g of higher index; t, a, c, d only reach s, r, e or lower t's); 6.7 (2) and 5.1 as written. Neither uses the six priorities that differ between Table 4 and Figure 4."
+],
+"T-4": [
+"e44ce56bf",
+"(T-4) Every strategy σ of an improvement run from ι has Ξ_ι ⊴ Ξ_σ ([F11] Theorem 3.2; in the fleet, landed R15 (a)). By Claim NT no two successors of a node tie at any state of the run, so the property of §3.1 determines I^loc(σ) uniquely there: every policy with the property, WRAP's included, produces the same run from ι_(G_n), which is therefore the run Theorem 6.14 speaks of. No reading of the proofs of Lemmas 6.2-6.13 is needed (Addendum A's route), and the lane's tie rule is never invoked on G_n."
+],
+"STATUS": [
+"e44ce56bf",
+"Status. Claim NT and (T-4) are referee-originated: under L41 they count only when the lane has written them and the other referee has checked them independently. I would sign them."
+],
+"F-1": [
+"e44ce56bf",
+"F-1 (the game; READING, stated by the box, confirmed here). Table 4 (p. 15) prints d_i 4i + 1, e_i 4i + 2, g_i 4i + 4, k_i 8n + 4i + 7, f_i 8n + 4i + 9, h_i 8n + 4i + 10. Then Ω(g_n) = Ω(a_1) = 4n + 4, against p. 3's injectivity, and the highest priority is 12n + 10, against Fact 6.1's «12·n + 8 as highest priority» on the same page. Figure 4 (p. 16, G_3) shows d 3, 7, 11; e 4, 8, 12; g 6, 10, 14; k 33, 37, 41; f 35, 39, 43; h 36, 40, 44, i.e. each of the six formulas minus 2; Figure 3 / Table 3 (p. 13, «p′_1 = 3 and p_1 = 33») agree with Figure 4. So the game of Theorem 6.14 is the Figure-4 game on the reading that Table 4 carries a misprint; XI-EXP must keep saying so (it does, §5.1 and §6)."
+],
+"F-2": [
+"e44ce56bf",
+"F-2 (the count). The paper proves its phase lemmas under a stated restriction (p. 17-18): «we will assume that b is different from 0_n and that the two highest bits in b are zero and remain zero, i.e. we will only use the first n − 2 bits for counting. Note however, that every bit works as intended in the counter.» Lemma 6.13 gives k ≥ 4 steps per increment. So the bound 2^n is the theorem «as published»; what the written lemmas give line by line is of the order 4·2^(n−2) minus a constant. XI-EXP's «2^n + 3» inherits exactly this. For «not polynomial» any 2^Ω(n) suffices. DATA: T = 9·2^n − 10 for n = 1, …, 10 (my run), above 2^n."
+],
+"F-3": [
+"e44ce56bf",
+"F-3 (wording). XI-EXP is exact: at least 2^n + 3 iterations on 10.5n² + 152.5n + 48 vertices. In the number of vertices this is 2^Ω(√|W|): super-polynomial. §0 item 3's «exponential wherever Howard's is» should read «in n» or «super-polynomial» here."
+],
+"W-2": [
+"e44ce56bf",
+"W-2 (required): the Definition says only «the new vertices are indexed after V». Statements (i)-(v) hold for every index order of the new vertices (no step uses one; my PERM = 1 sets, §5). The NUMBERS for N5 do depend on it: on W^L_n in my order N5 makes 3 iterations (F = 1) for n = 1, …, 6; on the lane's frozen WL_1, …, WL_4 (wrap104.py's order; same vertex and edge counts and the same 2-step signature multisets as mine, scratch/wrap_cmp.py) my engine gives 6 iterations (F = 4), the lane's column «N5 (spec) on W^L_n: 6». Both agree with (v) and Remark 3 (the key is an index sequence). The box should fix the order in the Definition, or say that its N5 columns are for wrap104.py's order. N5′-xi's counts are the same in both orders on these games, as (iii) and Claim NT say; on a game H with exact ties (iii)'s Howard run can depend on the order through «SPEC's choice, then the larger index»."
+],
+"REPLAY": [
+"e44ce56bf",
+"No FALSE statement found; no instance against any step. Own replay (§5): 18 must-be-0 counters (the box's six and twelve of mine), all 0 on every set; every counter has a firing control; my engine reproduces the lane's N5′-xi iteration counts on Friedmann's game from my own transcription of the PDF and on the lane's frozen instances."
+],
+"A1": [
+"90703a810",
+"So on my wrapper of my transcription of G_8 the iteration count is above the number of vertices, as in the lane's Addendum A.1 row (2,297 iterations on 1,940 vertices), with one fallback and all 18 counters 0."
+]
+}

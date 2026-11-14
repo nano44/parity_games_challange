@@ -1,0 +1,4 @@
+START 107 {'cnmoves': 7, 'up': 6, 'down': 1, 'ret': 0, 'down_noshort': 0}
+IT 107 {'cnmoves': 8, 'up': 7, 'down': 1, 'ret': 0, 'down_noshort': 0}
+IT 2678 {'cnmoves': 7, 'up': 5, 'down': 2, 'ret': 0, 'down_noshort': 0}
+BEST {'cnmoves': 7, 'up': 5, 'down': 2, 'ret': 0, 'down_noshort': 0}

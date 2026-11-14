@@ -1,0 +1,6 @@
+L-2 3a3096a45df6ca22e8099ca4e1a9ac1779c1321e 2741 | L-3 03453361fead881493e2d2786b869f1c63158c4c 2765
+old in L-2 1 | old in L-3 0 | new in L-3 1
+rebuild L-2 + D-5 equal to L-3: True 03453361fead881493e2d2786b869f1c63158c4c
+L-3 newlines 1 parens 38 38 neg False pipes 0
+F-11 parenthesis strings in entry 2: 1 1
+entry 1 unchanged (prefix of entry-2 file equals 01a68edc's file): True

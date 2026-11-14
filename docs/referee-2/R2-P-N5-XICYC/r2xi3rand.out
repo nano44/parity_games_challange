@@ -1,0 +1,1 @@
+seed 32 count 1000 Nmax 12 dmax 5 {"mover_transitions": 2780, "nonstd": 0, "nonhoward": 0, "badstop": 0, "nofb": 0, "genomes": 1000, "cyclic": 984, "transitions": 2782, "howard3_equal": 971, "standard": 999, "no_fb_before": 999, "fb_at": 999, "xi_T3": 999, "gamma_eq_gamma3": 1000}

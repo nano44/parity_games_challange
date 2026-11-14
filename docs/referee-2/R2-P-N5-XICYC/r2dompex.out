@@ -1,0 +1,6 @@
+priorities [2, 3, 4, 5, 0, 1] owners (0 Even, 1 Odd) [1, 1, 0, 0, 0, 0] successors [[2], [1], [1, 3], [1, 2], [0, 1, 3], [0, 1, 4]]
+state t   : sigma [2, 1, 3, 1, 0, 0] sigma-bar {0: 2, 1: 1}
+state t+1 : sigma [2, 1, 1, 1, 1, 1] sigma-bar {0: 2, 1: 1} (a p-step: no Λ, no σ̄ change)
+x 3 y 2 Ω_t(y) (1, [2, 3], 2) (x in Π)
+Ω_(t+1)(x) (1, [3], 1) ◁ ext(x, Ω_t(y)) (1, [2, 3], 3)
+Ω_t(x) (1, [3], 1) Ω_t(σ_(t+1)(x)) (1, [], 0) Ω_t(y) (1, [2, 3], 2)

@@ -1,0 +1,8 @@
+GAME red/carry/instances/h4_disjoint_n20.pg 
+GAMES 1
+enum_states 1
+loc_chk 2
+rhos 4
+states 1
+VIOLATIONS 0
+RC 0

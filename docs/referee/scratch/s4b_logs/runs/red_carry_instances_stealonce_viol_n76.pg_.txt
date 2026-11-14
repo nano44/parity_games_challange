@@ -1,0 +1,9 @@
+GAME red/carry/instances/stealonce_viol_n76.pg 
+GAMES 1
+enum_skip 4
+enum_states 5
+loc_chk 209
+rhos 4124
+states 9
+VIOLATIONS 0
+RC 0

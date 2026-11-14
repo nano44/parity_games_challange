@@ -1,0 +1,6 @@
+== MUT=oldkeys
+ 'MOVE_viol': 59  'DFa_viol': 0  'PD_viol': 0  'E1_viol': 0  'E2_viol': 0  'E3_viol': 0  'E4_viol': 0  'E5_viol': 0  'E5gamma_viol': 0  'PN_viol': 0  'CEi_viol': 0  'CEii_viol': 0} 
+== MUT=parity
+ 'MOVE_viol': 0  'DFa_viol': 424  'PD_viol': 0  'E1_viol': 0  'E2_viol': 0  'E3_viol': 0  'E4_viol': 0  'E5_viol': 0  'E5gamma_viol': 0  'PN_viol': 0 
+== MUT=minrank
+ 'MOVE_viol': 0  'DFa_viol': 355  'PD_viol': 0  'E1_viol': 0  'E2_viol': 0  'E3_viol': 0  'E4_viol': 0  'E5_viol': 0  'E5gamma_viol': 0  'PN_viol': 0 

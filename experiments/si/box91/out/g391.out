@@ -1,0 +1,12 @@
+engine g3 instance N+M T C Dhib sumD maxa Xdep Xfan maxPX mexp nexp seg2 tuples par1 par2 par3 lexfail afail pxfail dhifail spfail maxflip gtight grfail gr2fail grwhy fl_lam fl_e fl_len maxlamfl trfail pecouples nexpl pefail ecfail pelam
+g3 WC4_2.json 60 4 1 2 2 1 0 0 1 0 0 0 16 0 0 0 0 0 0 0 0 1 0 0 0 0 0 3 0 0 0 0 0 0 0 0
+g3 WC16_2.json 216 4 1 2 2 1 0 0 1 0 0 0 64 0 0 0 0 0 0 0 0 1 0 0 0 0 0 15 0 0 0 0 0 0 0 0
+g3 FW8_2.json 371 29 3 1 3 0 0 0 0 0 0 0 106 0 0 0 0 0 0 0 0 1 0 0 0 0 8 0 0 1 0 0 0 0 0 0
+g3 FW16_2.json 787 53 3 1 3 0 0 0 0 0 0 0 234 0 0 0 0 0 0 0 0 1 0 0 0 0 16 0 0 1 0 0 0 0 0 0
+g3 MW8_2.json 261 55 17 18 18 9 8 8 37 1 15 0 61 0 0 0 0 0 0 0 0 34 0 0 0 0 8 34 0 1 0 28 8 0 0 0
+g3 MW32_2.json 957 199 65 66 66 33 32 32 529 1 63 0 229 0 0 0 0 0 0 0 0 130 0 0 0 0 32 130 0 1 0 496 32 0 0 0
+g3 C6G8_n54.json 204 17 6 8 16 3 2 2 4 2 6 0 88 0 0 0 0 0 0 0 0 11 0 0 0 0 19 54 0 2 0 10 2 0 0 0
+g3 RWX_n95.json 328 12 2 7 8 2 3 1 4 1 5 1 135 0 0 0 0 0 0 0 0 3 0 0 0 0 5 64 0 1 0 0 1 0 0 0
+g3 DWT20_2803.json 364 22 3 20 21 2 9 2 12 2 18 20 160 0 0 0 0 0 0 0 0 6 0 0 0 0 1 78 0 1 0 121 2 0 0 0
+g3 DHIB26_2804.json 400 28 4 26 45 6 9 4 32 3 31 7 277 0 0 0 0 0 0 0 0 15 0 0 0 0 3 145 0 1 0 103 3 0 0 0
+g3 DHIB18_2805.json 400 19 4 18 30 5 7 3 21 2 19 4 271 0 0 0 0 0 0 0 0 10 0 0 0 0 37 121 0 2 0 74 3 0 0 0

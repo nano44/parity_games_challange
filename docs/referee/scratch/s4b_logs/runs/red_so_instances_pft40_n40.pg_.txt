@@ -1,0 +1,8 @@
+GAME red/so/instances/pft40_n40.pg 
+GAMES 1
+enum_states 2
+loc_chk 10
+rhos 12
+states 2
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,3 @@
+TOTAL starts 300 7 5 genomes 1500 acyclic 1500
+G T 2342 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 3842 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 42 maxT/N 1.0 N of runs with T = N: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+G3 howard_equal 1500 T 2342 notbeta 0 nonstrict 0 lamfail 0 C 0 R 0 states 3842 eplay 0 brutechecked 0 brutefail 0 T_gt_N 0 T_eq_N 42 maxT/N 1.0 N of runs with T = N: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]

@@ -1,0 +1,8 @@
+GAME red/n3/instances/core41_n40.pg red/n3/instances/core41_n40.start
+GAMES 1
+enum_states 1
+loc_chk 1
+rhos 2
+states 1
+VIOLATIONS 0
+RC 0

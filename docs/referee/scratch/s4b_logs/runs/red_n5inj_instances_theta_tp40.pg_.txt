@@ -1,0 +1,9 @@
+GAME red/n5inj/instances/theta_tp40.pg 
+GAMES 1
+enum_states 7
+keep_chk 5
+loc_chk 9
+rhos 16
+states 7
+VIOLATIONS 0
+RC 0

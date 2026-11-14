@@ -1,0 +1,14 @@
+A_d4_W2_k2.json d 4 N 8 Xi-depth 6 L 9 | spec 12 | xi 8 | idx 5 | seq 31
+A_d4_W3_k3.json d 4 N 12 Xi-depth 9 L 15 | spec 18 | xi 8 | idx 4 | seq 67
+A_d5_W2_k3.json d 5 N 10 Xi-depth 6 L 13 | spec 16 | xi 6 | idx 5 | seq 52
+A_d6_W2_k2.json d 6 N 12 Xi-depth 8 L 11 | spec 14 | xi 6 | idx 5 | seq 36
+KILL_M2D_d6_mu13_norm.json d 6 N 12 Xi-depth 10 L 13 | spec 16 | xi 10 | idx 5 | seq 34
+KILL_M2D_d8_mu21_norm.json d 8 N 16 Xi-depth 8 L 24 | spec 27 | xi 8 | idx 4 | seq 55
+RECT_d11_T59_norm.json d 11 N 22 Xi-depth 17 L 59 | spec 62 | xi 8 | idx 5 | seq 13
+REC_d10_mu32_norm.json d 10 N 20 Xi-depth 12 L 33 | spec 36 | xi 10 | idx 4 | seq 18
+REC_d10_tower_mu30_norm.json d 10 N 20 Xi-depth 13 L 35 | spec 38 | xi 6 | idx 5 | seq 66
+REC_d11_mu40_norm.json d 11 N 22 Xi-depth 16 L 44 | spec 47 | xi 8 | idx 5 | seq 77
+REC_d12_mu42_norm.json d 12 N 24 Xi-depth 14 L 48 | spec 51 | xi 7 | idx 5 | seq 55
+REC_d7_mu17_norm.json d 7 N 14 Xi-depth 12 L 17 | spec 20 | xi 11 | idx 4 | seq 10
+REC_d8_mu24_norm.json d 8 N 16 Xi-depth 12 L 25 | spec 28 | xi 12 | idx 6 | seq 9
+REC_d9_mu29_norm.json d 9 N 18 Xi-depth 11 L 31 | spec 34 | xi 9 | idx 5 | seq 65

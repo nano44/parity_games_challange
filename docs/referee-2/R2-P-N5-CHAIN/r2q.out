@@ -1,0 +1,37 @@
+packet	MISSING	FREEZE BOX 196 as packet P-N5-CHAIN … statements REACH3-ALL (with ESC3-ALL, W3-ALL), the Γ3 forms, CHAIN3; pre
+packet	RESULTS.md,P-N5-REACH.md,END@131b4c1c,ASC@93531b03	Even movers of priority 0; Odd gates of priority 1 with a W-face e and a Ξ-face β
+packet	RESULTS.md,P-N5-REACH.md,END@131b4c1c,ASC@93531b03	each with a W-target of level lev(x) − 1 (none at level 0)
+packet	RESULTS.md,P-N5-REACH.md,END@131b4c1c,ASC@93531b03	β of priority 6 + 2·rank + parity with edges to the Ξ-target and to u, or to u alone
+packet	RESULTS.md,P-N5-REACH.md,END@131b4c1c,ASC@93531b03	e of even priority above every β with one edge to the W-target or to the top even self-loop c_W
+packet	RESULTS.md,P-N5-REACH.md,END@131b4c1c,ASC@93531b03	an unused even self-loop of priority 2; c_W's priority top is the least even number at least 2 above every oth
+packet	RESULTS.md,P-N5-REACH.md,END@131b4c1c,ASC@93531b03	a closed core u = K0 (Even, top + 2) → {K1, K3}, K1 (Even, 5) → {K0, K1}, K2 (Odd, 3) → {K1, K2}, K3 (Even, to
+packet	RESULTS.md,END@131b4c1c	obtained from Γ(G) by 4M + 4 single-successor Even pads of priority ≤ 2 (pA on K0 → K3, s on K1's loop, q on K
+packet	P-N5-REACH.md	σ(x) = m_(x,s(x)); σ(β_g) = xt(g) if xt(g) is a mover, pb_g otherwise; σ(K0) = pA, σ(K1) = s, σ(K3) = K2; τ(g)
+packet	RESULTS.md,P-N5-XICYC-fixes.md	RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome and ESC3, W3 for acyclic Ξ-graphs
+packet	RESULTS.md,P-N5-REACH.md	S3's start pair on Γ3(G) is the standard state of Γ3 for the genome start s_0.
+packet	P-N5-REACH.md	every cycle contains a vertex of Γ
+packet	P-N5-REACH.md,END@131b4c1c	In the standard state, Iτ = ∅, so S4b leaves τ unchanged.
+packet	RESULTS.md,P-N5-XICYC-fixes.md	with σ̄(K2) = r proved for every genome in P-N5-XICYC's fixes
+packet	RESULTS.md,END@131b4c1c	N5′-xi from S3 on Γ3(G) visits only standard states and makes Howard steps at the movers until its first fallb
+packet	RESULTS.md,END@131b4c1c	Theorem REACH3-CYC, CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome
+packet	P-N5-XICYC.md,END@131b4c1c	SPEC S1-S5 with ONE change in S4a. At every Even v with |A(v)| ≥ 2 that is not its own H-cycle node, σ_new(v) 
+packet	RESULTS.md,P-N5-XICYC.md,END@131b4c1c	Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(σ)}.
+packet	P-N5-XICYC.md	first the reward of Λ (an even priority p gives +p, an odd one −p, with priorities made injective by rank); th
+packet	P-N5-XICYC.md	σ̄_t is optimal at every vertex at once ([VJ])
+packet	RESULTS.md	(Odd's best reply σ̄_k is pointwise optimal in G_{σ_k})
+packet	RESULTS.md,P-N5-REACH.md,END@131b4c1c	used in two forms: S1's σ̄, and τ̄ on the dual game, are pointwise optima; and S4a's σ_new … is a pointwise op
+packet	END@131b4c1c	For every genome G, N5′-xi from S3 on Γ3(G) has exactly one fallback, at an iteration F ≥ 1, and makes exactly
+packet	RESULTS.md,P-N5-REACH.md,END@131b4c1c	β_g →
+packet	RESULTS.md,P-N5-REACH.md	→ β
+packet	MISSING	nohoward
+packet	MISSING	pβ at every gate, r at K2
+packet	MISSING	T3 equals the IDEAL-CYC count T_CYC on Γ(G), so P-N5-QUIET's bound transfers
+packet	MISSING	BOX 196 CHAIN
+packet	RESULTS.md,END@131b4c1c	ctrl
+packet	RESULTS.md,N5-ssi-global.md,P-N5-REACH.md,P-N5-XICYC-fixes.md,DECISIONS.md,END@131b4c1c	spec
+packet	MISSING	P-N5-CHAIN
+packet	MISSING	Polynomial only on a restricted class
+L-1	RESULTS.md,END@131b4c1c	Theorem REACH3-CYC, CONDITIONAL on P-N5-REACH's S3-START, PAD, K3, TAU3, ESC3, W3 for every genome
+L-1	RESULTS.md,P-N5-XICYC-fixes.md	RESULTS R117's entry signs S3-START, PAD, K3 and TAU3 for every genome and ESC3, W3 for acyclic Ξ-graphs
+L-1	RESULTS.md,P-N5-XICYC.md,END@131b4c1c	Lemma A: for any non-empty unambiguous set I of improvements of σ (VJ00 §4.4), Ωσ ⊴ Ω_{Switch_I(σ)}.
+quotes 36  not in any source 7  (trunk 3906d411)

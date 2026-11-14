@@ -1,0 +1,9 @@
+GAME red/carry/instances/spp25_oink_n40.pg 
+GAMES 1
+enum_skip 2
+enum_states 5
+loc_chk 93
+rhos 2150
+states 7
+VIOLATIONS 0
+RC 0

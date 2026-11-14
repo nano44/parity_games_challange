@@ -1,0 +1,4 @@
+it 0 score (2, 0, 0, 4) T 13 tog [1, 1] U 30 flipex (0, None) pre [] cfg {"h": 2, "L": [4, 8], "a": 2, "b": 2, "c": 4, "cpos": 1, "wreal": 1, "merge": 0, "cexit": "C"}
+it 15 score (4, 1, 0, 4) T 14 tog [3, 1] U 32 flipex (0, None) pre [] cfg {"h": 2, "L": [6, 8], "a": 2, "b": 2, "c": 5, "cpos": 1, "wreal": 0, "merge": 0, "cexit": "C"}
+it 198 score (4, 1, 0, 5) T 11 tog [3, 1] U 22 flipex (0, None) pre [] cfg {"h": 2, "L": [2, 7], "a": 0, "b": 2, "c": 3, "cpos": -1, "wreal": 1, "merge": 0, "cexit": "B"}
+BEST (4, 1, 0, 5) {"h": 2, "L": [1, 4], "a": 0, "b": 0, "c": 2, "cpos": -1, "wreal": 1, "merge": 0, "cexit": "C"}

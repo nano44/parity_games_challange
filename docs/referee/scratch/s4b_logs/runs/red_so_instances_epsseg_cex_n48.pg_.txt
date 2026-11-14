@@ -1,0 +1,8 @@
+GAME red/so/instances/epsseg_cex_n48.pg 
+GAMES 1
+enum_states 2
+loc_chk 10
+rhos 12
+states 2
+VIOLATIONS 0
+RC 0

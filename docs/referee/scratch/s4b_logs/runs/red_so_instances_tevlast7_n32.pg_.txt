@@ -1,0 +1,4 @@
+GAME red/so/instances/tevlast7_n32.pg 
+GAMES 1
+VIOLATIONS 0
+RC 0

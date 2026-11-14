@@ -1,0 +1,34 @@
+N 48 T3 30 bigC 44 M_C 91 int gates 2
+t1 sw2 [29:1>0 44:0>4] | flips ext 0 int 1: 34.0e*
+t2 sw1 [28:1>0] | flips ext 0 int 0: 
+t3 sw1 [27:1>0] | flips ext 0 int 0: 
+t4 sw1 [26:1>0] | flips ext 0 int 0: 
+t5 sw1 [25:1>0] | flips ext 0 int 0: 
+t6 sw1 [24:1>0] | flips ext 0 int 0: 
+t7 sw1 [23:1>0] | flips ext 0 int 0: 
+t8 sw1 [22:1>0] | flips ext 0 int 0: 
+t9 sw3 [21:1>0 36:1>0 44:4>0] | flips ext 1 int 0: 30.0e
+t10 sw2 [20:1>0 35:1>0] | flips ext 0 int 0: 
+t11 sw2 [19:1>0 43:0>1] | flips ext 0 int 1: 34.0b*
+t12 sw2 [18:1>0 44:0>4] | flips ext 0 int 1: 34.0e*
+t13 sw1 [17:1>0] | flips ext 0 int 0: 
+t14 sw1 [16:1>0] | flips ext 0 int 0: 
+t15 sw3 [15:1>0 38:1>0 44:4>1] | flips ext 1 int 0: 31.0e
+t16 sw2 [14:1>0 37:1>0] | flips ext 0 int 0: 
+t17 sw2 [13:1>0 43:1>2] | flips ext 0 int 1: 34.0b*
+t18 sw2 [12:1>0 44:1>4] | flips ext 0 int 1: 34.0e*
+t19 sw1 [11:1>0] | flips ext 0 int 0: 
+t20 sw1 [10:1>0] | flips ext 0 int 0: 
+t21 sw3 [9:1>0 40:1>0 44:4>2] | flips ext 1 int 0: 32.0e
+t22 sw2 [8:1>0 39:1>0] | flips ext 0 int 0: 
+t23 sw2 [7:1>0 43:2>3] | flips ext 0 int 1: 34.0b*
+t24 sw2 [6:1>0 44:2>4] | flips ext 0 int 1: 34.0e*
+t25 sw1 [5:1>0] | flips ext 0 int 0: 
+t26 sw1 [4:1>0] | flips ext 0 int 0: 
+t27 sw3 [3:1>0 42:1>0 44:4>3] | flips ext 1 int 0: 33.0e
+t28 sw2 [2:1>0 41:1>0] | flips ext 0 int 0: 
+t29 sw1 [43:3>4] | flips ext 0 int 1: 34.0b*
+t30 sw1 [44:3>4] | flips ext 0 int 1: 34.0e*
+gate flip counts (>=2): [((34, 0), 9, 'int')]
+ext gates flipping: 4 max ext flips 1
+mover switch counts: [(44, 9), (43, 4), (29, 1), (28, 1), (27, 1), (26, 1), (25, 1), (24, 1), (23, 1), (22, 1), (21, 1), (36, 1), (20, 1), (35, 1), (19, 1), (18, 1), (17, 1), (16, 1), (15, 1), (38, 1)] total 49

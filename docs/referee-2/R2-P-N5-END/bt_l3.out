@@ -1,0 +1,8 @@
+L-2 e8a8ac51cc79c9de4000749899e7f0b860eeebe5 6988 B;  L-3 d6afe92ae0d2c0021743c99d2bd10f16cad27c73 7215 B
+L-R1: old in L-2 1, old in L-3 0, new in L-2 0, new in L-3 1, referee text has its piece True
+N-1: old in L-2 1, old in L-3 0, new in L-2 0, new in L-3 1, referee text has its piece True
+N-2: old in L-2 1, old in L-3 0, new in L-2 0, new in L-3 1, referee text has its piece True
+EL-1: old in L-2 1, old in L-3 0, new in L-2 0, new in L-3 1, referee text has its piece True
+EL-2: old in L-2 1, old in L-3 0, new in L-2 0, new in L-3 1, referee text has its piece True
+L-3 == L-2 + S1-S5: True ; parens 105 105 ; pipes 0 ; lines 1
+word-level diff tokens: 55

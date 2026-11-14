@@ -1,0 +1,3 @@
+HP2_mup.json N 40 T 11 labels pRpppRpppRR R 4 C 0
+  GF [0, 3, 2, 0] RF [0, 3, 2, 0] MV [14, 4, 16, 0] KF [0, 0, 0, 0] U 20 maxasc 1 hist {0: 3028, 1: 8} maxDE 4
+  Xi-cycles (movers, level): [[(6, 2)], [(2, 2)], [(4, 2)], [(1, 1)], [(0, 0)], [(3, 1)]] count 6

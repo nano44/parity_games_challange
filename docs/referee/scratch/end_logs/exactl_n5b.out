@@ -1,0 +1,5 @@
+n5b-spec gen acyc 2952 300: runs 300 | tau 0 nfb 0 nofb 0 k0 0 k1 0 k2 0 k3 0 total 0 pb 0 | start != my S3 0 | maxF 4 | IDEAL-ACYC 300 lfail 0 maxL 3
+n5b-spec gen rand 2952 300: runs 300 | tau 0 nfb 0 nofb 0 k0 0 k1 0 k2 0 k3 0 total 0 pb 0 | start != my S3 0 | maxF 4 | IDEAL-ACYC 26 lfail 0 maxL 2
+n5b-spec gen deep 2952 300: runs 300 | tau 0 nfb 0 nofb 0 k0 0 k1 0 k2 0 k3 0 total 0 pb 0 | start != my S3 0 | maxF 5 | IDEAL-ACYC 1 lfail 0 maxL 1
+n5b-spec gen wide 2952 300: runs 300 | tau 0 nfb 0 nofb 0 k0 0 k1 0 k2 0 k3 0 total 0 pb 0 | start != my S3 0 | maxF 5 | IDEAL-ACYC 14 lfail 0 maxL 1
+n5b-spec gen selfl 2952 300: runs 300 | tau 0 nfb 0 nofb 0 k0 0 k1 0 k2 0 k3 0 total 0 pb 0 | start != my S3 0 | maxF 4 | IDEAL-ACYC 0 lfail 0 maxL 0

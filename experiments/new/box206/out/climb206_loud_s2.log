@@ -1,0 +1,25 @@
+start (2, 3, 31) N 48
+it 51 score (3, 3, 29) N 48
+it 88 score (3, 3, 30) N 48
+it 335 score (3, 3, 31) N 48
+it 624 score (4, 3, 31) N 48
+it 875 score (4, 3, 32) N 48
+it 1192 score (5, 3, 33) N 48
+it 1769 score (5, 3, 34) N 48
+it 2144 score (5, 3, 35) N 48
+it 2686 score (5, 3, 36) N 48
+it 2736 score (6, 3, 36) N 48
+it 2879 score (6, 4, 36) N 48
+it 2951 score (7, 4, 37) N 48
+FINAL seed 2 score (7, 4, 37)
+start (7, 4, 37) N 48
+it 3386 score (7, 4, 38) N 48
+it 4207 score (8, 4, 38) N 48
+it 5481 score (8, 4, 39) N 48
+it 7864 score (8, 4, 40) N 48
+it 7965 score (8, 4, 41) N 48
+it 8271 score (9, 4, 28) N 48
+it 8440 score (9, 4, 29) N 48
+it 8538 score (9, 4, 30) N 48
+it 8829 score (10, 4, 31) N 48
+FINAL seed 2 score (10, 4, 31)

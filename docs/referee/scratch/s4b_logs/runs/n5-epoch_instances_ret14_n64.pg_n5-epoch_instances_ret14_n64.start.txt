@@ -1,0 +1,10 @@
+GAME n5-epoch/instances/ret14_n64.pg n5-epoch/instances/ret14_n64.start
+GAMES 1
+enum_skip 1
+enum_states 5
+keep_chk 2
+loc_chk 33
+rhos 108
+states 6
+VIOLATIONS 0
+RC 0

@@ -1,0 +1,10 @@
+LV_CTRL=2 WC16_2.json g3 ctrl 2 N 68 M 148 monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 1 l3fail 1 phifail 0 stallnocyc 2 nofvs 0 rstall 0 boundfail 0 winstall 1 wbeta 0 wl3fail 2 wmid 0 wbound 0 | T 4 k 2 levels 2 phivals 2 stalls 2 stallloud 2 plat 1 platmax 2 windows 3 wmax 2 wlev 1 DR 0
+PL_CTRL=1 plat3 hist WC16_2.json ctrl 1 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 0 maxlen 0 maxpct 0 tail 0 T 4
+LV_CTRL=2 C6G8_n54.json g3 ctrl 2 N 54 M 150 monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 17 l3fail 17 phifail 0 stallnocyc 10 nofvs 0 rstall 0 boundfail 0 winstall 0 wbeta 0 wl3fail 0 wmid 0 wbound 0 | T 17 k 99 levels 8 phivals 8 stalls 10 stallloud 10 plat 3 platmax 8 windows 0 wmax 0 wlev 0 DR 0
+PL_CTRL=1 plat3 hist C6G8_n54.json ctrl 1 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 0 maxlen 0 maxpct 0 tail 0 T 17
+PL_CTRL=1 plat3 hist DWT20_2803.json ctrl 1 p1 0 pclos 2 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 1 maxlen 1 maxpct 25 tail 0 T 22
+LV_CTRL=2 MWR4_2.json g3 ctrl 2 N 48 M 97 monofail 0 k3fail 0 k4fail 0 k5fail 0 einF 30 l3fail 30 phifail 0 stallnocyc 25 nofvs 0 rstall 4 boundfail 0 winstall 4 wbeta 0 wl3fail 8 wmid 0 wbound 0 | T 30 k 1 levels 12 phivals 30 stalls 25 stallloud 25 plat 5 platmax 8 windows 10 wmax 7 wlev 1 DR 10
+PL_CTRL=1 plat3 hist MWR4_2.json ctrl 1 p1 0 pclos 0 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 0 maxlen 0 maxpct 0 tail 0 T 30
+PL_CTRL=1 plat3 hist C98_2_2_3.json ctrl 1 p1 0 pclos 6 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 1 maxlen 4 maxpct 80 tail 0 T 8
+PL_CTRL=1 plat3 hist C98_3_3_3.json ctrl 1 p1 0 pclos 6 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 2 maxlen 2 maxpct 20 tail 1 T 12
+PL_CTRL=1 plat3 hist C98_5_5_3.json ctrl 1 p1 0 pclos 16 p2 0 p3 0 p4 0 p5 0 t1 0 t2 0 t3 0 plateaus 2 maxlen 3 maxpct 11 tail 2 T 15

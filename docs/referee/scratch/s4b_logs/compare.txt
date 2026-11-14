@@ -1,0 +1,6 @@
+# REFEREE s22: per distinct list line, lane s4bopt_corpus.txt (l-si 68fa36619) vs mine (runs/ + rerun/ for the 87 re-run lines)
+distinct lines 813 compared 811 skipped (n > 500) [('red/usplit/instances/gate_K64_n581.pg', 70, 0), ('red/usplit/instances/gate_K64_n581.pg red/usplit/instances/gate_K64_n581.start', 0, 0)]
+mine {'states': 5656, 'oddfb': 29, 'VIOLATIONS': 0, 'enum_states': 5166, 'rhos': 576663, 'loc_chk': 32469, 'keep_chk': 2894, 'enum_skip': 490}
+lane on the compared lines {'STATES': 5656, 'ODDFB': 29}
+lines with a count difference 0 []
+lane, over the 813 DISTINCT list lines (719 distinct .pg files): {'STATES': 5726, 'CHECKED': 5058, 'SKIPPED': 668, 'RHOS': 213311, 'OPTV': 0, 'TAUNEW_EQ_RUN': 5697, 'ODDFB': 29, 'S4ACHK': 11326, 'S4AV': 0}

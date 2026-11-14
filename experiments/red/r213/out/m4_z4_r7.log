@@ -1,0 +1,2 @@
+MOVE d 4 t 13 z 4 r 7: SAT solve 434.3 s
+  replay T 8 moves of z 7 target True (OK) -> out/m4_z4_r7.json

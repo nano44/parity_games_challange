@@ -1,0 +1,2 @@
+DU21_h4.json runs 1 awA 0 awB 0 caseL 8323 caseE 16978 Rtop 1451 Rcarry 1107 lexdec 0 dfail 0 rootfail 0 rootok 18935 maxR 14 maxalt 5 maxtops 20 rootdepth 2 max T3 24 max D 21 max D-Mact 1 (D 12, Mact 11)
+DU9_h3.json runs 1 awA 0 awB 0 caseL 2469 caseE 0 Rtop 67 Rcarry 147 lexdec 0 dfail 0 rootfail 0 rootok 2198 maxR 4 maxalt 5 maxtops 9 rootdepth 1 max T3 18 max D 10 max D-Mact 4 (D 10, Mact 6)

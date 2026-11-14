@@ -1,0 +1,8 @@
+restart 0: best maxplat 6 (N 8, M 21)
+restart 1: best maxplat 7 (N 7, M 18)
+restart 2: best maxplat 6 (N 6, M 16)
+restart 3: best maxplat 7 (N 13, M 33)
+restart 4: best maxplat 4 (N 5, M 14)
+restart 5: best maxplat 10 (N 16, M 39)
+objective maxplat family big seed 43: evaluations 9006, best 10, sum of the 36 must-be-0 counters over all genomes visited: 0
+exit 0

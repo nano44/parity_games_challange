@@ -1,0 +1,99 @@
+PASS L-4 is sha1 6bfde78e, 12,562 B :: 6bfde78ef050b47f43527875256c65a205869e77 12562
+pairs parsed: 9
+PASS nine old -> new pairs (R-E1, R-E2, seven of R-E3), or ten with the source note's entry count :: 9
+PASS R-E1: exactly one parsed pair's old contains its anchor
+PASS R-E2: exactly one parsed pair's old contains its anchor
+PASS R-E3.1: exactly one parsed pair's old contains its anchor
+PASS R-E3.2: exactly one parsed pair's old contains its anchor
+PASS R-E3.3: exactly one parsed pair's old contains its anchor
+PASS R-E3.4: exactly one parsed pair's old contains its anchor
+PASS R-E3.5: exactly one parsed pair's old contains its anchor
+PASS R-E3.6: exactly one parsed pair's old contains its anchor
+PASS R-E3.7: exactly one parsed pair's old contains its anchor
+PASS pair 1 old occurs once in the running text :: 1 :: re-arm multiplicity m = n with C = 2n + 1 on MW8_2, MW32_2 (…
+PASS pair 2 old occurs once in the running text :: 1 :: growth: C, A*_all and the largest gate flip count are linear…
+PASS pair 3 old occurs once in the running text :: 1 :: (Lemma GATE-LOW-NULL) at a LAM ∧ PRIV step…
+PASS pair 4 old occurs once in the running text :: 1 :: (and they differ), so a flip at t…
+PASS pair 5 old occurs once in the running text :: 1 :: changes π(E(p_e)) or π(E(p_b)) at t, and if Λ(p_e) = Λ(p_b)…
+PASS pair 6 old occurs once in the running text :: 1 :: (Corollary E-FACE-PAYS) relocks(o) ≤ ch_(p_e),…
+PASS pair 7 old occurs once in the running text :: 1 :: UP hypothesis, at every t with e_o ∉…
+PASS pair 8 old occurs once in the running text :: 1 :: that of D does, so if D's play avoids e_o at every state of …
+PASS pair 9 old occurs once in the running text :: 1 :: unchanged), and flips(o) ≤ 2·min(ch_(p_e), ch_(p_b)) + 1…
+rebuilt L-5: sha1 7ebcf7355be9838473f05a7defe913940b6fd723 12923 B
+PASS rebuilt (without any EXTRA pair) = CHECKER's L-5 (sha1 7ebcf735…, 12,923 B; C142 §4) :: 0 extra pair(s)
+PASS one line with its newline, 0 '|', 238 '(' = 238 ')' :: nl 1 bars 0 parens 238 238
+PASS absent: m = n
+PASS absent: P = F_(d+2) − 1 with
+PASS absent: A*_all and the largest
+PASS absent: linear in n
+PASS absent: on every family measured
+PASS absent: MW(n): C = 2n + 1
+PASS absent: MWR(n): flips
+PASS absent: which makes E-FACE-PAYS (d) tight
+PASS absent: §2 (a)
+PASS absent: P-N5-CHAIN's C-EQUIV
+PASS absent: lie on both of two plays
+PASS absent: not a premise here
+PASS absent: not among P-N5-CHAIN
+PASS absent: while its play avoids
+PASS absent: over the run then
+PASS absent: CTRL=a0
+PASS absent: is a hypothesis here
+PASS absent: L-RED R228
+PASS absent: afail
+PASS absent: pxfail
+PASS absent: box 94's 22 instances
+PASS absent: RA-MULT
+PASS absent: K1-FLIP(c)
+PASS absent: a polynomial bound on the RA path count
+PASS absent: pending packet
+PASS present once: E-1 m numbers :: 1
+PASS present once: E-1 P numbers :: 1
+PASS present once: E-1 source :: 1
+PASS present once: E-2 lead-in :: 1
+PASS present once: E-2 MW numbers :: 1
+PASS present once: E-2 MWR numbers :: 1
+PASS present once: E-3 GLN (a) :: 1
+PASS present once: E-3 GLN (b) :: 1
+PASS present once: E-3 GLN (b′) :: 1
+PASS present once: E-3 EFP (a) :: 1
+PASS present once: E-3 EFP (b) :: 1
+PASS present once: E-3 EFP (c) :: 1
+PASS present once: E-3 EFP (d) :: 1
+PASS «A*_all» only in the A*-EQUIV statement and its DATA counters, not in a growth clause
+INFO source note: ['with its fixes entries 1-4'] ['L-SI successors 48-50']
+diff regions L-4 -> L-5: 22
+   insert PURE-MARKER |  -> (a)
+   insert PURE-MARKER |  -> (b)
+   insert PURE-MARKER |  -> (b′)
+   insert PURE-MARKER |  -> (a)
+   insert PURE-MARKER |  -> (b)
+   insert PURE-MARKER |  -> (c)
+   insert PURE-MARKER |  -> (d)
+   replace  | = n -> 8 / 32
+   replace  | = 2n + 1 -> 17 / 65
+   replace  | MW8_2, -> MW8_2 /
+   replace  | = -> 54 / 2583 (=
+   insert  |  -> at d = 8, 16)
+   delete  | = -> 
+   replace  | FW8_2, FW16_2, -> FW8_2 / FW16_2 (m and P: L-SI 47 box 90, claude/l-si 2d0344d3 and 4ded1e8d, box90/out/mw90.out maxm and fw90.out maxP, both engines),
+   replace  | growth: C, A*_all -> growth, as numbers on the named instances only (both engines; box91/out/own91.out and g391.out C and maxflip, box93/out/mwr93_own.out and mwr93_g3.out mx_flips and mx_ch_D): C 17 / 65
+   replace  | gate -> per-gate
+   replace  | are linear in n -> 34 / 130
+   replace  | every family measured (MW(n): C = 2n + 1, -> MW8_2 / MW32_2, and per-gate
+   replace  | 4n + 2; MWR(n): flips 2n + 1 -> 9 / 17 / 33
+   insert  |  -> (ch_D 4 / 8 / 16)
+   replace  | 0, which makes -> 0 on MWR4_2, MWR8_2, MWR16_2, where
+   replace  | tight); -> holds with equality;
+PASS exactly seven pure single-marker insertions :: 7
+PASS reverse: new occurs once :: 1 :: unchanged), and (d) flips(o) ≤ 2·min(ch_(p_e), ch_…
+PASS reverse: new occurs once :: 1 :: that of D does, so (c) if D's play avoids e_o at e…
+PASS reverse: new occurs once :: 1 :: UP hypothesis, (b) at every t with e_o ∉…
+PASS reverse: new occurs once :: 1 :: (Corollary E-FACE-PAYS) (a) relocks(o) ≤ ch_(p_e),…
+PASS reverse: new occurs once :: 1 :: changes π(E(p_e)) or π(E(p_b)) at t, and (b′) if Λ…
+PASS reverse: new occurs once :: 1 :: (and they differ), so (b) a flip at t…
+PASS reverse: new occurs once :: 1 :: (Lemma GATE-LOW-NULL) (a) at a LAM ∧ PRIV step…
+PASS reverse: new occurs once :: 1 :: growth, as numbers on the named instances only (bo…
+PASS reverse: new occurs once :: 1 :: re-arm multiplicity m 8 / 32 with C 17 / 65 on MW8…
+PASS reversing the nine pairs on the tested text gives L-4 byte for byte
+FAILS 0

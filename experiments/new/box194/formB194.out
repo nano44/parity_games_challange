@@ -1,0 +1,4 @@
+# Form B (DATA only, not in any line): quiet194.py after fixes entry 2 (D-1: exact L, per window) on the 3 P-N5-ASC instances outside QUIET's DATA set; run from experiments/new/box194: python3 quiet194.py ../box192/inst/cR_d2_w8_R22.json ../box192/inst/rd3_d7.json ../box192/inst/rf_d5.json
+cR_d2_w8_R22.json N 16 M 32 n 118 T 24 Q 24 W 0 L 38337 wfail 0 Tfail 0 crossflip 0 DEtot 16 sumDE 907
+rd3_d7.json N 14 M 37 n 131 T 25 Q 16 W 4 L 44570 wfail 0 Tfail 0 crossflip 0 DEtot 13 sumDE 827
+rf_d5.json N 10 M 20 n 76 T 11 Q 11 W 0 L 10221 wfail 0 Tfail 0 crossflip 0 DEtot 11 sumDE 453
