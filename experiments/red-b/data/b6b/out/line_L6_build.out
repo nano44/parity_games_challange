@@ -1,0 +1,18 @@
+L-5 bytes 7482 sha1 fbd857b08befb397e03e71c554cccb4542be3820
+--- L3-3: at character 2605 of L-5, 70 bytes removed, 208 bytes put in
+- (premise R117 (f), under SPEC's S1 tie-breaks, same standing premises)
++ (with R124's premises as landed, all under the standing SPEC premise 1E-N3, among them RESULTS R117 (f) for EXACT-L, SPEC's S1 tie-breaks through REACH3's [RULE] choice, and RESULTS R15 (c) for Lemma TERM-XI)
+--- L3-2: at character 6184 of L-5, 39 bytes removed, 61 bytes put in
+- DATA for k ≤ 12: winners = Zielonka's
++ DATA for k ≤ 13, k = 13 on one engine: winners = Zielonka's
+--- L3-5: at character 6322 of L-5, 105 bytes removed, 218 bytes put in
+- CAUSAL and LEMMA′ of fixes entry 4 (4.3, 4.4) are referee-originated, stated and proved by REFEREE 36 (
++ STABLE's step form, CAUSAL and LEMMA′ of fixes entry 4 (4.2, 4.3, 4.4) are referee-originated, stated by REFEREE 36, which also proved CAUSAL and LEMMA′, the proof of STABLE being the frozen one read in step form (
+--- L-i: at character 7217 of L-5, 23 bytes removed, 23 bytes put in
+- with fixes entries 1-10
++ with fixes entries 1-11
+changes 4; characters of L-5 kept unchanged 7119 of 7297
+L-6 bytes 7755 (with its newline) lines 1 pipes 0 sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b
+L-6 brackets ( 82 ) 82 [ 1 ] 1 { 0 } 0 « 6 » 6 balanced 1
+L-6 checks failed 0
+written docs/red-b/P-N5-EXP-line-L6.txt

@@ -15,21 +15,25 @@ label of Corollary EXP-N5' names both statements of RESULTS R124; the closing pa
 rules. L-3 stays as history; L-4 was the line of record of fixes entry 9.
 L-5 = docs/red-b/P-N5-EXP-line-L5.txt = L-4 with the replacements of CHANGES5 and nothing else (fixes entry 10: REFEREE 37's
 F-L3-1, the rank clause of rule R with its local delta; the source of the IDEAL-ACYC-POLY sentence named; the closing
-parenthesis names fixes entries 1-10), by the same rules. L-4 stays as history; L-5 IS THE LINE OF RECORD.
+parenthesis names fixes entries 1-10), by the same rules. L-4 stays as history; L-5 was the line of record of fixes entry 10.
+L-6 = docs/red-b/P-N5-EXP-line-L6.txt = L-5 with the replacements of CHANGES6 and nothing else (fixes entry 11: REFEREE-2 42's
+L3-2, L3-3, L3-5, relayed by the Lead; the closing parenthesis names fixes entries 1-11). L-5 stays as history; L-6 IS THE LINE
+OF RECORD.
 
 Usage (from anywhere; no other lane's file is needed for build / check):
   b6line.py build    write L-2; print the diff (per change: item, position in L-1, the old text, the new text, each cut down to
                      the part that differs), then the checks
   b6line.py build3   the same for L-3 from L-2 (the committed L-2 must be the rebuilt one); prints the diff against L-2
   b6line.py build4   the same for L-4 from L-3;  b6line.py build5   the same for L-5 from L-4
-  b6line.py check    rebuild L-2, L-3, L-4 and L-5 in memory and compare each with its committed file; exit 1 on any difference or
+  b6line.py build6   the same for L-6 from L-5
+  b6line.py check    rebuild L-2, L-3, L-4, L-5 and L-6 in memory and compare each with its committed file; exit 1 on any difference or
                      failed check (check.sh); the last line of each block is «L-n rebuilt-vs-committed diff 0»
   b6line.py quotes   check every quotation of QUOTES verbatim (white space normalised on both sides, nothing else) against its
                      source, read with `git show COMMIT:PATH` (the commits must be in the clone: fetch claude/referee,
                      claude/referee-2 and trunk first); prints the source's sha1 and the line numbers of each quotation;
-                     `quotes` reads L-2, `quotes3` L-3, `quotes4` L-4, `quotes5` L-5 (CHANGES3-5 touch no quotation;
+                     `quotes` reads L-2, `quotes3` L-3, `quotes4` L-4, `quotes5` L-5, `quotes6` L-6 (CHANGES3-6 touch no quotation;
                      the IDEAL-ACYC-POLY sentence, in every line since L-1, is checked against R104's packet from L-5 on)
-Checks on L-2, L-3, L-4 and L-5: exactly one line (one newline, the last byte); no pipe character; the brackets ( ) [ ] { } « » balanced and
+Checks on L-2 to L-6: exactly one line (one newline, the last byte); no pipe character; the brackets ( ) [ ] { } « » balanced and
 properly nested (counts printed); sha1 and byte count printed.
 Control B6LINE_CTRL=1 (build / check): one unbalanced bracket is put into the result; the bracket check must fire (exit 1,
 nothing is written).  Control B6LINE_CTRL=2 (quotes): one letter of every quotation is changed; each must be NOT-FOUND (exit 1)."""
@@ -42,6 +46,7 @@ L2 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L2.txt")
 L3 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L3.txt")
 L4 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L4.txt")
 L5 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L5.txt")
+L6 = os.path.join(TOP, "docs", "red-b", "P-N5-EXP-line-L6.txt")
 POLY = "there is a polynomial q such that L(G) ≤ q(N + M) for every G ∈ IDEAL-ACYC"
 L1_SHA1 = "59c5309377eda882ba436ffe7eb03fbff598c7c8"
 CTRL = os.environ.get("B6LINE_CTRL", "0")
@@ -104,6 +109,18 @@ CHANGES5 = [
     ("F-L3-1 (2)", "so R104's IDEAL-ACYC-POLY («",
      "so IDEAL-ACYC-POLY (named in RESULTS R104 and R117; in the words of R104's packet docs/red/P-N5-REALIZE.md: «"),
     ("L-h", "with fixes entries 1-9", "with fixes entries 1-10"),
+]
+
+# L-6 from L-5 (REFEREE-2 42's L3-2, L3-3, L3-5, relayed by the Lead 2026-11-14 14:14Z; item L-i: the parenthesis)
+CHANGES6 = [
+    ("L3-2", "DATA for k ≤ 12: winners = Zielonka's", "DATA for k ≤ 13, k = 13 on one engine: winners = Zielonka's"),
+    ("L3-3", "(premise R117 (f), under SPEC's S1 tie-breaks, same standing premises)",
+     "(with R124's premises as landed, all under the standing SPEC premise 1E-N3, among them RESULTS R117 (f) for EXACT-L, SPEC's "
+     "S1 tie-breaks through REACH3's [RULE] choice, and RESULTS R15 (c) for Lemma TERM-XI)"),
+    ("L3-5", "CAUSAL and LEMMA′ of fixes entry 4 (4.3, 4.4) are referee-originated, stated and proved by REFEREE 36 (",
+     "STABLE's step form, CAUSAL and LEMMA′ of fixes entry 4 (4.2, 4.3, 4.4) are referee-originated, stated by REFEREE 36, which "
+     "also proved CAUSAL and LEMMA′, the proof of STABLE being the frozen one read in step form ("),
+    ("L-i", "with fixes entries 1-10", "with fixes entries 1-11"),
 ]
 
 # (item, quotation, commit, path, restrict-to-entry head or None)
@@ -211,6 +228,12 @@ def build5():
     return l4, res, spans
 
 
+def build6():
+    _, l5, _ = build5()
+    res, spans = apply(l5, CHANGES6, "L-5")
+    return l5, res, spans
+
+
 def report(res, counts, ok, bad, name="L-2"):
     b = res.encode("utf-8")
     print("%s bytes %d (with its newline) lines %d pipes %d sha1 %s" % (name, len(b), res.count("\n"), res.count("|"), sha1(b)))
@@ -259,7 +282,7 @@ def restrict(text, head):
 def quotes(path=L2):
     res = open(path, encoding="utf-8").read()
     n = found = 0
-    for item, q, commit, path, head in QUOTES + (QUOTES5 if path == L5 else []):
+    for item, q, commit, path, head in QUOTES + (QUOTES5 if path in (L5, L6) else []):
         n += 1
         if ("«" + q + "»") not in res:
             print(f"{item} NOT-IN-LINE «{q[:60]}»")
@@ -286,11 +309,28 @@ def quotes(path=L2):
 
 if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else ""
-    if mode not in ("build", "build3", "build4", "build5", "check", "quotes", "quotes3", "quotes4", "quotes5"):
+    if mode not in ("build", "build3", "build4", "build5", "build6", "check", "quotes", "quotes3", "quotes4", "quotes5", "quotes6"):
         print(__doc__)
         sys.exit(2)
-    if mode in ("quotes", "quotes3", "quotes4", "quotes5"):
-        sys.exit(quotes({"quotes": L2, "quotes3": L3, "quotes4": L4, "quotes5": L5}[mode]))
+    if mode in ("quotes", "quotes3", "quotes4", "quotes5", "quotes6"):
+        sys.exit(quotes({"quotes": L2, "quotes3": L3, "quotes4": L4, "quotes5": L5, "quotes6": L6}[mode]))
+    if mode == "build6":
+        l5, res, spans = build6()
+        if open(L5, encoding="utf-8").read() != l5:
+            raise SystemExit("b6line: the committed L-5 is not the L-5 rebuilt from L-1")
+        counts, ok, bad = checks(res)
+        print("L-5 bytes %d sha1 %s" % (len(l5.encode("utf-8")), sha1(l5.encode("utf-8"))))
+        for a, b, item, old, new in spans:
+            print(f"--- {item}: at character {a} of L-5, {len(old.encode('utf-8'))} bytes removed, {len(new.encode('utf-8'))} bytes put in")
+            print(f"- {old}")
+            print(f"+ {new}")
+        print("changes %d; characters of L-5 kept unchanged %d of %d" % (len(spans), len(l5) - sum(len(trim(o, w)[1]) for _, _, _, o, w in spans), len(l5)))
+        report(res, counts, ok, bad, "L-6")
+        if bad:
+            sys.exit(1)
+        open(L6, "w", encoding="utf-8").write(res)
+        print("written " + os.path.relpath(L6, TOP))
+        sys.exit(0)
     if mode == "build5":
         l4, res, spans = build5()
         if open(L4, encoding="utf-8").read() != l4:
@@ -381,4 +421,10 @@ if __name__ == "__main__":
     cur5 = open(L5, encoding="utf-8").read() if os.path.exists(L5) else None
     diff5 = 0 if cur5 == res5 else 1
     print("L-5 rebuilt-vs-committed diff %d" % diff5)
-    sys.exit(1 if (bad or diff or bad3 or diff3 or bad4 or diff4 or bad5 or diff5) else 0)
+    _, res6, _ = build6()
+    counts6, ok6, bad6 = checks(res6)
+    report(res6, counts6, ok6, bad6, "L-6")
+    cur6 = open(L6, encoding="utf-8").read() if os.path.exists(L6) else None
+    diff6 = 0 if cur6 == res6 else 1
+    print("L-6 rebuilt-vs-committed diff %d" % diff6)
+    sys.exit(1 if (bad or diff or bad3 or diff3 or bad4 or diff4 or bad5 or diff5 or bad6 or diff6) else 0)

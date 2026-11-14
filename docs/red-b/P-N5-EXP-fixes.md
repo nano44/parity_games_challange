@@ -1366,3 +1366,78 @@ written docs/red-b/P-N5-EXP-line-L5.txt
   l5 0», its control gives «prefix 7 of 7». check.sh tests both, that L-2 to L-5 are the builder's output, and now runs b6gloss.py
   on k = 6 (rule R: 62 steps; the old gloss: 3 and 1). The new files are pinned in data/b6b/SHA1SUMS_b6b_fixes7; the older pin
   files, the frozen packet and entries 1-9 are unchanged.
+
+## Entry 11 (L-RED-B successor 7, session_01V5yGRVmUNMkUXGRuVH63B8; 2026-11-14, written 14:18Z by date -u): REFEREE-2 42's L3-2, L3-3, L3-5 on the line (its Addendum 4, relayed by the Lead) — the correctness DATA up to k = 13, the premises of Corollary EXP-N5′ in R124's words, STABLE's step form in the L41 scope tail; line L-6; no statement, proof, hypothesis or number changes
+REFEREE-2 42's Addendum 4 was not on origin when this entry was written (the Lead names its commit 4d5b03f7, local to that lane).
+Its three items are taken from the Lead's relay (the Lead's message of 2026-11-14 14:14Z: «Lead relay of REFEREE-2 42, 14:07Z»).
+The Lead also relays that this referee found the failing clause of entry 10 independently (its L3-1, with its own measured
+L = 3) and the packet attribution (its L3-4); both are done in L-5 and are unchanged in L-6. A successor adds the quotations by
+commit and line once Addendum 4 is on origin.
+
+**11.1 L3-2: the correctness DATA reach k = 13.** As relayed: «DATA for k ≤ 12: winners = Zielonka's» is to read «DATA for k ≤ 13,
+k = 13 on one engine: winners = Zielonka's». Accepted: entry 6 (9.15) has wrong 0 at k = 13 on engine 1 (every winner equals the
+harness Zielonka's); engine 2 was not run at k = 13, which the new words say. Entry 2 (e)'s sentence («for k ≤ 12 this is DATA»)
+was written before entry 6 and is completed by it in the same way.
+
+**11.2 L3-3: the premises of Corollary EXP-N5′, in R124's words.** As relayed: the line's parenthesis «(premise R117 (f), under
+SPEC's S1 tie-breaks, same standing premises)» is not exact, because R124 as landed names RESULTS R15 (c) for its Lemma TERM-XI and
+RESULTS R117 (f) for EXACT-L only, and R117's title line has R15 (d), not (c). R124's words (trunk docs/RESULTS.md l. 15371):
+
+[Q R124 l. 15371] «premise RESULTS R117 (f); it uses SPEC's S1 tie-breaks, through REACH3's [RULE] choice» «(Lemma TERM-XI) both runs
+terminate» «premises, all under the standing SPEC premise 1E-N3 of RESULTS R57 / R104 / R117» «RESULTS R15 (c) («every non-empty
+switch of improvements goes strictly up in ≺») for TERM-XI; RESULTS R117 (f) for EXACT-L only»
+
+Accepted. In L-6 the parenthesis reads: (with R124's premises as landed, all under the standing SPEC premise 1E-N3, among them
+RESULTS R117 (f) for EXACT-L, SPEC's S1 tie-breaks through REACH3's [RULE] choice, and RESULTS R15 (c) for Lemma TERM-XI). This is
+the Lead's wording, every word of it R124's, with one clause added by me from the same line of R124 (all under the standing SPEC
+premise 1E-N3), so that what the replaced words «same standing premises» said is not lost. R15 (c) is R124's premise for its
+Lemma TERM-XI; it is not the R15 (d) that R117's title line names for termination only. READ the label of Corollary EXP-N5′ in
+entry 3 and in entry 9 (9.1) the same way: PROVED-CONDITIONAL on RESULTS R124's Corollary EXACT-L and Theorem ENDGAME-3-N5 AS
+LANDED [refereed-only], with R124's premises as landed, as just listed; the premise lists written in entry 3 and in 9.1 are
+completed by RESULTS R15 (c) for Lemma TERM-XI, and RESULTS R117 (f) is a premise of EXACT-L only. No proof changes: entry 3's
+proof uses the two statements of R124 as landed, whatever their premises are.
+
+**11.3 L3-5: STABLE's step form belongs in the L41 scope tail.** As relayed: the tail names CAUSAL and LEMMA′ only; STABLE's step
+form (4.2) is REFEREE 36's wording too (its E-5). REFEREE 36's words, which 4.2 adopts:
+
+[Q REF1 l. 259-260] «Correct form: «if unit i is at rest b under s, E_(i−1)(s) = b and C_(i−1)(s⁺) = b, then s⁺ = s on unit i».»
+
+Accepted. In L-6 the tail begins: STABLE's step form, CAUSAL and LEMMA′ of fixes entry 4 (4.2, 4.3, 4.4) are referee-originated,
+stated by REFEREE 36, which also proved CAUSAL and LEMMA′, the proof of STABLE being the frozen one read in step form. The first
+half is the Lead's replacement. The words after it are changed by me, because «stated and proved by REFEREE 36» would not be true
+of 4.2: REFEREE 36 stated STABLE's step form (its E-5, inside its §5.3) and gave no new proof of it; the proof in 4.2 is the
+frozen one (l. 258-262) read with the key bit of the step. Both quoted signatures name STABLE (stage 4: «with CAUSAL and STABLE in
+step form»; REFEREE-2: «4.2 STABLE»), so the rest of the tail is true of 4.2 as it stands.
+
+**11.4 Line L-6, quote check, guards, pins (records).**
+- LINE L-6: docs/red-b/P-N5-EXP-line-L6.txt = line L-5 with four named replacements made by experiments/red-b/b6line.py build6,
+  each old text occurring exactly once in L-5, and nothing else: 11.1, 11.2, 11.3 and «with fixes entries 1-10» becoming «with
+  fixes entries 1-11» (this entry changes how Corollary EXP-N5′ and STABLE are labelled). Undoing the four gives L-5 back byte for
+  byte. L-6 IS THE LINE OF RECORD; L-1 to L-5 are not edited and stay as history. The builder's record
+  (data/b6b/out/line_L6_build.out; line_L6_quotes.out: the five quotations inside L-6 found verbatim at their commits; controls
+  line_L6_ctrl.out, line_L6_quotes_ctrl.out fire):
+```
+L-5 bytes 7482 sha1 fbd857b08befb397e03e71c554cccb4542be3820
+--- L3-3: at character 2605 of L-5, 70 bytes removed, 208 bytes put in
+- (premise R117 (f), under SPEC's S1 tie-breaks, same standing premises)
++ (with R124's premises as landed, all under the standing SPEC premise 1E-N3, among them RESULTS R117 (f) for EXACT-L, SPEC's S1 tie-breaks through REACH3's [RULE] choice, and RESULTS R15 (c) for Lemma TERM-XI)
+--- L3-2: at character 6184 of L-5, 39 bytes removed, 61 bytes put in
+- DATA for k ≤ 12: winners = Zielonka's
++ DATA for k ≤ 13, k = 13 on one engine: winners = Zielonka's
+--- L3-5: at character 6322 of L-5, 105 bytes removed, 218 bytes put in
+- CAUSAL and LEMMA′ of fixes entry 4 (4.3, 4.4) are referee-originated, stated and proved by REFEREE 36 (
++ STABLE's step form, CAUSAL and LEMMA′ of fixes entry 4 (4.2, 4.3, 4.4) are referee-originated, stated by REFEREE 36, which also proved CAUSAL and LEMMA′, the proof of STABLE being the frozen one read in step form (
+--- L-i: at character 7217 of L-5, 23 bytes removed, 23 bytes put in
+- with fixes entries 1-10
++ with fixes entries 1-11
+changes 4; characters of L-5 kept unchanged 7119 of 7297
+L-6 bytes 7755 (with its newline) lines 1 pipes 0 sha1 1e0ff12d51da7a4ee1aad12ed0fd9119a097896b
+L-6 brackets ( 82 ) 82 [ 1 ] 1 { 0 } 0 « 6 » 6 balanced 1
+L-6 checks failed 0
+written docs/red-b/P-N5-EXP-line-L6.txt
+```
+- Quote check of the whole file: b6fixquote.py → data/b6b/out/quote_fixes11.out (the 117 quotes of entries 1-10 and the 5 of
+  this entry: «quotes 122 found 122 notfound 0»; control quote_fixes11_ctrl.out: «quotes 122 found 0 notfound 122»).
+- Guards and pins: b6guard.py has an eighth stage (entries 1-11) and pins L-6: «guard frozen 0 prefix 0 of 8 l1 0 l2 0 l3 0 l4 0
+  l5 0 l6 0», its control gives «prefix 8 of 8». check.sh tests both and that L-2 to L-6 are the builder's output. The new files
+  are pinned in data/b6b/SHA1SUMS_b6b_fixes8; the older pin files, the frozen packet and entries 1-10 are unchanged.

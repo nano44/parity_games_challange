@@ -47,10 +47,10 @@ if [ -f data/b6b/SHA1SUMS_b6b_fixes3 ]; then (cd data/b6b && sha1sum -c --quiet 
 # P-N5-EXP fixes entry 7: the frozen and append-only guards with their control; line L-2 rebuilt from L-1, with its bracket
 # control; the (R3) range test and the Xi-target test with their controls; run_b6fix.sh on a failing stage (exit 1, no file left)
 # and on a clean one (width.out byte-equal to its pinned file); the entry's pins (about 1 s)
-gd=$(python3 b6guard.py | tail -n 1); [ "$gd" = "guard frozen 0 prefix 0 of 7 l1 0 l2 0 l3 0 l4 0 l5 0" ] || { echo "red-b: P-N5-EXP frozen / append-only guard FAILED: $gd"; fail=1; }
-gc=$(B6G_CTRL=1 python3 b6guard.py | tail -n 1); [ "$gc" = "guard frozen 0 prefix 7 of 7 l1 0 l2 0 l3 0 l4 0 l5 0" ] || { echo "red-b: P-N5-EXP guard control did not fire: $gc"; fail=1; }
-l2=$(python3 b6line.py check | grep -c "^L-[2345] rebuilt-vs-committed diff 0$"); [ "$l2" = "4" ] || { echo "red-b: one of the lines L-2 .. L-5 (fixes entries 7-10) is not b6line.py's output: $l2 of 4"; fail=1; }
-lc=$(B6LINE_CTRL=1 python3 b6line.py check | grep -c "balanced 0"); [ "$lc" = "4" ] || { echo "red-b: b6line bracket control did not fire on the four built lines"; fail=1; }
+gd=$(python3 b6guard.py | tail -n 1); [ "$gd" = "guard frozen 0 prefix 0 of 8 l1 0 l2 0 l3 0 l4 0 l5 0 l6 0" ] || { echo "red-b: P-N5-EXP frozen / append-only guard FAILED: $gd"; fail=1; }
+gc=$(B6G_CTRL=1 python3 b6guard.py | tail -n 1); [ "$gc" = "guard frozen 0 prefix 8 of 8 l1 0 l2 0 l3 0 l4 0 l5 0 l6 0" ] || { echo "red-b: P-N5-EXP guard control did not fire: $gc"; fail=1; }
+l2=$(python3 b6line.py check | grep -c "^L-[23456] rebuilt-vs-committed diff 0$"); [ "$l2" = "5" ] || { echo "red-b: one of the lines L-2 .. L-6 (fixes entries 7-11) is not b6line.py's output: $l2 of 5"; fail=1; }
+lc=$(B6LINE_CTRL=1 python3 b6line.py check | grep -c "balanced 0"); [ "$lc" = "5" ] || { echo "red-b: b6line bracket control did not fire on the five built lines"; fail=1; }
 r6=$(python3 b6e7.py r3 6 | tail -n 1); case "$r6" in *"windows2 30 r3in 0 r3move 0 r3rest 0 literal 26 expected 26 litdiff 0") ;; *) echo "red-b: b6e7 r3 6 FAILED: $r6"; fail=1;; esac
 rc6=$(B6E7_CTRL=1 python3 b6e7.py r3 6 | tail -n 1); case "$rc6" in *" r3in 30 "*) ;; *) echo "red-b: b6e7 r3 control did not fire: $rc6"; fail=1;; esac
 x6=$(python3 b6e7.py xt 6 | tail -n 1); case "$x6" in *"kinds u v y yb yp ypb wiretgt 0 etgt 0 yptgt 6 expected 6 ypdiff 0") ;; *) echo "red-b: b6e7 xt 6 FAILED: $x6"; fail=1;; esac
@@ -68,5 +68,6 @@ if [ -f data/b6b/SHA1SUMS_b6b_fixes6 ]; then (cd data/b6b && sha1sum -c --quiet 
 # gives another genome with L = 3, resp. 1: the control that would catch the old wording; the entry's pins
 g6=$(python3 b6gloss.py 6 | tail -n 1); case "$g6" in *"expected 62 rulediff 0 Lrule 62 Ldiff 0 Lwire0 62 wire0diff 0 Loldinc 3 Lolddec 1 member 1 oldfires 2") ;; *) echo "red-b: b6gloss 6 FAILED (or the old-gloss control did not fire): $g6"; fail=1;; esac
 if [ -f data/b6b/SHA1SUMS_b6b_fixes7 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes7) || { echo "red-b: data/b6b fixes7 SHA1SUMS mismatch"; fail=1; }; fi
+if [ -f data/b6b/SHA1SUMS_b6b_fixes8 ]; then (cd data/b6b && sha1sum -c --quiet SHA1SUMS_b6b_fixes8) || { echo "red-b: data/b6b fixes8 SHA1SUMS mismatch"; fail=1; }; fi
 [ $fail -eq 0 ] && echo "red-b check PASS" || echo "red-b check FAILED"
 exit $fail

@@ -77,7 +77,20 @@ by the fleet's 5-hour limit from about 17:37Z to 19:04Z; handover check, line L-
   successor who touches the line's gloss must run b6gloss.py-style controls (build the genome the words describe, run it).
   A successor should also add the quotation of F-L3-1 by commit and line once REFEREE 37's §14 is on origin (an entry 11).
   NEXT NUMBERS: an L-6 from L-5, entry 11, fixes8, an eighth guard stage.
-- (e) IN FLIGHT: nothing but the push of the fourth commit (this note is in it); before it: the pushes of the second and third (scripts/push.sh as a tracked task, about 50 minutes in the gate). No CPU job.
+- (a⁗) ADDED 2026-11-14T14:19Z, a FIFTH commit on top of abde9163 (its push was stopped in the gate on the Lead's order of
+  14:14Z; origin was still at 10dfedb6): REFEREE-2 42's L3-2, L3-3, L3-5 (relayed by the Lead; its Addendum 4 was not on
+  origin; it also found F-L3-1 on its own). LINE L-6 = L-5 with: «DATA for k ≤ 13, k = 13 on one engine: winners = Zielonka's»;
+  EXP-N5′'s premises in R124's words (R117 (f) for EXACT-L, S1 tie-breaks through REACH3's [RULE] choice, R15 (c) for Lemma
+  TERM-XI, all under 1E-N3: the last clause is MY addition to the Lead's text, from the same line of R124); the L41 tail now
+  names STABLE's step form too, and says «stated by REFEREE 36, which also proved CAUSAL and LEMMA′, the proof of STABLE being
+  the frozen one read in step form» (MY change of the words after the Lead's replacement: REFEREE 36 did not prove STABLE);
+  «with fixes entries 1-11» (b6line.py build6; docs/red-b/P-N5-EXP-line-L6.txt, 7,755 bytes, sha1
+  1e0ff12d51da7a4ee1aad12ed0fd9119a097896b, brackets ( 82 ) 82 [ 1 ] 1 « 6 » 6). L-6 IS THE LINE OF RECORD. Fixes entry 11
+  (l. 1369-1443; the file has 1,443 lines, sha1 214967a10752ac9b90981d01628bec13473da404). b6guard.py: eight stages, pins
+  L-2..L-6 («of 8»); pins SHA1SUMS_b6b_fixes8. OPEN for a successor: quote F-L3-1 (REFEREE 37's §14) and L3-1..L3-5
+  (REFEREE-2's Addendum 4, 4d5b03f7) by commit and line once they are on origin (an entry 12, no other change).
+  NEXT NUMBERS: an L-7 from L-6, entry 12, fixes9, a ninth guard stage.
+- (e) IN FLIGHT: nothing but the push of the fifth commit (this note is in it); before it: the pushes of the earlier commits (scripts/push.sh as a tracked task, about 50 minutes in the gate). No CPU job.
 - NEXT for a successor 8 (only if the Lead creates one): the trap check; `git ls-remote origin claude/l-red-b` must show this
   commit; read the referees' and CHECKER's items on L-2 / entry 7 by commit; answer in entry 8 (append-only, b6fixquote.py with a
   new label per new report, a new pin file SHA1SUMS_b6b_fixes5, a new stage in b6guard.py); an L-3 only by script from L-2.
